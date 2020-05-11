@@ -1,0 +1,107 @@
+{
+    "common": {
+        "name": "mytime",
+        "version": "0.0.1",
+        "news": {
+            "0.0.1": {
+                "en": "initial release",
+                "de": "Erstveröffentlichung",
+                "ru": "Начальная версия",
+                "pt": "lançamento inicial",
+                "nl": "Eerste uitgave",
+                "fr": "Première version",
+                "it": "Versione iniziale",
+                "es": "Versión inicial",
+                "pl": "Pierwsze wydanie",
+                "zh-cn": "首次出版"
+            }
+        },
+        "title": "MyTime",
+        "titleLang": {
+            "en": "MyTime",
+            "de": "MyTime",
+            "ru": "MyTime",
+            "pt": "MyTime",
+            "nl": "MyTime",
+            "fr": "MyTime",
+            "it": "MyTime",
+            "es": "MyTime",
+            "pl": "MyTime",
+            "zh-cn": "MyTime"
+        },
+        "desc": {
+            "en": "This adapter handle Time (eg: countdown,etc.)",
+            "de": "This adapter handle Time (eg: countdown,etc.)",
+            "ru": "This adapter handle Time (eg: countdown,etc.)",
+            "pt": "This adapter handle Time (eg: countdown,etc.)",
+            "nl": "This adapter handle Time (eg: countdown,etc.)",
+            "fr": "This adapter handle Time (eg: countdown,etc.)",
+            "it": "This adapter handle Time (eg: countdown,etc.)",
+            "es": "This adapter handle Time (eg: countdown,etc.)",
+            "pl": "This adapter handle Time (eg: countdown,etc.)",
+            "zh-cn": "This adapter handle Time (eg: countdown,etc.)"
+        },
+        "authors": [
+            "oweitman <oweitman@gmx.de>"
+        ],
+        "keywords": [
+            "ioBroker",
+            "template",
+            "Smart Home",
+            "home automation"
+        ],
+        "license": "MIT",
+        "platform": "Javascript/Node.js",
+        "main": "main.js",
+        "icon": "mytime.png",
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/oweitman/ioBroker.mytime/master/admin/mytime.png",
+        "readme": "https://github.com/oweitman/ioBroker.mytime/blob/master/README.md",
+        "loglevel": "info",
+        "restartAdapters": [
+            "vis"
+        ],
+        "messagebox": true,
+        "localLink": "%web_protocol%://%ip%:%web_port%/vis/edit.html",
+        "mode": "daemon",
+        "type": "visualization",
+        "compact": true,
+        "connectionType": "local",
+        "dataSource": "poll",
+        "materialize": true,
+        "dependencies": [
+            {
+                "js-controller": ">=1.4.2"
+            },
+            "vis"
+        ]
+    },
+    "native": {
+        "option1": true,
+        "option2": "42"
+    },
+    "objects": [],
+    "instanceObjects": [
+        {
+            "_id": "info",
+            "type": "channel",
+            "common": {
+                "name": "Information"
+            },
+            "native": {}
+        },
+        {
+            "_id": "info.connection",
+            "type": "state",
+            "common": {
+                "role": "indicator.connected",
+                "name": "Device or service connected",
+                "type": "boolean",
+                "read": true,
+                "write": false,
+                "def": false
+            },
+            "native": {}
+        }
+    ]
+}
