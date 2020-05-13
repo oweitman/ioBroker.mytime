@@ -24,28 +24,24 @@ vis.binds['mytime'] = {
         }
     },
     intervals: [],
-    countdown: {
+    countdowncircle: {
+        intervaltime: 25,
         createWidget: function (widgetID, view, data, style) {
             var $div = $('#' + widgetID);
             // if nothing found => wait
             if (!$div.length) {
                 return setTimeout(function () {
-                    vis.binds['mytime'].countdown.createWidget(widgetID, view, data, style);
+                    vis.binds['mytime'].countdowncircle.createWidget(widgetID, view, data, style);
                 }, 100);
             }
             var countdown_oid;
-            if (!data.countdown_oid || (countdown_oid = vis.binds["mytime"].countdown.getCountdownId(data.countdown_oid))==false) return;
-            var start   = countdown_oid ? vis.states.attr(countdown_oid + '.start.val')   : 0;
-            var end     = countdown_oid ? vis.states.attr(countdown_oid + '.end.val')     : 0;
-            var timer   = countdown_oid ? vis.states.attr(countdown_oid + '.timer.val')  : 0;
-            var action  = countdown_oid ? vis.states.attr(countdown_oid + '.action.val')  : 'stop';
-            var act = vis.states.attr('mytime.0.Countdown.test.action');
+            if (!data.countdown_oid || (countdown_oid = vis.binds["mytime"].getCountdownId(data.countdown_oid))==false) return;
 
             function onChange(e, newVal, oldVal) {
                 var idParts = e.type.split('.');
                 if (idParts[4]!='action' && idParts[4]!='timer') return;
                 console.log(e.type + ' ' + newVal + ' ' + oldVal);
-                vis.binds["mytime"].countdown.setState(widgetID, data);
+                vis.binds["mytime"].countdowncircle.setState(widgetID, data,vis.binds["mytime"].countdowncircle.setState);
             }
 
             if (countdown_oid) {
@@ -57,48 +53,187 @@ vis.binds['mytime'] = {
                         countdown_oid + '.start'],onChange);
                 }
             }
+            var width=$('#' + widgetID).width();
+            var height=$('#' + widgetID).height();
             var text = '';
-            text += '<div class="timer"></div>';
+            
+            text += '<style> \n';
+            text += '#'+widgetID + ' .time {\n';
+            text += '   position:  absolute; \n';
+            text += '   left:      50%; \n';
+            text += '   top:       50%; \n';
+            text += '   transform: translate(-50%, -50%); \n';
+            text += '} \n';
+            text += '</style> \n';            
+            
+            text += '<canvas class="canvas" width="'+width+'" height="'+height+'"></canvas>';
+            text += '<div class="time"></div>';
             $('#' + widgetID).html(text);
-            vis.binds["mytime"].countdown.startTimer(widgetID,data);
-        },
-        getCountdownId: function(countdown_oid) {
-            var idParts = countdown_oid.split('.');
-            if (idParts[2] != 'Countdown') return false;
-            idParts.pop();
-            return idParts.join('.');
-        },
-        setState: function(widgetID,data) {
-            console.log('setState ' + new Date().getTime());
-            var countdown_oid;
-            if (!data.countdown_oid || (countdown_oid = vis.binds["mytime"].countdown.getCountdownId(data.countdown_oid))==false) return;
-            var start   = countdown_oid ? vis.states.attr(countdown_oid + '.start.val')   : 0;
-            var end     = countdown_oid ? vis.states.attr(countdown_oid + '.end.val')     : 0;
-            var timer   = countdown_oid ? vis.states.attr(countdown_oid + '.timer.val')  : 0;
-            var action  = countdown_oid ? vis.states.attr(countdown_oid + '.action.val')  : 'stop';
-            var format = data.format || 'dd\\d HH\\h mm\\m ss\\s';
 
+            vis.binds["mytime"].startTimer(
+                widgetID,
+                data,vis.binds["mytime"].countdowncircle.intervaltime,
+                vis.binds["mytime"].countdowncircle.setState);
+            
+        },
+        setState: function(widgetID,data,callback) {
+            var countdown_oid;
+            if (!data.countdown_oid || (countdown_oid = vis.binds["mytime"].getCountdownId(data.countdown_oid))==false) return;
+            var start     = countdown_oid ? vis.states.attr(countdown_oid + '.start.val')   : 0;
+            var end       = countdown_oid ? vis.states.attr(countdown_oid + '.end.val')     : 0;
+            var timer     = countdown_oid ? vis.states.attr(countdown_oid + '.timer.val')  : 0;            
+            var action    = countdown_oid ? vis.states.attr(countdown_oid + '.action.val')  : 'stop';
+            var config  = countdown_oid ? JSON.parse(vis.states.attr(countdown_oid + '.config.val')) : {};            
+            var linewidth = data.countdown_width || 20; 
+            var format    = data.countdown_format || 'mm:ss';
+            var stopbehaviour = config.stopbehaviour || 'timer';            
+            var bcolor    = data.countdown_background || 'grey';
+            var fcolor    = data.countdown_foreground || '#87ceeb';            
+            
             var now = new Date().getTime();
             var ms=0;
             if (action=='stop') {
-                vis.binds["mytime"].countdown.stopTimer(widgetID);            
-                ms = timer;
+                vis.binds["mytime"].stopTimer(widgetID);          
+                ms = (stopbehaviour=='timer')? timer:0;
             }
             if (action=='run') {
                 ms = end-now;
-                vis.binds["mytime"].countdown.startTimer(widgetID,data);
+                vis.binds["mytime"].startTimer(
+                    widgetID,
+                    data,
+                    vis.binds["mytime"].countdowncircle.intervaltime,callback);
             }
             if (action=='pause') {
-                vis.binds["mytime"].countdown.stopTimer(widgetID);            
+                $('#'+widgetID+' .timer').removeClass('stop run pause end').addClass('pause');
+                vis.binds["mytime"].stopTimer(widgetID);                
                 ms = end-start;
             }
             if (ms<=0) {
                 ms=0;
-                vis.binds["mytime"].countdown.stopTimer(widgetID);
-                //vis.conn.setState(countdown_oid + '.cmd','end');                
+                vis.binds["mytime"].stopTimer(widgetID);
             }
             if (action=='end') {
-                vis.binds["mytime"].countdown.stopTimer(widgetID);            
+                vis.binds["mytime"].stopTimer(widgetID);
+                ms = 0;
+            }
+            
+            var startangle = ms*360/timer
+            if (vis.editMode) startangle=180;
+                        
+            var canvas = $('#' + widgetID+' canvas');
+            var ctx = canvas[0].getContext("2d");
+            ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+            
+            var length = Math.min(ctx.canvas.width,ctx.canvas.height);
+            var radius=(length/2)-(linewidth/2);
+
+            var x = ctx.canvas.width/2;
+            var y = ctx.canvas.height/2;
+            ctx.beginPath();
+            ctx.lineWidth = linewidth;
+            //ctx.lineCap = "round";
+            var sh=0;
+            ctx.arc(x, y, radius, (360*(Math.PI/180)), (0*(Math.PI/180)),1);
+            ctx.strokeStyle = bcolor;
+            ctx.stroke();
+            ctx.closePath();
+            ctx.beginPath();
+            var sh=-90*(Math.PI/180);
+            ctx.arc(x, y, radius, ((360-startangle)*(Math.PI/180)+sh), (0*(Math.PI/180)+sh),1);
+            ctx.strokeStyle = fcolor;
+            ctx.stroke();
+            ctx.closePath();
+            var text = '';
+            text += vis.binds["mytime"].formatDate(ms,format);
+            $('#' + widgetID + ' .time').html(text);
+
+        },            
+
+
+
+
+    },            
+    countdownplain: {
+        intervaltime: 500,        
+        createWidget: function (widgetID, view, data, style) {
+            var $div = $('#' + widgetID);
+            // if nothing found => wait
+            if (!$div.length) {
+                return setTimeout(function () {
+                    vis.binds['mytime'].countdownplain.createWidget(widgetID, view, data, style);
+                }, 100);
+            }
+            var countdown_oid;
+            if (!data.countdown_oid || (countdown_oid = vis.binds["mytime"].getCountdownId(data.countdown_oid))==false) return;
+
+            function onChange(e, newVal, oldVal) {
+                var idParts = e.type.split('.');
+                if (idParts[4]!='action' && idParts[4]!='timer') return;
+                console.log(e.type + ' ' + newVal + ' ' + oldVal);
+                vis.binds["mytime"].countdownplain.setState(widgetID, data);
+            }
+
+            if (countdown_oid) {
+                if (1 || !vis.editMode) {
+                    vis.binds["mytime"].bindStates($div,[
+                        countdown_oid + '.action',
+                        countdown_oid + '.end',
+                        countdown_oid + '.timer',
+                        countdown_oid + '.config',
+                        countdown_oid + '.start'],onChange);
+                }
+            }
+            var text = '';
+            text += '<div class="timer"></div>';
+            $('#' + widgetID).html(text);
+            
+            vis.binds["mytime"].startTimer(
+                widgetID,
+                data,
+                vis.binds["mytime"].countdownplain.intervaltime,
+                vis.binds["mytime"].countdownplain.setState);
+            
+        },
+        setState: function(widgetID,data) {
+            console.log('setState ' + new Date().getTime());
+            var countdown_oid;
+            if (!data.countdown_oid || (countdown_oid = vis.binds["mytime"].getCountdownId(data.countdown_oid))==false) return;
+            var start   = countdown_oid ? vis.states.attr(countdown_oid + '.start.val')   : 0;
+            var end     = countdown_oid ? vis.states.attr(countdown_oid + '.end.val')     : 0;
+            var timer   = countdown_oid ? vis.states.attr(countdown_oid + '.timer.val')  : 0;
+            var action  = countdown_oid ? vis.states.attr(countdown_oid + '.action.val')  : 'stop';
+            var config  = countdown_oid ? JSON.parse(vis.states.attr(countdown_oid + '.config.val')) : {};
+            var format = data.countdown_format || 'dd\\d HH\\h mm\\m ss\\s';
+            var stopbehaviour = config.stopbehaviour || 'timer';
+
+            var now = new Date().getTime();
+            var ms=0;
+            if (action=='stop') {
+                $('#'+widgetID+' .timer').removeClass('stop run pause end').addClass('stop');
+                vis.binds["mytime"].stopTimer(widgetID);
+                ms = (stopbehaviour=='timer')? timer:0;
+            }
+            if (action=='run') {
+                ms = end-now;
+                $('#'+widgetID+' .timer').removeClass('stop run pause end').addClass('run');
+                vis.binds["mytime"].startTimer(
+                    widgetID,
+                    data,
+                    vis.binds["mytime"].countdownplain.intervaltime,
+                    vis.binds["mytime"].countdownplain.setState);
+            }
+            if (action=='pause') {
+                $('#'+widgetID+' .timer').removeClass('stop run pause end').addClass('pause');
+                vis.binds["mytime"].stopTimer(widgetID);            
+                ms = end-start;
+            }
+            if (ms<=0) {
+                ms=0;
+                vis.binds["mytime"].stopTimer(widgetID);           
+            }
+            if (action=='end') {
+                $('#'+widgetID+' .timer').removeClass('stop run pause end').addClass('end');
+                vis.binds["mytime"].stopTimer(widgetID);            
                 ms = 0;
             }
 
@@ -106,20 +241,40 @@ vis.binds['mytime'] = {
             text += vis.binds["mytime"].formatDate(ms,format);
             $('#' + widgetID + ' .timer').html(text);
         },
-        startTimer: function(widgetID,data) {
+        xstartTimer: function(widgetID,data) {
             if (vis.binds["mytime"].intervals[widgetID]) return;
-            console.log('startTimer');
             var interval;
-            interval = setInterval(vis.binds["mytime"].countdown.setState,500,widgetID,data);
+            interval = setInterval(vis.binds["mytime"].countdownplain.setState,500,widgetID,data);
+            console.log('startTimer '+interval);
             vis.binds["mytime"].intervals[widgetID]=interval;
         },
-        stopTimer: function(widgetID) {
-            console.log('stopTimer');
+        xstopTimer: function(widgetID) {
             var interval;
             interval = (vis.binds["mytime"].intervals[widgetID]) ? vis.binds["mytime"].intervals[widgetID] : null;
+            console.log('stopTimer '+interval);
             if (interval) delete vis.binds["mytime"].intervals[widgetID];
             if (interval) clearInterval(interval);
         },
+    },
+    startTimer: function(widgetID,data,time,callback) {
+        if (vis.binds["mytime"].intervals[widgetID]) return;
+        var interval;
+        interval = setInterval(callback,time,widgetID,data,callback);
+        console.log('startTimer '+widgetID+' '+interval);
+        vis.binds["mytime"].intervals[widgetID]=interval;
+    },
+    stopTimer: function(widgetID) {
+        var interval;
+        interval = (vis.binds["mytime"].intervals[widgetID]) ? vis.binds["mytime"].intervals[widgetID] : null;
+        console.log('stopTimer '+widgetID+' '+interval);
+        if (interval) delete vis.binds["mytime"].intervals[widgetID];
+        if (interval) clearInterval(interval);
+    },
+    getCountdownId: function(countdown_oid) {
+        var idParts = countdown_oid.split('.');
+        if (idParts[2] != 'Countdown') return false;
+        idParts.pop();
+        return idParts.join('.');
     },
     calcCountdownFromMiliSeconds: function(miliseconds,pattern) {
         var ret = {};

@@ -49,10 +49,11 @@
                     var errmsg="";
                     var countdownname = $('#countdownname').val() || '';
                     countdownname = countdownname.replace(/[^0-9a-z]/gi, '');
-                    var countdowndays = $('#countdowndays').val() | 0;
-                    var countdownhours = $('#countdownhours').val() | 0;
-                    var countdownminutes = $('#countdownminutes').val() | 0;
-                    var countdownseconds = $('#countdownseconds').val() | 0;
+                    var countdowndays = $('#countdowndays').val() || 0;
+                    var countdownhours = $('#countdownhours').val() || 0;
+                    var countdownminutes = $('#countdownminutes').val() || 0;
+                    var countdownseconds = $('#countdownseconds').val() || 0;
+                    var countdownstopbehaviour = $('#countdownstopbehaviour').val() || 'timer';
                     
                     if (countdowndays<0) errmsg += "Error: Invalid days ";
                     if (countdownhours<0) errmsg += "Error: Invalid hours ";
@@ -67,7 +68,7 @@
                             countdown[countdownname]={};
                             countdown[countdownname].name = countdownname;
                         }
-                        countdown[countdownname].config = JSON.stringify({"miliseconds":countdownmiliseconds})                        
+                        countdown[countdownname].config = JSON.stringify({"stopbehaviour":countdownstopbehaviour})                        
                         countdown[countdownname].end = 0;
                         countdown[countdownname].timer = countdownmiliseconds;
                         countdown[countdownname].action = 'stop';
@@ -79,6 +80,8 @@
                         $('#countdownhours').val('');
                         $('#countdownminutes').val('');
                         $('#countdownseconds').val('');
+                        $('#countdownstopbehaviour').val('');
+                        if (M) M.updateTextFields();
                         onChange(true);
                         updatetable(onChange);
                     } else {
@@ -115,6 +118,9 @@
                 $('#countdownhours').val(cdObj.hours);
                 $('#countdownminutes').val(cdObj.minutes);
                 $('#countdownseconds').val(cdObj.seconds);
+                $('#countdownstopbehaviour').val(event.data.stopbehaviour);
+                if (M) M.updateTextFields();
+                
             }
             updatetable(event.data.onChange);
         }
@@ -137,24 +143,27 @@
             tablebody.html('');
             for (key in countdown) {
                 var item = countdown[key];
+                var config = JSON.parse(item.config);
                 var miliseconds = item.timer || 0;
                 var cdObj = calcCountdownFromMiliSeconds(miliseconds);
                 var text='';
                 text += '<tr>';
                 text += '<td class="wizard-table-name">'+item.name+'</td>';
-                text += '<td class="wizard-table-cat">'+cdObj.days+'d '+cdObj.hours+'m '+cdObj.minutes+'m '+cdObj.seconds+'s '+'</td>';
+                text += '<td class="wizard-table-time">'+cdObj.days+'d '+cdObj.hours+'m '+cdObj.minutes+'m '+cdObj.seconds+'s '+'</td>';
+                text += '<td class="wizard-table-stop">';
+                text += (config.stopbehaviour=='timer')?'set to timer':'set to zero';
+                text += '</td>';
                 text += '<td class="wizard-table-delete">';
                 text += '<a class="waves-effect waves-light btn edit"><i class="material-icons">edit</i></a>';
                 text += '<a class="waves-effect waves-light btn del"><i class="material-icons">delete</i></a>';
                 text += '</td>';
                 text += '</tr>';
                 var newtr = $(text);
-                newtr.find('a').click({that:this,onChange:onChange,name:item.name,miliseconds:miliseconds},del_edititem);
+                newtr.find('a').click({that:this,onChange:onChange,name:item.name,miliseconds:miliseconds,config:item.config},del_edititem);
                 tablebody.append(newtr);            
             }
         }
         
-
         // This will be called by the admin adapter when the user presses the save button
         function save(callback) {
         
@@ -206,7 +215,7 @@
                         <h3 class="translate">MyTime settings </h3>
                     </div>
                     <div class="col" style="">
-                        <img class="responsive-img valign logo" src="admin/mytime-logo.png" width="64" height="64">
+                        <img class="responsive-img valign logo" src="admin/mytime.png" width="64" height="64">
                     </div>
                 </div>
                 <div class="row">
@@ -236,6 +245,16 @@
                             <input class="" id="countdownseconds" type="text" />
                             <label class="translate" for="countdownseconds">Seconds:</label>
                         </div>
+                        <div class="input-field col s2">
+                            <select id="countdownstopbehaviour" name="countdownstopbehaviour" class="countdownstopbehaviour" size="1">
+                                <option value="timer" selected >set to timer</option>
+                                <option value="zero">set to zero</option>
+                            </select>
+                            <label class="translate" for="countdownstopbehaviour">Stop behaviour:</label>
+                        </div>
+                        
+                        
+                        
                         <div class="input-field col s1">
                             <button class="btn waves-effect waves-light blue table-button-add" type="submit" name="action">
                                 <i class="material-icons">add</i>
@@ -254,7 +273,8 @@
                             <thead>
                             <tr>
                                 <th class="translate wizard-table-name" style="width:10%;">Name</th>
-                                <th class="translate wizard-table-cat" style="width:25%;">Time</th>
+                                <th class="translate wizard-table-time" style="width:25%;">Time</th>
+                                <th class="translate wizard-table-stop" style="width:25%;">Stop Behaviour</th>
                             </tr>
                             </thead>
                             <tbody id="countdown-data">
