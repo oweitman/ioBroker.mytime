@@ -46,7 +46,7 @@ After configuration of a new countdown the adapter creates the following datapoi
 
 | action    | description                                                                                           |
 |-----------|-------------------------------------------------------------------------------------------------------|
-| stop      | the countdown is stopped, start and end time is set to 0                                               |
+| stop      | the countdown is stopped, start and end time is set to 0                                              |
 | run       | the countdown runs. if the countdown reachs the end time. the action switchs to end                   |
 | pause     | countdown is in pausemode. the end time was set to the time of the pause                              |
 | end       | the countdown is ended. this state you can use as a trigger for further actions (sound, popups, etc.) |                                |
@@ -77,14 +77,14 @@ if you want you can set irregular time noteations. the time is sumed up seperatl
 
 **Examples**
 
-| setting   | description                                                                                           |
-|-----------|---------|----------------------------------------------------------------------------------------------|
-| 1:0:0:0   | set/adds/subtracts 1 day to the timer
-| 2:0:0     | set/adds/subtracts 2 hours to the timer
-| 3:0       | set/adds/subtracts 3 minutes to the timer
-| 120       | set/adds/subtracts 120 seconds to the timer
-| 48:0:0    | set/adds/subtracts 48 hours to the timer
-| 48:75:120 | set/adds/subtracts the timer
+| setting   | description                                 |
+|-----------|---------------------------------------------|
+| 1:0:0:0   | set/adds/subtracts 1 day to the timer       |
+| 2:0:0     | set/adds/subtracts 2 hours to the timer     |
+| 3:0       | set/adds/subtracts 3 minutes to the timer   |
+| 120       | set/adds/subtracts 120 seconds to the timer |
+| 48:0:0    | set/adds/subtracts 48 hours to the timer    |
+| 48:75:120 | set/adds/subtracts the timer                |
 
 ##### Format of the template to format the countdown output in the widget
 
