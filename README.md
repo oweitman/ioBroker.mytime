@@ -27,7 +27,7 @@ After the countdown gets the signal stop, the countdown resets to the time set b
 After the countdown gets the signal stop, the countdown remains at 0.
 
 
-###Usage
+### Usage
 #### Countdown 
 
 ##### Available Datapoints
@@ -90,29 +90,29 @@ if you want you can set irregular time noteations. the time is sumed up seperatl
 
 The following placeholders are available:
 
-| placeholder | description                                                                                           |
-|-------------|---------|----------------------------------------------------------------------------------------------|
-| d           | days without leading zeros
-| dd          | days with leading zeros
-| H           | hours without leading zeros
-| HH          | hours with leading zeros
-| m           | minutes without leading zeros
-| mm          | minutes with leading zeros
-| s           | seconds without leading zeros
-| ss          | seconds with leading zeros
-| \           | Escape character if you want to use a placeholder in the output
+| placeholder | description                                                     |
+|-------------|-----------------------------------------------------------------|
+| d           | days without leading zeros                                      |
+| dd          | days with leading zeros                                         |
+| H           | hours without leading zeros                                     |
+| HH          | hours with leading zeros                                        |
+| m           | minutes without leading zeros                                   |
+| mm          | minutes with leading zeros                                      |
+| s           | seconds without leading zeros                                   |
+| ss          | seconds with leading zeros                                      |
+| \           | Escape character if you want to use a placeholder in the output |
 
 **Examples**
 
 All Examples with countdown timer 1:2:3:4
 
-| template   | result                                                                                           |
-|-----------|---------|----------------------------------------------------------------------------------------------|
-| d\d Hh m\m s\s        | 1d 2h 3m 4s       | with escape-characters and without leading zeros
-| dd\d HHh mm\m ss\s    | 01d 02h 03m 04s   | with escape-characters and with leading zeros
-| ss\s                  | 93784s            | only seconds
-| dd\d HH\h             | 01d 02h           | only days and hours
-| HH\h mm\m             | 26h 03m           | only hours and minutes
+| template              | example           | result                                           |
+|-----------------------|-------------------|--------------------------------------------------|
+| d\d Hh m\m s\s        | 1d 2h 3m 4s       | with escape-characters and without leading zeros |
+| dd\d HHh mm\m ss\s    | 01d 02h 03m 04s   | with escape-characters and with leading zeros    |
+| ss\s                  | 93784s            | only seconds                                     |
+| dd\d HH\h             | 01d 02h           | only days and hours                              |
+| HH\h mm\m             | 26h 03m           | only hours and minutes                           |
 
 ### Widgets
 #### Widget Countdown plain
