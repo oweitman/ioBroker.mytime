@@ -62,7 +62,7 @@
                     
                     var countdownmiliseconds = calcCountdownToMiliSeconds(countdowndays,countdownhours,countdownminutes,countdownseconds);                    
                     
-                    var countdown = JSON.parse($('#countdown').val());
+                    var countdown = JSON.parse($('#countdown').val()|| '{}');
                     if (countdownname !=  '' && countdownmiliseconds >=  0 ) {
                         if (!countdown.hasOwnProperty(countdownname)) {                            
                             countdown[countdownname]={};
@@ -81,7 +81,11 @@
                         $('#countdownminutes').val('');
                         $('#countdownseconds').val('');
                         $('#countdownstopbehaviour').val('');
-                        if (M) M.updateTextFields();
+                        if (M) {
+                            M.updateTextFields();
+                            var elems = document.querySelectorAll('select');
+                            var instances = M.FormSelect.init(elems, {});
+                        }
                         onChange(true);
                         updatetable(onChange);
                     } else {
@@ -94,7 +98,11 @@
             
             
             // reinitialize all the Materialize labels on the page if you are dynamically adding inputs:
-            if (M) M.updateTextFields();
+            if (M) {
+                M.updateTextFields();
+                var elems = document.querySelectorAll('select');
+                var instances = M.FormSelect.init(elems, {});
+            }
             getCountdownInfo(function(countdown){
                 $('#countdown').val(JSON.stringify(countdown));
                 updatetable(onChange);
@@ -103,7 +111,7 @@
 
         }
         function del_edititem(event) {
-            var countdown = JSON.parse($('#countdown').val());
+            var countdown = JSON.parse($('#countdown').val()|| '{}');
             if ($(event.currentTarget).hasClass('del')) {
                 delete countdown[event.data.name];
                 $('#countdown').val(JSON.stringify(countdown));
@@ -111,6 +119,7 @@
             }
             if ($(event.currentTarget).hasClass('edit')) {
                 delete countdown[event.data.name];
+                var config = JSON.parse(event.data.config || '{}');
                 var cdObj = calcCountdownFromMiliSeconds(event.data.miliseconds);
                 $('#countdown').val(JSON.stringify(countdown));
                 $('#countdownname').val(event.data.name);
@@ -118,19 +127,28 @@
                 $('#countdownhours').val(cdObj.hours);
                 $('#countdownminutes').val(cdObj.minutes);
                 $('#countdownseconds').val(cdObj.seconds);
-                $('#countdownstopbehaviour').val(event.data.stopbehaviour);
-                if (M) M.updateTextFields();
+                $('#countdownstopbehaviour').val(config.stopbehaviour);
+                event.data.onChange(true);
+                if (M) {
+                    M.updateTextFields();
+                    var elems = document.querySelectorAll('select');
+                    var instances = M.FormSelect.init(elems, {});
+                }
                 
             }
             updatetable(event.data.onChange);
         }
         function calcCountdownFromMiliSeconds(miliseconds) {
+        
             var ret = {};
-            ret.days = (miliseconds/(1000*60*60*24)).toFixed(0);
-            ret.hours = ((miliseconds % (1000*60*60*24))/(1000*60*60)).toFixed(0);
-            ret.minutes = ((miliseconds % (1000*60*60))/(1000*60)).toFixed(0);
-            ret.seconds = ((miliseconds % (1000*60))/(1000)).toFixed(0);
-            return ret;            
+            ret.days = Math.floor(miliseconds / 1000 / 60 / 60 / 24);
+            miliseconds -= ret.days * 1000*60*60*24;
+            ret.hours = Math.floor(miliseconds / 1000 / 60 / 60 );
+            miliseconds -= ret.hours * 1000*60*60;
+            ret.minutes = Math.floor(miliseconds / 1000 / 60 );
+            miliseconds -= ret.minutes * 1000*60;
+            ret.seconds = Math.floor(miliseconds / 1000  );
+            return ret;      
         }
         function calcCountdownToMiliSeconds(days,hours,minutes,seconds) {
             return (1000*seconds)+(1000*60*minutes)+(1000*60*60*hours)+(1000*60*60*24*days);
@@ -139,11 +157,12 @@
         function updatetable(onChange) {
         
             var tablebody = $('#countdown-data');
-            var countdown = JSON.parse($('#countdown').val());            
+            var countdown = JSON.parse($('#countdown').val()|| '{}');
             tablebody.html('');
             for (key in countdown) {
                 var item = countdown[key];
-                var config = JSON.parse(item.config);
+                var config = JSON.parse(item.config || '{}');
+                if (!config.stopbehaviour) config.behaviour='timer';
                 var miliseconds = item.timer || 0;
                 var cdObj = calcCountdownFromMiliSeconds(miliseconds);
                 var text='';
@@ -177,7 +196,7 @@
                     obj[$this.attr('id')] = $this.val();
                 }
             });
-            var countdown = JSON.parse($('#countdown').val());
+            var countdown = JSON.parse($('#countdown').val()|| '{}');
             setCountdownInfo(countdown,function(res){
                 myOnChange(false);
                 callback(obj);
@@ -247,7 +266,8 @@
                         </div>
                         <div class="input-field col s2">
                             <select id="countdownstopbehaviour" name="countdownstopbehaviour" class="countdownstopbehaviour" size="1">
-                                <option value="timer" selected >set to timer</option>
+                                <option value="" selected ></option>
+                                <option value="timer">set to timer</option>
                                 <option value="zero">set to zero</option>
                             </select>
                             <label class="translate" for="countdownstopbehaviour">Stop behaviour:</label>

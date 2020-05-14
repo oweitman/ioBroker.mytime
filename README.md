@@ -73,7 +73,7 @@ the notation of the value is
 days,hours and minutes are optional.
 if you want to set the timer to one day you have to set hours,minutes and second aswell
 you dont have to respect the normal value ranges (eg hours 0-24). you can also set 48 hours.
-if you want you can set irregular time noteations. the time is sumed up seperatly
+if you want you can set irregular time notations. the time is sumed up seperatly
 
 **Examples**
 
