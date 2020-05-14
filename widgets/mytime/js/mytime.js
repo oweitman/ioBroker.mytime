@@ -93,6 +93,7 @@ vis.binds['mytime'] = {
             var stopbehaviour = config.stopbehaviour || 'timer';            
             var bcolor    = data.countdown_background || 'grey';
             var fcolor    = data.countdown_foreground || '#87ceeb';            
+            var reverse   = data.countdown_reverse;            
             
             var now = new Date().getTime();
             var ms=0;
@@ -147,7 +148,11 @@ vis.binds['mytime'] = {
             ctx.closePath();
             ctx.beginPath();
             var sh=-90*(Math.PI/180);
-            ctx.arc(x, y, radius, ((360-startangle)*(Math.PI/180)+sh), (0*(Math.PI/180)+sh),1);
+            if (reverse) {
+                ctx.arc(x, y, radius, ((startangle)*(Math.PI/180)+sh), (0*(Math.PI/180)+sh),1);
+            } else {
+                ctx.arc(x, y, radius, ((360-startangle)*(Math.PI/180)+sh), (0*(Math.PI/180)+sh),1);
+            }
             ctx.strokeStyle = fcolor;
             ctx.stroke();
             ctx.closePath();

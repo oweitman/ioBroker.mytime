@@ -147,6 +147,8 @@ A countdown widget in a ring/circle design. Suitable for short countdowns.
 The timer datapoint of a countdown datapoint.
 ###### Format
 Formats the timer output. default is mm:ss. for details see Chapter format template
+###### Reverse
+Setting for growing or shrinking the ring/circle
 ###### Width
 The width of the ring or circle.
 ###### background
@@ -165,6 +167,8 @@ Foregroundcolor of the ring/circle
 ```
 
 ## Todo
+* circle with round caps
+* circle reverse
 * Polar clock
 * 7segment display
 * Nixie style
