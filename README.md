@@ -174,8 +174,12 @@ Foregroundcolor of the ring/circle
 
 ## Changelog
 
+### 0.1.1
+* Add a countdown name datapoint
 ### 0.1.0
-* (oweitman) initial release
+* Forum release
+### 0.1.0
+* initial release
 
 ## License
 MIT License
