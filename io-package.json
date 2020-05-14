@@ -4,10 +4,10 @@
         "version": "0.1.0",
         "news": {
             "0.1.1": {
-                "en": "Forum release",
+                "en": "Forum release"
             },
             "0.0.1": {
-                "en": "initial release",
+                "en": "initial release"
             }
         },
         "title": "MyTime",
