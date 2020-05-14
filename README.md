@@ -149,6 +149,8 @@ The timer datapoint of a countdown datapoint.
 Formats the timer output. default is mm:ss. for details see Chapter format template
 ###### Reverse
 Setting for growing or shrinking the ring/circle
+###### Caps
+Setting for the ends of the ring/circle: round or straight
 ###### Width
 The width of the ring or circle.
 ###### background
@@ -167,17 +169,20 @@ Foregroundcolor of the ring/circle
 ```
 
 ## Todo
-* circle with round caps
-* circle reverse
 * Polar clock
 * 7segment display
 * Nixie style
 * rolling numbers
 * flip board display (airport-display)
 * customizable fonts
+* ~~circle reverse~~
+* ~~circle with round caps~~
 
 ## Changelog
 
+### 0.1.2
+* Setting for growing or shrinking the ring/circle
+* Setting for the ends of the ring/circle: round or straight
 ### 0.1.1
 * Add a countdown name datapoint
 ### 0.1.0

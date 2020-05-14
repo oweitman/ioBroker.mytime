@@ -93,7 +93,8 @@ vis.binds['mytime'] = {
             var stopbehaviour = config.stopbehaviour || 'timer';            
             var bcolor    = data.countdown_background || 'grey';
             var fcolor    = data.countdown_foreground || '#87ceeb';            
-            var reverse   = data.countdown_reverse;            
+            var reverse   = data.countdown_reverse;
+            var caps      = data.countdown_caps || 'straight';
             
             var now = new Date().getTime();
             var ms=0;
@@ -140,7 +141,8 @@ vis.binds['mytime'] = {
             var y = ctx.canvas.height/2;
             ctx.beginPath();
             ctx.lineWidth = linewidth;
-            //ctx.lineCap = "round";
+            if (caps=='straight') ctx.lineCap = "butt";
+            if (caps=='round') ctx.lineCap = "round";
             var sh=0;
             ctx.arc(x, y, radius, (360*(Math.PI/180)), (0*(Math.PI/180)),1);
             ctx.strokeStyle = bcolor;
