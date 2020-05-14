@@ -53,17 +53,18 @@ After configuration of a new countdown the adapter creates the following datapoi
 
 ##### Available commands for the cmd datapoint
 
-| command       | example       | description                                                                                           |
-|---------------|---------------|----------------------------------------------------------------------------------------------|
-| +value        | +1:10         | adds time to the countdown setting. the setting will be taken into account at the next start |
-| -value        | -1:2:3        | subtracts time from the countdown. the setting will be taken into account at the next start  |
-| =value        | =5:00         | set the countdowntimer to this time.                                                         |
-| start         | start         | starts the countdown                                                                         |
-| stop          | stop          | stops the countdown. the countdown time is reset to the setting                              |
-| pause         | pause         | pauses the countdown                                                                         |
-| end           | end           | stops the countdown. the countdown is set to 0                                               |
-| setstop2timer | setstop2timer | set stop behaviour configuration to timer                                                    |
-| setstop2zero  | setstop2zero  | set stop behaviour configuration to zeros                                                    |
+| command       | example              | description                                                                                           |
+|---------------|----------------------|----------------------------------------------------------------------------------------------|
+| +value        | +1:10                | adds time to the countdown setting. the setting will be taken into account at the next start |
+| -value        | -1:2:3               | subtracts time from the countdown. the setting will be taken into account at the next start  |
+| =value        | =5:00                | set the countdowntimer to this time.                                                         |
+| #ISO-Date     | #2020-01-01T10:00:00 | set the countdowntimer to a target time. The Time must be formatted as ISO-Datestring        |
+| start         | start                | starts the countdown                                                                         |
+| stop          | stop                 | stops the countdown. the countdown time is reset to the setting                              |
+| pause         | pause                | pauses the countdown                                                                         |
+| end           | end                  | stops the countdown. the countdown is set to 0                                               |
+| setstop2timer | setstop2timer        | set stop behaviour configuration to timer                                                    |
+| setstop2zero  | setstop2zero         | set stop behaviour configuration to zeros                                                    |
 
 ##### Format of the value for setting the countdown timer
 
@@ -104,7 +105,7 @@ The following placeholders are available:
 
 **Examples**
 
-All Examples with countdown timer 1:2:3:4
+All following Examples with countdown timer 1:2:3:4
 
 | template              | example           | result                                           |
 |-----------------------|-------------------|--------------------------------------------------|
