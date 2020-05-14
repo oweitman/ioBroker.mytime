@@ -162,9 +162,17 @@ Foregroundcolor of the ring/circle
 }
 ```
 
+## Todo
+* Polar clock
+* 7segment display
+* Nixie style
+* rolling numbers
+* flip board display (airport-display)
+* customizable fonts
+
 ## Changelog
 
-### 0.0.1
+### 0.1.0
 * (oweitman) initial release
 
 ## License
