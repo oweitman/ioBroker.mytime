@@ -151,6 +151,16 @@ The width of the ring or circle.
 Backgroundcolor of the ring/circle
 ###### foreground
 Foregroundcolor of the ring/circle
+##### The actual action state (stop,run,pause,end) of the countdown is available as CSS-Class selector.
+
+```
+#w00000 .timer.end {
+    color:red;
+}
+#w00000 .timer.run {
+    color:green;
+}
+```
 
 ## Changelog
 

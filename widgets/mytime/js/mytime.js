@@ -36,6 +36,7 @@ vis.binds['mytime'] = {
             }
             var countdown_oid;
             if (!data.countdown_oid || (countdown_oid = vis.binds["mytime"].getCountdownId(data.countdown_oid))==false) return;
+            var timer     = countdown_oid ? vis.states.attr(countdown_oid + '.timer.val')  : 0;
 
             function onChange(e, newVal, oldVal) {
                 var idParts = e.type.split('.');
@@ -58,7 +59,7 @@ vis.binds['mytime'] = {
             var text = '';
             
             text += '<style> \n';
-            text += '#'+widgetID + ' .time {\n';
+            text += '#'+widgetID + ' .timer {\n';
             text += '   position:  absolute; \n';
             text += '   left:      50%; \n';
             text += '   top:       50%; \n';
@@ -67,14 +68,17 @@ vis.binds['mytime'] = {
             text += '</style> \n';            
             
             text += '<canvas class="canvas" width="'+width+'" height="'+height+'"></canvas>';
-            text += '<div class="time"></div>';
+            text += '<div class="timer"></div>';
             $('#' + widgetID).html(text);
-
             vis.binds["mytime"].startTimer(
                 widgetID,
-                data,vis.binds["mytime"].countdowncircle.intervaltime,
+                data,
+                vis.binds["mytime"].countdowncircle.calcInterval(timer),
                 vis.binds["mytime"].countdowncircle.setState);
             
+        },
+        calcInterval: function(timer) {
+            return Math.max((timer/720).toFixed(0),25);
         },
         setState: function(widgetID,data,callback) {
             var countdown_oid;
@@ -93,18 +97,21 @@ vis.binds['mytime'] = {
             var now = new Date().getTime();
             var ms=0;
             if (action=='stop') {
+                $('#'+widgetID+' .timer').removeClass('stop run pause end').addClass('stop');                
                 vis.binds["mytime"].stopTimer(widgetID);          
                 ms = (stopbehaviour=='timer')? timer:0;
             }
             if (action=='run') {
+                $('#'+widgetID+' .timer').removeClass('stop run pause end').addClass('run');                
                 ms = end-now;
                 vis.binds["mytime"].startTimer(
                     widgetID,
                     data,
-                    vis.binds["mytime"].countdowncircle.intervaltime,callback);
+                    vis.binds["mytime"].countdowncircle.calcInterval(timer),
+                    callback);
             }
             if (action=='pause') {
-                $('#'+widgetID+' .timer').removeClass('stop run pause end').addClass('pause');
+                $('#'+widgetID+' .timer').removeClass('stop run pause end').addClass('pause');                
                 vis.binds["mytime"].stopTimer(widgetID);                
                 ms = end-start;
             }
@@ -113,6 +120,7 @@ vis.binds['mytime'] = {
                 vis.binds["mytime"].stopTimer(widgetID);
             }
             if (action=='end') {
+                $('#'+widgetID+' .timer').removeClass('stop run pause end').addClass('end');                                
                 vis.binds["mytime"].stopTimer(widgetID);
                 ms = 0;
             }
@@ -145,7 +153,7 @@ vis.binds['mytime'] = {
             ctx.closePath();
             var text = '';
             text += vis.binds["mytime"].formatDate(ms,format);
-            $('#' + widgetID + ' .time').html(text);
+            $('#' + widgetID + ' .timer').html(text);
 
         },            
 
