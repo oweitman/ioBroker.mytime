@@ -1,8 +1,11 @@
 {
     "common": {
         "name": "mytime",
-        "version": "0.1.2",
+        "version": "0.2.0",
         "news": {
+            "0.2.0": {
+                "en": "extend the countdown circle with more rings for days, hours and minutes"
+            },
             "0.1.2": {
                 "en": "Setting for growing or shrinking the ring/circle / Setting for the ends of the ring/circle: round or straight / Extend special char filtering with umlauts / Fix state request issue in widget countdown circle"
             },

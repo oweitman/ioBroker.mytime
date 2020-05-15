@@ -113,7 +113,7 @@
         type="text/ejs"
         class="vis-tpl"
 		data-vis-prev='<img src="widgets/mytime/img/cdplain.png"></img>'
-        data-vis-attrs="countdown_oid/id;countdown_format[mm:ss];countdown_reverse/checkbox;countdown_caps[straight]/nselect,straight,round;countdown_width[20];countdown_background/color;countdown_foreground/color;"
+        data-vis-attrs="countdown_oid/id;countdown_format[mm:ss];countdown_reverse/checkbox;countdown_width[20];countdown_ringgap;countdown_caps[straight]/nselect,straight,round;countdown_background/color;countdown_foreground/color;countdown_showsec/checkbox;countdown_showmin/checkbox;countdown_showhrs/checkbox;countdown_showday/checkbox;"
         data-vis-set="mytime"
         data-vis-type="val"
         data-vis-beta="true"
@@ -123,4 +123,4 @@
         vis.binds['mytime'].countdowncircle.createWidget(this.data.wid, this.view, this.data, this.style);
     %></div>
 </script>
- 
+                      

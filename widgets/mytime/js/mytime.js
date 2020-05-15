@@ -37,7 +37,23 @@ vis.binds['mytime'] = {
             var countdown_oid;
             if (!data.countdown_oid || (countdown_oid = vis.binds["mytime"].getCountdownId(data.countdown_oid))==false) return;
             var timer     = countdown_oid ? vis.states.attr(countdown_oid + '.timer.val')  : 0;
-
+            var showsec   = data.countdown_showsec;
+            var showmin   = data.countdown_showmin;
+            var showhrs   = data.countdown_showhrs;
+            var showday   = data.countdown_showday;
+            
+            
+            var pattern =   ((showsec)?"1":"0") + 
+                            ((showmin)?"1":"0") + 
+                            ((showhrs)?"1":"0") + 
+                            ((showday)?"1":"0");
+                            
+            if (pattern.indexOf('101')>=0) {
+                $('#' + widgetID).html('Error: Invalid Format');
+                return;
+                
+            }
+            
             function onChange(e, newVal, oldVal) {
                 var idParts = e.type.split('.');
                 if (idParts[4]!='action' && idParts[4]!='timer') return;
@@ -71,6 +87,7 @@ vis.binds['mytime'] = {
             text += '<canvas class="canvas" width="'+width+'" height="'+height+'"></canvas>';
             text += '<div class="timer"></div>';
             $('#' + widgetID).html(text);
+            vis.binds["mytime"].stopTimer(widgetID);            
             vis.binds["mytime"].startTimer(
                 widgetID,
                 data,
@@ -79,7 +96,7 @@ vis.binds['mytime'] = {
             
         },
         calcInterval: function(timer) {
-            return Math.max((timer/720).toFixed(0),25);
+            return Math.min(Math.max(timer/720,25),500);
         },
         setState: function(widgetID,data,callback) {
             var countdown_oid;
@@ -96,6 +113,16 @@ vis.binds['mytime'] = {
             var fcolor    = data.countdown_foreground || '#87ceeb';            
             var reverse   = data.countdown_reverse;
             var caps      = data.countdown_caps || 'straight';
+            var showsec   = data.countdown_showsec;
+            var showmin   = data.countdown_showmin;
+            var showhrs   = data.countdown_showhrs;
+            var showday   = data.countdown_showday;
+            var ringgap   = data.countdown_ringgap || 5;
+
+            var pattern =   ((showday)?"1":"0") + 
+                            ((showhrs)?"1":"0") + 
+                            ((showmin)?"1":"0") + 
+                            ((showsec)?"1":"0");
             
             var now = new Date().getTime();
             var ms=0;
@@ -127,44 +154,94 @@ vis.binds['mytime'] = {
                 vis.binds["mytime"].stopTimer(widgetID);
                 ms = 0;
             }
+
+            var cdObjnow = vis.binds["mytime"].calcCountdownFromMiliSeconds(ms, pattern);
+            var cdObjtimer = vis.binds["mytime"].calcCountdownFromMiliSeconds(timer, pattern);
             
-            var startangle = ms*360/timer
-            if (vis.editMode) startangle=180;
-                        
             var canvas = $('#' + widgetID+' canvas');
             var ctx = canvas[0].getContext("2d");
-            ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+            vis.binds["mytime"].countdowncircle.clearBase(ctx);
             
-            var length = Math.min(ctx.canvas.width,ctx.canvas.height);
-            var radius=(length/2)-(linewidth/2);
+            ctx.lineWidth = linewidth;
 
+            var radius=0;
             var x = ctx.canvas.width/2;
             var y = ctx.canvas.height/2;
+            var length = Math.min(ctx.canvas.width,ctx.canvas.height);
+//var radius=(length/2)-(linewidth/2);
+            var startangle=0;
+            var bound=0;
+            var gap=0;
+            ['seconds','minutes','hours','days'].forEach(ring => {
+                bound = (ring=='seconds') ? length/2 : radius-(linewidth/2);
+                gap = (ring=='seconds') ? 0 : ringgap;
+                radius=vis.binds["mytime"].countdowncircle.calcRadius(bound,linewidth,gap);
+                
+                if (ring=='seconds' && pattern[3]=='1') {
+                    startangle = (pattern[2]=='1') ? cdObjnow[ring]*360/60 : cdObjnow[ring]*360/cdObjtimer[ring];
+                    if (vis.editMode) startangle=180;
+                    vis.binds["mytime"].countdowncircle.drawBase(ctx,x,y,radius,bcolor);
+                    vis.binds["mytime"].countdowncircle.drawRing(ctx,x,y,radius,startangle,fcolor,caps,reverse);                       
+                }
+                if (ring=='minutes' && pattern[2]=='1') {
+                    startangle = (pattern[1]=='1') ? cdObjnow[ring]*360/60 : cdObjnow[ring]*360/cdObjtimer[ring];
+                    if (vis.editMode) startangle=180;
+                    vis.binds["mytime"].countdowncircle.drawBase(ctx,x,y,radius,bcolor);
+                    vis.binds["mytime"].countdowncircle.drawRing(ctx,x,y,radius,startangle,fcolor,caps,reverse);                       
+                }
+                if (ring=='hours' && pattern[1]=='1') {
+                    startangle = (pattern[0]=='1') ? cdObjnow[ring]*360/24 : cdObjnow[ring]*360/cdObjtimer[ring];
+                    if (vis.editMode) startangle=180;
+                    vis.binds["mytime"].countdowncircle.drawBase(ctx,x,y,radius,bcolor);
+                    vis.binds["mytime"].countdowncircle.drawRing(ctx,x,y,radius,startangle,fcolor,caps,reverse);                       
+                }
+                if (ring=='days' && pattern[0]=='1') {
+                    startangle = cdObjnow[ring]*360/cdObjtimer[ring];
+                    if (vis.editMode) startangle=180;
+                    vis.binds["mytime"].countdowncircle.drawBase(ctx,x,y,radius,bcolor);
+                    vis.binds["mytime"].countdowncircle.drawRing(ctx,x,y,radius,startangle,fcolor,caps,reverse);                       
+                }
+
+            });
+
+            vis.binds["mytime"].countdowncircle.drawText(widgetID, ms,format);
+        },
+        calcRadius: function(bound,linewidth,gap) {
+            var radius = (bound)-(linewidth/2)-gap;
+            return (radius >= (linewidth/2)) ? radius : (linewidth/2);
+
+        },
+        clearBase: function(ctx) {
+            ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+        },
+        drawBase: function(ctx,x,y,radius,color) {
             ctx.beginPath();
-            ctx.lineWidth = linewidth;
+            ctx.arc(x, y, radius, (360*(Math.PI/180)), (0*(Math.PI/180)),1);
+            ctx.strokeStyle = color; //bcolor
+            ctx.stroke();
+            ctx.closePath();            
+        },
+        drawRing: function(ctx,x,y,radius,startangle,color,caps,reverse) {
             if (caps=='straight') ctx.lineCap = "butt";
             if (caps=='round') ctx.lineCap = "round";
-            var sh=0;
-            ctx.arc(x, y, radius, (360*(Math.PI/180)), (0*(Math.PI/180)),1);
-            ctx.strokeStyle = bcolor;
-            ctx.stroke();
-            ctx.closePath();
+
             ctx.beginPath();
+            ctx.strokeStyle = color;
             var sh=-90*(Math.PI/180);
+            
             if (reverse) {
                 ctx.arc(x, y, radius, ((startangle)*(Math.PI/180)+sh), (0*(Math.PI/180)+sh),1);
             } else {
                 ctx.arc(x, y, radius, ((360-startangle)*(Math.PI/180)+sh), (0*(Math.PI/180)+sh),1);
             }
-            ctx.strokeStyle = fcolor;
             ctx.stroke();
             ctx.closePath();
+        },
+        drawText: function(widgetID, ms,format) {
             var text = '';
             text += vis.binds["mytime"].formatDate(ms,format);
             $('#' + widgetID + ' .timer').html(text);
-
-        },            
-
+        },
 
 
 
@@ -180,8 +257,8 @@ vis.binds['mytime'] = {
                 }, 100);
             }
             var countdown_oid;
-            if (!data.countdown_oid || (countdown_oid = vis.binds["mytime"].getCountdownId(data.countdown_oid))==false) return;
-
+            if (!data.countdown_oid || (countdown_oid = vis.binds["mytime"].getCountdownId(data.countdown_oid))==false) return;            
+            
             function onChange(e, newVal, oldVal) {
                 var idParts = e.type.split('.');
                 if (idParts[4]!='action' && idParts[4]!='timer') return;
@@ -255,21 +332,7 @@ vis.binds['mytime'] = {
             var text = '';
             text += vis.binds["mytime"].formatDate(ms,format);
             $('#' + widgetID + ' .timer').html(text);
-        },
-        xstartTimer: function(widgetID,data) {
-            if (vis.binds["mytime"].intervals[widgetID]) return;
-            var interval;
-            interval = setInterval(vis.binds["mytime"].countdownplain.setState,500,widgetID,data);
-            console.log('startTimer '+interval);
-            vis.binds["mytime"].intervals[widgetID]=interval;
-        },
-        xstopTimer: function(widgetID) {
-            var interval;
-            interval = (vis.binds["mytime"].intervals[widgetID]) ? vis.binds["mytime"].intervals[widgetID] : null;
-            console.log('stopTimer '+interval);
-            if (interval) delete vis.binds["mytime"].intervals[widgetID];
-            if (interval) clearInterval(interval);
-        },
+        }
     },
     startTimer: function(widgetID,data,time,callback) {
         if (vis.binds["mytime"].intervals[widgetID]) return;

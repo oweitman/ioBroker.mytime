@@ -141,7 +141,7 @@ the widgets are preconfigured for a countdown named test.
 }
 ```
 #### Widget Countdown Circle
-A countdown widget in a ring/circle design. Suitable for short countdowns.
+A countdown widget in a ring/circle design. 
 ##### Widget Properties
 ###### oid
 The timer datapoint of a countdown datapoint.
@@ -149,14 +149,25 @@ The timer datapoint of a countdown datapoint.
 Formats the timer output. default is mm:ss. for details see Chapter format template
 ###### Reverse
 Setting for growing or shrinking the ring/circle
-###### Caps
-Setting for the ends of the ring/circle: round or straight
 ###### Width
 The width of the ring or circle.
+###### Ring gap
+Gap in pixel between the rings
+###### Caps
+Setting for the ends of the ring/circle: round or straight
 ###### background
 Backgroundcolor of the ring/circle
 ###### foreground
 Foregroundcolor of the ring/circle
+###### showsec
+Show the ring of seconds
+###### showmin
+Show the ring of minutes
+###### showhrs
+Show the ring of minutes
+###### showday
+Show the ring of days
+
 ##### The actual action state (stop,run,pause,end) of the countdown is available as CSS-Class selector.
 
 ```
@@ -169,17 +180,20 @@ Foregroundcolor of the ring/circle
 ```
 
 ## Todo
-* Polar clock
 * 7segment display
 * Nixie style
 * rolling numbers
 * flip board display (airport-display)
 * customizable fonts
+* wordclock timer ?
+* ~~Polar clock~~
 * ~~circle reverse~~
 * ~~circle with round caps~~
 
 ## Changelog
 
+### 0.2.0
+* extend the countdown circle with more rings for days, hours and minutes
 ### 0.1.2
 * Setting for growing or shrinking the ring/circle
 * Setting for the ends of the ring/circle: round or straight
