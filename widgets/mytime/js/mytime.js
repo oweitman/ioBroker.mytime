@@ -51,6 +51,7 @@ vis.binds['mytime'] = {
                         countdown_oid + '.action',
                         countdown_oid + '.end',
                         countdown_oid + '.timer',
+                        countdown_oid + '.config',
                         countdown_oid + '.start'],onChange);
                 }
             }

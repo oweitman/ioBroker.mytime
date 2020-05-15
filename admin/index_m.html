@@ -48,7 +48,7 @@
                 function (evt) {
                     var errmsg="";
                     var countdownname = $('#countdownname').val() || '';
-                    countdownname = countdownname.replace(/[^0-9a-z]/gi, '');
+                    countdownname = countdownname.replace(/[^0-9a-zöÖüÜäÄß]/gi, '');
                     var countdowndays = $('#countdowndays').val() || 0;
                     var countdownhours = $('#countdownhours').val() || 0;
                     var countdownminutes = $('#countdownminutes').val() || 0;

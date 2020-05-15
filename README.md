@@ -183,6 +183,8 @@ Foregroundcolor of the ring/circle
 ### 0.1.2
 * Setting for growing or shrinking the ring/circle
 * Setting for the ends of the ring/circle: round or straight
+* Extend special char filtering with umlauts
+* Fix state request issue in widget countdown circle 
 ### 0.1.1
 * Add a countdown name datapoint
 ### 0.1.0
