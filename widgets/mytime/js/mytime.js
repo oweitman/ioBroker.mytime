@@ -208,7 +208,6 @@ vis.binds['mytime'] = {
                 data,
                 vis.binds["mytime"].countdownplain.intervaltime,
                 vis.binds["mytime"].countdownplain.setState);
-            
         },
         setState: function(widgetID,data) {
             console.log('setState ' + new Date().getTime());
