@@ -192,6 +192,12 @@ Show the ring of days
 
 ## Changelog
 
+### 0.2.1
+* fix timer display in configuration dialog
+* fix default template of countdown plain
+* add icons for countdonw plain and countdown circle widgets 
+* fix startangle calculation for countdown circle if time values are 0
+* remove timer intervals in editmode due to interfer with the configuration dialog and didnt save the ne values
 ### 0.2.0
 * extend the countdown circle with more rings for days, hours and minutes
 ### 0.1.2

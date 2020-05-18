@@ -42,7 +42,6 @@ vis.binds['mytime'] = {
             var showhrs   = data.countdown_showhrs;
             var showday   = data.countdown_showday;
             
-            
             var pattern =   ((showsec)?"1":"0") + 
                             ((showmin)?"1":"0") + 
                             ((showhrs)?"1":"0") + 
@@ -93,6 +92,7 @@ vis.binds['mytime'] = {
                 data,
                 vis.binds["mytime"].countdowncircle.calcInterval(timer),
                 vis.binds["mytime"].countdowncircle.setState);
+            vis.binds["mytime"].countdowncircle.setState(widgetID,data);
             
         },
         calcInterval: function(timer) {
@@ -178,25 +178,25 @@ vis.binds['mytime'] = {
                 radius=vis.binds["mytime"].countdowncircle.calcRadius(bound,linewidth,gap);
                 
                 if (ring=='seconds' && pattern[3]=='1') {
-                    startangle = (pattern[2]=='1') ? cdObjnow[ring]*360/60 : cdObjnow[ring]*360/cdObjtimer[ring];
+                    startangle = (pattern[2]=='1') ? cdObjnow[ring]*360/60 || 0: cdObjnow[ring]*360/cdObjtimer[ring] || 0;
                     if (vis.editMode) startangle=180;
                     vis.binds["mytime"].countdowncircle.drawBase(ctx,x,y,radius,bcolor);
                     vis.binds["mytime"].countdowncircle.drawRing(ctx,x,y,radius,startangle,fcolor,caps,reverse);                       
                 }
                 if (ring=='minutes' && pattern[2]=='1') {
-                    startangle = (pattern[1]=='1') ? cdObjnow[ring]*360/60 : cdObjnow[ring]*360/cdObjtimer[ring];
+                    startangle = (pattern[1]=='1') ? cdObjnow[ring]*360/60 || 0: cdObjnow[ring]*360/cdObjtimer[ring] || 0;
                     if (vis.editMode) startangle=180;
                     vis.binds["mytime"].countdowncircle.drawBase(ctx,x,y,radius,bcolor);
                     vis.binds["mytime"].countdowncircle.drawRing(ctx,x,y,radius,startangle,fcolor,caps,reverse);                       
                 }
                 if (ring=='hours' && pattern[1]=='1') {
-                    startangle = (pattern[0]=='1') ? cdObjnow[ring]*360/24 : cdObjnow[ring]*360/cdObjtimer[ring];
+                    startangle = (pattern[0]=='1') ? cdObjnow[ring]*360/24 || 0 : cdObjnow[ring]*360/cdObjtimer[ring] || 0;
                     if (vis.editMode) startangle=180;
                     vis.binds["mytime"].countdowncircle.drawBase(ctx,x,y,radius,bcolor);
                     vis.binds["mytime"].countdowncircle.drawRing(ctx,x,y,radius,startangle,fcolor,caps,reverse);                       
                 }
                 if (ring=='days' && pattern[0]=='1') {
-                    startangle = cdObjnow[ring]*360/cdObjtimer[ring];
+                    startangle = cdObjnow[ring]*360/cdObjtimer[ring] || 0;
                     if (vis.editMode) startangle=180;
                     vis.binds["mytime"].countdowncircle.drawBase(ctx,x,y,radius,bcolor);
                     vis.binds["mytime"].countdowncircle.drawRing(ctx,x,y,radius,startangle,fcolor,caps,reverse);                       
@@ -243,8 +243,6 @@ vis.binds['mytime'] = {
             $('#' + widgetID + ' .timer').html(text);
         },
 
-
-
     },            
     countdownplain: {
         intervaltime: 500,        
@@ -280,11 +278,13 @@ vis.binds['mytime'] = {
             text += '<div class="timer"></div>';
             $('#' + widgetID).html(text);
             
+            vis.binds["mytime"].stopTimer(widgetID);
             vis.binds["mytime"].startTimer(
                 widgetID,
                 data,
                 vis.binds["mytime"].countdownplain.intervaltime,
                 vis.binds["mytime"].countdownplain.setState);
+            if (vis.editMode) vis.binds["mytime"].countdownplain.setState(widgetID,data);
         },
         setState: function(widgetID,data) {
             console.log('setState ' + new Date().getTime());
@@ -336,6 +336,7 @@ vis.binds['mytime'] = {
     },
     startTimer: function(widgetID,data,time,callback) {
         if (vis.binds["mytime"].intervals[widgetID]) return;
+        if (vis.editMode) return;
         var interval;
         interval = setInterval(callback,time,widgetID,data,callback);
         console.log('startTimer '+widgetID+' '+interval);
@@ -343,6 +344,7 @@ vis.binds['mytime'] = {
     },
     stopTimer: function(widgetID) {
         var interval;
+        if (vis.editMode) return;
         interval = (vis.binds["mytime"].intervals[widgetID]) ? vis.binds["mytime"].intervals[widgetID] : null;
         console.log('stopTimer '+widgetID+' '+interval);
         if (interval) delete vis.binds["mytime"].intervals[widgetID];
@@ -385,7 +387,7 @@ vis.binds['mytime'] = {
         $div.data('bound', null);
         $div.data('bindHandler', null);
 
-        vis.conn.gettingStates =0;
+        vis.conn.gettingStates = 0;
         vis.conn.getStates(bound, function (error, states) {
 
             vis.updateStates(states);
