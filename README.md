@@ -186,6 +186,8 @@ Show the ring of days
 * flip board display (airport-display)
 * customizable fonts
 * wordclock timer ?
+* new command to set only target time without date
+* Groupseperator '.' in Name
 * ~~Polar clock~~
 * ~~circle reverse~~
 * ~~circle with round caps~~
