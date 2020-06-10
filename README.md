@@ -146,6 +146,8 @@ A countdown widget in a ring/circle design.
 ##### Widget Properties
 ###### oid
 The timer datapoint of a countdown datapoint.
+###### notimetext
+Disables the time text over the polar clock
 ###### Format
 Formats the timer output. default is mm:ss. for details see Chapter format template
 ###### Reverse
@@ -168,6 +170,37 @@ Show the ring of minutes
 Show the ring of minutes
 ###### showday
 Show the ring of days
+
+##### The actual action state (stop,run,pause,end) of the countdown is available as CSS-Class selector.
+
+```
+#w00000 .timer.end {
+    color:red;
+}
+#w00000 .timer.run {
+    color:green;
+}
+```
+
+#### Widget Countdown FlipClock
+A countdown widget in a airport flip board style 
+##### Widget Properties
+###### oid
+The timer datapoint of a countdown datapoint.
+###### countdown_showsec
+Shows the seconds-part. there must be no gap between two units.
+###### countdown_showmin
+Shows the minute-part. there must be no gap between two units.
+###### countdown_showhrs
+Shows the hours-part. there must be no gap between two units.
+###### countdown_showday
+Shows the day-part. there must be no gap between two units.
+###### countdown_color
+Color of the countdowntimer
+###### countdown_background_color
+Backgroundcolor of the countdowntimer
+###### countdown_dot_color
+Color of the dots of the countdowntimer
 
 ##### The actual action state (stop,run,pause,end) of the countdown is available as CSS-Class selector.
 
