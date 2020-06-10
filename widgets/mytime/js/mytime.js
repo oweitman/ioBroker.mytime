@@ -59,7 +59,7 @@ vis.binds['mytime'] = {
 
             function onChange(e, newVal, oldVal) {
                 var idParts = e.type.split('.');
-                if (idParts[4]!='action' && idParts[4]!='timer') return;
+                if (idParts[idParts.length-2]!='action' && idParts[idParts.length-2]!='timer') return;
                 console.log(e.type + ' ' + newVal + ' ' + oldVal);
                 vis.binds["mytime"].countdownflip.setState(widgetID, data,vis.binds["mytime"].countdownflip.setState);
             }
@@ -74,11 +74,6 @@ vis.binds['mytime'] = {
                         countdown_oid + '.start'],onChange);
                 }
             }
-
-//.flip-clock-wrapper a { = color flip
-//.flip-clock-wrapper ul li a div div.inn { = background flip
-//.flip-clock-dot { = background dot
-//.flip-clock-wrapper { = font 
 
             var text = '';
             text += '<style> \n';
@@ -202,7 +197,7 @@ vis.binds['mytime'] = {
             
             function onChange(e, newVal, oldVal) {
                 var idParts = e.type.split('.');
-                if (idParts[4]!='action' && idParts[4]!='timer') return;
+                if (idParts[idParts.length-2]!='action' && idParts[idParts.length-2]!='timer') return;
                 console.log(e.type + ' ' + newVal + ' ' + oldVal);
                 vis.binds["mytime"].countdowncircle.setState(widgetID, data,vis.binds["mytime"].countdowncircle.setState);
             }
@@ -217,6 +212,7 @@ vis.binds['mytime'] = {
                         countdown_oid + '.start'],onChange);
                 }
             }
+
             var width=$('#' + widgetID).width();
             var height=$('#' + widgetID).height();
             var text = '';
@@ -253,7 +249,8 @@ vis.binds['mytime'] = {
             var timer     = countdown_oid ? vis.states.attr(countdown_oid + '.timer.val')  : 0;            
             var action    = countdown_oid ? vis.states.attr(countdown_oid + '.action.val')  : 'stop';
             var config  = countdown_oid ? JSON.parse(vis.states.attr(countdown_oid + '.config.val')) : {};            
-            var linewidth = data.countdown_width || 20; 
+            var linewidth = data.countdown_width || 20;
+            var notimetext = countdown_notimetext;
             var format    = data.countdown_format || 'mm:ss';
             var stopbehaviour = config.stopbehaviour || 'timer';            
             var bcolor    = data.countdown_background || 'grey';
@@ -351,7 +348,7 @@ vis.binds['mytime'] = {
 
             });
 
-            vis.binds["mytime"].countdowncircle.drawText(widgetID, ms,format);
+            if (notimetext) vis.binds["mytime"].countdowncircle.drawText(widgetID, ms,format);
         },
         calcRadius: function(bound,linewidth,gap) {
             var radius = (bound)-(linewidth/2)-gap;
@@ -406,7 +403,7 @@ vis.binds['mytime'] = {
             
             function onChange(e, newVal, oldVal) {
                 var idParts = e.type.split('.');
-                if (idParts[4]!='action' && idParts[4]!='timer') return;
+                if (idParts[idParts.length-2]!='action' && idParts[idParts.length-2]!='timer') return;
                 console.log(e.type + ' ' + newVal + ' ' + oldVal);
                 vis.binds["mytime"].countdownplain.setState(widgetID, data);
             }
