@@ -59,6 +59,7 @@ After configuration of a new countdown the adapter creates the following datapoi
 | -value        | -1:2:3               | subtracts time from the countdown. the setting will be taken into account at the next start  |
 | =value        | =5:00                | set the countdowntimer to this time.                                                         |
 | #ISO-Date     | #2020-01-01T10:00:00 | set the countdowntimer to a target time. The Time must be formatted as ISO-Datestring        |
+| $Time         | $20:15               | set the countdowntimer to a target time. If Time is before current time. the next day is set.|
 | start         | start                | starts the countdown                                                                         |
 | stop          | stop                 | stops the countdown. the countdown time is reset to the setting                              |
 | pause         | pause                | pauses the countdown                                                                         |
@@ -186,8 +187,8 @@ Show the ring of days
 * flip board display (airport-display)
 * customizable fonts
 * wordclock timer ?
-* new command to set only target time without date
-* ~~polarclock invisible countdown~~
+* ~~new command to set only target time without date~~
+* ~~polarclock invisible countdown text~~
 * ~~Groupseperator '.' in Name~~
 * ~~Polar clock~~
 * ~~circle reverse~~
