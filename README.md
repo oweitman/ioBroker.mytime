@@ -221,7 +221,7 @@ Color of the dots of the countdowntimer
 * customizable fonts
 * wordclock timer ?
 * ~~new command to set only target time without date~~
-* ~~polarclock invisible countdown text~~
+* ~~countdown circle widget with option to disable countdown text
 * ~~Groupseperator '.' in Name~~
 * ~~Polar clock~~
 * ~~circle reverse~~
@@ -229,6 +229,10 @@ Color of the dots of the countdowntimer
 
 ## Changelog
 
+### 0.3.0
+* new command to set only target time without date
+* countdown circle widget now with option to disable countdown text
+* timers are now groupable in subdirectories. you can now enter dots (.) as a groupseperater in the name of a timer
 ### 0.2.1
 * fix timer display in configuration dialog
 * fix default template of countdown plain
