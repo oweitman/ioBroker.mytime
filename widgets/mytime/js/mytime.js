@@ -24,6 +24,153 @@ vis.binds['mytime'] = {
         }
     },
     intervals: [],
+    countdownflip: {
+        intervaltime: 500,
+        flips: [],
+        createWidget: function (widgetID, view, data, style) {
+            var $div = $('#' + widgetID);
+            // if nothing found => wait
+            if (!$div.length || !jQuery().FlipClock) {
+                return setTimeout(function () {
+                    vis.binds['mytime'].countdownflip.createWidget(widgetID, view, data, style);
+                }, 100);
+            }
+            var countdown_oid;
+            if (!data.countdown_oid || (countdown_oid = vis.binds["mytime"].getCountdownId(data.countdown_oid))==false) return;
+            var showsec   = data.countdown_showsec;
+            var showmin   = data.countdown_showmin;
+            var showhrs   = data.countdown_showhrs;
+            var showday   = data.countdown_showday;
+
+            var font = (style['font-family'] && style['font-family'] != '') ? style['font-family'] : '';
+            var color    = data.countdown_color ? data.countdown_color : '';
+            var bcolor   = data.countdown_background_color ? data.countdown_background_color:'';
+            var dotcolor = data.countdown_dot_color ? data.countdown_dot_color:'';
+
+            var pattern =   ((showday)?"1":"0") +
+                            ((showhrs)?"1":"0") +
+                            ((showmin)?"1":"0") +
+                            ((showsec)?"1":"0");
+
+            if (pattern.indexOf('101')>=0) {
+                $('#' + widgetID).html('Error: Invalid Format');
+                return;
+            }
+
+            function onChange(e, newVal, oldVal) {
+                var idParts = e.type.split('.');
+                if (idParts[4]!='action' && idParts[4]!='timer') return;
+                console.log(e.type + ' ' + newVal + ' ' + oldVal);
+                vis.binds["mytime"].countdownflip.setState(widgetID, data,vis.binds["mytime"].countdownflip.setState);
+            }
+
+            if (countdown_oid) {
+                if (1 || !vis.editMode) {
+                    vis.binds["mytime"].bindStates($div,[
+                        countdown_oid + '.action',
+                        countdown_oid + '.end',
+                        countdown_oid + '.timer',
+                        countdown_oid + '.config',
+                        countdown_oid + '.start'],onChange);
+                }
+            }
+
+//.flip-clock-wrapper a { = color flip
+//.flip-clock-wrapper ul li a div div.inn { = background flip
+//.flip-clock-dot { = background dot
+//.flip-clock-wrapper { = font 
+
+            var text = '';
+            text += '<style> \n';
+            if (font != "") {
+                text += '#'+widgetID + ' .flip-clock-wrapper {\n';
+                text += '   font-family:  ' + font + '; \n';
+                text += '} \n';
+            }
+            if (bcolor != "" || color != "") {
+                text += '#'+widgetID + ' .flip-clock-wrapper ul li a div div.inn {\n';
+                if (bcolor!="") text += '   background-color:  ' + bcolor + '; \n';
+                if (color!="")  text += '   color:  ' + color + '; \n';
+                text += '} \n';
+            }
+            if (dotcolor != "") {
+                text += '#'+widgetID + ' .flip-clock-dot {\n';
+                text += '   background-color:  ' + dotcolor + '; \n';
+                text += '} \n';
+            }
+            text += '</style> \n';
+
+            text += '<div class="timer"></div>';
+            $('#' + widgetID).html(text);
+
+            vis.binds["mytime"].countdownflip.flips[widgetID] = $('#' + widgetID+' .timer').mtFlipClock(30, {
+                clockFace: 'Mytime',
+                countdown: true,
+                autoStart: false,
+                pattern: pattern
+            });
+            vis.binds["mytime"].stopTimer(widgetID);
+            vis.binds["mytime"].startTimer(
+                widgetID,
+                data,
+                vis.binds["mytime"].countdownflip.intervaltime,
+                vis.binds["mytime"].countdownflip.setState);
+            if (vis.editMode) vis.binds["mytime"].countdownflip.setState(widgetID,data);
+        },
+
+        setState: function(widgetID,data) {
+            console.log('setState ' + new Date().getTime());
+            var countdown_oid;
+            if (!data.countdown_oid || (countdown_oid = vis.binds["mytime"].getCountdownId(data.countdown_oid))==false) return;
+            var start   = countdown_oid ? vis.states.attr(countdown_oid + '.start.val')   : 0;
+            var end     = countdown_oid ? vis.states.attr(countdown_oid + '.end.val')     : 0;
+            var timer   = countdown_oid ? vis.states.attr(countdown_oid + '.timer.val')  : 0;
+            var action  = countdown_oid ? vis.states.attr(countdown_oid + '.action.val')  : 'stop';
+            var config  = countdown_oid ? JSON.parse(vis.states.attr(countdown_oid + '.config.val')) : {};
+            var stopbehaviour = config.stopbehaviour || 'timer';
+
+            var showsec   = data.countdown_showsec;
+            var showmin   = data.countdown_showmin;
+            var showhrs   = data.countdown_showhrs;
+            var showday   = data.countdown_showday;
+
+            var now = new Date().getTime();
+            var ms=0;
+            if (action=='stop') {
+                $('#'+widgetID+' .timer').removeClass('stop run pause end').addClass('stop');
+                vis.binds["mytime"].stopTimer(widgetID);
+                ms = (stopbehaviour=='timer')? timer:0;
+            }
+            if (action=='run') {
+                ms = end-now;
+                $('#'+widgetID+' .timer').removeClass('stop run pause end').addClass('run');
+                vis.binds["mytime"].startTimer(
+                    widgetID,
+                    data,
+                    vis.binds["mytime"].countdownflip.intervaltime,
+                    vis.binds["mytime"].countdownflip.setState);
+            }
+            if (action=='pause') {
+                $('#'+widgetID+' .timer').removeClass('stop run pause end').addClass('pause');
+                vis.binds["mytime"].stopTimer(widgetID);
+                ms = end-start;
+            }
+            if (ms<=0) {
+                ms=0;
+                vis.binds["mytime"].stopTimer(widgetID);
+            }
+            if (action=='end') {
+                $('#'+widgetID+' .timer').removeClass('stop run pause end').addClass('end');
+                vis.binds["mytime"].stopTimer(widgetID);
+                ms = 0;
+            }
+            vis.binds["mytime"].countdownflip.flips[widgetID].setTime(parseInt(ms/1000));
+
+        }
+
+
+
+    },
     countdowncircle: {
         intervaltime: 25,
         createWidget: function (widgetID, view, data, style) {
@@ -445,3 +592,5 @@ vis.binds['mytime'] = {
 };
 
 vis.binds['mytime'].showVersion();
+
+
