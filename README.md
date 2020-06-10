@@ -187,7 +187,7 @@ Show the ring of days
 * customizable fonts
 * wordclock timer ?
 * new command to set only target time without date
-* polarclock invisible countdown
+* ~~polarclock invisible countdown~~
 * ~~Groupseperator '.' in Name~~
 * ~~Polar clock~~
 * ~~circle reverse~~

@@ -250,7 +250,7 @@ vis.binds['mytime'] = {
             var action    = countdown_oid ? vis.states.attr(countdown_oid + '.action.val')  : 'stop';
             var config  = countdown_oid ? JSON.parse(vis.states.attr(countdown_oid + '.config.val')) : {};            
             var linewidth = data.countdown_width || 20;
-            var notimetext = countdown_notimetext;
+            var notimetext = data.countdown_notimetext;
             var format    = data.countdown_format || 'mm:ss';
             var stopbehaviour = config.stopbehaviour || 'timer';            
             var bcolor    = data.countdown_background || 'grey';
@@ -348,7 +348,7 @@ vis.binds['mytime'] = {
 
             });
 
-            if (notimetext) vis.binds["mytime"].countdowncircle.drawText(widgetID, ms,format);
+            if (!notimetext) vis.binds["mytime"].countdowncircle.drawText(widgetID, ms,format);
         },
         calcRadius: function(bound,linewidth,gap) {
             var radius = (bound)-(linewidth/2)-gap;
