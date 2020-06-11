@@ -98,7 +98,7 @@ vis.binds['mytime'] = {
             text += '<div class="timer"></div>';
             $('#' + widgetID).html(text);
 
-            vis.binds["mytime"].countdownflip.flips[widgetID] = $('#' + widgetID+' .timer').mtFlipClock(30, {
+            vis.binds["mytime"].countdownflip.flips[widgetID] = $('#' + widgetID+' .timer').mtFlipClock(0, {
                 clockFace: 'Mytime',
                 countdown: true,
                 autoStart: false,
