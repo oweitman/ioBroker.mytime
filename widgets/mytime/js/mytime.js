@@ -74,7 +74,6 @@ vis.binds['mytime'] = {
                         countdown_oid + '.start'],onChange);
                 }
             }
-
             var text = '';
             text += '<style> \n';
             if (font != "") {
@@ -112,7 +111,6 @@ vis.binds['mytime'] = {
                 vis.binds["mytime"].countdownflip.setState);
             if (vis.editMode) vis.binds["mytime"].countdownflip.setState(widgetID,data);
         },
-
         setState: function(widgetID,data) {
             console.log('setState ' + new Date().getTime());
             var countdown_oid;
@@ -132,13 +130,13 @@ vis.binds['mytime'] = {
             var now = new Date().getTime();
             var ms=0;
             if (action=='stop') {
-                $('#'+widgetID+' .timer').removeClass('stop run pause end').addClass('stop');
+                $('#'+widgetID+' .timer').removeClass('cdstop cdrun cdpause cdend').addClass('cdstop');
                 vis.binds["mytime"].stopTimer(widgetID);
                 ms = (stopbehaviour=='timer')? timer:0;
             }
             if (action=='run') {
                 ms = end-now;
-                $('#'+widgetID+' .timer').removeClass('stop run pause end').addClass('run');
+                $('#'+widgetID+' .timer').removeClass('cdstop cdrun cdpause cdend').addClass('cdrun');
                 vis.binds["mytime"].startTimer(
                     widgetID,
                     data,
@@ -146,7 +144,7 @@ vis.binds['mytime'] = {
                     vis.binds["mytime"].countdownflip.setState);
             }
             if (action=='pause') {
-                $('#'+widgetID+' .timer').removeClass('stop run pause end').addClass('pause');
+                $('#'+widgetID+' .timer').removeClass('cdstop cdrun cdpause cdend').addClass('cdpause');
                 vis.binds["mytime"].stopTimer(widgetID);
                 ms = end-start;
             }
@@ -155,16 +153,12 @@ vis.binds['mytime'] = {
                 vis.binds["mytime"].stopTimer(widgetID);
             }
             if (action=='end') {
-                $('#'+widgetID+' .timer').removeClass('stop run pause end').addClass('end');
+                $('#'+widgetID+' .timer').removeClass('cdstop cdrun cdpause cdend').addClass('cdend');
                 vis.binds["mytime"].stopTimer(widgetID);
                 ms = 0;
             }
             vis.binds["mytime"].countdownflip.flips[widgetID].setTime(parseInt(ms/1000));
-
         }
-
-
-
     },
     countdowncircle: {
         intervaltime: 25,
@@ -236,7 +230,6 @@ vis.binds['mytime'] = {
                 vis.binds["mytime"].countdowncircle.calcInterval(timer),
                 vis.binds["mytime"].countdowncircle.setState);
             vis.binds["mytime"].countdowncircle.setState(widgetID,data);
-            
         },
         calcInterval: function(timer) {
             return Math.min(Math.max(timer/720,25),500);
@@ -271,12 +264,12 @@ vis.binds['mytime'] = {
             var now = new Date().getTime();
             var ms=0;
             if (action=='stop') {
-                $('#'+widgetID+' .timer').removeClass('stop run pause end').addClass('stop');                
+                $('#'+widgetID+' .timer').removeClass('cdstop cdrun cdpause cdend').addClass('cdstop');
                 vis.binds["mytime"].stopTimer(widgetID);          
                 ms = (stopbehaviour=='timer')? timer:0;
             }
             if (action=='run') {
-                $('#'+widgetID+' .timer').removeClass('stop run pause end').addClass('run');                
+                $('#'+widgetID+' .timer').removeClass('cdstop cdrun cdpause cdend').addClass('cdrun');
                 ms = end-now;
                 vis.binds["mytime"].startTimer(
                     widgetID,
@@ -285,7 +278,7 @@ vis.binds['mytime'] = {
                     callback);
             }
             if (action=='pause') {
-                $('#'+widgetID+' .timer').removeClass('stop run pause end').addClass('pause');                
+                $('#'+widgetID+' .timer').removeClass('cdstop cdrun cdpause cdend').addClass('cdpause');
                 vis.binds["mytime"].stopTimer(widgetID);                
                 ms = end-start;
             }
@@ -294,7 +287,7 @@ vis.binds['mytime'] = {
                 vis.binds["mytime"].stopTimer(widgetID);
             }
             if (action=='end') {
-                $('#'+widgetID+' .timer').removeClass('stop run pause end').addClass('end');                                
+                $('#'+widgetID+' .timer').removeClass('cdstop cdrun cdpause cdend').addClass('cdend');
                 vis.binds["mytime"].stopTimer(widgetID);
                 ms = 0;
             }
@@ -353,7 +346,6 @@ vis.binds['mytime'] = {
         calcRadius: function(bound,linewidth,gap) {
             var radius = (bound)-(linewidth/2)-gap;
             return (radius >= (linewidth/2)) ? radius : (linewidth/2);
-
         },
         clearBase: function(ctx) {
             ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
@@ -445,13 +437,13 @@ vis.binds['mytime'] = {
             var now = new Date().getTime();
             var ms=0;
             if (action=='stop') {
-                $('#'+widgetID+' .timer').removeClass('stop run pause end').addClass('stop');
+                $('#'+widgetID+' .timer').removeClass('cdstop cdrun cdpause cdend').addClass('cdstop');
                 vis.binds["mytime"].stopTimer(widgetID);
                 ms = (stopbehaviour=='timer')? timer:0;
             }
             if (action=='run') {
                 ms = end-now;
-                $('#'+widgetID+' .timer').removeClass('stop run pause end').addClass('run');
+                $('#'+widgetID+' .timer').removeClass('cdstop cdrun cdpause cdend').addClass('cdrun');
                 vis.binds["mytime"].startTimer(
                     widgetID,
                     data,
@@ -459,7 +451,7 @@ vis.binds['mytime'] = {
                     vis.binds["mytime"].countdownplain.setState);
             }
             if (action=='pause') {
-                $('#'+widgetID+' .timer').removeClass('stop run pause end').addClass('pause');
+                $('#'+widgetID+' .timer').removeClass('cdstop cdrun cdpause cdend').addClass('cdpause');
                 vis.binds["mytime"].stopTimer(widgetID);            
                 ms = end-start;
             }
@@ -468,7 +460,7 @@ vis.binds['mytime'] = {
                 vis.binds["mytime"].stopTimer(widgetID);           
             }
             if (action=='end') {
-                $('#'+widgetID+' .timer').removeClass('stop run pause end').addClass('end');
+                $('#'+widgetID+' .timer').removeClass('cdstop cdrun cdpause cdend').addClass('cdend');
                 vis.binds["mytime"].stopTimer(widgetID);            
                 ms = 0;
             }
@@ -545,8 +537,6 @@ vis.binds['mytime'] = {
         }.bind({change_callback}));                
     },
     formatDate: function (ms, format) {
-        
-
         function ii(i, len) {
             var s = i + "";
             len = len || 2;
