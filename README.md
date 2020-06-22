@@ -218,13 +218,32 @@ Group CSS-Common / transform "scale(0.5)"
 }
 ```
 
+#### Widget Countdown NixieClock
+A countdown widget in a Nixie-Tube/LED style 
+##### Widget Properties
+###### oid
+The timer datapoint of a countdown datapoint.
+###### countdown_showsec
+Shows the seconds-part. there must be no gap between two units.
+###### countdown_showmin
+Shows the minute-part. there must be no gap between two units.
+###### countdown_showhrs
+Shows the hours-part. there must be no gap between two units.
+###### countdown_showday
+Shows the day-part. there must be no gap between two units.
+###### countdown_color
+Color of the countdowntimer
+###### countdown_glowcolor
+Glow around thie Nixie-digits
+
+
 ## Todo
 * 7segment display
-* Nixie style
 * rolling numbers
-* flip board display (airport-display)
 * customizable fonts
 * wordclock timer ?
+* ~~Nixie style~~
+* ~~flip board display (airport-display)~~
 * ~~new command to set only target time without date~~
 * ~~countdown circle widget with option to disable countdown text
 * ~~Groupseperator '.' in Name~~

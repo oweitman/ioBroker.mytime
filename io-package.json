@@ -1,8 +1,11 @@
 {
     "common": {
         "name": "mytime",
-        "version": "0.3.1",
+        "version": "0.4.0",
         "news": {
+            "0.4.0": {
+                "en": "* New widget Nixie countdown"
+            },
             "0.3.1": {
                 "en": "* remove mytime tile in iobroker overview / * set initial visual countdown value to 0 / * prefix css classes, due css artefacts from other adapters (eg kodi and css class stop)"
             },

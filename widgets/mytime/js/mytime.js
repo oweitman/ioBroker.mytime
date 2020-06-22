@@ -24,6 +24,277 @@ vis.binds['mytime'] = {
         }
     },
     intervals: [],
+    
+
+
+
+
+    countdownnixie: {
+        intervaltime: 500,
+        flips: [],
+        createWidget: function (widgetID, view, data, style) {
+            var $div = $('#' + widgetID);
+            // if nothing found => wait
+            if (!$div.length || !jQuery().FlipClock) {
+                return setTimeout(function () {
+                    vis.binds['mytime'].countdownnixie.createWidget(widgetID, view, data, style);
+                }, 100);
+            }
+            var countdown_oid;
+            if (!data.countdown_oid || (countdown_oid = vis.binds["mytime"].getCountdownId(data.countdown_oid))==false) return;
+            var showsec   = data.countdown_showsec;
+            var showmin   = data.countdown_showmin;
+            var showhrs   = data.countdown_showhrs;
+            var showday   = data.countdown_showday;
+
+            var font = (style['font-family'] && style['font-family'] != '') ? style['font-family'] : '';
+
+            var color       = data.countdown_color     || '#FFE548';
+            var glowcolor   = data.countdown_glowcolor || '#F58732';
+            
+            var pattern =   ((showday)?"1":"0") +
+                            ((showhrs)?"1":"0") +
+                            ((showmin)?"1":"0") +
+                            ((showsec)?"1":"0");
+
+            if (pattern.indexOf('101')>=0 || pattern.indexOf('1001')>=0) {
+                $('#' + widgetID).html('Error: Invalid Format');
+                return;
+            }
+
+            function onChange(e, newVal, oldVal) {
+                var idParts = e.type.split('.');
+                if (idParts[idParts.length-2]!='action' && idParts[idParts.length-2]!='timer') return;
+                console.log(e.type + ' ' + newVal + ' ' + oldVal);
+                vis.binds["mytime"].countdownnixie.setState(widgetID, data,vis.binds["mytime"].countdownnixie.setState);
+            }
+
+            if (countdown_oid) {
+                if (1 || !vis.editMode) {
+                    vis.binds["mytime"].bindStates($div,[
+                        countdown_oid + '.action',
+                        countdown_oid + '.end',
+                        countdown_oid + '.timer',
+                        countdown_oid + '.config',
+                        countdown_oid + '.start'],onChange);
+                }
+            }
+            var text = '';
+
+            text += '<style> \n';
+            
+            text += '.cdclock p.separator,\n';
+            text += '.cdclock section p.active {\n';
+            text += '    color: '+ color +';\n';
+            text += '    text-shadow: 0px 0px 20px '+ glowcolor +';\n';
+            text += '}\n';
+            
+            text += '</style> \n';
+      
+            text += '<div class="cdclock">\n';
+            
+            if (showday) {
+                text += '    <section class="days">\n';
+                text += '        <div class="tens">\n';
+                text += '            <p>0</p>\n';
+                text += '            <p>1</p>\n';
+                text += '            <p>2</p>\n';
+                text += '            <p>3</p>\n';
+                text += '            <p>4</p>\n';
+                text += '            <p>5</p>\n';
+                text += '            <p>6</p>\n';
+                text += '            <p>7</p>\n';
+                text += '            <p>8</p>\n';
+                text += '            <p>9</p>\n';
+                text += '        </div>\n';
+                text += '        <div class="ones">\n';
+                text += '            <p>0</p>\n';
+                text += '            <p>1</p>\n';
+                text += '            <p>2</p>\n';
+                text += '            <p>3</p>\n';
+                text += '            <p>4</p>\n';
+                text += '            <p>5</p>\n';
+                text += '            <p>6</p>\n';
+                text += '            <p>7</p>\n';
+                text += '            <p>8</p>\n';
+                text += '            <p>9</p>\n';
+                text += '        </div>\n';
+                text += '    </section>\n';
+            }
+            if (showday && showhrs) text += '    <p class="separator">:</p>\n';
+            if (showhrs) {            
+                text += '    <section class="hours">\n';
+                text += '        <div class="tens">\n';
+                text += '            <p>0</p>\n';
+                text += '            <p>1</p>\n';
+                text += '            <p>2</p>\n';
+                text += '            <p>3</p>\n';
+                text += '            <p>4</p>\n';
+                text += '            <p>5</p>\n';
+                text += '            <p>6</p>\n';
+                text += '            <p>7</p>\n';
+                text += '            <p>8</p>\n';
+                text += '            <p>9</p>\n';
+                text += '        </div>\n';
+                text += '        <div class="ones">\n';
+                text += '            <p>0</p>\n';
+                text += '            <p>1</p>\n';
+                text += '            <p>2</p>\n';
+                text += '            <p>3</p>\n';
+                text += '            <p>4</p>\n';
+                text += '            <p>5</p>\n';
+                text += '            <p>6</p>\n';
+                text += '            <p>7</p>\n';
+                text += '            <p>8</p>\n';
+                text += '            <p>9</p>\n';
+                text += '        </div>\n';
+                text += '    </section>\n';
+            }
+            if (showhrs && showmin) text += '    <p class="separator">:</p>\n';
+            if (showmin) {
+                text += '    <section class="mins">\n';
+                text += '        <div class="tens">\n';
+                text += '            <p>0</p>\n';
+                text += '            <p>1</p>\n';
+                text += '            <p>2</p>\n';
+                text += '            <p>3</p>\n';
+                text += '            <p>4</p>\n';
+                text += '            <p>5</p>\n';
+                text += '            <p>6</p>\n';
+                text += '            <p>7</p>\n';
+                text += '            <p>8</p>\n';
+                text += '            <p>9</p>\n';
+                text += '        </div>\n';
+                text += '        <div class="ones">\n';
+                text += '            <p>0</p>\n';
+                text += '            <p>1</p>\n';
+                text += '            <p>2</p>\n';
+                text += '            <p>3</p>\n';
+                text += '            <p>4</p>\n';
+                text += '            <p>5</p>\n';
+                text += '            <p>6</p>\n';
+                text += '            <p>7</p>\n';
+                text += '            <p>8</p>\n';
+                text += '            <p>9</p>\n';
+                text += '        </div>\n';
+                text += '    </section>\n';
+            }
+            if (showmin && showsec) text += '    <p class="separator">:</p>\n';
+            if (showsec) {
+                text += '    <section class="secs">\n';
+                text += '        <div class="tens">\n';
+                text += '            <p>0</p>\n';
+                text += '            <p>1</p>\n';
+                text += '            <p>2</p>\n';
+                text += '            <p>3</p>\n';
+                text += '            <p>4</p>\n';
+                text += '            <p>5</p>\n';
+                text += '            <p>6</p>\n';
+                text += '            <p>7</p>\n';
+                text += '            <p>8</p>\n';
+                text += '            <p>9</p>\n';
+                text += '        </div>\n';
+                text += '        <div class="ones">\n';
+                text += '            <p>0</p>\n';
+                text += '            <p>1</p>\n';
+                text += '            <p>2</p>\n';
+                text += '            <p>3</p>\n';
+                text += '            <p>4</p>\n';
+                text += '            <p>5</p>\n';
+                text += '            <p>6</p>\n';
+                text += '            <p>7</p>\n';
+                text += '            <p>8</p>\n';
+                text += '            <p>9</p>\n';
+                text += '        </div>\n';
+                text += '    </section>\n';
+            }
+            text += '</div>\n';
+
+            text += '<div class="timer"></div>';
+            $('#' + widgetID).html(text);
+
+            vis.binds["mytime"].stopTimer(widgetID);
+            vis.binds["mytime"].startTimer(
+                widgetID,
+                data,
+                vis.binds["mytime"].countdownnixie.intervaltime,
+                vis.binds["mytime"].countdownnixie.setState);
+            if (vis.editMode) vis.binds["mytime"].countdownnixie.setState(widgetID,data);
+        },
+        setState: function(widgetID,data) {
+            console.log('setState ' + new Date().getTime());
+            var countdown_oid;
+            if (!data.countdown_oid || (countdown_oid = vis.binds["mytime"].getCountdownId(data.countdown_oid))==false) return;
+            var start   = countdown_oid ? vis.states.attr(countdown_oid + '.start.val')   : 0;
+            var end     = countdown_oid ? vis.states.attr(countdown_oid + '.end.val')     : 0;
+            var timer   = countdown_oid ? vis.states.attr(countdown_oid + '.timer.val')  : 0;
+            var action  = countdown_oid ? vis.states.attr(countdown_oid + '.action.val')  : 'stop';
+            var config  = countdown_oid ? JSON.parse(vis.states.attr(countdown_oid + '.config.val')) : {};
+            var stopbehaviour = config.stopbehaviour || 'timer';
+            
+            var showsec   = data.countdown_showsec;
+            var showmin   = data.countdown_showmin;
+            var showhrs   = data.countdown_showhrs;
+            var showday   = data.countdown_showday;
+
+            var pattern =   ((showday)?"1":"0") + 
+                            ((showhrs)?"1":"0") + 
+                            ((showmin)?"1":"0") + 
+                            ((showsec)?"1":"0");
+            
+            var now = new Date().getTime();
+            var ms=0;
+            if (action=='stop') {
+                $('#'+widgetID+' .cdclock').removeClass('cdstop cdrun cdpause cdend').addClass('cdstop');
+                vis.binds["mytime"].stopTimer(widgetID);
+                ms = (stopbehaviour=='timer')? timer:0;
+            }
+            if (action=='run') {
+                ms = end-now;
+                $('#'+widgetID+' .cdclock').removeClass('cdstop cdrun cdpause cdend').addClass('cdrun');
+                vis.binds["mytime"].startTimer(
+                    widgetID,
+                    data,
+                    vis.binds["mytime"].countdownnixie.intervaltime,
+                    vis.binds["mytime"].countdownnixie.setState);
+            }
+            if (action=='pause') {
+                $('#'+widgetID+' .cdclock').removeClass('cdstop cdrun cdpause cdend').addClass('cdpause');
+                vis.binds["mytime"].stopTimer(widgetID);
+                ms = end-start;
+            }
+            if (ms<=0) {
+                ms=0;
+                vis.binds["mytime"].stopTimer(widgetID);
+            }
+            if (action=='end') {
+                $('#'+widgetID+' .cdclock').removeClass('cdstop cdrun cdpause cdend').addClass('cdend');
+                vis.binds["mytime"].stopTimer(widgetID);
+                ms = 0;
+            }
+            
+            var cdObj = vis.binds["mytime"].formatDate(ms, 'dd:HH:mm:ss').split(':');
+            if (showday) vis.binds["mytime"].countdownnixie.setDigits($('#' + widgetID+' .days'),  cdObj[0])
+            if (showhrs) vis.binds["mytime"].countdownnixie.setDigits($('#' + widgetID+' .hours'), cdObj[1])
+            if (showmin) vis.binds["mytime"].countdownnixie.setDigits($('#' + widgetID+' .mins'),  cdObj[2])
+            if (showsec) vis.binds["mytime"].countdownnixie.setDigits($('#' + widgetID+' .secs'),  cdObj[3])
+            
+        },
+        setDigits: function(section, digit) {
+            const tens = [...$(section).find('.tens')[0].children];
+            const ones = [...$(section).find('.ones')[0].children];
+            var l = digit.length;
+            tens.forEach(number => number.classList.remove('active'));
+            tens[digit[l-2]].classList.add('active');
+            ones.forEach(number => number.classList.remove('active'));
+            ones[digit[l-1]].classList.add('active');
+        },
+
+    },
+    
+    
+    
+    
     countdownflip: {
         intervaltime: 500,
         flips: [],
@@ -52,7 +323,7 @@ vis.binds['mytime'] = {
                             ((showmin)?"1":"0") +
                             ((showsec)?"1":"0");
 
-            if (pattern.indexOf('101')>=0) {
+            if (pattern.indexOf('101')>=0 || pattern.indexOf('1001')>=0) {
                 $('#' + widgetID).html('Error: Invalid Format');
                 return;
             }
@@ -183,7 +454,7 @@ vis.binds['mytime'] = {
                             ((showhrs)?"1":"0") + 
                             ((showday)?"1":"0");
                             
-            if (pattern.indexOf('101')>=0) {
+            if (pattern.indexOf('101')>=0 || pattern.indexOf('1001')>=0) {
                 $('#' + widgetID).html('Error: Invalid Format');
                 return;
                 
@@ -549,7 +820,7 @@ vis.binds['mytime'] = {
                         ((format.search(/(^|[^\\])m/g)>=0)?"1":"0") + 
                         ((format.search(/(^|[^\\])s/g)>=0)?"1":"0");
                         
-        if (pattern.indexOf('101')>=0) {
+        if (pattern.indexOf('101')>=0 || pattern.indexOf('1001')>=0) {
             return 'Error: Invalid Format';
             
         }
