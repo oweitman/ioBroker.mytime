@@ -72,15 +72,15 @@
 
             offset = 0;
             if (this.showday && this.showhrs) {
-                $(this.createDivider('dd')).insertBefore(this.lists[2].$el);
+                $(this.createDivider('')).insertBefore(this.lists[2].$el);
                 offset += 2;
             }
             if (this.showhrs && this.showmin) {
-                $(this.createDivider('hh')).insertBefore(this.lists[offset+2].$el);
+                $(this.createDivider('')).insertBefore(this.lists[offset+2].$el);
                 offset += 2;
             }
             if (this.showmin && this.showsec) {
-                $(this.createDivider('mm')).insertBefore(this.lists[offset+2].$el);
+                $(this.createDivider('')).insertBefore(this.lists[offset+2].$el);
             }
             
 
