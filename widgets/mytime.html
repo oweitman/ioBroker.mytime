@@ -146,7 +146,7 @@
         type="text/ejs"
         class="vis-tpl"
 		data-vis-prev='<img src="widgets/mytime/img/cdnixie.png"></img>'
-        data-vis-attrs="countdown_oid/id;countdown_showsec[true]/checkbox;countdown_showmin/checkbox;countdown_showhrs/checkbox;countdown_showday/checkbox;countdown_color/color;countdown_glowcolor/color;"
+        data-vis-attrs="countdown_oid/id;countdown_showsec[true]/checkbox;countdown_showmin/checkbox;countdown_showhrs/checkbox;countdown_showday/checkbox;countdown_color_active[#FFE548]/color;countdown_color_inactive[#323232]/color;countdown_opacity_inactive[0.35]/number,0,1,0.05;countdown_glowcolor[#F58732]/color;"
         data-vis-set="mytime"
         data-vis-type="val"
         data-vis-beta="true"
@@ -156,4 +156,4 @@
         vis.binds['mytime'].countdownnixie.createWidget(this.data.wid, this.view, this.data, this.style);
     %></div>
 </script>
- 
+      

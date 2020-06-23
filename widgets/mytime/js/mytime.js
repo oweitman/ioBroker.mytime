@@ -49,8 +49,10 @@ vis.binds['mytime'] = {
 
             var font = (style['font-family'] && style['font-family'] != '') ? style['font-family'] : '';
 
-            var color       = data.countdown_color     || '#FFE548';
-            var glowcolor   = data.countdown_glowcolor || '#F58732';
+            var color_act        = data.countdown_color_active     || '#FFE548';
+            var color_inact      = data.countdown_color_inactive   || '#323232';
+            var opacity_inact    = data.countdown_opacity_inactive || 0.35;
+            var glowcolor        = data.countdown_glowcolor        || '#F58732';
             
             var pattern =   ((showday)?"1":"0") +
                             ((showhrs)?"1":"0") +
@@ -83,16 +85,19 @@ vis.binds['mytime'] = {
 
             text += '<style> \n';
             
-            text += '.cdclock p.separator,\n';
-            text += '.cdclock section p.active {\n';
-            text += '    color: '+ color +';\n';
+            text += '#'+widgetID + ' .cdclock p.separator,\n';
+            text += '#'+widgetID + ' .cdclock section p.active {\n';
+            text += '    color: '+ color_act +';\n';
             text += '    text-shadow: 0px 0px 20px '+ glowcolor +';\n';
             text += '}\n';
-            
+            text += '#'+widgetID + ' .cdclock  {\n';
+            text += '    color: '+ color_inact +('0'+parseInt(255*opacity_inact).toString(16)).slice(-2)+';\n';
+            text += '}\n';
+
             text += '</style> \n';
-      
+
             text += '<div class="cdclock">\n';
-            
+
             if (showday) {
                 text += '    <section class="days">\n';
                 text += '        <div class="tens">\n';

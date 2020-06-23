@@ -231,17 +231,37 @@ Shows the minute-part. there must be no gap between two units.
 Shows the hours-part. there must be no gap between two units.
 ###### countdown_showday
 Shows the day-part. there must be no gap between two units.
-###### countdown_color
+###### countdown_color_active
 Color of the countdowntimer
+###### countdown_color_inactive
+Color of the inactiv digits
+###### countdown_opacity_inactive
+Opacity of the color of the inactive digits
 ###### countdown_glowcolor
-Glow around thie Nixie-digits
+Color of the glow around thie Nixie-digits
 
+##### Tips
+If you want to adjust the size of the countdown nixieclock, under css settings in vis you can enter for half size:
+Group CSS-Common / transform "scale(0.5)"
+
+
+##### The actual action state (cdstop,cdrun,cdpause,cdend) of the countdown is available as CSS-Class selector.
+
+```
+#w00000 .timer.cdend {
+    color:red;
+}
+#w00000 .timer.cdrun {
+    color:green;
+}
+```
 
 ## Todo
 * 7segment display
 * rolling numbers
 * customizable fonts
 * wordclock timer ?
+* timed scheduler: plan single date/time and recurring events like outlook
 * ~~Nixie style~~
 * ~~flip board display (airport-display)~~
 * ~~new command to set only target time without date~~
@@ -253,6 +273,11 @@ Glow around thie Nixie-digits
 
 ## Changelog
 
+
+### 0.4.1
+* widget cd flipclock: remove dot labels
+### 0.4.0
+* New widget NixieClock
 ### 0.3.1
 * remove mytime tile in iobroker overview
 * set initial visual countdown value to 0
