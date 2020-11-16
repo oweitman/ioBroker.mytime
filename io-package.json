@@ -1,8 +1,11 @@
 {
     "common": {
         "name": "mytime",
-        "version": "0.4.1",
+        "version": "0.4.2",
         "news": {
+            "0.4.2": {
+                "en": "* performance optimization. mytime now checks the data from internal and did not read the data allways from datapoints | update dependencies"
+            },
             "0.4.1": {
                 "en": "* widget cd flipclock: remove dot labels /* improve css settings of the widget countdown nixieclock00"
             },

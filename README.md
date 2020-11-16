@@ -274,6 +274,8 @@ Group CSS-Common / transform "scale(0.5)"
 ## Changelog
 
 
+### 0.4.2
+* performance optimization. mytime now checks the data from internal and did not read the data allways from datapoints | update dependencies
 ### 0.4.1
 * widget cd flipclock: remove dot labels
 ### 0.4.0
