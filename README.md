@@ -14,7 +14,8 @@
 
 ## mytime adapter for ioBroker
 
-This adapter handle Time (eg: countdown,etc.)
+This adapter handle Time (eg: countdown,etc.).
+The countdownfunctionality provides datapoints that you can use to manage a countdown (e.g. in a script). The adapter also includes several widgets to visualize these countdowns.
 
 ### Configuration
 #### Countdown
