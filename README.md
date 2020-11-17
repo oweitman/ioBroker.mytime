@@ -7,10 +7,7 @@
 ![Number of Installations (stable)](http://iobroker.live/badges/mytime-stable.svg)
 [![Dependency Status](https://img.shields.io/david/oweitman/iobroker.mytime.svg)](https://david-dm.org/oweitman/iobroker.mytime)
 [![Known Vulnerabilities](https://snyk.io/test/github/oweitman/ioBroker.mytime/badge.svg)](https://snyk.io/test/github/oweitman/ioBroker.mytime)
-
-[![NPM](https://nodei.co/npm/iobroker.mytime.png?downloads=true)](https://nodei.co/npm/iobroker.mytime/)
-
-**Tests:**: [![Travis-CI](http://img.shields.io/travis/oweitman/ioBroker.mytime/master.svg)](https://travis-ci.org/oweitman/ioBroker.mytime)
+[![Travis-CI](http://img.shields.io/travis/oweitman/ioBroker.mytime/master.svg)](https://travis-ci.org/oweitman/ioBroker.mytime)
 
 ## mytime adapter for ioBroker
 
