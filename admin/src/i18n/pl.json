@@ -10,5 +10,12 @@
     "mins": "Minuty",
     "secs": "sekundy",
     "behaviour": "Zachowanie",
-    "": ""
+    "": "",
+    "set to timer": "ustawiony na timer",
+    "set to zero": "ustawione na zero",
+    "actions": "działania",
+    "timer": "ustawiony na timer",
+    "zero": "ustawione na zero",
+    "Adding Countdowns": "Dodawanie odliczania",
+    "List Countdowns": "Lista odliczania"
 }

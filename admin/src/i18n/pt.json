@@ -10,5 +10,12 @@
     "mins": "Minutos",
     "secs": "Segundos",
     "behaviour": "Comportamento",
-    "": ""
+    "": "",
+    "set to timer": "definir para cronômetro",
+    "set to zero": "definido para zero",
+    "actions": "ações",
+    "timer": "definir para cronômetro",
+    "zero": "definido para zero",
+    "Adding Countdowns": "Adicionando contagens regressivas",
+    "List Countdowns": "Listar contagens regressivas"
 }

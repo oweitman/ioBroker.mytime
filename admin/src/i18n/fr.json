@@ -10,5 +10,12 @@
     "mins": "Minutes",
     "secs": "Secondes",
     "behaviour": "Comportement",
-    "": ""
+    "": "",
+    "set to timer": "réglé sur minuterie",
+    "set to zero": "mis à zéro",
+    "actions": "Actions",
+    "timer": "réglé sur minuterie",
+    "zero": "mis à zéro",
+    "Adding Countdowns": "Ajout de comptes à rebours",
+    "List Countdowns": "Liste des comptes à rebours"
 }

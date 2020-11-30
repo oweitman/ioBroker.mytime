@@ -214,8 +214,7 @@
             "vis"
         ]
     },
-    "native": {
-    },
+    "native": {},
     "objects": [],
     "instanceObjects": [
         {
@@ -225,8 +224,8 @@
                 "name": "Information"
             },
             "native": {
-				"counter":{}
-			}
+                "counter": {}
+            }
         },
         {
             "_id": "info.connection",

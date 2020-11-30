@@ -10,5 +10,12 @@
     "mins": "分钟",
     "secs": "秒",
     "behaviour": "行为",
-    "": ""
+    "": "",
+    "set to timer": "设置为计时器",
+    "set to zero": "设置为零",
+    "actions": "行动",
+    "timer": "设置为计时器",
+    "zero": "设置为零",
+    "Adding Countdowns": "添加倒计时",
+    "List Countdowns": "清单倒数"
 }

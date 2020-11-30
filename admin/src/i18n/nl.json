@@ -10,5 +10,12 @@
     "mins": "Minuten",
     "secs": "Seconden",
     "behaviour": "Gedrag",
-    "": ""
+    "": "",
+    "set to timer": "ingesteld op timer",
+    "set to zero": "ingesteld op nul",
+    "actions": "acties",
+    "timer": "ingesteld op timer",
+    "zero": "ingesteld op nul",
+    "Adding Countdowns": "Countdowns toevoegen",
+    "List Countdowns": "Lijst Countdowns"
 }

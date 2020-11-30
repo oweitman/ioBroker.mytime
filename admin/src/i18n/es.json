@@ -10,5 +10,12 @@
     "mins": "Minutos",
     "secs": "Segundos",
     "behaviour": "Comportamiento",
-    "": ""
+    "": "",
+    "set to timer": "establecer en temporizador",
+    "set to zero": "poner a cero",
+    "actions": "comportamiento",
+    "timer": "establecer en temporizador",
+    "zero": "poner a cero",
+    "Adding Countdowns": "Agregar cuentas regresivas",
+    "List Countdowns": "Lista de cuentas regresivas"
 }

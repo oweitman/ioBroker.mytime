@@ -10,5 +10,12 @@
     "mins": "Minuti",
     "secs": "Secondi",
     "behaviour": "Comportamento",
-    "": ""
+    "": "",
+    "set to timer": "impostato su timer",
+    "set to zero": "impostato a zero",
+    "actions": "Azioni",
+    "timer": "impostato su timer",
+    "zero": "impostato a zero",
+    "Adding Countdowns": "Aggiunta di conti alla rovescia",
+    "List Countdowns": "Elenco conti alla rovescia"
 }

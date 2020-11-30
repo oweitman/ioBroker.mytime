@@ -178,3 +178,4 @@ class Settings extends React.Component {
 }
 
 export default withStyles(styles)(Settings);
+
