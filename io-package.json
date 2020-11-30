@@ -1,8 +1,14 @@
 {
     "common": {
         "name": "mytime",
-        "version": "0.4.2",
+        "version": "0.5.1",
         "news": {
+            "0.5.1": {
+                "en": "* Migration of old counters"
+            },
+            "0.5.0": {
+                "en": "* Change settings dialog to react"
+            },
             "0.4.2": {
                 "en": "* performance optimization. mytime now checks the data from internal and did not read the data allways from datapoints | update dependencies",
                 "de": "* Leistungsoptimierung. ",

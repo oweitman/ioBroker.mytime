@@ -272,6 +272,10 @@ Group CSS-Common / transform "scale(0.5)"
 ## Changelog
 
 
+### 0.5.1
+* Migration of old counters
+### 0.5.0
+* Change settings dialog to react
 ### 0.4.2
 * performance optimization. mytime now checks the data from internal and did not read the data allways from datapoints | update dependencies
 ### 0.4.1
