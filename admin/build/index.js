@@ -40635,7 +40635,7 @@ exports["default"] = _default;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = exports.PROGRESS = void 0;
+exports["default"] = exports.ERRORS = exports.PROGRESS = void 0;
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
@@ -40676,6 +40676,11 @@ var PROGRESS = {
 exports.PROGRESS = PROGRESS;
 var PERMISSION_ERROR = 'permissionError';
 var NOT_CONNECTED = 'notConnectedError';
+var ERRORS = {
+  PERMISSION_ERROR: PERMISSION_ERROR,
+  NOT_CONNECTED: NOT_CONNECTED
+};
+exports.ERRORS = ERRORS;
 
 var Connection = /*#__PURE__*/function () {
   /**
@@ -67995,7 +68000,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "43379" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "41913" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
