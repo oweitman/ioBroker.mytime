@@ -1,0 +1,44 @@
+{
+    "cli": true,
+    "adapterName": "mytime",
+    "title": "myTime",
+    "description": "This adapter handle Time (eg: countdown,etc.)",
+    "keywords": [
+        "ioBroker",
+        "template",
+        "Smart Home",
+        "home automation"
+    ],
+    "expert": "yes",
+    "features": [
+        "adapter",
+        "vis"
+    ],
+    "adminFeatures": [
+        "tab",
+        "custom"
+    ],
+    "type": "visualization",
+    "startMode": "daemon",
+    "connectionType": "local",
+    "dataSource": "poll",
+    "connectionIndicator": "yes",
+    "language": "JavaScript",
+    "adminReact": "yes",
+    "tools": [
+        "ESLint",
+        "type checking"
+    ],
+    "indentation": "Space (4)",
+    "quotes": "double",
+    "es6class": "yes",
+    "authorName": "oweitman",
+    "authorGithub": "oweitman",
+    "authorEmail": "oweitman@gmx.de",
+    "gitRemoteProtocol": "SSH",
+    "gitCommit": "no",
+    "license": "MIT License",
+    "ci": "travis",
+    "dependabot": "yes",
+    "creatorVersion": "1.30.1"
+}

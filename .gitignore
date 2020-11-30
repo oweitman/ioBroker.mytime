@@ -1,3 +1,4 @@
+.cache
 .git
 .idea
 *.code-workspace
@@ -7,6 +8,9 @@ todo
 
 # npm package files
 iobroker.*.tgz
+
+# Sourcemaps
+maps/
 
 Thumbs.db
 
