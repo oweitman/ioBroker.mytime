@@ -215,8 +215,6 @@
         ]
     },
     "native": {
-        "option1": true,
-        "option2": "42"
     },
     "objects": [],
     "instanceObjects": [
@@ -226,7 +224,9 @@
             "common": {
                 "name": "Information"
             },
-            "native": {}
+            "native": {
+				"counter":{}
+			}
         },
         {
             "_id": "info.connection",

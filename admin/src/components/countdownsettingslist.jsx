@@ -20,7 +20,7 @@ import * as util from "./countdownsettingutil";
 const styles = () => ({
 	root: {
 	},
-}); 
+});
 
 class CountdownSettingsList extends React.Component {
 	constructor(props) {
@@ -53,25 +53,25 @@ class CountdownSettingsList extends React.Component {
 				<TableCell>{times.seconds}</TableCell>
 				<TableCell>{I18n.t(stopbehaviour)}</TableCell>
 				<StyledTableCellActions >
-					<Fab 
+					<Fab
 						onClick={(e) => this.edit1Handler(e,counter)}
 						size="small"
-						color="primary" 
+						color="primary"
 						aria-label="add">
 							<EditIcon />
 					</Fab>
 					<Fab
 						onClick={(e) => this.delHandler(e,counter)}
 						size="small"
-						color="primary" 
+						color="primary"
 						aria-label="add">
 							<DeleteIcon />
 					</Fab>
 				</StyledTableCellActions>
-			</TableRow>		
+			</TableRow>
 		);
 	}
-	
+
 	render() {
 		var data = this.props.data || {};
 		const StyledTableContainer = withStyles({
@@ -100,7 +100,6 @@ class CountdownSettingsList extends React.Component {
 				  {Object.keys(data).map((key) => data[key]).map((counter) => {
 					  return this.renderListItem(counter);
 				  })}
-					  
 				</TableBody>
 			  </Table>
 			</StyledTableContainer>
@@ -110,6 +109,6 @@ class CountdownSettingsList extends React.Component {
 	}
 }
 
-export default withStyles(styles)(CountdownSettingsList); 
+export default withStyles(styles)(CountdownSettingsList);
 
 

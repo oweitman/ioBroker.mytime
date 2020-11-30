@@ -20,14 +20,14 @@ const styles = (_theme) => ({
 const StyledTextField = withStyles({
 	root: {
 		width: '25ch',
-	}, 
+	},
 })(TextField);
 class CountdownSettingsAdd extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = this.assignState(props);
 		this.handleInput = this.handleInput.bind(this);
-		this.addHandler = this.addHandler.bind(this);		
+		this.addHandler = this.addHandler.bind(this);
 	}
 	componentDidUpdate(prevProps) {
 		if (this.props.addData!=prevProps.addData) this.setState(this.assignState(this.props));
@@ -46,7 +46,7 @@ class CountdownSettingsAdd extends React.Component {
 				hours: 		"",
 				mins: 		"",
 				secs: 		"",
-				behaviour:	"",				
+				behaviour:	"",
 			},
 		};
 		return Object.assign(template,this.setData(props.addData));
@@ -72,7 +72,7 @@ class CountdownSettingsAdd extends React.Component {
 			}
 		}
 	}
-	
+
 	resetForm() {
 		this.setState(
 			{
@@ -88,7 +88,7 @@ class CountdownSettingsAdd extends React.Component {
 					hours: 		"",
 					mins: 		"",
 					secs: 		"",
-					behaviour:	"",				
+					behaviour:	"",
 				},
 			}
 		);
@@ -113,7 +113,7 @@ class CountdownSettingsAdd extends React.Component {
 			mins: 		cd.minutes||"",
 			secs: 		cd.seconds||"",
 			behaviour:	counter.config && JSON.parse(counter.config).stopbehaviour || ""
-		};		
+		};
 	}
 	validateNumber(value) {
 		return (isNaN(value)) ? I18n.t("invalid Input. "):"";
@@ -129,7 +129,7 @@ class CountdownSettingsAdd extends React.Component {
 			{title:"hours",		attr:"hours",		type:"text"},
 			{title:"mins",		attr:"mins",		type:"text"},
 			{title:"secs",		attr:"secs",		type:"text"},
-			{title:"behaviour",	attr:"behaviour",	type:"select",	
+			{title:"behaviour",	attr:"behaviour",	type:"select",
 				childs: [
 					{
 						label:"\u00A0",
@@ -150,7 +150,7 @@ class CountdownSettingsAdd extends React.Component {
 					<h3>{I18n.t("Adding Countdowns")}</h3>
 					<div>
 						{elements.map((el) =>
-							<StyledTextField 
+							<StyledTextField
 								name={el.attr}
 								key={el.attr}
 								label={I18n.t(el.title)}
@@ -173,7 +173,7 @@ class CountdownSettingsAdd extends React.Component {
 						<Fab
  							onClick={this.addHandler}
 							size="medium"
-							color="primary" 
+							color="primary"
 							aria-label="add">
 								<AddIcon />
 						</Fab>
@@ -182,4 +182,4 @@ class CountdownSettingsAdd extends React.Component {
 			)
 	}
 }
-export default withStyles(styles)(CountdownSettingsAdd); 
+export default withStyles(styles)(CountdownSettingsAdd);

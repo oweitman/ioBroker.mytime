@@ -32,26 +32,6 @@ class App extends GenericApp {
         super(props, extendedProps);
     }
 
-    onConnectionReady() {
-        // executed when connection is ready
-    }
-
-
-    //overloaded from GenericApp, because own savemethod in the adapter is used.
-	onSave(isClose) {
-        let oldObj;
-        if (this.state.isConfigurationError) {
-            this.setState({errorText: this.state.isConfigurationError});
-            return;
-        }
-
-        this.socket.getObject(this.instanceId)
-            .then(() => {
-                this.setState({changed: false});
-                isClose && GenericApp.onClose();
-            });
-    }
-
     render() {
         if (!this.state.loaded) {
             return super.render();
@@ -67,7 +47,7 @@ class App extends GenericApp {
                 <Settings 
 					native={this.state.native} 
 					context={context}
-					onChange={(attr, value) => this.setState({[attr]:value})}
+					onChange={(attr, value) => this.updateNativeValue(attr, value)}
 					changed={this.state.changed}
 				/>
 

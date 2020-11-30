@@ -75,99 +75,6 @@ const styles = () => ({
 /**
  * @extends {React.Component<SettingsProps, SettingsState>}
  */
-class Settings1 extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {};
-    }
-
-    /**
-     * @param {string} title
-     * @param {string} attr
-     * @param {string} type
-     */
-    renderInput(title, attr, type) {
-        return (
-            <TextField
-                label={I18n.t(title)}
-                className={`${this.props.classes.input} ${this.props.classes.controlElement}`}
-                value={this.props.native[attr]}
-                type={type || "text"}
-                onChange={(e) => this.props.onChange(attr, e.target.value)}
-                margin="normal"
-            />
-        );
-    }
-
-    /**
-     * @param {string} title
-     * @param {string} attr
-     * @param {{ value: string; title: string }[]} options
-     * @param {React.CSSProperties} [style]
-     */
-    renderSelect(title, attr, options, style) {
-        return (
-            <FormControl
-                className={`${this.props.classes.input} ${this.props.classes.controlElement}`}
-                style={{
-                    paddingTop: 5,
-                    ...style
-                }}
-            >
-                <Select
-                    value={this.props.native[attr] || "_"}
-                    onChange={(e) => this.props.onChange(attr, e.target.value === "_" ? "" : e.target.value)}
-                    input={<Input name={attr} id={attr + "-helper"} />}
-                >
-                    {options.map((item) => (
-                        <MenuItem key={"key-" + item.value} value={item.value || "_"}>
-                            {I18n.t(item.title)}
-                        </MenuItem>
-                    ))}
-                </Select>
-                <FormHelperText>{I18n.t(title)}</FormHelperText>
-            </FormControl>
-        );
-    }
-
-    /**
-     * @param {string} title
-     * @param {string} attr
-     * @param {React.CSSProperties} [style]
-     */
-    renderCheckbox(title, attr, style) {
-        return (
-            <FormControlLabel
-                key={attr}
-                style={{
-                    paddingTop: 5,
-                    ...style
-                }}
-                className={this.props.classes.controlElement}
-                control={
-                    <Checkbox
-                        checked={this.props.native[attr]}
-                        onChange={() => this.props.onChange(attr, !this.props.native[attr])}
-                        color="primary"
-                    />
-                }
-                label={I18n.t(title)}
-            />
-        );
-    }
-
- 
-    render() {
-		  
-        return (
-			<form className={this.props.classes.tab}>
-				{this.renderCheckbox("option1 zzz ", "option1")}<br />
-				{this.renderInput("option2xxx", "option2", "text")}
-			</form>
-
-        );
-    }
-}
 
 	function TabPanel(props) {
 	  const { children, value, index, ...other } = props;
@@ -202,7 +109,9 @@ class Settings1 extends React.Component {
 class Settings extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+			counter:props.counter
+		};
 		this.state.tab = 0;
     }
 
@@ -254,7 +163,8 @@ class Settings extends React.Component {
 			  </AppBar>
 			  <TabPanel value={value} index={0}>
 				<CountdownSettings 
-					onChange={(attr,value) => this.props.onChange(attr, value)} 
+					counter={this.props.native["counter"]||{}}
+					onChange={(value) => this.props.onChange("counter", value)}
 					context={this.props.context}
 					changed={this.props.changed}
 				/>

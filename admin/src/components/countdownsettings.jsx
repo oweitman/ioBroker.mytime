@@ -14,88 +14,55 @@ const styles = (_theme) => ({
 });
 
 class CountdownSettings extends React.Component {
-	
+
     constructor(props) {
         super(props);
 		this.socket = props.context.socket;
 		this.sendTo = props.context.socket.sendTo;
 		this.instanceId = props.context.instanceId;
 		this.state={
-			data:{},
 			addData:{},
 			alert:false,
 			alertText:"",
 		};
-		this.getCountdownInfo(function(data){
-			this.setState({counter:data});
-		}.bind(this));
 		this.addHandler = this.addHandler.bind(this);
 		this.edit1Handler = this.edit1Handler.bind(this);
 		this.updateHandler = this.updateHandler.bind(this);
 		this.delHandler = this.delHandler.bind(this);
-		this.closeAlertHandler = this.closeAlertHandler.bind(this);		
+		this.closeAlertHandler = this.closeAlertHandler.bind(this);
     }
-	componentDidUpdate(prevProps) {
-		if (this.props.changed==false && this.props.changed!=prevProps.changed) this.setCountdownInfo(this.state.counter);
-	}
-	getCountdownInfo(callback) {
-		this.socket.sendTo(this.instanceId,'getCountdownInfo',{}).then(function(data){
-			callback(data);
-		});		
-	}
-	setCountdownInfo(counter) {
-		this.socket.sendTo(this.instanceId,'setCountdownInfo',counter).then(function(){
-
-		});		
-	}	
 	addHandler(data) {
-		if (this.state.counter.hasOwnProperty(data.name)) {
+		if (this.props.counter.hasOwnProperty(data.name)) {
 			this.alertOn("Duplicate entry!");
 			return false;
 		}
-		this.setUpate(true);
-		this.setState(prevState => {
-		  let counter = Object.assign({}, prevState.counter);
-		  counter.[data.name] = data;
-		  return { 
-			counter:counter,
-			addData:{}
-		  };
-		})		
+		let counter = Object.assign({}, this.props.counter);
+		counter.[data.name] = data;
+		this.props.onChange(counter);
+		this.setState({addData:{}});
 		return true;
 	}
 	edit1Handler(data) {
 		this.setState({addData:data});
 	}
 	updateHandler(data) {
-		if (this.state.counter.hasOwnProperty(data.name)) {
-			this.setUpate(true);
-			this.setState(prevState => {
-			  let counter = Object.assign({}, prevState.counter);
-			  counter.[data.name] = data;
-			  return { 
-				counter:counter,
-				addData:{}
-				};
-			})
+		if (this.props.counter.hasOwnProperty(data.name)) {
+			let counter = Object.assign({}, this.props.counter);
+			counter.[data.name] = data;
+			this.props.onChange(counter);
+			this.setState({addData:{}});
 			return true;
 		}
 		return false;
 	}
 	delHandler(data) {
-		if (this.state.counter.hasOwnProperty(data.name)) {
-			this.setUpate(true);
-			this.setState(prevState => {
-			  let counter = Object.assign({}, prevState.counter);
-			  delete counter.[data.name];
-			  return { counter:counter };
-			})
+		if (this.props.counter.hasOwnProperty(data.name)) {
+			let counter = Object.assign({}, this.props.counter);
+			delete counter.[data.name];
+			this.props.onChange(counter);
 			return true;
 		}
 		return false;
-	}
-	setUpate(value) {
-		this.props.onChange("changed",value);
 	}
 	closeAlertHandler(event, reason) {
 		if (reason === 'clickaway') {
@@ -104,34 +71,31 @@ class CountdownSettings extends React.Component {
 		this.alertOff();
 	}
 	alertOn(msg) {
-		this.setState({alert:true,alertText:msg});		
+		this.setState({alert:true,alertText:msg});
 	}
 	alertOff() {
-		this.setState({alert:false,alertText:""});				
+		this.setState({alert:false,alertText:""});
 	}
-	
-
-
 	render() {
 		return (
 			<div>
 				<form>
-				<CountdownSettingsAdd 
+				<CountdownSettingsAdd
 					addData={this.state.addData}
 					onUpdate={this.updateHandler}
 					onAdd={this.addHandler}
-				/> 
+				/>
 				</form>
- 				<CountdownSettingsList 
+				<CountdownSettingsList
 					onDel={this.delHandler}
 					onEdit1={this.edit1Handler}
-					data={this.state.counter} 
-				/> 
-				<Snackbar open={this.state.alert} 
-					autoHideDuration={6000} 
+					data={this.props.counter}
+				/>
+				<Snackbar open={this.state.alert}
+					autoHideDuration={6000}
 					anchorOrigin={{vertical: 'top',horizontal: 'center'}}
 					onClose={this.closeAlertHandler}
-				> 
+				>
 				  <Alert severity="error" onClose={this.closeAlertHandler}>
 					  <h1>{this.state.alertText}</h1>
 				  </Alert>
@@ -141,7 +105,7 @@ class CountdownSettings extends React.Component {
 	}
 }
 
-export default withStyles(styles)(CountdownSettings); 
+export default withStyles(styles)(CountdownSettings);
 
 /*
 		<div>
