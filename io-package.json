@@ -1,13 +1,43 @@
 {
     "common": {
         "name": "mytime",
-        "version": "0.5.1",
+        "version": "0.5.2",
         "news": {
+            "0.5.2": {
+                "en": "* fix an issue and introduce a new command save to save the configuration defined in datapoints to the iobroker configuration data",
+                "de": "* Beheben eines Problems und Einführung eines neuen Befehls zum Speichern, um die in Datenpunkten definierte Konfiguration in den iobroker-Konfigurationsdaten zu speichern",
+                "ru": "* исправить проблему и ввести новую команду save для сохранения конфигурации, определенной в точках данных, в данные конфигурации iobroker",
+                "pt": "* corrigir um problema e introduzir um novo comando save para salvar a configuração definida em pontos de dados para os dados de configuração do iobroker",
+                "nl": "* los een probleem op en introduceer een nieuw commando save om de configuratie gedefinieerd in datapunten op te slaan in de iobroker configuratiegegevens",
+                "fr": "* résoudre un problème et introduire une nouvelle commande save pour enregistrer la configuration définie dans les points de données dans les données de configuration iobroker",
+                "it": "* risolve un problema e introduce un nuovo comando save per salvare la configurazione definita nei datapoint nei dati di configurazione di iobroker",
+                "es": "* solucionar un problema e introducir un nuevo comando guardar para guardar la configuración definida en los puntos de datos en los datos de configuración de iobroker",
+                "pl": "* napraw problem i wprowadź nową komendę save, aby zapisać konfigurację zdefiniowaną w punktach danych do danych konfiguracyjnych iobroker",
+                "zh-cn": "*解决问题并引入新的命令保存以将数据点中定义的配置保存到iobroker配置数据"
+            },
             "0.5.1": {
-                "en": "* Migration of old counters"
+                "en": "* Migration of old counters",
+                "de": "* Migration alter Zähler",
+                "ru": "* Миграция старых счетчиков",
+                "pt": "* Migração de contadores antigos",
+                "nl": "* Migratie van oude loketten",
+                "fr": "* Migration d'anciens compteurs",
+                "it": "* Migrazione di vecchi contatori",
+                "es": "* Migración de contadores antiguos",
+                "pl": "* Migracja starych liczników",
+                "zh-cn": "*迁移旧柜台"
             },
             "0.5.0": {
-                "en": "* Change settings dialog to react"
+                "en": "* Change settings dialog to react",
+                "de": "* Anpassen des Einstellungsdialogs auf REACT",
+                "ru": "* Изменить диалог настроек, чтобы реагировать",
+                "pt": "* Altere a caixa de diálogo de configurações para reagir",
+                "nl": "* Verander instellingen dialoogvenster om te reageren",
+                "fr": "* Modifier la boîte de dialogue des paramètres pour réagir",
+                "it": "* Modifica la finestra di dialogo delle impostazioni per reagire",
+                "es": "* Cambiar el diálogo de configuración para reaccionar",
+                "pl": "* Zmień okno dialogowe ustawień, aby zareagować",
+                "zh-cn": "*更改设置对话框做出反应"
             },
             "0.4.2": {
                 "en": "* performance optimization. mytime now checks the data from internal and did not read the data allways from datapoints | update dependencies",
