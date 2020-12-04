@@ -65,6 +65,7 @@ After configuration of a new countdown the adapter creates the following datapoi
 | setstop2timer | setstop2timer        | set stop behaviour configuration to timer                                                    |
 | setstop2zero  | setstop2zero         | set stop behaviour configuration to zeros                                                    |
 | save          | save                 | save the configuration defined in datapoints to the iobroker configuration                   |
+|               |                      | iobroker restarts the adapter after saving automatically                                     |
 
 ##### Format of the value for setting the countdown timer
 
