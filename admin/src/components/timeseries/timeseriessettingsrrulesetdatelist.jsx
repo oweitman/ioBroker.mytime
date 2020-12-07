@@ -17,12 +17,12 @@ const styles = (_theme) => ({
 		whiteSpace: "nowrap"
 	},
 	list:{
-		height:"1150px",
+		height:"600px",
 		overflowY:"scroll"
 	}
 });
 
-function RruleFormatedDate(props) {
+function RruleSetFormatedDate(props) {
 	var index = 		"#"+(props.index+1).toString().padStart(3,"0");
 	var weekday =		props.item.toLocaleString(window.navigator.userLanguage || window.navigator.language,{weekday: 'short'});
 	var day =			props.item.toLocaleString(window.navigator.userLanguage || window.navigator.language,{day: '2-digit'});
@@ -52,26 +52,29 @@ function RruleFormatedDate(props) {
 	)
 }
 
-class TimeseriesSettingsRruleDateList extends React.Component {
+class TimeseriesSettingsRruleSetDateList extends React.Component {
 	
     constructor(props) {
         super(props);
 	}
-
 	convertData(rrule) {
 		rrule = JSON.parse(JSON.stringify(rrule.rrule));
 		if (rrule.dtstart && typeof rrule.dtstart=="string") rrule.dtstart = new Date(rrule.dtstart);
 		if (rrule.until   && typeof rrule.until=="string") rrule.until = new Date(rrule.until);
 		return rrule;
-	}	
+	}
+
+	
 	render() {
-		const { classes } = this.props;		
-		if (this.props.isErr()) return <></>
-		var obj = this.convertData(this.props.rrule());
+		const { classes } = this.props;
+		var rrules = this.props.rrules;
 		try {
-			const rule = new RRule(obj);
-			//var items = rule.all(function (date, i){return i < 100});
-			var items = rule.between(new Date(), new Date(Date.UTC(2100, 1, 1)),true,function (date, i){return i < 100});
+			var rruleset = new RRuleSet();
+			rrules.forEach(rrule => {
+				rruleset.rrule(new RRule(this.convertData(rrule)))
+			});
+			
+			var items = rruleset.between(new Date(),new Date(Date.UTC(2100, 1, 1)),true,function (date, i){return i < 100});
 		} catch (e) {
 			return <>{e.message}</>
 		}
@@ -86,7 +89,7 @@ class TimeseriesSettingsRruleDateList extends React.Component {
 					<Table size="small" className={classes.table}>
 						<TableBody>
 							{items.slice(0,100).map((item,i) =>
-								<RruleFormatedDate key={item} item={item} index={i}/>
+								<RruleSetFormatedDate key={item} item={item} index={i}/>
 							)}
 						</TableBody>
 					</Table>
@@ -95,7 +98,7 @@ class TimeseriesSettingsRruleDateList extends React.Component {
 		)
 	}
 }
-export default withStyles(styles)(TimeseriesSettingsRruleDateList);
+export default withStyles(styles)(TimeseriesSettingsRruleSetDateList);
 
 
 
