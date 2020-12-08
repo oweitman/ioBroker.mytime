@@ -33,6 +33,8 @@ class TimeseriesSettingsRrule extends React.Component {
 			edit: false,
 			rrules: [],
 			name:"",
+			action:"stop",
+			cmd:"",
 			duration:1,
 			errmsg: {
 				name:"",
@@ -77,13 +79,17 @@ class TimeseriesSettingsRrule extends React.Component {
 		return {
 			name:this.state.name,
 			duration:this.state.duration,
+			action:this.state.action,
+			cmd:this.state.cmd,
 			rrules:this.state.rrules
 		}
 	}
 	setData(timeserie) { 
 		return {
 			name:timeserie.name ? timeserie.name : "",
-			duration:timeserie.duration ? timeserie.duration : "",
+			duration:timeserie.duration ? timeserie.duration : 1,
+			action:timeserie.action ? timeserie.action:"stop",
+			cmd:timeserie.cmd ? timeserie.cmd:"",
 			rrules:timeserie.rrules ? timeserie.rrules : []
 		}
 	}

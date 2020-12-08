@@ -79,8 +79,8 @@ class TimeseriesSettingsList extends React.Component {
 								<TableCell classes={{root:classes.tableaction}} ><b>{I18n.t("Actions")}</b></TableCell>
 							</TableRow>
 						</TableHead>
-						<TableBody>
-							{this.props.timeseries.slice(0,100).map((item,i) => this.renderListItem(item))}
+						<TableBody>						
+							{Object.keys(this.props.timeseries).map((item,i) => this.renderListItem(this.props.timeseries[item]))}
 						</TableBody>
 					</Table>
 				</Paper>

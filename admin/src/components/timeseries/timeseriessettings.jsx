@@ -19,7 +19,7 @@ class TimeseriesSettings extends React.Component {
         super(props);
 		this.state = {
 			addData:{},
-			timeseries:JSON.parse(JSON.stringify(props.timeseries))||[],
+			timeseries:JSON.parse(JSON.stringify(props.timeseries))||{},
 			alert: false,
 			alertText: "",
 			edit: false
@@ -39,7 +39,7 @@ class TimeseriesSettings extends React.Component {
 		if (timeserie.rrules.length>0) {
 			timeserie.name = this.checkName(timeserie.name);
 			if (parseInt(timeserie.duration||0)<1) timeserie.duration=1;
-			timeseries.push(timeserie);
+			timeseries[timeserie.name]=(timeserie);
 		}
 		this.setState({
 			edit:false,
@@ -49,14 +49,17 @@ class TimeseriesSettings extends React.Component {
 	}
 	updateHandler(timeserie) {
 		var timeseries = this.state.timeseries;
-		if (timeserie.name=="") timeserie.name=checkName(timeserie.name);
+		if (timeserie.name=="") timeserie.name=this.checkName(timeserie.name);
 		if (parseInt(timeserie.duration||0)<1) timeserie.duration=1;
-		var index = timeseries.findIndex(t => t.name==timeserie.name);
+		//var index = timeseries.findIndex(t => t.name==timeserie.name);
+		timeseries[timeserie.name] = timeserie;
+/*			
 		if (index>-1) {
 			timeseries[index] = timeserie;
 		} else {
 			timeseries.push(timeserie);			
 		}
+		*/
 		this.setState({
 			addData:{},
 			edit:false,
@@ -72,20 +75,18 @@ class TimeseriesSettings extends React.Component {
 		var timeseries = this.state.timeseries;
 		name = name.replace(/[^0-9a-zöÖüÜäÄß\.]/gi, '');
 		if (name != "") {
-			while (true) {			
-				index = timeseries.findIndex(el => el.name == name+len);
-				if (index==-1) {
-					name=name+((len!="")?" ("+len+")":"");
+			while (true) {
+				if (!timeseries[name+len]) {
+					name=name+((len!="")?"_"+len:"");
 					break;
 				} else {
 					len=(len||0)+1;
-				}				
+				}
 			}
 		} else {
 			var len = 1;
 			while (true) {			
-				index = timeseries.findIndex(el => el.name == "Timeserie"+len);
-				if (index==-1) {
+				if (!timeseries["Timeserie"+len]) {
 					name = "Timeserie"+len;
 					break;
 				}
@@ -103,9 +104,8 @@ class TimeseriesSettings extends React.Component {
 	}
 	delHandler(timeserie) {
 		var timeseries = this.state.timeseries;
-		var index = timeseries.findIndex(r => r.name==timeserie.name);
-		if (index>-1) {
-			timeseries.splice(index,1);
+		if (timeseries[timeserie.name]) {
+			delete timeseries[timeserie.name];
 		}
 		this.setState({
 			timeseries:timeseries,

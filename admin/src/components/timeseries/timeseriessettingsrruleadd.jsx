@@ -219,6 +219,27 @@ class TimeseriesSettingsRruleAdd extends React.Component {
 	setData(rrule) {
 		var obj={
 			name:					rrule.name ? 		rrule.name : "",
+			frequency:				rrule.rrule.freq ? 		rrule.rrule.freq : 3,
+			start:					rrule.rrule.dtstart ? 	rrule.rrule.dtstart : new Date(),
+			timezone:				rrule.rrule.tzid ? 		rrule.rrule.tzid:"Europe/Amsterdam",
+			until:					rrule.rrule.until ?		rrule.rrule.until : null,
+			count:					rrule.rrule.count ?		rrule.rrule.count : "",
+			interval:				rrule.rrule.interval ?	rrule.rrule.interval : 1,
+			weekstart:				rrule.rrule.wkst ? 		rrule.rrule.wkst : 0,
+			"byweekday_RRule.MO":	rrule.rrule.byweekday ? rrule.rrule.byweekday.indexOf("RRule.MO")>-1 :false,
+			"byweekday_RRule.TU":	rrule.rrule.byweekday ? rrule.rrule.byweekday.indexOf("RRule.TU")>-1 :false,
+			"byweekday_RRule.WE":	rrule.rrule.byweekday ? rrule.rrule.byweekday.indexOf("RRule.WE")>-1 :false,
+			"byweekday_RRule.TH":	rrule.rrule.byweekday ? rrule.rrule.byweekday.indexOf("RRule.TH")>-1 :false,
+			"byweekday_RRule.FR":	rrule.rrule.byweekday ? rrule.rrule.byweekday.indexOf("RRule.FR")>-1 :false,
+			"byweekday_RRule.SA":	rrule.rrule.byweekday ? rrule.rrule.byweekday.indexOf("RRule.SA")>-1 :false,
+			"byweekday_RRule.SU":	rrule.rrule.byweekday ? rrule.rrule.byweekday.indexOf("RRule.SU")>-1 :false,
+			bymonth:				rrule.rrule.bymonth ?	rrule.rrule.bymonth.join(",") : "",
+			bysetpos:				rrule.rrule.bysetpos ?	rrule.rrule.bysetpos.join(",") : "",
+			bymonthday:				rrule.rrule.bymonthday ?rrule.rrule.bymonthday.join(",") : "",
+			byweekday:				rrule.rrule.byweekday ?	rrule.rrule.byweekday.join(",") : "",
+			byweekno:				rrule.rrule.byweekno ?	rrule.rrule.byweekno.join(",") : "",
+			byhour:					rrule.rrule.byhour ?	rrule.rrule.byhour.join(",") : "",
+			byminute:				rrule.rrule.byminute ?	rrule.rrule.byminute.join(",") : "",
 			errmsg: {
 				name:"",
 				frequency:"",
@@ -238,32 +259,6 @@ class TimeseriesSettingsRruleAdd extends React.Component {
 				byminute:"",
 			}
 		};
-		if (rrule.rrule) {
-			var rrule = {
-				frequency:				rrule.rrule.freq ? 		rrule.rrule.freq : 3,
-				start:					rrule.rrule.dtstart ? 	rrule.rrule.dtstart : new Date(),
-				timezone:				rrule.rrule.tzid ? 		rrule.rrule.tzid:"Europe/Amsterdam",
-				until:					rrule.rrule.until ?		rrule.rrule.until : null,
-				count:					rrule.rrule.count ?		rrule.rrule.count : 10,
-				interval:				rrule.rrule.interval ?	rrule.rrule.interval : 1,
-				weekstart:				rrule.rrule.wkst ? 		rrule.rrule.wkst : 0,
-				"byweekday_RRule.MO":	rrule.rrule.byweekday ? rrule.rrule.byweekday.indexOf("RRule.MO")>-1 :false,
-				"byweekday_RRule.TU":	rrule.rrule.byweekday ? rrule.rrule.byweekday.indexOf("RRule.TU")>-1 :false,
-				"byweekday_RRule.WE":	rrule.rrule.byweekday ? rrule.rrule.byweekday.indexOf("RRule.WE")>-1 :false,
-				"byweekday_RRule.TH":	rrule.rrule.byweekday ? rrule.rrule.byweekday.indexOf("RRule.TH")>-1 :false,
-				"byweekday_RRule.FR":	rrule.rrule.byweekday ? rrule.rrule.byweekday.indexOf("RRule.FR")>-1 :false,
-				"byweekday_RRule.SA":	rrule.rrule.byweekday ? rrule.rrule.byweekday.indexOf("RRule.SA")>-1 :false,
-				"byweekday_RRule.SU":	rrule.rrule.byweekday ? rrule.rrule.byweekday.indexOf("RRule.SU")>-1 :false,
-				bymonth:				rrule.rrule.bymonth ?	rrule.rrule.bymonth.join(",") : "",
-				bysetpos:				rrule.rrule.bysetpos ?	rrule.rrule.bysetpos.join(",") : "",
-				bymonthday:				rrule.rrule.bymonthday ?rrule.rrule.bymonthday.join(",") : "",
-				byweekday:				rrule.rrule.byweekday ?	rrule.rrule.byweekday.join(",") : "",
-				byweekno:				rrule.rrule.byweekno ?	rrule.rrule.byweekno.join(",") : "",
-				byhour:					rrule.rrule.byhour ?	rrule.rrule.byhour.join(",") : "",
-				byminute:				rrule.rrule.byminute ?	rrule.rrule.byminute.join(",") : "",
-			};
-			obj.rrule=rrule;
-		}
 		return obj;		
 	}
 	rrule(e) {
@@ -370,12 +365,11 @@ class TimeseriesSettingsRruleAdd extends React.Component {
 				<MuiPickersUtilsProvider utils={DateFnsUtils}>
 					<KeyboardDateTimePicker
 					    className={classes.inputwith}
-						classes={classes.toolbar}
 						size="small"
 						ampm={false}
 						margin="dense"
 						label={I18n.t(el.title+" Date")}
-						format="dd.MM.yyyy HH:mm"
+						format="dd.MM.yyyy HH:mm:ss"
 						value={this.state[el.attr]}
 						onChange={(value) => this.handleChangeDate(el.attr,value)}
 						error={((this.state["errmsg"][el.attr]||"")!="")}
@@ -588,6 +582,7 @@ class TimeseriesSettingsRruleAdd extends React.Component {
 		return "";
 	}
 	validateDate(value) {
+		if (value===null) return "";
 		if (!(value instanceof Date)) return "invalid value";
 		if (value.getTime()!== value.getTime()) return "invalid date";
 		return "";

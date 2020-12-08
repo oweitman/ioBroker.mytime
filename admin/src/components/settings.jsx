@@ -175,7 +175,7 @@ class Settings extends React.Component {
 			  </TabPanel>
 			  <TabPanel value={value} index={1}>
 				<TimeseriesSettings 
-					timeseries={this.props.native["timeseries"]||[]}
+					timeseries={this.props.native["timeseries"]||{}}
 					onChange={(value) => this.props.onChange("timeseries", value)}
 					context={this.props.context}
 				/>
