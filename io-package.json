@@ -1,8 +1,11 @@
 {
     "common": {
         "name": "mytime",
-        "version": "0.5.1",
+        "version": "0.6.0",
         "news": {
+            "0.6.0": {
+                "en": "* Introduction of new functionality timeseries"
+            },
             "0.5.1": {
                 "en": "* Migration of old counters"
             },

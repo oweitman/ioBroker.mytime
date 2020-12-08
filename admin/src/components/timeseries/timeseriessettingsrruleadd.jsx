@@ -138,7 +138,11 @@ class TimeseriesSettingsRruleAdd extends React.Component {
 			{title:"byminute",		attr:"byminute",		type:"text", tooltip: "If given, it must be either an integer, or a sequence of integers, meaning the minutes to apply the recurrence to."},
 		];
 
-		this.state = this.assignState(props);
+		if (Object.keys(props.addData).length==0) {
+			this.state = this.template;
+		} else {
+			this.state = this.assignState(props);
+		}
 
 		this.saveRruleHandler 		= this.saveRruleHandler.bind(this);		
 		this.handleChange 			= this.handleChange.bind(this);
@@ -457,7 +461,6 @@ class TimeseriesSettingsRruleAdd extends React.Component {
 								))}				
 							</FormGroup>
 						</Grid>
-						<FormHelperText>Be careful</FormHelperText>
 					</FormControl>
 				</HtmlTooltip>
 			</div>
