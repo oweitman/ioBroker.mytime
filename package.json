@@ -79,7 +79,9 @@
     "test:integration": "mocha test/integration --exit",
     "test": "npm run test:js && npm run test:package",
     "check": "tsc --noEmit -p tsconfig.check.json",
-    "lint": "eslint --ext .js,.jsx"
+    "lint:client": "eslint admin/src --ext .js,.jsx --env browser --ignore-pattern rrule.js",
+    "lint:server": "eslint main.js lib --ext .js,.jsx --env node --ignore-pattern rrule.js",
+    "lint": "npm run lint:client && npm run lint:server"
   },
   "bugs": {
     "url": "https://github.com/oweitman/ioBroker.mytime/issues"

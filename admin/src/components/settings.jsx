@@ -1,38 +1,27 @@
 import React from "react";
 import { withStyles } from "@material-ui/core/styles";
-import TextField from "@material-ui/core/TextField";
-import Input from "@material-ui/core/Input";
-import FormHelperText from "@material-ui/core/FormHelperText";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
-import MenuItem from "@material-ui/core/MenuItem";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Checkbox from "@material-ui/core/Checkbox";
-import AppBar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-import PropTypes from 'prop-types';
-
-
+import AppBar from "@material-ui/core/AppBar";
+import Tabs from "@material-ui/core/Tabs";
+import Tab from "@material-ui/core/Tab";
+import Box from "@material-ui/core/Box";
+import PropTypes from "prop-types";
 import I18n from "@iobroker/adapter-react/i18n";
 import CountdownSettings from "./countdown/countdownsettings";
 import TimeseriesSettings from "./timeseries/timeseriessettings";
-// import timeseries
+
 
 /* Todo
 * Eventhandler aus der render() in die klasse verschieben
 */
- 
+
 /**
  * @type {() => Record<string, import("@material-ui/core/styles/withStyles").CreateCSSProperties>}
  */
- 
+
 const styles = () => ({
-	root: {
-		color: "black",
-	},
+    root: {
+        color: "black",
+    },
     input: {
         marginTop: 0,
         minWidth: 400,
@@ -81,109 +70,108 @@ const styles = () => ({
  * @extends {React.Component<SettingsProps, SettingsState>}
  */
 
-	function TabPanel(props) {
-	  const { children, value, index, ...other } = props;
-	const divStyle = {
-	  overflowY: 'scroll',
-	  height: 'calc( 100% - 150px )',
-	};
-	  return (
-		<div
-		  role="tabpanel"
-		  hidden={value !== index}
-		  id={`simple-tabpanel-${index}`}
-		  aria-labelledby={`simple-tab-${index}`}
-		  style={divStyle}
-		  {...other}
-		>
-		  {value === index && (
-			<Box p={3}>
-			  {children}
-			</Box>
-		  )}
-		</div>
-	  );
-	}
-
-	TabPanel.propTypes = {
-	  children: PropTypes.node,
-	  index: PropTypes.any.isRequired,
-	  value: PropTypes.any.isRequired,
-	};
-	
+function TabPanel(props) {
+    const { children, value, index, ...other } = props;
+    const divStyle = {
+        overflowY: "scroll",
+        height: "calc( 100% - 150px )",
+    };
+    return (
+        <div
+            role="tabpanel"
+            hidden={value !== index}
+            id={`simple-tabpanel-${index}`}
+            aria-labelledby={`simple-tab-${index}`}
+            style={divStyle}
+            {...other}
+        >
+            {value === index && (
+                <Box p={3}>
+                    {children}
+                </Box>
+            )}
+        </div>
+    );
+}
+TabPanel.propTypes = {
+    children: PropTypes.node,
+    index: PropTypes.any.isRequired,
+    value: PropTypes.any.isRequired,
+};
 class Settings extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-			counter:props.counter
-		};
-		this.state.tab = 0;
+            counter:props.counter
+        };
+        this.state.tab = 0;
+    }
+    a11yProps(index) {
+        return {
+            id: `simple-tab-${index}`,
+            "aria-controls": `simple-tabpanel-${index}`,
+        };
     }
 
 
 
+    render() {
+        const value = this.state.tab;
 
-	
-	a11yProps(index) {
-	  return {
-		id: `simple-tab-${index}`,
-		'aria-controls': `simple-tabpanel-${index}`,
-	  };
-	}	
-	
-	
-	
-	render(props) {
-		const { classes } = this.props;
-		const value = this.state.tab;
-		
-    	const handleChange = (event, newValue) => {
-			this.setState(state => ({
-			  tab: newValue
-			}));
-	    };
-		
-		const StyledTabs = withStyles({
-			scroller: {
-				"background-color": '#2196f3',
-			},
-		})(Tabs);
-		const StyledTab = withStyles({
-			root: {
-//				"background-color": '#64b5f6',
-			},
-			selected: {
-				color: "black",
-				"background-color": 'white',
-			},
-		})(Tab);
+        const handleChange = (event, newValue) => {
+            this.setState({
+                tab: newValue
+            });
+        };
 
-		return (
-			<div>
-			  <AppBar position="static">
-				<StyledTabs value={value} onChange={handleChange.bind(this)} aria-label="simple tabs example">
-				  <StyledTab label={I18n.t("tabcountdown")} {...this.a11yProps(0)} />
-				  <StyledTab label={I18n.t("tabtimeseries")} {...this.a11yProps(1)} />
-				</StyledTabs>
-			  </AppBar>
-			  <TabPanel value={value} index={0}>
-				<CountdownSettings 
-					counter={this.props.native["counter"]||{}}
-					onChange={(value) => this.props.onChange("counter", value)}
-					context={this.props.context}
-				/>
-			  </TabPanel>
-			  <TabPanel value={value} index={1}>
-				<TimeseriesSettings 
-					timeseries={this.props.native["timeseries"]||{}}
-					onChange={(value) => this.props.onChange("timeseries", value)}
-					context={this.props.context}
-				/>
-			  </TabPanel>
-			</div>
-		);
-	}	
+        const StyledTabs = withStyles({
+            scroller: {
+                "background-color": "#2196f3",
+            },
+        })(Tabs);
+        const StyledTab = withStyles({
+            root: {
+                //              "background-color": '#64b5f6',
+            },
+            selected: {
+                color: "black",
+                "background-color": "white",
+            },
+        })(Tab);
+
+        return (
+            <div>
+                <AppBar position="static">
+                    <StyledTabs value={value} onChange={handleChange.bind(this)} aria-label="simple tabs example">
+                        <StyledTab label={I18n.t("tabcountdown")} {...this.a11yProps(0)} />
+                        <StyledTab label={I18n.t("tabtimeseries")} {...this.a11yProps(1)} />
+                    </StyledTabs>
+                </AppBar>
+                <TabPanel value={value} index={0}>
+                    <CountdownSettings
+                        counter={this.props.native["counter"]||{}}
+                        onChange={(value) => this.props.onChange("counter", value)}
+                        context={this.props.context}
+                    />
+                </TabPanel>
+                <TabPanel value={value} index={1}>
+                    <TimeseriesSettings
+                        timeseries={this.props.native["timeseries"]||{}}
+                        onChange={(value) => this.props.onChange("timeseries", value)}
+                        context={this.props.context}
+                    />
+                </TabPanel>
+            </div>
+        );
+    }
 }
+Settings.propTypes = {
+    counter: PropTypes.object,
+    native: PropTypes.object,
+    context: PropTypes.object,
+    onChange: PropTypes.func,
+
+};
 
 export default withStyles(styles)(Settings);
 

@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /*
  * Created with @iobroker/create-adapter v1.24.2
@@ -6,12 +6,12 @@
 
 // The adapter-core module gives you access to the core ioBroker functions
 // you need to create an adapter
-const utils = require('@iobroker/adapter-core');
+const utils = require("@iobroker/adapter-core");
 
 // Load your modules here, e.g.:
 // const fs = require("fs");
 
-const mytimerequire = require(__dirname +'/lib/mytimeserver.js');
+const mytimerequire = require(__dirname +"/lib/mytimeserver.js");
 let mytimeserver;
 class Mytime extends utils.Adapter {
 
@@ -21,30 +21,30 @@ class Mytime extends utils.Adapter {
     constructor(options) {
         super({
             ...options,
-            name: 'mytime',
+            name: "mytime",
         });
-        this.on('ready', this.onReady.bind(this));
-        this.on('stateChange', this.onStateChange.bind(this));
-        this.on('message', this.onMessage.bind(this));
-        this.on('unload', this.onUnload.bind(this));
+        this.on("ready", this.onReady.bind(this));
+        this.on("stateChange", this.onStateChange.bind(this));
+        this.on("message", this.onMessage.bind(this));
+        this.on("unload", this.onUnload.bind(this));
     }
 
     /**
      * Is called when databases are connected and adapter received configuration.
      */
     async onReady() {
-        this.log.debug('main onReady start');
+        this.log.debug("main onReady start");
         // Reset the connection indicator during startup
-        this.setState('info.connection', false, true);
+        this.setState("info.connection", false, true);
 
         // Initialize your adapter here
         if (!mytimeserver) {
-            this.log.debug('main onReady open mytime');
+            this.log.debug("main onReady open mytime");
             mytimeserver = new mytimerequire(this);
         }
 
         // in this template all states changes inside the adapters namespace are subscribed
-        this.subscribeStates('*');
+        this.subscribeStates("*");
     }
 
     /**
@@ -53,15 +53,15 @@ class Mytime extends utils.Adapter {
      */
     onUnload(callback) {
         try {
-            this.log.debug('main onUnload try');             
+            this.log.debug("main onUnload try");
 
             mytimeserver.closeConnections();
-            this.log.info('cleaned everything up...');
-			// Reset the connection indicator during startup
-			this.setState('info.connection', false, true);
+            this.log.info("cleaned everything up...");
+            // Reset the connection indicator during startup
+            this.setState("info.connection", false, true);
             callback();
         } catch (e) {
-            this.log.debug('main onUnload error');
+            this.log.debug("main onUnload error");
             callback();
         }
     }
@@ -82,22 +82,22 @@ class Mytime extends utils.Adapter {
         }
     }
 
-     /**
+    /**
       * Some message was sent to this instance over message box. Used by email, pushover, text2speech, ...
       * Using this method requires "common.message" property to be set to true in io-package.json
       * @param {ioBroker.Message} obj
       */
-     onMessage(obj) {
-     	if (typeof obj === 'object' && obj.message) {
-     		if (obj.command === 'send') {
-     			// e.g. send email or pushover or whatever
-     			this.log.info('send command');
-    			// Send response in callback if required
-                if (obj.callback) this.sendTo(obj.from, obj.command, 'Message received', obj.callback);
+    onMessage(obj) {
+        if (typeof obj === "object" && obj.message) {
+            if (obj.command === "send") {
+                // e.g. send email or pushover or whatever
+                this.log.info("send command");
+                // Send response in callback if required
+                if (obj.callback) this.sendTo(obj.from, obj.command, "Message received", obj.callback);
             }
         }
         mytimeserver.processMessages(obj);
-     }
+    }
 
 }
 

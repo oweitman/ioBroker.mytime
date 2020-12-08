@@ -7,7 +7,7 @@ import Settings from "./components/settings";
 /**
  * @type {(_theme: Theme) => import("@material-ui/styles").StyleRules}
  */
-const styles = (_theme) => ({
+const styles = (_theme) => ({ // eslint-disable-line no-unused-vars
     root: {},
 });
 
@@ -36,24 +36,24 @@ class App extends GenericApp {
         if (!this.state.loaded) {
             return super.render();
         }
-		
-		const context = {
-			socket: this.socket,
-			instanceId: this.instanceId,			
-		}
+
+        const context = {
+            socket: this.socket,
+            instanceId: this.instanceId,
+        };
 
         return (
             <div className="App">
-                <Settings 
-					native={this.state.native} 
-					context={context}
-					onChange={(attr, value) => this.updateNativeValue(attr, value)}
-					changed={this.state.changed}
-				/>
+                <Settings
+                    native={this.state.native}
+                    context={context}
+                    onChange={(attr, value) => this.updateNativeValue(attr, value)}
+                    changed={this.state.changed}
+                />
 
-				{this.renderError()}
-				{this.renderToast()}
-				{this.renderSaveCloseButtons()}
+                {this.renderError()}
+                {this.renderToast()}
+                {this.renderSaveCloseButtons()}
             </div>
         );
     }
