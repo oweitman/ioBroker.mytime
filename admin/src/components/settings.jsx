@@ -17,9 +17,14 @@ import PropTypes from 'prop-types';
 
 
 import I18n from "@iobroker/adapter-react/i18n";
-import CountdownSettings from "./countdownsettings";
+import CountdownSettings from "./countdown/countdownsettings";
+import TimeseriesSettings from "./timeseries/timeseriessettings";
+// import timeseries
 
-
+/* Todo
+* Eventhandler aus der render() in die klasse verschieben
+*/
+ 
 /**
  * @type {() => Record<string, import("@material-ui/core/styles/withStyles").CreateCSSProperties>}
  */
@@ -158,7 +163,7 @@ class Settings extends React.Component {
 			  <AppBar position="static">
 				<StyledTabs value={value} onChange={handleChange.bind(this)} aria-label="simple tabs example">
 				  <StyledTab label={I18n.t("tabcountdown")} {...this.a11yProps(0)} />
-				  { /*<StyledTab label={I18n.t("tabtimeseries")} {...this.a11yProps(1)} /> */}
+				  <StyledTab label={I18n.t("tabtimeseries")} {...this.a11yProps(1)} />
 				</StyledTabs>
 			  </AppBar>
 			  <TabPanel value={value} index={0}>
@@ -166,11 +171,14 @@ class Settings extends React.Component {
 					counter={this.props.native["counter"]||{}}
 					onChange={(value) => this.props.onChange("counter", value)}
 					context={this.props.context}
-					changed={this.props.changed}
 				/>
 			  </TabPanel>
 			  <TabPanel value={value} index={1}>
-				mytime timeseries settings
+				<TimeseriesSettings 
+					timeseries={this.props.native["timeseries"]||{}}
+					onChange={(value) => this.props.onChange("timeseries", value)}
+					context={this.props.context}
+				/>
 			  </TabPanel>
 			</div>
 		);

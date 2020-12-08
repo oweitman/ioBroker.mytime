@@ -1,8 +1,11 @@
 {
     "common": {
         "name": "mytime",
-        "version": "0.5.2",
+        "version": "0.6.0",
         "news": {
+            "0.6.0": {
+                "en": "* Introduction of new functionality timeseries"
+            },
             "0.5.2": {
                 "en": "* fix an issue and introduce a new command save to save the configuration defined in datapoints to the iobroker configuration data",
                 "de": "* Beheben eines Problems und Einführung eines neuen Befehls zum Speichern, um die in Datenpunkten definierte Konfiguration in den iobroker-Konfigurationsdaten zu speichern",
