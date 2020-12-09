@@ -7,7 +7,7 @@ import Box from "@material-ui/core/Box";
 import PropTypes from "prop-types";
 import I18n from "@iobroker/adapter-react/i18n";
 import CountdownSettings from "./countdown/countdownsettings";
-import TimeseriesSettings from "./timeseries/timeseriessettings";
+import TimeseriesSettings from "./timeseries/settings";
 
 
 /* Todo

@@ -21,7 +21,7 @@ const styles = () => ({
     },
     tablecell: {
         padding: "8px 8px",
-    }   
+    }
 });
 
 class CountdownSettingsList extends React.Component {
@@ -38,7 +38,7 @@ class CountdownSettingsList extends React.Component {
     }
 
     renderListItem(counter) {
-        const { classes } = this.props;        
+        const { classes } = this.props;
         const times = util.calcCountdownFromMiliSeconds(counter.timer);
         const stopbehaviour = JSON.parse(counter.config).stopbehaviour || "";
         const StyledTableCellActions = withStyles({
@@ -77,7 +77,7 @@ class CountdownSettingsList extends React.Component {
     }
 
     render() {
-        const { classes } = this.props;        
+        const { classes } = this.props;
         const data = this.props.data || {};
         const StyledTableContainer = withStyles({
             root: {
@@ -117,8 +117,8 @@ class CountdownSettingsList extends React.Component {
 CountdownSettingsList.propTypes = {
     onDel: PropTypes.func,
     onEdit1: PropTypes.func,
-    data: PropTypes.object
-
+    data: PropTypes.object,
+    classes: PropTypes.object
 };
 
 export default withStyles(styles)(CountdownSettingsList);

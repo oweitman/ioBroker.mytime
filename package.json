@@ -79,8 +79,8 @@
     "test:integration": "mocha test/integration --exit",
     "test": "npm run test:js && npm run test:package",
     "check": "tsc --noEmit -p tsconfig.check.json",
-    "lint:client": "eslint admin/src --ext .js,.jsx --env browser --ignore-pattern rrule.js",
-    "lint:server": "eslint main.js lib --ext .js,.jsx --env node --ignore-pattern rrule.js",
+    "lint:client": "eslint admin/src --ext .js,.jsx --env browser --ignore-pattern rrule.js --fix",
+    "lint:server": "eslint main.js lib --ext .js,.jsx --env node --ignore-pattern rrule.js --fix",
     "lint": "npm run lint:client && npm run lint:server"
   },
   "bugs": {
