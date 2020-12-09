@@ -19,8 +19,12 @@ const styles = (_theme) => ({ // eslint-disable-line no-unused-vars
     },
     tableaction: {
         width: "1%",
-        whiteSpace: "nowrap"
-    }
+        whiteSpace: "nowrap",
+        padding: "8px 8px",
+    },
+    tablecell: {
+        padding: "8px 8px",
+    }    
 });
 
 class TimeseriesSettingsList extends React.Component {
@@ -41,7 +45,7 @@ class TimeseriesSettingsList extends React.Component {
         const { classes } = this.props;
         return (
             <TableRow key={timeserie.name}>
-                <TableCell>{timeserie.name}</TableCell>
+                <TableCell classes={{root:classes.tablecell}} >{timeserie.name}</TableCell>
                 <TableCell classes={{root:classes.tableaction}}>
                     <Fab
                         onClick={(e) => this.edit1Handler(e,timeserie)}
@@ -75,7 +79,7 @@ class TimeseriesSettingsList extends React.Component {
                     <Table size="small" >
                         <TableHead>
                             <TableRow>
-                                <TableCell><b>{I18n.t("Timeseries")}</b></TableCell>
+                                <TableCell classes={{root:classes.tablecell}} ><b>{I18n.t("Timeseries")}</b></TableCell>
                                 <TableCell classes={{root:classes.tableaction}} ><b>{I18n.t("Actions")}</b></TableCell>
                             </TableRow>
                         </TableHead>

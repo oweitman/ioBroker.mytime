@@ -21,8 +21,12 @@ const styles = (_theme) => ({ // eslint-disable-line no-unused-vars
     },
     tableaction: {
         width: "1%",
-        whiteSpace: "nowrap"
-    }
+        whiteSpace: "nowrap",
+        padding: "8px 8px",
+    },
+    tablecell: {
+        padding: "8px 8px",
+    },    
 });
 
 class TimeseriesSettingsRruleList extends React.Component {
@@ -42,7 +46,7 @@ class TimeseriesSettingsRruleList extends React.Component {
         const { classes } = this.props;
         return (
             <TableRow key={rrule.name}>
-                <TableCell>{rrule.name}</TableCell>
+                <TableCell classes={{root:classes.tablecell}}>{rrule.name}</TableCell>
                 <TableCell classes={{root:classes.tableaction}}>
                     <Fab
                         onClick={(e) => this.props.moveUp(e,rrule)}
@@ -90,7 +94,7 @@ class TimeseriesSettingsRruleList extends React.Component {
                     <Table size="small">
                         <TableHead>
                             <TableRow>
-                                <TableCell><b>{I18n.t("Rulename")}</b></TableCell>
+                                <TableCell classes={{root:classes.tablecell}}><b>{I18n.t("Rulename")}</b></TableCell>
                                 <TableCell classes={{root:classes.tableaction}} ><b>{I18n.t("Actions")}</b></TableCell>
                             </TableRow>
                         </TableHead>

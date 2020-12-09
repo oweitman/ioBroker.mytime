@@ -18,10 +18,14 @@ const styles = (_theme) => ({ // eslint-disable-line no-unused-vars
     list:{
         height:"1150px",
         overflowY:"scroll"
-    }
+    },
+    tablecell: {
+        padding: "8px 8px",
+    },    
 });
 
 function RruleFormatedDate(props) {
+    const { classes } = props;
     const index = 		"#"+(props.index+1).toString().padStart(3,"0");
     const weekday =		props.item.toLocaleString(window.navigator.userLanguage || window.navigator.language,{weekday: "short"});
     const date =			props.item.toLocaleString(window.navigator.userLanguage || window.navigator.language,
@@ -37,9 +41,9 @@ function RruleFormatedDate(props) {
     return (
         <>
             <TableRow>
-                <TableCell>{index}</TableCell>
-                <TableCell>{weekday}</TableCell>
-                <TableCell>{date}</TableCell>
+                <TableCell classes={{root:classes.tablecell}} >{index}</TableCell>
+                <TableCell classes={{root:classes.tablecell}} >{weekday}</TableCell>
+                <TableCell classes={{root:classes.tablecell}} >{date}</TableCell>
             </TableRow>
         </>
     );
@@ -83,7 +87,7 @@ class TimeseriesSettingsRruleDateList extends React.Component {
                     <Table size="small" className={classes.table}>
                         <TableBody>
                             {items.slice(0,100).map((item,i) =>
-                                <RruleFormatedDate key={item} item={item} index={i}/>
+                                <RruleFormatedDate key={item} item={item} index={i} classes={classes}/>
                             )}
                         </TableBody>
                     </Table>

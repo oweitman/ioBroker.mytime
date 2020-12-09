@@ -19,6 +19,9 @@ import PropTypes from "prop-types";
 const styles = () => ({
     root: {
     },
+    tablecell: {
+        padding: "8px 8px",
+    }   
 });
 
 class CountdownSettingsList extends React.Component {
@@ -35,22 +38,24 @@ class CountdownSettingsList extends React.Component {
     }
 
     renderListItem(counter) {
+        const { classes } = this.props;        
         const times = util.calcCountdownFromMiliSeconds(counter.timer);
         const stopbehaviour = JSON.parse(counter.config).stopbehaviour || "";
         const StyledTableCellActions = withStyles({
             root: {
                 "width": "1%",
                 "whiteSpace": "nowrap",
+                padding: "8px 8px",
             },
         })(TableCell);
         return (
             <TableRow key={counter.name}>
-                <TableCell>{counter.name}</TableCell>
-                <TableCell>{times.days}</TableCell>
-                <TableCell>{times.hours}</TableCell>
-                <TableCell>{times.minutes}</TableCell>
-                <TableCell>{times.seconds}</TableCell>
-                <TableCell>{I18n.t(stopbehaviour)}</TableCell>
+                <TableCell classes={{root:classes.tablecell}} >{counter.name}</TableCell>
+                <TableCell classes={{root:classes.tablecell}} >{times.days}</TableCell>
+                <TableCell classes={{root:classes.tablecell}} >{times.hours}</TableCell>
+                <TableCell classes={{root:classes.tablecell}} >{times.minutes}</TableCell>
+                <TableCell classes={{root:classes.tablecell}} >{times.seconds}</TableCell>
+                <TableCell classes={{root:classes.tablecell}} >{I18n.t(stopbehaviour)}</TableCell>
                 <StyledTableCellActions >
                     <Fab
                         onClick={(e) => this.edit1Handler(e,counter)}
@@ -72,6 +77,7 @@ class CountdownSettingsList extends React.Component {
     }
 
     render() {
+        const { classes } = this.props;        
         const data = this.props.data || {};
         const StyledTableContainer = withStyles({
             root: {
@@ -86,13 +92,13 @@ class CountdownSettingsList extends React.Component {
                     <Table size="small">
                         <TableHead>
                             <TableRow>
-                                <TableCell><b>{I18n.t("name")}</b></TableCell>
-                                <TableCell ><b>{I18n.t("days")}</b></TableCell>
-                                <TableCell ><b>{I18n.t("hours")}</b></TableCell>
-                                <TableCell ><b>{I18n.t("mins")}</b></TableCell>
-                                <TableCell ><b>{I18n.t("secs")}</b></TableCell>
-                                <TableCell ><b>{I18n.t("behaviour")}</b></TableCell>
-                                <TableCell ><b>{I18n.t("actions")}</b></TableCell>
+                                <TableCell classes={{root:classes.tablecell}} ><b>{I18n.t("name")}</b></TableCell>
+                                <TableCell classes={{root:classes.tablecell}}  ><b>{I18n.t("days")}</b></TableCell>
+                                <TableCell classes={{root:classes.tablecell}}  ><b>{I18n.t("hours")}</b></TableCell>
+                                <TableCell classes={{root:classes.tablecell}}  ><b>{I18n.t("mins")}</b></TableCell>
+                                <TableCell classes={{root:classes.tablecell}}  ><b>{I18n.t("secs")}</b></TableCell>
+                                <TableCell classes={{root:classes.tablecell}}  ><b>{I18n.t("behaviour")}</b></TableCell>
+                                <TableCell classes={{root:classes.tablecell}}  ><b>{I18n.t("actions")}</b></TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
