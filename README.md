@@ -31,6 +31,7 @@ Each timeseries creates a seperate datapoint which is triggered at the calculate
 The time events are calculated in real time. However, the rrule library used is not yet perfect in all parameter combinations. 
 This shows that with some combinations the page goes into an endless loop. 
 The demo page http://jakubroztocil.github.io/rrule/ can also be used for experiments.
+Additional to add a timerule, you can add a timerule to exclude time events, to add single time events and also to exclude single time events.
 
 ### Usage
 
@@ -301,6 +302,9 @@ Group CSS-Common / transform "scale(0.5)"
 
 ## Changelog
 
+
+### 0.6.1
+* remove beta tag from widgets * m,assive reengeneering of the react classes, add functions für exclusion rules, adding single time events and exclude single time events
 ### 0.6.0
 * Introduction of new functionality timeseries
 ### 0.5.2
