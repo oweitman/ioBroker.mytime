@@ -94,16 +94,30 @@ gulp.task("updateReadme", function (done) {
 });
 
 gulp.task("translate-react", async function (done) {
-
     let yandex;
-    const i = process.argv.indexOf("--yandex");
+    let delkeys=false;
+    let notrans=true;
+    let i;
+    //translate service is yandex
+    //but free translation service from yandex is stopped
+    i = process.argv.indexOf("--yandex");
     if (i > -1) {
         yandex = process.argv[i + 1];
     }
-
+    //in en non existent keys should be deleted in other files
+    i = process.argv.indexOf("--del");
+    if (i > -1) {
+        delkeys = true;
+    }
+    //translation service should be ommitted in case of quota overuse
+    i = process.argv.indexOf("--notrans");
+    if (i > -1) {
+        notrans = false;
+    }
 	if (fs.existsSync("./admin/src/i18n/en.json")) {
 		let enTranslations = require("./admin/src/i18n/en.json");
 		for (let l in languages) {
+            let delcount=0;
 			console.log("Translate Text: " + l);
 			let existing = {};
 			if (fs.existsSync("./admin/src/i18n/" + l + ".json")) {
@@ -111,9 +125,21 @@ gulp.task("translate-react", async function (done) {
 			}
 			for (let t in enTranslations) {
 				if (!existing[t]) {
-					existing[t] = await translate(enTranslations[t], l, yandex);
+					if (notrans) existing[t] = await translate(enTranslations[t], l, yandex);
 				}
 			}
+            //delete keys which in en not exists
+            for (let t in existing) {
+                if (!enTranslations[t]) {
+                    if (delkeys) {
+                        console.log("delete key " + t);
+                        delete existing[t];
+                    } else {
+                        delcount++;
+                    }
+                }
+            }
+            if (!delkeys) console.log("deletable keys: "+delcount);
 			fs.writeFileSync("./admin/src/i18n/" + l + ".json", JSON.stringify(existing, null, 4));
 		}
 	}

@@ -5,7 +5,7 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Box from "@material-ui/core/Box";
 import PropTypes from "prop-types";
-import I18n from "@iobroker/adapter-react/i18n";
+import I18n from "./../i18n";
 import CountdownSettings from "./countdown/countdownsettings";
 import TimeseriesSettings from "./timeseries/settings";
 
@@ -138,6 +138,9 @@ class Settings extends React.Component {
                 "background-color": "white",
             },
         })(Tab);
+        I18n.getUnused();
+        I18n.getNoTranslation();
+        console.log(process.env.NODE_ENV);
 
         return (
             <div>

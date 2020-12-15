@@ -6,7 +6,8 @@ import Snackbar from "@material-ui/core/Snackbar";
 import Alert from "@material-ui/lab/Alert";
 import Fab from "@material-ui/core/Fab";
 import AddIcon from "@material-ui/icons/Add";
-import I18n from "@iobroker/adapter-react/i18n";
+//import I18n from "@iobroker/adapter-react/i18n";
+import I18n from  "./../../i18n"; //xx
 import HtmlTooltip from "./HtmlTooltip";
 import PropTypes from "prop-types";
 

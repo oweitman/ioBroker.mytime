@@ -3,7 +3,8 @@ import { withStyles } from "@material-ui/core/styles";
 import Fab from "@material-ui/core/Fab";
 import SaveAltIcon from "@material-ui/icons/SaveAlt";
 import CancelIcon from "@material-ui/icons/Cancel";
-import I18n from "@iobroker/adapter-react/i18n";
+//import I18n from "@iobroker/adapter-react/i18n";
+import I18n from  "./../../i18n"; //xx
 import TSSettingsRruleList from "./settingsrrulelist";
 import TSSettingsAddRrule from "./settingsaddrrule";
 import TSSettingsAddDate from "./settingsadddate";

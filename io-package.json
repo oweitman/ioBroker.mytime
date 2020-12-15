@@ -4,10 +4,28 @@
         "version": "0.6.1",
         "news": {
             "0.6.1": {
-                "en": "* remove beta tag from widgets * m,assive reengeneering of the react classes, add functions für exclusion rules, adding single time events and exclude single time events"
+                "en": "* remove beta tag from widgets * m,assive reengeneering of the react classes, add functions für exclusion rules, adding single time events and exclude single time events",
+                "de": "* Beta-Tag aus Widgets entfernen * m, Neuerstellung der Reaktionsklassen aktivieren, Funktionen für Ausschlussregeln hinzufügen, Einzelzeitereignisse hinzufügen und Einzelzeitereignisse ausschließen",
+                "ru": "* удалить бета-тег из виджетов * m, провести реинжиниринг классов реакции, добавить функции для правил исключения, добавить одноразовые события и исключить одноразовые события",
+                "pt": "* remover tag beta dos widgets * m, reengenharia ativa das classes de reação, adicionar funções para regras de exclusão, adicionar eventos de tempo único e excluir eventos de tempo único",
+                "nl": "* verwijder bètatag van widgets * m, assive hergeneering van de reactklassen, functies voor uitsluitingsregels toevoegen, eenmalige evenementen toevoegen en eenmalige evenementen uitsluiten",
+                "fr": "* supprimer la balise bêta des widgets * m, réingénierie assive des classes de réaction, ajouter des fonctions pour les règles d'exclusion, ajouter des événements ponctuels et exclure les événements ponctuels",
+                "it": "* rimuove il tag beta dai widget * m, riprogettazione completa delle classi di reazione, aggiungi funzioni per le regole di esclusione, aggiungi eventi una volta ed escludi eventi una volta",
+                "es": "* eliminar la etiqueta beta de los widgets * m, regeneración asistida de las clases de reacción, agregar funciones para reglas de exclusión, agregar eventos de tiempo único y excluir eventos de tiempo único",
+                "pl": "* usuń tag beta z widżetów * m, asive reengeneering klas reagowania, dodaj funkcje dla reguł wykluczania, dodając zdarzenia jednorazowe i wykluczaj zdarzenia jednorazowe",
+                "zh-cn": "*从窗口小部件中删除beta标签* m，可重新生成React类，添加排除规则的功能，添加单次事件并排除单次事件"
             },
             "0.6.0": {
-                "en": "* Introduction of new functionality timeseries"
+                "en": "* Introduction of new functionality timeseries",
+                "de": "* Einführung neuer Funktionszeitreihen",
+                "ru": "* Внедрение новых функциональных таймсерий",
+                "pt": "* Introdução de novas séries de tempo de funcionalidade",
+                "nl": "* Introductie van nieuwe functionaliteitstijdreeksen",
+                "fr": "* Introduction de nouvelles séries temporelles de fonctionnalités",
+                "it": "* Introduzione di nuove funzionalità timeseries",
+                "es": "* Introducción de nuevas funciones de series temporales",
+                "pl": "* Wprowadzenie nowych timeeries funkcjonalności",
+                "zh-cn": "*新功能时间序列介绍"
             },
             "0.5.2": {
                 "en": "* fix an issue and introduce a new command save to save the configuration defined in datapoints to the iobroker configuration data",

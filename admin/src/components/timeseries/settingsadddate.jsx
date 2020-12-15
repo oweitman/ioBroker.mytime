@@ -3,7 +3,8 @@ import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import TSSettingsListDate from "./settingslistdate";
 import HtmlTooltip from "./HtmlTooltip";
-import I18n from "@iobroker/adapter-react/i18n";
+//import I18n from "@iobroker/adapter-react/i18n";
+import I18n from  "./../../i18n"; //xx
 import Fab from "@material-ui/core/Fab";
 import SaveAltIcon from "@material-ui/icons/SaveAlt";
 import CancelIcon from "@material-ui/icons/Cancel";
@@ -68,7 +69,7 @@ class TSSettingsAddDate extends React.Component {
             }
         };
         this.elements=[
-            {title:"rulemode",  attr:"rulemode",    type:"text",            tooltip: "", ref: null},
+            //{title:"rulemode",  attr:"rulemode",    type:"text",            tooltip: "", ref: null},
             {title:"name",      attr:"name",        type:"text",            tooltip: "Name of the rule. If empty a Number is used", ref: null },
             {title:"date",      attr:"datetoadd",   type:"datetime-local",  tooltip: "A date that you want to add to the List", ref: null  },
 
@@ -239,7 +240,7 @@ class TSSettingsAddDate extends React.Component {
                         ampm={false}
                         ref={el.ref}
                         margin="dense"
-                        label={I18n.t(el.title+" Date")}
+                        label={I18n.t(el.title)}
                         format="dd.MM.yyyy HH:mm:ss"
                         value={this.state[el.attr]}
                         onChange={(value) => this.handleChangeDate(el.attr,value)}

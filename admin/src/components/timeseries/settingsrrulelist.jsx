@@ -1,6 +1,7 @@
 import React from "react";
 import { withStyles } from "@material-ui/core/styles";
-import I18n from "@iobroker/adapter-react/i18n";
+//import I18n from "@iobroker/adapter-react/i18n";
+import I18n from  "./../../i18n"; //xx
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
@@ -52,7 +53,7 @@ class TSSettingsRruleList extends React.Component {
         return (
             <TableRow key={rrule.name}>
                 <TableCell classes={{root:classes.tablecell}}>{rrule.name}</TableCell>
-                <TableCell classes={{root:classes.tabletype}}>{rrule.rulemode}</TableCell>
+                <TableCell classes={{root:classes.tabletype}}>{I18n.t(rrule.rulemode)}</TableCell>
                 <TableCell classes={{root:classes.tableaction}}>
                     <Fab
                         onClick={(e) => this.props.moveUp(e,rrule)}
