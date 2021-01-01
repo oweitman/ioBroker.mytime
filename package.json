@@ -28,7 +28,7 @@
     "rrule": "^2.6.4"
   },
   "devDependencies": {
-    "@babel/cli": "^7.12.8",
+    "@babel/cli": "^7.12.10",
     "@babel/core": "^7.12.9",
     "@iobroker/adapter-react": "^1.4.10",
     "@iobroker/testing": "^2.3.0",
