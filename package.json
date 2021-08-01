@@ -23,7 +23,7 @@
     "@date-io/date-fns": "^2.10.8",
     "@iobroker/adapter-core": "^2.4.0",
     "@material-ui/pickers": "^3.3.10",
-    "date-fns": "^2.21.2",
+    "date-fns": "^2.23.0",
     "prop-types": "^15.7.2",
     "rrule": "^2.6.8"
   },
