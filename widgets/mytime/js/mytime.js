@@ -834,7 +834,6 @@ vis.binds['mytime'] = {
             text += '   align-items: stretch; \n';
             text += '} \n';
             text += '#'+widgetID + ' .wc__row__letter {\n';
-            text += '   border: 1px solid black; \n';
             text += '   width: 1em; \n';
             text += '   text-align:center; \n';
             text += '   color:'+letterDeactivated+'; \n';
