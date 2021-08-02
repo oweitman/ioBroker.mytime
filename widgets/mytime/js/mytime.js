@@ -744,6 +744,7 @@ vis.binds['mytime'] = {
             "german":   "DE",
             "swiss":    "CH_BERN",
             "swabian":  "DE_SWG",
+            "italiano": "IT",
             "dutch":    "NL"
         },
         createWidget: function (widgetID, view, data, style) {
@@ -757,6 +758,7 @@ vis.binds['mytime'] = {
             var language = data.language || "english";
             var letterActivated = data.letterActivated || '#fff';
             var letterDeactivated = data.letterDeactivated || '#333';
+            var wordclockMargin = data.wordclockMargin || 0;
             var withMinutes = data.withMinutes || false;
             var withSeconds = data.withSeconds || false;
             var minuteSize = data.minuteSize || 5;
@@ -824,6 +826,7 @@ vis.binds['mytime'] = {
             text += '#'+widgetID + ' .wc__wordclock {\n';
             text += '   display: flex; \n';
             text += '   flex-direction: column; \n';
+            text += '   margin: '+wordclockMargin+'px; \n';
             text += '} \n';
             text += '#'+widgetID + ' .wc__row {\n';
             text += '   display: flex; \n';
