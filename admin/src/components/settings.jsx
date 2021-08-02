@@ -138,9 +138,9 @@ class Settings extends React.Component {
                 "background-color": "white",
             },
         })(Tab);
-        I18n.getUnused();
-        I18n.getNoTranslation();
-        console.log(process.env.NODE_ENV);
+        //I18n.getUnused();
+        //I18n.getNoTranslation();
+        //console.log(process.env.NODE_ENV);
 
         return (
             <div>
