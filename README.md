@@ -280,6 +280,8 @@ Some different languages for the wordclock are available
 Color for the highlighted words
 ###### letterDeactivated
 Color for the normal letters
+###### wordclockMargin
+Margin between the wordclock and the LEDs
 ###### withMinutes
 Show the Minute-LEDs in the Corner of the wordclock
 ###### minuteSize
@@ -292,9 +294,6 @@ Show the Seconds-LEDs of the wordclock
 Size in Pixels of the Seconds LEDs
 ###### secondColor
 color of the Seconds LED
-
-
-
 
 ##### Tips
 If you want to adjust the size of the countdown nixieclock, under css settings in vis you can enter for half size:
@@ -331,6 +330,8 @@ Group CSS-Common / transform "scale(0.5)"
 ## Changelog
 
 
+### 0.7.1
+* add margin property for wordclock * add italiano and francais for wordclock * wordclock remove border
 ### 0.7.0
 * New widget wordclock
 ### 0.6.1

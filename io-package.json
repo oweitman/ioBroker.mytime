@@ -1,8 +1,11 @@
 {
     "common": {
         "name": "mytime",
-        "version": "0.7.0",
+        "version": "0.7.1",
         "news": {
+            "0.7.1": {
+                "en": "* add margin property for wordclock * add italiano and francais for wordclock * wordclock remove border"
+            },
             "0.7.0": {
                 "en": "* New wordclock widget"
             },
