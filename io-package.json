@@ -1,8 +1,11 @@
 {
     "common": {
         "name": "mytime",
-        "version": "0.6.1",
+        "version": "0.7.0",
         "news": {
+            "0.7.0": {
+                "en": "* New wordclock widget"
+            },
             "0.6.1": {
                 "en": "* remove beta tag from widgets * m,assive reengeneering of the react classes, add functions für exclusion rules, adding single time events and exclude single time events",
                 "de": "* Beta-Tag aus Widgets entfernen * m, Neuerstellung der Reaktionsklassen aktivieren, Funktionen für Ausschlussregeln hinzufügen, Einzelzeitereignisse hinzufügen und Einzelzeitereignisse ausschließen",
@@ -266,7 +269,7 @@
             "link": "",
             "fa-icon": "info"
         },
-        "supportCustoms": true,
+        "supportCustoms": false,
         "dependencies": [
             {
                 "js-controller": ">=2.0.0"
