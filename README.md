@@ -330,6 +330,8 @@ Group CSS-Common / transform "scale(0.5)"
 ## Changelog
 
 
+### 0.7.2
+* * add russian and espaniol for wordclock
 ### 0.7.1
 * add margin property for wordclock * add italiano and francais for wordclock * wordclock remove border
 ### 0.7.0
