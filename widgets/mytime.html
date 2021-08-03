@@ -20,6 +20,7 @@
 <script type="text/javascript" src="widgets/mytime/js/wc_langPack_IT.js"></script>
 <script type="text/javascript" src="widgets/mytime/js/wc_langPack_FR.js"></script>
 <script type="text/javascript" src="widgets/mytime/js/wc_langPack_RU.js"></script>
+<script type="text/javascript" src="widgets/mytime/js/wc_langPack_ES.js"></script>
 
 <!-- the full description of format in data-vis-attrs can be found here:
     https://github.com/ioBroker/ioBroker.vis/blob/master/www/js/visEditInspect.js#L39
@@ -167,7 +168,7 @@
         type="text/ejs"
         class="vis-tpl"
 		data-vis-prev='<img style="display: block;margin-left: auto;margin-right: auto;width: 50%;" src="widgets/mytime/img/wordclock.png"></img>'
-        data-vis-attrs="language[english]/nselect,english,german,swiss,swabian,dutch,italiano,francais,russian;letterActivated/color;letterDeactivated/color;wordclockMargin/number;withMinutes/checkbox;minuteSize[5]/number;minuteColor/color;withSeconds/checkbox;secondSize[5]/number;secondColor/color;"
+        data-vis-attrs="language[english]/nselect,english,german,swiss,swabian,dutch,italiano,espaniol,francais,russian;letterActivated/color;letterDeactivated/color;wordclockMargin/number;withMinutes/checkbox;minuteSize[5]/number;minuteColor/color;withSeconds/checkbox;secondSize[5]/number;secondColor/color;"
         data-vis-set="mytime"
         data-vis-type="val"
         data-vis-beta="false"
@@ -177,3 +178,4 @@
         vis.binds['mytime'].wordclock.createWidget(this.data.wid, this.view, this.data, this.style);
     %></div>
 </script>
+ 
