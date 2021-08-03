@@ -43,37 +43,37 @@ vis.binds['mytime'].wordclock.addLanguage({
       (settings.round ? Math.round(m / 5) * 5 : Math.floor(m / 5) * 5) % 60
     ) {
       case 5:
-        ret += hourNames[h+1] + 'Y CINCO ';
+        ret += hourNames[h] + 'Y CINCO ';
         break;
       case 10:
-        ret += hourNames[h+1] + 'Y DIEZ ';
+        ret += hourNames[h] + 'Y DIEZ ';
         break;
       case 15:
-        ret += hourNames[h+1] + 'Y CUARTO ';
+        ret += hourNames[h] + 'Y CUARTO ';
         break;
       case 20:
-        ret += hourNames[h+1] + 'Y VEINTE ';
+        ret += hourNames[h] + 'Y VEINTE ';
         break;
       case 25:
-        ret += hourNames[h+1] + 'Y VEINTICINCO ';
+        ret += hourNames[h] + 'Y VEINTICINCO ';
         break;
       case 30:
-        ret += hourNames[h+1] + 'Y MEDIA ';
+        ret += hourNames[h] + 'Y MEDIA ';
         break;
       case 35:
-        ret += hourNames[h+1] + 'MENOS VEINTICINCO ';
+        ret += hourNames[h] + 'MENOS VEINTICINCO ';
         break;
       case 40:
-        ret += hourNames[h+1] + 'MENOS VEINTE ';
+        ret += hourNames[h] + 'MENOS VEINTE ';
         break;
       case 45:
-        ret += hourNames[h+1] + 'MENOS CUARTO ';
+        ret += hourNames[h] + 'MENOS CUARTO ';
         break;
       case 50:
-        ret += hourNames[h+1] + 'MENOS DIEZ ';
+        ret += hourNames[h] + 'MENOS DIEZ ';
         break;
       case 55:
-        ret += hourNames[h+1] + 'MENOS DIEZ ';
+        ret += hourNames[h] + 'MENOS DIEZ ';
         break;
     }
     return ret;
