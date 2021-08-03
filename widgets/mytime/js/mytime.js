@@ -745,6 +745,7 @@ vis.binds['mytime'] = {
             "swiss":    "CH_BERN",
             "swabian":  "DE_SWG",
             "italiano": "IT",
+            "russian":  "RU",
             "francais": "fr-CA",
             "dutch":    "NL"
         },
