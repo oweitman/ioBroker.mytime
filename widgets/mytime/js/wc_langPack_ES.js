@@ -25,6 +25,7 @@ vis.binds['mytime'].wordclock.addLanguage({
     var ret = '';
     h %= 12;
     var hourNames = [
+      'SON LAS DOCE ',
       'ES LA UNA ',
       'SON LAS DOS  ',
       'SON LAS TRES ',
@@ -35,12 +36,14 @@ vis.binds['mytime'].wordclock.addLanguage({
       'SON LAS OCHO ',
       'SON LAS NUEVE ',
       'SON LAS DIEZ ',
-      'SON LAS ONCE ',
-      'SON LAS DOCE '
+      'SON LAS ONCE '
     ];
     switch (
       (settings.round ? Math.round(m / 5) * 5 : Math.floor(m / 5) * 5) % 60
     ) {
+      case 0:
+        ret += hourNames[h];
+        break;
       case 5:
         ret += hourNames[h] + 'Y CINCO ';
         break;
