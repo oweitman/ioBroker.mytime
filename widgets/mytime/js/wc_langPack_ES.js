@@ -24,9 +24,7 @@ vis.binds['mytime'].wordclock.addLanguage({
   timeString: function(h, m, settings = { round: false }) {
     var ret = '';
     h %= 12;
-    if (h == 0) h = 12;
     var hourNames = [
-      'SON LAS DOCE ',
       'ES LA UNA ',
       'SON LAS DOS  ',
       'SON LAS TRES ',
@@ -37,7 +35,8 @@ vis.binds['mytime'].wordclock.addLanguage({
       'SON LAS OCHO ',
       'SON LAS NUEVE ',
       'SON LAS DIEZ ',
-      'SON LAS ONCE '
+      'SON LAS ONCE ',
+      'SON LAS DOCE '
     ];
     switch (
       (settings.round ? Math.round(m / 5) * 5 : Math.floor(m / 5) * 5) % 60
