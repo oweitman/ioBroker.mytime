@@ -1,8 +1,11 @@
 {
     "common": {
         "name": "mytime",
-        "version": "0.7.4",
+        "version": "0.7.5",
         "news": {
+            "0.7.5": {
+                "en": "* Remove comments in io-package"
+            },
             "0.7.4": {
                 "en": "* fix spanish language pack"
             },
@@ -77,174 +80,6 @@
                 "es": "* Introducción de nuevas funciones de series temporales",
                 "pl": "* Wprowadzenie nowych timeeries funkcjonalności",
                 "zh-cn": "*新功能时间序列介绍"
-            },
-            "0.5.2": {
-                "en": "* fix an issue and introduce a new command save to save the configuration defined in datapoints to the iobroker configuration data",
-                "de": "* Beheben eines Problems und Einführung eines neuen Befehls zum Speichern, um die in Datenpunkten definierte Konfiguration in den iobroker-Konfigurationsdaten zu speichern",
-                "ru": "* исправить проблему и ввести новую команду save для сохранения конфигурации, определенной в точках данных, в данные конфигурации iobroker",
-                "pt": "* corrigir um problema e introduzir um novo comando save para salvar a configuração definida em pontos de dados para os dados de configuração do iobroker",
-                "nl": "* los een probleem op en introduceer een nieuw commando save om de configuratie gedefinieerd in datapunten op te slaan in de iobroker configuratiegegevens",
-                "fr": "* résoudre un problème et introduire une nouvelle commande save pour enregistrer la configuration définie dans les points de données dans les données de configuration iobroker",
-                "it": "* risolve un problema e introduce un nuovo comando save per salvare la configurazione definita nei datapoint nei dati di configurazione di iobroker",
-                "es": "* solucionar un problema e introducir un nuevo comando guardar para guardar la configuración definida en los puntos de datos en los datos de configuración de iobroker",
-                "pl": "* napraw problem i wprowadź nową komendę save, aby zapisać konfigurację zdefiniowaną w punktach danych do danych konfiguracyjnych iobroker",
-                "zh-cn": "*解决问题并引入新的命令保存以将数据点中定义的配置保存到iobroker配置数据"
-            },
-            "0.5.1": {
-                "en": "* Migration of old counters",
-                "de": "* Migration alter Zähler",
-                "ru": "* Миграция старых счетчиков",
-                "pt": "* Migração de contadores antigos",
-                "nl": "* Migratie van oude loketten",
-                "fr": "* Migration d'anciens compteurs",
-                "it": "* Migrazione di vecchi contatori",
-                "es": "* Migración de contadores antiguos",
-                "pl": "* Migracja starych liczników",
-                "zh-cn": "*迁移旧柜台"
-            },
-            "0.5.0": {
-                "en": "* Change settings dialog to react",
-                "de": "* Anpassen des Einstellungsdialogs auf REACT",
-                "ru": "* Изменить диалог настроек, чтобы реагировать",
-                "pt": "* Altere a caixa de diálogo de configurações para reagir",
-                "nl": "* Verander instellingen dialoogvenster om te reageren",
-                "fr": "* Modifier la boîte de dialogue des paramètres pour réagir",
-                "it": "* Modifica la finestra di dialogo delle impostazioni per reagire",
-                "es": "* Cambiar el diálogo de configuración para reaccionar",
-                "pl": "* Zmień okno dialogowe ustawień, aby zareagować",
-                "zh-cn": "*更改设置对话框做出反应"
-            },
-            "0.4.2": {
-                "en": "* performance optimization. mytime now checks the data from internal and did not read the data allways from datapoints | update dependencies",
-                "de": "* Leistungsoptimierung. ",
-                "ru": "* оптимизация производительности. ",
-                "pt": "* Otimização de performance. ",
-                "nl": "* prestatie-optimalisatie. ",
-                "fr": "* optimisation des performances. ",
-                "it": "* ottimizzazione delle prestazioni. ",
-                "es": "* optimización del rendimiento. ",
-                "pl": "* optymalizacja wydajności. ",
-                "zh-cn": "*性能优化。 "
-            },
-            "0.4.1": {
-                "en": "* widget cd flipclock: remove dot labels /* improve css settings of the widget countdown nixieclock00",
-                "de": "* Widget-CD-Flipclock: Punktbeschriftungen entfernen / * CSS-Einstellungen des Widget-Countdowns verbessern nixieclock00",
-                "ru": "* widget cd flipclock: удалить точечные метки / * улучшить настройки css обратного отсчета виджета nixieclock00",
-                "pt": "* widget cd flipclock: remove marcadores de pontos / * melhora as configurações de css da contagem regressiva do widget nixieclock00",
-                "nl": "* widget cd flipclock: verwijder puntlabels / * verbeter css instellingen van de widget countdown nixieclock00",
-                "fr": "* widget cd flipclock: supprimer les étiquettes de points / * améliorer les paramètres css du compte à rebours du widget nixieclock00",
-                "it": "* widget cd flipclock: rimuove le etichette dei punti / * migliora le impostazioni css del conto alla rovescia del widget nixieclock00",
-                "es": "* widget cd flipclock: eliminar etiquetas de puntos / * mejorar la configuración css del widget cuenta atrás nixieclock00",
-                "pl": "* widget cd flipclock: usuń etykiety kropek / * popraw ustawienia css odliczania widżetu nixieclock00",
-                "zh-cn": "*小部件cd翻转时钟：删除点标签/ *改善小部件倒计时的css设置nixieclock00"
-            },
-            "0.4.0": {
-                "en": "* New widget Nixie countdown",
-                "de": "* Neuer Widget Nixie Countdown",
-                "ru": "* Новый виджет обратного отсчета Nixie",
-                "pt": "* Nova contagem regressiva do widget Nixie",
-                "nl": "* Nieuwe widget Nixie aftellen",
-                "fr": "* Nouveau widget Nixie compte à rebours",
-                "it": "* Nuovo widget conto alla rovescia Nixie",
-                "es": "* Nuevo widget de cuenta atrás de Nixie",
-                "pl": "* Nowy widżet odliczający Nixie",
-                "zh-cn": "*新的小部件Nixie倒计时"
-            },
-            "0.3.1": {
-                "en": "* remove mytime tile in iobroker overview / * set initial visual countdown value to 0 / * prefix css classes, due css artefacts from other adapters (eg kodi and css class stop)",
-                "de": "* mytime-Kachel in der iobroker-Übersicht entfernen / * anfänglichen visuellen Countdown-Wert auf 0 setzen / * Präfix-CSS-Klassen aufgrund von CSS-Artefakten anderer Adapter (z. B. Kodi und CSS-Klassenstopp)",
-                "ru": "* удалить плитку mytime в обзоре iobroker / * установить начальное значение визуального обратного отсчета на 0 / * префикс классов css, из-за артефактов css от других адаптеров (например, kodi и css class stop)",
-                "pt": "* remover o bloco mytime na visão geral do iobroker / * definir o valor inicial da contagem regressiva visual para 0 / * prefixo classes css, devido a artefatos css de outros adaptadores (por exemplo, kodi e parada de classe css)",
-                "nl": "* verwijder mytime-tegel in iobroker-overzicht / * stel de initiële visuele aftelwaarde in op 0 / * prefix css-klassen, vanwege css-artefacten van andere adapters (bijv. kodi en css class stop)",
-                "fr": "* supprimer la vignette mytime dans l'aperçu d'iobroker / * définir la valeur initiale du compte à rebours visuel sur 0 / * préfixer les classes css, en raison des artefacts css d'autres adaptateurs (par exemple, kodi et arrêt de classe css)",
-                "it": "* rimuovi il riquadro mytime nella panoramica di iobroker / * imposta il valore del conto alla rovescia visivo iniziale su 0 / * prefisso classi css, a causa di artefatti css da altri adattatori (ad es. kodi e interruzione della classe css)",
-                "es": "* eliminar el mosaico de mytime en la descripción general de iobroker / * establecer el valor de la cuenta regresiva visual inicial en 0 / * prefijar clases css, debido a artefactos css de otros adaptadores (por ejemplo, parada de clase kodi y css)",
-                "pl": "* usuń kafelek mytime w przeglądzie iobroker / * ustaw początkową wizualną wartość odliczania na 0 / * prefiks klas css, z powodu artefaktów css z innych adapterów (np. kodi i css zatrzymanie klasy)",
-                "zh-cn": "*在iobroker概述中删除mytime tile / *将初始视觉倒计时值设置为0 / *由于其他适配器（例如kodi和css类停止）的css伪像，将css类作为前缀"
-            },
-            "0.3.0": {
-                "en": "* new command to set only target time without date * countdown circle widget now with option to disable countdown text * timers are now groupable in subdirectories. you can now enter dots (.) as a groupseperater in the name of a timer",
-                "de": "* Neuer Befehl zum Festlegen nur der Zielzeit ohne Datum * Countdown-Kreis-Widget jetzt mit Option zum Deaktivieren des Countdown-Textes * Timer können jetzt in Unterverzeichnissen gruppiert werden. ",
-                "ru": "* новая команда для установки только целевого времени без даты * круговой виджет обратного отсчета теперь с возможностью отключения текста обратного отсчета * таймеры теперь группируются в подкаталогах. ",
-                "pt": "* Novo comando para definir apenas o tempo alvo sem data * widget de círculo de contagem regressiva agora com opção para desativar o texto de contagem regressiva * Os cronômetros agora são agrupáveis ​​em subdiretórios. ",
-                "nl": "* nieuw commando om alleen de doeltijd in te stellen zonder datum * countdown cirkel-widget nu met optie om afteltekst uit te schakelen * timers zijn nu groepeerbaar in submappen. ",
-                "fr": "* nouvelle commande pour définir uniquement l'heure cible sans date * widget de cercle de compte à rebours maintenant avec option pour désactiver le texte du compte à rebours * les minuteries sont désormais regroupables dans des sous-répertoires. ",
-                "it": "* nuovo comando per impostare solo il tempo di destinazione senza data * widget cerchio per il conto alla rovescia ora con opzione per disabilitare il testo del conto alla rovescia * i timer sono ora raggruppabili in sottodirectory. ",
-                "es": "* nuevo comando para establecer solo el tiempo objetivo sin fecha * widget de círculo de cuenta regresiva ahora con opción para deshabilitar el texto de cuenta regresiva * los temporizadores ahora se pueden agrupar en subdirectorios. ",
-                "pl": "* nowe polecenie ustawiania tylko czasu docelowego bez daty * widżet koła odliczania teraz z opcją wyłączenia tekstu odliczania * zegary można teraz grupować w podkatalogach. ",
-                "zh-cn": "*新命令仅设置没有日期的目标时间*倒数圈子小部件现在带有禁用倒数文本的选项*计时器现在可在子目录中分组。"
-            },
-            "0.2.1": {
-                "en": "* fix timer display in configuration dialog / * fix default template of countdown plain / * add icons for countdonw plain and countdown circle widgets  / * fix startangle calculation for countdown circle if time values are 0 / * remove timer intervals in editmode due to interfer with the configuration dialog and didnt save the ne values",
-                "de": "* Timer-Anzeige im Konfigurationsdialog korrigieren / * Standardvorlage für Countdown-Ebene korrigieren / * Symbole für Countdonw-Ebene und Countdown-Kreis-Widgets hinzufügen / * Startangle-Berechnung für Countdown-Kreis korrigieren, wenn die Zeitwerte 0 sind / * Timer-Intervalle im Bearbeitungsmodus aufgrund von Interferenzen entfernen ",
-                "ru": "* исправлено отображение таймера в диалоговом окне конфигурации / * исправлен шаблон по умолчанию для равнины обратного отсчета / * добавлены значки для виджетов равнины обратного отсчета и круга обратного отсчета / * исправлен расчет начального угла для круга обратного отсчета, если значения времени равны 0 / * удаление интервалов таймера в режиме редактирования из-за вмешательства в ",
-                "pt": "* corrigir exibição do cronômetro na caixa de diálogo de configuração / * corrigir modelo padrão de contagem regressiva simples / * adicionar ícones para widgets de contagem regressiva e de contagem regressiva / * corrigir cálculo de startangle para círculo de contagem regressiva se os valores de tempo forem 0 / * remover intervalos de cronômetro no modo de edição devido a interferir com ",
-                "nl": "* fix timerdisplay in configuratiedialoog / * fix standaardsjabloon van countdown plain / * voeg pictogrammen toe voor countdonw plain en countdown circle widgets / * fix starthoekberekening voor countdown cirkel als tijdwaarden 0 zijn / * verwijder timerintervallen in bewerkingsmodus vanwege interferentie ",
-                "fr": "* correction de l'affichage de la minuterie dans la boîte de dialogue de configuration / * correction du modèle par défaut du compte à rebours / * ajout d'icônes pour les widgets countdonw plain et countdown circle / * correction du calcul de l'angle de départ pour le cercle du compte à rebours si les valeurs de temps sont 0 / * suppression des intervalles de minuterie en mode d'édition en raison d'interférences avec ",
-                "it": "* correzione della visualizzazione del timer nella finestra di configurazione / * correzione del modello predefinito del conto alla rovescia normale / * aggiunta di icone per i widget del conto alla rovescia semplice e del cerchio del conto alla rovescia / * correzione del calcolo dello startangle per il cerchio del conto alla rovescia se i valori del tempo sono 0 / * rimuove gli intervalli del timer in modalità di modifica a causa dell'interferenza con ",
-                "es": "* corregir la visualización del temporizador en el cuadro de diálogo de configuración / * corregir la plantilla predeterminada de la cuenta regresiva simple / * agregar iconos para los widgets de cuenta regresiva simple y de círculo de cuenta regresiva / * corregir el cálculo del ángulo de inicio para el círculo de cuenta regresiva si los valores de tiempo son 0 / * eliminar los intervalos del temporizador en el modo de edición debido a interferencias ",
-                "pl": "* naprawiono wyświetlanie licznika czasu w oknie konfiguracji / * naprawiono domyślny szablon zwykłego odliczania / * dodano ikony dla widżetów z licznikiem zwykłym i kółkiem odliczania / * naprawiono obliczanie kąta początku dla koła odliczania, jeśli wartości czasu wynoszą 0 / * usunąć odstępy czasowe w trybie edycji z powodu zakłóceń ",
-                "zh-cn": "*修复计时器在配置对话框中的显示/ *修复倒计时普通模板的默认模板/ *为countdonw平原和倒计时圆圈小部件添加图标/ *如果时间值为0则修复倒计时圆圈的startangle计算/ *由于干扰而删除了editmode中的计时器间隔"
-            },
-            "0.2.0": {
-                "en": "extend the countdown circle with more rings for days, hours and minutes",
-                "de": "Erweitern Sie den Countdown-Kreis für Tage, Stunden und Minuten um weitere Ringe",
-                "ru": "увеличьте круг обратного отсчета, добавив больше колец на дни, часы и минуты",
-                "pt": "estenda o círculo de contagem regressiva com mais anéis para dias, horas e minutos",
-                "nl": "breid de aftellende cirkel uit met meer ringen voor dagen, uren en minuten",
-                "fr": "prolongez le cercle du compte à rebours avec plus de sonneries pendant des jours, des heures et des minutes",
-                "it": "estendere il cerchio del conto alla rovescia con più squilli per giorni, ore e minuti",
-                "es": "extender el círculo de cuenta regresiva con más anillos durante días, horas y minutos",
-                "pl": "wydłuż okrąg odliczania o więcej dzwonków na dni, godziny i minuty",
-                "zh-cn": "延长倒计时圈数天，小时和分钟"
-            },
-            "0.1.2": {
-                "en": "Setting for growing or shrinking the ring/circle / Setting for the ends of the ring/circle: round or straight / Extend special char filtering with umlauts / Fix state request issue in widget countdown circle",
-                "de": "Einstellung zum Vergrößern oder Verkleinern des Rings / Kreises / Einstellung für die Enden des Rings / Kreises: rund oder gerade / Erweitern Sie die Sonderzeichenfilterung mit Umlauten / Beheben Sie das Problem der Statusanforderung im Widget-Countdown-Kreis",
-                "ru": "Настройка для увеличения или уменьшения кольца / круга / Настройка для концов кольца / круга: круглые или прямые / Расширение специальной фильтрации символов с помощью умлаутов / Исправление проблемы запроса состояния в круге обратного отсчета виджета",
-                "pt": "Configuração para aumentar ou diminuir o anel / círculo / Configuração para as extremidades do anel / círculo: redondo ou reto / Estender a filtragem especial de caracteres com tremas / Corrigir problema de solicitação de estado no círculo de contagem regressiva do widget",
-                "nl": "Instelling voor het laten groeien of krimpen van de ring / cirkel / Instelling voor de uiteinden van de ring / cirkel: rond of recht / Speciale char-filtering uitbreiden met umlauts / Statusverzoekprobleem in widget aftellingscirkel oplossen",
-                "fr": "Réglage pour agrandir ou rétrécir l'anneau / cercle / Réglage pour les extrémités de l'anneau / cercle: rond ou droit / Étendre le filtrage de caractères spéciaux avec des trémas / Correction du problème de demande d'état dans le cercle du compte à rebours du widget",
-                "it": "Impostazione per aumentare o ridurre l'anello / cerchio / Impostazione per le estremità dell'anello / cerchio: rotondo o dritto / Estendi il filtro dei caratteri speciali con dieresi / Risolvi il problema della richiesta di stato nel cerchio del conto alla rovescia del widget",
-                "es": "Configuración para hacer crecer o encoger el anillo / círculo / Configuración para los extremos del anillo / círculo: redondo o recto / Extender el filtrado de caracteres especiales con diéresis / Solucionar problema de solicitud de estado en el círculo de cuenta regresiva del widget",
-                "pl": "Ustawienie zwiększania lub zmniejszania pierścienia / koła / Ustawienia końcówek pierścienia / koła: okrągłe lub proste / Rozszerz specjalne filtrowanie znaków za pomocą umlautów / Napraw problem z żądaniem stanu w kółku odliczania widżetów",
-                "zh-cn": "设置用于增大或缩小环形/圆形/环形/圆形末端的设置：圆形或直形/扩展带有变音符号的特殊字符过滤/修复小部件倒数圆圈中的状态请求问题"
-            },
-            "0.1.1": {
-                "en": "Add a countdown name datapoint",
-                "de": "Fügen Sie einen Datenpunkt für den Countdown-Namen hinzu",
-                "ru": "Добавить дату обратного отсчета",
-                "pt": "Adicionar um ponto de dados de nome de contagem regressiva",
-                "nl": "Voeg een datapunt van de aftellende naam toe",
-                "fr": "Ajouter un point de données de nom de compte à rebours",
-                "it": "Aggiungi un punto dati del nome del conto alla rovescia",
-                "es": "Agregar un punto de datos de nombre de cuenta regresiva",
-                "pl": "Dodaj punkt danych z nazwą odliczania",
-                "zh-cn": "添加倒计时名称数据点"
-            },
-            "0.1.0": {
-                "en": "Forum release",
-                "de": "Forum Release",
-                "ru": "Релиз форума",
-                "pt": "Lançamento do fórum",
-                "nl": "Forum vrijgave",
-                "fr": "Publication du forum",
-                "it": "Rilascio del forum",
-                "es": "Lanzamiento del foro",
-                "pl": "Wydanie forum",
-                "zh-cn": "论坛发布"
-            },
-            "0.0.1": {
-                "en": "initial release",
-                "de": "Erstveröffentlichung",
-                "ru": "Начальная версия",
-                "pt": "lançamento inicial",
-                "nl": "Eerste uitgave",
-                "fr": "Première version",
-                "it": "Versione iniziale",
-                "es": "Versión inicial",
-                "pl": "Pierwsze wydanie",
-                "zh-cn": "初始发行"
             }
         },
         "title": "MyTime",
