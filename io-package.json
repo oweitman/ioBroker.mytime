@@ -1,16 +1,55 @@
 {
     "common": {
         "name": "mytime",
-        "version": "0.7.2",
+        "version": "0.7.3",
         "news": {
+            "0.7.3": {
+                "en": "* add turkish language for wordclock",
+                "de": "* Türkische Sprache für Wordclock hinzufügen",
+                "ru": "* добавить турецкий язык для Wordclock",
+                "pt": "* adicionar idioma turco para o wordclock",
+                "nl": "* Turkse taal toevoegen voor wordclock",
+                "fr": "* ajouter la langue turque pour wordclock",
+                "it": "* aggiungi la lingua turca per wordclock",
+                "es": "* agregar idioma turco para wordclock",
+                "pl": "* dodaj język turecki do zegara",
+                "zh-cn": "*为wordclock添加土耳其语"
+            },
             "0.7.2": {
-                "en": "* add russian and espaniol for wordclock"
+                "en": "* add russian and espaniol language for wordclock",
+                "de": "* Russisch und Spanisch für Wordclock hinzufügen",
+                "ru": "* добавить русский и испанский язык для Wordclock",
+                "pt": "* adicione os idiomas russo e espaniol para o wordclock",
+                "nl": "* voeg russische en espaniol-taal toe voor wordclock",
+                "fr": "* ajouter la langue russe et espagnole pour wordclock",
+                "it": "* aggiungi la lingua russa e spagnola per wordclock",
+                "es": "* agregar idioma ruso y espaniol para wordclock",
+                "pl": "* dodaj język rosyjski i espaniol do zegara",
+                "zh-cn": "* 为 wordclock 添加俄语和西班牙语"
             },
             "0.7.1": {
-                "en": "* add margin property for wordclock * add italiano and francais for wordclock * wordclock remove border"
+                "en": "* add margin property for wordclock * add italiano and francais for wordclock * wordclock remove border",
+                "de": "* Margin-Eigenschaft für Wordclock hinzufügen * Italiano und Francais für Wordclock hinzufügen * Wordclock Rand entfernen",
+                "ru": "* добавить свойство поля для wordclock * добавить итальянский и французский для wordclock * wordclock удалить границу",
+                "pt": "* adicionar propriedade de margem para wordclock * adicionar italiano e francais para wordclock * wordclock remover borda",
+                "nl": "* voeg een marge-eigenschap toe voor wordclock * voeg italiano en francais toe voor wordclock * wordclock verwijdert rand",
+                "fr": "* ajouter la propriété margin pour wordclock * ajouter italiano et francais pour wordclock * wordclock supprimer la bordure",
+                "it": "* aggiungi proprietà margin per wordclock * aggiungi italiano e francais per wordclock * wordclock rimuovi bordo",
+                "es": "* agregar propiedad de margen para wordclock * agregar italiano y francais para wordclock * wordclock eliminar borde",
+                "pl": "* dodaj właściwość margin dla wordclocka * dodaj italiano i francais dla wordclocka * wordclock usuń obramowanie",
+                "zh-cn": "* 为 wordclock 添加边距属性 *为 wordclock 添加 italiano 和 francais * wordclock 删除边框"
             },
             "0.7.0": {
-                "en": "* New wordclock widget"
+                "en": "* New wordclock widget",
+                "de": "* Neues Wordclock-Widget",
+                "ru": "* Новый виджет Wordclock",
+                "pt": "* Novo widget de wordclock",
+                "nl": "* Nieuwe wordclock-widget",
+                "fr": "* Nouveau widget wordclock",
+                "it": "* Nuovo widget wordclock",
+                "es": "* Nuevo widget de reloj de palabras",
+                "pl": "* Nowy widżet zegara",
+                "zh-cn": "* 新的字时钟小部件"
             },
             "0.6.1": {
                 "en": "* remove beta tag from widgets * m,assive reengeneering of the react classes, add functions für exclusion rules, adding single time events and exclude single time events",
