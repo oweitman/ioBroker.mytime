@@ -1,8 +1,11 @@
 {
     "common": {
         "name": "mytime",
-        "version": "0.7.3",
+        "version": "0.7.4",
         "news": {
+            "0.7.4": {
+                "en": "* fix spanish language pack"
+            },
             "0.7.3": {
                 "en": "* add turkish language for wordclock",
                 "de": "* Türkische Sprache für Wordclock hinzufügen",
