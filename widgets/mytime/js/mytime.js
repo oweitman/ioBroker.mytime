@@ -744,10 +744,11 @@ vis.binds['mytime'] = {
             "german":   "DE",
             "swiss":    "CH_BERN",
             "swabian":  "DE_SWG",
-            "italiano": "IT",
-            "espaniol": "ES",
+            "italian":  "IT",
+            "spanisch": "ES",
             "russian":  "RU",
-            "francais": "fr-CA",
+            "french":   "fr-CA",
+            "turkish":  "TR",
             "dutch":    "NL"
         },
         createWidget: function (widgetID, view, data, style) {
@@ -935,7 +936,7 @@ vis.binds['mytime'] = {
                 $letters.slice(start,start+timewords[j].length).addClass('wc__row__letter_active');
             }
             var $minutes = $frame.find(".wc__minute");
-            if (min_rest==0) $minutes.removeClass("wc__minute_active");
+            $minutes.removeClass("wc__minute_active");
             if (min_rest==1) {
                 $minutes.eq(0).addClass("wc__minute_active");
             }
