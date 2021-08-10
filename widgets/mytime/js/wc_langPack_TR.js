@@ -24,7 +24,7 @@ vis.binds['mytime'].wordclock.addLanguage({
   timeString: function(h, m, settings = { round: false }) {
     var ret = 'SAAT ';
     h %= 12;
-    if (h == 0) h = 12;
+    //if (h == 0) h = 12;
     var hourNames1 = [
       'ON İKİ ',
       'BİR ',

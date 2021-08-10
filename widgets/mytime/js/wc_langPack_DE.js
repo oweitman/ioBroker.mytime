@@ -25,57 +25,57 @@ vis.binds['mytime'].wordclock.addLanguage({
     h %= 12;
     if (h == 0) h = 12;
     var hourNames = [
-      'EINS',
-      'ZWEI',
-      'DREI',
-      'VIER',
-      'FÜNF',
-      'SECHS',
-      'SIEBEN',
-      'ACHT',
-      'NEUN',
-      'ZEHN',
-      'ELF',
-      'ZWÖLF'
+      'EINS ',
+      'ZWEI ',
+      'DREI ',
+      'VIER ',
+      'FÜNF ',
+      'SECHS ',
+      'SIEBEN ',
+      'ACHT ',
+      'NEUN ',
+      'ZEHN ',
+      'ELF ',
+      'ZWÖLF '
     ];
     switch (
       (settings.round ? Math.round(m / 5) * 5 : Math.floor(m / 5) * 5) % 60
     ) {
       case 0:
-        ret += (h == 1 ? 'EIN' : hourNames[h - 1]) + ' UHR';
+        ret += (h == 1 ? 'EIN ' : hourNames[h - 1]) + 'UHR ';
         break;
       case 5:
-        ret += 'FÜNF NACH ' + hourNames[h - 1];
+        ret += 'FÜNF NACH ' + hourNames[h - 1]+"UHR ";
         break;
       case 10:
-        ret += 'ZEHN NACH ' + hourNames[h - 1];
+        ret += 'ZEHN NACH ' + hourNames[h - 1]+"UHR ";
         break;
       case 15:
-        ret += 'VIERTEL NACH ' + hourNames[h - 1];
+        ret += 'VIERTEL NACH ' + hourNames[h - 1]+"UHR ";
         break;
       case 20:
-        ret += 'ZWANZIG NACH ' + hourNames[h - 1];
+        ret += 'ZWANZIG NACH ' + hourNames[h - 1]+"UHR ";
         break;
       case 25:
-        ret += 'FÜNF VOR HALB ' + hourNames[h % 12];
+        ret += 'FÜNF VOR HALB ' + hourNames[h % 12]+"UHR ";
         break;
       case 30:
-        ret += 'HALB ' + hourNames[h % 12];
+        ret += 'HALB ' + hourNames[h % 12]+"UHR ";
         break;
       case 35:
-        ret += 'FÜNF NACH HALB ' + hourNames[h % 12];
+        ret += 'FÜNF NACH HALB ' + hourNames[h % 12]+"UHR ";
         break;
       case 40:
-        ret += 'ZWANZIG VOR ' + hourNames[h % 12];
+        ret += 'ZWANZIG VOR ' + hourNames[h % 12]+"UHR ";
         break;
       case 45:
-        ret += 'VIERTEL VOR ' + hourNames[h % 12];
+        ret += 'VIERTEL VOR ' + hourNames[h % 12]+"UHR ";
         break;
       case 50:
-        ret += 'ZEHN VOR ' + hourNames[h % 12];
+        ret += 'ZEHN VOR ' + hourNames[h % 12]+"UHR ";
         break;
       case 55:
-        ret += 'FÜNF VOR ' + hourNames[h % 12];
+        ret += 'FÜNF VOR ' + hourNames[h % 12]+"UHR ";
         break;
     }
     return ret;

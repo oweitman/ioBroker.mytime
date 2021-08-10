@@ -6,7 +6,6 @@ Version: 1.0
 WordClock LanguagePack Italia 
 
 */
-
 vis.binds['mytime'].wordclock.addLanguage({
   langCode: 'IT',
   letterSet: [
@@ -24,38 +23,82 @@ vis.binds['mytime'].wordclock.addLanguage({
   timeString: function(h, m, settings = { round: false }) {
     var ret = '';
     h %= 12;
-    if (h == 0) h = 12;
+    var min = (settings.round ? Math.round(m / 5) * 5 : Math.floor(m / 5) * 5) % 60;
+    //if (h == 0) h = 12;
     var hourNames = [
-      'DODICI',
-      'UNA',
-      'DUE',
-      'TRE',
-      'QUATTRO',
-      'CINQUE',
-      'SEI',
-      'SETTE',
-      'OTTO',
-      'NOVE',
-      'DIECI',
-      'UNDICI'
+      'DODICI ',
+      'UNA ',
+      'DUE ',
+      'TRE ',
+      'QUATTRO ',
+      'CINQUE ',
+      'SEI ',
+      'SETTE ',
+      'OTTO ',
+      'NOVE ',
+      'DIECI ',
+      'UNDICI '
     ];
-    if (h==1) {
+    if ((h==1 && min <30) || (h==0 && min>30)) {
         ret += "È L' ";
     } else {
         ret += "SONO LE ORE ";        
     }
-    ret += hourNames[h]+" ";
     
-    var min = (settings.round ? Math.round(m / 5) * 5 : Math.floor(m / 5) * 5) % 60;
     if (min >=5) {
         if (min<35) {
-            ret += "E ";
+            ret += hourNames[h] + "E ";
         } else {
-            ret += "MENO ";
+            ret += hourNames[h+1==12?0:h+1] + "MENO ";
         }
     }
     
-    min = (settings.round ? Math.round(m / 5)  : Math.floor(m / 5) ) % 60;
+    //min = (settings.round ? Math.round(m / 5)  : Math.floor(m / 5) ) % 60;
+    switch (
+      min
+    ) {    
+        case 0:
+            ret += hourNames[h];
+            break;
+        case 5:
+            ret += 'CINQUE ';
+            break;
+        case 10:
+            ret += 'DIECI ';
+            break;
+        case 15:
+            ret += 'UN QUARTO ';
+            break;
+        case 20:
+            ret += 'VENTI ';
+            break;
+        case 25:
+            ret += 'VENTICINQUE ' ;
+            break;
+        case 30:
+            ret += 'MEZZA ';
+            break;
+        case 35:
+            ret += 'VENTICINQUE ';
+            break;
+        case 40:
+            ret += 'VENTI ';
+            break;
+        case 45:
+            ret += 'UN QUARTO ';
+            break;
+        case 50:
+            ret += 'DIECI ';
+            break;
+        case 55:
+            ret += 'CINQUE ';
+            break;
+        };
+
+    
+    
+    
+    /*
     switch (
       min
     ) {
@@ -83,6 +126,7 @@ vis.binds['mytime'].wordclock.addLanguage({
         ret += "MEZZA ";
         break;
     }
+    */
     return ret;
   }
 });
