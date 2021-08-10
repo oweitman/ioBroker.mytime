@@ -134,24 +134,7 @@
         "connectionType": "local",
         "dataSource": "poll",
         "materialize": true,
-        "materializeTab": true,
-        "adminTab": {
-            "singleton": true,
-            "name": {
-                "en": "myTime",
-                "de": "meine Zeit",
-                "ru": "мое время",
-                "pt": "meu tempo",
-                "nl": "mijn tijd",
-                "fr": "mon temps",
-                "it": "mio tempo",
-                "es": "mi tiempo",
-                "pl": "mój czas",
-                "zh-cn": "我的时间"
-            },
-            "link": "",
-            "fa-icon": "info"
-        },
+        "materializeTab": false,
         "supportCustoms": false,
         "dependencies": [
             {
