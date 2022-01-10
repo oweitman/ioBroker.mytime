@@ -24,7 +24,7 @@
     "@iobroker/adapter-core": "^2.5.1",
     "@material-ui/pickers": "^3.3.10",
     "date-fns": "^2.28.0",
-    "prop-types": "^15.7.2",
+    "prop-types": "^15.8.1",
     "rrule": "^2.6.8"
   },
   "devDependencies": {
