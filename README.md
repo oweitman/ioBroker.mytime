@@ -9,6 +9,11 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/oweitman/ioBroker.mytime/badge.svg)](https://snyk.io/test/github/oweitman/ioBroker.mytime)
 [![Travis-CI](http://img.shields.io/travis/oweitman/ioBroker.mytime/master.svg)](https://travis-ci.org/oweitman/ioBroker.mytime)
 
+## IMPORTANT
+
+Only the english documentation is valid as the automatic translation
+translates areas that should not be translated.
+
 ## mytime adapter for ioBroker
 
 This adapter handle Time (eg: countdown,etc.).
@@ -294,6 +299,8 @@ Show the Seconds-LEDs of the wordclock
 Size in Pixels of the Seconds LEDs
 ###### secondColor
 color of the Seconds LED
+###### timezone
+The time of the selected timezone is displayed
 
 ##### Tips
 If you want to adjust the size of the countdown nixieclock, under css settings in vis you can enter for half size:
