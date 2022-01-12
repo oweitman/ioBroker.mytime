@@ -1,8 +1,11 @@
 {
     "common": {
         "name": "mytime",
-        "version": "0.7.6",
+        "version": "0.7.7",
         "news": {
+            "0.7.7": {
+                "en": "* add timezone for wordclock"
+            },
             "0.7.6": {
                 "en": "* add tests for wordclock * remove admin tab"
             },

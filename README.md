@@ -323,6 +323,7 @@ Group CSS-Common / transform "scale(0.5)"
 * rolling numbers
 * customizable fonts
 * ts: timerules for exclusion (time range, single dates)
+* ~~add timezone for wordclock~~
 * ~~wordclock timer~~
 * ~~timed scheduler: plan single date/time and recurring events like outlook~~
 * ~~Nixie style~~
@@ -337,6 +338,8 @@ Group CSS-Common / transform "scale(0.5)"
 ## Changelog
 
 
+### 0.7.7
+* add timezone for wordclock
 ### 0.7.6
 * add tests for wordclock * remove admin tab
 ### 0.7.5
