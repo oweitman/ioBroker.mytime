@@ -785,6 +785,7 @@ vis.binds['mytime'] = {
             var secondColor = data.secondColor || 'blue';
             var lang_key = this.lang_map[language];
             var lang_pack = this.lang_pack.find(el=>el.langCode==lang_key);
+            var timezone = data.timezone || vis.binds["mytime"].getCurrentTimezone();
 
             var text = '';
             text += '<style> \n';
@@ -932,14 +933,16 @@ vis.binds['mytime'] = {
             vis.binds["mytime"].startTimer(
                 widgetID,
                 lang_key,
+                timezone,
                 1000,
                 vis.binds["mytime"].wordclock.render.bind(this)
             );
-            this.render(widgetID,lang_key);
+            this.render(widgetID,lang_key,timezone);
         },
-        render: function (widgetID,lang_key) {
+        render: function (widgetID,lang_key,timezone) {
             var lang_pack = this.lang_pack.find(el=>el.langCode==lang_key);
             var date = new Date();
+            date = vis.binds["mytime"].convertDate2Timezone(date,timezone)
             var min_rest = date.getMinutes()%5;
             var $frame = $('#' + widgetID + ' .wc__frame');
             var $wordclock = $frame.find(' .wc__wordclock');
@@ -1092,8 +1095,35 @@ vis.binds['mytime'] = {
 
         return format;
     },
+    getTimezones: function () {
+        return timezones.map((el)=>el.label);
+    },
+    convertDate2Timezone: function (date, tzString) {
+        return new Date((typeof date === "string" ? new Date(date) : date).toLocaleString("en-US", {timeZone: tzString}));
+    },
+    getCurrentTimezone: function () {
+        return Intl.DateTimeFormat().resolvedOptions().timeZone;
+    },
+    attrSelect: function (wid_attr, options) {
+            var line = {};
+            if (wid_attr === 'timezone') {
+                var options = this.getTimezones();
+                var html='';
+                var currentTimezone = vis.widgets[vis.activeWidgets].data.timezone||this.getCurrentTimezone();
+                for (var i=0;i < options.length;i++) {
+                    if (options[i]===currentTimezone) {
+                        html += '<option value="'+options[i]+'" selected="selected">'+options[i]+'</option>';
+                    } else {
+                        html += '<option value="'+options[i]+'">'+options[i]+'</option>';
+                    }
+                }
+                //Intl.DateTimeFormat().resolvedOptions().timeZone
+                line = {
+                    input: '<select type="text" id="inspect_' + wid_attr + '">'+html+'</select>'
+                };
+            }
+            return line;
+    },
 };
 
 vis.binds['mytime'].showVersion();
-
-

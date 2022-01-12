@@ -11,6 +11,7 @@
 <!-- here you can include so many js-files as you want -->
 <script type="text/javascript" src="widgets/mytime/js/flipclock.js"></script>
 <script type="text/javascript" src="widgets/mytime/js/flipclockmytimeface.js"></script>
+<script type="text/javascript" src="widgets/mytime/js/timezones.js"></script>
 <script type="text/javascript" src="widgets/mytime/js/mytime.js"></script>
 <script type="text/javascript" src="widgets/mytime/js/wc_langPack_CH_BERN.js"></script>
 <script type="text/javascript" src="widgets/mytime/js/wc_langPack_DE.js"></script>
@@ -169,7 +170,7 @@
         type="text/ejs"
         class="vis-tpl"
 		data-vis-prev='<img style="display: block;margin-left: auto;margin-right: auto;width: 50%;" src="widgets/mytime/img/wordclock.png"></img>'
-        data-vis-attrs="language[english]/nselect,english,german,swiss,swabian,dutch,italian,spanish,french,russian,turkish;letterActivated/color;letterDeactivated/color;wordclockMargin/number;withMinutes/checkbox;minuteSize[5]/number;minuteColor/color;withSeconds/checkbox;secondSize[5]/number;secondColor/color;"
+        data-vis-attrs="language[english]/nselect,english,german,swiss,swabian,dutch,italian,spanish,french,russian,turkish;letterActivated/color;letterDeactivated/color;wordclockMargin/number;withMinutes/checkbox;minuteSize[5]/number;minuteColor/color;withSeconds/checkbox;secondSize[5]/number;secondColor/color;timezone/custom,mytime.attrSelect;"
         data-vis-set="mytime"
         data-vis-type="val"
         data-vis-beta="false"
