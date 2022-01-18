@@ -522,7 +522,9 @@ vis.binds['mytime'] = {
             var end       = countdown_oid ? vis.states.attr(countdown_oid + '.end.val')     : 0;
             var timer     = countdown_oid ? vis.states.attr(countdown_oid + '.timer.val')  : 0;            
             var action    = countdown_oid ? vis.states.attr(countdown_oid + '.action.val')  : 'stop';
-            var config  = countdown_oid ? JSON.parse(vis.states.attr(countdown_oid + '.config.val')) : {};            
+            var configval = countdown_oid ? vis.states.attr(countdown_oid + '.config.val') : '{}';
+            configval = configval ? configval : '{}';
+            var config  = countdown_oid ? JSON.parse(configval) : {};
             var linewidth = data.countdown_width || 20;
             var notimetext = data.countdown_notimetext;
             var format    = data.countdown_format || 'mm:ss';
@@ -785,7 +787,6 @@ vis.binds['mytime'] = {
             var secondColor = data.secondColor || 'blue';
             var lang_key = this.lang_map[language];
             var lang_pack = this.lang_pack.find(el=>el.langCode==lang_key);
-            var timezone = data.timezone || vis.binds["mytime"].getCurrentTimezone();
 
             var text = '';
             text += '<style> \n';
@@ -932,14 +933,16 @@ vis.binds['mytime'] = {
             vis.binds["mytime"].stopTimer(widgetID);
             vis.binds["mytime"].startTimer(
                 widgetID,
-                lang_key,
-                timezone,
+                data,
                 1000,
                 vis.binds["mytime"].wordclock.render.bind(this)
             );
-            this.render(widgetID,lang_key,timezone);
+            this.render(widgetID,data);
         },
-        render: function (widgetID,lang_key,timezone) {
+        render: function (widgetID,data) {
+            var timezone = data.timezone || vis.binds["mytime"].getCurrentTimezone();
+            var language = data.language || "english";
+            var lang_key = this.lang_map[language];
             var lang_pack = this.lang_pack.find(el=>el.langCode==lang_key);
             var date = new Date();
             date = vis.binds["mytime"].convertDate2Timezone(date,timezone)
