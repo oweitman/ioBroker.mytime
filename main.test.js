@@ -109,6 +109,21 @@ describe('wordclock => Italian', () => {
             result.should.equal(el.expected);
         });
     });
+    data.forEach(el=>{
+        it(`should find ${el.expected} in matrix`, () => {
+            // assign result a value from functionToTest
+            var timewords = pack.vis.binds.mytime.wordclock.lang_pack[0].timeString(el.h,el.m).split(" ");
+            var displayChars = pack.vis.binds.mytime.wordclock.lang_pack[0].letterSet.map(row=>row.join('')).join('');
+            var result = true;
+            var offset=0;
+            for(var j=0; j<timewords.length; j++){
+                var start = displayChars.indexOf(timewords[j],offset);
+                result = result && start>-1;
+                offset=start+1;
+            }
+            result.should.equal(true);
+        });
+    });
 });
 
 describe('wordclock => Deutsch', () => {
@@ -151,4 +166,95 @@ describe('wordclock => Deutsch', () => {
             result.should.equal(el.expected);
         });
     });
+    data.forEach(el=>{
+        it(`should find ${el.expected} in matrix`, () => {
+            // assign result a value from functionToTest
+            var timewords = pack.vis.binds.mytime.wordclock.lang_pack[0].timeString(el.h,el.m).split(" ");
+            var displayChars = pack.vis.binds.mytime.wordclock.lang_pack[0].letterSet.map(row=>row.join('')).join('');
+            var result = true;
+            var offset=0;
+            for(var j=0; j<timewords.length; j++){
+                var start = displayChars.indexOf(timewords[j],offset);
+                result = result && start>-1;
+                offset=start+1;
+            }
+            result.should.equal(true);
+        });
+    });
+});
+
+describe('wordclock => CH Bern', () => {
+
+    var pack = loadModule('./widgets/mytime/js/wc_langPack_CH_BERN.js', {vis:vis});
+
+    var data = [
+    {h:0,m:0,expected:"ÄS ISCH ZWÖUFI"},
+    {h:1,m:0,expected:"ÄS ISCH EIS"},
+    {h:2,m:0,expected:"ÄS ISCH ZWÖI"},
+    {h:3,m:0,expected:"ÄS ISCH DRÜÜ"},
+    {h:4,m:0,expected:"ÄS ISCH VIERI"},
+    {h:5,m:0,expected:"ÄS ISCH FÜFI"},
+    {h:6,m:0,expected:"ÄS ISCH SÄCHSI"},
+    {h:7,m:0,expected:"ÄS ISCH SIBNI"},
+    {h:8,m:0,expected:"ÄS ISCH ACHTI"},
+    {h:9,m:0,expected:"ÄS ISCH NÜNI"},
+    {h:10,m:0,expected:"ÄS ISCH ZÄHNI"},
+    {h:11,m:0,expected:"ÄS ISCH EUFI"},
+    {h:12,m:0,expected:"ÄS ISCH ZWÖUFI"},
+    {h:2,m:5,expected:"ÄS ISCH FÜF AB ZWÖI"},
+    {h:2,m:10,expected:"ÄS ISCH ZÄH AB ZWÖI"},
+    {h:2,m:15,expected:"ÄS ISCH VIERTU AB ZWÖI"},
+    {h:2,m:20,expected:"ÄS ISCH ZWÄNZG AB ZWÖI"},
+    {h:2,m:25,expected:"ÄS ISCH FÜF VOR HAUBI DRÜÜ"},
+    {h:2,m:30,expected:"ÄS ISCH HAUBI DRÜÜ"},
+    {h:2,m:35,expected:"ÄS ISCH FÜF AB HAUBI DRÜÜ"},
+    {h:2,m:40,expected:"ÄS ISCH ZWÄNZG VOR DRÜÜ"},
+    {h:2,m:45,expected:"ÄS ISCH VIERTU VOR DRÜÜ"},
+    {h:2,m:50,expected:"ÄS ISCH ZÄH VOR DRÜÜ"},
+    {h:2,m:55,expected:"ÄS ISCH FÜF VOR DRÜÜ"},
+
+    {h:0,m:10,expected:"ÄS ISCH ZÄH AB ZWÖUFI"},
+    {h:1,m:10,expected:"ÄS ISCH ZÄH AB EIS"},
+    {h:2,m:10,expected:"ÄS ISCH ZÄH AB ZWÖI"},
+    {h:3,m:10,expected:"ÄS ISCH ZÄH AB DRÜÜ"},
+    {h:4,m:10,expected:"ÄS ISCH ZÄH AB VIERI"},
+    {h:5,m:10,expected:"ÄS ISCH ZÄH AB FÜFI"},
+    {h:6,m:10,expected:"ÄS ISCH ZÄH AB SÄCHSI"},
+    {h:7,m:10,expected:"ÄS ISCH ZÄH AB SIBNI"},
+    {h:8,m:10,expected:"ÄS ISCH ZÄH AB ACHTI"},
+    {h:9,m:10,expected:"ÄS ISCH ZÄH AB NÜNI"},
+    {h:10,m:10,expected:"ÄS ISCH ZÄH AB ZÄHNI"},
+    {h:11,m:10,expected:"ÄS ISCH ZÄH AB EUFI"},
+    {h:12,m:10,expected:"ÄS ISCH ZÄH AB ZWÖUFI"},
+
+    ];
+
+    data.forEach(el=>{
+        it(`should return ${el.h.toString().padStart(2,"0")}:${el.m.toString().padStart(2,"0")} ${el.expected}`, () => {
+            // assign result a value from functionToTest
+            var result = pack.vis.binds.mytime.wordclock.lang_pack[0].timeString(el.h,el.m);
+            expect(result).to.equal(el.expected);
+            // or using the should() syntax
+            result.should.equal(el.expected);
+        });
+    });
+
+    data.forEach(el=>{
+        it(`should find ${el.expected} in matrix`, () => {
+            // assign result a value from functionToTest
+            var timewords = pack.vis.binds.mytime.wordclock.lang_pack[0].timeString(el.h,el.m).split(" ");
+            var displayChars = pack.vis.binds.mytime.wordclock.lang_pack[0].letterSet.map(row=>row.join('')).join('');
+            var result = true;
+            var offset=0;
+            for(var j=0; j<timewords.length; j++){
+                var start = displayChars.indexOf(timewords[j],offset);
+                result = result && start>-1;
+                offset=start+1;
+            }
+            result.should.equal(true);
+        });
+    });
+
+
+
 });
