@@ -1,8 +1,11 @@
 {
     "common": {
         "name": "mytime",
-        "version": "0.7.8",
+        "version": "0.7.9",
         "news": {
+            "0.7.9": {
+                "en": "* add more wordclock tests * fix wordclock matrix swiss"
+            },
             "0.7.8": {
                 "en": "* fix wordclock"
             },
