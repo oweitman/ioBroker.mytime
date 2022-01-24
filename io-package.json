@@ -1,8 +1,11 @@
 {
     "common": {
         "name": "mytime",
-        "version": "0.7.10",
+        "version": "0.7.11",
         "news": {
+            "0.7.11": {
+                "en": "* adjust documentation for widget reverse countdown"
+            },
             "0.7.10": {
                 "en": "* add widget reverse countdown"
             },
