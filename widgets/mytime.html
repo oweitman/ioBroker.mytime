@@ -123,6 +123,21 @@
     %></div>
 </script>
 
+<script id="tplMyTimeReverseCountdownPlain"
+        type="text/ejs"
+        class="vis-tpl"
+		data-vis-prev='<img style="display: block;margin-left: auto;margin-right: auto;width: 50%;" src="widgets/mytime/img/cdplain.png"></img>'
+        data-vis-attrs="countdown_datetime;countdown_format[dd\d HH\h mm\m ss\s];"
+        data-vis-set="mytime"
+        data-vis-type="val"
+        data-vis-beta="false"
+        data-vis-update-style="true"
+        data-vis-name="MyTime Reverse Countdown Plain">
+    <div class="vis-widget <%== this.data.attr('class') %>" style="overflow:visible; width: 230px; height: 210px" id="<%= this.data.attr('wid') %>"><%
+        vis.binds['mytime'].reversecountdownplain.createWidget(this.data.wid, this.view, this.data, this.style);
+    %></div>
+</script>
+
 <script id="tplMyTimeCountdownCircle"
         type="text/ejs"
         class="vis-tpl"

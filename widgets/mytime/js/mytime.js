@@ -662,7 +662,47 @@ vis.binds['mytime'] = {
             $('#' + widgetID + ' .timer').html(text);
         },
 
-    },            
+    },
+    reversecountdownplain: {
+        intervaltime: 500,
+        createWidget: function (widgetID, view, data, style) {
+            var $div = $('#' + widgetID);
+            // if nothing found => wait
+            if (!$div.length) {
+                return setTimeout(function () {
+                    vis.binds['mytime'].reversecountdownplain.createWidget(widgetID, view, data, style);
+                }, 100);
+            }
+
+            data.datetime = data.countdown_datetime || new Date().toISOString();
+
+            var text = '';
+            text += '<div class="timer"></div>';
+            $('#' + widgetID).html(text);
+
+            vis.binds["mytime"].stopTimer(widgetID);
+            vis.binds["mytime"].startTimer(
+                widgetID,
+                data,
+                vis.binds["mytime"].reversecountdownplain.intervaltime,
+                vis.binds["mytime"].reversecountdownplain.setState);
+            if (vis.editMode) vis.binds["mytime"].reversecountdownplain.setState(widgetID,data);
+        },
+        setState: function(widgetID,data) {
+            console.log('setState ' + new Date().getTime());
+            var countdown_oid;
+            var format = data.countdown_format || 'dd\\d HH\\h mm\\m ss\\s';
+
+            var now = new Date().getTime();
+            var end  = new Date(data.datetime).getTime();
+
+            var ms = now-end;
+
+            var text = '';
+            text += vis.binds["mytime"].formatDate(ms,format);
+            $('#' + widgetID + ' .timer').html(text);
+        }
+    },
     countdownplain: {
         intervaltime: 500,        
         createWidget: function (widgetID, view, data, style) {
@@ -673,6 +713,7 @@ vis.binds['mytime'] = {
                     vis.binds['mytime'].countdownplain.createWidget(widgetID, view, data, style);
                 }, 100);
             }
+
             var countdown_oid;
             if (!data.countdown_oid || (countdown_oid = vis.binds["mytime"].getCountdownId(data.countdown_oid))==false) return;            
             
@@ -1016,6 +1057,7 @@ vis.binds['mytime'] = {
     },
     calcCountdownFromMiliSeconds: function(miliseconds,pattern) {
         var ret = {};
+
         if (pattern[0]=='1') {
             ret.days = Math.floor(miliseconds / 1000 / 60 / 60 / 24);
             miliseconds -= ret.days * 1000*60*60*24;
@@ -1032,6 +1074,7 @@ vis.binds['mytime'] = {
             ret.seconds = Math.floor(miliseconds / 1000  );
             miliseconds -= ret.seconds * 1000;
         }
+
         return ret;      
     },    
     bindStates: function (elem, bound, change_callback) {
@@ -1070,7 +1113,7 @@ vis.binds['mytime'] = {
                         ((format.search(/(^|[^\\])H/g)>=0)?"1":"0") + 
                         ((format.search(/(^|[^\\])m/g)>=0)?"1":"0") + 
                         ((format.search(/(^|[^\\])s/g)>=0)?"1":"0");
-                        
+
         if (pattern.indexOf('101')>=0 || pattern.indexOf('1001')>=0) {
             return 'Error: Invalid Format';
             
