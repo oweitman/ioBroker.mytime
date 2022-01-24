@@ -337,6 +337,8 @@ Group CSS-Common / transform "scale(0.5)"
 
 ## Changelog
 
+### 0.7.10
+* add widget reverse countdown
 ### 0.7.9
 * add more wordclock tests
 * fix wordclock matrix swiss

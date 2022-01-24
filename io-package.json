@@ -1,8 +1,11 @@
 {
     "common": {
         "name": "mytime",
-        "version": "0.7.9",
+        "version": "0.7.10",
         "news": {
+            "0.7.10": {
+                "en": "* add widget reverse countdown"
+            },
             "0.7.9": {
                 "en": "* add more wordclock tests * fix wordclock matrix swiss"
             },
