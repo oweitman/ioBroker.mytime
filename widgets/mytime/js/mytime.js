@@ -692,6 +692,8 @@ vis.binds['mytime'] = {
             console.log('setState ' + new Date().getTime());
             var countdown_oid;
             var format = data.countdown_format || 'dd\\d HH\\h mm\\m ss\\s';
+            var htmlprepend = data.countdown_html_prepend || "";
+            var htmlappend = data.countdown_html_append || "";
 
             var now = new Date().getTime();
             var end  = new Date(data.datetime).getTime();
@@ -700,7 +702,7 @@ vis.binds['mytime'] = {
 
             var text = '';
             text += vis.binds["mytime"].formatDate(ms,format);
-            $('#' + widgetID + ' .timer').html(text);
+            $('#' + widgetID + ' .timer').html(htmlprepend+text+htmlappend);
         }
     },
     countdownplain: {
