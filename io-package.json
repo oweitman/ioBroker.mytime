@@ -1,8 +1,11 @@
 {
     "common": {
         "name": "mytime",
-        "version": "0.7.11",
+        "version": "0.7.12",
         "news": {
+            "0.7.12": {
+                "en": "* add html_prepend and html_append properties to the widget reverse countdown"
+            },
             "0.7.11": {
                 "en": "* adjust documentation for widget reverse countdown"
             },
