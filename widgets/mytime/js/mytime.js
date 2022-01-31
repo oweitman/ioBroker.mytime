@@ -442,7 +442,7 @@ vis.binds['mytime'] = {
         }
     },
     countdowncircle: {
-        intervaltime: 25,
+        intervaltime: 500,
         createWidget: function (widgetID, view, data, style) {
             var $div = $('#' + widgetID);
             // if nothing found => wait
@@ -453,7 +453,7 @@ vis.binds['mytime'] = {
             }
             var countdown_oid;
             if (!data.countdown_oid || (countdown_oid = vis.binds["mytime"].getCountdownId(data.countdown_oid))==false) return;
-            var timer     = countdown_oid ? vis.states.attr(countdown_oid + '.timer.val')  : 0;
+            var timer     = countdown_oid ? vis.states.attr(countdown_oid + '.timer.val') ? vis.states.attr(countdown_oid + '.timer.val'):0: 0;
             var showsec   = data.countdown_showsec;
             var showmin   = data.countdown_showmin;
             var showhrs   = data.countdown_showhrs;
@@ -508,9 +508,9 @@ vis.binds['mytime'] = {
             vis.binds["mytime"].startTimer(
                 widgetID,
                 data,
-                vis.binds["mytime"].countdowncircle.calcInterval(timer),
+                //vis.binds["mytime"].countdowncircle.calcInterval(timer),
+                vis.binds["mytime"].countdowncircle.intervaltime,
                 vis.binds["mytime"].countdowncircle.setState);
-            vis.binds["mytime"].countdowncircle.setState(widgetID,data);
         },
         calcInterval: function(timer) {
             return Math.min(Math.max(timer/720,25),500);
