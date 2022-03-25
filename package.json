@@ -62,7 +62,7 @@
     "react-icons": "^4.3.1",
     "sinon": "^13.0.1",
     "sinon-chai": "^3.7.0",
-    "typescript": "^4.6.2"
+    "typescript": "^4.6.3"
   },
   "parcel-plugin-build-hooks": {
     "buildStart": "echo \"parcel buildStart\"",
