@@ -27,7 +27,7 @@
   "devDependencies": {
     "@babel/cli": "^7.17.10",
     "@babel/core": "^7.18.0",
-    "@babel/eslint-parser": "^7.17.0",
+    "@babel/eslint-parser": "^7.18.2",
     "@babel/preset-react": "^7.17.12",
     "@iobroker/adapter-react": "^2.1.0",
     "@iobroker/testing": "^3.0.2",
