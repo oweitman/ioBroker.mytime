@@ -51,7 +51,7 @@
     "chai": "^4.3.6",
     "chai-as-promised": "^7.1.1",
     "eslint": "^8.25.0",
-    "eslint-plugin-react": "^7.31.8",
+    "eslint-plugin-react": "^7.31.9",
     "gulp": "^4.0.2",
     "mocha": "^10.0.0",
     "parcel-bundler": "^1.12.5",
