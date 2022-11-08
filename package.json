@@ -46,7 +46,7 @@
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.3",
     "@types/sinon": "^10.0.13",
-    "@types/sinon-chai": "^3.2.8",
+    "@types/sinon-chai": "^3.2.9",
     "babel-eslint": "^10.1.0",
     "chai": "^4.3.6",
     "chai-as-promised": "^7.1.1",
