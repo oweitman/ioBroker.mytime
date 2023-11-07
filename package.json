@@ -38,7 +38,7 @@
     "@date-io/date-fns": "^2.16.0",
     "date-fns": "^2.29.3",
     "@types/chai": "^4.3.3",
-    "@types/chai-as-promised": "^7.1.5",
+    "@types/chai-as-promised": "^7.1.8",
     "@types/gulp": "^4.0.10",
     "@types/mocha": "^10.0.1",
     "@types/node": "^18.15.0",
