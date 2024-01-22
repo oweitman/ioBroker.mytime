@@ -36,7 +36,7 @@
     "@material-ui/lab": "^4.0.0-alpha.61",
     "@material-ui/pickers": "^3.3.10",
     "@date-io/date-fns": "^2.16.0",
-    "date-fns": "^2.29.3",
+    "date-fns": "^3.3.0",
     "@types/chai": "^4.3.3",
     "@types/chai-as-promised": "^7.1.5",
     "@types/gulp": "^4.0.10",
