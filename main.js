@@ -1,7 +1,7 @@
 "use strict";
 
 /*
- * Created with @iobroker/create-adapter v1.24.2
+ * Created with @iobroker/create-adapter v2.6.3
  */
 
 // The adapter-core module gives you access to the core ioBroker functions
@@ -34,8 +34,6 @@ class Mytime extends utils.Adapter {
      */
     async onReady() {
         this.log.debug("main onReady start");
-        // Reset the connection indicator during startup
-        this.setState("info.connection", false, true);
 
         // Initialize your adapter here
         if (!mytimeserver) {
@@ -57,8 +55,6 @@ class Mytime extends utils.Adapter {
 
             mytimeserver.closeConnections();
             this.log.info("cleaned everything up...");
-            // Reset the connection indicator during startup
-            this.setState("info.connection", false, true);
             callback();
         } catch (e) {
             this.log.debug("main onUnload error");

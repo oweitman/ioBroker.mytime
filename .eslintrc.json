@@ -1,18 +1,12 @@
 {
     "root": true,
-    "parser": "@babel/eslint-parser",    
     "env": {
         "es6": true,
         "node": true,
         "mocha": true
     },
-    "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended"
-    ],
-    "plugins": [
-        "react"
-    ],
+    "extends": ["eslint:recommended", "plugin:react/recommended"],
+    "plugins": ["react"],
     "settings": {
         "react": {
             "version": "detect"
@@ -27,6 +21,13 @@
             }
         ],
         "no-console": "off",
+        "no-unused-vars": [
+            "error",
+            {
+                "ignoreRestSiblings": true,
+                "argsIgnorePattern": "^_"
+            }
+        ],
         "no-var": "error",
         "no-trailing-spaces": "error",
         "prefer-const": "error",
@@ -38,15 +39,10 @@
                 "allowTemplateLiterals": true
             }
         ],
-        "semi": [
-            "error",
-            "always"
-        ]
+        "semi": ["error", "always"]
     },
     "parserOptions": {
-		"sourceType": "module",
-        "ecmaVersion": 2018,
-        "requireConfigFile": false,
+        "ecmaVersion": "latest",
         "ecmaFeatures": {
             "jsx": true
         }
