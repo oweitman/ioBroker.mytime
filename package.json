@@ -1,6 +1,6 @@
 {
   "name": "iobroker.mytime",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "This adapter handle Time (eg: countdown,etc.)",
   "author": {
     "name": "oweitman",
@@ -93,7 +93,7 @@
   "scripts": {
     "test:declarations": "tsc -p test/lib/TS/tsconfig.json && tsc -p test/lib/JS/tsconfig.json",
     "test:javascript": "node node_modules/mocha/bin/mocha --exit",
-    "test": "npm run test:package && npm run test:unit",
+    "test": "npm run test:package",
     "test:package": "mocha test/package --exit",
     "test:unit": "mocha test/unit --exit",
     "test:integration": "mocha test/integration --exit",

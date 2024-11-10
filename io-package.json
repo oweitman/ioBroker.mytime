@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "mytime",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "titleLang": {
       "en": "MyTime",
       "de": "MyTime",
@@ -32,6 +32,19 @@
       "oweitman <oweitman@gmx.de>"
     ],
     "news": {
+      "1.0.6": {
+        "en": "more repair",
+        "de": "mehr reparatur",
+        "ru": "больше ремонт",
+        "pt": "mais reparação",
+        "nl": "meer reparatie",
+        "fr": "plus de réparation",
+        "it": "più riparazione",
+        "es": "más reparación",
+        "pl": "więcej napraw",
+        "uk": "ремонт",
+        "zh-cn": "更多维修"
+      },
       "1.0.5": {
         "en": "add package-lock.json to git",
         "de": "paket-lock.json zu git hinzufügen",
@@ -109,19 +122,6 @@
         "pl": "* dodaj właściwości html_prepend i html_append do odliczania wstecznego widżetu",
         "uk": "* додайте властивості html_prepend і html_append до зворотного відліку віджетів",
         "zh-cn": "* 为小部件反向倒计时添加 html_prepend 和 html_append 属性"
-      },
-      "0.7.11": {
-        "en": "* adjust documentation for widget reverse countdown",
-        "de": "* Dokumentation für Widget-Reverse-Countdown anpassen",
-        "ru": "* корректировка документации для обратного отсчета виджета",
-        "pt": "* ajuste a documentação para contagem regressiva do widget",
-        "nl": "* documentatie aanpassen voor het omgekeerd aftellen van widgets",
-        "fr": "* ajuster la documentation pour le compte à rebours inversé du widget",
-        "it": "* modificare la documentazione per il conto alla rovescia inverso del widget",
-        "es": "* ajustar la documentación para la cuenta regresiva inversa del widget",
-        "pl": "* dostosuj dokumentację do odliczania wstecznego widżetu",
-        "uk": "* налаштувати документацію для зворотного відліку віджетів",
-        "zh-cn": "* 调整小部件反向倒计时的文档"
       }
     },
     "platform": "Javascript/Node.js",
