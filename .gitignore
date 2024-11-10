@@ -1,18 +1,30 @@
+node_modules
+.idea
+tmp
+_admin
+iob_npm.dode
+/nbproject
+package-lock.json
+
+# ioBroker dev-server
+.dev-server/
+
 # No dot-directories except github/vscode
 .*/
 !.vscode/
 !.github/
-
 *.code-workspace
-node_modules
-nbproject
 
 # npm package files
 iobroker.*.tgz
-
 Thumbs.db
 
 # i18n intermediate files
 admin/i18n/flat.txt
 admin/i18n/*/flat.txt
-.vscode/info.txt
+
+.vscode/info.md
+
+admin/custom/
+.vscode/admin.zip
+.vscode/srcxxx.zip

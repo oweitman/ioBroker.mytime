@@ -1,0 +1,21 @@
+{
+    "mytime2 adapter settings": "Ustawienia adaptera dla mytime2",
+    "tabcountdown": "Odliczanie",
+    "tabtimeseries": "Serie czasowe",
+    "cdName": "Nazwa",
+    "cdDays": "Dni",
+    "cdHours": "Godziny",
+    "cdMinutes": "Protokół",
+    "cdSeconds": "Towary drugiej jakości",
+    "cdBehavior": "Zachowanie",
+    "cd-TT-Name": "Nazwa punktu danych sterującego odliczaniem",
+    "cd-TT-Days": "Liczba dni do odliczania",
+    "cd-TT-Hours": "Liczba godzin do odliczania",
+    "cd-TT-Minutes": "Liczba minut odliczania",
+    "cd-TT-Seconds": "Liczba sekund odliczania",
+    "cd-TT-Behavior": "Zachowanie po zakończeniu odliczania",
+    "cdBehaviourSetTimer": "ustaw na timer",
+    "cdBehaviourSetReset": "ustawić na zero",
+    "xxx": "xxx",
+    "": ""
+}

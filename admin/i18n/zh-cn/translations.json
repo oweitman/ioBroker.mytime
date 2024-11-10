@@ -1,0 +1,21 @@
+{
+    "mytime2 adapter settings": "mytime2的适配器设置",
+    "tabcountdown": "倒计时",
+    "tabtimeseries": "时间序列",
+    "cdName": "姓名",
+    "cdDays": "天",
+    "cdHours": "时间",
+    "cdMinutes": "分钟",
+    "cdSeconds": "秒数",
+    "cdBehavior": "行为",
+    "cd-TT-Name": "控制倒计时的数据点名称",
+    "cd-TT-Days": "倒计时天数",
+    "cd-TT-Hours": "倒计时的小时数",
+    "cd-TT-Minutes": "倒计时分钟数",
+    "cd-TT-Seconds": "倒计时秒数",
+    "cd-TT-Behavior": "倒计时结束后的行为",
+    "cdBehaviourSetTimer": "设置为定时器",
+    "cdBehaviourSetReset": "设置为零",
+    "xxx": "xxx",
+    "": ""
+}

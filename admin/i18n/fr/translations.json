@@ -1,0 +1,21 @@
+{
+    "mytime2 adapter settings": "Paramètres d'adaptateur pour mytime2",
+    "tabcountdown": "Compte à rebours",
+    "tabtimeseries": "Séries temporelles",
+    "cdName": "Nom",
+    "cdDays": "Jours",
+    "cdHours": "Heures",
+    "cdMinutes": "Minutes",
+    "cdSeconds": "Secondes",
+    "cdBehavior": "Comportement",
+    "cd-TT-Name": "Nom du point de données pour contrôler le compte à rebours",
+    "cd-TT-Days": "Nombre de jours pour le compte à rebours",
+    "cd-TT-Hours": "Nombre d'heures pour le compte à rebours",
+    "cd-TT-Minutes": "Nombre de minutes pour le compte à rebours",
+    "cd-TT-Seconds": "Nombre de secondes pour le compte à rebours",
+    "cd-TT-Behavior": "Comportement après la fin du compte à rebours",
+    "cdBehaviourSetTimer": "réglé sur minuterie",
+    "cdBehaviourSetReset": "mis à zéro",
+    "xxx": "xxx",
+    "": ""
+}

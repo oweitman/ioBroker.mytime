@@ -2,108 +2,6 @@
     "common": {
         "name": "mytime",
         "version": "0.7.12",
-        "news": {
-            "0.7.12": {
-                "en": "* add html_prepend and html_append properties to the widget reverse countdown"
-            },
-            "0.7.11": {
-                "en": "* adjust documentation for widget reverse countdown"
-            },
-            "0.7.10": {
-                "en": "* add widget reverse countdown"
-            },
-            "0.7.9": {
-                "en": "* add more wordclock tests * fix wordclock matrix swiss"
-            },
-            "0.7.8": {
-                "en": "* fix wordclock"
-            },
-            "0.7.7": {
-                "en": "* add timezone for wordclock"
-            },
-            "0.7.6": {
-                "en": "* add tests for wordclock * remove admin tab"
-            },
-            "0.7.5": {
-                "en": "* Remove comments in io-package"
-            },
-            "0.7.4": {
-                "en": "* fix spanish language pack"
-            },
-            "0.7.3": {
-                "en": "* add turkish language for wordclock",
-                "de": "* Türkische Sprache für Wordclock hinzufügen",
-                "ru": "* добавить турецкий язык для Wordclock",
-                "pt": "* adicionar idioma turco para o wordclock",
-                "nl": "* Turkse taal toevoegen voor wordclock",
-                "fr": "* ajouter la langue turque pour wordclock",
-                "it": "* aggiungi la lingua turca per wordclock",
-                "es": "* agregar idioma turco para wordclock",
-                "pl": "* dodaj język turecki do zegara",
-                "zh-cn": "*为wordclock添加土耳其语"
-            },
-            "0.7.2": {
-                "en": "* add russian and espaniol language for wordclock",
-                "de": "* Russisch und Spanisch für Wordclock hinzufügen",
-                "ru": "* добавить русский и испанский язык для Wordclock",
-                "pt": "* adicione os idiomas russo e espaniol para o wordclock",
-                "nl": "* voeg russische en espaniol-taal toe voor wordclock",
-                "fr": "* ajouter la langue russe et espagnole pour wordclock",
-                "it": "* aggiungi la lingua russa e spagnola per wordclock",
-                "es": "* agregar idioma ruso y espaniol para wordclock",
-                "pl": "* dodaj język rosyjski i espaniol do zegara",
-                "zh-cn": "* 为 wordclock 添加俄语和西班牙语"
-            },
-            "0.7.1": {
-                "en": "* add margin property for wordclock * add italiano and francais for wordclock * wordclock remove border",
-                "de": "* Margin-Eigenschaft für Wordclock hinzufügen * Italiano und Francais für Wordclock hinzufügen * Wordclock Rand entfernen",
-                "ru": "* добавить свойство поля для wordclock * добавить итальянский и французский для wordclock * wordclock удалить границу",
-                "pt": "* adicionar propriedade de margem para wordclock * adicionar italiano e francais para wordclock * wordclock remover borda",
-                "nl": "* voeg een marge-eigenschap toe voor wordclock * voeg italiano en francais toe voor wordclock * wordclock verwijdert rand",
-                "fr": "* ajouter la propriété margin pour wordclock * ajouter italiano et francais pour wordclock * wordclock supprimer la bordure",
-                "it": "* aggiungi proprietà margin per wordclock * aggiungi italiano e francais per wordclock * wordclock rimuovi bordo",
-                "es": "* agregar propiedad de margen para wordclock * agregar italiano y francais para wordclock * wordclock eliminar borde",
-                "pl": "* dodaj właściwość margin dla wordclocka * dodaj italiano i francais dla wordclocka * wordclock usuń obramowanie",
-                "zh-cn": "* 为 wordclock 添加边距属性 *为 wordclock 添加 italiano 和 francais * wordclock 删除边框"
-            },
-            "0.7.0": {
-                "en": "* New wordclock widget",
-                "de": "* Neues Wordclock-Widget",
-                "ru": "* Новый виджет Wordclock",
-                "pt": "* Novo widget de wordclock",
-                "nl": "* Nieuwe wordclock-widget",
-                "fr": "* Nouveau widget wordclock",
-                "it": "* Nuovo widget wordclock",
-                "es": "* Nuevo widget de reloj de palabras",
-                "pl": "* Nowy widżet zegara",
-                "zh-cn": "* 新的字时钟小部件"
-            },
-            "0.6.1": {
-                "en": "* remove beta tag from widgets * m,assive reengeneering of the react classes, add functions für exclusion rules, adding single time events and exclude single time events",
-                "de": "* Beta-Tag aus Widgets entfernen * m, Neuerstellung der Reaktionsklassen aktivieren, Funktionen für Ausschlussregeln hinzufügen, Einzelzeitereignisse hinzufügen und Einzelzeitereignisse ausschließen",
-                "ru": "* удалить бета-тег из виджетов * m, провести реинжиниринг классов реакции, добавить функции для правил исключения, добавить одноразовые события и исключить одноразовые события",
-                "pt": "* remover tag beta dos widgets * m, reengenharia ativa das classes de reação, adicionar funções para regras de exclusão, adicionar eventos de tempo único e excluir eventos de tempo único",
-                "nl": "* verwijder bètatag van widgets * m, assive hergeneering van de reactklassen, functies voor uitsluitingsregels toevoegen, eenmalige evenementen toevoegen en eenmalige evenementen uitsluiten",
-                "fr": "* supprimer la balise bêta des widgets * m, réingénierie assive des classes de réaction, ajouter des fonctions pour les règles d'exclusion, ajouter des événements ponctuels et exclure les événements ponctuels",
-                "it": "* rimuove il tag beta dai widget * m, riprogettazione completa delle classi di reazione, aggiungi funzioni per le regole di esclusione, aggiungi eventi una volta ed escludi eventi una volta",
-                "es": "* eliminar la etiqueta beta de los widgets * m, regeneración asistida de las clases de reacción, agregar funciones para reglas de exclusión, agregar eventos de tiempo único y excluir eventos de tiempo único",
-                "pl": "* usuń tag beta z widżetów * m, asive reengeneering klas reagowania, dodaj funkcje dla reguł wykluczania, dodając zdarzenia jednorazowe i wykluczaj zdarzenia jednorazowe",
-                "zh-cn": "*从窗口小部件中删除beta标签* m，可重新生成React类，添加排除规则的功能，添加单次事件并排除单次事件"
-            },
-            "0.6.0": {
-                "en": "* Introduction of new functionality timeseries",
-                "de": "* Einführung neuer Funktionszeitreihen",
-                "ru": "* Внедрение новых функциональных таймсерий",
-                "pt": "* Introdução de novas séries de tempo de funcionalidade",
-                "nl": "* Introductie van nieuwe functionaliteitstijdreeksen",
-                "fr": "* Introduction de nouvelles séries temporelles de fonctionnalités",
-                "it": "* Introduzione di nuove funzionalità timeseries",
-                "es": "* Introducción de nuevas funciones de series temporales",
-                "pl": "* Wprowadzenie nowych timeeries funkcjonalności",
-                "zh-cn": "*新功能时间序列介绍"
-            }
-        },
-        "title": "MyTime",
         "titleLang": {
             "en": "MyTime",
             "de": "MyTime",
@@ -114,7 +12,8 @@
             "it": "MyTime",
             "es": "MyTime",
             "pl": "MyTime",
-            "zh-cn": "MyTime"
+            "zh-cn": "MyTime",
+            "uk": "MyTime"
         },
         "desc": {
             "en": "This adapter handle Time (eg: countdown,etc.)",
@@ -126,45 +25,123 @@
             "it": "This adapter handle Time (eg: countdown,etc.)",
             "es": "This adapter handle Time (eg: countdown,etc.)",
             "pl": "This adapter handle Time (eg: countdown,etc.)",
-            "zh-cn": "This adapter handle Time (eg: countdown,etc.)"
+            "zh-cn": "This adapter handle Time (eg: countdown,etc.)",
+            "uk": "Цей адаптер обробляє час (наприклад, зворотній відлік тощо)"
         },
         "authors": ["oweitman <oweitman@gmx.de>"],
-        "keywords": [
-            "ioBroker",
-            "template",
-            "Smart Home",
-            "home automation"
-        ],
-        "license": "MIT",
+        "news": {
+            "0.7.12": {
+                "en": "* add html_prepend and html_append properties to the widget reverse countdown",
+                "de": "* Fügen Sie die Eigenschaften html_prepend und html_append zum umgekehrten Countdown des Widgets hinzu",
+                "ru": "* добавить свойства html_prepend и html_append в обратный отсчет виджета",
+                "pt": "* adicione as propriedades html_prepend e html_append à contagem regressiva reversa do widget",
+                "nl": "* voeg de eigenschappen html_prepend en html_append toe aan het omgekeerde aftellen van de widget",
+                "fr": "* ajouter les propriétés html_prepend et html_append au compte à rebours inversé du widget",
+                "it": "* aggiungi le proprietà html_prepend e html_append al conto alla rovescia inverso del widget",
+                "es": "* agregue las propiedades html_prepend y html_append a la cuenta regresiva inversa del widget",
+                "pl": "* dodaj właściwości html_prepend i html_append do odliczania wstecznego widżetu",
+                "uk": "* додайте властивості html_prepend і html_append до зворотного відліку віджетів",
+                "zh-cn": "* 为小部件反向倒计时添加 html_prepend 和 html_append 属性"
+            },
+            "0.7.11": {
+                "en": "* adjust documentation for widget reverse countdown",
+                "de": "* Dokumentation für Widget-Reverse-Countdown anpassen",
+                "ru": "* корректировка документации для обратного отсчета виджета",
+                "pt": "* ajuste a documentação para contagem regressiva do widget",
+                "nl": "* documentatie aanpassen voor het omgekeerd aftellen van widgets",
+                "fr": "* ajuster la documentation pour le compte à rebours inversé du widget",
+                "it": "* modificare la documentazione per il conto alla rovescia inverso del widget",
+                "es": "* ajustar la documentación para la cuenta regresiva inversa del widget",
+                "pl": "* dostosuj dokumentację do odliczania wstecznego widżetu",
+                "uk": "* налаштувати документацію для зворотного відліку віджетів",
+                "zh-cn": "* 调整小部件反向倒计时的文档"
+            },
+            "0.7.10": {
+                "en": "* add widget reverse countdown",
+                "de": "* Widget-Reverse-Countdown hinzufügen",
+                "ru": "* добавить виджет обратного отсчета",
+                "pt": "* adicionar contagem regressiva ao widget",
+                "nl": "* voeg een widget omgekeerd aftellen toe",
+                "fr": "* ajouter un compte à rebours inversé de widget",
+                "it": "* aggiungi il conto alla rovescia inverso del widget",
+                "es": "* agregar widget de cuenta regresiva inversa",
+                "pl": "* dodaj widget odliczania wstecznego",
+                "uk": "* додати віджет зворотного відліку",
+                "zh-cn": "* 添加小部件反向倒计时"
+            },
+            "0.7.9": {
+                "en": "* add more wordclock tests * fix wordclock matrix swiss",
+                "de": "* Weitere Wordclock-Tests hinzufügen * Wordclock-Matrix Swiss reparieren",
+                "ru": "* добавить больше тестов WordClock * исправить матрицу WordClock Swiss",
+                "pt": "* adicionar mais testes de wordclock * corrigir matriz de wordclock suíça",
+                "nl": "* voeg meer wordclock-tests toe * repareer wordclock-matrix Zwitsers",
+                "fr": "* ajouter plus de tests wordclock * corriger la matrice wordclock suisse",
+                "it": "* aggiunti altri test wordclock * corretta la matrice wordclock svizzera",
+                "es": "* agregar más pruebas de reloj * arreglar la matriz de reloj suizo",
+                "pl": "* dodaj więcej testów wordclocka * napraw szwajcarską matrycę wordclocka",
+                "uk": "* додати більше тестів wordclock * виправити матрицю wordclock swiss",
+                "zh-cn": "* 添加更多字时钟测试 * 修复字时钟矩阵瑞士"
+            },
+            "0.7.8": {
+                "en": "* fix wordclock",
+                "de": "* Wordclock reparieren",
+                "ru": "* исправить WordClock",
+                "pt": "* corrigir wordclock",
+                "nl": "* wordclock repareren",
+                "fr": "* Correction de l'horloge de mots",
+                "it": "* corretto il wordclock",
+                "es": "* arreglar el reloj",
+                "pl": "* napraw wordclock",
+                "uk": "* виправити wordclock",
+                "zh-cn": "*修复字时钟"
+            },
+            "0.7.7": {
+                "en": "* add timezone for wordclock",
+                "de": "* Zeitzone für Wordclock hinzufügen",
+                "ru": "* добавить часовой пояс для WordClock",
+                "pt": "* adicione fuso horário para wordclock",
+                "nl": "* voeg tijdzone toe voor wordclock",
+                "fr": "* ajouter un fuseau horaire pour wordclock",
+                "it": "* aggiungi fuso orario per wordclock",
+                "es": "* agregar zona horaria para wordclock",
+                "pl": "* dodaj strefę czasową dla wordclocka",
+                "uk": "* додати часовий пояс для wordclock",
+                "zh-cn": "* 为字时钟添加时区"
+            },
+            "0.7.6": {
+                "en": "* add tests for wordclock * remove admin tab",
+                "de": "* Tests für Wordclock hinzufügen * Admin-Tab entfernen",
+                "ru": "* добавить тесты для WordClock * удалить вкладку администратора",
+                "pt": "* adicionar testes para wordclock * remover guia de administração",
+                "nl": "* tests voor wordclock toevoegen * admin-tabblad verwijderen",
+                "fr": "* ajouter des tests pour wordclock * supprimer l'onglet admin",
+                "it": "* aggiungi test per wordclock * rimuovi la scheda di amministrazione",
+                "es": "* agregar pruebas para wordclock * eliminar pestaña de administración",
+                "pl": "* dodaj testy dla wordclocka * usuń zakładkę administratora",
+                "uk": "* додати тести для wordclock * видалити вкладку адміністратора",
+                "zh-cn": "* 添加字时钟测试 * 删除管理选项卡"
+            }
+        },
+        "platform": "Javascript/Node.js",
+        "mode": "daemon",
+        "loglevel": "info",
+        "icon": "mytime.png",
+        "extIcon": "https://raw.githubusercontent.com/oweitman/ioBroker.mytime/main/admin/mytime.png",
+        "keywords": ["mytime", "timeseries", "countdown timer"],
+        "adminUI": {
+            "config": "json"
+        },
+        "readme": "https://github.com/oweitman/ioBroker.mytime/blob/main/README.md",
+        "enabled": true,
         "licenseInformation": {
             "type": "free",
             "license": "MIT"
         },
-        "platform": "Javascript/Node.js",
-        "main": "main.js",
-        "icon": "mytime.png",
-        "enabled": true,
-        "extIcon": "https://raw.githubusercontent.com/oweitman/ioBroker.mytime/main/admin/mytime.png",
-        "readme": "https://github.com/oweitman/ioBroker.mytime/blob/main/README.md",
-        "loglevel": "info",
-        "tier": 3,
-        "restartAdapters": [],
-        "messagebox": true,
-        "mode": "daemon",
-        "type": "misc-data",
         "compact": true,
-        "connectionType": "local",
-        "dataSource": "poll",
-        "adminUI": {
-            "config": "materialize"
-        },
         "eraseOnUpload": true,
-        "materialize": true,
-        "materializeTab": false,
-        "supportCustoms": false,
         "dependencies": [
             {
-                "js-controller": ">=3.3.22"
+                "js-controller": ">=4.0.24"
             },
             "vis"
         ],
@@ -172,9 +149,56 @@
             {
                 "admin": ">=5.0.0"
             }
-        ]
+        ],
+        "type": "visualization",
+        "messagebox": true,
+        "tier": 3,
+        "connectionType": "local",
+        "dataSource": "poll",
+        "restartAdapters": []
     },
-    "native": {},
+    "native": {
+        "countdown": [],
+        "timeseries": []
+    },
     "objects": [],
-    "instanceObjects": []
+    "instanceObjects": [
+        {
+            "_id": "Countdowns",
+            "type": "device",
+            "common": {
+                "name": "All Countdowns datapoints"
+            },
+            "native": {}
+        },
+        {
+            "_id": "Timeseries",
+            "type": "device",
+            "common": {
+                "name": "All Timeseries datapoints"
+            },
+            "native": {}
+        },
+        {
+            "_id": "info",
+            "type": "channel",
+            "common": {
+                "name": "Information"
+            },
+            "native": {}
+        },
+        {
+            "_id": "info.connection",
+            "type": "state",
+            "common": {
+                "role": "indicator.connected",
+                "name": "Device or service connected",
+                "type": "boolean",
+                "read": true,
+                "write": false,
+                "def": false
+            },
+            "native": {}
+        }
+    ]
 }

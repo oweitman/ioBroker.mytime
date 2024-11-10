@@ -11,7 +11,7 @@ const utils = require("@iobroker/adapter-core");
 // Load your modules here, e.g.:
 // const fs = require("fs");
 
-const mytimerequire = require(__dirname +"/lib/mytimeserver.js");
+const mytimeclassNew = require(__dirname + "/lib/mytimeserver.js");
 let mytimeserver;
 class Mytime extends utils.Adapter {
 
@@ -38,7 +38,8 @@ class Mytime extends utils.Adapter {
         // Initialize your adapter here
         if (!mytimeserver) {
             this.log.debug("main onReady open mytime");
-            mytimeserver = new mytimerequire(this);
+            mytimeserver = new mytimeclassNew(this);
+            mytimeserver.init();
         }
 
         // in this template all states changes inside the adapters namespace are subscribed
@@ -70,11 +71,11 @@ class Mytime extends utils.Adapter {
     onStateChange(id, state) {
         if (state) {
             // The state was changed
-            this.log.info(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
-            if (mytimeserver) mytimeserver.doStateChange(id,state);
+            this.log.debug(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
+            if (mytimeserver) mytimeserver.doStateChange(id, state);
         } else {
             // The state was deleted
-            this.log.info(`state ${id} deleted`);
+            this.log.debug(`state ${id} deleted`);
         }
     }
 
@@ -84,6 +85,7 @@ class Mytime extends utils.Adapter {
       * @param {ioBroker.Message} obj
       */
     onMessage(obj) {
+        debugger;
         if (typeof obj === "object" && obj.message) {
             if (obj.command === "send") {
                 // e.g. send email or pushover or whatever

@@ -1,0 +1,56 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Run translate-adapter",
+            // "args": ["./devutil/translate.js", "deletekey", "tsTimeseriesName,tsTimeseriesNameTooltip"],
+            "args": ["./devutil/translate.js", "--source", "widgets/mytime/i18n/en.json", "--format", "single"],
+            "runtimeExecutable": "c:/Users/oweit/AppData/Roaming/fnm/aliases/default/node.exe",
+            "cwd": "${workspaceFolder}",
+            "stopOnEntry": true
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "default Launch ioBroker Adapter ",
+            "skipFiles": ["<node_internals>/**"],
+            "args": ["--debug", "0"],
+            "program": "node_modules/iobroker.mytime/main.js",
+            "cwd": "${workspaceFolder}/.dev-server/default",
+            "runtimeExecutable": "c:/Users/oweit/AppData/Roaming/fnm/aliases/default/node.exe",
+            "stopOnEntry": false,
+            "sourceMaps": true,
+            "console": "internalConsole",
+            "outputCapture": "std",
+            "resolveSourceMapLocations": ["${workspaceFolder}/**" /* , "!*node_modules/**" */]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "visdebug ",
+            "skipFiles": ["<node_internals>/**"],
+            "args": ["visdebug", "mytime", "--debug", "0"],
+            "program": "node_modules/iobroker.js-controller/iobroker.js",
+            "cwd": "${workspaceFolder}/.dev-server/default",
+            "runtimeExecutable": "c:/Users/oweit/AppData/Roaming/fnm/aliases/default/node.exe",
+            "stopOnEntry": true,
+            "sourceMaps": true,
+            "console": "internalConsole",
+            "outputCapture": "std",
+            "resolveSourceMapLocations": ["${workspaceFolder}/**" /* , "!*node_modules/**" */]
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "iobroker web",
+            "url": "http://localhost:4173/",
+            "trace": true,
+            "skipFiles": ["socket.io.js"]
+        }
+    ]
+}

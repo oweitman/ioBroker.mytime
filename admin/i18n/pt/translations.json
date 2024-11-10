@@ -1,0 +1,21 @@
+{
+    "mytime2 adapter settings": "Configurações do adaptador para mytime2",
+    "tabcountdown": "Contagem regressiva",
+    "tabtimeseries": "Série temporal",
+    "cdName": "Nome",
+    "cdDays": "Dias",
+    "cdHours": "Horas",
+    "cdMinutes": "Minutos",
+    "cdSeconds": "Segundos",
+    "cdBehavior": "Comportamento",
+    "cd-TT-Name": "Nome do ponto de dados para controlar a contagem regressiva",
+    "cd-TT-Days": "Número de dias para a contagem regressiva",
+    "cd-TT-Hours": "Número de horas para a contagem regressiva",
+    "cd-TT-Minutes": "Número de minutos para a contagem regressiva",
+    "cd-TT-Seconds": "Número de segundos para a contagem regressiva",
+    "cd-TT-Behavior": "Comportamento após o fim da contagem regressiva",
+    "cdBehaviourSetTimer": "definido para temporizador",
+    "cdBehaviourSetReset": "definido como zero",
+    "xxx": "xxx",
+    "": ""
+}

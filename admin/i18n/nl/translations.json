@@ -1,0 +1,21 @@
+{
+    "mytime2 adapter settings": "Adapterinstellingen voor mytime2",
+    "tabcountdown": "Aftellen",
+    "tabtimeseries": "Tijdreeksen",
+    "cdName": "Naam",
+    "cdDays": "Dagen",
+    "cdHours": "Uur",
+    "cdMinutes": "Notulen",
+    "cdSeconds": "Seconden",
+    "cdBehavior": "Gedrag",
+    "cd-TT-Name": "Naam van het datapunt om het aftellen te beheren",
+    "cd-TT-Days": "Aantal dagen voor het aftellen",
+    "cd-TT-Hours": "Aantal uren voor het aftellen",
+    "cd-TT-Minutes": "Aantal minuten voor het aftellen",
+    "cd-TT-Seconds": "Aantal seconden voor het aftellen",
+    "cd-TT-Behavior": "Gedrag na einde van het aftellen",
+    "cdBehaviourSetTimer": "ingesteld op timer",
+    "cdBehaviourSetReset": "op nul gezet",
+    "xxx": "xxx",
+    "": ""
+}

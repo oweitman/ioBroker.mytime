@@ -1,0 +1,126 @@
+{
+    "type": "tabs",
+    "i18n": true,
+    "items": {
+        "_tabcountdown": {
+            "type": "panel",
+            "label": "tabcountdown",
+            "xs": 12,
+            "sm": 12,
+            "md": 12,
+            "lg": 12,
+            "xl": 12,
+            "items": {
+                "countdowns": {
+                    "newLine": true,
+                    "xs": 12,
+                    "sm": 10,
+                    "md": 10,
+                    "lg": 10,
+                    "xl": 10,
+                    "noDelete": false,
+                    "type": "table",
+                    "items": [
+                        {
+                            "width": "20%",
+                            "type": "text",
+                            "attr": "name",
+                            "title": "cdName",
+                            "filter": true,
+                            "sort": true,
+                            "default": "",
+                            "tooltip": "cd-TT-Name",
+                            "validator": "!/[^0-9a-zöÖüÜäÄß]/i.test(data.name) && data.name.length>0 && data.name.length<30",
+                            "validatorNoSaveOnError": true
+                        },
+                        {
+                            "width": "15%",
+                            "type": "text",
+                            "attr": "days",
+                            "title": "cdDays",
+                            "filter": true,
+                            "sort": true,
+                            "default": 0,
+                            "tooltip": "cd-TT-Days",
+                            "validator": "data.days>=0",
+                            "validatorNoSaveOnError": true
+                        },
+                        {
+                            "width": "15%",
+                            "type": "text",
+                            "attr": "hours",
+                            "title": "cdHours",
+                            "filter": true,
+                            "sort": true,
+                            "default": 0,
+                            "tooltip": "cd-TT-Hours",
+                            "validator": "(data.hours>=0) && (data.hours<=23)",
+                            "validatorNoSaveOnError": true
+                        },
+                        {
+                            "width": "15%",
+                            "type": "text",
+                            "attr": "minutes",
+                            "title": "cdMinutes",
+                            "filter": true,
+                            "sort": true,
+                            "default": 0,
+                            "tooltip": "cd-TT-Minutes",
+                            "validator": "(data.hours>=0) && (data.hours<=59)",
+                            "validatorNoSaveOnError": true
+                        },
+                        {
+                            "width": "15%",
+                            "type": "text",
+                            "attr": "seconds",
+                            "title": "cdSeconds",
+                            "filter": true,
+                            "sort": true,
+                            "default": 0,
+                            "tooltip": "cd-TT-Seconds",
+                            "validator": "(data.hours>=0) && (data.hours<=59)",
+                            "validatorNoSaveOnError": true
+                        },
+                        {
+                            "width": "15%",
+                            "type": "select",
+                            "attr": "behavior",
+                            "title": "cdBehavior",
+                            "options": [
+                                { "label": "cdBehaviourSetTimer", "value": "timer" },
+                                { "label": "cdBehaviourSetReset", "value": "zero" }
+                            ],
+                            "filter": true,
+                            "sort": true,
+                            "default": "timer",
+                            "tooltip": "cd-TT-Behavior"
+                        }
+                    ]
+                }
+            }
+        },
+        "_tabtimeseries": {
+            "type": "panel",
+            "label": "tabtimeseries",
+            "xs": 12,
+            "sm": 12,
+            "md": 12,
+            "lg": 12,
+            "xl": 12,
+            "items": {
+                "timeseries": {
+                    "type": "custom",
+                    "i18n": true,
+                    "xs": 12,
+                    "sm": 10,
+                    "md": 10,
+                    "lg": 10,
+                    "xl": 10,
+                    "style": { "width": "100%" },
+                    "url": "custom/customComponents.js",
+                    "name": "ConfigCustomMytimeSet/Components/TimeseriesConfig"
+                }
+            }
+        }
+    }
+}

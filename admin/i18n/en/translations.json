@@ -1,0 +1,21 @@
+{
+    "mytime2 adapter settings": "Adapter settings for mytime2",
+    "tabcountdown": "Countdown",
+    "tabtimeseries": "Timeseries",
+    "cdName": "Name",
+    "cdDays": "Days",
+    "cdHours": "Hours",
+    "cdMinutes": "Minutes",
+    "cdSeconds": "Seconds",
+    "cdBehavior": "Behavior",
+    "cd-TT-Name": "Name of the datapoint to control the countdown",
+    "cd-TT-Days": "Number of days for the countdown",
+    "cd-TT-Hours": "Number of hours for the countdown",
+    "cd-TT-Minutes": "Number of minutes for the countdown",
+    "cd-TT-Seconds": "Number of seconds for the countdown",
+    "cd-TT-Behavior": "Behaviour after end of countdown",
+    "cdBehaviourSetTimer": "set to timer",
+    "cdBehaviourSetReset": "set to zero",
+    "xxx": "xxx",
+    "": ""
+}

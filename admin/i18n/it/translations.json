@@ -1,0 +1,21 @@
+{
+    "mytime2 adapter settings": "Impostazioni dell'adattatore per mytime2",
+    "tabcountdown": "Conto alla rovescia",
+    "tabtimeseries": "Serie temporali",
+    "cdName": "Nome",
+    "cdDays": "Giorni",
+    "cdHours": "Ore",
+    "cdMinutes": "Minuti",
+    "cdSeconds": "Secondi",
+    "cdBehavior": "Comportamento",
+    "cd-TT-Name": "Nome del punto dati per controllare il conto alla rovescia",
+    "cd-TT-Days": "Numero di giorni per il conto alla rovescia",
+    "cd-TT-Hours": "Numero di ore per il conto alla rovescia",
+    "cd-TT-Minutes": "Numero di minuti per il conto alla rovescia",
+    "cd-TT-Seconds": "Numero di secondi per il conto alla rovescia",
+    "cd-TT-Behavior": "Comportamento dopo la fine del conto alla rovescia",
+    "cdBehaviourSetTimer": "impostato su timer",
+    "cdBehaviourSetReset": "impostato a zero",
+    "xxx": "xxx",
+    "": ""
+}
