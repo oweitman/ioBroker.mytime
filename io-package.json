@@ -1,7 +1,7 @@
 {
     "common": {
         "name": "mytime",
-        "version": "0.7.12",
+        "version": "1.0.0",
         "titleLang": {
             "en": "MyTime",
             "de": "MyTime",
@@ -107,19 +107,6 @@
                 "pl": "* dodaj strefę czasową dla wordclocka",
                 "uk": "* додати часовий пояс для wordclock",
                 "zh-cn": "* 为字时钟添加时区"
-            },
-            "0.7.6": {
-                "en": "* add tests for wordclock * remove admin tab",
-                "de": "* Tests für Wordclock hinzufügen * Admin-Tab entfernen",
-                "ru": "* добавить тесты для WordClock * удалить вкладку администратора",
-                "pt": "* adicionar testes para wordclock * remover guia de administração",
-                "nl": "* tests voor wordclock toevoegen * admin-tabblad verwijderen",
-                "fr": "* ajouter des tests pour wordclock * supprimer l'onglet admin",
-                "it": "* aggiungi test per wordclock * rimuovi la scheda di amministrazione",
-                "es": "* agregar pruebas para wordclock * eliminar pestaña de administración",
-                "pl": "* dodaj testy dla wordclocka * usuń zakładkę administratora",
-                "uk": "* додати тести для wordclock * видалити вкладку адміністратора",
-                "zh-cn": "* 添加字时钟测试 * 删除管理选项卡"
             }
         },
         "platform": "Javascript/Node.js",

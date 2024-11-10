@@ -1,101 +1,125 @@
 {
-    "name": "iobroker.mytime",
-    "version": "0.7.12",
-    "description": "This adapter handle Time (eg: countdown,etc.)",
-    "author": {
-        "name": "oweitman",
-        "email": "oweitman@gmx.de"
-    },
-    "homepage": "https://github.com/oweitman/ioBroker.mytime",
-    "license": "MIT",
-    "keywords": [
-        "ioBroker",
-        "mytime",
-        "timeseries",
-        "countdown timer"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/oweitman/ioBroker.mytime.git"
-    },
-    "engines": {
-        "node": ">= 18"
-    },
-    "depsComment": {
-        "@types/node": "should match the lowest MAJOR version of Node.js we support."
-    },
-    "dependencies": {
-        "@iobroker/adapter-core": "^3.2.2",
-        "@iobroker/build-tools": "^1.0.9",
-        "@iobroker/testing": "^4.1.3",
-        "@types/node": "^20.14.2",
-        "@types/request": "^2.48.12",
-        "axios": "^1.7.2",
-        "dayjs": "^1.11.13",
-        "rrule": "^2.7.2",
-        "semver": "^7.6.2",
-        "typescript": "~5.4.5"
-    },
-    "devDependencies": {
-        "@alcalzone/release-script": "^3.7.0",
-        "@alcalzone/release-script-plugin-iobroker": "^3.7.1",
-        "@alcalzone/release-script-plugin-license": "^3.7.0",
-        "@alcalzone/release-script-plugin-manual-review": "^3.7.0",
-        "@iobroker/testing":"^4.1.3",
-        "@iobroker/adapter-dev": "^1.3.0",
-        "@iobroker/eslint-config": "^0.1.6",
-        "@iobroker/vis-2-widgets-react-dev": "^1.0.7",
-        "alcalzone-shared": "^4.0.8",
-        "chai": "^4.4.1",
-        "gulp": "^4.0.2",
-        "gulp-rename": "^2.0.0",
-        "gulp-replace": "^1.1.4",
-        "mocha": "^10.4.0",
-        "timekeeper": "^2.3.1"
-    },
-    "bugs": {
-        "url": "https://github.com/oweitman/ioBroker.mytime/issues"
-    },
-    "main": "main.js",
-    "files": [
-        "admin/",
-        "lib/",
-        "widgets/**/!(tsconfig|tsconfig.*|.eslintrc).json",
-        "widgets/**/*.{html,css,png,svg,jpg,js}",
-        "www/",
-        "io-package.json",
-        "LICENSE",
-        "main.js"
-    ],
-    "scripts": {
-        "test:declarations": "tsc -p test/lib/TS/tsconfig.json && tsc -p test/lib/JS/tsconfig.json",
-        "test:javascript": "node node_modules/mocha/bin/mocha --exit",
-        "test": "npm run test:package && npm run test:unit",
-        "test:package": "mocha test/package --exit",
-        "test:unit": "mocha test/unit --exit",
-        "test:integration": "mocha test/integration --exit",
-        "prepublishOnly": "gulp --gulpfile tasks.js default",
-        "release": "release-script",
-        "release-patch": "release-script patch --yes",
-        "release-minor": "release-script minor --yes",
-        "release-major": "release-script major --yes",
-        "translate": "translate-adapter",
-        "update-packages": "ncu --upgrade && cd src && ncu --upgrade && cd ../src-admin && ncu --upgrade",
-        "npm": "npm i -f && cd src-admin && npm i -f",
-        "admin-0-clean": "node tasks --admin-0-clean",
-        "admin-1-npm": "node tasks --admin-1-npm",
-        "admin-2-compile": "node tasks --admin-2-compile",
-        "admin-3-copy": "node tasks --admin-3-copy",
-        "admin-build": "node tasks --admin-build",
-        "0-clean": "node tasks --0-clean",
-        "1-npm": "node tasks --1-npm",
-        "2-build": "node tasks --2-build",
-        "3-copy": "node tasks --3-copy",
-        "4-patch": "node tasks --4-patch",
-        "build": "node tasks.js",
-        "translate-admin-deletekey": "node ./src-admin/devutil/translate.js deletekey 'xx,xx'",
-        "translate-admin": "node ./devutil/translate.js -- source src-admin/src/i18n", 
-        "translate-widgets": "node ./devutil/translate.js --source widgets/mytime/i18n/en.json --format single" 
-    },
-    "readmeFilename": "README.md"
+  "name": "iobroker.mytime",
+  "version": "1.0.0",
+  "description": "This adapter handle Time (eg: countdown,etc.)",
+  "author": {
+    "name": "oweitman",
+    "email": "oweitman@gmx.de"
+  },
+  "homepage": "https://github.com/oweitman/ioBroker.mytime",
+  "license": "MIT",
+  "keywords": [
+    "ioBroker",
+    "mytime",
+    "timeseries",
+    "countdown timer"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oweitman/ioBroker.mytime.git"
+  },
+  "engines": {
+    "node": ">= 18"
+  },
+  "depsComment": {
+    "@types/node": "should match the lowest MAJOR version of Node.js we support."
+  },
+  "dependencies": {
+    "@iobroker/adapter-core": "^3.2.2",
+    "@iobroker/build-tools": "^1.0.9",
+    "@iobroker/testing": "^4.1.3",
+    "@types/node": "^20.14.2",
+    "@types/request": "^2.48.12",
+    "axios": "^1.7.2",
+    "dayjs": "^1.11.13",
+    "rrule": "^2.7.2",
+    "semver": "^7.6.2",
+    "typescript": "~5.4.5"
+  },
+  "devDependencies": {
+    "@alcalzone/release-script": "^3.8.0",
+    "@alcalzone/release-script-plugin-iobroker": "^3.7.2",
+    "@alcalzone/release-script-plugin-license": "^3.7.0",
+    "@alcalzone/release-script-plugin-manual-review": "^3.7.0",
+    "@iobroker/adapter-dev": "^1.3.0",
+    "@iobroker/adapter-react": "2.0.22",
+    "@iobroker/testing": "^5.0.0",
+    "@material-ui/core": "^4.12.4",
+    "@tsconfig/node18": "^18.2.4",
+    "@types/chai-as-promised": "^7.1.8",
+    "@types/chai": "^4.3.20",
+    "@types/mocha": "^10.0.9",
+    "@types/node": "^18.19.64",
+    "@types/proxyquire": "^1.3.31",
+    "@types/react-dom": "^17.0.25",
+    "@types/react": "^17.0.83",
+    "@types/sinon": "^17.0.3",
+    "@types/sinon-chai": "^3.2.12",
+    "chai-as-promised": "^7.1.2",
+    "chai": "^4.5.0", 
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint": "^8.57.1",
+    "mocha": "^10.8.2",
+    "prettier": "^3.3.3",
+    "proxyquire": "^2.1.3",
+    "react-dom": "^17.0.2",
+    "react": "^17.0.2",
+    "sinon": "^19.0.2",
+    "sinon-chai": "^3.7.0",
+    "typescript": "~5.0.4",
+    "@iobroker/eslint-config": "^0.1.6",
+    "@iobroker/vis-2-widgets-react-dev": "^1.0.7",
+    "alcalzone-shared": "^4.0.8",
+    "gulp": "^4.0.2",
+    "gulp-rename": "^2.0.0",
+    "gulp-replace": "^1.1.4",
+     "timekeeper": "^2.3.1"
+  },
+  "bugs": {
+    "url": "https://github.com/oweitman/ioBroker.mytime/issues"
+  },
+  "main": "main.js",
+  "files": [
+    "admin/",
+    "lib/",
+    "widgets/**/!(tsconfig|tsconfig.*|.eslintrc).json",
+    "widgets/**/*.{html,css,png,svg,jpg,js}",
+    "www/",
+    "io-package.json",
+    "LICENSE",
+    "main.js"
+  ],
+  "scripts": {
+    "test:declarations": "tsc -p test/lib/TS/tsconfig.json && tsc -p test/lib/JS/tsconfig.json",
+    "test:javascript": "node node_modules/mocha/bin/mocha --exit",
+    "test": "npm run test:package && npm run test:unit",
+    "test:package": "mocha test/package --exit",
+    "test:unit": "mocha test/unit --exit",
+    "test:integration": "mocha test/integration --exit",
+    "prepublishOnly": "gulp --gulpfile tasks.js default",
+    "release": "release-script",
+    "release-patch": "release-script patch --yes",
+    "release-minor": "release-script minor --yes",
+    "release-major": "release-script major --yes",
+    "translate": "translate-adapter",
+    "update-packages": "ncu --upgrade && cd src && ncu --upgrade && cd ../src-admin && ncu --upgrade",
+    "npm": "npm i -f && cd src-admin && npm i -f",
+    "admin-0-clean": "node tasks --admin-0-clean",
+    "admin-1-npm": "node tasks --admin-1-npm",
+    "admin-2-compile": "node tasks --admin-2-compile",
+    "admin-3-copy": "node tasks --admin-3-copy",
+    "admin-build": "node tasks --admin-build",
+    "0-clean": "node tasks --0-clean",
+    "1-npm": "node tasks --1-npm",
+    "2-build": "node tasks --2-build",
+    "3-copy": "node tasks --3-copy",
+    "4-patch": "node tasks --4-patch",
+    "build": "node tasks.js",
+    "translate-admin-deletekey": "node ./src-admin/devutil/translate.js deletekey 'xx,xx'",
+    "translate-admin": "node ./devutil/translate.js -- source src-admin/src/i18n",
+    "translate-widgets": "node ./devutil/translate.js --source widgets/mytime/i18n/en.json --format single"
+  },
+  "readmeFilename": "README.md"
 }

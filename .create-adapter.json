@@ -4,15 +4,11 @@
     "adapterName": "mytime",
     "title": "myTime",
     "description": "This adapter handle Time (eg: countdown,etc.)",
-    "keywords": [
-        "mytime",
-        "trigger time",
-        "countdown"
-    ],
+    "keywords": ["mytime", "trigger time", "countdown"],
     "expert": "yes",
     "features": ["adapter", "vis"],
     "adminFeatures": [],
-    "type": "misc-data",
+    "type": "visualization",
     "startMode": "daemon",
     "connectionType": "local",
     "dataSource": "assumption",
@@ -34,5 +30,5 @@
     "defaultBranch": "main",
     "license": "MIT License",
     "dependabot": "yes",
-    "creatorVersion": "2.6.3"
+    "creatorVersion": "2.6.5"
 }
