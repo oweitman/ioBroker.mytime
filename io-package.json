@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "mytime",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "titleLang": {
       "en": "MyTime",
       "de": "MyTime",
@@ -32,6 +32,19 @@
       "oweitman <oweitman@gmx.de>"
     ],
     "news": {
+      "1.0.7": {
+        "en": "switch back to node 18 for testing due to airbnb error",
+        "de": "zurück zum knoten 18 zum testen durch airbnb-fehler",
+        "ru": "переключиться на узел 18 для тестирования из-за ошибки airbnb",
+        "pt": "mudar de volta para o nó 18 para testes devido ao erro do airbnb",
+        "nl": "terug schakelen naar node 18 voor testen als gevolg van airbnb fout",
+        "fr": "retour au nœud 18 pour les essais en raison d'une erreur airbnb",
+        "it": "tornare al nodo 18 per il test a causa di errore airbnb",
+        "es": "volver al nodo 18 para probar debido al error de airbnb",
+        "pl": "przełączanie z powrotem na węzeł 18 do testów z powodu błędu airbnb",
+        "uk": "перемикач назад до вузла 18 для тестування через помилку airbnb",
+        "zh-cn": "切换到节点18进行测试,因为空气bnb错误"
+      },
       "1.0.6": {
         "en": "more repair",
         "de": "mehr reparatur",
@@ -109,19 +122,6 @@
         "pl": "ogólny przegląd\naktualizacja dialogów konfiguracyjnych dla odliczania i czasopism w jsonConfig i niestandardowe reagowanie",
         "uk": "загальний перегляд\nоновлення діалогів конфігурації для відліку та часових подій в jsonConfig та користувацького реагування",
         "zh-cn": "一般订正\n在 jsonConfig 和自定义中更新倒计时和时间序列的配置对话框"
-      },
-      "0.7.12": {
-        "en": "* add html_prepend and html_append properties to the widget reverse countdown",
-        "de": "* Fügen Sie die Eigenschaften html_prepend und html_append zum umgekehrten Countdown des Widgets hinzu",
-        "ru": "* добавить свойства html_prepend и html_append в обратный отсчет виджета",
-        "pt": "* adicione as propriedades html_prepend e html_append à contagem regressiva reversa do widget",
-        "nl": "* voeg de eigenschappen html_prepend en html_append toe aan het omgekeerde aftellen van de widget",
-        "fr": "* ajouter les propriétés html_prepend et html_append au compte à rebours inversé du widget",
-        "it": "* aggiungi le proprietà html_prepend e html_append al conto alla rovescia inverso del widget",
-        "es": "* agregue las propiedades html_prepend y html_append a la cuenta regresiva inversa del widget",
-        "pl": "* dodaj właściwości html_prepend i html_append do odliczania wstecznego widżetu",
-        "uk": "* додайте властивості html_prepend і html_append до зворотного відліку віджетів",
-        "zh-cn": "* 为小部件反向倒计时添加 html_prepend 和 html_append 属性"
       }
     },
     "platform": "Javascript/Node.js",
