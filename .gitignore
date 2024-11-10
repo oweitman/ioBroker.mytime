@@ -4,7 +4,6 @@ tmp
 _admin
 iob_npm.dode
 /nbproject
-package-lock.json
 
 # ioBroker dev-server
 .dev-server/

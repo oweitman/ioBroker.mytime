@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "mytime",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "titleLang": {
       "en": "MyTime",
       "de": "MyTime",
@@ -32,6 +32,19 @@
       "oweitman <oweitman@gmx.de>"
     ],
     "news": {
+      "1.0.5": {
+        "en": "add package-lock.json to git",
+        "de": "paket-lock.json zu git hinzufügen",
+        "ru": "добавить пакет-lock.json к git",
+        "pt": "adicionar package-lock.json para git",
+        "nl": "pakket-lock.json toevoegen aan git",
+        "fr": "ajouter paquet-lock.json à git",
+        "it": "aggiungere pacchetto-lock.json a git",
+        "es": "añadir paquete-lock.json a git",
+        "pl": "add package- lock.json to git",
+        "uk": "додати пакет-lock.json до git",
+        "zh-cn": "将软件包锁.json添加到 git"
+      },
       "1.0.4": {
         "en": "remove unused library",
         "de": "ungenutzte bibliothek",
@@ -109,19 +122,6 @@
         "pl": "* dostosuj dokumentację do odliczania wstecznego widżetu",
         "uk": "* налаштувати документацію для зворотного відліку віджетів",
         "zh-cn": "* 调整小部件反向倒计时的文档"
-      },
-      "0.7.10": {
-        "en": "* add widget reverse countdown",
-        "de": "* Widget-Reverse-Countdown hinzufügen",
-        "ru": "* добавить виджет обратного отсчета",
-        "pt": "* adicionar contagem regressiva ao widget",
-        "nl": "* voeg een widget omgekeerd aftellen toe",
-        "fr": "* ajouter un compte à rebours inversé de widget",
-        "it": "* aggiungi il conto alla rovescia inverso del widget",
-        "es": "* agregar widget de cuenta regresiva inversa",
-        "pl": "* dodaj widget odliczania wstecznego",
-        "uk": "* додати віджет зворотного відліку",
-        "zh-cn": "* 添加小部件反向倒计时"
       }
     },
     "platform": "Javascript/Node.js",
