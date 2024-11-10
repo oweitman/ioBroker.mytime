@@ -1,4 +1,7 @@
-admin/build/
+admin/custom/
+src-admin/build/
 .prettierrc.js
 **/.eslintrc.js
 admin/words.js
+src-admin/src/worker.js
+src-admin/src/WebWorker.js

@@ -27,7 +27,6 @@ function importi18nKeys() {
         for (const file of files) {
             const filePath = `${dir}/${file}`;
             if (fs.statSync(filePath).isFile() && filePath.endsWith('.json')) {
-                // eslint-disable-next-line import/no-dynamic-require
                 i18n[file.replace('.json', '')] = require(filePath);
             }
         }

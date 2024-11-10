@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /*
 	Base.js, version 1.1a
 	Copyright 2006-2010, Dean Edwards
@@ -903,9 +904,9 @@ var mtFlipClock;
 		 * @return  object  Returns a mtFlipClock.Time object
 		 */
 
-		getTime: function (time) {
-			return this.time;
-		},
+		/* 		getTime: function (time) {
+					return this.time;
+				}, */
 
 		/**
 		 * Changes the increment of time to up or down (add/sub)
@@ -1016,7 +1017,7 @@ var mtFlipClock;
 		 * @param  object  An object to override the default properties	 
 		 */
 
-		constructor: function (factory, digit, options) {
+		constructor: function (factory, digit/* , options */) {
 			this.factory = factory;
 			this.digit = digit;
 			this.lastDigit = digit;
@@ -1523,7 +1524,7 @@ var mtFlipClock;
 			}
 
 			var hours = date.getHours();
-			var merid = hours > 12 ? 'PM' : 'AM';
+			// var merid = hours > 12 ? 'PM' : 'AM';
 			var data = [
 				hours > 12 ? hours - 12 : (hours === 0 ? 12 : hours),
 				date.getMinutes()
@@ -1588,7 +1589,7 @@ var mtFlipClock;
 			var total = 0;
 			var newArray = [];
 
-			$.each(digits, function (i, digit) {
+			$.each(digits, function (i/* , digit */) {
 				if (i < totalDigits) {
 					total += parseInt(digits[i], 10);
 				}

@@ -10,18 +10,18 @@ WordClock LanguagePack ES
 vis.binds['mytime'].wordclock.addLanguage({
   langCode: 'ES',
   letterSet: [
-    ["E", "S", "O", "N", "E", "L", "A", "S", "U", "N", "A"], 
-    ["D", "O", "S", "I", "T", "R", "E", "S", "O", "A", "M"], 
-    ["C", "U", "A", "T", "R", "O", "C", "I", "N", "C", "O"], 
-    ["S", "E", "I", "S", "A", "S", "I", "E", "T", "E", "N"], 
-    ["O", "C", "H", "O", "N", "U", "E", "V", "E", "P", "M"], 
-    ["L", "A", "D", "I", "E", "Z", "S", "O", "N", "C", "E"], 
-    ["D", "O", "C", "E", "L", "Y", "M", "E", "N", "O", "S"], 
-    ["O", "V", "E", "I", "N", "T", "E", "D", "I", "E", "Z"], 
-    ["V", "E", "I", "N", "T", "I", "C", "I", "N", "C", "O"], 
+    ["E", "S", "O", "N", "E", "L", "A", "S", "U", "N", "A"],
+    ["D", "O", "S", "I", "T", "R", "E", "S", "O", "A", "M"],
+    ["C", "U", "A", "T", "R", "O", "C", "I", "N", "C", "O"],
+    ["S", "E", "I", "S", "A", "S", "I", "E", "T", "E", "N"],
+    ["O", "C", "H", "O", "N", "U", "E", "V", "E", "P", "M"],
+    ["L", "A", "D", "I", "E", "Z", "S", "O", "N", "C", "E"],
+    ["D", "O", "C", "E", "L", "Y", "M", "E", "N", "O", "S"],
+    ["O", "V", "E", "I", "N", "T", "E", "D", "I", "E", "Z"],
+    ["V", "E", "I", "N", "T", "I", "C", "I", "N", "C", "O"],
     ["M", "E", "D", "I", "A", "C", "U", "A", "R", "T", "O"]
   ],
-  timeString: function(h, m, settings = { round: false }) {
+  timeString: function (h, m, settings = { round: false }) {
     var ret = '';
     h %= 12;
     var hourNames = [
@@ -39,7 +39,7 @@ vis.binds['mytime'].wordclock.addLanguage({
       'SON LAS ONCE '
     ];
     switch (
-      (settings.round ? Math.round(m / 5) * 5 : Math.floor(m / 5) * 5) % 60
+    (settings.round ? Math.round(m / 5) * 5 : Math.floor(m / 5) * 5) % 60
     ) {
       case 0:
         ret += hourNames[h];

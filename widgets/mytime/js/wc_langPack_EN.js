@@ -56,12 +56,12 @@ vis.binds['mytime'].wordclock.addLanguage({
       (settings.fuzzyTime == 'both' || settings.fuzzyTime == 'before') &&
       m % 5 >= 3
     ) {
-	  if (m > 55) { h = (h + 1) % 12; if (h ==0) h=12;};
+      if (m > 55) { h = (h + 1) % 12; if (h == 0) h = 12; };
       ret += 'NEARLY ';
     }
 
     switch (
-      (settings.round || settings.fuzzyTime == 'both' || settings.fuzzyTime == 'before' ? Math.round(m / 5) * 5 : Math.floor(m / 5) * 5) % 60
+    (settings.round || settings.fuzzyTime == 'both' || settings.fuzzyTime == 'before' ? Math.round(m / 5) * 5 : Math.floor(m / 5) * 5) % 60
     ) {
       case 0:
         ret += hourNames[h - 1] + ' OCLOCK';

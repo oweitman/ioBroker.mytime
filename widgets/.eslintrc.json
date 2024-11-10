@@ -1,7 +1,12 @@
 {
     "env": {
         "browser": true,
-        "es6": false
+        "commonjs": true,
+        "es6": true,
+        "jquery": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 8
     },
     "rules": {
         // Visualizations may run in very old browsers without `let` and `const`

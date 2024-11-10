@@ -15,21 +15,6 @@ fetch('/vis/widgets/mytime/i18n/translations.json').then(async res => {
         true,
         systemDictionary,
         i18n
-        // {
-        // Add your translations here, e.g.:
-        // "size": {
-        // 	"en": "Size",
-        // 	"de": "Größe",
-        // 	"ru": "Размер",
-        // 	"pt": "Tamanho",
-        // 	"nl": "Grootte",
-        // 	"fr": "Taille",
-        // 	"it": "Dimensione",
-        // 	"es": "Talla",
-        // 	"pl": "Rozmiar",
-        // 	"zh-cn": "尺寸"
-        // }
-        // }
     );
 });
 
@@ -61,7 +46,7 @@ vis.binds['mytime'] = {
             var showhrs = data.countdown_showhrs;
             var showday = data.countdown_showday;
 
-            var font = (style['font-family'] && style['font-family'] != '') ? style['font-family'] : '';
+            // var font = (style['font-family'] && style['font-family'] != '') ? style['font-family'] : '';
 
             var color_act = data.countdown_color_active || '#FFE548';
             var color_inact = data.countdown_color_inactive || '#323232';
@@ -78,7 +63,7 @@ vis.binds['mytime'] = {
                 return;
             }
 
-            function onChange(e, newVal, oldVal) {
+            function onChange(e/* , newVal, oldVal */) {
                 var idParts = e.type.split('.');
                 if (idParts[idParts.length - 2] != 'action' && idParts[idParts.length - 2] != 'timer') return;
                 vis.binds["mytime"].countdownnixie.setState(widgetID, data, vis.binds["mytime"].countdownnixie.setState);
@@ -254,10 +239,10 @@ vis.binds['mytime'] = {
             var showhrs = data.countdown_showhrs;
             var showday = data.countdown_showday;
 
-            var pattern = ((showday) ? "1" : "0") +
-                ((showhrs) ? "1" : "0") +
-                ((showmin) ? "1" : "0") +
-                ((showsec) ? "1" : "0");
+            /*             var pattern = ((showday) ? "1" : "0") +
+                            ((showhrs) ? "1" : "0") +
+                            ((showmin) ? "1" : "0") +
+                            ((showsec) ? "1" : "0"); */
 
             var now = new Date().getTime();
             var ms = 0;
@@ -341,7 +326,7 @@ vis.binds['mytime'] = {
                 return;
             }
 
-            function onChange(e, newVal, oldVal) {
+            function onChange(e/* , newVal, oldVal */) {
                 var idParts = e.type.split('.');
                 if (idParts[idParts.length - 2] != 'action' && idParts[idParts.length - 2] != 'timer') return;
                 vis.binds["mytime"].countdownflip.setState(widgetID, data, vis.binds["mytime"].countdownflip.setState);
@@ -404,10 +389,10 @@ vis.binds['mytime'] = {
             var config = countdown_oid ? JSON.parse(vis.states.attr(countdown_oid + '.config.val') || "{}") : {};
             var stopbehaviour = config.stopbehaviour || 'timer';
 
-            var showsec = data.countdown_showsec;
-            var showmin = data.countdown_showmin;
-            var showhrs = data.countdown_showhrs;
-            var showday = data.countdown_showday;
+            /*             var showsec = data.countdown_showsec;
+                        var showmin = data.countdown_showmin;
+                        var showhrs = data.countdown_showhrs;
+                        var showday = data.countdown_showday; */
 
             var now = new Date().getTime();
             var ms = 0;
@@ -454,7 +439,7 @@ vis.binds['mytime'] = {
             }
             var countdown_oid;
             if (!data.countdown_oid || (countdown_oid = vis.binds["mytime"].getCountdownId(data.countdown_oid)) == false) return;
-            var timer = countdown_oid ? vis.states.attr(countdown_oid + '.timer.val') ? vis.states.attr(countdown_oid + '.timer.val') : 0 : 0;
+            // var timer = countdown_oid ? vis.states.attr(countdown_oid + '.timer.val') ? vis.states.attr(countdown_oid + '.timer.val') : 0 : 0;
             var showsec = data.countdown_showsec;
             var showmin = data.countdown_showmin;
             var showhrs = data.countdown_showhrs;
@@ -471,7 +456,7 @@ vis.binds['mytime'] = {
 
             }
 
-            function onChange(e, newVal, oldVal) {
+            function onChange(e/* , newVal, oldVal */) {
                 var idParts = e.type.split('.');
                 if (idParts[idParts.length - 2] != 'action' && idParts[idParts.length - 2] != 'timer') return;
                 vis.binds["mytime"].countdowncircle.setState(widgetID, data, vis.binds["mytime"].countdowncircle.setState);
@@ -688,7 +673,7 @@ vis.binds['mytime'] = {
             if (vis.editMode) vis.binds["mytime"].reversecountdownplain.setState(widgetID, data);
         },
         setState: function (widgetID, data) {
-            var countdown_oid;
+            // var countdown_oid;
             var format = data.countdown_format || 'dd\\d HH\\h mm\\m ss\\s';
             var htmlprepend = data.countdown_html_prepend || "";
             var htmlappend = data.countdown_html_append || "";
@@ -717,7 +702,7 @@ vis.binds['mytime'] = {
             var countdown_oid;
             if (!data.countdown_oid || (countdown_oid = vis.binds["mytime"].getCountdownId(data.countdown_oid)) == false) return;
 
-            function onChange(e, newVal, oldVal) {
+            function onChange(e/* , newVal, oldVal */) {
                 var idParts = e.type.split('.');
                 if (idParts[idParts.length - 2] != 'action' && idParts[idParts.length - 2] != 'timer') return;
                 vis.binds["mytime"].countdownplain.setState(widgetID, data);

@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "mytime",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "titleLang": {
       "en": "MyTime",
       "de": "MyTime",
@@ -32,6 +32,19 @@
       "oweitman <oweitman@gmx.de>"
     ],
     "news": {
+      "1.0.3": {
+        "en": "add lint and lint",
+        "de": "lint und lint hinzufügen",
+        "ru": "добавить lint и lint",
+        "pt": "adicionar lint e lint",
+        "nl": "plint en plint toevoegen",
+        "fr": "ajouter lint et lint",
+        "it": "aggiungere lint e lint",
+        "es": "añadir forro y forro",
+        "pl": "dodaj lint i lint",
+        "uk": "додати лощ і лощ",
+        "zh-cn": "添加线条和线条"
+      },
       "1.0.2": {
         "en": "remove iobroker eslint",
         "de": "iobroker eslint entfernen",
@@ -109,19 +122,6 @@
         "pl": "* dodaj więcej testów wordclocka * napraw szwajcarską matrycę wordclocka",
         "uk": "* додати більше тестів wordclock * виправити матрицю wordclock swiss",
         "zh-cn": "* 添加更多字时钟测试 * 修复字时钟矩阵瑞士"
-      },
-      "0.7.8": {
-        "en": "* fix wordclock",
-        "de": "* Wordclock reparieren",
-        "ru": "* исправить WordClock",
-        "pt": "* corrigir wordclock",
-        "nl": "* wordclock repareren",
-        "fr": "* Correction de l'horloge de mots",
-        "it": "* corretto il wordclock",
-        "es": "* arreglar el reloj",
-        "pl": "* napraw wordclock",
-        "uk": "* виправити wordclock",
-        "zh-cn": "*修复字时钟"
       }
     },
     "platform": "Javascript/Node.js",

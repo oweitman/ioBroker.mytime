@@ -1,5 +1,3 @@
-/* eslint-disable prettier/prettier */
-/* eslint-disable @typescript-eslint/no-require-imports */
 /*!
  * ioBroker gulpfile
  * Date: 2023-02-22

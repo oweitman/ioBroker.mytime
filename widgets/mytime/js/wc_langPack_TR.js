@@ -10,18 +10,18 @@ WordClock LanguagePack TR
 vis.binds['mytime'].wordclock.addLanguage({
   langCode: 'TR',
   letterSet: [
-    ["S", "A", "A", "T", "R", "O", "N", "U", "Ü", "Ç", "Ü"], 
-    ["B", "İ", "R", "İ", "A", "L", "T", "I", "Y", "I", "D"], 
-    ["İ", "K", "İ", "Y", "İ", "D", "O", "K", "U", "Z", "U"], 
-    ["D", "Ö", "R", "D", "Ü", "Y", "E", "D", "İ", "Y", "İ"], 
-    ["S", "E", "K", "I", "Z", "İ", "Y", "A", "R", "I", "M"], 
-    ["D", "Ö", "R", "T", "A", "M", "S", "B", "E", "Ş", "İ"], 
-    ["K", "P", "M", "O", "T", "U", "Z", "K", "I", "R", "K"], 
-    ["E", "L", "L", "İ", "O", "N", "Y", "İ", "R", "M", "İ"], 
-    ["B", "U", "Ç", "U", "K", "Ç", "E", "Y", "R", "E", "K"], 
+    ["S", "A", "A", "T", "R", "O", "N", "U", "Ü", "Ç", "Ü"],
+    ["B", "İ", "R", "İ", "A", "L", "T", "I", "Y", "I", "D"],
+    ["İ", "K", "İ", "Y", "İ", "D", "O", "K", "U", "Z", "U"],
+    ["D", "Ö", "R", "D", "Ü", "Y", "E", "D", "İ", "Y", "İ"],
+    ["S", "E", "K", "I", "Z", "İ", "Y", "A", "R", "I", "M"],
+    ["D", "Ö", "R", "T", "A", "M", "S", "B", "E", "Ş", "İ"],
+    ["K", "P", "M", "O", "T", "U", "Z", "K", "I", "R", "K"],
+    ["E", "L", "L", "İ", "O", "N", "Y", "İ", "R", "M", "İ"],
+    ["B", "U", "Ç", "U", "K", "Ç", "E", "Y", "R", "E", "K"],
     ["B", "E", "Ş", "M", "G", "E", "Ç", "İ", "Y", "O", "R"]
   ],
-  timeString: function(h, m, settings = { round: false }) {
+  timeString: function (h, m, settings = { round: false }) {
     var ret = 'SAAT ';
     h %= 12;
     //if (h == 0) h = 12;
@@ -54,7 +54,7 @@ vis.binds['mytime'].wordclock.addLanguage({
       'ON BİRİ ',
     ];
     switch (
-      (settings.round ? Math.round(m / 5) * 5 : Math.floor(m / 5) * 5) % 60
+    (settings.round ? Math.round(m / 5) * 5 : Math.floor(m / 5) * 5) % 60
     ) {
       case 0:
         ret += hourNames1[h] + ' ';

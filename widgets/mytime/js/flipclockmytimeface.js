@@ -1,57 +1,57 @@
 
-(function($) {
+(function ($) {
 
-	/**
-	 * Daily Counter Clock Face
-	 *
-	 * This class will generate a daily counter for FlipClock.js. A
-	 * daily counter will track days, hours, minutes, and seconds. If
-	 * the number of available digits is exceeded in the count, a new
-	 * digit will be created.
-	 *
-	 * @param  object  The parent FlipClock.Factory object
-	 * @param  object  An object of properties to override the default
-	 */
+    /**
+     * Daily Counter Clock Face
+     *
+     * This class will generate a daily counter for FlipClock.js. A
+     * daily counter will track days, hours, minutes, and seconds. If
+     * the number of available digits is exceeded in the count, a new
+     * digit will be created.
+     *
+     * @param  object  The parent FlipClock.Factory object
+     * @param  object  An object of properties to override the default
+     */
 
-	mtFlipClock.MytimeFace = mtFlipClock.Face.extend({
+    mtFlipClock.MytimeFace = mtFlipClock.Face.extend({
 
-		showSeconds: true,
-        
-		showsec: false,
-		showmin: false,
-		showhrs: false,
-		showday: false,
-        patter:"",
+        showSeconds: true,
 
-		/**
-		 * Constructor
-		 *
-		 * @param  object  The parent FlipClock.Factory object
-		 * @param  object  An object of properties to override the default
-		 */
+        showsec: false,
+        showmin: false,
+        showhrs: false,
+        showday: false,
+        patter: "",
 
-		constructor: function(factory, options) {
-			this.base(factory, options);
-            
-            this.showday = (this.pattern[0]=='1') ? true:false;
-            this.showhrs = (this.pattern[1]=='1') ? true:false;
-            this.showmin = (this.pattern[2]=='1') ? true:false;
-            this.showsec = (this.pattern[3]=='1') ? true:false;
+        /**
+         * Constructor
+         *
+         * @param  object  The parent FlipClock.Factory object
+         * @param  object  An object of properties to override the default
+         */
+
+        constructor: function (factory, options) {
+            this.base(factory, options);
+
+            this.showday = (this.pattern[0] == '1') ? true : false;
+            this.showhrs = (this.pattern[1] == '1') ? true : false;
+            this.showmin = (this.pattern[2] == '1') ? true : false;
+            this.showsec = (this.pattern[3] == '1') ? true : false;
 
 
 
-            },
+        },
 
-		/**
-		 * Build the clock face
-		 */
+        /**
+         * Build the clock face
+         */
 
-		build: function(time) {
-			var t = this;
-			var children = this.factory.$el.find('ul');
-			var offset = 0;
+        build: function (time) {
+            var t = this;
+            // var children = this.factory.$el.find('ul');
+            var offset = 0;
 
-			time = time ? time : this.factory.time.getDayCounter(true);
+            time = time ? time : this.factory.time.getDayCounter(true);
 
             if (this.showday) {
                 t.createList(time[0]);
@@ -76,26 +76,26 @@
                 offset += 2;
             }
             if (this.showhrs && this.showmin) {
-                $(this.createDivider('')).insertBefore(this.lists[offset+2].$el);
+                $(this.createDivider('')).insertBefore(this.lists[offset + 2].$el);
                 offset += 2;
             }
             if (this.showmin && this.showsec) {
-                $(this.createDivider('')).insertBefore(this.lists[offset+2].$el);
+                $(this.createDivider('')).insertBefore(this.lists[offset + 2].$el);
             }
-            
 
-			this.base();
-		},
 
-		/**
-		 * Flip the clock face
-		 */
+            this.base();
+        },
 
-		flip: function(time, doNotAddPlayClass) {
-			if(!time) {
-				time = this.factory.time.getDayCounter(this.showSeconds);
-			}
-            
+        /**
+         * Flip the clock face
+         */
+
+        flip: function (time/* , doNotAddPlayClass */) {
+            if (!time) {
+                time = this.factory.time.getDayCounter(this.showSeconds);
+            }
+
             var newtime = [];
 
             if (this.showday) {
@@ -114,12 +114,12 @@
                 newtime.push(time[6]);
                 newtime.push(time[7]);
             }
-            
-			this.autoIncrement();
 
-			this.base(newtime, false);
-		}
+            this.autoIncrement();
 
-	});
+            this.base(newtime, false);
+        }
+
+    });
 
 }(jQuery));
