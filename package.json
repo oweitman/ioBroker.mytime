@@ -1,6 +1,6 @@
 {
   "name": "iobroker.mytime",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "This adapter handle Time (eg: countdown,etc.)",
   "author": {
     "name": "oweitman",
@@ -69,7 +69,6 @@
     "sinon": "^19.0.2",
     "sinon-chai": "^3.7.0",
     "typescript": "~5.0.4",
-    "@iobroker/eslint-config": "^0.1.6",
     "@iobroker/vis-2-widgets-react-dev": "^1.0.7",
     "alcalzone-shared": "^4.0.8",
     "gulp": "^4.0.2",
@@ -99,7 +98,7 @@
     "test:unit": "mocha test/unit --exit",
     "test:integration": "mocha test/integration --exit",
     "prepublishOnly": "gulp --gulpfile tasks.js default",
-    "release": "release-script",
+    "release": "release-script --all",
     "release-patch": "release-script patch --yes",
     "release-minor": "release-script minor --yes",
     "release-major": "release-script major --yes",

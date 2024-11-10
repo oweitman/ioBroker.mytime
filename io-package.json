@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "mytime",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "titleLang": {
       "en": "MyTime",
       "de": "MyTime",
@@ -32,6 +32,19 @@
       "oweitman <oweitman@gmx.de>"
     ],
     "news": {
+      "1.0.2": {
+        "en": "remove iobroker eslint",
+        "de": "iobroker eslint entfernen",
+        "ru": "удалить iobroker eslint",
+        "pt": "remover iobroker eslint",
+        "nl": "iobroker eslint verwijderen",
+        "fr": "enlever iobroker eslint",
+        "it": "rimuovere iobroker eslint",
+        "es": "eliminar iobroker eslint",
+        "pl": "usunąć iobroker eslint",
+        "uk": "видалення iobroker eslint",
+        "zh-cn": "删除 io 经纪人 eslint"
+      },
       "1.0.1": {
         "en": "general revision\nupdating the configuration dialogs for countdown and timeseries in jsonConfig and custom react",
         "de": "allgemeine revision\naktualisierung der Konfigurationsdialoge für Countdown und Zeitreihen in jsonConfig und benutzerdefinierte Reaktion",
@@ -109,19 +122,6 @@
         "pl": "* napraw wordclock",
         "uk": "* виправити wordclock",
         "zh-cn": "*修复字时钟"
-      },
-      "0.7.7": {
-        "en": "* add timezone for wordclock",
-        "de": "* Zeitzone für Wordclock hinzufügen",
-        "ru": "* добавить часовой пояс для WordClock",
-        "pt": "* adicione fuso horário para wordclock",
-        "nl": "* voeg tijdzone toe voor wordclock",
-        "fr": "* ajouter un fuseau horaire pour wordclock",
-        "it": "* aggiungi fuso orario per wordclock",
-        "es": "* agregar zona horaria para wordclock",
-        "pl": "* dodaj strefę czasową dla wordclocka",
-        "uk": "* додати часовий пояс для wordclock",
-        "zh-cn": "* 为字时钟添加时区"
       }
     },
     "platform": "Javascript/Node.js",
