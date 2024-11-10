@@ -1,6 +1,6 @@
 {
   "name": "iobroker.mytime",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This adapter handle Time (eg: countdown,etc.)",
   "author": {
     "name": "oweitman",
@@ -56,7 +56,7 @@
     "@types/sinon": "^17.0.3",
     "@types/sinon-chai": "^3.2.12",
     "chai-as-promised": "^7.1.2",
-    "chai": "^4.5.0", 
+    "chai": "^4.5.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react": "^7.37.2",
@@ -75,7 +75,7 @@
     "gulp": "^4.0.2",
     "gulp-rename": "^2.0.0",
     "gulp-replace": "^1.1.4",
-     "timekeeper": "^2.3.1"
+    "timekeeper": "^2.3.1"
   },
   "bugs": {
     "url": "https://github.com/oweitman/ioBroker.mytime/issues"

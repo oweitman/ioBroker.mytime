@@ -887,8 +887,7 @@ Group CSS-Common / transform "scale(0.5)"
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
-
-### **WORK IN PROGRESS**
+### 1.0.1 (2024-11-10)
 
 - general revision
 - updating the configuration dialogs for countdown and timeseries in jsonConfig and custom react
