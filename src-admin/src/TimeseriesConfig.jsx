@@ -5,7 +5,7 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 
 import { ThemeProvider } from "@mui/material/styles";
 
-import {
+/* import {
     fr as frLocale,
     ru as ruLocale,
     enUS as enLocale,
@@ -18,7 +18,7 @@ import {
     de as deLocale,
     uk as ukLocale,
     nl as nlLocale,
-} from "date-fns/locale";
+} from "date-fns/locale"; */
 
 import { Theme } from "@iobroker/adapter-react-v5";
 import { ConfigGeneric } from "@iobroker/json-config";
@@ -28,7 +28,7 @@ import TimeseriesList from "./TimeseriesList";
 import { TimeseriesProvider } from "./TimeseriesContext";
 import { NavStateProvider } from "./TimeseriesNavContext";
 
-export const localeMap = {
+/* export const localeMap = {
     en: enLocale,
     fr: frLocale,
     ru: ruLocale,
@@ -41,7 +41,7 @@ export const localeMap = {
     pl: plLocale,
     uk: ukLocale,
     "zh-cn": cnLocale,
-};
+}; */
 
 class TimeseriesConfig extends ConfigGeneric {
     constructor(props) {

@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "mytime",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "titleLang": {
       "en": "MyTime",
       "de": "MyTime",
@@ -32,6 +32,19 @@
       "oweitman <oweitman@gmx.de>"
     ],
     "news": {
+      "1.0.4": {
+        "en": "remove unused library",
+        "de": "ungenutzte bibliothek",
+        "ru": "удалить неиспользуемую библиотеку",
+        "pt": "remover biblioteca não utilizada",
+        "nl": "ongebruikte bibliotheek verwijderen",
+        "fr": "supprimer la bibliothèque inutilisée",
+        "it": "rimuovere la libreria inutilizzata",
+        "es": "eliminar la biblioteca no utilizada",
+        "pl": "usuń nieużywaną bibliotekę",
+        "uk": "видалити невикористану бібліотеку",
+        "zh-cn": "删除未使用的库"
+      },
       "1.0.3": {
         "en": "add lint and lint",
         "de": "lint und lint hinzufügen",
@@ -109,19 +122,6 @@
         "pl": "* dodaj widget odliczania wstecznego",
         "uk": "* додати віджет зворотного відліку",
         "zh-cn": "* 添加小部件反向倒计时"
-      },
-      "0.7.9": {
-        "en": "* add more wordclock tests * fix wordclock matrix swiss",
-        "de": "* Weitere Wordclock-Tests hinzufügen * Wordclock-Matrix Swiss reparieren",
-        "ru": "* добавить больше тестов WordClock * исправить матрицу WordClock Swiss",
-        "pt": "* adicionar mais testes de wordclock * corrigir matriz de wordclock suíça",
-        "nl": "* voeg meer wordclock-tests toe * repareer wordclock-matrix Zwitsers",
-        "fr": "* ajouter plus de tests wordclock * corriger la matrice wordclock suisse",
-        "it": "* aggiunti altri test wordclock * corretta la matrice wordclock svizzera",
-        "es": "* agregar más pruebas de reloj * arreglar la matriz de reloj suizo",
-        "pl": "* dodaj więcej testów wordclocka * napraw szwajcarską matrycę wordclocka",
-        "uk": "* додати більше тестів wordclock * виправити матрицю wordclock swiss",
-        "zh-cn": "* 添加更多字时钟测试 * 修复字时钟矩阵瑞士"
       }
     },
     "platform": "Javascript/Node.js",

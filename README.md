@@ -887,6 +887,10 @@ Group CSS-Common / transform "scale(0.5)"
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+### 1.0.4 (2024-11-10)
+
+- remove unused library
+
 ### 1.0.3 (2024-11-10)
 
 - add lint and lint
