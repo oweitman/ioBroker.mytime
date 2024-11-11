@@ -887,6 +887,10 @@ Group CSS-Common / transform "scale(0.5)"
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+### 1.0.15 (2024-11-11)
+
+- repair issues from repochecker
+
 ### 1.0.14 (2024-11-11)
 
 - improve test and release process
