@@ -887,6 +887,10 @@ Group CSS-Common / transform "scale(0.5)"
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+### 1.0.9 (2024-11-11)
+
+- deactivate lint
+
 ### 1.0.8 (2024-11-11)
 
 - remove eslint command from package.json

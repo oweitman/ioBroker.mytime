@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "mytime",
-    "version": "1.0.8",
+    "version": "1.0.9",
     "titleLang": {
       "en": "MyTime",
       "de": "MyTime",
@@ -32,6 +32,19 @@
       "oweitman <oweitman@gmx.de>"
     ],
     "news": {
+      "1.0.9": {
+        "en": "deactivate lint",
+        "de": "lint deaktivieren",
+        "ru": "deactivate lint",
+        "pt": "desativar lint",
+        "nl": "lint deactiveren",
+        "fr": "désactiver le lint",
+        "it": "disattivare lint",
+        "es": "desactivado lint",
+        "pl": "dezaktywować szczelinę",
+        "uk": "деактивувати лайт",
+        "zh-cn": "关闭插件"
+      },
       "1.0.8": {
         "en": "remove eslint command from package.json",
         "de": "entfernen sie eslint befehl aus paket. json",
@@ -109,19 +122,6 @@
         "pl": "dodaj lint i lint",
         "uk": "додати лощ і лощ",
         "zh-cn": "添加线条和线条"
-      },
-      "1.0.2": {
-        "en": "remove iobroker eslint",
-        "de": "iobroker eslint entfernen",
-        "ru": "удалить iobroker eslint",
-        "pt": "remover iobroker eslint",
-        "nl": "iobroker eslint verwijderen",
-        "fr": "enlever iobroker eslint",
-        "it": "rimuovere iobroker eslint",
-        "es": "eliminar iobroker eslint",
-        "pl": "usunąć iobroker eslint",
-        "uk": "видалення iobroker eslint",
-        "zh-cn": "删除 io 经纪人 eslint"
       }
     },
     "platform": "Javascript/Node.js",
