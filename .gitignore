@@ -27,3 +27,4 @@ admin/i18n/*/flat.txt
 admin/custom/
 .vscode/admin.zip
 .vscode/srcxxx.zip
+.vscode/secrets.txt

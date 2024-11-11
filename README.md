@@ -887,40 +887,17 @@ Group CSS-Common / transform "scale(0.5)"
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
-### 1.0.9 (2024-11-11)
+### 1.0.11 (2024-11-11)
 
+- update github workflow
 - deactivate lint
-
-### 1.0.8 (2024-11-11)
-
 - remove eslint command from package.json
-
-### 1.0.7 (2024-11-10)
-
 - switch back to node 18 for testing due to airbnb error
-
-### 1.0.6 (2024-11-10)
-
 - more repair
-
-### 1.0.5 (2024-11-10)
-
 - add package-lock.json to git
-
-### 1.0.4 (2024-11-10)
-
 - remove unused library
-
-### 1.0.3 (2024-11-10)
-
 - add lint and lint
-
-### 1.0.2 (2024-11-10)
-
 - remove iobroker eslint
-
-### 1.0.1 (2024-11-10)
-
 - general revision
 - updating the configuration dialogs for countdown and timeseries in jsonConfig and custom react
 
