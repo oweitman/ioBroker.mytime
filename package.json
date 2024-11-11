@@ -1,6 +1,6 @@
 {
   "name": "iobroker.mytime",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "This adapter handle Time (eg: countdown,etc.)",
   "author": {
     "name": "oweitman",
@@ -95,7 +95,6 @@
     "test:javascript": "node node_modules/mocha/bin/mocha --exit",
     "test": "npm run test:package",
     "test:package": "mocha test/package --exit",
-    "test:unit": "mocha test/unit --exit",
     "test:integration": "mocha test/integration --exit",
     "prepublishOnly": "gulp --gulpfile tasks.js default",
     "release": "release-script --all",
@@ -116,7 +115,6 @@
     "3-copy": "node tasks --3-copy",
     "4-patch": "node tasks --4-patch",
     "build": "node tasks.js",
-    "lint": "eslint .",
     "translate-admin-deletekey": "node ./src-admin/devutil/translate.js deletekey 'xx,xx'",
     "translate-admin": "node ./devutil/translate.js -- source src-admin/src/i18n",
     "translate-widgets": "node ./devutil/translate.js --source widgets/mytime/i18n/en.json --format single"

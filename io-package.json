@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "mytime",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "titleLang": {
       "en": "MyTime",
       "de": "MyTime",
@@ -32,6 +32,19 @@
       "oweitman <oweitman@gmx.de>"
     ],
     "news": {
+      "1.0.8": {
+        "en": "remove eslint command from package.json",
+        "de": "entfernen sie eslint befehl aus paket. json",
+        "ru": "удалить команду eslint из пакета. json",
+        "pt": "remover o comando eslint do pacote. o que foi",
+        "nl": "verwijder eslint commando uit pakket. json",
+        "fr": "supprimer la commande eslint du paquet. json",
+        "it": "rimuovere il comando eslint dal pacchetto. j",
+        "es": "eliminar el comando eslint del paquete. json",
+        "pl": "usuń polecenie eslint z pakietu. json",
+        "uk": "видалити команду eslint з пакета. свінгери",
+        "zh-cn": "从软件包中删除 eslint 命令 。 贾森"
+      },
       "1.0.7": {
         "en": "switch back to node 18 for testing due to airbnb error",
         "de": "zurück zum knoten 18 zum testen durch airbnb-fehler",
@@ -109,19 +122,6 @@
         "pl": "usunąć iobroker eslint",
         "uk": "видалення iobroker eslint",
         "zh-cn": "删除 io 经纪人 eslint"
-      },
-      "1.0.1": {
-        "en": "general revision\nupdating the configuration dialogs for countdown and timeseries in jsonConfig and custom react",
-        "de": "allgemeine revision\naktualisierung der Konfigurationsdialoge für Countdown und Zeitreihen in jsonConfig und benutzerdefinierte Reaktion",
-        "ru": "общий пересмотр\nобновление диалогов конфигурации для отсчета и временных рядов в jsonConfig и пользовательской реакции",
-        "pt": "revisão geral\natualizando os diálogos de configuração para contagem regressiva e séries em jsonConfig e reagem personalizada",
-        "nl": "algemene herziening\nhet bijwerken van de configuratiedialoogvensters voor aftellen en tijdreeksen in jsonConfig en aangepaste reactie",
-        "fr": "révision générale\nmettre à jour les dialogues de configuration pour le compte à rebours et les timeeries dans jsonConfig et réagir sur mesure",
-        "it": "revisione generale\nl'aggiornamento delle finestre di dialogo di configurazione per conto alla rovescia e timeerie in jsonConfig e reagisce su misura",
-        "es": "revisión general\nactualizar los diálogos de configuración para la cuenta regresiva y los plazos en jsonConfig y la reacción personalizada",
-        "pl": "ogólny przegląd\naktualizacja dialogów konfiguracyjnych dla odliczania i czasopism w jsonConfig i niestandardowe reagowanie",
-        "uk": "загальний перегляд\nоновлення діалогів конфігурації для відліку та часових подій в jsonConfig та користувацького реагування",
-        "zh-cn": "一般订正\n在 jsonConfig 和自定义中更新倒计时和时间序列的配置对话框"
       }
     },
     "platform": "Javascript/Node.js",

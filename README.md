@@ -887,6 +887,10 @@ Group CSS-Common / transform "scale(0.5)"
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+### 1.0.8 (2024-11-11)
+
+- remove eslint command from package.json
+
 ### 1.0.7 (2024-11-10)
 
 - switch back to node 18 for testing due to airbnb error
