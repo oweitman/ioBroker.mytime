@@ -49,12 +49,11 @@ function copyAllAdminFiles() {
 function clean() {
     /*     deleteFoldersRecursive(`${__dirname}/src/build`); */
     deleteFoldersRecursive(`${__dirname}/admin`, [
-        'backitup.png',
+        'mytime.png',
         '.json',
         '.json5',
         'custom',
         'adapter-settings.js',
-        'backitup.svg',
         'index.html',
         'index_m.html',
         'index_m.js',

@@ -1,6 +1,6 @@
 {
   "name": "iobroker.mytime",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "This adapter handle Time (eg: countdown,etc.)",
   "author": {
     "name": "oweitman",
@@ -96,7 +96,7 @@
     "test": "npm run test:package",
     "test:package": "mocha test/package --exit",
     "test:integration": "mocha test/integration --exit",
-    "prepublishOnly": "gulp --gulpfile tasks.js default",
+    "prepublishOnly": "node tasks.js",
     "release": "release-script --all",
     "release-patch": "release-script patch --yes",
     "release-minor": "release-script minor --yes",
