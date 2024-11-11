@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "mytime",
-    "version": "1.0.11",
+    "version": "1.0.12",
     "titleLang": {
       "en": "MyTime",
       "de": "MyTime",
@@ -32,7 +32,7 @@
       "oweitman <oweitman@gmx.de>"
     ],
     "news": {
-      "1.0.11": {
+      "1.0.12": {
         "en": "update github workflow\ndeactivate lint\nremove eslint command from package.json\nswitch back to node 18 for testing due to airbnb error\nmore repair\nadd package-lock.json to git\nremove unused library\nadd lint and lint\nremove iobroker eslint\ngeneral revision\nupdating the configuration dialogs for countdown and timeseries in jsonConfig and custom react",
         "de": "github workflow aktualisieren\nlint deaktivieren\nentfernen sie eslint befehl aus paket. json\nzurück zum knoten 18 zum testen durch airbnb-fehler\nmehr reparatur\npaket-lock.json zu git hinzufügen\nungenutzte bibliothek\nlint und lint hinzufügen\niobroker eslint entfernen\nallgemeine revision\naktualisierung der Konfigurationsdialoge für Countdown und Zeitreihen in jsonConfig und benutzerdefinierte Reaktion",
         "ru": "обновление рабочего процесса github\ndeactivate lint\nудалить команду eslint из пакета. json\nпереключиться на узел 18 для тестирования из-за ошибки airbnb\nбольше ремонт\nдобавить пакет-lock.json к git\nудалить неиспользуемую библиотеку\nдобавить lint и lint\nудалить iobroker eslint\nобщий пересмотр\nобновление диалогов конфигурации для отсчета и временных рядов в jsonConfig и пользовательской реакции",

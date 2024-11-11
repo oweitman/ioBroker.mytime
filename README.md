@@ -887,7 +887,7 @@ Group CSS-Common / transform "scale(0.5)"
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
-### 1.0.11 (2024-11-11)
+### 1.0.12 (2024-11-11)
 
 - update github workflow
 - deactivate lint
