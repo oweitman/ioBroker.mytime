@@ -1,210 +1,203 @@
 {
-  "common": {
-    "name": "mytime",
-    "version": "1.0.15",
-    "titleLang": {
-      "en": "MyTime",
-      "de": "MyTime",
-      "ru": "MyTime",
-      "pt": "MyTime",
-      "nl": "MyTime",
-      "fr": "MyTime",
-      "it": "MyTime",
-      "es": "MyTime",
-      "pl": "MyTime",
-      "zh-cn": "MyTime",
-      "uk": "MyTime"
+    "common": {
+        "name": "mytime",
+        "version": "1.0.15",
+        "titleLang": {
+            "en": "MyTime",
+            "de": "MyTime",
+            "ru": "MyTime",
+            "pt": "MyTime",
+            "nl": "MyTime",
+            "fr": "MyTime",
+            "it": "MyTime",
+            "es": "MyTime",
+            "pl": "MyTime",
+            "zh-cn": "MyTime",
+            "uk": "MyTime"
+        },
+        "desc": {
+            "en": "This adapter handle Time (eg: countdown,etc.)",
+            "de": "This adapter handle Time (eg: countdown,etc.)",
+            "ru": "This adapter handle Time (eg: countdown,etc.)",
+            "pt": "This adapter handle Time (eg: countdown,etc.)",
+            "nl": "This adapter handle Time (eg: countdown,etc.)",
+            "fr": "This adapter handle Time (eg: countdown,etc.)",
+            "it": "This adapter handle Time (eg: countdown,etc.)",
+            "es": "This adapter handle Time (eg: countdown,etc.)",
+            "pl": "This adapter handle Time (eg: countdown,etc.)",
+            "zh-cn": "This adapter handle Time (eg: countdown,etc.)",
+            "uk": "Цей адаптер обробляє час (наприклад, зворотній відлік тощо)"
+        },
+        "authors": ["oweitman <oweitman@gmx.de>"],
+        "news": {
+            "1.0.15": {
+                "en": "repair issues from repochecker",
+                "de": "reparaturprobleme von repochecker",
+                "ru": "проблемы с ремонтом от repochecker",
+                "pt": "problemas de reparação de repochecker",
+                "nl": "reparatie problemen van repochecker",
+                "fr": "problèmes de réparation de repochecker",
+                "it": "problemi di riparazione da repochecker",
+                "es": "problemas de reparación de repochecker",
+                "pl": "problemy z naprawą z repochecker",
+                "uk": "ремонтні питання від repochecker",
+                "zh-cn": "重新检查器的修理问题"
+            },
+            "1.0.14": {
+                "en": "improve test and release process\nupdate github workflow\nremove eslint command from package.json\nswitch back to node 18 for testing due to airbnb error\nmore repair\nadd package-lock.json to git\nremove unused library\nadd lint and lint\nremove iobroker eslint\ngeneral revision\nupdating the configuration dialogs for countdown and timeseries in jsonConfig and custom react",
+                "de": "verbesserung des test- und releaseprozesses\ngithub workflow aktualisieren\nentfernen sie eslint befehl aus paket. json\nzurück zum knoten 18 zum testen durch airbnb-fehler\nmehr reparatur\npaket-lock.json zu git hinzufügen\nungenutzte bibliothek\nlint und lint hinzufügen\niobroker eslint entfernen\nallgemeine revision\naktualisierung der Konfigurationsdialoge für Countdown und Zeitreihen in jsonConfig und benutzerdefinierte Reaktion",
+                "ru": "совершенствование процесса испытаний и выпуска\nобновление рабочего процесса github\nудалить команду eslint из пакета. json\nпереключиться на узел 18 для тестирования из-за ошибки airbnb\nбольше ремонт\nдобавить пакет-lock.json к git\nудалить неиспользуемую библиотеку\nдобавить lint и lint\nудалить iobroker eslint\nобщий пересмотр\nобновление диалогов конфигурации для отсчета и временных рядов в jsonConfig и пользовательской реакции",
+                "pt": "melhorar o processo de teste e liberação\natualizar o fluxo de trabalho do github\nremover o comando eslint do pacote. o que foi\nmudar de volta para o nó 18 para testes devido ao erro do airbnb\nmais reparação\nadicionar package-lock.json para git\nremover biblioteca não utilizada\nadicionar lint e lint\nremover iobroker eslint\nrevisão geral\natualizando os diálogos de configuração para contagem regressiva e séries em jsonConfig e reagem personalizada",
+                "nl": "het test- en vrijgaveproces verbeteren\ngithub-workflow bijwerken\nverwijder eslint commando uit pakket. json\nterug schakelen naar node 18 voor testen als gevolg van airbnb fout\nmeer reparatie\npakket-lock.json toevoegen aan git\nongebruikte bibliotheek verwijderen\nplint en plint toevoegen\niobroker eslint verwijderen\nalgemene herziening\nhet bijwerken van de configuratiedialoogvensters voor aftellen en tijdreeksen in jsonConfig en aangepaste reactie",
+                "fr": "améliorer le processus d'essai et de libération\nmettre à jour le flux de travail github\nsupprimer la commande eslint du paquet. json\nretour au nœud 18 pour les essais en raison d'une erreur airbnb\nplus de réparation\najouter paquet-lock.json à git\nsupprimer la bibliothèque inutilisée\najouter lint et lint\nenlever iobroker eslint\nrévision générale\nmettre à jour les dialogues de configuration pour le compte à rebours et les timeeries dans jsonConfig et réagir sur mesure",
+                "it": "migliorare il processo di test e rilascio\naggiornamento flusso di lavoro github\nrimuovere il comando eslint dal pacchetto. j\ntornare al nodo 18 per il test a causa di errore airbnb\npiù riparazione\naggiungere pacchetto-lock.json a git\nrimuovere la libreria inutilizzata\naggiungere lint e lint\nrimuovere iobroker eslint\nrevisione generale\nl'aggiornamento delle finestre di dialogo di configurazione per conto alla rovescia e timeerie in jsonConfig e reagisce su misura",
+                "es": "mejorar el proceso de prueba y liberación\nactualización github workflow\neliminar el comando eslint del paquete. json\nvolver al nodo 18 para probar debido al error de airbnb\nmás reparación\nañadir paquete-lock.json a git\neliminar la biblioteca no utilizada\nañadir forro y forro\neliminar iobroker eslint\nrevisión general\nactualizar los diálogos de configuración para la cuenta regresiva y los plazos en jsonConfig y la reacción personalizada",
+                "pl": "usprawnić proces testowania i uwalniania\naktualizacja przepływu pracy github\nusuń polecenie eslint z pakietu. json\nprzełączanie z powrotem na węzeł 18 do testów z powodu błędu airbnb\nwięcej napraw\nadd package- lock.json to git\nusuń nieużywaną bibliotekę\ndodaj lint i lint\nusunąć iobroker eslint\nogólny przegląd\naktualizacja dialogów konfiguracyjnych dla odliczania i czasopism w jsonConfig i niestandardowe reagowanie",
+                "uk": "поліпшити процес тестування та релізу\nоновлення github workflow\nвидалити команду eslint з пакета. свінгери\nперемикач назад до вузла 18 для тестування через помилку airbnb\nремонт\nдодати пакет-lock.json до git\nвидалити невикористану бібліотеку\nдодати лощ і лощ\nвидалення iobroker eslint\nзагальний перегляд\nоновлення діалогів конфігурації для відліку та часових подій в jsonConfig та користувацького реагування",
+                "zh-cn": "改进测试和释放程序\n更新 github 工作流程\n从软件包中删除 eslint 命令 。 贾森\n切换到节点18进行测试,因为空气bnb错误\n更多维修\n将软件包锁.json添加到 git\n删除未使用的库\n添加线条和线条\n删除 io 经纪人 eslint\n一般订正\n在 jsonConfig 和自定义中更新倒计时和时间序列的配置对话框"
+            },
+            "0.7.12": {
+                "en": "* add html_prepend and html_append properties to the widget reverse countdown",
+                "de": "* Fügen Sie die Eigenschaften html_prepend und html_append zum umgekehrten Countdown des Widgets hinzu",
+                "ru": "* добавить свойства html_prepend и html_append в обратный отсчет виджета",
+                "pt": "* adicione as propriedades html_prepend e html_append à contagem regressiva reversa do widget",
+                "nl": "* voeg de eigenschappen html_prepend en html_append toe aan het omgekeerde aftellen van de widget",
+                "fr": "* ajouter les propriétés html_prepend et html_append au compte à rebours inversé du widget",
+                "it": "* aggiungi le proprietà html_prepend e html_append al conto alla rovescia inverso del widget",
+                "es": "* agregue las propiedades html_prepend y html_append a la cuenta regresiva inversa del widget",
+                "pl": "* dodaj właściwości html_prepend i html_append do odliczania wstecznego widżetu",
+                "uk": "* додайте властивості html_prepend і html_append до зворотного відліку віджетів",
+                "zh-cn": "* 为小部件反向倒计时添加 html_prepend 和 html_append 属性"
+            },
+            "0.7.11": {
+                "en": "* adjust documentation for widget reverse countdown",
+                "de": "* Dokumentation für Widget-Reverse-Countdown anpassen",
+                "ru": "* корректировка документации для обратного отсчета виджета",
+                "pt": "* ajuste a documentação para contagem regressiva do widget",
+                "nl": "* documentatie aanpassen voor het omgekeerd aftellen van widgets",
+                "fr": "* ajuster la documentation pour le compte à rebours inversé du widget",
+                "it": "* modificare la documentazione per il conto alla rovescia inverso del widget",
+                "es": "* ajustar la documentación para la cuenta regresiva inversa del widget",
+                "pl": "* dostosuj dokumentację do odliczania wstecznego widżetu",
+                "uk": "* налаштувати документацію для зворотного відліку віджетів",
+                "zh-cn": "* 调整小部件反向倒计时的文档"
+            },
+            "0.7.10": {
+                "en": "* add widget reverse countdown",
+                "de": "* Widget-Reverse-Countdown hinzufügen",
+                "ru": "* добавить виджет обратного отсчета",
+                "pt": "* adicionar contagem regressiva ao widget",
+                "nl": "* widget omgekeerd aftellen toevoegen",
+                "fr": "* ajouter un compte à rebours inversé de widget",
+                "it": "* aggiungi il conto alla rovescia inverso del widget",
+                "es": "* agregar widget de cuenta regresiva inversa",
+                "pl": "* dodaj widget odliczania wstecznego",
+                "uk": "* додати віджет зворотного відліку",
+                "zh-cn": "* 添加小部件反向倒计时"
+            },
+            "0.7.9": {
+                "en": "* add more wordclock tests * fix wordclock matrix swiss",
+                "de": "* Weitere Wordclock-Tests hinzufügen * Wordclock-Matrix Swiss reparieren",
+                "ru": "* добавить больше тестов WordClock * исправить матрицу WordClock Swiss",
+                "pt": "* adicionar mais testes de wordclock * corrigir matriz de wordclock suíça",
+                "nl": "* voeg meer wordclock-tests toe * repareer wordclock-matrix Zwitsers",
+                "fr": "* ajouter plus de tests wordclock * corriger la matrice wordclock suisse",
+                "it": "* aggiunti altri test wordclock * corretta la matrice wordclock svizzera",
+                "es": "* agregar más pruebas de reloj * arreglar la matriz de reloj suizo",
+                "pl": "* dodaj więcej testów wordclocka * napraw szwajcarską matrycę wordclocka",
+                "uk": "* додати більше тестів wordclock * виправити матрицю wordclock swiss",
+                "zh-cn": "* 添加更多字时钟测试 * 修复字时钟矩阵瑞士"
+            },
+            "0.7.8": {
+                "en": "* fix wordclock",
+                "de": "* Wordclock reparieren",
+                "ru": "* исправить WordClock",
+                "pt": "* corrigir wordclock",
+                "nl": "* wordclock repareren",
+                "fr": "* Correction de l'horloge de mots",
+                "it": "* corretto il wordclock",
+                "es": "* arreglar el reloj",
+                "pl": "* napraw wordclock",
+                "uk": "* виправити wordclock",
+                "zh-cn": "* 修复字时钟"
+            }
+        },
+        "platform": "Javascript/Node.js",
+        "mode": "daemon",
+        "loglevel": "info",
+        "icon": "mytime.png",
+        "extIcon": "https://raw.githubusercontent.com/oweitman/ioBroker.mytime/main/admin/mytime.png",
+        "keywords": ["mytime", "timeseries", "countdown timer"],
+        "adminUI": {
+            "config": "json"
+        },
+        "readme": "https://github.com/oweitman/ioBroker.mytime/blob/main/README.md",
+        "enabled": true,
+        "licenseInformation": {
+            "type": "free",
+            "license": "MIT"
+        },
+        "compact": true,
+        "eraseOnUpload": true,
+        "dependencies": [
+            {
+                "js-controller": ">=4.0.24"
+            }
+        ],
+        "globalDependencies": [
+            {
+                "admin": ">=5.0.0"
+            }
+        ],
+        "type": "visualization",
+        "messagebox": true,
+        "tier": 3,
+        "connectionType": "local",
+        "dataSource": "poll",
+        "restartAdapters": []
     },
-    "desc": {
-      "en": "This adapter handle Time (eg: countdown,etc.)",
-      "de": "This adapter handle Time (eg: countdown,etc.)",
-      "ru": "This adapter handle Time (eg: countdown,etc.)",
-      "pt": "This adapter handle Time (eg: countdown,etc.)",
-      "nl": "This adapter handle Time (eg: countdown,etc.)",
-      "fr": "This adapter handle Time (eg: countdown,etc.)",
-      "it": "This adapter handle Time (eg: countdown,etc.)",
-      "es": "This adapter handle Time (eg: countdown,etc.)",
-      "pl": "This adapter handle Time (eg: countdown,etc.)",
-      "zh-cn": "This adapter handle Time (eg: countdown,etc.)",
-      "uk": "Цей адаптер обробляє час (наприклад, зворотній відлік тощо)"
+    "native": {
+        "countdown": [],
+        "timeseries": []
     },
-    "authors": [
-      "oweitman <oweitman@gmx.de>"
-    ],
-    "news": {
-      "1.0.15": {
-        "en": "repair issues from repochecker",
-        "de": "reparaturprobleme von repochecker",
-        "ru": "проблемы с ремонтом от repochecker",
-        "pt": "problemas de reparação de repochecker",
-        "nl": "reparatie problemen van repochecker",
-        "fr": "problèmes de réparation de repochecker",
-        "it": "problemi di riparazione da repochecker",
-        "es": "problemas de reparación de repochecker",
-        "pl": "problemy z naprawą z repochecker",
-        "uk": "ремонтні питання від repochecker",
-        "zh-cn": "重新检查器的修理问题"
-      },
-      "1.0.14": {
-        "en": "improve test and release process\nupdate github workflow\nremove eslint command from package.json\nswitch back to node 18 for testing due to airbnb error\nmore repair\nadd package-lock.json to git\nremove unused library\nadd lint and lint\nremove iobroker eslint\ngeneral revision\nupdating the configuration dialogs for countdown and timeseries in jsonConfig and custom react",
-        "de": "verbesserung des test- und releaseprozesses\ngithub workflow aktualisieren\nentfernen sie eslint befehl aus paket. json\nzurück zum knoten 18 zum testen durch airbnb-fehler\nmehr reparatur\npaket-lock.json zu git hinzufügen\nungenutzte bibliothek\nlint und lint hinzufügen\niobroker eslint entfernen\nallgemeine revision\naktualisierung der Konfigurationsdialoge für Countdown und Zeitreihen in jsonConfig und benutzerdefinierte Reaktion",
-        "ru": "совершенствование процесса испытаний и выпуска\nобновление рабочего процесса github\nудалить команду eslint из пакета. json\nпереключиться на узел 18 для тестирования из-за ошибки airbnb\nбольше ремонт\nдобавить пакет-lock.json к git\nудалить неиспользуемую библиотеку\nдобавить lint и lint\nудалить iobroker eslint\nобщий пересмотр\nобновление диалогов конфигурации для отсчета и временных рядов в jsonConfig и пользовательской реакции",
-        "pt": "melhorar o processo de teste e liberação\natualizar o fluxo de trabalho do github\nremover o comando eslint do pacote. o que foi\nmudar de volta para o nó 18 para testes devido ao erro do airbnb\nmais reparação\nadicionar package-lock.json para git\nremover biblioteca não utilizada\nadicionar lint e lint\nremover iobroker eslint\nrevisão geral\natualizando os diálogos de configuração para contagem regressiva e séries em jsonConfig e reagem personalizada",
-        "nl": "het test- en vrijgaveproces verbeteren\ngithub-workflow bijwerken\nverwijder eslint commando uit pakket. json\nterug schakelen naar node 18 voor testen als gevolg van airbnb fout\nmeer reparatie\npakket-lock.json toevoegen aan git\nongebruikte bibliotheek verwijderen\nplint en plint toevoegen\niobroker eslint verwijderen\nalgemene herziening\nhet bijwerken van de configuratiedialoogvensters voor aftellen en tijdreeksen in jsonConfig en aangepaste reactie",
-        "fr": "améliorer le processus d'essai et de libération\nmettre à jour le flux de travail github\nsupprimer la commande eslint du paquet. json\nretour au nœud 18 pour les essais en raison d'une erreur airbnb\nplus de réparation\najouter paquet-lock.json à git\nsupprimer la bibliothèque inutilisée\najouter lint et lint\nenlever iobroker eslint\nrévision générale\nmettre à jour les dialogues de configuration pour le compte à rebours et les timeeries dans jsonConfig et réagir sur mesure",
-        "it": "migliorare il processo di test e rilascio\naggiornamento flusso di lavoro github\nrimuovere il comando eslint dal pacchetto. j\ntornare al nodo 18 per il test a causa di errore airbnb\npiù riparazione\naggiungere pacchetto-lock.json a git\nrimuovere la libreria inutilizzata\naggiungere lint e lint\nrimuovere iobroker eslint\nrevisione generale\nl'aggiornamento delle finestre di dialogo di configurazione per conto alla rovescia e timeerie in jsonConfig e reagisce su misura",
-        "es": "mejorar el proceso de prueba y liberación\nactualización github workflow\neliminar el comando eslint del paquete. json\nvolver al nodo 18 para probar debido al error de airbnb\nmás reparación\nañadir paquete-lock.json a git\neliminar la biblioteca no utilizada\nañadir forro y forro\neliminar iobroker eslint\nrevisión general\nactualizar los diálogos de configuración para la cuenta regresiva y los plazos en jsonConfig y la reacción personalizada",
-        "pl": "usprawnić proces testowania i uwalniania\naktualizacja przepływu pracy github\nusuń polecenie eslint z pakietu. json\nprzełączanie z powrotem na węzeł 18 do testów z powodu błędu airbnb\nwięcej napraw\nadd package- lock.json to git\nusuń nieużywaną bibliotekę\ndodaj lint i lint\nusunąć iobroker eslint\nogólny przegląd\naktualizacja dialogów konfiguracyjnych dla odliczania i czasopism w jsonConfig i niestandardowe reagowanie",
-        "uk": "поліпшити процес тестування та релізу\nоновлення github workflow\nвидалити команду eslint з пакета. свінгери\nперемикач назад до вузла 18 для тестування через помилку airbnb\nремонт\nдодати пакет-lock.json до git\nвидалити невикористану бібліотеку\nдодати лощ і лощ\nвидалення iobroker eslint\nзагальний перегляд\nоновлення діалогів конфігурації для відліку та часових подій в jsonConfig та користувацького реагування",
-        "zh-cn": "改进测试和释放程序\n更新 github 工作流程\n从软件包中删除 eslint 命令 。 贾森\n切换到节点18进行测试,因为空气bnb错误\n更多维修\n将软件包锁.json添加到 git\n删除未使用的库\n添加线条和线条\n删除 io 经纪人 eslint\n一般订正\n在 jsonConfig 和自定义中更新倒计时和时间序列的配置对话框"
-      },
-      "0.7.12": {
-        "en": "* add html_prepend and html_append properties to the widget reverse countdown",
-        "de": "* Fügen Sie die Eigenschaften html_prepend und html_append zum umgekehrten Countdown des Widgets hinzu",
-        "ru": "* добавить свойства html_prepend и html_append в обратный отсчет виджета",
-        "pt": "* adicione as propriedades html_prepend e html_append à contagem regressiva reversa do widget",
-        "nl": "* voeg de eigenschappen html_prepend en html_append toe aan het omgekeerde aftellen van de widget",
-        "fr": "* ajouter les propriétés html_prepend et html_append au compte à rebours inversé du widget",
-        "it": "* aggiungi le proprietà html_prepend e html_append al conto alla rovescia inverso del widget",
-        "es": "* agregue las propiedades html_prepend y html_append a la cuenta regresiva inversa del widget",
-        "pl": "* dodaj właściwości html_prepend i html_append do odliczania wstecznego widżetu",
-        "uk": "* додайте властивості html_prepend і html_append до зворотного відліку віджетів",
-        "zh-cn": "* 为小部件反向倒计时添加 html_prepend 和 html_append 属性"
-      },
-      "0.7.11": {
-        "en": "* adjust documentation for widget reverse countdown",
-        "de": "* Dokumentation für Widget-Reverse-Countdown anpassen",
-        "ru": "* корректировка документации для обратного отсчета виджета",
-        "pt": "* ajuste a documentação para contagem regressiva do widget",
-        "nl": "* documentatie aanpassen voor het omgekeerd aftellen van widgets",
-        "fr": "* ajuster la documentation pour le compte à rebours inversé du widget",
-        "it": "* modificare la documentazione per il conto alla rovescia inverso del widget",
-        "es": "* ajustar la documentación para la cuenta regresiva inversa del widget",
-        "pl": "* dostosuj dokumentację do odliczania wstecznego widżetu",
-        "uk": "* налаштувати документацію для зворотного відліку віджетів",
-        "zh-cn": "* 调整小部件反向倒计时的文档"
-      },
-      "0.7.10": {
-        "en": "* add widget reverse countdown",
-        "de": "* Widget-Reverse-Countdown hinzufügen",
-        "ru": "* добавить виджет обратного отсчета",
-        "pt": "* adicionar contagem regressiva ao widget",
-        "nl": "* widget omgekeerd aftellen toevoegen",
-        "fr": "* ajouter un compte à rebours inversé de widget",
-        "it": "* aggiungi il conto alla rovescia inverso del widget",
-        "es": "* agregar widget de cuenta regresiva inversa",
-        "pl": "* dodaj widget odliczania wstecznego",
-        "uk": "* додати віджет зворотного відліку",
-        "zh-cn": "* 添加小部件反向倒计时"
-      },
-      "0.7.9": {
-        "en": "* add more wordclock tests * fix wordclock matrix swiss",
-        "de": "* Weitere Wordclock-Tests hinzufügen * Wordclock-Matrix Swiss reparieren",
-        "ru": "* добавить больше тестов WordClock * исправить матрицу WordClock Swiss",
-        "pt": "* adicionar mais testes de wordclock * corrigir matriz de wordclock suíça",
-        "nl": "* voeg meer wordclock-tests toe * repareer wordclock-matrix Zwitsers",
-        "fr": "* ajouter plus de tests wordclock * corriger la matrice wordclock suisse",
-        "it": "* aggiunti altri test wordclock * corretta la matrice wordclock svizzera",
-        "es": "* agregar más pruebas de reloj * arreglar la matriz de reloj suizo",
-        "pl": "* dodaj więcej testów wordclocka * napraw szwajcarską matrycę wordclocka",
-        "uk": "* додати більше тестів wordclock * виправити матрицю wordclock swiss",
-        "zh-cn": "* 添加更多字时钟测试 * 修复字时钟矩阵瑞士"
-      },
-      "0.7.8": {
-        "en": "* fix wordclock",
-        "de": "* Wordclock reparieren",
-        "ru": "* исправить WordClock",
-        "pt": "* corrigir wordclock",
-        "nl": "* wordclock repareren",
-        "fr": "* Correction de l'horloge de mots",
-        "it": "* corretto il wordclock",
-        "es": "* arreglar el reloj",
-        "pl": "* napraw wordclock",
-        "uk": "* виправити wordclock",
-        "zh-cn": "* 修复字时钟"
-      }
-    },
-    "platform": "Javascript/Node.js",
-    "mode": "daemon",
-    "loglevel": "info",
-    "icon": "mytime.png",
-    "extIcon": "https://raw.githubusercontent.com/oweitman/ioBroker.mytime/main/admin/mytime.png",
-    "keywords": [
-      "mytime",
-      "timeseries",
-      "countdown timer"
-    ],
-    "adminUI": {
-      "config": "json"
-    },
-    "readme": "https://github.com/oweitman/ioBroker.mytime/blob/main/README.md",
-    "enabled": true,
-    "licenseInformation": {
-      "type": "free",
-      "license": "MIT"
-    },
-    "compact": true,
-    "eraseOnUpload": true,
-    "dependencies": [
-      {
-        "js-controller": ">=4.0.24"
-      },
-      "vis"
-    ],
-    "globalDependencies": [
-      {
-        "admin": ">=5.0.0"
-      }
-    ],
-    "type": "visualization",
-    "messagebox": true,
-    "tier": 3,
-    "connectionType": "local",
-    "dataSource": "poll",
-    "restartAdapters": []
-  },
-  "native": {
-    "countdown": [],
-    "timeseries": []
-  },
-  "objects": [],
-  "instanceObjects": [
-    {
-      "_id": "Countdowns",
-      "type": "device",
-      "common": {
-        "name": "All Countdowns datapoints"
-      },
-      "native": {}
-    },
-    {
-      "_id": "Timeseries",
-      "type": "device",
-      "common": {
-        "name": "All Timeseries datapoints"
-      },
-      "native": {}
-    },
-    {
-      "_id": "info",
-      "type": "channel",
-      "common": {
-        "name": "Information"
-      },
-      "native": {}
-    },
-    {
-      "_id": "info.connection",
-      "type": "state",
-      "common": {
-        "role": "indicator.connected",
-        "name": "Device or service connected",
-        "type": "boolean",
-        "read": true,
-        "write": false,
-        "def": false
-      },
-      "native": {}
-    }
-  ]
+    "objects": [],
+    "instanceObjects": [
+        {
+            "_id": "Countdowns",
+            "type": "device",
+            "common": {
+                "name": "All Countdowns datapoints"
+            },
+            "native": {}
+        },
+        {
+            "_id": "Timeseries",
+            "type": "device",
+            "common": {
+                "name": "All Timeseries datapoints"
+            },
+            "native": {}
+        },
+        {
+            "_id": "info",
+            "type": "channel",
+            "common": {
+                "name": "Information"
+            },
+            "native": {}
+        },
+        {
+            "_id": "info.connection",
+            "type": "state",
+            "common": {
+                "role": "indicator.connected",
+                "name": "Device or service connected",
+                "type": "boolean",
+                "read": true,
+                "write": false,
+                "def": false
+            },
+            "native": {}
+        }
+    ]
 }
