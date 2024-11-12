@@ -892,11 +892,11 @@ Group CSS-Common / transform "scale(0.5)"
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
-
-### **WORK IN PROGRESS**
+### 1.1.0 (2024-11-12)
 
 - add some new commands to restart the countdown time in place
 - repair save command
+- removed vis dependency from io-package.json
 
 ### 1.0.15 (2024-11-11)
 
