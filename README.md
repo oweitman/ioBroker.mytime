@@ -2,15 +2,14 @@
 
 # ioBroker.mytime
 
-[![NPM version](http://img.shields.io/npm/v/iobroker.mytime.svg)](https://www.npmjs.com/package/iobroker.mytime)
+[![NPM version](https://img.shields.io/npm/v/iobroker.mytime.svg)](https://www.npmjs.com/package/iobroker.mytime)
 [![Downloads](https://img.shields.io/npm/dm/iobroker.mytime.svg)](https://www.npmjs.com/package/iobroker.mytime)
-![Number of Installations (latest)](http://iobroker.live/badges/mytime-installed.svg)
+![Number of Installations](https://iobroker.live/badges/mytime-installed.svg)
+![Current version in stable repository](https://iobroker.live/badges/mytime-stable.svg)
 
-<!--- ![Number of Installations (stable)](http://iobroker.live/badges/mytime-stable.svg) -->
+[![NPM](https://nodei.co/npm/iobroker.mytime.png?downloads=true)](https://nodei.co/npm/iobroker.mytime/)
 
-[![Dependency Status](https://img.shields.io/david/oweitman/iobroker.mytime.svg)](https://david-dm.org/oweitman/iobroker.mytime)
-[![Known Vulnerabilities](https://snyk.io/test/github/oweitman/ioBroker.mytime/badge.svg)](https://snyk.io/test/github/oweitman/ioBroker.mytime)
-[![Travis-CI](http://img.shields.io/travis/oweitman/ioBroker.mytime/master.svg)](https://travis-ci.org/oweitman/ioBroker.mytime)
+**Tests:** ![Test and Release](https://github.com/oweitman/ioBroker.mytime/workflows/Test%20and%20Release/badge.svg)
 
 ## IMPORTANT
 
@@ -892,6 +891,7 @@ Group CSS-Common / transform "scale(0.5)"
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+
 ### 1.1.0 (2024-11-12)
 
 - add some new commands to restart the countdown time in place
