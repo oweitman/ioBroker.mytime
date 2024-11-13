@@ -891,6 +891,9 @@ Group CSS-Common / transform "scale(0.5)"
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+### 1.1.1 (2024-11-13)
+
+- fix problem with start of vis2, exclude widgets for vis2
 
 ### 1.1.0 (2024-11-12)
 

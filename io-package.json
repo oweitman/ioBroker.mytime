@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "mytime",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "titleLang": {
       "en": "MyTime",
       "de": "MyTime",
@@ -32,6 +32,19 @@
       "oweitman <oweitman@gmx.de>"
     ],
     "news": {
+      "1.1.1": {
+        "en": "fix problem with start of vis2, exclude widgets for vis2",
+        "de": "problem mit beginn von vis2, ausschließen widgets für vis2",
+        "ru": "исправить проблему с запуском vis2, исключить виджеты для vis2",
+        "pt": "corrigir problema com início de vis2, excluir widgets para vis2",
+        "nl": "probleem oplossen met het begin van vis2, widgets voor vis2 uitsluiten",
+        "fr": "résoudre le problème avec le début de vis2, exclure les widgets pour vis2",
+        "it": "problema di correzione con inizio di vis2, escludere widget per vis2",
+        "es": "solucionar problema con inicio de vis2, excluye widgets para vis2",
+        "pl": "problem z uruchomieniem vis2, wyklucza widżety dla vis2",
+        "uk": "виправити проблему з стартом vis2, виключити віджети для vis2",
+        "zh-cn": "解决对映2的启动问题, 排除对映2 的部件"
+      },
       "1.1.0": {
         "en": "add some new commands to restart the countdown time in place\nrepair save command\nremoved vis dependency from io-package.json",
         "de": "fügen sie neue befehle hinzu, um die countdown-zeit neu zu starten\nreparieren sie den befehl\nabgenommen vis-abhängigkeit von io-package. json",
@@ -109,19 +122,6 @@
         "pl": "* dodaj widget odliczania wstecznego",
         "uk": "* додати віджет зворотного відліку",
         "zh-cn": "* 添加小部件反向倒计时"
-      },
-      "0.7.9": {
-        "en": "* add more wordclock tests * fix wordclock matrix swiss",
-        "de": "* Weitere Wordclock-Tests hinzufügen * Wordclock-Matrix Swiss reparieren",
-        "ru": "* добавить больше тестов WordClock * исправить матрицу WordClock Swiss",
-        "pt": "* adicionar mais testes de wordclock * corrigir matriz de wordclock suíça",
-        "nl": "* voeg meer wordclock-tests toe * repareer wordclock-matrix Zwitsers",
-        "fr": "* ajouter plus de tests wordclock * corriger la matrice wordclock suisse",
-        "it": "* aggiunti altri test wordclock * corretta la matrice wordclock svizzera",
-        "es": "* agregar más pruebas de reloj * arreglar la matriz de reloj suizo",
-        "pl": "* dodaj więcej testów wordclocka * napraw szwajcarską matrycę wordclocka",
-        "uk": "* додати більше тестів wordclock * виправити матрицю wordclock swiss",
-        "zh-cn": "* 添加更多字时钟测试 * 修复字时钟矩阵瑞士"
       }
     },
     "platform": "Javascript/Node.js",
@@ -142,6 +142,19 @@
     "licenseInformation": {
       "type": "free",
       "license": "MIT"
+    },
+    "visWidgets": {
+      "ignoreInVersions": [
+        2
+      ],
+      "mytime": {
+        "ignoreInVersions": [
+          2
+        ],
+        "components": [],
+        "i18n": true,
+        "url": ""
+      }
     },
     "compact": true,
     "eraseOnUpload": true,
