@@ -163,7 +163,7 @@
         "tier": 3,
         "connectionType": "local",
         "dataSource": "poll",
-        "restartAdapters": ["vis"]
+        "restartAdapters": ["vis", "vis-2"]
     },
     "native": {
         "countdown": [],
