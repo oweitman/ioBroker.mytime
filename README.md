@@ -164,6 +164,8 @@ All following Examples with countdown timer 1:2:3:4
 
 ### Widgets
 
+From Version 1.2.0 on the widgets should be compatible with vis1 and vis2.
+
 #### Widget Countdown plain
 
 A countdown widget for a plain textual output
@@ -180,7 +182,10 @@ Formats the timer output. default is mm:ss. for details see Chapter format templ
 
 ##### Example widget code
 
-the widgets are preconfigured for a countdown named test.
+The widgets are preconfigured for a countdown named test.
+There a 2 seperate versions for vis1 and vis2
+
+**VIS1:**
 
 ```json
 [
@@ -724,6 +729,289 @@ the widgets are preconfigured for a countdown named test.
 ]
 ```
 
+**VIS2:**
+
+```json
+[
+  {
+    "tpl": "tplIconState",
+    "data": {
+      "bindings": [],
+      "oid": "mytime.0.Countdowns.test.cmd",
+      "type": "value",
+      "g_common": true,
+      "step": 1,
+      "minmax": 1,
+      "repeat_delay": 800,
+      "repeat_interval": 300,
+      "min": 0,
+      "max": 100,
+      "variant": "contained",
+      "g_style": true,
+      "text": "pause",
+      "value": "pause"
+    },
+    "style": {
+      "bindings": [],
+      "left": "423.0000305175781px",
+      "top": "402.00001525878906px",
+      "width": "59px",
+      "height": "26px"
+    },
+    "widgetSet": "jqui",
+    "_id": "i000001"
+  },
+  {
+    "tpl": "tplIconState",
+    "data": {
+      "bindings": [],
+      "oid": "mytime.0.Countdowns.test.cmd",
+      "type": "value",
+      "g_common": true,
+      "step": 1,
+      "minmax": 1,
+      "repeat_delay": 800,
+      "repeat_interval": 300,
+      "min": 0,
+      "max": 100,
+      "variant": "contained",
+      "g_style": true,
+      "text": "start",
+      "value": "start"
+    },
+    "style": {
+      "bindings": [],
+      "left": "361.0000305175781px",
+      "top": "402.00001525878906px",
+      "width": "59px",
+      "height": "26px"
+    },
+    "widgetSet": "jqui",
+    "_id": "i000002"
+  },
+  {
+    "tpl": "tplIconState",
+    "data": {
+      "bindings": [],
+      "oid": "mytime.0.Countdowns.test.cmd",
+      "type": "value",
+      "g_common": true,
+      "step": 1,
+      "minmax": 1,
+      "repeat_delay": 800,
+      "repeat_interval": 300,
+      "min": 0,
+      "max": 100,
+      "variant": "contained",
+      "g_style": true,
+      "text": "stop",
+      "value": "stop"
+    },
+    "style": {
+      "bindings": [],
+      "left": "485.0000305175781px",
+      "top": "402.00001525878906px",
+      "width": "59px",
+      "height": "26px"
+    },
+    "widgetSet": "jqui",
+    "_id": "i000003"
+  },
+  {
+    "tpl": "tplIconState",
+    "data": {
+      "bindings": [],
+      "oid": "mytime.0.Countdowns.test.cmd",
+      "type": "value",
+      "g_common": true,
+      "step": 1,
+      "minmax": 1,
+      "repeat_delay": 800,
+      "repeat_interval": 300,
+      "min": 0,
+      "max": 100,
+      "variant": "contained",
+      "g_style": true,
+      "text": "+10",
+      "value": "+10"
+    },
+    "style": {
+      "bindings": [],
+      "left": "423.0000305175781px",
+      "top": "349.00001525878906px",
+      "width": "59px",
+      "height": "26px"
+    },
+    "widgetSet": "jqui",
+    "_id": "i000004"
+  },
+  {
+    "tpl": "tplIconState",
+    "data": {
+      "bindings": [],
+      "oid": "mytime.0.Countdowns.test.cmd",
+      "type": "value",
+      "g_common": true,
+      "step": 1,
+      "minmax": 1,
+      "repeat_delay": 800,
+      "repeat_interval": 300,
+      "min": 0,
+      "max": 100,
+      "variant": "contained",
+      "g_style": true,
+      "text": "=100",
+      "value": "=100"
+    },
+    "style": {
+      "bindings": [],
+      "left": "361.0000305175781px",
+      "top": "349.00001525878906px",
+      "width": "59px",
+      "height": "26px"
+    },
+    "widgetSet": "jqui",
+    "_id": "i000005"
+  },
+  {
+    "tpl": "tplIconState",
+    "data": {
+      "bindings": [],
+      "oid": "mytime.0.Countdowns.test.cmd",
+      "type": "value",
+      "g_common": true,
+      "step": 1,
+      "minmax": 1,
+      "repeat_delay": 800,
+      "repeat_interval": 300,
+      "min": 0,
+      "max": 100,
+      "variant": "contained",
+      "g_style": true,
+      "text": "-10",
+      "value": "-10"
+    },
+    "style": {
+      "bindings": [],
+      "left": "485.0000305175781px",
+      "top": "349.00001525878906px",
+      "width": "59px",
+      "height": "26px"
+    },
+    "widgetSet": "jqui",
+    "_id": "i000006"
+  },
+  {
+    "tpl": "tplIconState",
+    "data": {
+      "bindings": [],
+      "oid": "mytime.0.Countdowns.test.cmd",
+      "type": "value",
+      "g_common": true,
+      "step": 1,
+      "minmax": 1,
+      "repeat_delay": 800,
+      "repeat_interval": 300,
+      "min": 0,
+      "max": 100,
+      "variant": "contained",
+      "g_style": true,
+      "text": "+!10",
+      "value": "+!10"
+    },
+    "style": {
+      "bindings": [],
+      "left": "423.0000305175781px",
+      "top": "320.00001525878906px",
+      "width": "59px",
+      "height": "26px"
+    },
+    "widgetSet": "jqui",
+    "_id": "i000007"
+  },
+  {
+    "tpl": "tplIconState",
+    "data": {
+      "bindings": [],
+      "oid": "mytime.0.Countdowns.test.cmd",
+      "type": "value",
+      "g_common": true,
+      "step": 1,
+      "minmax": 1,
+      "repeat_delay": 800,
+      "repeat_interval": 300,
+      "min": 0,
+      "max": 100,
+      "variant": "contained",
+      "g_style": true,
+      "text": "=!100",
+      "value": "=!100"
+    },
+    "style": {
+      "bindings": [],
+      "left": "361.0000305175781px",
+      "top": "320.00001525878906px",
+      "width": "59px",
+      "height": "26px"
+    },
+    "widgetSet": "jqui",
+    "_id": "i000008"
+  },
+  {
+    "tpl": "tplIconState",
+    "data": {
+      "bindings": [],
+      "oid": "mytime.0.Countdowns.test.cmd",
+      "type": "value",
+      "g_common": true,
+      "step": 1,
+      "minmax": 1,
+      "repeat_delay": 800,
+      "repeat_interval": 300,
+      "min": 0,
+      "max": 100,
+      "variant": "contained",
+      "g_style": true,
+      "text": "-!10",
+      "value": "-!10"
+    },
+    "style": {
+      "bindings": [],
+      "left": "485.0000305175781px",
+      "top": "320.00001525878906px",
+      "width": "59px",
+      "height": "26px"
+    },
+    "widgetSet": "jqui",
+    "_id": "i000009"
+  },
+  {
+    "tpl": "tplMyTimeCountdownPlain",
+    "data": {
+      "bindings": [],
+      "countdown_format": "dd\\d HH\\h mm\\m ss\\s",
+      "g_common": true,
+      "g_css_border": true,
+      "countdown_oid": "mytime.0.Countdowns.test.timer",
+      "g_css_font_text": true
+    },
+    "style": {
+      "bindings": [],
+      "left": "361.0000305175781px",
+      "top": "375.00001525878906px",
+      "width": "182px",
+      "height": "24px",
+      "border-width": "0",
+      "border-style": "solid",
+      "border-color": "rgba(237,235,243,1)",
+      "text-align": "center"
+    },
+    "widgetSet": "mytime",
+    "_id": "i000010"
+  }
+]
+```
+
 **The actual action state (cdstop,cdrun,cdpause,cdend) of the countdown is available as CSS-Class selector:**
 
 ```css
@@ -891,6 +1179,9 @@ Group CSS-Common / transform "scale(0.5)"
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+### 1.2.0 (2024-11-15)
+
+- widgets are now compatible with vis2
 
 ### 1.1.1 (2024-11-13)
 

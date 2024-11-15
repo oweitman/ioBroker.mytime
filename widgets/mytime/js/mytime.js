@@ -8,7 +8,7 @@
 'use strict';
 
 // add translations for edit mode
-fetch('/vis/widgets/mytime/i18n/translations.json').then(async res => {
+fetch('widgets/mytime/i18n/translations.json').then(async res => {
     let i18n = await res.json();
 
     $.extend(
@@ -512,7 +512,7 @@ vis.binds['mytime'] = {
             var linewidth = data.countdown_width || 20;
             var notimetext = data.countdown_notimetext;
             var format = data.countdown_format || 'mm:ss';
-            var stopbehaviour = config.stopbehaviour || 'timer';
+            var stopbehaviour = config && config.stopbehaviour || 'timer';
             var bcolor = data.countdown_background || 'grey';
             var fcolor = data.countdown_foreground || '#87ceeb';
             var reverse = data.countdown_reverse;
@@ -1072,7 +1072,7 @@ vis.binds['mytime'] = {
         vis.conn.gettingStates = 0;
         vis.conn.getStates(bound, function (error, states) {
 
-            vis.updateStates(states);
+            vis.binds["mytime"].updateStates(states);
             vis.conn.subscribe(bound);
             for (var i = 0; i < bound.length; i++) {
                 bound[i] = bound[i] + '.val';
@@ -1081,6 +1081,37 @@ vis.binds['mytime'] = {
             $div.data('bound', bound);
             $div.data('bindHandler', change_callback);
         }.bind({ change_callback }));
+    },
+    updateStates: function (states) {
+        for (var id in states) {
+            if (!states.hasOwnProperty(id)) {
+                continue;
+            }
+            var obj = states[id];
+            try {
+                if (vis.editMode) {
+                    vis.states[`${id}.val`] = obj.val;
+                    vis.states[`${id}.ts`] = obj.ts;
+                    vis.states[`${id}.ack`] = obj.ack;
+                    vis.states[`${id}.lc`] = obj.lc;
+                    if (obj.q !== undefined && obj.q !== null) {
+                        vis.states[`${id}.q`] = obj.q;
+                    }
+                } else {
+                    const oo = {};
+                    oo[`${id}.val`] = obj.val;
+                    oo[`${id}.ts`] = obj.ts;
+                    oo[`${id}.ack`] = obj.ack;
+                    oo[`${id}.lc`] = obj.lc;
+                    if (obj.q !== undefined && obj.q !== null) {
+                        oo[`${id}.q`] = obj.q;
+                    }
+                    vis.states.attr(oo);
+                }
+            } catch (e) {
+                console.error(`Error: can't create states object for ${id}(${e})`);
+            }
+        }
     },
     formatDate: function (ms, format) {
         function ii(i, len) {
