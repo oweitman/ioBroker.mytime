@@ -1179,6 +1179,11 @@ Group CSS-Common / transform "scale(0.5)"
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+
+### **WORK IN PROGRESS**
+
+- interprete all commands in lowercase
+
 ### 1.2.0 (2024-11-15)
 
 - widgets are now compatible with vis2
