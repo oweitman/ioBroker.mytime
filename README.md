@@ -1179,8 +1179,7 @@ Group CSS-Common / transform "scale(0.5)"
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
-
-### **WORK IN PROGRESS**
+### 1.2.1 (2024-11-17)
 
 - interprete all commands in lowercase
 
