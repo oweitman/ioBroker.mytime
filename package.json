@@ -114,7 +114,7 @@
     "2-build": "node tasks --2-build",
     "3-copy": "node tasks --3-copy",
     "4-patch": "node tasks --4-patch",
-    "build": "node tasks.js",
+    "build": "node tasks.js && cd widgets/mytime && npm run build && cd ../..",
     "lint": "eslint .",
     "repochecker": "npx github:oweitman/ioBroker.repochecker https://github.com/oweitman/ioBroker.mytime --local",
     "translate-admin-deletekey": "node ./src-admin/devutil/translate.js deletekey 'xx,xx'",
