@@ -117,9 +117,9 @@
     "build": "node tasks.js && cd widgets/mytime && npm run build && cd ../..",
     "lint": "eslint .",
     "repochecker": "npx github:oweitman/ioBroker.repochecker https://github.com/oweitman/ioBroker.mytime --local",
-    "translate-admin-deletekey": "node ./src-admin/devutil/translate.js deletekey 'xx,xx'",
-    "translate-admin": "node ./devutil/translate.js -- source src-admin/src/i18n",
-    "translate-widgets": "node ./devutil/translate.js --source widgets/mytime/i18n/en.json --format single"
+    "translate-admin-deletekey": "node ./src-admin/bin/translate.js deletekey 'xx,xx'",
+    "translate-admin": "node ./bin/translate.js -- source src-admin/src/i18n",
+    "translate-widgets": "node ./bin/translate.js --source widgets/mytime/i18n/en.json --format single"
   },
   "readmeFilename": "README.md"
 }

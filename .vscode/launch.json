@@ -17,8 +17,8 @@
             "type": "node",
             "request": "launch",
             "name": "Run translate-adapter",
-            // "args": ["./devutil/translate.js", "deletekey", "tsTimeseriesName,tsTimeseriesNameTooltip"],
-            "args": ["./devutil/translate.js", "--source", "widgets/mytime/i18n/en.json", "--format", "single"],
+            // "args": ["./bin/translate.js", "deletekey", "tsTimeseriesName,tsTimeseriesNameTooltip"],
+            "args": ["./bin/translate.js", "--source", "widgets/mytime/i18n/en.json", "--format", "single"],
             "runtimeExecutable": "c:/Users/oweit/AppData/Roaming/fnm/aliases/default/node.exe",
             "cwd": "${workspaceFolder}",
             "stopOnEntry": true
