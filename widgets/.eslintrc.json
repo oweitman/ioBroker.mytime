@@ -6,7 +6,8 @@
         "jquery": true
     },
     "parserOptions": {
-        "ecmaVersion": 2024
+        "ecmaVersion": 2024,
+        "sourceType": "module"
     },
     "rules": {
         // Visualizations may run in very old browsers without `let` and `const`
