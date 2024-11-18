@@ -19,19 +19,23 @@ translates areas that should not be translated.
 ## mytime adapter for ioBroker
 
 This adapter handle Time (eg: countdown,etc.).
-The countdown functionality provides datapoints that you can use to manage a countdown (e.g. in a script). The adapter also includes several widgets to visualize these countdowns.
-Time series can be used to create complex time series at which the data points are triggered.
+The countdown functionality provides datapoints that you can use to manage a
+countdown (e.g. in a script). The adapter also includes several widgets
+to visualize these countdowns. Time series can be used to create
+complex time series at which the data points are triggered.
 
 ### Configuration
 
 #### Countdown
 
-In the configuration dialog Tab "Countdown" you can create a new countdown eg 'test', set timer to 10 seconds and import the following widgets.
+In the configuration dialog Tab "Countdown" you can create a new countdown
+eg 'test', set timer to 10 seconds and import the following widgets.
 Datapoints are pre configured for a countdown named test.
 
 ##### Stop behaviour timer
 
-After the countdown gets the signal stop, the countdown resets to the time set by timer.
+After the countdown gets the signal stop, the countdown resets
+to the time set by timer.
 
 ##### Stop behaviour zero
 
@@ -39,12 +43,17 @@ After the countdown gets the signal stop, the countdown remains at 0.
 
 #### Timeseries
 
-In the configuration dialog Tab "Timeseries" you can create a new timeseries with one or more timerules. For each timerule you can define different parameters
-Each timeseries creates a seperate datapoint which is triggered at the calculated time events.
-The time events are calculated in real time. However, the rrule library used is not yet perfect in all parameter combinations.
+In the configuration dialog Tab "Timeseries" you can create a
+new timeseries with one or more timerules. For each timerule you can
+define different parameters
+Each timeseries creates a seperate datapoint which is triggered
+at the calculated time events.
+The time events are calculated in real time. However, the rrule library
+used is not yet perfect in all parameter combinations.
 This shows that with some combinations the page goes into an endless loop.
 The demo page <http://jakubroztocil.github.io/rrule/> can also be used for experiments.
-Additional to add a timerule, you can add a timerule to exclude time events, to add single time events and also to exclude single time events.
+Additional to add a timerule, you can add a timerule to exclude time events,
+to add single time events and also to exclude single time events.
 
 ### Usage
 
@@ -119,9 +128,11 @@ you can set the countdown to an unlimited time.
 the notation of the value is
 [days:[hours:[minutes:[seconds]]]]
 days,hours and minutes are optional.
-if you want to set the timer to one day you have to set hours,minutes and second aswell
-you dont have to respect the normal value ranges (eg hours 0-24). you can also set 48 hours.
-if you want you can set irregular time notations. the time is summed up seperatly
+if you want to set the timer to one day you have
+to set hours, minutes and second aswell
+you dont have to respect the normal value ranges (eg hours 0-24).
+You can also set 48 hours.
+If you want you can set irregular time notations. the time is summed up seperatly
 
 **Examples:**
 
@@ -187,830 +198,17 @@ There a 2 seperate versions for vis1 and vis2
 
 **VIS1:**
 
-```json
-[
-  {
-    "tpl": "tplMyTimeCountdownPlain",
-    "data": {
-      "g_fixed": false,
-      "g_visibility": false,
-      "g_css_font_text": false,
-      "g_css_background": false,
-      "g_css_shadow_padding": false,
-      "g_css_border": false,
-      "g_gestures": false,
-      "g_signals": false,
-      "g_last_change": false,
-      "visibility-cond": "==",
-      "visibility-val": 1,
-      "visibility-groups-action": "hide",
-      "signals-cond-0": "==",
-      "signals-val-0": true,
-      "signals-icon-0": "/vis/signals/lowbattery.png",
-      "signals-icon-size-0": 0,
-      "signals-blink-0": false,
-      "signals-horz-0": 0,
-      "signals-vert-0": 0,
-      "signals-hide-edit-0": false,
-      "signals-cond-1": "==",
-      "signals-val-1": true,
-      "signals-icon-1": "/vis/signals/lowbattery.png",
-      "signals-icon-size-1": 0,
-      "signals-blink-1": false,
-      "signals-horz-1": 0,
-      "signals-vert-1": 0,
-      "signals-hide-edit-1": false,
-      "signals-cond-2": "==",
-      "signals-val-2": true,
-      "signals-icon-2": "/vis/signals/lowbattery.png",
-      "signals-icon-size-2": 0,
-      "signals-blink-2": false,
-      "signals-horz-2": 0,
-      "signals-vert-2": 0,
-      "signals-hide-edit-2": false,
-      "lc-type": "last-change",
-      "lc-is-interval": true,
-      "lc-is-moment": false,
-      "lc-format": "",
-      "lc-position-vert": "top",
-      "lc-position-horz": "right",
-      "lc-offset-vert": 0,
-      "lc-offset-horz": 0,
-      "lc-font-size": "12px",
-      "lc-font-family": "",
-      "lc-font-style": "",
-      "lc-bkg-color": "",
-      "lc-color": "",
-      "lc-border-width": "0",
-      "lc-border-style": "",
-      "lc-border-color": "",
-      "lc-border-radius": 10,
-      "lc-zindex": 0,
-      "countdown_oid": "mytime.0.Countdown.test.timer",
-      "format": "d H m s"
-    },
-    "style": { "left": "771px", "top": "143px", "width": "151px", "height": "16px" },
-    "widgetSet": "mytime"
-  },
-  {
-    "tpl": "tplJquiButtonState",
-    "data": {
-      "oid": "mytime.0.Countdown.test.cmd",
-      "g_fixed": true,
-      "g_visibility": false,
-      "g_css_font_text": true,
-      "g_css_background": true,
-      "g_css_shadow_padding": true,
-      "g_css_border": true,
-      "g_gestures": false,
-      "g_signals": false,
-      "g_last_change": false,
-      "buttontext": "+10s",
-      "signals-cond-0": "==",
-      "signals-val-0": true,
-      "signals-icon-0": "/vis/signals/lowbattery.png",
-      "signals-icon-size-0": 0,
-      "signals-blink-0": false,
-      "signals-horz-0": 0,
-      "signals-vert-0": 0,
-      "signals-hide-edit-0": false,
-      "signals-cond-1": "==",
-      "signals-val-1": true,
-      "signals-icon-1": "/vis/signals/lowbattery.png",
-      "signals-icon-size-1": 0,
-      "signals-blink-1": false,
-      "signals-horz-1": 0,
-      "signals-vert-1": 0,
-      "signals-hide-edit-1": false,
-      "signals-cond-2": "==",
-      "signals-val-2": true,
-      "signals-icon-2": "/vis/signals/lowbattery.png",
-      "signals-icon-size-2": 0,
-      "signals-blink-2": false,
-      "signals-horz-2": 0,
-      "signals-vert-2": 0,
-      "signals-hide-edit-2": false,
-      "lc-type": "last-change",
-      "lc-is-interval": true,
-      "lc-is-moment": false,
-      "lc-format": "",
-      "lc-position-vert": "top",
-      "lc-position-horz": "right",
-      "lc-offset-vert": 0,
-      "lc-offset-horz": 0,
-      "lc-font-size": "12px",
-      "lc-font-family": "",
-      "lc-font-style": "",
-      "lc-bkg-color": "",
-      "lc-color": "",
-      "lc-border-width": "0",
-      "lc-border-style": "",
-      "lc-border-color": "",
-      "lc-border-radius": 10,
-      "lc-zindex": 0,
-      "value": "+10",
-      "visibility-cond": "==",
-      "visibility-val": 1,
-      "visibility-groups-action": "hide",
-      "class": "mytime"
-    },
-    "style": {
-      "left": "742px",
-      "top": "111px",
-      "color": "white",
-      "font-weight": "lighter",
-      "font-size": "x-small",
-      "background": "",
-      "border-width": "2px",
-      "border-style": "solid",
-      "border-color": "white",
-      "border-radius": "10px",
-      "background-color": "#303030 !important",
-      "box-shadow": "2px 2px 3px rgba(20, 20, 20, 50)",
-      "width": "55px"
-    },
-    "widgetSet": "jqui"
-  },
-  {
-    "tpl": "tplJquiButtonState",
-    "data": {
-      "oid": "mytime.0.Countdown.test.cmd",
-      "g_fixed": true,
-      "g_visibility": false,
-      "g_css_font_text": true,
-      "g_css_background": true,
-      "g_css_shadow_padding": true,
-      "g_css_border": true,
-      "g_gestures": false,
-      "g_signals": false,
-      "g_last_change": false,
-      "buttontext": "-10s",
-      "signals-cond-0": "==",
-      "signals-val-0": true,
-      "signals-icon-0": "/vis/signals/lowbattery.png",
-      "signals-icon-size-0": 0,
-      "signals-blink-0": false,
-      "signals-horz-0": 0,
-      "signals-vert-0": 0,
-      "signals-hide-edit-0": false,
-      "signals-cond-1": "==",
-      "signals-val-1": true,
-      "signals-icon-1": "/vis/signals/lowbattery.png",
-      "signals-icon-size-1": 0,
-      "signals-blink-1": false,
-      "signals-horz-1": 0,
-      "signals-vert-1": 0,
-      "signals-hide-edit-1": false,
-      "signals-cond-2": "==",
-      "signals-val-2": true,
-      "signals-icon-2": "/vis/signals/lowbattery.png",
-      "signals-icon-size-2": 0,
-      "signals-blink-2": false,
-      "signals-horz-2": 0,
-      "signals-vert-2": 0,
-      "signals-hide-edit-2": false,
-      "lc-type": "last-change",
-      "lc-is-interval": true,
-      "lc-is-moment": false,
-      "lc-format": "",
-      "lc-position-vert": "top",
-      "lc-position-horz": "right",
-      "lc-offset-vert": 0,
-      "lc-offset-horz": 0,
-      "lc-font-size": "12px",
-      "lc-font-family": "",
-      "lc-font-style": "",
-      "lc-bkg-color": "",
-      "lc-color": "",
-      "lc-border-width": "0",
-      "lc-border-style": "",
-      "lc-border-color": "",
-      "lc-border-radius": 10,
-      "lc-zindex": 0,
-      "value": "-10",
-      "visibility-cond": "==",
-      "visibility-val": 1,
-      "visibility-groups-action": "hide",
-      "class": "mytime"
-    },
-    "style": {
-      "left": "801px",
-      "top": "111px",
-      "color": "white",
-      "font-weight": "lighter",
-      "font-size": "x-small",
-      "background": "",
-      "border-width": "2px",
-      "border-style": "solid",
-      "border-color": "white",
-      "border-radius": "10px",
-      "background-color": "#303030 !important",
-      "box-shadow": "2px 2px 3px rgba(20, 20, 20, 50)",
-      "width": "55px"
-    },
-    "widgetSet": "jqui"
-  },
-  {
-    "tpl": "tplJquiButtonState",
-    "data": {
-      "oid": "mytime.0.Countdown.test.cmd",
-      "g_fixed": true,
-      "g_visibility": false,
-      "g_css_font_text": true,
-      "g_css_background": true,
-      "g_css_shadow_padding": true,
-      "g_css_border": true,
-      "g_gestures": false,
-      "g_signals": false,
-      "g_last_change": false,
-      "buttontext": "=10",
-      "signals-cond-0": "==",
-      "signals-val-0": true,
-      "signals-icon-0": "/vis/signals/lowbattery.png",
-      "signals-icon-size-0": 0,
-      "signals-blink-0": false,
-      "signals-horz-0": 0,
-      "signals-vert-0": 0,
-      "signals-hide-edit-0": false,
-      "signals-cond-1": "==",
-      "signals-val-1": true,
-      "signals-icon-1": "/vis/signals/lowbattery.png",
-      "signals-icon-size-1": 0,
-      "signals-blink-1": false,
-      "signals-horz-1": 0,
-      "signals-vert-1": 0,
-      "signals-hide-edit-1": false,
-      "signals-cond-2": "==",
-      "signals-val-2": true,
-      "signals-icon-2": "/vis/signals/lowbattery.png",
-      "signals-icon-size-2": 0,
-      "signals-blink-2": false,
-      "signals-horz-2": 0,
-      "signals-vert-2": 0,
-      "signals-hide-edit-2": false,
-      "lc-type": "last-change",
-      "lc-is-interval": true,
-      "lc-is-moment": false,
-      "lc-format": "",
-      "lc-position-vert": "top",
-      "lc-position-horz": "right",
-      "lc-offset-vert": 0,
-      "lc-offset-horz": 0,
-      "lc-font-size": "12px",
-      "lc-font-family": "",
-      "lc-font-style": "",
-      "lc-bkg-color": "",
-      "lc-color": "",
-      "lc-border-width": "0",
-      "lc-border-style": "",
-      "lc-border-color": "",
-      "lc-border-radius": 10,
-      "lc-zindex": 0,
-      "value": "=10",
-      "visibility-cond": "==",
-      "visibility-val": 1,
-      "visibility-groups-action": "hide",
-      "class": "mytime"
-    },
-    "style": {
-      "left": "864px",
-      "top": "111px",
-      "color": "white",
-      "font-weight": "lighter",
-      "font-size": "x-small",
-      "background": "",
-      "border-width": "2px",
-      "border-style": "solid",
-      "border-color": "white",
-      "border-radius": "10px",
-      "background-color": "#303030 !important",
-      "box-shadow": "2px 2px 3px rgba(20, 20, 20, 50)",
-      "width": "55px"
-    },
-    "widgetSet": "jqui"
-  },
-  {
-    "tpl": "tplJquiButtonState",
-    "data": {
-      "oid": "mytime.0.Countdown.test.cmd",
-      "g_fixed": true,
-      "g_visibility": false,
-      "g_css_font_text": true,
-      "g_css_background": true,
-      "g_css_shadow_padding": true,
-      "g_css_border": true,
-      "g_gestures": false,
-      "g_signals": false,
-      "g_last_change": false,
-      "buttontext": "start",
-      "signals-cond-0": "==",
-      "signals-val-0": true,
-      "signals-icon-0": "/vis/signals/lowbattery.png",
-      "signals-icon-size-0": 0,
-      "signals-blink-0": false,
-      "signals-horz-0": 0,
-      "signals-vert-0": 0,
-      "signals-hide-edit-0": false,
-      "signals-cond-1": "==",
-      "signals-val-1": true,
-      "signals-icon-1": "/vis/signals/lowbattery.png",
-      "signals-icon-size-1": 0,
-      "signals-blink-1": false,
-      "signals-horz-1": 0,
-      "signals-vert-1": 0,
-      "signals-hide-edit-1": false,
-      "signals-cond-2": "==",
-      "signals-val-2": true,
-      "signals-icon-2": "/vis/signals/lowbattery.png",
-      "signals-icon-size-2": 0,
-      "signals-blink-2": false,
-      "signals-horz-2": 0,
-      "signals-vert-2": 0,
-      "signals-hide-edit-2": false,
-      "lc-type": "last-change",
-      "lc-is-interval": true,
-      "lc-is-moment": false,
-      "lc-format": "",
-      "lc-position-vert": "top",
-      "lc-position-horz": "right",
-      "lc-offset-vert": 0,
-      "lc-offset-horz": 0,
-      "lc-font-size": "12px",
-      "lc-font-family": "",
-      "lc-font-style": "",
-      "lc-bkg-color": "",
-      "lc-color": "",
-      "lc-border-width": "0",
-      "lc-border-style": "",
-      "lc-border-color": "",
-      "lc-border-radius": 10,
-      "lc-zindex": 0,
-      "value": "start",
-      "visibility-cond": "==",
-      "visibility-val": 1,
-      "visibility-groups-action": "hide",
-      "class": "mytime"
-    },
-    "style": {
-      "left": "742px",
-      "top": "163px",
-      "color": "white",
-      "font-weight": "lighter",
-      "font-size": "x-small",
-      "background": "",
-      "border-width": "2px",
-      "border-style": "solid",
-      "border-color": "white",
-      "border-radius": "10px",
-      "background-color": "#303030 !important",
-      "box-shadow": "2px 2px 3px rgba(20, 20, 20, 50)",
-      "width": "55px"
-    },
-    "widgetSet": "jqui"
-  },
-  {
-    "tpl": "tplJquiButtonState",
-    "data": {
-      "oid": "mytime.0.Countdown.test.cmd",
-      "g_fixed": true,
-      "g_visibility": false,
-      "g_css_font_text": true,
-      "g_css_background": true,
-      "g_css_shadow_padding": true,
-      "g_css_border": true,
-      "g_gestures": false,
-      "g_signals": false,
-      "g_last_change": false,
-      "buttontext": "pause",
-      "signals-cond-0": "==",
-      "signals-val-0": true,
-      "signals-icon-0": "/vis/signals/lowbattery.png",
-      "signals-icon-size-0": 0,
-      "signals-blink-0": false,
-      "signals-horz-0": 0,
-      "signals-vert-0": 0,
-      "signals-hide-edit-0": false,
-      "signals-cond-1": "==",
-      "signals-val-1": true,
-      "signals-icon-1": "/vis/signals/lowbattery.png",
-      "signals-icon-size-1": 0,
-      "signals-blink-1": false,
-      "signals-horz-1": 0,
-      "signals-vert-1": 0,
-      "signals-hide-edit-1": false,
-      "signals-cond-2": "==",
-      "signals-val-2": true,
-      "signals-icon-2": "/vis/signals/lowbattery.png",
-      "signals-icon-size-2": 0,
-      "signals-blink-2": false,
-      "signals-horz-2": 0,
-      "signals-vert-2": 0,
-      "signals-hide-edit-2": false,
-      "lc-type": "last-change",
-      "lc-is-interval": true,
-      "lc-is-moment": false,
-      "lc-format": "",
-      "lc-position-vert": "top",
-      "lc-position-horz": "right",
-      "lc-offset-vert": 0,
-      "lc-offset-horz": 0,
-      "lc-font-size": "12px",
-      "lc-font-family": "",
-      "lc-font-style": "",
-      "lc-bkg-color": "",
-      "lc-color": "",
-      "lc-border-width": "0",
-      "lc-border-style": "",
-      "lc-border-color": "",
-      "lc-border-radius": 10,
-      "lc-zindex": 0,
-      "value": "pause",
-      "visibility-cond": "==",
-      "visibility-val": 1,
-      "visibility-groups-action": "hide",
-      "class": "mytime"
-    },
-    "style": {
-      "left": "801px",
-      "top": "163px",
-      "color": "white",
-      "font-weight": "lighter",
-      "font-size": "x-small",
-      "background": "",
-      "border-width": "2px",
-      "border-style": "solid",
-      "border-color": "white",
-      "border-radius": "10px",
-      "background-color": "#303030 !important",
-      "box-shadow": "2px 2px 3px rgba(20, 20, 20, 50)",
-      "width": "55px"
-    },
-    "widgetSet": "jqui"
-  },
-  {
-    "tpl": "tplJquiButtonState",
-    "data": {
-      "oid": "mytime.0.Countdown.test.cmd",
-      "g_fixed": true,
-      "g_visibility": false,
-      "g_css_font_text": true,
-      "g_css_background": true,
-      "g_css_shadow_padding": true,
-      "g_css_border": true,
-      "g_gestures": false,
-      "g_signals": false,
-      "g_last_change": false,
-      "buttontext": "stop",
-      "signals-cond-0": "==",
-      "signals-val-0": true,
-      "signals-icon-0": "/vis/signals/lowbattery.png",
-      "signals-icon-size-0": 0,
-      "signals-blink-0": false,
-      "signals-horz-0": 0,
-      "signals-vert-0": 0,
-      "signals-hide-edit-0": false,
-      "signals-cond-1": "==",
-      "signals-val-1": true,
-      "signals-icon-1": "/vis/signals/lowbattery.png",
-      "signals-icon-size-1": 0,
-      "signals-blink-1": false,
-      "signals-horz-1": 0,
-      "signals-vert-1": 0,
-      "signals-hide-edit-1": false,
-      "signals-cond-2": "==",
-      "signals-val-2": true,
-      "signals-icon-2": "/vis/signals/lowbattery.png",
-      "signals-icon-size-2": 0,
-      "signals-blink-2": false,
-      "signals-horz-2": 0,
-      "signals-vert-2": 0,
-      "signals-hide-edit-2": false,
-      "lc-type": "last-change",
-      "lc-is-interval": true,
-      "lc-is-moment": false,
-      "lc-format": "",
-      "lc-position-vert": "top",
-      "lc-position-horz": "right",
-      "lc-offset-vert": 0,
-      "lc-offset-horz": 0,
-      "lc-font-size": "12px",
-      "lc-font-family": "",
-      "lc-font-style": "",
-      "lc-bkg-color": "",
-      "lc-color": "",
-      "lc-border-width": "0",
-      "lc-border-style": "",
-      "lc-border-color": "",
-      "lc-border-radius": 10,
-      "lc-zindex": 0,
-      "value": "stop",
-      "visibility-cond": "==",
-      "visibility-val": 1,
-      "visibility-groups-action": "hide",
-      "class": "mytime"
-    },
-    "style": {
-      "left": "864px",
-      "top": "163px",
-      "color": "white",
-      "font-weight": "lighter",
-      "font-size": "x-small",
-      "background": "",
-      "border-width": "2px",
-      "border-style": "solid",
-      "border-color": "white",
-      "border-radius": "10px",
-      "background-color": "#303030 !important",
-      "box-shadow": "2px 2px 3px rgba(20, 20, 20, 50)",
-      "width": "55px"
-    },
-    "widgetSet": "jqui"
-  }
-]
-```
+<details>
+  <summary>Details</summary>
+  <pre><code>[{"tpl":"tplMyTimeCountdownPlain","data":{"g_fixed":false,"g_visibility":false,"g_css_font_text":false,"g_css_background":false,"g_css_shadow_padding":false,"g_css_border":false,"g_gestures":false,"g_signals":false,"g_last_change":false,"visibility-cond":"==","visibility-val":1,"visibility-groups-action":"hide","signals-cond-0":"==","signals-val-0":true,"signals-icon-0":"/vis/signals/lowbattery.png","signals-icon-size-0":0,"signals-blink-0":false,"signals-horz-0":0,"signals-vert-0":0,"signals-hide-edit-0":false,"signals-cond-1":"==","signals-val-1":true,"signals-icon-1":"/vis/signals/lowbattery.png","signals-icon-size-1":0,"signals-blink-1":false,"signals-horz-1":0,"signals-vert-1":0,"signals-hide-edit-1":false,"signals-cond-2":"==","signals-val-2":true,"signals-icon-2":"/vis/signals/lowbattery.png","signals-icon-size-2":0,"signals-blink-2":false,"signals-horz-2":0,"signals-vert-2":0,"signals-hide-edit-2":false,"lc-type":"last-change","lc-is-interval":true,"lc-is-moment":false,"lc-format":"","lc-position-vert":"top","lc-position-horz":"right","lc-offset-vert":0,"lc-offset-horz":0,"lc-font-size":"12px","lc-font-family":"","lc-font-style":"","lc-bkg-color":"","lc-color":"","lc-border-width":"0","lc-border-style":"","lc-border-color":"","lc-border-radius":10,"lc-zindex":0,"countdown_oid":"mytime.0.Countdown.test.timer","format":"d H m s"},"style":{"left":"771px","top":"143px","width":"151px","height":"16px"},"widgetSet":"mytime"},{"tpl":"tplJquiButtonState","data":{"oid":"mytime.0.Countdown.test.cmd","g_fixed":true,"g_visibility":false,"g_css_font_text":true,"g_css_background":true,"g_css_shadow_padding":true,"g_css_border":true,"g_gestures":false,"g_signals":false,"g_last_change":false,"buttontext":"+10s","signals-cond-0":"==","signals-val-0":true,"signals-icon-0":"/vis/signals/lowbattery.png","signals-icon-size-0":0,"signals-blink-0":false,"signals-horz-0":0,"signals-vert-0":0,"signals-hide-edit-0":false,"signals-cond-1":"==","signals-val-1":true,"signals-icon-1":"/vis/signals/lowbattery.png","signals-icon-size-1":0,"signals-blink-1":false,"signals-horz-1":0,"signals-vert-1":0,"signals-hide-edit-1":false,"signals-cond-2":"==","signals-val-2":true,"signals-icon-2":"/vis/signals/lowbattery.png","signals-icon-size-2":0,"signals-blink-2":false,"signals-horz-2":0,"signals-vert-2":0,"signals-hide-edit-2":false,"lc-type":"last-change","lc-is-interval":true,"lc-is-moment":false,"lc-format":"","lc-position-vert":"top","lc-position-horz":"right","lc-offset-vert":0,"lc-offset-horz":0,"lc-font-size":"12px","lc-font-family":"","lc-font-style":"","lc-bkg-color":"","lc-color":"","lc-border-width":"0","lc-border-style":"","lc-border-color":"","lc-border-radius":10,"lc-zindex":0,"value":"+10","visibility-cond":"==","visibility-val":1,"visibility-groups-action":"hide","class":"mytime"},"style":{"left":"742px","top":"111px","color":"white","font-weight":"lighter","font-size":"x-small","background":"","border-width":"2px","border-style":"solid","border-color":"white","border-radius":"10px","background-color":"#303030 !important","box-shadow":"2px 2px 3px rgba(20, 20, 20, 50)","width":"55px"},"widgetSet":"jqui"},{"tpl":"tplJquiButtonState","data":{"oid":"mytime.0.Countdown.test.cmd","g_fixed":true,"g_visibility":false,"g_css_font_text":true,"g_css_background":true,"g_css_shadow_padding":true,"g_css_border":true,"g_gestures":false,"g_signals":false,"g_last_change":false,"buttontext":"-10s","signals-cond-0":"==","signals-val-0":true,"signals-icon-0":"/vis/signals/lowbattery.png","signals-icon-size-0":0,"signals-blink-0":false,"signals-horz-0":0,"signals-vert-0":0,"signals-hide-edit-0":false,"signals-cond-1":"==","signals-val-1":true,"signals-icon-1":"/vis/signals/lowbattery.png","signals-icon-size-1":0,"signals-blink-1":false,"signals-horz-1":0,"signals-vert-1":0,"signals-hide-edit-1":false,"signals-cond-2":"==","signals-val-2":true,"signals-icon-2":"/vis/signals/lowbattery.png","signals-icon-size-2":0,"signals-blink-2":false,"signals-horz-2":0,"signals-vert-2":0,"signals-hide-edit-2":false,"lc-type":"last-change","lc-is-interval":true,"lc-is-moment":false,"lc-format":"","lc-position-vert":"top","lc-position-horz":"right","lc-offset-vert":0,"lc-offset-horz":0,"lc-font-size":"12px","lc-font-family":"","lc-font-style":"","lc-bkg-color":"","lc-color":"","lc-border-width":"0","lc-border-style":"","lc-border-color":"","lc-border-radius":10,"lc-zindex":0,"value":"-10","visibility-cond":"==","visibility-val":1,"visibility-groups-action":"hide","class":"mytime"},"style":{"left":"801px","top":"111px","color":"white","font-weight":"lighter","font-size":"x-small","background":"","border-width":"2px","border-style":"solid","border-color":"white","border-radius":"10px","background-color":"#303030 !important","box-shadow":"2px 2px 3px rgba(20, 20, 20, 50)","width":"55px"},"widgetSet":"jqui"},{"tpl":"tplJquiButtonState","data":{"oid":"mytime.0.Countdown.test.cmd","g_fixed":true,"g_visibility":false,"g_css_font_text":true,"g_css_background":true,"g_css_shadow_padding":true,"g_css_border":true,"g_gestures":false,"g_signals":false,"g_last_change":false,"buttontext":"=10","signals-cond-0":"==","signals-val-0":true,"signals-icon-0":"/vis/signals/lowbattery.png","signals-icon-size-0":0,"signals-blink-0":false,"signals-horz-0":0,"signals-vert-0":0,"signals-hide-edit-0":false,"signals-cond-1":"==","signals-val-1":true,"signals-icon-1":"/vis/signals/lowbattery.png","signals-icon-size-1":0,"signals-blink-1":false,"signals-horz-1":0,"signals-vert-1":0,"signals-hide-edit-1":false,"signals-cond-2":"==","signals-val-2":true,"signals-icon-2":"/vis/signals/lowbattery.png","signals-icon-size-2":0,"signals-blink-2":false,"signals-horz-2":0,"signals-vert-2":0,"signals-hide-edit-2":false,"lc-type":"last-change","lc-is-interval":true,"lc-is-moment":false,"lc-format":"","lc-position-vert":"top","lc-position-horz":"right","lc-offset-vert":0,"lc-offset-horz":0,"lc-font-size":"12px","lc-font-family":"","lc-font-style":"","lc-bkg-color":"","lc-color":"","lc-border-width":"0","lc-border-style":"","lc-border-color":"","lc-border-radius":10,"lc-zindex":0,"value":"=10","visibility-cond":"==","visibility-val":1,"visibility-groups-action":"hide","class":"mytime"},"style":{"left":"864px","top":"111px","color":"white","font-weight":"lighter","font-size":"x-small","background":"","border-width":"2px","border-style":"solid","border-color":"white","border-radius":"10px","background-color":"#303030 !important","box-shadow":"2px 2px 3px rgba(20, 20, 20, 50)","width":"55px"},"widgetSet":"jqui"},{"tpl":"tplJquiButtonState","data":{"oid":"mytime.0.Countdown.test.cmd","g_fixed":true,"g_visibility":false,"g_css_font_text":true,"g_css_background":true,"g_css_shadow_padding":true,"g_css_border":true,"g_gestures":false,"g_signals":false,"g_last_change":false,"buttontext":"start","signals-cond-0":"==","signals-val-0":true,"signals-icon-0":"/vis/signals/lowbattery.png","signals-icon-size-0":0,"signals-blink-0":false,"signals-horz-0":0,"signals-vert-0":0,"signals-hide-edit-0":false,"signals-cond-1":"==","signals-val-1":true,"signals-icon-1":"/vis/signals/lowbattery.png","signals-icon-size-1":0,"signals-blink-1":false,"signals-horz-1":0,"signals-vert-1":0,"signals-hide-edit-1":false,"signals-cond-2":"==","signals-val-2":true,"signals-icon-2":"/vis/signals/lowbattery.png","signals-icon-size-2":0,"signals-blink-2":false,"signals-horz-2":0,"signals-vert-2":0,"signals-hide-edit-2":false,"lc-type":"last-change","lc-is-interval":true,"lc-is-moment":false,"lc-format":"","lc-position-vert":"top","lc-position-horz":"right","lc-offset-vert":0,"lc-offset-horz":0,"lc-font-size":"12px","lc-font-family":"","lc-font-style":"","lc-bkg-color":"","lc-color":"","lc-border-width":"0","lc-border-style":"","lc-border-color":"","lc-border-radius":10,"lc-zindex":0,"value":"start","visibility-cond":"==","visibility-val":1,"visibility-groups-action":"hide","class":"mytime"},"style":{"left":"742px","top":"163px","color":"white","font-weight":"lighter","font-size":"x-small","background":"","border-width":"2px","border-style":"solid","border-color":"white","border-radius":"10px","background-color":"#303030 !important","box-shadow":"2px 2px 3px rgba(20, 20, 20, 50)","width":"55px"},"widgetSet":"jqui"},{"tpl":"tplJquiButtonState","data":{"oid":"mytime.0.Countdown.test.cmd","g_fixed":true,"g_visibility":false,"g_css_font_text":true,"g_css_background":true,"g_css_shadow_padding":true,"g_css_border":true,"g_gestures":false,"g_signals":false,"g_last_change":false,"buttontext":"pause","signals-cond-0":"==","signals-val-0":true,"signals-icon-0":"/vis/signals/lowbattery.png","signals-icon-size-0":0,"signals-blink-0":false,"signals-horz-0":0,"signals-vert-0":0,"signals-hide-edit-0":false,"signals-cond-1":"==","signals-val-1":true,"signals-icon-1":"/vis/signals/lowbattery.png","signals-icon-size-1":0,"signals-blink-1":false,"signals-horz-1":0,"signals-vert-1":0,"signals-hide-edit-1":false,"signals-cond-2":"==","signals-val-2":true,"signals-icon-2":"/vis/signals/lowbattery.png","signals-icon-size-2":0,"signals-blink-2":false,"signals-horz-2":0,"signals-vert-2":0,"signals-hide-edit-2":false,"lc-type":"last-change","lc-is-interval":true,"lc-is-moment":false,"lc-format":"","lc-position-vert":"top","lc-position-horz":"right","lc-offset-vert":0,"lc-offset-horz":0,"lc-font-size":"12px","lc-font-family":"","lc-font-style":"","lc-bkg-color":"","lc-color":"","lc-border-width":"0","lc-border-style":"","lc-border-color":"","lc-border-radius":10,"lc-zindex":0,"value":"pause","visibility-cond":"==","visibility-val":1,"visibility-groups-action":"hide","class":"mytime"},"style":{"left":"801px","top":"163px","color":"white","font-weight":"lighter","font-size":"x-small","background":"","border-width":"2px","border-style":"solid","border-color":"white","border-radius":"10px","background-color":"#303030 !important","box-shadow":"2px 2px 3px rgba(20, 20, 20, 50)","width":"55px"},"widgetSet":"jqui"},{"tpl":"tplJquiButtonState","data":{"oid":"mytime.0.Countdown.test.cmd","g_fixed":true,"g_visibility":false,"g_css_font_text":true,"g_css_background":true,"g_css_shadow_padding":true,"g_css_border":true,"g_gestures":false,"g_signals":false,"g_last_change":false,"buttontext":"stop","signals-cond-0":"==","signals-val-0":true,"signals-icon-0":"/vis/signals/lowbattery.png","signals-icon-size-0":0,"signals-blink-0":false,"signals-horz-0":0,"signals-vert-0":0,"signals-hide-edit-0":false,"signals-cond-1":"==","signals-val-1":true,"signals-icon-1":"/vis/signals/lowbattery.png","signals-icon-size-1":0,"signals-blink-1":false,"signals-horz-1":0,"signals-vert-1":0,"signals-hide-edit-1":false,"signals-cond-2":"==","signals-val-2":true,"signals-icon-2":"/vis/signals/lowbattery.png","signals-icon-size-2":0,"signals-blink-2":false,"signals-horz-2":0,"signals-vert-2":0,"signals-hide-edit-2":false,"lc-type":"last-change","lc-is-interval":true,"lc-is-moment":false,"lc-format":"","lc-position-vert":"top","lc-position-horz":"right","lc-offset-vert":0,"lc-offset-horz":0,"lc-font-size":"12px","lc-font-family":"","lc-font-style":"","lc-bkg-color":"","lc-color":"","lc-border-width":"0","lc-border-style":"","lc-border-color":"","lc-border-radius":10,"lc-zindex":0,"value":"stop","visibility-cond":"==","visibility-val":1,"visibility-groups-action":"hide","class":"mytime"},"style":{"left":"864px","top":"163px","color":"white","font-weight":"lighter","font-size":"x-small","background":"","border-width":"2px","border-style":"solid","border-color":"white","border-radius":"10px","background-color":"#303030 !important","box-shadow":"2px 2px 3px rgba(20, 20, 20, 50)","width":"55px"},"widgetSet":"jqui"}]</code></pre>
+</details>
 
 **VIS2:**
 
-```json
-[
-  {
-    "tpl": "tplIconState",
-    "data": {
-      "bindings": [],
-      "oid": "mytime.0.Countdowns.test.cmd",
-      "type": "value",
-      "g_common": true,
-      "step": 1,
-      "minmax": 1,
-      "repeat_delay": 800,
-      "repeat_interval": 300,
-      "min": 0,
-      "max": 100,
-      "variant": "contained",
-      "g_style": true,
-      "text": "pause",
-      "value": "pause"
-    },
-    "style": {
-      "bindings": [],
-      "left": "423.0000305175781px",
-      "top": "402.00001525878906px",
-      "width": "59px",
-      "height": "26px"
-    },
-    "widgetSet": "jqui",
-    "_id": "i000001"
-  },
-  {
-    "tpl": "tplIconState",
-    "data": {
-      "bindings": [],
-      "oid": "mytime.0.Countdowns.test.cmd",
-      "type": "value",
-      "g_common": true,
-      "step": 1,
-      "minmax": 1,
-      "repeat_delay": 800,
-      "repeat_interval": 300,
-      "min": 0,
-      "max": 100,
-      "variant": "contained",
-      "g_style": true,
-      "text": "start",
-      "value": "start"
-    },
-    "style": {
-      "bindings": [],
-      "left": "361.0000305175781px",
-      "top": "402.00001525878906px",
-      "width": "59px",
-      "height": "26px"
-    },
-    "widgetSet": "jqui",
-    "_id": "i000002"
-  },
-  {
-    "tpl": "tplIconState",
-    "data": {
-      "bindings": [],
-      "oid": "mytime.0.Countdowns.test.cmd",
-      "type": "value",
-      "g_common": true,
-      "step": 1,
-      "minmax": 1,
-      "repeat_delay": 800,
-      "repeat_interval": 300,
-      "min": 0,
-      "max": 100,
-      "variant": "contained",
-      "g_style": true,
-      "text": "stop",
-      "value": "stop"
-    },
-    "style": {
-      "bindings": [],
-      "left": "485.0000305175781px",
-      "top": "402.00001525878906px",
-      "width": "59px",
-      "height": "26px"
-    },
-    "widgetSet": "jqui",
-    "_id": "i000003"
-  },
-  {
-    "tpl": "tplIconState",
-    "data": {
-      "bindings": [],
-      "oid": "mytime.0.Countdowns.test.cmd",
-      "type": "value",
-      "g_common": true,
-      "step": 1,
-      "minmax": 1,
-      "repeat_delay": 800,
-      "repeat_interval": 300,
-      "min": 0,
-      "max": 100,
-      "variant": "contained",
-      "g_style": true,
-      "text": "+10",
-      "value": "+10"
-    },
-    "style": {
-      "bindings": [],
-      "left": "423.0000305175781px",
-      "top": "349.00001525878906px",
-      "width": "59px",
-      "height": "26px"
-    },
-    "widgetSet": "jqui",
-    "_id": "i000004"
-  },
-  {
-    "tpl": "tplIconState",
-    "data": {
-      "bindings": [],
-      "oid": "mytime.0.Countdowns.test.cmd",
-      "type": "value",
-      "g_common": true,
-      "step": 1,
-      "minmax": 1,
-      "repeat_delay": 800,
-      "repeat_interval": 300,
-      "min": 0,
-      "max": 100,
-      "variant": "contained",
-      "g_style": true,
-      "text": "=100",
-      "value": "=100"
-    },
-    "style": {
-      "bindings": [],
-      "left": "361.0000305175781px",
-      "top": "349.00001525878906px",
-      "width": "59px",
-      "height": "26px"
-    },
-    "widgetSet": "jqui",
-    "_id": "i000005"
-  },
-  {
-    "tpl": "tplIconState",
-    "data": {
-      "bindings": [],
-      "oid": "mytime.0.Countdowns.test.cmd",
-      "type": "value",
-      "g_common": true,
-      "step": 1,
-      "minmax": 1,
-      "repeat_delay": 800,
-      "repeat_interval": 300,
-      "min": 0,
-      "max": 100,
-      "variant": "contained",
-      "g_style": true,
-      "text": "-10",
-      "value": "-10"
-    },
-    "style": {
-      "bindings": [],
-      "left": "485.0000305175781px",
-      "top": "349.00001525878906px",
-      "width": "59px",
-      "height": "26px"
-    },
-    "widgetSet": "jqui",
-    "_id": "i000006"
-  },
-  {
-    "tpl": "tplIconState",
-    "data": {
-      "bindings": [],
-      "oid": "mytime.0.Countdowns.test.cmd",
-      "type": "value",
-      "g_common": true,
-      "step": 1,
-      "minmax": 1,
-      "repeat_delay": 800,
-      "repeat_interval": 300,
-      "min": 0,
-      "max": 100,
-      "variant": "contained",
-      "g_style": true,
-      "text": "+!10",
-      "value": "+!10"
-    },
-    "style": {
-      "bindings": [],
-      "left": "423.0000305175781px",
-      "top": "320.00001525878906px",
-      "width": "59px",
-      "height": "26px"
-    },
-    "widgetSet": "jqui",
-    "_id": "i000007"
-  },
-  {
-    "tpl": "tplIconState",
-    "data": {
-      "bindings": [],
-      "oid": "mytime.0.Countdowns.test.cmd",
-      "type": "value",
-      "g_common": true,
-      "step": 1,
-      "minmax": 1,
-      "repeat_delay": 800,
-      "repeat_interval": 300,
-      "min": 0,
-      "max": 100,
-      "variant": "contained",
-      "g_style": true,
-      "text": "=!100",
-      "value": "=!100"
-    },
-    "style": {
-      "bindings": [],
-      "left": "361.0000305175781px",
-      "top": "320.00001525878906px",
-      "width": "59px",
-      "height": "26px"
-    },
-    "widgetSet": "jqui",
-    "_id": "i000008"
-  },
-  {
-    "tpl": "tplIconState",
-    "data": {
-      "bindings": [],
-      "oid": "mytime.0.Countdowns.test.cmd",
-      "type": "value",
-      "g_common": true,
-      "step": 1,
-      "minmax": 1,
-      "repeat_delay": 800,
-      "repeat_interval": 300,
-      "min": 0,
-      "max": 100,
-      "variant": "contained",
-      "g_style": true,
-      "text": "-!10",
-      "value": "-!10"
-    },
-    "style": {
-      "bindings": [],
-      "left": "485.0000305175781px",
-      "top": "320.00001525878906px",
-      "width": "59px",
-      "height": "26px"
-    },
-    "widgetSet": "jqui",
-    "_id": "i000009"
-  },
-  {
-    "tpl": "tplMyTimeCountdownPlain",
-    "data": {
-      "bindings": [],
-      "countdown_format": "dd\\d HH\\h mm\\m ss\\s",
-      "g_common": true,
-      "g_css_border": true,
-      "countdown_oid": "mytime.0.Countdowns.test.timer",
-      "g_css_font_text": true
-    },
-    "style": {
-      "bindings": [],
-      "left": "361.0000305175781px",
-      "top": "375.00001525878906px",
-      "width": "182px",
-      "height": "24px",
-      "border-width": "0",
-      "border-style": "solid",
-      "border-color": "rgba(237,235,243,1)",
-      "text-align": "center"
-    },
-    "widgetSet": "mytime",
-    "_id": "i000010"
-  }
-]
-```
+<details>
+  <summary>Details</summary>
+</details>
+<pre><code>[{"tpl":"tplIconState","data":{"bindings":[],"oid":"mytime.0.Countdowns.test.cmd","type":"value","g_common":true,"step":1,"minmax":1,"repeat_delay":800,"repeat_interval":300,"min":0,"max":100,"variant":"contained","g_style":true,"text":"pause","value":"pause"},"style":{"bindings":[],"left":"423.0000305175781px","top":"402.00001525878906px","width":"59px","height":"26px"},"widgetSet":"jqui","_id":"i000001"},{"tpl":"tplIconState","data":{"bindings":[],"oid":"mytime.0.Countdowns.test.cmd","type":"value","g_common":true,"step":1,"minmax":1,"repeat_delay":800,"repeat_interval":300,"min":0,"max":100,"variant":"contained","g_style":true,"text":"start","value":"start"},"style":{"bindings":[],"left":"361.0000305175781px","top":"402.00001525878906px","width":"59px","height":"26px"},"widgetSet":"jqui","_id":"i000002"},{"tpl":"tplIconState","data":{"bindings":[],"oid":"mytime.0.Countdowns.test.cmd","type":"value","g_common":true,"step":1,"minmax":1,"repeat_delay":800,"repeat_interval":300,"min":0,"max":100,"variant":"contained","g_style":true,"text":"stop","value":"stop"},"style":{"bindings":[],"left":"485.0000305175781px","top":"402.00001525878906px","width":"59px","height":"26px"},"widgetSet":"jqui","_id":"i000003"},{"tpl":"tplIconState","data":{"bindings":[],"oid":"mytime.0.Countdowns.test.cmd","type":"value","g_common":true,"step":1,"minmax":1,"repeat_delay":800,"repeat_interval":300,"min":0,"max":100,"variant":"contained","g_style":true,"text":"+10","value":"+10"},"style":{"bindings":[],"left":"423.0000305175781px","top":"349.00001525878906px","width":"59px","height":"26px"},"widgetSet":"jqui","_id":"i000004"},{"tpl":"tplIconState","data":{"bindings":[],"oid":"mytime.0.Countdowns.test.cmd","type":"value","g_common":true,"step":1,"minmax":1,"repeat_delay":800,"repeat_interval":300,"min":0,"max":100,"variant":"contained","g_style":true,"text":"=100","value":"=100"},"style":{"bindings":[],"left":"361.0000305175781px","top":"349.00001525878906px","width":"59px","height":"26px"},"widgetSet":"jqui","_id":"i000005"},{"tpl":"tplIconState","data":{"bindings":[],"oid":"mytime.0.Countdowns.test.cmd","type":"value","g_common":true,"step":1,"minmax":1,"repeat_delay":800,"repeat_interval":300,"min":0,"max":100,"variant":"contained","g_style":true,"text":"-10","value":"-10"},"style":{"bindings":[],"left":"485.0000305175781px","top":"349.00001525878906px","width":"59px","height":"26px"},"widgetSet":"jqui","_id":"i000006"},{"tpl":"tplIconState","data":{"bindings":[],"oid":"mytime.0.Countdowns.test.cmd","type":"value","g_common":true,"step":1,"minmax":1,"repeat_delay":800,"repeat_interval":300,"min":0,"max":100,"variant":"contained","g_style":true,"text":"+!10","value":"+!10"},"style":{"bindings":[],"left":"423.0000305175781px","top":"320.00001525878906px","width":"59px","height":"26px"},"widgetSet":"jqui","_id":"i000007"},{"tpl":"tplIconState","data":{"bindings":[],"oid":"mytime.0.Countdowns.test.cmd","type":"value","g_common":true,"step":1,"minmax":1,"repeat_delay":800,"repeat_interval":300,"min":0,"max":100,"variant":"contained","g_style":true,"text":"=!100","value":"=!100"},"style":{"bindings":[],"left":"361.0000305175781px","top":"320.00001525878906px","width":"59px","height":"26px"},"widgetSet":"jqui","_id":"i000008"},{"tpl":"tplIconState","data":{"bindings":[],"oid":"mytime.0.Countdowns.test.cmd","type":"value","g_common":true,"step":1,"minmax":1,"repeat_delay":800,"repeat_interval":300,"min":0,"max":100,"variant":"contained","g_style":true,"text":"-!10","value":"-!10"},"style":{"bindings":[],"left":"485.0000305175781px","top":"320.00001525878906px","width":"59px","height":"26px"},"widgetSet":"jqui","_id":"i000009"},{"tpl":"tplMyTimeCountdownPlain","data":{"bindings":[],"countdown_format":"dd\\d HH\\h mm\\m ss\\s","g_common":true,"g_css_border":true,"countdown_oid":"mytime.0.Countdowns.test.timer","g_css_font_text":true},"style":{"bindings":[],"left":"361.0000305175781px","top":"375.00001525878906px","width":"182px","height":"24px","border-width":"0","border-style":"solid","border-color":"rgba(237,235,243,1)","text-align":"center"},"widgetSet":"mytime","_id":"i000010"}]</code></pre>
 
 **The actual action state (cdstop,cdrun,cdpause,cdend) of the countdown is available as CSS-Class selector:**
 
@@ -1087,7 +285,8 @@ A countdown widget in a airport flip board style
 
 **Tips:**
 
-If you want to adjust the size of the countdown flipclock, under css settings in vis you can enter for half size:
+If you want to adjust the size of the countdown flipclock,
+under css settings in vis you can enter for half size:
 Group CSS-Common / transform "scale(0.5)"
 
 **The actual action state (cdstop,cdrun,cdpause,cdend) of the countdown is available as CSS-Class selector:**
@@ -1141,7 +340,8 @@ A widget to show a wordclock with many options
 
 **Tips:**
 
-If you want to adjust the size of the countdown nixieclock, under css settings in vis you can enter for half size:
+If you want to adjust the size of the countdown nixieclock,
+under css settings in vis you can enter for half size:
 Group CSS-Common / transform "scale(0.5)"
 
 **The actual action state (cdstop,cdrun,cdpause,cdend) of the countdown is available as CSS-Class selector:**
@@ -1179,6 +379,12 @@ Group CSS-Common / transform "scale(0.5)"
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+### 1.2.2 (2024-11-18)
+
+- improve readme
+- improve widget js
+- remove word test from widgets html, sorry
+
 ### 1.2.1 (2024-11-17)
 
 - interprete all commands in lowercase
@@ -1193,8 +399,8 @@ Group CSS-Common / transform "scale(0.5)"
 
 ### 1.1.0 (2024-11-12)
 
-- IMPORTANT: Changed Datapoint names and datastructure for the configuration, no migration
-  you have to enter all configurations again
+- IMPORTANT: Changed Datapoint names and datastructure for the configuration,
+  no migration you have to enter all configurations again
 - add some new commands to restart the countdown time in place
 - repair save command
 - removed vis dependency from io-package.json
@@ -1215,7 +421,8 @@ Group CSS-Common / transform "scale(0.5)"
 - add lint and lint
 - remove iobroker eslint
 - general revision
-- updating the configuration dialogs for countdown and timeseries in jsonConfig and custom react
+- updating the configuration dialogs for countdown and timeseries
+  in jsonConfig and custom react
 
 ### 0.7.12
 
@@ -1270,7 +477,9 @@ Group CSS-Common / transform "scale(0.5)"
 
 ### 0.6.1
 
-- remove beta tag from widgets \* m,assive reengeneering of the react classes, add functions für exclusion rules, adding single time events and exclude single time events
+- remove beta tag from widgets \* m,assive reengeneering of the react classes,
+  add functions für exclusion rules, adding single time events
+  and exclude single time events
 
 ### 0.6.0
 
@@ -1278,7 +487,8 @@ Group CSS-Common / transform "scale(0.5)"
 
 ### 0.5.2
 
-- fix an issue and introduce a new command save to save the configuration defined in datapoints to the iobroker configuration data
+- fix an issue and introduce a new command save to save the configuration
+  defined in datapoints to the iobroker configuration data
 
 ### 0.5.1
 
@@ -1290,7 +500,8 @@ Group CSS-Common / transform "scale(0.5)"
 
 ### 0.4.2
 
-- performance optimization. mytime now checks the data from internal and did not read the data allways from datapoints | update dependencies
+- performance optimization. mytime now checks the data from internal
+  and did not read the data allways from datapoints | update dependencies
 
 ### 0.4.1
 
@@ -1304,13 +515,15 @@ Group CSS-Common / transform "scale(0.5)"
 
 - remove mytime tile in iobroker overview
 - set initial visual countdown value to 0
-- prefix css classes, due css artefacts from other adapters (eg kodi and css class stop)
+- prefix css classes, due css artefacts from other adapters
+  (eg kodi and css class stop)
 
 ### 0.3.0
 
 - new command to set only target time without date
 - countdown circle widget now with option to disable countdown text
-- timers are now groupable in subdirectories. you can now enter dots (.) as a groupseperater in the name of a timer
+- timers are now groupable in subdirectories.
+  you can now enter dots (.) as a groupseperater in the name of a timer
 
 ### 0.2.1
 
@@ -1318,7 +531,8 @@ Group CSS-Common / transform "scale(0.5)"
 - fix default template of countdown plain
 - add icons for countdonw plain and countdown circle widgets
 - fix startangle calculation for countdown circle if time values are 0
-- remove timer intervals in editmode due to interfer with the configuration dialog and didnt save the ne values
+- remove timer intervals in editmode due to interfer with
+  the configuration dialog and didnt save the ne values
 
 ### 0.2.0
 

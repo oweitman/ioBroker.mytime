@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "mytime",
-    "version": "1.2.1",
+    "version": "1.2.2",
     "titleLang": {
       "en": "MyTime",
       "de": "MyTime",
@@ -32,6 +32,19 @@
       "oweitman <oweitman@gmx.de>"
     ],
     "news": {
+      "1.2.2": {
+        "en": "improve readme\nimprove widget js\nremove word test from widgets html, sorry",
+        "de": "das lesemetik verbessern\nwidget js verbessern\nentfernen sie den worttest von widgets html, sorry",
+        "ru": "улучшить чтение\nулучшить виджет\nудалить слово тест от виджетов html, извините",
+        "pt": "melhorar a leitura\nmelhorar o widget js\nremover teste de palavra de widgets html, desculpe",
+        "nl": "readme verbeteren\nwidget js verbeteren\nwoordtest verwijderen uit widgets html, sorry",
+        "fr": "améliorer la lecture\naméliorer le widget js\nsupprimer mot test de widgets html, désolé",
+        "it": "migliorare la lettura\nmigliorare il widget js\nrimuovere word test da widgets html, dispiace",
+        "es": "mejorar el readme\nmejorar widget js\neliminar la prueba de palabras de widgets html, lo siento",
+        "pl": "poprawić readme\npoprawić widget js\nusunąć test słowa z widgets html, przepraszam",
+        "uk": "поліпшити читання\nполіпшити віджет js\nвидалення тесту з віджетів html, шкода",
+        "zh-cn": "改进读取器\n改进部件 js\n从部件 html 中删除单词测试, 抱歉"
+      },
       "1.2.1": {
         "en": "interprete all commands in lowercase",
         "de": "alle befehle in kleinbuchstaben interpretieren",
@@ -109,19 +122,6 @@
         "pl": "usprawnić proces testowania i uwalniania\naktualizacja przepływu pracy github\nusuń polecenie eslint z pakietu. json\nprzełączanie z powrotem na węzeł 18 do testów z powodu błędu airbnb\nwięcej napraw\nadd package- lock.json to git\nusuń nieużywaną bibliotekę\ndodaj lint i lint\nusunąć iobroker eslint\nogólny przegląd\naktualizacja dialogów konfiguracyjnych dla odliczania i czasopism w jsonConfig i niestandardowe reagowanie",
         "uk": "поліпшити процес тестування та релізу\nоновлення github workflow\nвидалити команду eslint з пакета. свінгери\nперемикач назад до вузла 18 для тестування через помилку airbnb\nремонт\nдодати пакет-lock.json до git\nвидалити невикористану бібліотеку\nдодати лощ і лощ\nвидалення iobroker eslint\nзагальний перегляд\nоновлення діалогів конфігурації для відліку та часових подій в jsonConfig та користувацького реагування",
         "zh-cn": "改进测试和释放程序\n更新 github 工作流程\n从软件包中删除 eslint 命令 。 贾森\n切换到节点18进行测试,因为空气bnb错误\n更多维修\n将软件包锁.json添加到 git\n删除未使用的库\n添加线条和线条\n删除 io 经纪人 eslint\n一般订正\n在 jsonConfig 和自定义中更新倒计时和时间序列的配置对话框"
-      },
-      "0.7.12": {
-        "en": "* add html_prepend and html_append properties to the widget reverse countdown",
-        "de": "* Fügen Sie die Eigenschaften html_prepend und html_append zum umgekehrten Countdown des Widgets hinzu",
-        "ru": "* добавить свойства html_prepend и html_append в обратный отсчет виджета",
-        "pt": "* adicione as propriedades html_prepend e html_append à contagem regressiva reversa do widget",
-        "nl": "* voeg de eigenschappen html_prepend en html_append toe aan het omgekeerde aftellen van de widget",
-        "fr": "* ajouter les propriétés html_prepend et html_append au compte à rebours inversé du widget",
-        "it": "* aggiungi le proprietà html_prepend e html_append al conto alla rovescia inverso del widget",
-        "es": "* agregue las propiedades html_prepend y html_append a la cuenta regresiva inversa del widget",
-        "pl": "* dodaj właściwości html_prepend i html_append do odliczania wstecznego widżetu",
-        "uk": "* додайте властивості html_prepend і html_append до зворотного відліку віджетів",
-        "zh-cn": "* 为小部件反向倒计时添加 html_prepend 和 html_append 属性"
       }
     },
     "platform": "Javascript/Node.js",

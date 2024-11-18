@@ -1,0 +1,9 @@
+{
+    "first-line-heading": false,
+    "MD013": {
+        "tables": false
+    },
+    "MD033": {
+        "allowed_elements": ["details", "summary", "pre", "code"]
+    }
+}
