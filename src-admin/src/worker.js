@@ -1,16 +1,14 @@
-/* eslint-disable no-restricted-globals */
-import { RRule } from 'rrule';
+import {} from /* RRule */ 'rrule';
 // importScripts("rrule");
 
 export default () => {
-
-  self.addEventListener('message', e => {
-    debugger;
-    // self.importScripts("rrule.js");
-    const rule = new RRule(e.data);
-    postMessage(rule.all());
-  })
-}
+    /*     self.addEventListener('message', e => {
+        // debugger;
+        // self.importScripts("rrule.js");
+        const rule = new RRule(e.data);
+        // postMessage(rule.all());
+    }); */
+};
 
 /* export default () => {
     self.addEventListener('message', e => { // eslint-disable-line no-restricted-globals

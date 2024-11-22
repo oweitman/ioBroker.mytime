@@ -37,9 +37,19 @@ function cleanAdmin() {
 }
 
 function copyAllAdminFiles() {
-    copyFiles(['src-admin/build/static/css/*.css', '!src-admin/build/static/css/src_bootstrap_*.css'], 'admin/custom/static/css');
+    copyFiles(
+        ['src-admin/build/static/css/*.css', '!src-admin/build/static/css/src_bootstrap_*.css'],
+        'admin/custom/static/css',
+    );
     copyFiles(['src-admin/build/static/js/*.js'], 'admin/custom/static/js');
-    copyFiles(['src-admin/build/static/js/*.map', '!src-admin/build/static/js/vendors*.map', '!src-admin/build/static/js/node_modules*.map'], 'admin/custom/static/js');
+    copyFiles(
+        [
+            'src-admin/build/static/js/*.map',
+            '!src-admin/build/static/js/vendors*.map',
+            '!src-admin/build/static/js/node_modules*.map',
+        ],
+        'admin/custom/static/js',
+    );
     copyFiles(['src-admin/build/static/media/*.png'], 'admin/custom/static/media');
     copyFiles(['src-admin/build/customComponents.js'], 'admin/custom');
     copyFiles(['src-admin/build/customComponents.js.map'], 'admin/custom');
@@ -63,7 +73,7 @@ function clean() {
         'tab_m.js',
         'words.js',
         'translations.json',
-        'i18n'
+        'i18n',
     ]);
 }
 
@@ -79,8 +89,10 @@ function clean() {
 function patchFiles() {
     if (fs.existsSync(`${__dirname}/src/build/index.html`)) {
         let code = fs.readFileSync(`${__dirname}/src/build/index.html`).toString('utf8');
-        code = code.replace(/<script>var script=document\.createElement\("script"\)[^<]+<\/script>/,
-            `<script type="text/javascript" src="./../../lib/js/socket.io.js"></script>`);
+        code = code.replace(
+            /<script>var script=document\.createElement\("script"\)[^<]+<\/script>/,
+            `<script type="text/javascript" src="./../../lib/js/socket.io.js"></script>`,
+        );
 
         fs.existsSync(`${__dirname}/admin/tab_m.html`) && fs.unlinkSync(`${__dirname}/admin/tab_m.html`);
         fs.writeFileSync(`${__dirname}/admin/tab_m.html`, code);
@@ -90,11 +102,9 @@ function patchFiles() {
 if (process.argv.includes('--admin-0-clean')) {
     cleanAdmin();
 } else if (process.argv.includes('--admin-1-npm')) {
-    npmInstall(`${__dirname}/src-admin/`)
-        .catch(e => console.error(e));
+    npmInstall(`${__dirname}/src-admin/`).catch(e => console.error(e));
 } else if (process.argv.includes('--admin-2-compile')) {
-    buildAdmin()
-        .catch(e => console.error(e));
+    buildAdmin().catch(e => console.error(e));
 } else if (process.argv.includes('--admin-3-copy')) {
     copyAllAdminFiles();
 } else if (process.argv.includes('--admin-build')) {
@@ -107,12 +117,10 @@ if (process.argv.includes('--admin-0-clean')) {
     clean();
 } else if (process.argv.includes('--1-npm')) {
     if (!fs.existsSync(`${__dirname}/src/node_modules`)) {
-        npmInstall(`${__dirname}/src/`)
-            .catch(e => console.error(e));
+        npmInstall(`${__dirname}/src/`).catch(e => console.error(e));
     }
 } else if (process.argv.includes('--2-build')) {
-    buildReact(`${__dirname}/src/`, { rootDir: __dirname })
-        .catch(e => console.error(e));
+    buildReact(`${__dirname}/src/`, { rootDir: __dirname }).catch(e => console.error(e));
 } else if (process.argv.includes('--3-copy')) {
     /*     copyAllFiles(); */
 } else if (process.argv.includes('--4-patch')) {
@@ -121,12 +129,12 @@ if (process.argv.includes('--admin-0-clean')) {
     clean();
     let installPromise;
     if (!fs.existsSync(`${__dirname}/src/node_modules`)) {
-        installPromise = npmInstall(`${__dirname}/src/`)
-            .catch(e => console.error(e));
+        installPromise = npmInstall(`${__dirname}/src/`).catch(e => console.error(e));
     } else {
         installPromise = Promise.resolve();
     }
-    installPromise.then(() => buildReact(`${__dirname}/src/`, { rootDir: __dirname }))
+    installPromise
+        .then(() => buildReact(`${__dirname}/src/`, { rootDir: __dirname }))
         /*         .then(() => copyAllFiles()) */
         .then(() => patchFiles())
         .catch(e => console.error(e));

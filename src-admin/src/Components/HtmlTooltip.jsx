@@ -2,7 +2,7 @@ import { Tooltip } from "@mui/material";
 
 function HtmlTooltip({ title, children, props }) {
     return (
-        <Tooltip
+       <Tooltip    
             // eslint-disable-next-line react/no-danger
             title={<div dangerouslySetInnerHTML={{ __html: title }} />}
             enterDelay={1000}

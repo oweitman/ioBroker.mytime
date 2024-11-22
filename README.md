@@ -382,7 +382,9 @@ Group CSS-Common / transform "scale(0.5)"
 
 ### **WORK IN PROGRESS**
 
-- x
+- switch to iobroker eslint
+- adjust many code to follow the new rules
+- add some jsdoc
 
 ### 1.2.2 (2024-11-18)
 

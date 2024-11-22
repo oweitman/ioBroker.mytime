@@ -3,7 +3,7 @@
  *
  * MIT License
  *
- **/
+ */
 'use strict';
 
 const fs = require('node:fs');
@@ -48,14 +48,24 @@ gulp.task('admin-1-npm', async () => gulpHelper.npmInstall(`${__dirname}/src-adm
 
 gulp.task('admin-2-compile', async () => buildAdmin());
 
-gulp.task('admin-3-copy', () => Promise.all([
-    gulp.src(['src-admin/build/static/css/*.css', '!src-admin/build/static/css/src_bootstrap_*.css']).pipe(gulp.dest('admin/custom/static/css')),
-    gulp.src(['src-admin/build/static/js/*.js']).pipe(gulp.dest('admin/custom/static/js')),
-    gulp.src(['src-admin/build/static/js/*.map', '!src-admin/build/static/js/vendors*.map', '!src-admin/build/static/js/node_modules*.map']).pipe(gulp.dest('admin/custom/static/js')),
-    gulp.src(['src-admin/build/customComponents.js']).pipe(gulp.dest('admin/custom')),
-    gulp.src(['src-admin/build/customComponents.js.map']).pipe(gulp.dest('admin/custom')),
-    gulp.src(['src-admin/src/i18n/*.json']).pipe(gulp.dest('admin/custom/i18n')),
-]));
+gulp.task('admin-3-copy', () =>
+    Promise.all([
+        gulp
+            .src(['src-admin/build/static/css/*.css', '!src-admin/build/static/css/src_bootstrap_*.css'])
+            .pipe(gulp.dest('admin/custom/static/css')),
+        gulp.src(['src-admin/build/static/js/*.js']).pipe(gulp.dest('admin/custom/static/js')),
+        gulp
+            .src([
+                'src-admin/build/static/js/*.map',
+                '!src-admin/build/static/js/vendors*.map',
+                '!src-admin/build/static/js/node_modules*.map',
+            ])
+            .pipe(gulp.dest('admin/custom/static/js')),
+        gulp.src(['src-admin/build/customComponents.js']).pipe(gulp.dest('admin/custom')),
+        gulp.src(['src-admin/build/customComponents.js.map']).pipe(gulp.dest('admin/custom')),
+        gulp.src(['src-admin/src/i18n/*.json']).pipe(gulp.dest('admin/custom/i18n')),
+    ]),
+);
 
 gulp.task('admin-build', gulp.series(['admin-0-clean', 'admin-1-npm', 'admin-2-compile', 'admin-3-copy']));
 
@@ -99,9 +109,8 @@ function npmInstall() {
 gulp.task('2-npm', () => {
     if (fs.existsSync(`${__dirname}/src/node_modules`)) {
         return Promise.resolve();
-    } else {
-        return npmInstall();
     }
+    return npmInstall();
 });
 
 gulp.task('2-npm-dep', gulp.series('clean', '2-npm'));
@@ -152,25 +161,24 @@ gulp.task('3-build-dep', gulp.series('2-npm', '3-build'));
 function copyFiles() {
     // deleteFoldersRecursive(`${__dirname}/admin`, ['jsonConfig.json', 'javascript.png']);
     return Promise.all([
-        gulp.src([
-            'src/build/**/*',
-            '!src/build/index.html',
-            '!src/build/static/js/main.*.chunk.js',
-            '!src/build/i18n/**/*',
-            '!src/build/i18n'
-        ])
+        gulp
+            .src([
+                'src/build/**/*',
+                '!src/build/index.html',
+                '!src/build/static/js/main.*.chunk.js',
+                '!src/build/i18n/**/*',
+                '!src/build/i18n',
+            ])
             .pipe(gulp.dest('admin/')),
 
-        gulp.src([
-            'src/build/index.html',
-        ])
+        gulp
+            .src(['src/build/index.html'])
             .pipe(replace('href="/', 'href="'))
             .pipe(replace('src="/', 'src="'))
             .pipe(rename('tab.html'))
             .pipe(gulp.dest('admin/')),
-        gulp.src([
-            'src/build/static/js/main.*.chunk.js',
-        ])
+        gulp
+            .src(['src/build/static/js/main.*.chunk.js'])
             .pipe(replace('"/assets', '"./assets'))
             .pipe(gulp.dest('admin/assets/')),
     ]);
@@ -183,50 +191,76 @@ gulp.task('5-copy', () => copyFiles());
 gulp.task('5-copy-dep', gulp.series('3-build-dep', '5-copy'));
 
 //nur src
-gulp.task('6-patch', () => new Promise(resolve => {
-    if (fs.existsSync(`${__dirname}/admin/tab.html`)) {
-        let code = fs.readFileSync(`${__dirname}/admin/tab.html`).toString('utf8');
-        code = code.replace(/<script>var head=document\.getElementsByTagName\("head"\)\[0][^<]+<\/script>/,
-            `<script type="text/javascript" onerror="setTimeout(function(){window.location.reload()}, 5000)" src="./../../lib/js/socket.io.js"></script>`);
-        // add the monaco script at the end
-        if (!code.includes(`<script type="text/javascript" src="vs/loader.js"></script><script type="text/javascript" src="vs/configure.js"></script>`)) {
-            code = code.replace('</body></html>', `<script type="text/javascript" src="vs/loader.js"></script><script type="text/javascript" src="vs/configure.js"></script></body></html>`);
-        }
+gulp.task(
+    '6-patch',
+    () =>
+        new Promise(resolve => {
+            if (fs.existsSync(`${__dirname}/admin/tab.html`)) {
+                let code = fs.readFileSync(`${__dirname}/admin/tab.html`).toString('utf8');
+                code = code.replace(
+                    /<script>var head=document\.getElementsByTagName\("head"\)\[0][^<]+<\/script>/,
+                    `<script type="text/javascript" onerror="setTimeout(function(){window.location.reload()}, 5000)" src="./../../lib/js/socket.io.js"></script>`,
+                );
+                // add the monaco script at the end
+                if (
+                    !code.includes(
+                        `<script type="text/javascript" src="vs/loader.js"></script><script type="text/javascript" src="vs/configure.js"></script>`,
+                    )
+                ) {
+                    code = code.replace(
+                        '</body></html>',
+                        `<script type="text/javascript" src="vs/loader.js"></script><script type="text/javascript" src="vs/configure.js"></script></body></html>`,
+                    );
+                }
 
-        fs.writeFileSync(`${__dirname}/admin/tab.html`, code);
-    }
-    if (fs.existsSync(`${__dirname}/src/build/index.html`)) {
-        let code = fs.readFileSync(`${__dirname}/src/build/index.html`).toString('utf8');
-        code = code.replace(/<script>var head=document\.getElementsByTagName\("head"\)\[0][^<]+<\/script>/,
-            `<script type="text/javascript" onerror="setTimeout(function(){window.location.reload()}, 5000)" src="./../../lib/js/socket.io.js"></script>`);
-        // add the monaco script at the end
-        if (!code.includes(`<script type="text/javascript" src="vs/loader.js"></script><script type="text/javascript" src="vs/configure.js"></script>`)) {
-            code = code.replace('</body></html>', `<script type="text/javascript" src="vs/loader.js"></script><script type="text/javascript" src="vs/configure.js"></script></body></html>`);
-        }
+                fs.writeFileSync(`${__dirname}/admin/tab.html`, code);
+            }
+            if (fs.existsSync(`${__dirname}/src/build/index.html`)) {
+                let code = fs.readFileSync(`${__dirname}/src/build/index.html`).toString('utf8');
+                code = code.replace(
+                    /<script>var head=document\.getElementsByTagName\("head"\)\[0][^<]+<\/script>/,
+                    `<script type="text/javascript" onerror="setTimeout(function(){window.location.reload()}, 5000)" src="./../../lib/js/socket.io.js"></script>`,
+                );
+                // add the monaco script at the end
+                if (
+                    !code.includes(
+                        `<script type="text/javascript" src="vs/loader.js"></script><script type="text/javascript" src="vs/configure.js"></script>`,
+                    )
+                ) {
+                    code = code.replace(
+                        '</body></html>',
+                        `<script type="text/javascript" src="vs/loader.js"></script><script type="text/javascript" src="vs/configure.js"></script></body></html>`,
+                    );
+                }
 
-        fs.writeFileSync(`${__dirname}/src/build/index.html`, code);
-    }
+                fs.writeFileSync(`${__dirname}/src/build/index.html`, code);
+            }
 
-    const buffer = Buffer.from(JSON.parse(fs.readFileSync(`${__dirname}/admin/vsFont/codicon.json`)), 'base64');
-
-    // this is a workaround for TTF file. somehow it will always corrupt, so we pack it into ZIP
-    JSZip.loadAsync(buffer)
-        .then(zip => {
-            zip.file('codicon.ttf').async('arraybuffer')
-                .then(data => {
-                    if (!fs.existsSync(`${__dirname}/admin/vs/base/browser/ui/codicons/codicon/`)) {
-                        fs.mkdirSync(`${__dirname}/admin/vs/base/browser/ui/codicons/codicon/`, { recursive: true });
-                    }
-
-                    if (data.byteLength !== 73452) {
-                        throw new Error('invalid font file!');
-                    }
-                    fs.writeFileSync(`${__dirname}/admin/vs/base/browser/ui/codicons/codicon/codicon.ttf`, Buffer.from(data));
-                    resolve();
-                });
-        });
-}));
-
+            // const buffer = Buffer.from(JSON.parse(fs.readFileSync(`${__dirname}/admin/vsFont/codicon.json`)), 'base64');
+            resolve();
+            // this is a workaround for TTF file. somehow it will always corrupt, so we pack it into ZIP
+            /*  JSZip.loadAsync(buffer).then(zip => {
+                 zip.file('codicon.ttf')
+                     .async('arraybuffer')
+                     .then(data => {
+                         if (!fs.existsSync(`${__dirname}/admin/vs/base/browser/ui/codicons/codicon/`)) {
+                             fs.mkdirSync(`${__dirname}/admin/vs/base/browser/ui/codicons/codicon/`, {
+                                 recursive: true,
+                             });
+                         }
+ 
+                         if (data.byteLength !== 73452) {
+                             throw new Error('invalid font file!');
+                         }
+                         fs.writeFileSync(
+                             `${__dirname}/admin/vs/base/browser/ui/codicons/codicon/codicon.ttf`,
+                             Buffer.from(data),
+                         );
+                         resolve();
+                     });
+             }); */
+        }),
+);
 
 //nur src
 gulp.task('6-patch-dep', gulp.series('5-copy-dep', '6-patch'));
@@ -255,7 +289,7 @@ function lang2data(lang, isFlat) {
         if (Object.prototype.hasOwnProperty.call(lang, w)) {
             count++;
             if (isFlat) {
-                str += (lang[w] === '' ? (isFlat[w] || w) : lang[w]) + '\n';
+                str += `${lang[w] === '' ? isFlat[w] || w : lang[w]}\n`;
             } else {
                 const key = `  "${w.replace(/"/g, '\\"')}": `;
                 str += `${key}"${lang[w].replace(/"/g, '\\"')}",\n`;
@@ -267,9 +301,8 @@ function lang2data(lang, isFlat) {
     }
     if (isFlat) {
         return str;
-    } else {
-        return str.substring(0, str.length - 2) + '\n}';
     }
+    return `${str.substring(0, str.length - 2)}\n}`;
 }
 
 function padRight(text, totalLength) {
@@ -341,18 +374,25 @@ gulp.task('blocklyJson2words', done => {
         const posA = order.indexOf(a);
         const posB = order.indexOf(b);
         if (posA === -1 && posB === -1) {
-            if (a > b) return 1;
-            if (a < b) return -1;
+            if (a > b) {
+                return 1;
+            }
+            if (a < b) {
+                return -1;
+            }
             return 0;
         } else if (posA === -1) {
             return -1;
         } else if (posB === -1) {
             return 1;
-        } else {
-            if (posA > posB) return 1;
-            if (posA < posB) return -1;
-            return 0;
         }
+        if (posA > posB) {
+            return 1;
+        }
+        if (posA < posB) {
+            return -1;
+        }
+        return 0;
     });
 
     for (let l = 0; l < dirs.length; l++) {
@@ -501,9 +541,13 @@ gulp.task('monaco-typescript', done => {
 
     console.log('installing new version');
     // extract the new monaco-editor
-    cp.execSync(`tar -xvzf typescript-deploys-monaco-editor-${version}.tgz --strip-components=3 -C src/public/vs package/min/vs`);
+    cp.execSync(
+        `tar -xvzf typescript-deploys-monaco-editor-${version}.tgz --strip-components=3 -C src/public/vs package/min/vs`,
+    );
     // and the .d.ts file
-    cp.execSync(`tar -xvzf typescript-deploys-monaco-editor-${version}.tgz --strip-components=1 -C src/public/vs package/monaco.d.ts`);
+    cp.execSync(
+        `tar -xvzf typescript-deploys-monaco-editor-${version}.tgz --strip-components=1 -C src/public/vs package/monaco.d.ts`,
+    );
 
     console.log('finalizing');
     // restore the old configure.js

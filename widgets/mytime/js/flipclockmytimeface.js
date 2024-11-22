@@ -1,6 +1,6 @@
+/* global mtFlipClock, jQuery */
 
 (function ($) {
-
     /**
      * Daily Counter Clock Face
      *
@@ -14,14 +14,13 @@
      */
 
     mtFlipClock.MytimeFace = mtFlipClock.Face.extend({
-
         showSeconds: true,
 
         showsec: false,
         showmin: false,
         showhrs: false,
         showday: false,
-        patter: "",
+        patter: '',
 
         /**
          * Constructor
@@ -33,13 +32,10 @@
         constructor: function (factory, options) {
             this.base(factory, options);
 
-            this.showday = (this.pattern[0] == '1') ? true : false;
-            this.showhrs = (this.pattern[1] == '1') ? true : false;
-            this.showmin = (this.pattern[2] == '1') ? true : false;
-            this.showsec = (this.pattern[3] == '1') ? true : false;
-
-
-
+            this.showday = this.pattern[0] == '1' ? true : false;
+            this.showhrs = this.pattern[1] == '1' ? true : false;
+            this.showmin = this.pattern[2] == '1' ? true : false;
+            this.showsec = this.pattern[3] == '1' ? true : false;
         },
 
         /**
@@ -47,27 +43,26 @@
          */
 
         build: function (time) {
-            var t = this;
             // var children = this.factory.$el.find('ul');
             var offset = 0;
 
             time = time ? time : this.factory.time.getDayCounter(true);
 
             if (this.showday) {
-                t.createList(time[0]);
-                t.createList(time[1]);
+                this.createList(time[0]);
+                this.createList(time[1]);
             }
             if (this.showhrs) {
-                t.createList(time[2]);
-                t.createList(time[3]);
+                this.createList(time[2]);
+                this.createList(time[3]);
             }
             if (this.showmin) {
-                t.createList(time[4]);
-                t.createList(time[5]);
+                this.createList(time[4]);
+                this.createList(time[5]);
             }
             if (this.showsec) {
-                t.createList(time[6]);
-                t.createList(time[7]);
+                this.createList(time[6]);
+                this.createList(time[7]);
             }
 
             offset = 0;
@@ -83,7 +78,6 @@
                 $(this.createDivider('')).insertBefore(this.lists[offset + 2].$el);
             }
 
-
             this.base();
         },
 
@@ -91,7 +85,7 @@
          * Flip the clock face
          */
 
-        flip: function (time/* , doNotAddPlayClass */) {
+        flip: function (time /* , doNotAddPlayClass */) {
             if (!time) {
                 time = this.factory.time.getDayCounter(this.showSeconds);
             }
@@ -118,8 +112,6 @@
             this.autoIncrement();
 
             this.base(newtime, false);
-        }
-
+        },
     });
-
-}(jQuery));
+})(jQuery);
