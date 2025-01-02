@@ -31,6 +31,7 @@ vis.binds['mytime'] = {
         }
     },
     intervals: [],
+    serversync: {},
     countdownnixie: {
         intervaltime: 500,
         flips: [],
@@ -274,7 +275,7 @@ vis.binds['mytime'] = {
                             ((showmin) ? "1" : "0") +
                             ((showsec) ? "1" : "0"); */
 
-            var now = new Date().getTime();
+            var now = new Date().getTime() - (vis.binds['mytime'].serversync.serverTimeDiff || 0);
             var ms = 0;
             if (action == 'stop' || action == '') {
                 $(`#${widgetID} .cdclock`).removeClass('cdstop cdrun cdpause cdend').addClass('cdstop');
@@ -452,7 +453,7 @@ vis.binds['mytime'] = {
                         var showhrs = data.countdown_showhrs;
                         var showday = data.countdown_showday; */
 
-            var now = new Date().getTime();
+            var now = new Date().getTime() - (vis.binds['mytime'].serversync.serverTimeDiff || 0);
             var ms = 0;
             if (action == 'stop' || action == '') {
                 $(`#${widgetID} .timer`).removeClass('cdstop cdrun cdpause cdend').addClass('cdstop');
@@ -602,7 +603,7 @@ vis.binds['mytime'] = {
 
             var pattern = (showday ? '1' : '0') + (showhrs ? '1' : '0') + (showmin ? '1' : '0') + (showsec ? '1' : '0');
 
-            var now = new Date().getTime();
+            var now = new Date().getTime() - (vis.binds['mytime'].serversync.serverTimeDiff || 0);
             var ms = 0;
             if (action == 'stop' || action == '') {
                 $(`#${widgetID} .timer`).removeClass('cdstop cdrun cdpause cdend').addClass('cdstop');
@@ -777,7 +778,7 @@ vis.binds['mytime'] = {
             var htmlprepend = data.countdown_html_prepend || '';
             var htmlappend = data.countdown_html_append || '';
 
-            var now = new Date().getTime();
+            var now = new Date().getTime() - (vis.binds['mytime'].serversync.serverTimeDiff || 0);
             var end = new Date(data.datetime).getTime();
 
             var ms = now - end;
@@ -860,7 +861,7 @@ vis.binds['mytime'] = {
             var format = data.countdown_format || 'dd\\d HH\\h mm\\m ss\\s';
             var stopbehaviour = config.stopbehaviour || 'timer';
 
-            var now = new Date().getTime();
+            var now = new Date().getTime() - (vis.binds['mytime'].serversync.serverTimeDiff || 0);
             var ms = 0;
             if (action == 'stop' || action == '') {
                 $(`#${widgetID} .timer`).removeClass('cdstop cdrun cdpause cdend').addClass('cdstop');
@@ -1316,6 +1317,34 @@ vis.binds['mytime'] = {
         }
         return line;
     },
+    calcServerTimeDiff: async function () {
+        try {
+            let serverTime = await this.sendToAsync('mytime.0', 'getServerTime');
+            let now = new Date().getTime();
+            this.serversync.serverTimeDiff = serverTime - now;
+        } catch (error) {
+            console.log(error);
+        }
+        setTimeout(() => {
+            this.calcServerTimeDiff();
+        }, 15000);
+    },
+    sendToAsync: async function (instance, command, sendData) {
+        console.log(`sendToAsync ${command} ${sendData || 'no parameters'}`);
+        return new Promise((resolve, reject) => {
+            try {
+                if (!vis.conn) {
+                    reject('no vis.conn object');
+                }
+                vis.conn.sendTo(instance, command, sendData, function (receiveData) {
+                    resolve(receiveData);
+                });
+            } catch (error) {
+                reject(error);
+            }
+        });
+    },
 };
 
 vis.binds['mytime'].showVersion();
+vis.binds['mytime'].calcServerTimeDiff();
