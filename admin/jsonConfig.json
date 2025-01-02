@@ -22,7 +22,7 @@
                     "type": "table",
                     "items": [
                         {
-                            "width": "20%",
+                            "width": "5%",
                             "type": "text",
                             "attr": "name",
                             "title": "cdName",
@@ -34,7 +34,7 @@
                             "validatorNoSaveOnError": true
                         },
                         {
-                            "width": "15%",
+                            "width": "5%",
                             "type": "text",
                             "attr": "days",
                             "title": "cdDays",
@@ -46,7 +46,7 @@
                             "validatorNoSaveOnError": true
                         },
                         {
-                            "width": "15%",
+                            "width": "5%",
                             "type": "text",
                             "attr": "hours",
                             "title": "cdHours",
@@ -58,7 +58,7 @@
                             "validatorNoSaveOnError": true
                         },
                         {
-                            "width": "15%",
+                            "width": "5%",
                             "type": "text",
                             "attr": "minutes",
                             "title": "cdMinutes",
@@ -70,7 +70,7 @@
                             "validatorNoSaveOnError": true
                         },
                         {
-                            "width": "15%",
+                            "width": "5%",
                             "type": "text",
                             "attr": "seconds",
                             "title": "cdSeconds",
@@ -82,7 +82,7 @@
                             "validatorNoSaveOnError": true
                         },
                         {
-                            "width": "15%",
+                            "width": "5%",
                             "type": "select",
                             "attr": "behavior",
                             "title": "cdBehavior",
@@ -94,7 +94,17 @@
                             "sort": true,
                             "default": "timer",
                             "tooltip": "cd-TT-Behavior"
-                        }
+                        },
+                        {
+                            "width": "5%",
+                            "type": "sendTo",
+                            "label": "SetDP",
+                            "title": "cdSetDP",
+                            "command": "setCountdownConfig",
+                            "jsonData": "{\"behavior\": \"${data.behavior}\", \"days\": \"${data.days}\", \"hours\": \"${data.hours}\", \"minutes\": \"${data.minutes}\", \"name\": \"${data.name}\", \"seconds\": \"${data.seconds}\" }",
+                            "variant": "outlined",
+                            "showProcess": true
+                          }                        
                     ]
                 }
             }

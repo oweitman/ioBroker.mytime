@@ -17,5 +17,6 @@
     "cdBehaviourSetTimer": "auf Timer eingestellt",
     "cdBehaviourSetReset": "auf Null gesetzt",
     "xxx": "xxx",
-    "": ""
+    "": "",
+    "cdSetDP": "SetDP"
 }

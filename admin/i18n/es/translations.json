@@ -17,5 +17,6 @@
     "cdBehaviourSetTimer": "configurar el temporizador",
     "cdBehaviourSetReset": "puesto a cero",
     "xxx": "xxx",
-    "": ""
+    "": "",
+    "cdSetDP": "Establecer DP"
 }

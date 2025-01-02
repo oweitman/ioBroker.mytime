@@ -114,7 +114,7 @@
     "lint": "eslint -c eslint.config.mjs .",
     "repochecker": "npx github:oweitman/ioBroker.repochecker https://github.com/oweitman/ioBroker.mytime --local",
     "translate-admin-deletekey": "node ./src-admin/bin/translate.js deletekey 'xx,xx'",
-    "translate-admin": "node ./bin/translate.js -- source src-admin/src/i18n",
+    "translate-admin": "node ./bin/translate.js --source src-admin/src/i18n",
     "translate-widgets": "node ./bin/translate.js --source widgets/mytime/i18n/en.json --format single"
   },
   "readmeFilename": "README.md"

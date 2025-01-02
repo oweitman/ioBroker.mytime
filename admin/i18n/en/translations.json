@@ -8,6 +8,7 @@
     "cdMinutes": "Minutes",
     "cdSeconds": "Seconds",
     "cdBehavior": "Behavior",
+    "cdSetDP": "SetDP",
     "cd-TT-Name": "Name of the datapoint to control the countdown",
     "cd-TT-Days": "Number of days for the countdown",
     "cd-TT-Hours": "Number of hours for the countdown",

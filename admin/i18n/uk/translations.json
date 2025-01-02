@@ -17,5 +17,6 @@
     "cdBehaviourSetTimer": "встановити таймер",
     "cdBehaviourSetReset": "встановити на нуль",
     "xxx": "xxx",
-    "": ""
+    "": "",
+    "cdSetDP": "SetDP"
 }
