@@ -1,6 +1,6 @@
 {
   "name": "iobroker.mytime",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "This adapter handle Time (eg: countdown,etc.)",
   "author": {
     "name": "oweitman",

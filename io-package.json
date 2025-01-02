@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "mytime",
-    "version": "1.3.0",
+    "version": "1.4.0",
     "titleLang": {
       "en": "MyTime",
       "de": "MyTime",
@@ -32,6 +32,19 @@
       "oweitman <oweitman@gmx.de>"
     ],
     "news": {
+      "1.4.0": {
+        "en": "to update the time from the configuration i added a SetDP Button",
+        "de": "um die Zeit von der Konfiguration zu aktualisieren, habe ich einen SetDP Button hinzugefügt",
+        "ru": "для обновления времени от конфигурации я добавил кнопку SetDP",
+        "pt": "para atualizar o tempo da configuração eu adicionei um botão SetDP",
+        "nl": "om de tijd van de configuratie bij te werken heb ik een SetDP-knop toegevoegd",
+        "fr": "pour mettre à jour l'heure de la configuration j'ai ajouté un bouton SetDP",
+        "it": "per aggiornare il tempo dalla configurazione ho aggiunto un pulsante SetDP",
+        "es": "para actualizar el tiempo de la configuración añadí un botón SetDP",
+        "pl": "aby zaktualizować czas z konfiguracji dodałem przycisk SetDP",
+        "uk": "для оновлення часу з конфігурації я додав кнопку SetDP",
+        "zh-cn": "以更新配置中的时间 "
+      },
       "1.3.0": {
         "en": "switch to iobroker eslint\nadjust many code to follow the new rules\nadd some jsdoc\nimplement servertimediff calculation and correction\nfix datapoint names for the vis1 example controls\nset nogit\nadjust year in readme and license",
         "de": "iobroker eslint wechseln\nvielen code anpassen, um den neuen regeln zu folgen\nfügen sie einige jsdoc\nservertimediff berechnung und korrektur implementieren\ndatenpunkt-namen für die vis1-beispielsteuerungen festlegen\nset nogit\njahr in readme und lizenz anpassen",
@@ -109,19 +122,6 @@
         "pl": "dodaj kilka nowych poleceń, aby ponownie uruchomić czas odliczania\nnaprawa zapisz polecenie\nusunięty z zależności od pakietu jo-. json",
         "uk": "додати нові команди, щоб перезапустити час в місці\nремонт зберегти команду\nвидалена залежність від io-package. свінгери",
         "zh-cn": "添加一些新命令以重新启动已设置的倒计时时间\n修补保存命令\n消除了依赖性 贾森"
-      },
-      "1.0.15": {
-        "en": "repair issues from repochecker",
-        "de": "reparaturprobleme von repochecker",
-        "ru": "проблемы с ремонтом от repochecker",
-        "pt": "problemas de reparação de repochecker",
-        "nl": "reparatie problemen van repochecker",
-        "fr": "problèmes de réparation de repochecker",
-        "it": "problemi di riparazione da repochecker",
-        "es": "problemas de reparación de repochecker",
-        "pl": "problemy z naprawą z repochecker",
-        "uk": "ремонтні питання від repochecker",
-        "zh-cn": "重新检查器的修理问题"
       }
     },
     "platform": "Javascript/Node.js",
