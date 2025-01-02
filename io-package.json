@@ -126,6 +126,7 @@
     },
     "platform": "Javascript/Node.js",
     "mode": "daemon",
+    "nogit": true,
     "loglevel": "info",
     "icon": "mytime.png",
     "extIcon": "https://raw.githubusercontent.com/oweitman/ioBroker.mytime/main/admin/mytime.png",
