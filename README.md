@@ -379,12 +379,15 @@ Group CSS-Common / transform "scale(0.5)"
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
-
-### **WORK IN PROGRESS**
+### 1.3.0 (2025-01-02)
 
 - switch to iobroker eslint
 - adjust many code to follow the new rules
 - add some jsdoc
+- implement servertimediff calculation and correction
+- fix datapoint names for the vis1 example controls
+- set nogit
+- adjust year in readme and license
 
 ### 1.2.2 (2024-11-18)
 
@@ -565,7 +568,7 @@ Group CSS-Common / transform "scale(0.5)"
 
 MIT License
 
-Copyright (c) 2024 oweitman <oweitman@gmx.de>
+Copyright (c) 2025 oweitman <oweitman@gmx.de>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

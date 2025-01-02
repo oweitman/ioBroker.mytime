@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "mytime",
-    "version": "1.2.2",
+    "version": "1.3.0",
     "titleLang": {
       "en": "MyTime",
       "de": "MyTime",
@@ -32,6 +32,19 @@
       "oweitman <oweitman@gmx.de>"
     ],
     "news": {
+      "1.3.0": {
+        "en": "switch to iobroker eslint\nadjust many code to follow the new rules\nadd some jsdoc\nimplement servertimediff calculation and correction\nfix datapoint names for the vis1 example controls\nset nogit\nadjust year in readme and license",
+        "de": "iobroker eslint wechseln\nvielen code anpassen, um den neuen regeln zu folgen\nfügen sie einige jsdoc\nservertimediff berechnung und korrektur implementieren\ndatenpunkt-namen für die vis1-beispielsteuerungen festlegen\nset nogit\njahr in readme und lizenz anpassen",
+        "ru": "переход на iobroker eslint\nкорректировать многие коды, чтобы следовать новым правилам\nдобавить немного jsdoc\nреализовать серверное время\nфиксация имен точек данных для контроля примера vis1\nset nogit\nкорректировать год в считывании и лицензии",
+        "pt": "mudar para iobroker eslint\najustar muitos códigos para seguir as novas regras\nadicionar alguns jsdoc\nimplementar cálculo e correção servertimediff\ncorrigir nomes de datapoint para os controles de exemplo vis1\nset nogit\najustar ano em readme e licença",
+        "nl": "schakelen naar iobroker eslint\npas veel code aan om de nieuwe regels te volgen\njsdoc toevoegen\nimplementeren servertimediff berekening en correctie\nfix datapoint namen voor de vis1 voorbeeld controles\nnogit instellen\naanpassing jaar in readme en licentie",
+        "fr": "passer à iobroker eslint\najuster beaucoup de code pour suivre les nouvelles règles\najouter un peu de jsdoc\nimplémenter le calcul et la correction du serveurtimediff\nfixer les noms des points de données pour les commandes d'exemple vis1\ndéfinir nogit\najuster l'année en lecture et licence",
+        "it": "passare a iobroker eslint\nregolare molti codice per seguire le nuove regole\naggiungere alcuni jsdoc\nimplementare il calcolo servertimediff e la correzione\ncorreggere i nomi dei datapoint per i controlli dell'esempio vis1\nset nogit\nregolare l'anno in lettura e licenza",
+        "es": "cambio a iobroker eslint\najustar muchos códigos para seguir las nuevas reglas\nañadir algunos jsdoc\nimplementar cálculo servidortimediff y corrección\nfijar nombres de puntos de datos para los controles de ejemplo vis1\nnogit\najuste año en readme y licencia",
+        "pl": "przełącz na iobroker eslint\ndostosować wiele kodów do nowych zasad\ndodaj trochę jsdoc\nwdrożyć obliczanie i korektę servertimediff\nustaw nazwy punktów danych dla przykładowych kontroli vis1\nset nogit\ndostosować rok w readme i licencji",
+        "uk": "перемикач до iobroker eslint\nналаштуйте багато коду, щоб дотримуватися нових правил\nдодати деякі jsdoc\nздійснювати розрахунок та корекцію сервера\nвиправити імена точок даних для керування прикладом vis1\nвстановити nogit\nкоригувати рік в режимі зчитування та ліцензії",
+        "zh-cn": "切换到 io 经纪人 eslint\n调整许多代码以遵循新规则\n添加一些jsdoc语\n执行服务器时间diff计算和校正\n用于 vis1 示例控件的固定数据点名称\n设置备忘\n按读数和许可证调整年份"
+      },
       "1.2.2": {
         "en": "improve readme\nimprove widget js\nremove word test from widgets html, sorry",
         "de": "das lesemetik verbessern\nwidget js verbessern\nentfernen sie den worttest von widgets html, sorry",
@@ -109,19 +122,6 @@
         "pl": "problemy z naprawą z repochecker",
         "uk": "ремонтні питання від repochecker",
         "zh-cn": "重新检查器的修理问题"
-      },
-      "1.0.14": {
-        "en": "improve test and release process\nupdate github workflow\nremove eslint command from package.json\nswitch back to node 18 for testing due to airbnb error\nmore repair\nadd package-lock.json to git\nremove unused library\nadd lint and lint\nremove iobroker eslint\ngeneral revision\nupdating the configuration dialogs for countdown and timeseries in jsonConfig and custom react",
-        "de": "verbesserung des test- und releaseprozesses\ngithub workflow aktualisieren\nentfernen sie eslint befehl aus paket. json\nzurück zum knoten 18 zum testen durch airbnb-fehler\nmehr reparatur\npaket-lock.json zu git hinzufügen\nungenutzte bibliothek\nlint und lint hinzufügen\niobroker eslint entfernen\nallgemeine revision\naktualisierung der Konfigurationsdialoge für Countdown und Zeitreihen in jsonConfig und benutzerdefinierte Reaktion",
-        "ru": "совершенствование процесса испытаний и выпуска\nобновление рабочего процесса github\nудалить команду eslint из пакета. json\nпереключиться на узел 18 для тестирования из-за ошибки airbnb\nбольше ремонт\nдобавить пакет-lock.json к git\nудалить неиспользуемую библиотеку\nдобавить lint и lint\nудалить iobroker eslint\nобщий пересмотр\nобновление диалогов конфигурации для отсчета и временных рядов в jsonConfig и пользовательской реакции",
-        "pt": "melhorar o processo de teste e liberação\natualizar o fluxo de trabalho do github\nremover o comando eslint do pacote. o que foi\nmudar de volta para o nó 18 para testes devido ao erro do airbnb\nmais reparação\nadicionar package-lock.json para git\nremover biblioteca não utilizada\nadicionar lint e lint\nremover iobroker eslint\nrevisão geral\natualizando os diálogos de configuração para contagem regressiva e séries em jsonConfig e reagem personalizada",
-        "nl": "het test- en vrijgaveproces verbeteren\ngithub-workflow bijwerken\nverwijder eslint commando uit pakket. json\nterug schakelen naar node 18 voor testen als gevolg van airbnb fout\nmeer reparatie\npakket-lock.json toevoegen aan git\nongebruikte bibliotheek verwijderen\nplint en plint toevoegen\niobroker eslint verwijderen\nalgemene herziening\nhet bijwerken van de configuratiedialoogvensters voor aftellen en tijdreeksen in jsonConfig en aangepaste reactie",
-        "fr": "améliorer le processus d'essai et de libération\nmettre à jour le flux de travail github\nsupprimer la commande eslint du paquet. json\nretour au nœud 18 pour les essais en raison d'une erreur airbnb\nplus de réparation\najouter paquet-lock.json à git\nsupprimer la bibliothèque inutilisée\najouter lint et lint\nenlever iobroker eslint\nrévision générale\nmettre à jour les dialogues de configuration pour le compte à rebours et les timeeries dans jsonConfig et réagir sur mesure",
-        "it": "migliorare il processo di test e rilascio\naggiornamento flusso di lavoro github\nrimuovere il comando eslint dal pacchetto. j\ntornare al nodo 18 per il test a causa di errore airbnb\npiù riparazione\naggiungere pacchetto-lock.json a git\nrimuovere la libreria inutilizzata\naggiungere lint e lint\nrimuovere iobroker eslint\nrevisione generale\nl'aggiornamento delle finestre di dialogo di configurazione per conto alla rovescia e timeerie in jsonConfig e reagisce su misura",
-        "es": "mejorar el proceso de prueba y liberación\nactualización github workflow\neliminar el comando eslint del paquete. json\nvolver al nodo 18 para probar debido al error de airbnb\nmás reparación\nañadir paquete-lock.json a git\neliminar la biblioteca no utilizada\nañadir forro y forro\neliminar iobroker eslint\nrevisión general\nactualizar los diálogos de configuración para la cuenta regresiva y los plazos en jsonConfig y la reacción personalizada",
-        "pl": "usprawnić proces testowania i uwalniania\naktualizacja przepływu pracy github\nusuń polecenie eslint z pakietu. json\nprzełączanie z powrotem na węzeł 18 do testów z powodu błędu airbnb\nwięcej napraw\nadd package- lock.json to git\nusuń nieużywaną bibliotekę\ndodaj lint i lint\nusunąć iobroker eslint\nogólny przegląd\naktualizacja dialogów konfiguracyjnych dla odliczania i czasopism w jsonConfig i niestandardowe reagowanie",
-        "uk": "поліпшити процес тестування та релізу\nоновлення github workflow\nвидалити команду eslint з пакета. свінгери\nперемикач назад до вузла 18 для тестування через помилку airbnb\nремонт\nдодати пакет-lock.json до git\nвидалити невикористану бібліотеку\nдодати лощ і лощ\nвидалення iobroker eslint\nзагальний перегляд\nоновлення діалогів конфігурації для відліку та часових подій в jsonConfig та користувацького реагування",
-        "zh-cn": "改进测试和释放程序\n更新 github 工作流程\n从软件包中删除 eslint 命令 。 贾森\n切换到节点18进行测试,因为空气bnb错误\n更多维修\n将软件包锁.json添加到 git\n删除未使用的库\n添加线条和线条\n删除 io 经纪人 eslint\n一般订正\n在 jsonConfig 和自定义中更新倒计时和时间序列的配置对话框"
       }
     },
     "platform": "Javascript/Node.js",
