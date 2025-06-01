@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "mytime",
-    "version": "1.4.0",
+    "version": "1.4.2",
     "titleLang": {
       "en": "MyTime",
       "de": "MyTime",
@@ -32,6 +32,32 @@
       "oweitman <oweitman@gmx.de>"
     ],
     "news": {
+      "1.4.2": {
+        "en": "revert to node 18\ncleanup files and some details\nfix server time diff calculations",
+        "de": "zurück zum knoten 183\naufräumen von dateien und details\nfix serverzeit-diff-berechnungen",
+        "ru": "вернуться в нод 18\nочистка файлов и некоторые детали\nфиксировать вычисления времени диффа сервера",
+        "pt": "reverter para nó 18\nlimpe arquivos e alguns detalhes\ncorrigir cálculos de diff de tempo de servidor",
+        "nl": "terug naar knooppunt 18\nbestanden opruimen en wat details\nfix server tijd diff berekeningen",
+        "fr": "retour au nœud 18\nfichiers de nettoyage et quelques détails\ncorrection des calculs de diff heure du serveur",
+        "it": "tornare al nodo 18\nfile di pulizia e alcuni dettagli\ncorrezione dei calcoli di diff dell'ora del server",
+        "es": "revertir a los nodos 18\nlimpiar archivos y algunos detalles\nfijar cálculos del tiempo del servidor",
+        "pl": "powrót do węzła 18\nczyszczenie plików i kilka szczegółów\nnaprawić obliczenia czasu diff serwera",
+        "uk": "перевернутися до вузла 18 років\nочищення файлів і деякі деталі\nфіксувати розрахунки часу сервера",
+        "zh-cn": "返回节点 第 18 条\n清理文件和一些细节\n修正服务器时间 diff 计算"
+      },
+      "1.4.1": {
+        "en": "revert to node 18\ncleanup files and some details",
+        "de": "zurück zum knoten 183\naufräumen von dateien und details",
+        "ru": "вернуться в нод 18\nочистка файлов и некоторые детали",
+        "pt": "reverter para nó 18\nlimpe arquivos e alguns detalhes",
+        "nl": "terug naar knooppunt 18\nbestanden opruimen en wat details",
+        "fr": "retour au nœud 18\nfichiers de nettoyage et quelques détails",
+        "it": "tornare al nodo 18\nfile di pulizia e alcuni dettagli",
+        "es": "revertir a los nodos 18\nlimpiar archivos y algunos detalles",
+        "pl": "powrót do węzła 18\nczyszczenie plików i kilka szczegółów",
+        "uk": "перевернутися до вузла 18 років\nочищення файлів і деякі деталі",
+        "zh-cn": "返回节点 第 18 条\n清理文件和一些细节"
+      },
       "1.4.0": {
         "en": "to update the time from the configuration i added a SetDP Button",
         "de": "um die Zeit von der Konfiguration zu aktualisieren, habe ich einen SetDP Button hinzugefügt",
@@ -96,32 +122,6 @@
         "pl": "widżety są teraz kompatybilne z vis2",
         "uk": "віджети тепер сумісні з vis2",
         "zh-cn": "部件现在与 vis2 兼容"
-      },
-      "1.1.1": {
-        "en": "fix problem with start of vis2, exclude widgets for vis2",
-        "de": "problem mit beginn von vis2, ausschließen widgets für vis2",
-        "ru": "исправить проблему с запуском vis2, исключить виджеты для vis2",
-        "pt": "corrigir problema com início de vis2, excluir widgets para vis2",
-        "nl": "probleem oplossen met het begin van vis2, widgets voor vis2 uitsluiten",
-        "fr": "résoudre le problème avec le début de vis2, exclure les widgets pour vis2",
-        "it": "problema di correzione con inizio di vis2, escludere widget per vis2",
-        "es": "solucionar problema con inicio de vis2, excluye widgets para vis2",
-        "pl": "problem z uruchomieniem vis2, wyklucza widżety dla vis2",
-        "uk": "виправити проблему з стартом vis2, виключити віджети для vis2",
-        "zh-cn": "解决对映2的启动问题, 排除对映2 的部件"
-      },
-      "1.1.0": {
-        "en": "add some new commands to restart the countdown time in place\nrepair save command\nremoved vis dependency from io-package.json",
-        "de": "fügen sie neue befehle hinzu, um die countdown-zeit neu zu starten\nreparieren sie den befehl\nabgenommen vis-abhängigkeit von io-package. json",
-        "ru": "добавить несколько новых команд для перезагрузки времени\nсохранить команду\nудаленная зависимость от io-package. json",
-        "pt": "adicionar alguns novos comandos para reiniciar o tempo de contagem regressiva no lugar\nreparação de comando save\nremoveu a dependência de vis do io-package. o que foi",
-        "nl": "voeg een aantal nieuwe commando's toe om de afteltijd opnieuw te starten\nreparatie save commando\nverwijderd ten opzichte van afhankelijkheid van io-package. json",
-        "fr": "ajouter de nouvelles commandes pour redémarrer le temps de compte à rebours\nréparation de la commande de sauvegarde\nenlevé vis-à-vis de la dépendance du io-package. json",
-        "it": "aggiungere alcuni nuovi comandi per riavviare il conto alla rovescia\nriparazione salva comando\nrimossa vis dipendenza da io-package. j",
-        "es": "añadir algunos nuevos comandos para reiniciar el tiempo de cuenta atrás en el lugar\nreparación guardar comando\nse quitó la dependencia de io-package. json",
-        "pl": "dodaj kilka nowych poleceń, aby ponownie uruchomić czas odliczania\nnaprawa zapisz polecenie\nusunięty z zależności od pakietu jo-. json",
-        "uk": "додати нові команди, щоб перезапустити час в місці\nремонт зберегти команду\nвидалена залежність від io-package. свінгери",
-        "zh-cn": "添加一些新命令以重新启动已设置的倒计时时间\n修补保存命令\n消除了依赖性 贾森"
       }
     },
     "platform": "Javascript/Node.js",
