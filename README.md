@@ -382,6 +382,7 @@ Group CSS-Common / transform "scale(0.5)"
 ### **WORK IN PROGRESS**
 
 - revert to node 18
+- cleanup files and some details
 
 ### 1.4.0 (2025-01-02)
 

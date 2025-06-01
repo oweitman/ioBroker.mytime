@@ -1321,16 +1321,23 @@ vis.binds['mytime'] = {
         try {
             let serverTime = await this.sendToAsync('mytime.0', 'getServerTime');
             let now = new Date().getTime();
-            this.serversync.serverTimeDiff = serverTime - now;
+            this.serversync.serverTimeDiff = now - serverTime;
+
+            // Erfolgreich? Dann erneut in 15 Sekunden aufrufen
+            setTimeout(() => {
+                this.calcServerTimeDiff();
+            }, 15000);
         } catch (error) {
-            console.log(error);
+            console.log('Error retrieving server time:', error);
+
+            // Bei Fehler in 1 Sekunde erneut versuchen
+            setTimeout(() => {
+                this.calcServerTimeDiff();
+            }, 1000);
         }
-        setTimeout(() => {
-            this.calcServerTimeDiff();
-        }, 15000);
     },
     sendToAsync: async function (instance, command, sendData) {
-        console.log(`sendToAsync ${command} ${sendData || 'no parameters'}`);
+        // console.log(`sendToAsync ${command} ${sendData || 'no parameters'}`);
         return new Promise((resolve, reject) => {
             try {
                 if (!vis.conn) {
