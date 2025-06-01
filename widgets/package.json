@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "main": "mytime/js/mytime.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "esbuild mytime/js/bundle.js --minify --bundle --outfile=mytime/js/mytime-dist.js --target=es6 --sourcemap"
+    "build": "esbuild mytime/js/bundle.js --minify --bundle --outfile=mytime/build/mytime-dist.js --target=es6 --sourcemap"
   },
   "author": "",
   "license": "MIT",

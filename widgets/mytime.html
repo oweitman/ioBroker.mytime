@@ -1,9 +1,7 @@
 <!--
     ioBroker.vis mytime Widget-Set
 
-    version: "0.0.1"
-
-    Copyright 2020 oweitman oweitman@gmx.de
+    Copyright 2025 oweitman oweitman@gmx.de
 -->
 <!-- here you can include so many css as you want -->
 <link rel="stylesheet" href="widgets/mytime/css/flipclock.css" />
@@ -11,23 +9,11 @@
 <!-- here you can include so many js-files as you want -->
 <!-- <script type="text/javascript" src="widgets/mytime/dist/index.js"></script>-->
  
-<script type="text/javascript" src="widgets/mytime/js/flipclock.js"></script>
-<script type="text/javascript" src="widgets/mytime/js/flipclockmytimeface.js"></script>
-<script type="text/javascript" src="widgets/mytime/js/timezones.js"></script>
-<script type="text/javascript" src="widgets/mytime/js/mytime-dist.js"></script>
+<script type="text/javascript" src="widgets/mytime/lib/flipclock.js"></script>
+<script type="text/javascript" src="widgets/mytime/lib/flipclockmytimeface.js"></script>
+<!-- <script type="text/javascript" src="widgets/mytime/lib/timezones.js"></script> -->
+<script type="text/javascript" src="widgets/mytime/build/mytime-dist.js"></script>
 
-<!-- <script type="text/javascript" src="widgets/mytime/js/mytime.js"></script> 
-<script type="text/javascript" src="widgets/mytime/js/wc_langPack_CH_BERN.js"></script>
-<script type="text/javascript" src="widgets/mytime/js/wc_langPack_DE.js"></script>
-<script type="text/javascript" src="widgets/mytime/js/wc_langPack_DE_SWG.js"></script>
-<script type="text/javascript" src="widgets/mytime/js/wc_langPack_EN.js"></script>
-<script type="text/javascript" src="widgets/mytime/js/wc_langPack_NL.js"></script>
-<script type="text/javascript" src="widgets/mytime/js/wc_langPack_IT.js"></script>
-<script type="text/javascript" src="widgets/mytime/js/wc_langPack_FR.js"></script>
-<script type="text/javascript" src="widgets/mytime/js/wc_langPack_RU.js"></script>
-<script type="text/javascript" src="widgets/mytime/js/wc_langPack_ES.js"></script>
-<script type="text/javascript" src="widgets/mytime/js/wc_langPack_TR.js"></script>
--->
 <!-- the full description of format in data-vis-attrs can be found here:
     https://github.com/ioBroker/ioBroker.vis/blob/master/www/js/visEditInspect.js#L39
 
@@ -199,4 +185,3 @@ x
         vis.binds['mytime'].wordclock.createWidget(this.data.wid, this.view, this.data, this.style);
     %></div>
 </script>
-             

@@ -73,8 +73,10 @@
   "files": [
     "admin/",
     "lib/",
-    "widgets/**/!(tsconfig|tsconfig.*|.eslintrc).json",
-    "widgets/**/*.{html,css,png,svg,jpg,js}",
+    "widgets/**/!(tsconfig|tsconfig.*|.eslintrc|en).json",
+    "widgets/**/*.{html,css,png,svg,jpg}",
+    "widgets/**/build/*.{js,map}",
+    "widgets/**/lib/*.{js,map}",
     "www/",
     "io-package.json",
     "LICENSE",

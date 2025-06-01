@@ -9,7 +9,7 @@
 
 import { version as pkgVersion } from '../../../package.json';
 
-/* global $, systemDictionary, jQuery, vis, timezones */
+/* global $, systemDictionary, jQuery, vis */
 // add translations for edit mode
 fetch('widgets/mytime/i18n/translations.json').then(async res => {
     let i18n = await res.json();
@@ -1287,7 +1287,7 @@ vis.binds['mytime'] = {
         return format;
     },
     getTimezones: function () {
-        return timezones.map(el => el.label);
+        return this.timezones.map(el => el.label);
     },
     convertDate2Timezone: function (date, tzString) {
         return new Date(
