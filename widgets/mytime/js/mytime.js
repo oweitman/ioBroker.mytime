@@ -1300,7 +1300,7 @@ vis.binds['mytime'] = {
     attrSelect: function (wid_attr, options) {
         var line = {};
         if (wid_attr === 'timezone') {
-            options = options || this.getTimezones();
+            options = this.getTimezones();
             var html = '';
             var currentTimezone = vis.widgets[vis.activeWidgets].data.timezone || this.getCurrentTimezone();
             for (var i = 0; i < options.length; i++) {
