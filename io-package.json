@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "mytime",
-    "version": "1.4.2",
+    "version": "1.4.3",
     "titleLang": {
       "en": "MyTime",
       "de": "MyTime",
@@ -32,6 +32,19 @@
       "oweitman <oweitman@gmx.de>"
     ],
     "news": {
+      "1.4.3": {
+        "en": "fix validation rule for the setDP button in admin",
+        "de": "die Validierungsregel für die setDP-Taste in Admin festlegen",
+        "ru": "исправить правило проверки для кнопки setDP в admin",
+        "pt": "regra de validação de correção para o botão setDP no admin",
+        "nl": "fix validatieregel voor de setDP-knop in admin",
+        "fr": "fixer la règle de validation pour le bouton setDP dans admin",
+        "it": "correzione della regola di convalida per il pulsante setDP in admin",
+        "es": "fijar regla de validación para el botón setDP en administración",
+        "pl": "reguła walidacji dla przycisku setDP w admin",
+        "uk": "зафіксувати правило валідації для кнопки setDP в адмін",
+        "zh-cn": "固定管理员设置的 DP 按钮的验证规则"
+      },
       "1.4.2": {
         "en": "revert to node 18\ncleanup files and some details\nfix server time diff calculations",
         "de": "zurück zum knoten 183\naufräumen von dateien und details\nfix serverzeit-diff-berechnungen",
@@ -44,19 +57,6 @@
         "pl": "powrót do węzła 18\nczyszczenie plików i kilka szczegółów\nnaprawić obliczenia czasu diff serwera",
         "uk": "перевернутися до вузла 18 років\nочищення файлів і деякі деталі\nфіксувати розрахунки часу сервера",
         "zh-cn": "返回节点 第 18 条\n清理文件和一些细节\n修正服务器时间 diff 计算"
-      },
-      "1.4.1": {
-        "en": "revert to node 18\ncleanup files and some details",
-        "de": "zurück zum knoten 183\naufräumen von dateien und details",
-        "ru": "вернуться в нод 18\nочистка файлов и некоторые детали",
-        "pt": "reverter para nó 18\nlimpe arquivos e alguns detalhes",
-        "nl": "terug naar knooppunt 18\nbestanden opruimen en wat details",
-        "fr": "retour au nœud 18\nfichiers de nettoyage et quelques détails",
-        "it": "tornare al nodo 18\nfile di pulizia e alcuni dettagli",
-        "es": "revertir a los nodos 18\nlimpiar archivos y algunos detalles",
-        "pl": "powrót do węzła 18\nczyszczenie plików i kilka szczegółów",
-        "uk": "перевернутися до вузла 18 років\nочищення файлів і деякі деталі",
-        "zh-cn": "返回节点 第 18 条\n清理文件和一些细节"
       },
       "1.4.0": {
         "en": "to update the time from the configuration i added a SetDP Button",

@@ -14,10 +14,10 @@
                 "countdowns": {
                     "newLine": true,
                     "xs": 12,
-                    "sm": 10,
-                    "md": 10,
-                    "lg": 10,
-                    "xl": 10,
+                    "sm": 12,
+                    "md": 12,
+                    "lg": 12,
+                    "xl": 12,
                     "noDelete": false,
                     "type": "table",
                     "items": [
@@ -97,14 +97,16 @@
                         },
                         {
                             "width": "5%",
+                            "attr": "_send",
                             "type": "sendTo",
                             "label": "SetDP",
                             "title": "cdSetDP",
                             "command": "setCountdownConfig",
                             "jsonData": "{\"behavior\": \"${data.behavior}\", \"days\": \"${data.days}\", \"hours\": \"${data.hours}\", \"minutes\": \"${data.minutes}\", \"name\": \"${data.name}\", \"seconds\": \"${data.seconds}\" }",
                             "variant": "outlined",
-                            "showProcess": true
-                          }                        
+                            "showProcess": true,
+                            "disabled": "!originalData.countdowns.some(el=>el.name==data.name);"                 
+                          }                          
                     ]
                 }
             }
