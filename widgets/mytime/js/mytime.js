@@ -304,7 +304,11 @@ vis.binds['mytime'] = {
             if (action == 'end') {
                 $(`#${widgetID} .cdclock`).removeClass('cdstop cdrun cdpause cdend').addClass('cdend');
                 vis.binds['mytime'].stopTimer(widgetID);
-                ms = 0;
+                if (stopbehaviour == 'timer') {
+                    ms = timer;
+                } else {
+                    ms = 0;
+                }
             }
 
             var cdObj = vis.binds['mytime'].formatDate(ms, 'dd:HH:mm:ss').split(':');
@@ -482,7 +486,11 @@ vis.binds['mytime'] = {
             if (action == 'end') {
                 $(`#${widgetID} .timer`).removeClass('cdstop cdrun cdpause cdend').addClass('cdend');
                 vis.binds['mytime'].stopTimer(widgetID);
-                ms = 0;
+                if (stopbehaviour == 'timer') {
+                    ms = timer;
+                } else {
+                    ms = 0;
+                }
             }
             vis.binds['mytime'].countdownflip.flips[widgetID].setTime(parseInt(ms / 1000));
         },
@@ -632,7 +640,11 @@ vis.binds['mytime'] = {
             if (action == 'end') {
                 $(`#${widgetID} .timer`).removeClass('cdstop cdrun cdpause cdend').addClass('cdend');
                 vis.binds['mytime'].stopTimer(widgetID);
-                ms = 0;
+                if (stopbehaviour == 'timer') {
+                    ms = timer;
+                } else {
+                    ms = 0;
+                }
             }
 
             var cdObjnow = vis.binds['mytime'].calcCountdownFromMiliSeconds(ms, pattern);
@@ -890,7 +902,11 @@ vis.binds['mytime'] = {
             if (action == 'end') {
                 $(`#${widgetID} .timer`).removeClass('cdstop cdrun cdpause cdend').addClass('cdend');
                 vis.binds['mytime'].stopTimer(widgetID);
-                ms = 0;
+                if (stopbehaviour == 'timer') {
+                    ms = timer;
+                } else {
+                    ms = 0;
+                }
             }
 
             var text = '';
