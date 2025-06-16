@@ -105,9 +105,7 @@
                             "jsonData": "{\"behavior\": \"${data.behavior}\", \"days\": \"${data.days}\", \"hours\": \"${data.hours}\", \"minutes\": \"${data.minutes}\", \"name\": \"${data.name}\", \"seconds\": \"${data.seconds}\" }",
                             "variant": "outlined",
                             "showProcess": true,
-                            "xdisabled": "!originalData.countdowns.some(el=>el.name==data.name);",                 
-                            "disabled": "!originalData.countdowns.some(el=>el.name==data.name)||!globalData.countdowns.filter((el,idx)=>el.name==data.name&&idx!=arrayIndex).length==0;",
-                            "ydisabled": "!globalData.countdowns.filter((el,idx)=>el.name==data.name&&idx!=arrayIndex).length==0;"
+                            "disabled": "!originalData.countdowns.some(el=>el.name==data.name)||!globalData.countdowns.filter((el,idx)=>el.name==data.name&&idx!=arrayIndex).length==0;"
                           }
                     ]
                 }
