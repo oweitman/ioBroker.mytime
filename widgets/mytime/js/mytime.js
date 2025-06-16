@@ -82,19 +82,19 @@ vis.binds['mytime'] = {
             }
 
             if (countdown_oid) {
-                if (!vis.editMode) {
-                    vis.binds['mytime'].bindStates(
-                        $div,
-                        [
-                            `${countdown_oid}.action`,
-                            `${countdown_oid}.end`,
-                            `${countdown_oid}.timer`,
-                            `${countdown_oid}.config`,
-                            `${countdown_oid}.start`,
-                        ],
-                        onChange,
-                    );
-                }
+                //if (!vis.editMode) {
+                vis.binds['mytime'].bindStates(
+                    $div,
+                    [
+                        `${countdown_oid}.action`,
+                        `${countdown_oid}.end`,
+                        `${countdown_oid}.timer`,
+                        `${countdown_oid}.config`,
+                        `${countdown_oid}.start`,
+                    ],
+                    onChange,
+                );
+                //}
             }
             var text = '';
 
@@ -375,19 +375,19 @@ vis.binds['mytime'] = {
             }
 
             if (countdown_oid) {
-                if (!vis.editMode) {
-                    vis.binds['mytime'].bindStates(
-                        $div,
-                        [
-                            `${countdown_oid}.action`,
-                            `${countdown_oid}.end`,
-                            `${countdown_oid}.timer`,
-                            `${countdown_oid}.config`,
-                            `${countdown_oid}.start`,
-                        ],
-                        onChange,
-                    );
-                }
+                //if (!vis.editMode) {
+                vis.binds['mytime'].bindStates(
+                    $div,
+                    [
+                        `${countdown_oid}.action`,
+                        `${countdown_oid}.end`,
+                        `${countdown_oid}.timer`,
+                        `${countdown_oid}.config`,
+                        `${countdown_oid}.start`,
+                    ],
+                    onChange,
+                );
+                //}
             }
             var text = '';
             text += '<style> \n';
@@ -530,19 +530,19 @@ vis.binds['mytime'] = {
             }
 
             if (countdown_oid) {
-                if (!vis.editMode) {
-                    vis.binds['mytime'].bindStates(
-                        $div,
-                        [
-                            `${countdown_oid}.action`,
-                            `${countdown_oid}.end`,
-                            `${countdown_oid}.timer`,
-                            `${countdown_oid}.config`,
-                            `${countdown_oid}.start`,
-                        ],
-                        onChange,
-                    );
-                }
+                //if (!vis.editMode) {
+                vis.binds['mytime'].bindStates(
+                    $div,
+                    [
+                        `${countdown_oid}.action`,
+                        `${countdown_oid}.end`,
+                        `${countdown_oid}.timer`,
+                        `${countdown_oid}.config`,
+                        `${countdown_oid}.start`,
+                    ],
+                    onChange,
+                );
+                //}
             }
 
             var width = $(`#${widgetID}`).width();
@@ -816,19 +816,19 @@ vis.binds['mytime'] = {
             }
 
             if (countdown_oid) {
-                if (!vis.editMode) {
-                    vis.binds['mytime'].bindStates(
-                        $div,
-                        [
-                            `${countdown_oid}.action`,
-                            `${countdown_oid}.end`,
-                            `${countdown_oid}.timer`,
-                            `${countdown_oid}.config`,
-                            `${countdown_oid}.start`,
-                        ],
-                        onChange,
-                    );
-                }
+                //if (!vis.editMode) {
+                vis.binds['mytime'].bindStates(
+                    $div,
+                    [
+                        `${countdown_oid}.action`,
+                        `${countdown_oid}.end`,
+                        `${countdown_oid}.timer`,
+                        `${countdown_oid}.config`,
+                        `${countdown_oid}.start`,
+                    ],
+                    onChange,
+                );
+                //}
             }
             var text = '';
             text += '<div class="timer"></div>';
@@ -1197,7 +1197,13 @@ vis.binds['mytime'] = {
         }
         $div.data('bound', null);
         $div.data('bindHandler', null);
-
+        if (vis.editMode) {
+            vis.binds['mytime'].getStates(bound, undefined, undefined);
+        } else {
+            vis.binds['mytime'].getStates(bound, $div, change_callback);
+        }
+    },
+    getStates: function (bound, $div, change_callback) {
         vis.conn.gettingStates = 0;
         vis.conn.getStates(
             bound,
@@ -1206,10 +1212,14 @@ vis.binds['mytime'] = {
                 vis.conn.subscribe(bound);
                 for (var i = 0; i < bound.length; i++) {
                     bound[i] = `${bound[i]}.val`;
-                    vis.states.bind(bound[i], change_callback);
+                    if (change_callback) {
+                        vis.states.bind(bound[i], change_callback);
+                    }
                 }
-                $div.data('bound', bound);
-                $div.data('bindHandler', change_callback);
+                if ($div) {
+                    $div.data('bound', bound);
+                    $div.data('bindHandler', change_callback);
+                }
             }.bind({ change_callback }),
         );
     },
