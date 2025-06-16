@@ -30,7 +30,7 @@
                             "sort": true,
                             "default": "",
                             "tooltip": "cd-TT-Name",
-                            "validator": "!/[^0-9a-zöÖüÜäÄß]/i.test(data.name) && data.name.length>0 && data.name.length<30",
+                            "validator": "!/[^0-9a-zöÖüÜäÄß]/i.test(data.name) && data.name.length>0 && data.name.length<30&&globalData.countdowns.filter((el,idx)=>el.name==data.name&&idx!=arrayIndex).length==0",
                             "validatorNoSaveOnError": true
                         },
                         {
@@ -105,8 +105,10 @@
                             "jsonData": "{\"behavior\": \"${data.behavior}\", \"days\": \"${data.days}\", \"hours\": \"${data.hours}\", \"minutes\": \"${data.minutes}\", \"name\": \"${data.name}\", \"seconds\": \"${data.seconds}\" }",
                             "variant": "outlined",
                             "showProcess": true,
-                            "disabled": "!originalData.countdowns.some(el=>el.name==data.name);"                 
-                          }                          
+                            "xdisabled": "!originalData.countdowns.some(el=>el.name==data.name);",                 
+                            "disabled": "!originalData.countdowns.some(el=>el.name==data.name)||!globalData.countdowns.filter((el,idx)=>el.name==data.name&&idx!=arrayIndex).length==0;",
+                            "ydisabled": "!globalData.countdowns.filter((el,idx)=>el.name==data.name&&idx!=arrayIndex).length==0;"
+                          }
                     ]
                 }
             }
