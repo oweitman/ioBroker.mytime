@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "mytime",
-    "version": "1.4.3",
+    "version": "1.4.4",
     "titleLang": {
       "en": "MyTime",
       "de": "MyTime",
@@ -32,6 +32,19 @@
       "oweitman <oweitman@gmx.de>"
     ],
     "news": {
+      "1.4.4": {
+        "en": "fix stopbeaviour\nfix state handling\nimprove validator vor name and setdp in admin",
+        "de": "stoppbeaviour\nzustandsbehandlung\nvalidator vor name und setdp in admin",
+        "ru": "фиксировать стоп-авиор\nфиксировать состояние\nулучшить имя валидатора и setdp в admin",
+        "pt": "corrigir o comportamento de paragem\ncorrigir o tratamento do estado\nmelhorar o nome do vor validador e setdp no administrador",
+        "nl": "fix stopbeaviour\nfix state handling\nverbeteren validator vor naam en setdp in admin",
+        "fr": "fixer stopbeaviour\nréparer la manipulation de l'état\naméliorer validator vor nom et setdp dans admin",
+        "it": "fix stopbeaviour\ncorretto gestione dello stato\nmigliorare il nome del vor del validatore e setdp in admin",
+        "es": "reparación stopbeaviour\ncorrección de estado\nmejorar el nombre del vor del validador y configurar en admin",
+        "pl": "naprawić stopbeaviour\nnaprawić obsługę państwa\npoprawić walidator vor nazwa i setdp w admin",
+        "uk": "фіксувати stopbeaviour\nфіксувати стан обробки\nпокращувати ім'я адміністратора і встановити в адмін",
+        "zh-cn": "修复断面\n固定状态处理\n改进管理员的验证符 vor 名称和设置dp"
+      },
       "1.4.3": {
         "en": "fix validation rule for the setDP button in admin",
         "de": "die Validierungsregel für die setDP-Taste in Admin festlegen",
@@ -109,19 +122,6 @@
         "pl": "interpretuj wszystkie polecenia w małych przypadkach",
         "uk": "перекладайте всі команди в нижньому рядку",
         "zh-cn": "在小写中解释所有命令"
-      },
-      "1.2.0": {
-        "en": "widgets are now compatible with vis2",
-        "de": "widgets sind jetzt kompatibel mit vis2",
-        "ru": "виджеты теперь совместимы с vis2",
-        "pt": "widgets agora são compatíveis com vis2",
-        "nl": "widgets zijn nu compatibel met vis2",
-        "fr": "les widgets sont désormais compatibles avec vis2",
-        "it": "widget sono ora compatibili con vis2",
-        "es": "widgets ahora son compatibles con vis2",
-        "pl": "widżety są teraz kompatybilne z vis2",
-        "uk": "віджети тепер сумісні з vis2",
-        "zh-cn": "部件现在与 vis2 兼容"
       }
     },
     "platform": "Javascript/Node.js",
