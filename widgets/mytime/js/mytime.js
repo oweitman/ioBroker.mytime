@@ -793,7 +793,8 @@ vis.binds['mytime'] = {
             var now = new Date().getTime() - (vis.binds['mytime'].serversync.serverTimeDiff || 0);
             var end = new Date(data.datetime).getTime();
 
-            var ms = now - end;
+            //var ms = now - end;
+            var ms = end - now;
 
             var text = '';
             text += vis.binds['mytime'].formatDate(ms, format);
