@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "mytime",
-    "version": "1.4.4",
+    "version": "1.4.5",
     "titleLang": {
       "en": "MyTime",
       "de": "MyTime",
@@ -32,6 +32,19 @@
       "oweitman <oweitman@gmx.de>"
     ],
     "news": {
+      "1.4.5": {
+        "en": "fix widget reverse countdown plain",
+        "de": "widget reverse countdown ebene",
+        "ru": "исправить виджет reverse countdown plain",
+        "pt": "corrigir a contagem regressiva do elemento",
+        "nl": "fix widget reverse countdown gewoon",
+        "fr": "correction du compte à rebours du widget",
+        "it": "correzione widget conto alla rovescia inversa",
+        "es": "arreglar widget reverso cuenta regresiva plano",
+        "pl": "fix widget reverse countdown plain",
+        "uk": "виправити віджет зворотний відлік plain",
+        "zh-cn": "修正部件倒数倒数平原"
+      },
       "1.4.4": {
         "en": "fix stopbeaviour\nfix state handling\nimprove validator vor name and setdp in admin",
         "de": "stoppbeaviour\nzustandsbehandlung\nvalidator vor name und setdp in admin",
@@ -109,19 +122,6 @@
         "pl": "poprawić readme\npoprawić widget js\nusunąć test słowa z widgets html, przepraszam",
         "uk": "поліпшити читання\nполіпшити віджет js\nвидалення тесту з віджетів html, шкода",
         "zh-cn": "改进读取器\n改进部件 js\n从部件 html 中删除单词测试, 抱歉"
-      },
-      "1.2.1": {
-        "en": "interprete all commands in lowercase",
-        "de": "alle befehle in kleinbuchstaben interpretieren",
-        "ru": "интерпретирует все команды в нижнем",
-        "pt": "interpretar todos os comandos em minúscula",
-        "nl": "interpreteer alle commando's in kleine letters",
-        "fr": "interpréter toutes les commandes en minuscules",
-        "it": "interpretare tutti i comandi in minuscolo",
-        "es": "interpretar todos los comandos en minúscula",
-        "pl": "interpretuj wszystkie polecenia w małych przypadkach",
-        "uk": "перекладайте всі команди в нижньому рядку",
-        "zh-cn": "在小写中解释所有命令"
       }
     },
     "platform": "Javascript/Node.js",

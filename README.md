@@ -379,6 +379,10 @@ Group CSS-Common / transform "scale(0.5)"
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+### 1.4.5 (2025-07-21)
+
+- fix widget reverse countdown plain
+
 ### 1.4.4 (2025-06-16)
 
 - fix stopbeaviour
