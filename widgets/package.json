@@ -2,10 +2,17 @@
   "name": "mytimevis1widget",
   "version": "1.0.0",
   "main": "mytime/js/mytime.js",
+  "watch": {
+      "build": "mytime/**/js/*.js"
+  },
   "scripts": {
-    "build": "esbuild mytime/js/bundle.js --minify --bundle --outfile=mytime/build/mytime-dist.js --target=es6 --sourcemap"
+    "build": "esbuild mytime/js/bundle.js --minify --bundle --outfile=mytime/build/mytime-dist.js --target=es6 --sourcemap",
+    "watch": "npm-watch"
   },
   "author": "",
   "license": "MIT",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "npm-watch": "^0.13.0"
+  }
 }
