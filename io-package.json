@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "mytime",
-    "version": "1.4.5",
+    "version": "1.4.6",
     "titleLang": {
       "en": "MyTime",
       "de": "MyTime",
@@ -32,6 +32,19 @@
       "oweitman <oweitman@gmx.de>"
     ],
     "news": {
+      "1.4.6": {
+        "en": "fix wrong calc of datapoints in some cases",
+        "de": "fehlerbehebung von datenpunkten in einigen fällen",
+        "ru": "исправить неправильный кальций точек данных в некоторых случаях",
+        "pt": "corrigir o cálculo errado de pontos de dados em alguns casos",
+        "nl": "vast te stellen verkeerde calc van datapunten in sommige gevallen",
+        "fr": "corriger une mauvaise calc des points de données dans certains cas",
+        "it": "correggere il calcolo sbagliato dei datapoint in alcuni casi",
+        "es": "corregir el cálculo incorrecto de los puntos de datos en algunos casos",
+        "pl": "naprawić błędne kalc punktów danych w niektórych przypadkach",
+        "uk": "зафіксувати неправильне калібрування точок даних в деяких випадках",
+        "zh-cn": "在某些情况下修补错误的数据点计算"
+      },
       "1.4.5": {
         "en": "fix widget reverse countdown plain",
         "de": "widget reverse countdown ebene",
@@ -109,19 +122,6 @@
         "pl": "przełącz na iobroker eslint\ndostosować wiele kodów do nowych zasad\ndodaj trochę jsdoc\nwdrożyć obliczanie i korektę servertimediff\nustaw nazwy punktów danych dla przykładowych kontroli vis1\nset nogit\ndostosować rok w readme i licencji",
         "uk": "перемикач до iobroker eslint\nналаштуйте багато коду, щоб дотримуватися нових правил\nдодати деякі jsdoc\nздійснювати розрахунок та корекцію сервера\nвиправити імена точок даних для керування прикладом vis1\nвстановити nogit\nкоригувати рік в режимі зчитування та ліцензії",
         "zh-cn": "切换到 io 经纪人 eslint\n调整许多代码以遵循新规则\n添加一些jsdoc语\n执行服务器时间diff计算和校正\n用于 vis1 示例控件的固定数据点名称\n设置备忘\n按读数和许可证调整年份"
-      },
-      "1.2.2": {
-        "en": "improve readme\nimprove widget js\nremove word test from widgets html, sorry",
-        "de": "das lesemetik verbessern\nwidget js verbessern\nentfernen sie den worttest von widgets html, sorry",
-        "ru": "улучшить чтение\nулучшить виджет\nудалить слово тест от виджетов html, извините",
-        "pt": "melhorar a leitura\nmelhorar o widget js\nremover teste de palavra de widgets html, desculpe",
-        "nl": "readme verbeteren\nwidget js verbeteren\nwoordtest verwijderen uit widgets html, sorry",
-        "fr": "améliorer la lecture\naméliorer le widget js\nsupprimer mot test de widgets html, désolé",
-        "it": "migliorare la lettura\nmigliorare il widget js\nrimuovere word test da widgets html, dispiace",
-        "es": "mejorar el readme\nmejorar widget js\neliminar la prueba de palabras de widgets html, lo siento",
-        "pl": "poprawić readme\npoprawić widget js\nusunąć test słowa z widgets html, przepraszam",
-        "uk": "поліпшити читання\nполіпшити віджет js\nвидалення тесту з віджетів html, шкода",
-        "zh-cn": "改进读取器\n改进部件 js\n从部件 html 中删除单词测试, 抱歉"
       }
     },
     "platform": "Javascript/Node.js",
