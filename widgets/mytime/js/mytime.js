@@ -48,6 +48,7 @@ vis.binds['mytime'] = {
                 !data.countdown_oid ||
                 (countdown_oid = vis.binds['mytime'].getCountdownId(data.countdown_oid)) == false
             ) {
+                console.error(`Error: invalid countdown_oid ${data.countdown_oid}`);
                 return;
             }
             var showsec = data.countdown_showsec;
@@ -82,7 +83,7 @@ vis.binds['mytime'] = {
             }
 
             if (countdown_oid) {
-                //if (!vis.editMode) {
+                //console.log(`bind states ${widgetID}`);
                 vis.binds['mytime'].bindStates(
                     $div,
                     [
@@ -256,6 +257,7 @@ vis.binds['mytime'] = {
                 !data.countdown_oid ||
                 (countdown_oid = vis.binds['mytime'].getCountdownId(data.countdown_oid)) == false
             ) {
+                console.error(`Error: invalid countdown_oid ${data.countdown_oid}`);
                 return;
             }
             var start = countdown_oid ? vis.states.attr(`${countdown_oid}.start.val`) : 0;
@@ -351,6 +353,7 @@ vis.binds['mytime'] = {
                 !data.countdown_oid ||
                 (countdown_oid = vis.binds['mytime'].getCountdownId(data.countdown_oid)) == false
             ) {
+                console.error(`Error: invalid countdown_oid ${data.countdown_oid}`);
                 return;
             }
             var showsec = data.countdown_showsec;
@@ -379,7 +382,7 @@ vis.binds['mytime'] = {
             }
 
             if (countdown_oid) {
-                //if (!vis.editMode) {
+                //console.log(`bind states ${widgetID}`);
                 vis.binds['mytime'].bindStates(
                     $div,
                     [
@@ -443,6 +446,7 @@ vis.binds['mytime'] = {
                 !data.countdown_oid ||
                 (countdown_oid = vis.binds['mytime'].getCountdownId(data.countdown_oid)) == false
             ) {
+                console.error(`Error: invalid countdown_oid ${data.countdown_oid}`);
                 return;
             }
             var start = countdown_oid ? vis.states.attr(`${countdown_oid}.start.val`) : 0;
@@ -510,6 +514,7 @@ vis.binds['mytime'] = {
                 !data.countdown_oid ||
                 (countdown_oid = vis.binds['mytime'].getCountdownId(data.countdown_oid)) == false
             ) {
+                console.error(`Error: invalid countdown_oid ${data.countdown_oid}`);
                 return;
             }
             // var timer = countdown_oid ? vis.states.attr(countdown_oid + '.timer.val') ? vis.states.attr(countdown_oid + '.timer.val') : 0 : 0;
@@ -538,7 +543,7 @@ vis.binds['mytime'] = {
             }
 
             if (countdown_oid) {
-                //if (!vis.editMode) {
+                //console.log(`bind states ${widgetID}`);
                 vis.binds['mytime'].bindStates(
                     $div,
                     [
@@ -588,6 +593,7 @@ vis.binds['mytime'] = {
                 !data.countdown_oid ||
                 (countdown_oid = vis.binds['mytime'].getCountdownId(data.countdown_oid)) == false
             ) {
+                console.error(`Error: invalid countdown_oid ${data.countdown_oid}`);
                 return;
             }
             var start = countdown_oid ? vis.states.attr(`${countdown_oid}.start.val`) : 0;
@@ -817,6 +823,7 @@ vis.binds['mytime'] = {
                 !data.countdown_oid ||
                 (countdown_oid = vis.binds['mytime'].getCountdownId(data.countdown_oid)) == false
             ) {
+                console.error(`Error: invalid countdown_oid ${data.countdown_oid}`);
                 return;
             }
 
@@ -829,7 +836,7 @@ vis.binds['mytime'] = {
             }
 
             if (countdown_oid) {
-                //if (!vis.editMode) {
+                //console.log(`bind states ${widgetID}`);
                 vis.binds['mytime'].bindStates(
                     $div,
                     [
@@ -864,6 +871,7 @@ vis.binds['mytime'] = {
                 !data.countdown_oid ||
                 (countdown_oid = vis.binds['mytime'].getCountdownId(data.countdown_oid)) == false
             ) {
+                console.error(`Error: invalid countdown_oid ${data.countdown_oid}`);
                 return;
             }
             var start = countdown_oid ? vis.states.attr(`${countdown_oid}.start.val`) : 0;
@@ -1176,10 +1184,10 @@ vis.binds['mytime'] = {
     },
     getCountdownId: function (countdown_oid) {
         var idParts = countdown_oid.split('.');
-        if (idParts[2] != 'Countdowns') {
+        if (idParts[2] != 'Countdowns' || idParts.length < 4) {
             return false;
         }
-        idParts.pop();
+        idParts = idParts.slice(0, 4);
         return idParts.join('.');
     },
     calcCountdownFromMiliSeconds: function (miliseconds, pattern) {
@@ -1241,6 +1249,7 @@ vis.binds['mytime'] = {
         );
     },
     updateStates: function (states) {
+        //console.log('updateStates', states);
         for (var id in states) {
             if (!Object.prototype.hasOwnProperty.call(states, id)) {
                 continue;
