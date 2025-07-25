@@ -24,7 +24,6 @@
   "dependencies": {
     "@iobroker/adapter-core": "^3.2.3",
     "@iobroker/build-tools": "^2.0.15",
-    "@types/request": "^2.48.12",
     "axios": "^1.10.0",
     "dayjs": "^1.11.13",
     "rrule": "^2.8.1",

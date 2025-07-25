@@ -100,27 +100,26 @@ After configuration of a new countdown the adapter creates the following datapoi
 
 ##### Available commands for the cmd datapoint
 
-| command       | example               | description                                                                                   |
-| ------------- | --------------------- | --------------------------------------------------------------------------------------------- |
-| +value        | +1:10                 | adds time to the countdown setting. the setting will be taken into account at the next start  |
-| +!value       | +!1:10                | like + operator and extend the running timer                                                  |
-| -value        | -1:2:3                | subtracts time from the countdown. the setting will be taken into account at the next start   |
-| -!value       | -!1:2:3               | like - operator and reduce the running timer                                                  |
-| =value        | =5:00                 | set the countdowntimer to this time.                                                          |
-| =!value       | =!5:00                | like = operator and set running timer to the given time                                       |
-| #ISO-Date     | #2025-01-01T10:00:00  | set the countdowntimer to a target time. The Time must be formatted as ISO-Datestring         |
-| #!ISO-Date    | #!2025-01-01T10:00:00 | like # operator and setting running timer to the given target time                            |
-| $Time         | $20:15                | set the countdowntimer to a target time. If Time is before current time. the next day is set. |
-| $!Time        | $!20:15               | like $ operator and setting running timer to the given target time                            |
-| start         | start                 | starts the countdown                                                                          |
-| stop          | stop                  | stops the countdown. the countdown time is reset to the setting                               |
-| pause         | pause                 | pauses the countdown                                                                          |
-| end           | end                   | stops the countdown. the countdown is set to 0                                                |
-| reset         | reset                 | reset the timer to the configuration state                                                    |
-| setstop2timer | setstop2timer         | set stop behaviour configuration to timer                                                     |
-| setstop2zero  | setstop2zero          | set stop behaviour configuration to zeros                                                     |
-| save          | save                  | save the configuration defined in datapoints to the iobroker configuration                    |
-|               |                       | iobroker restarts the adapter after saving automatically                                      |
+| command         | example                 | description                                                                                   |
+| --------------- | ----------------------- | --------------------------------------------------------------------------------------------- |
+| `+value`        | `+1:10`                 | adds time to the countdown setting. the setting will be taken into account at the next start  |
+| `+!value`       | ``+!1:10`               | like + operator and extend the running timer                                                  |
+| `-value`        | `-1:2:3`                | subtracts time from the countdown. the setting will be taken into account at the next start   |
+| `-!value`       | `-!1:2:3`               | like - operator and reduce the running timer                                                  |
+| `=value`        | `=5:00`                 | set the countdowntimer to this time.                                                          |
+| `=!value`       | `=!5:00`                | like = operator and set running timer to the given time                                       |
+| `#ISO-Date`     | `#2025-01-01T10:00:00`  | set the countdowntimer to a target time. The Time must be formatted as ISO-Datestring         |
+| `#!ISO-Date`    | `#!2025-01-01T10:00:00` | like # operator and setting running timer to the given target time                            |
+| `$Time`         | `$20:15`                | set the countdowntimer to a target time. If Time is before current time. the next day is set. |
+| `$!Time`        | `$!20:15`               | like $ operator and setting running timer to the given target time                            |
+| `start`         | `start`                 | starts the countdown                                                                          |
+| `stop`          | `stop`                  | stops the countdown. the countdown time is reset to the setting                               |
+| `pause`         | `pause`                 | pauses the countdown                                                                          |
+| `end`           | `end`                   | stops the countdown. the countdown is set to 0                                                |
+| `reset`         | `reset`                 | reset the timer to the configuration state                                                    |
+| `setstop2timer` | `setstop2timer`         | set stop behaviour configuration to timer                                                     |
+| `setstop2zero`  | `setstop2zero`          | set stop behaviour configuration to zeros                                                     |
+| `save`          | `save`                  | save the configuration defined in datapoints to the iobroker configuration, iobroker restarts the adapter after saving automatically                    |
 
 ##### Format of the value for setting the countdown timer
 
@@ -379,6 +378,11 @@ Group CSS-Common / transform "scale(0.5)"
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+
+- remove types/request
+- improve documentation format
+
 ### 1.4.6 (2025-07-21)
 
 - fix wrong calc of datapoints in some cases
