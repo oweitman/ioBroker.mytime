@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "mytime",
-    "version": "1.4.6",
+    "version": "1.4.7",
     "titleLang": {
       "en": "MyTime",
       "de": "MyTime",
@@ -32,6 +32,19 @@
       "oweitman <oweitman@gmx.de>"
     ],
     "news": {
+      "1.4.7": {
+        "en": "remove types/request\nimprove documentation format",
+        "de": "typen/request entfernen\nverbesserung des dokumentationsformats",
+        "ru": "удалить типы/запрос\nулучшение формата документации",
+        "pt": "remover tipos/pedidos\nmelhorar o formato da documentação",
+        "nl": "type/verzoek verwijderen\nverbetering van het documentatieformaat",
+        "fr": "supprimer les types/demandes\naméliorer le format de la documentation",
+        "it": "rimuovere i tipi / richiesta\nmigliorare il formato della documentazione",
+        "es": "eliminar tipos/requisitos\nmejorar el formato de documentación",
+        "pl": "usunąć typy / żądanie\npoprawić format dokumentacji",
+        "uk": "видалення типів / пошук\nформат документації",
+        "zh-cn": "删除类型/请求\n改进文件格式"
+      },
       "1.4.6": {
         "en": "fix wrong calc of datapoints in some cases",
         "de": "fehlerbehebung von datenpunkten in einigen fällen",
@@ -109,19 +122,6 @@
         "pl": "aby zaktualizować czas z konfiguracji dodałem przycisk SetDP",
         "uk": "для оновлення часу з конфігурації я додав кнопку SetDP",
         "zh-cn": "以更新配置中的时间 "
-      },
-      "1.3.0": {
-        "en": "switch to iobroker eslint\nadjust many code to follow the new rules\nadd some jsdoc\nimplement servertimediff calculation and correction\nfix datapoint names for the vis1 example controls\nset nogit\nadjust year in readme and license",
-        "de": "iobroker eslint wechseln\nvielen code anpassen, um den neuen regeln zu folgen\nfügen sie einige jsdoc\nservertimediff berechnung und korrektur implementieren\ndatenpunkt-namen für die vis1-beispielsteuerungen festlegen\nset nogit\njahr in readme und lizenz anpassen",
-        "ru": "переход на iobroker eslint\nкорректировать многие коды, чтобы следовать новым правилам\nдобавить немного jsdoc\nреализовать серверное время\nфиксация имен точек данных для контроля примера vis1\nset nogit\nкорректировать год в считывании и лицензии",
-        "pt": "mudar para iobroker eslint\najustar muitos códigos para seguir as novas regras\nadicionar alguns jsdoc\nimplementar cálculo e correção servertimediff\ncorrigir nomes de datapoint para os controles de exemplo vis1\nset nogit\najustar ano em readme e licença",
-        "nl": "schakelen naar iobroker eslint\npas veel code aan om de nieuwe regels te volgen\njsdoc toevoegen\nimplementeren servertimediff berekening en correctie\nfix datapoint namen voor de vis1 voorbeeld controles\nnogit instellen\naanpassing jaar in readme en licentie",
-        "fr": "passer à iobroker eslint\najuster beaucoup de code pour suivre les nouvelles règles\najouter un peu de jsdoc\nimplémenter le calcul et la correction du serveurtimediff\nfixer les noms des points de données pour les commandes d'exemple vis1\ndéfinir nogit\najuster l'année en lecture et licence",
-        "it": "passare a iobroker eslint\nregolare molti codice per seguire le nuove regole\naggiungere alcuni jsdoc\nimplementare il calcolo servertimediff e la correzione\ncorreggere i nomi dei datapoint per i controlli dell'esempio vis1\nset nogit\nregolare l'anno in lettura e licenza",
-        "es": "cambio a iobroker eslint\najustar muchos códigos para seguir las nuevas reglas\nañadir algunos jsdoc\nimplementar cálculo servidortimediff y corrección\nfijar nombres de puntos de datos para los controles de ejemplo vis1\nnogit\najuste año en readme y licencia",
-        "pl": "przełącz na iobroker eslint\ndostosować wiele kodów do nowych zasad\ndodaj trochę jsdoc\nwdrożyć obliczanie i korektę servertimediff\nustaw nazwy punktów danych dla przykładowych kontroli vis1\nset nogit\ndostosować rok w readme i licencji",
-        "uk": "перемикач до iobroker eslint\nналаштуйте багато коду, щоб дотримуватися нових правил\nдодати деякі jsdoc\nздійснювати розрахунок та корекцію сервера\nвиправити імена точок даних для керування прикладом vis1\nвстановити nogit\nкоригувати рік в режимі зчитування та ліцензії",
-        "zh-cn": "切换到 io 经纪人 eslint\n调整许多代码以遵循新规则\n添加一些jsdoc语\n执行服务器时间diff计算和校正\n用于 vis1 示例控件的固定数据点名称\n设置备忘\n按读数和许可证调整年份"
       }
     },
     "platform": "Javascript/Node.js",

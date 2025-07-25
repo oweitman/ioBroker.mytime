@@ -378,7 +378,7 @@ Group CSS-Common / transform "scale(0.5)"
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
-### **WORK IN PROGRESS**
+### 1.4.7 (2025-07-25)
 
 - remove types/request
 - improve documentation format

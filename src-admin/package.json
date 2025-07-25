@@ -1,7 +1,7 @@
 {
     "name": "iobroker-admin-component-mytime",
     "private": true,
-    "version": "1.4.6",
+    "version": "1.4.7",
     "scripts": {
         "start": "set PORT=4173 && craco start",
         "build": "craco build"
