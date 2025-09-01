@@ -22,7 +22,7 @@
     "node": ">= 20"
   },
   "dependencies": {
-    "@iobroker/adapter-core": "^3.3.1",
+    "@iobroker/adapter-core": "^3.3.2",
     "@iobroker/build-tools": "^2.0.15",
     "axios": "^1.11.0",
     "dayjs": "^1.11.13",
