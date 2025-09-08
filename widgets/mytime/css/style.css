@@ -1,43 +1,50 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:100');
 
-/* Style your widget here */
 .mytime-class {
     font-style: italic;
-}
+} 
 
 .cdclock {
-    color: rgba(50,50,50,0.35);
-    display: block;
-    text-align: center;
-
-    padding: 0;
-    font-family: 'Lato', sans-serif;
-    font-size: 100px;    
+  display: flex;
+  align-items: center;
+  line-height: 1;
+  white-space: nowrap;
+  font-family: 'Lato', sans-serif;
+  font-size: inherit;
 }
-.cdclock p.separator,
+
 .cdclock section {
-    display: inline-block;
-}
-.cdclock section div p {
-    position: absolute;
-    width: 60px;
-    text-align: center;
-    transition: 0.3s ease color, 0.3s ease text-shadow;
-    margin: 0;
-}
-.cdclock p.separator {
-    font-size: 60px;
-    vertical-align: top;
-    margin-top: 20px;  
+  display: flex;
+  gap: 0.0em;
 }
 
-.cdclock p.separator,
-.cdclock section p.active {
-    color: #FFE548;
-    text-shadow: 0px 0px 20px #F58732;
+.cdclock .tens,
+.cdclock .ones {
+  position: relative;
+  width: 0.6em;
+  height: 1em;
+  overflow: hidden;
 }
-.cdclock section div {
-    display: inline-block;
-    width: 60px;
-    height: 120px;
+
+.cdclock .tens p,
+.cdclock .ones p {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  line-height: 1em;
+}
+
+.cdclock section p.active {
+  opacity: 1;
+}
+
+.cdclock p.separator {
+  align-self: center;
+  line-height: 1;
+  opacity: 0.5;
+}
+
+.cdclock p {
+  margin: 0 !important;
+  transition: 0.5s ease color, 0.5s ease text-shadow;
 }

@@ -1,6 +1,6 @@
 {
   "name": "mytimevis1widget",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "main": "mytime/js/mytime.js",
   "watch": {
       "build": "mytime/**/js/*.js"

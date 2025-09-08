@@ -378,6 +378,12 @@ Group CSS-Common / transform "scale(0.5)"
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+
+- major release: make nixie clock responsive. the users have to adjust the 
+  font-size of the widget to get the old size.
+  if you want the old size try it with 100px font-size.
+
 ### 1.4.7 (2025-07-25)
 
 - remove types/request
