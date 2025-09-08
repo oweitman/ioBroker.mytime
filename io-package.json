@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "mytime",
-    "version": "1.4.7",
+    "version": "2.0.1",
     "titleLang": {
       "en": "MyTime",
       "de": "MyTime",
@@ -32,7 +32,7 @@
       "oweitman <oweitman@gmx.de>"
     ],
     "news": {
-      "2.0.0": {
+      "2.0.1": {
         "en": "major release: make nixie clock responsive. the users have to adjust the \n  font-size of the widget to get the old size.\n  if you want the old size try it with 100px font-size.",
         "de": "Hauptversion: Nixie-Uhr reaktionsfähig machen. Die Benutzer müssen die\n  font-size des Widgets, um die alte Größe zu erhalten.\n  wenn Sie die alte Größe wollen, versuchen Sie es mit 100px font-size.",
         "ru": "Основной релиз: сделайте часы nixie отзывчивыми. пользователям придется настроить\n  font-size виджета, чтобы получить старый размер.\n  Если вам нужен старый размер, попробуйте сделать это с font-size 100px.",
