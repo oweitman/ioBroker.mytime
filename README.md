@@ -317,6 +317,40 @@ A countdown widget in a Nixie-Tube/LED style
 | countdown_opacity_inactive | Opacity of the color of the inactive digits                     |
 | countdown_glowcolor        | Color of the glow around thie Nixie-digits                      |
 
+##### Tips
+
+###### Top/Bottom Margins
+
+The used Lato font is slightly slanted downwards, creating uneven top and
+bottom margins. This can be adjusted using the height and a negative top margin.
+The widget uses a height of 1em. The height can be set directly in the widget properties.
+
+A CSS class must be created for the negative margin.
+
+```css
+#w00000 .cdclock {
+margin-top: -5px;
+}
+```
+
+###### Widget size before Vrsion 2
+
+If you want to adjust the size of the countdown nixieclock,
+under css settings in vis you can enter for half size:
+Group CSS-Common / transform "scale(0.5)"
+
+###### Centering the Nixie Clock
+
+To center the clock, an additional CSS class is required, as the
+corresponding settings cannot be configured in the widget settings:
+
+```css
+#w00000 {
+  display: flex;
+  justify-content: center;
+}
+```
+
 #### Widget Wordclock
 
 A widget to show a wordclock with many options
@@ -337,11 +371,7 @@ A widget to show a wordclock with many options
 | secondColor       | color of the Seconds LED                                 |
 | timezone          | The time of the selected timezone is displayed           |
 
-**Tips:**
 
-If you want to adjust the size of the countdown nixieclock,
-under css settings in vis you can enter for half size:
-Group CSS-Common / transform "scale(0.5)"
 
 **The actual action state (cdstop,cdrun,cdpause,cdend) of the countdown is available as CSS-Class selector:**
 
