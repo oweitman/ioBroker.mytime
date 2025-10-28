@@ -27,7 +27,7 @@
     "axios": "^1.12.2",
     "dayjs": "^1.11.18",
     "rrule": "^2.8.1",
-    "semver": "^7.7.1"
+    "semver": "^7.7.3"
   },
   "devDependencies": {
     "@alcalzone/release-script": "^3.8.0",
