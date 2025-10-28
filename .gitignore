@@ -28,3 +28,6 @@ admin/custom/
 .vscode/admin.zip
 .vscode/srcxxx.zip
 .vscode/secrets.txt
+
+#ignore .commitinfo created by ioBroker release script
+.commitinfo
