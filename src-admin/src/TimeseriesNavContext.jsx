@@ -1,51 +1,51 @@
-import { createContext, useContext, useReducer /* , useEffect */ } from "react";
+import { createContext, useContext, useReducer /* , useEffect */ } from 'react';
 
 export const NavStateContext = createContext(null);
 export const NavStateDispatchContext = createContext(null);
 
 function navStateReducer(navState, action) {
     switch (action.type) {
-        case "isTimeserieNew": {
+        case 'isTimeserieNew': {
             navState[action.type] = action.value;
             return { ...navState };
         }
-        case "isTimeserieEditing": {
+        case 'isTimeserieEditing': {
             navState[action.type] = action.value;
             return { ...navState };
         }
-        case "isRuleEditing": {
+        case 'isRuleEditing': {
             navState[action.type] = action.value;
             return { ...navState };
         }
-        case "isDateEditing": {
+        case 'isDateEditing': {
             navState[action.type] = action.value;
             return { ...navState };
         }
-        case "isRuleNew": {
+        case 'isRuleNew': {
             navState[action.type] = action.value;
             return { ...navState };
         }
-        case "selectedTimeseriesID": {
+        case 'selectedTimeseriesID': {
             navState[action.type] = action.value;
             return { ...navState };
         }
-        case "selectedRuleID": {
+        case 'selectedRuleID': {
             navState[action.type] = action.value;
             return { ...navState };
         }
-        case "origTimeserie": {
+        case 'origTimeserie': {
             navState[action.type] = action.value;
             return { ...navState };
         }
-        case "origRule": {
+        case 'origRule': {
             navState[action.type] = action.value;
             return { ...navState };
         }
-        case "errors": {
+        case 'errors': {
             navState[action.type] = action.value;
             return { ...navState };
         }
-        case "isBack": {
+        case 'isBack': {
             navState[action.type] = action.value;
             return { ...navState };
         }

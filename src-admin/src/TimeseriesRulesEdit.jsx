@@ -1,7 +1,7 @@
-import { useContext, useState, useEffect } from "react";
-import dayjs from "dayjs";
+import { useContext, useState, useEffect } from 'react';
+import dayjs from 'dayjs';
 
-import { I18n } from "@iobroker/adapter-react-v5";
+import { I18n } from '@iobroker/adapter-react-v5';
 import {
     TextField,
     MenuItem,
@@ -18,18 +18,18 @@ import {
     Tab,
     Stack,
     IconButton,
-} from "@mui/material";
-import { Cancel } from "@mui/icons-material";
-import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
+} from '@mui/material';
+import { Cancel } from '@mui/icons-material';
+import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 
-import { RRule } from "rrule";
+import { RRule } from 'rrule';
 
-import { TimeseriesContext, useTimeseriesDispatch } from "./TimeseriesContext";
-import { NavStateContext, useNavStateDispatch } from "./TimeseriesNavContext";
-import TimeseriesValidator from "./TimeseriesValidator";
+import { TimeseriesContext, useTimeseriesDispatch } from './TimeseriesContext';
+import { NavStateContext, useNavStateDispatch } from './TimeseriesNavContext';
+import TimeseriesValidator from './TimeseriesValidator';
 
-import MyHeader from "./Components/Header";
-import HtmlTooltip from "./Components/HtmlTooltip";
+import MyHeader from './Components/Header';
+import HtmlTooltip from './Components/HtmlTooltip';
 
 // prettier-ignore
 const elements=[
@@ -79,7 +79,10 @@ function RRuleTabPanel(props) {
             {...other}
         >
             {value === index && (
-                <Grid container size={12}>
+                <Grid
+                    container
+                    size={12}
+                >
                     {children}
                 </Grid>
             )}
@@ -89,7 +92,7 @@ function RRuleTabPanel(props) {
 function getError(navState, type, key) {
     const errors = navState.errors?.[type];
     if (errors && Object.prototype.hasOwnProperty.call(errors, key)) {
-        return I18n.t(errors[key].join(""));
+        return I18n.t(errors[key].join(''));
         // return errors[key].join("");
     }
     return null;
@@ -103,39 +106,37 @@ export default function TimeseriesRulesEdit() {
     const validator = TimeseriesValidator();
 
     const timeserie = navState.selectedTimeseriesID
-        ? timeseries.find((item) => item.id === navState.selectedTimeseriesID)
+        ? timeseries.find(item => item.id === navState.selectedTimeseriesID)
         : null;
     const rule =
-        navState.selectedRuleID && timeserie
-            ? timeserie.rules.find((item) => item.id === navState.selectedRuleID)
-            : null;
+        navState.selectedRuleID && timeserie ? timeserie.rules.find(item => item.id === navState.selectedRuleID) : null;
 
     const style = {
         textPadding: {
-            padding: "0px 10px 0px 0px",
+            padding: '0px 10px 0px 0px',
         },
         radioCheckLabel: {
-            fontSize: "12px",
+            fontSize: '12px',
         },
         radioCheckIconSize: {
-            "& .MuiSvgIcon-root": {
+            '& .MuiSvgIcon-root': {
                 fontSize: 18,
             },
         },
         datetimeMargin: {
-            marginRight: "10px",
+            marginRight: '10px',
         },
         fontDatetime: {
-            "& .MuiInputBase-input": {
-                fontSize: "12px", // Hier die Schriftgröße anpassen
+            '& .MuiInputBase-input': {
+                fontSize: '12px', // Hier die Schriftgröße anpassen
             },
-            "& .MuiInputLabel-root": {
-                fontSize: "12px", // Hier die Schriftgröße anpassen
+            '& .MuiInputLabel-root': {
+                fontSize: '12px', // Hier die Schriftgröße anpassen
             },
         },
         tabFlex: {
-            "& .MuiTabs-flexContainer": {
-                flexWrap: "wrap",
+            '& .MuiTabs-flexContainer': {
+                flexWrap: 'wrap',
             },
         },
     };
@@ -143,7 +144,7 @@ export default function TimeseriesRulesEdit() {
     useEffect(() => {
         if (!navState.origRule)
             navStateDispatch({
-                type: "origRule",
+                type: 'origRule',
                 value: rule,
             });
     }, [navState.origRule, rule]);
@@ -153,16 +154,24 @@ export default function TimeseriesRulesEdit() {
     }, [rule]);
     useEffect(() => {
         navStateDispatch({
-            type: "isBack",
+            type: 'isBack',
             value:
-                Object.values(navState.errors?.timeseries || {}).some((val) => val !== null) ||
-                Object.values(navState.errors?.rule || {}).some((val) => val !== null) ||
-                Object.values(navState.errors?.date || {}).some((val) => val !== null),
+                Object.values(navState.errors?.timeseries || {}).some(val => val !== null) ||
+                Object.values(navState.errors?.rule || {}).some(val => val !== null) ||
+                Object.values(navState.errors?.date || {}).some(val => val !== null),
         });
     }, [navState.errors]);
     function renderText(el) {
         return (
-            <Grid item xs={12} sm={12} md={8} lg={4} xl={4} key={el.attr}>
+            <Grid
+                item
+                xs={12}
+                sm={12}
+                md={8}
+                lg={4}
+                xl={4}
+                key={el.attr}
+            >
                 <HtmlTooltip title={I18n.t(el.tooltip)}>
                     <TextField
                         fullWidth
@@ -170,11 +179,11 @@ export default function TimeseriesRulesEdit() {
                         key={el.attr}
                         label={I18n.t(el.title)}
                         variant="standard"
-                        type={el.type || "text"}
-                        onChange={(e) => {
-                            const v = e.target.value === "" ? undefined : e.target.value;
+                        type={el.type || 'text'}
+                        onChange={e => {
+                            const v = e.target.value === '' ? undefined : e.target.value;
                             const action = {
-                                type: "rule-field-change",
+                                type: 'rule-field-change',
                                 tsid: timeserie.id,
                                 rid: rule.id,
                                 field: e.target.name,
@@ -182,12 +191,12 @@ export default function TimeseriesRulesEdit() {
                             };
                             timeseriesDispatch(action);
                         }}
-                        error={getError(navState, "rule", el.attr) !== null}
-                        helperText={getError(navState, "rule", el.attr)}
+                        error={getError(navState, 'rule', el.attr) !== null}
+                        helperText={getError(navState, 'rule', el.attr)}
                         tooltip={I18n.t(el.tooltip)}
                         size="small"
                         margin="dense"
-                        value={rule[el.attr] || ""}
+                        value={rule[el.attr] || ''}
                         inputProps={{ style: { fontSize: 12 } }} // font size of input text
                         InputLabelProps={{ style: { fontSize: 12 } }} // font size of input label
                         sx={{ ...style.textPadding }}
@@ -198,18 +207,26 @@ export default function TimeseriesRulesEdit() {
     }
     function renderSelect(el) {
         return (
-            <Grid item xs={12} sm={12} md={12} lg={12} xl={12} key={el.attr}>
+            <Grid
+                item
+                xs={12}
+                sm={12}
+                md={12}
+                lg={12}
+                xl={12}
+                key={el.attr}
+            >
                 <HtmlTooltip title={I18n.t(el.tooltip)}>
                     <TextField
                         name={el.attr}
                         key={el.attr}
                         label={I18n.t(el.title)}
-                        select={el.type === "select"}
-                        value={rule[el.attr] || ""}
-                        type={el.type || "text"}
-                        onChange={(e) => {
+                        select={el.type === 'select'}
+                        value={rule[el.attr] || ''}
+                        type={el.type || 'text'}
+                        onChange={e => {
                             const action = {
-                                type: "rule-field-change",
+                                type: 'rule-field-change',
                                 tsid: timeserie.id,
                                 rid: rule.id,
                                 field: e.target.name,
@@ -217,14 +234,17 @@ export default function TimeseriesRulesEdit() {
                             };
                             timeseriesDispatch(action);
                         }}
-                        error={getError(navState, "rule", el.attr) !== null}
-                        helperText={getError(navState, "rule", el.attr)}
+                        error={getError(navState, 'rule', el.attr) !== null}
+                        helperText={getError(navState, 'rule', el.attr)}
                         size="small"
                         margin="dense"
                     >
                         {el.childs &&
-                            el.childs.map((option) => (
-                                <MenuItem key={option.value} value={option.value}>
+                            el.childs.map(option => (
+                                <MenuItem
+                                    key={option.value}
+                                    value={option.value}
+                                >
                                     {option.label}
                                 </MenuItem>
                             ))}
@@ -235,21 +255,35 @@ export default function TimeseriesRulesEdit() {
     }
     function renderRadio(el) {
         return (
-            <Grid item xs={12} sm={12} md={12} lg={12} xl={12} key={el.attr}>
+            <Grid
+                item
+                xs={12}
+                sm={12}
+                md={12}
+                lg={12}
+                xl={12}
+                key={el.attr}
+            >
                 <HtmlTooltip title={I18n.t(el.tooltip)}>
                     <Box key={el.attr}>
                         <FormControl component="fieldset">
-                            <FormLabel component="legend" sx={{ ...style.radioCheckLabel }}>
+                            <FormLabel
+                                component="legend"
+                                sx={{ ...style.radioCheckLabel }}
+                            >
                                 {I18n.t(el.title)}
                             </FormLabel>
-                            <Grid container spacing={0}>
+                            <Grid
+                                container
+                                spacing={0}
+                            >
                                 <RadioGroup
                                     row
                                     aria-label={el.attr}
                                     name={el.attr}
-                                    onChange={(e) => {
+                                    onChange={e => {
                                         const action = {
-                                            type: "rule-field-change",
+                                            type: 'rule-field-change',
                                             tsid: timeserie.id,
                                             rid: rule.id,
                                             field: e.target.name,
@@ -259,8 +293,11 @@ export default function TimeseriesRulesEdit() {
                                     }}
                                 >
                                     {el.childs &&
-                                        el.childs.map((option) => (
-                                            <Grid key={el.attr + option.value} item>
+                                        el.childs.map(option => (
+                                            <Grid
+                                                key={el.attr + option.value}
+                                                item
+                                            >
                                                 <FormControlLabel
                                                     checked={rule[el.attr] === option.value}
                                                     value={option.value}
@@ -284,30 +321,51 @@ export default function TimeseriesRulesEdit() {
     }
     function renderCheckbox(el) {
         return (
-            <Grid item xs={12} sm={12} md={12} lg={12} xl={12} key={el.attr}>
+            <Grid
+                item
+                xs={12}
+                sm={12}
+                md={12}
+                lg={12}
+                xl={12}
+                key={el.attr}
+            >
                 <HtmlTooltip title={I18n.t(el.tooltip)}>
-                    <FormControl component="fieldset" key={el.attr}>
-                        <FormLabel component="legend" sx={{ ...style.radioCheckLabel }}>
+                    <FormControl
+                        component="fieldset"
+                        key={el.attr}
+                    >
+                        <FormLabel
+                            component="legend"
+                            sx={{ ...style.radioCheckLabel }}
+                        >
                             {I18n.t(el.title)}
                         </FormLabel>
                         <Grid container>
                             <FormGroup row>
                                 {el.childs &&
-                                    el.childs.map((option) => (
-                                        <Grid key={el.attr + option.value} item xs={3} sm={4} md={3} lg={2}>
+                                    el.childs.map(option => (
+                                        <Grid
+                                            key={el.attr + option.value}
+                                            item
+                                            xs={3}
+                                            sm={4}
+                                            md={3}
+                                            lg={2}
+                                        >
                                             <FormControlLabel
                                                 control={
                                                     <Checkbox
                                                         checked={(rule[el.attr] || []).some(
-                                                            (v) => JSON.stringify(v) === JSON.stringify(option.value),
+                                                            v => JSON.stringify(v) === JSON.stringify(option.value),
                                                         )}
                                                         inputProps={{
-                                                            "data-state": `${el.attr}_${JSON.stringify(option.value)}`,
+                                                            'data-state': `${el.attr}_${JSON.stringify(option.value)}`,
                                                         }}
-                                                        onChange={(e) => {
-                                                            const [field, obj] = e.target.dataset.state.split("_");
+                                                        onChange={e => {
+                                                            const [field, obj] = e.target.dataset.state.split('_');
                                                             const action = {
-                                                                type: "rule-field-change-array",
+                                                                type: 'rule-field-change-array',
                                                                 tsid: timeserie.id,
                                                                 rid: rule.id,
                                                                 field,
@@ -337,31 +395,51 @@ export default function TimeseriesRulesEdit() {
     }
     function renderNewline(el, index) {
         return (
-            <Grid item xs={12} sm={12} md={12} lg={12} xl={12} key={`newline${index}`}>
+            <Grid
+                item
+                xs={12}
+                sm={12}
+                md={12}
+                lg={12}
+                xl={12}
+                key={`newline${index}`}
+            >
                 <Box size={12}></Box>
             </Grid>
         );
     }
     function renderDatetime(el) {
         return (
-            <Grid sx={{ ...style.datetimeMargin }} item xs={5} sm={5} md={5} lg={4} xl={4} key={el.attr}>
+            <Grid
+                sx={{ ...style.datetimeMargin }}
+                item
+                xs={5}
+                sm={5}
+                md={5}
+                lg={4}
+                xl={4}
+                key={el.attr}
+            >
                 <HtmlTooltip title={I18n.t(el.tooltip)}>
                     <Box>
-                        <Stack direction="row" alignItems="flex-end">
+                        <Stack
+                            direction="row"
+                            alignItems="flex-end"
+                        >
                             <DateTimePicker
                                 key={el.attr}
                                 label={I18n.t(el.title)}
                                 sx={{ ...style.fontDatetime }}
-                                views={["year", "month", "day", "hours", "minutes", "seconds"]}
+                                views={['year', 'month', 'day', 'hours', 'minutes', 'seconds']}
                                 ampm={false}
                                 slotProps={{
-                                    textField: { size: "small", variant: "standard" },
+                                    textField: { size: 'small', variant: 'standard' },
                                 }}
                                 formatDensity="dense"
                                 value={(rule[el.attr] && dayjs(rule[el.attr])) || null}
-                                onChange={(value) => {
+                                onChange={value => {
                                     const action = {
-                                        type: "rule-field-change",
+                                        type: 'rule-field-change',
                                         tsid: timeserie.id,
                                         rid: rule.id,
                                         field: el.attr,
@@ -374,7 +452,7 @@ export default function TimeseriesRulesEdit() {
                                 size="small"
                                 onClick={() => {
                                     const action = {
-                                        type: "rule-field-change",
+                                        type: 'rule-field-change',
                                         tsid: timeserie.id,
                                         rid: rule.id,
                                         field: el.attr,
@@ -395,22 +473,22 @@ export default function TimeseriesRulesEdit() {
         setTabValue(newValue);
     };
     function renderFormfield(el, index) {
-        if (el.type === "text") {
+        if (el.type === 'text') {
             return renderText(el);
         }
-        if (el.type === "select") {
+        if (el.type === 'select') {
             return renderSelect(el);
         }
-        if (el.type === "radio") {
+        if (el.type === 'radio') {
             return renderRadio(el);
         }
-        if (el.type === "checkbox") {
+        if (el.type === 'checkbox') {
             return renderCheckbox(el);
         }
-        if (el.type === "datetime-local") {
+        if (el.type === 'datetime-local') {
             return renderDatetime(el);
         }
-        if (el.type === "newline") {
+        if (el.type === 'newline') {
             return renderNewline(el, index);
         }
         return renderText(el);
@@ -418,23 +496,48 @@ export default function TimeseriesRulesEdit() {
     return (
         <Box>
             <Box>
-                <MyHeader text={rule.mode === "rule-add" ? "tsEditRuleAdd" : "tsEditRuleDel"} />
-                <Tabs value={tabValue} onChange={handleTabChange} sx={{ ...style.tabFlex }}>
-                    <Tab label={I18n.t("tsBase")} key="base"></Tab>
-                    <Tab label={I18n.t("tsExt1")} key="ext1"></Tab>
-                    <Tab label={I18n.t("tsExt2")} key="ext2"></Tab>
+                <MyHeader text={rule.mode === 'rule-add' ? 'tsEditRuleAdd' : 'tsEditRuleDel'} />
+                <Tabs
+                    value={tabValue}
+                    onChange={handleTabChange}
+                    sx={{ ...style.tabFlex }}
+                >
+                    <Tab
+                        label={I18n.t('tsBase')}
+                        key="base"
+                    ></Tab>
+                    <Tab
+                        label={I18n.t('tsExt1')}
+                        key="ext1"
+                    ></Tab>
+                    <Tab
+                        label={I18n.t('tsExt2')}
+                        key="ext2"
+                    ></Tab>
                 </Tabs>
             </Box>
             <Box>
-                <Box>{elements.filter((el) => el.tab === "main").map((el, index) => renderFormfield(el, index))}</Box>
-                <RRuleTabPanel value={tabValue} key="tab0" index={0}>
-                    {elements.filter((el) => el.tab === "base").map((el, index) => renderFormfield(el, index))}
+                <Box>{elements.filter(el => el.tab === 'main').map((el, index) => renderFormfield(el, index))}</Box>
+                <RRuleTabPanel
+                    value={tabValue}
+                    key="tab0"
+                    index={0}
+                >
+                    {elements.filter(el => el.tab === 'base').map((el, index) => renderFormfield(el, index))}
                 </RRuleTabPanel>
-                <RRuleTabPanel value={tabValue} key="tab1" index={1}>
-                    {elements.filter((el) => el.tab === "ext1").map((el, index) => renderFormfield(el, index))}
+                <RRuleTabPanel
+                    value={tabValue}
+                    key="tab1"
+                    index={1}
+                >
+                    {elements.filter(el => el.tab === 'ext1').map((el, index) => renderFormfield(el, index))}
                 </RRuleTabPanel>
-                <RRuleTabPanel value={tabValue} key="tab2" index={2}>
-                    {elements.filter((el) => el.tab === "ext2").map((el, index) => renderFormfield(el, index))}
+                <RRuleTabPanel
+                    value={tabValue}
+                    key="tab2"
+                    index={2}
+                >
+                    {elements.filter(el => el.tab === 'ext2').map((el, index) => renderFormfield(el, index))}
                 </RRuleTabPanel>
             </Box>
         </Box>

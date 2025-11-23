@@ -1,13 +1,13 @@
-import { useContext } from "react";
-import { Add as AddIcon, Delete as DelIcon, Edit as EditIcon } from "@mui/icons-material";
+import { useContext } from 'react';
+import { Add as AddIcon, Delete as DelIcon, Edit as EditIcon } from '@mui/icons-material';
 // import PropTypes from 'prop-types';
 
-import { Button, Stack, Table, TableHead, TableRow, TableCell, TableBody, IconButton, Grid } from "@mui/material";
+import { Button, Stack, Table, TableHead, TableRow, TableCell, TableBody, IconButton, Grid } from '@mui/material';
 
-import { I18n } from "@iobroker/adapter-react-v5";
-import { TimeseriesContext, useTimeseriesDispatch, timeserieTemplate } from "./TimeseriesContext";
-import TimeseriesEdit from "./TimeseriesEdit";
-import { NavStateContext, useNavStateDispatch } from "./TimeseriesNavContext";
+import { I18n } from '@iobroker/adapter-react-v5';
+import { TimeseriesContext, useTimeseriesDispatch, timeserieTemplate } from './TimeseriesContext';
+import TimeseriesEdit from './TimeseriesEdit';
+import { NavStateContext, useNavStateDispatch } from './TimeseriesNavContext';
 
 export default function TimeseriesList({ sx }) {
     const timeseries = useContext(TimeseriesContext);
@@ -17,13 +17,13 @@ export default function TimeseriesList({ sx }) {
 
     const style = {
         styleTableCellWide: {
-            padding: "4px",
-            width: "90%",
+            padding: '4px',
+            width: '90%',
             ...sx,
         },
         styleTableCellSmall: {
-            padding: "4px",
-            width: "10%",
+            padding: '4px',
+            width: '10%',
             ...sx,
         },
     };
@@ -34,46 +34,61 @@ export default function TimeseriesList({ sx }) {
     function renderTimeseriesList() {
         return (
             <Grid container>
-                <Grid item xs={12}>
-                    <Grid item xs={12} sm={10} md={8} lg={6}>
+                <Grid
+                    item
+                    xs={12}
+                >
+                    <Grid
+                        item
+                        xs={12}
+                        sm={10}
+                        md={8}
+                        lg={6}
+                    >
                         <Button
                             variant="contained"
                             startIcon={<AddIcon />}
                             onClick={() => {
                                 const tsitem = timeserieTemplate(timeseries);
                                 timeseriesDispatch({
-                                    type: "timeseries-add",
+                                    type: 'timeseries-add',
                                     item: tsitem,
                                 });
                                 navStateDispatch({
-                                    type: "isTimeserieNew",
+                                    type: 'isTimeserieNew',
                                     value: true,
                                 });
                                 navStateDispatch({
-                                    type: "selectedTimeseriesID",
+                                    type: 'selectedTimeseriesID',
                                     value: tsitem.id,
                                 });
                                 navStateDispatch({
-                                    type: "isTimeserieEditing",
+                                    type: 'isTimeserieEditing',
                                     value: true,
                                 });
                             }}
                         >
-                            {I18n.t("tsTimeserieAdd")}
+                            {I18n.t('tsTimeserieAdd')}
                         </Button>
                     </Grid>
                 </Grid>
-                <Grid item xs={12} sm={10} md={8} lg={6}>
+                <Grid
+                    item
+                    xs={12}
+                    sm={10}
+                    md={8}
+                    lg={6}
+                >
                     <Table>
                         <TableHead>
                             <TableRow>
-                                <TableCell sx={style.styleTableCellWide}>{I18n.t("tsTSName")}</TableCell>
-                                <TableCell sx={style.styleTableCellSmall}>{I18n.t("tsTSActions")}</TableCell>
+                                <TableCell sx={style.styleTableCellWide}>{I18n.t('tsTSName')}</TableCell>
+                                <TableCell sx={style.styleTableCellSmall}>{I18n.t('tsTSActions')}</TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
                             {timeseries.length > 0 &&
-                                timeseries.map((item) => (
+                                timeseries.map(item => (
                                     <TableRow key={item.id}>
                                         <TableCell sx={style.styleTableCellWide}>{item.tsname}</TableCell>
                                         <TableCell sx={style.styleTableCellSmall}>
@@ -81,15 +96,15 @@ export default function TimeseriesList({ sx }) {
                                                 <IconButton
                                                     onClick={() => {
                                                         navStateDispatch({
-                                                            type: "isTimeserieNew",
+                                                            type: 'isTimeserieNew',
                                                             value: false,
                                                         });
                                                         navStateDispatch({
-                                                            type: "selectedTimeseriesID",
+                                                            type: 'selectedTimeseriesID',
                                                             value: item.id,
                                                         });
                                                         navStateDispatch({
-                                                            type: "isTimeserieEditing",
+                                                            type: 'isTimeserieEditing',
                                                             value: true,
                                                         });
                                                     }}
@@ -99,7 +114,7 @@ export default function TimeseriesList({ sx }) {
                                                 <IconButton
                                                     onClick={() => {
                                                         timeseriesDispatch({
-                                                            type: "timeseries-delete",
+                                                            type: 'timeseries-delete',
                                                             id: item.id,
                                                         });
                                                     }}
@@ -112,8 +127,8 @@ export default function TimeseriesList({ sx }) {
                                 ))}
                             {timeseries.length === 0 && (
                                 <TableRow>
-                                    {" "}
-                                    <TableCell sx={style.styleTableCellWide}>{I18n.t("tsTableListEmpty")}</TableCell>
+                                    {' '}
+                                    <TableCell sx={style.styleTableCellWide}>{I18n.t('tsTableListEmpty')}</TableCell>
                                     <TableCell sx={style.styleTableCellSmall}></TableCell>
                                 </TableRow>
                             )}

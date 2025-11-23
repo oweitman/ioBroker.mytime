@@ -106,7 +106,7 @@
                             "variant": "outlined",
                             "showProcess": true,
                             "disabled": "!originalData.countdowns.some(el=>el.name==data.name)||!globalData.countdowns.filter((el,idx)=>el.name==data.name&&idx!=arrayIndex).length==0;"
-                          }
+                        }
                     ]
                 }
             }
@@ -129,6 +129,8 @@
                     "lg": 10,
                     "xl": 10,
                     "style": { "width": "100%" },
+                    "bundlerType": "module",
+                    "urlxx": "http://localhost:4173/customComponents.js",
                     "url": "custom/customComponents.js",
                     "name": "ConfigCustomMytimeSet/Components/TimeseriesConfig"
                 }

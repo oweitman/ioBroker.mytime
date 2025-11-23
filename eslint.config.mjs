@@ -23,6 +23,8 @@ export default [
             'build',
             'admin/build',
             'src-admin/build',
+            'src-admin/dist',
+            'src-admin/.__mf__temp',
             'admin/custom',
             'admin/words.js',
             'admin/admin.d.ts',

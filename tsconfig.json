@@ -11,6 +11,7 @@
         // "module": "commonjs",
         "module": "es2022",
         "moduleResolution": "node",
+        "ignoreDeprecations": "6.0",
         // this is necessary for the automatic typing of the adapter config
         "resolveJsonModule": true,
 
@@ -27,5 +28,6 @@
         "target": "es2022",
         "sourceMap": true
     },
-    "include": ["lib/**/*.js", "lib/**/*.d.ts", "main.js"]
+    "include": ["lib/**/*.js", "lib/**/*.d.ts", "main.js"],
+    "exclude": ["lib\rrule.js"]
 }

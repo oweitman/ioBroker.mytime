@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { LocalizationProvider } from "@mui/x-date-pickers";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 
-import { ThemeProvider } from "@mui/material/styles";
+// import { ThemeProvider } from '@mui/material/styles';
 
 /* import {
     fr as frLocale,
@@ -20,13 +20,13 @@ import { ThemeProvider } from "@mui/material/styles";
     nl as nlLocale,
 } from "date-fns/locale"; */
 
-import { Theme } from "@iobroker/adapter-react-v5";
-import { ConfigGeneric } from "@iobroker/json-config";
+import { Theme } from '@iobroker/adapter-react-v5';
+import { ConfigGeneric } from '@iobroker/json-config';
 
-import "./index.css";
-import TimeseriesList from "./TimeseriesList";
-import { TimeseriesProvider } from "./TimeseriesContext";
-import { NavStateProvider } from "./TimeseriesNavContext";
+import './index.css';
+import TimeseriesList from './TimeseriesList';
+import { TimeseriesProvider } from './TimeseriesContext';
+import { NavStateProvider } from './TimeseriesNavContext';
 
 /* export const localeMap = {
     en: enLocale,
@@ -64,31 +64,34 @@ class TimeseriesConfig extends ConfigGeneric {
 
     renderItem() {
         return (
-            <ThemeProvider theme={this.state.theme}>
-                <LocalizationProvider dateAdapter={AdapterDayjs}>
-                    <TimeseriesProvider initialTimeseries={this.props.data} onChange={this.props.onChange}>
-                        <NavStateProvider
-                            initialNavState={{
-                                isTimeserieSelected: null,
-                                isRuleEditing: null,
-                                isDateEditing: null,
-                                isTimeserieNew: null,
-                                isRuleNew: null,
-                                selectedTimeseriesID: null,
-                                selectedRuleID: null,
-                                origTimeserie: null,
-                                origRule: null,
-                                errors: null,
-                                isBack: null,
-                            }}
-                        >
-                            <div style={{ margin: "10px 10px", width: "100%" }}>
-                                <TimeseriesList />
-                            </div>
-                        </NavStateProvider>
-                    </TimeseriesProvider>
-                </LocalizationProvider>
-            </ThemeProvider>
+            // <ThemeProvider theme={this.state.theme}>
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+                <TimeseriesProvider
+                    initialTimeseries={this.props.data}
+                    onChange={this.props.onChange}
+                >
+                    <NavStateProvider
+                        initialNavState={{
+                            isTimeserieSelected: null,
+                            isRuleEditing: null,
+                            isDateEditing: null,
+                            isTimeserieNew: null,
+                            isRuleNew: null,
+                            selectedTimeseriesID: null,
+                            selectedRuleID: null,
+                            origTimeserie: null,
+                            origRule: null,
+                            errors: null,
+                            isBack: null,
+                        }}
+                    >
+                        <div style={{ margin: '10px 10px', width: '100%' }}>
+                            <TimeseriesList />
+                        </div>
+                    </NavStateProvider>
+                </TimeseriesProvider>
+            </LocalizationProvider>
+            // </ThemeProvider>
         );
     }
 }

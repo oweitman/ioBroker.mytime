@@ -1,5 +1,5 @@
 // this file used only for simulation and not used in end build
-
+import React from 'react';
 // eslint-disable-next-line @typescript-eslint/consistent-type-imports
 import { useTheme, ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
 
@@ -42,8 +42,8 @@ import zhCNLocal from './i18n/zh-cn.json';
 
 const styles = {
     app: theme => ({
-        backgroundColor: theme.palette.background.default,
-        color: theme.palette.text.primary,
+        //backgroundColor: theme.palette.background.default,
+        //color: theme.palette.text.primary,
         height: '100%',
     }),
     item: {
@@ -120,7 +120,7 @@ const DrawerHeader = ({ children }) => {
         </Box>
     );
 };
-function PersistentDrawerLeft(props) {
+function PersistentDrawerLeft() {
     const theme = useTheme();
     const [open, setOpen] = React.useState(true);
 
@@ -131,91 +131,88 @@ function PersistentDrawerLeft(props) {
     const handleDrawerClose = () => {
         setOpen(false);
     };
-    let data = {
-        countdowns: [
-            {
-                name: 'aaa',
-                days: '1',
-                hours: 0,
-                minutes: 0,
-                seconds: 0,
-                behavior: 'timer',
-            },
-        ],
-        timeseries: [
-            {
-                id: 1,
-                tsname: 'timeseries1',
-                tsduration: '1',
-                rules: [
-                    {
-                        id: 1,
-                        name: 'ts1,rule1',
-                        mode: 'rule-add',
-                        freq: 3,
-                        interval: 1,
-                        count: 10,
-                    },
-                    {
-                        id: 2,
-                        name: 'ts1,rule2',
-                        mode: 'rule-del',
-                    },
-                    {
-                        id: 3,
-                        name: 'ts1,rule3',
-                        mode: 'rule-add',
-                        freq: 4,
-                        interval: 1,
-                        count: 10,
-                    },
-                    {
-                        id: 4,
-                        name: 'ts1,rule4',
-                        mode: 'date-add',
-                        dates: [
-                            '2024-11-02T14:03:37.542Z',
-                            '2024-11-03T14:03:37.542Z',
-                            '2024-11-04T14:03:37.542Z',
-                            '2024-11-05T14:03:37.542Z',
-                            '2024-11-06T14:03:37.542Z',
-                            '2024-11-07T14:03:37.542Z',
-                            '2024-11-08T14:03:37.542Z',
-                            '2024-11-09T14:03:37.542Z',
-                            '2024-11-10T14:03:37.542Z',
-                        ],
-                    },
-                ],
-            },
-            {
-                id: 2,
-                tsname: 'timeseries2',
-                tsduration: '2',
-                rules: [
-                    {
-                        id: 2,
-                        name: 'ts2,rule1',
-                        mode: 'rule-add',
-                        dtstart: '2024-01-01T00:00:00.000Z',
-                        until: '2025-01-02T00:00:00.000Z',
-                        freq: 4,
-                        count: 10,
-                        interval: 1,
-                    },
-                ],
-            },
-            {
-                id: 3,
-                tsname: 'timeseries3',
-                tsduration: '3',
-                rules: [],
-            },
-        ],
-    };
-
-    let state = {
-        data: JSON.parse(JSON.stringify(data)), // deep copy of data,
-        originalData: JSON.parse(JSON.stringify(data)), // deep copy of data,
+    const state = {
+        data: {
+            countdowns: [
+                {
+                    name: 'aaa',
+                    days: '1',
+                    hours: 0,
+                    minutes: 0,
+                    seconds: 0,
+                    behavior: 'timer',
+                },
+            ],
+            timeseries: [
+                {
+                    id: 1,
+                    tsname: 'timeseries1',
+                    tsduration: '1',
+                    rules: [
+                        {
+                            id: 1,
+                            name: 'ts1,rule1',
+                            mode: 'rule-add',
+                            freq: 3,
+                            interval: 1,
+                            count: 10,
+                        },
+                        {
+                            id: 2,
+                            name: 'ts1,rule2',
+                            mode: 'rule-del',
+                        },
+                        {
+                            id: 3,
+                            name: 'ts1,rule3',
+                            mode: 'rule-add',
+                            freq: 4,
+                            interval: 1,
+                            count: 10,
+                        },
+                        {
+                            id: 4,
+                            name: 'ts1,rule4',
+                            mode: 'date-add',
+                            dates: [
+                                '2024-11-02T14:03:37.542Z',
+                                '2024-11-03T14:03:37.542Z',
+                                '2024-11-04T14:03:37.542Z',
+                                '2024-11-05T14:03:37.542Z',
+                                '2024-11-06T14:03:37.542Z',
+                                '2024-11-07T14:03:37.542Z',
+                                '2024-11-08T14:03:37.542Z',
+                                '2024-11-09T14:03:37.542Z',
+                                '2024-11-10T14:03:37.542Z',
+                            ],
+                        },
+                    ],
+                },
+                {
+                    id: 2,
+                    tsname: 'timeseries2',
+                    tsduration: '2',
+                    rules: [
+                        {
+                            id: 2,
+                            name: 'ts2,rule1',
+                            mode: 'rule-add',
+                            dtstart: '2024-01-01T00:00:00.000Z',
+                            until: '2025-01-02T00:00:00.000Z',
+                            freq: 4,
+                            count: 10,
+                            interval: 1,
+                        },
+                    ],
+                },
+                {
+                    id: 3,
+                    tsname: 'timeseries3',
+                    tsduration: '3',
+                    rules: [],
+                },
+            ],
+        },
         /*                  theme: this.createTheme("dark"),  */
         theme,
         themeName: 'dark',
@@ -295,72 +292,54 @@ function PersistentDrawerLeft(props) {
             <Main open={open}>
                 <DrawerHeader>{null}</DrawerHeader>
                 <StyledEngineProvider injectFirst>
-                    {/* <ThemeProvider theme={state.theme}> */}
-                    <div
-                        style={{
-                            width: '100%',
-                            // backgroundColor: state.themeType ? '#000' : '#FFF',
-                            // color: state.themeType ? '#FFF' : '#000',
-                        }}
-                    >
-                        <Placeholder text="header1" />
-                        <div style={{ width: '100%' }}>
-                            <TimeseriesConfig
-                                socket={{}}
-                                data={state.data}
-                                originalData={state.originalData}
-                                changed={JSON.stringify(state.originalData) !== JSON.stringify(state.data)}
-                                common={{}}
-                                schema={{
-                                    url: '',
-                                    i18n: true,
-                                    name: 'ConfigCustomMytimeSet/Components/TimeseriesConfig',
-                                    type: 'custom',
-                                }}
-                                alive
-                                theme={props.state.theme}
-                                themeType={props.state.themeType || 'light'}
-                                themeName={props.state.themeName || props.state.themeType || 'light'}
-                                attr="myCustomAttribute"
-                                onError={() => {}}
-                                instance={0}
-                                onChange={data => (state.data = data)}
-                                adapterName="mytime"
-                                oContext={{
-                                    adapterName: 'mytime',
-                                    socket: props.socket,
-                                    instance: 0,
-                                    themeType: props.state.theme.palette.mode,
-                                    isFloatComma: true,
-                                    dateFormat: '',
-                                    forceUpdate: () => {},
-                                    systemConfig: {},
-                                    theme: props.state.theme,
-                                    _themeName: props.state.themeName,
-                                    onCommandRunning: _commandRunning => {},
-                                }}
-                            />
-                            {/*   <TimeseriesConfig
+                    <ThemeProvider theme={state.theme}>
+                        <div
+                            style={{
+                                width: '100%',
+                                // backgroundColor: state.themeType ? '#000' : '#FFF',
+                                // color: state.themeType ? '#FFF' : '#000',
+                            }}
+                        >
+                            <Placeholder text="header1" />
+                            <div style={{ width: '100%' }}>
+                                <TimeseriesConfig
                                     alive
-
+                                    socket={{}}
                                     theme={state.theme}
                                     themeType={state.themeType || 'light'}
                                     themeName={state.themeName || state.themeType || 'light'}
                                     attr="myCustomAttribute"
-
+                                    data={state.data}
                                     onError={() => {}}
                                     instance={0}
-
+                                    schema={{
+                                        url: '',
+                                        i18n: true,
+                                        name: 'ConfigCustomMytimeSet/Components/TimeseriesConfig',
+                                        type: 'custom',
+                                    }}
                                     onChange={data => {
                                         console.log({ data });
                                     }}
                                     adapterName="mytime"
-
-
-                                /> */}
+                                    /* common={this.common} */
+                                    oContext={{
+                                        adapterName: 'mytime',
+                                        socket: this.socket,
+                                        instance: 0,
+                                        themeType: this.state.theme.palette.mode,
+                                        isFloatComma: true,
+                                        dateFormat: '',
+                                        forceUpdate: () => {},
+                                        systemConfig: {},
+                                        theme: this.state.theme,
+                                        _themeName: this.state.themeName,
+                                        onCommandRunning: _commandRunning => {},
+                                    }}
+                                />
+                            </div>
                         </div>
-                    </div>
-                    {/* </ThemeProvider> */}
+                    </ThemeProvider>
                 </StyledEngineProvider>
             </Main>
         </Box>
@@ -374,11 +353,9 @@ class App extends GenericApp {
 
         this.state = {
             ...this.state,
-            data: 'test',
-            originalData: 'test',
-            themeName: 'dark',
-            theme: this.createTheme('dark'),
-            setState: this.setState.bind(this),
+            data: { myCustomAttribute: 'red' },
+            originalData: { myCustomAttribute: 'red' },
+            // theme: this.createTheme(),
         };
         const translations = {
             en: enLocal,
@@ -404,28 +381,55 @@ class App extends GenericApp {
             return (
                 <StyledEngineProvider injectFirst>
                     <ThemeProvider theme={this.state.theme}>
-                        <Loader theme={this.state.themeType} />
+                        <Loader themeType={this.state.themeType} />
                     </ThemeProvider>
                 </StyledEngineProvider>
             );
         }
-        //return <>test</>;
 
         return (
             <StyledEngineProvider injectFirst>
                 <ThemeProvider theme={this.state.theme}>
-                    <PersistentDrawerLeft
-                        sx={styles.app}
-                        socket={this.socket}
-                        state={this.state}
-                    />
-                    {this.renderError()}
-                    {this.renderToast()}
-                    {this.renderSaveCloseButtons()}
-                    {this.renderAlertSnackbar()}
+                    <Box sx={styles.app}>
+                        <div style={styles.item}>
+                            <PersistentDrawerLeft
+                                {...this.props}
+                                oContext={{
+                                    adapterName: 'mytime',
+                                    socket: this.socket,
+                                    instance: 0,
+                                    themeType: this.state.theme.palette.mode,
+                                    isFloatComma: true,
+                                    dateFormat: '',
+                                    forceUpdate: () => {},
+                                    systemConfig: {},
+                                    theme: this.state.theme,
+                                    _themeName: this.state.themeName,
+                                    onCommandRunning: _commandRunning => {},
+                                }}
+                                alive
+                                changed={JSON.stringify(this.state.originalData) !== JSON.stringify(this.state.data)}
+                                themeName={this.state.theme.palette.mode}
+                                common={{}}
+                                attr="myCustomAttribute"
+                                data={this.state.data}
+                                originalData={this.state.originalData}
+                                onError={() => {}}
+                                schema={{
+                                    url: '',
+                                    i18n: true,
+                                    name: 'ConfigCustomMytimeSet/Components/TimeseriesConfig',
+                                    type: 'custom',
+                                }}
+                                onChange={data => this.setState({ data: data })}
+                            />
+                        </div>
+                    </Box>
                 </ThemeProvider>
             </StyledEngineProvider>
         );
+
+        return <PersistentDrawerLeft> </PersistentDrawerLeft>;
     }
 }
 

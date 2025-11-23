@@ -1,4 +1,4 @@
-/* eslint-disable jsdoc/require-jsdoc */
+//* eslint-disable jsdoc/require-jsdoc */
 import Worker from 'web-worker';
 
 export default class WebWorker {
