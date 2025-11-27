@@ -72,7 +72,8 @@ vis.binds['mytime'] = {
 
             function onChange(e /* , newVal, oldVal */) {
                 var idParts = e.type.split('.');
-                if (idParts[idParts.length - 2] != 'action' && idParts[idParts.length - 2] != 'timer') {
+                var dp = idParts[idParts.length - 2];
+                if (dp != 'action' && dp != 'timer' && dp != 'start' && dp != 'end') {
                     return;
                 }
                 vis.binds['mytime'].countdownnixie.setState(
@@ -375,7 +376,8 @@ vis.binds['mytime'] = {
 
             function onChange(e /* , newVal, oldVal */) {
                 var idParts = e.type.split('.');
-                if (idParts[idParts.length - 2] != 'action' && idParts[idParts.length - 2] != 'timer') {
+                var dp = idParts[idParts.length - 2];
+                if (dp != 'action' && dp != 'timer' && dp != 'start' && dp != 'end') {
                     return;
                 }
                 vis.binds['mytime'].countdownflip.setState(widgetID, data, vis.binds['mytime'].countdownflip.setState);
@@ -532,7 +534,8 @@ vis.binds['mytime'] = {
 
             function onChange(e /* , newVal, oldVal */) {
                 var idParts = e.type.split('.');
-                if (idParts[idParts.length - 2] != 'action' && idParts[idParts.length - 2] != 'timer') {
+                var dp = idParts[idParts.length - 2];
+                if (dp != 'action' && dp != 'timer' && dp != 'start' && dp != 'end') {
                     return;
                 }
                 vis.binds['mytime'].countdowncircle.setState(
@@ -829,7 +832,8 @@ vis.binds['mytime'] = {
 
             function onChange(e /* , newVal, oldVal */) {
                 var idParts = e.type.split('.');
-                if (idParts[idParts.length - 2] != 'action' && idParts[idParts.length - 2] != 'timer') {
+                var dp = idParts[idParts.length - 2];
+                if (dp != 'action' && dp != 'timer' && dp != 'start' && dp != 'end') {
                     return;
                 }
                 vis.binds['mytime'].countdownplain.setState(widgetID, data);

@@ -2,8 +2,12 @@
     "compilerOptions": {
         "composite": true,
         "module": "ESNext",
-        "moduleResolution": "Node",
-        "allowSyntheticDefaultImports": true
+        "moduleResolution": "node16", // geändert von "Node"
+        "allowSyntheticDefaultImports": true,
+        "resolveJsonModule": true, // <-- hinzugefügt
+        "allowImportingTsExtensions": true, // <-- hinzugefügt
+        "rewriteRelativeImportExtensions": true, // <-- hinzugefügt
+        "ignoreDeprecations": "6.0" // <-- optional, unterdrückt die node10-Warnung
     },
     "include": ["vite.config.ts", "module-federation/vite-importmap-shim.ts"]
 }

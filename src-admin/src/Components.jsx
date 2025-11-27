@@ -1,6 +1,4 @@
-import * as React from 'react';
+// @ts-ignore: module has no TypeScript declarations
 import TimeseriesConfig from './TimeseriesConfig';
 
-export default {
-    TimeseriesConfig,
-};
+export default { TimeseriesConfig };

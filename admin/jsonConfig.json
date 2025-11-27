@@ -88,7 +88,8 @@
                             "title": "cdBehavior",
                             "options": [
                                 { "label": "cdBehaviourSetTimer", "value": "timer" },
-                                { "label": "cdBehaviourSetReset", "value": "zero" }
+                                { "label": "cdBehaviourSetReset", "value": "zero" },
+                                { "label": "cdBehaviourSetRerun", "value": "rerun" }
                             ],
                             "filter": true,
                             "sort": true,
@@ -130,7 +131,6 @@
                     "xl": 10,
                     "style": { "width": "100%" },
                     "bundlerType": "module",
-                    "urlxx": "http://localhost:4173/customComponents.js",
                     "url": "custom/customComponents.js",
                     "name": "ConfigCustomMytimeSet/Components/TimeseriesConfig"
                 }

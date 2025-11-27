@@ -1,226 +1,226 @@
 {
-  "common": {
-    "name": "mytime",
-    "version": "2.0.1",
-    "titleLang": {
-      "en": "MyTime",
-      "de": "MyTime",
-      "ru": "MyTime",
-      "pt": "MyTime",
-      "nl": "MyTime",
-      "fr": "MyTime",
-      "it": "MyTime",
-      "es": "MyTime",
-      "pl": "MyTime",
-      "zh-cn": "MyTime",
-      "uk": "MyTime"
+    "common": {
+        "name": "mytime",
+        "version": "2.0.1",
+        "titleLang": {
+            "en": "MyTime",
+            "de": "MyTime",
+            "ru": "MyTime",
+            "pt": "MyTime",
+            "nl": "MyTime",
+            "fr": "MyTime",
+            "it": "MyTime",
+            "es": "MyTime",
+            "pl": "MyTime",
+            "zh-cn": "MyTime",
+            "uk": "MyTime"
+        },
+        "desc": {
+            "en": "This adapter handle Time (eg: countdown,etc.)",
+            "de": "This adapter handle Time (eg: countdown,etc.)",
+            "ru": "This adapter handle Time (eg: countdown,etc.)",
+            "pt": "This adapter handle Time (eg: countdown,etc.)",
+            "nl": "This adapter handle Time (eg: countdown,etc.)",
+            "fr": "This adapter handle Time (eg: countdown,etc.)",
+            "it": "This adapter handle Time (eg: countdown,etc.)",
+            "es": "This adapter handle Time (eg: countdown,etc.)",
+            "pl": "This adapter handle Time (eg: countdown,etc.)",
+            "zh-cn": "This adapter handle Time (eg: countdown,etc.)",
+            "uk": "Цей адаптер обробляє час (наприклад, зворотній відлік тощо)"
+        },
+        "authors": [
+            "oweitman <oweitman@gmx.de>"
+        ],
+        "news": {
+            "2.0.1": {
+                "en": "major release: make nixie clock responsive. the users have to adjust the \n  font-size of the widget to get the old size.\n  if you want the old size try it with 100px font-size.",
+                "de": "Hauptversion: Nixie-Uhr reaktionsfähig machen. Die Benutzer müssen die\n  font-size des Widgets, um die alte Größe zu erhalten.\n  wenn Sie die alte Größe wollen, versuchen Sie es mit 100px font-size.",
+                "ru": "Основной релиз: сделайте часы nixie отзывчивыми. пользователям придется настроить\n  font-size виджета, чтобы получить старый размер.\n  Если вам нужен старый размер, попробуйте сделать это с font-size 100px.",
+                "pt": "versão principal: tornar o relógio nixie responsivo. os utilizadores têm de ajustar o\n  tamanho da fonte do widget para obter o tamanho antigo.\n  se quiser o tamanho antigo, experimente-o com 100px font-size.",
+                "nl": "grote release: nixieklok responsief maken. de gebruikers moeten de\n  font-size van de widget om de oude grootte te krijgen.\n  Als je de oude grootte wilt, probeer het dan met 100px font-size.",
+                "fr": "version majeure : rendre l'horloge nixie réactive. les utilisateurs doivent ajuster la taille de l'horloge nixie.\n  font-size du widget pour obtenir l'ancienne taille.\n  si vous voulez l'ancienne taille, essayez avec 100px de taille de police.",
+                "it": "rilascio importante: rendere reattivo l'orologio nixie. gli utenti devono regolare il\n  font-size del widget per ottenere la vecchia dimensione.\n  se si desidera la vecchia dimensione, provare con 100px font-size.",
+                "es": "versión principal: hacer que el reloj nixie responda. los usuarios tienen que ajustar el\n  font-size del widget para obtener el tamaño antiguo.\n  si quieres el tamaño antiguo prueba con font-size de 100px.",
+                "pl": "główne wydanie: uczynienie zegara nixie responsywnym. użytkownicy muszą dostosować\n  font-size widżetu, aby uzyskać stary rozmiar.\n  Jeśli chcesz mieć stary rozmiar, spróbuj użyć rozmiaru czcionki 100px.",
+                "uk": "Основний реліз: зроблено годинник nixie більш адаптивним. Користувачам доводиться налаштовувати\n  font-size віджету, щоб отримати старий розмір.\n  якщо вам потрібен старий розмір, спробуйте з розміром шрифту 100px.",
+                "zh-cn": "major release: make nixie clock responsive. the users have to adjust the \n  font-size of the widget to get the old size.\n  if you want the old size try it with 100px font-size."
+            },
+            "1.4.7": {
+                "en": "remove types/request\nimprove documentation format",
+                "de": "typen/request entfernen\nverbesserung des dokumentationsformats",
+                "ru": "удалить типы/запрос\nулучшение формата документации",
+                "pt": "remover tipos/pedidos\nmelhorar o formato da documentação",
+                "nl": "type/verzoek verwijderen\nverbetering van het documentatieformaat",
+                "fr": "supprimer les types/demandes\naméliorer le format de la documentation",
+                "it": "rimuovere i tipi / richiesta\nmigliorare il formato della documentazione",
+                "es": "eliminar tipos/requisitos\nmejorar el formato de documentación",
+                "pl": "usunąć typy / żądanie\npoprawić format dokumentacji",
+                "uk": "видалення типів / пошук\nформат документації",
+                "zh-cn": "删除类型/请求\n改进文件格式"
+            },
+            "1.4.6": {
+                "en": "fix wrong calc of datapoints in some cases",
+                "de": "fehlerbehebung von datenpunkten in einigen fällen",
+                "ru": "исправить неправильный кальций точек данных в некоторых случаях",
+                "pt": "corrigir o cálculo errado de pontos de dados em alguns casos",
+                "nl": "vast te stellen verkeerde calc van datapunten in sommige gevallen",
+                "fr": "corriger une mauvaise calc des points de données dans certains cas",
+                "it": "correggere il calcolo sbagliato dei datapoint in alcuni casi",
+                "es": "corregir el cálculo incorrecto de los puntos de datos en algunos casos",
+                "pl": "naprawić błędne kalc punktów danych w niektórych przypadkach",
+                "uk": "зафіксувати неправильне калібрування точок даних в деяких випадках",
+                "zh-cn": "在某些情况下修补错误的数据点计算"
+            },
+            "1.4.5": {
+                "en": "fix widget reverse countdown plain",
+                "de": "widget reverse countdown ebene",
+                "ru": "исправить виджет reverse countdown plain",
+                "pt": "corrigir a contagem regressiva do elemento",
+                "nl": "fix widget reverse countdown gewoon",
+                "fr": "correction du compte à rebours du widget",
+                "it": "correzione widget conto alla rovescia inversa",
+                "es": "arreglar widget reverso cuenta regresiva plano",
+                "pl": "fix widget reverse countdown plain",
+                "uk": "виправити віджет зворотний відлік plain",
+                "zh-cn": "修正部件倒数倒数平原"
+            },
+            "1.4.4": {
+                "en": "fix stopbeaviour\nfix state handling\nimprove validator vor name and setdp in admin",
+                "de": "stoppbeaviour\nzustandsbehandlung\nvalidator vor name und setdp in admin",
+                "ru": "фиксировать стоп-авиор\nфиксировать состояние\nулучшить имя валидатора и setdp в admin",
+                "pt": "corrigir o comportamento de paragem\ncorrigir o tratamento do estado\nmelhorar o nome do vor validador e setdp no administrador",
+                "nl": "fix stopbeaviour\nfix state handling\nverbeteren validator vor naam en setdp in admin",
+                "fr": "fixer stopbeaviour\nréparer la manipulation de l'état\naméliorer validator vor nom et setdp dans admin",
+                "it": "fix stopbeaviour\ncorretto gestione dello stato\nmigliorare il nome del vor del validatore e setdp in admin",
+                "es": "reparación stopbeaviour\ncorrección de estado\nmejorar el nombre del vor del validador y configurar en admin",
+                "pl": "naprawić stopbeaviour\nnaprawić obsługę państwa\npoprawić walidator vor nazwa i setdp w admin",
+                "uk": "фіксувати stopbeaviour\nфіксувати стан обробки\nпокращувати ім'я адміністратора і встановити в адмін",
+                "zh-cn": "修复断面\n固定状态处理\n改进管理员的验证符 vor 名称和设置dp"
+            },
+            "1.4.3": {
+                "en": "fix validation rule for the setDP button in admin",
+                "de": "die Validierungsregel für die setDP-Taste in Admin festlegen",
+                "ru": "исправить правило проверки для кнопки setDP в admin",
+                "pt": "regra de validação de correção para o botão setDP no admin",
+                "nl": "fix validatieregel voor de setDP-knop in admin",
+                "fr": "fixer la règle de validation pour le bouton setDP dans admin",
+                "it": "correzione della regola di convalida per il pulsante setDP in admin",
+                "es": "fijar regla de validación para el botón setDP en administración",
+                "pl": "reguła walidacji dla przycisku setDP w admin",
+                "uk": "зафіксувати правило валідації для кнопки setDP в адмін",
+                "zh-cn": "固定管理员设置的 DP 按钮的验证规则"
+            },
+            "1.4.2": {
+                "en": "revert to node 18\ncleanup files and some details\nfix server time diff calculations",
+                "de": "zurück zum knoten 183\naufräumen von dateien und details\nfix serverzeit-diff-berechnungen",
+                "ru": "вернуться в нод 18\nочистка файлов и некоторые детали\nфиксировать вычисления времени диффа сервера",
+                "pt": "reverter para nó 18\nlimpe arquivos e alguns detalhes\ncorrigir cálculos de diff de tempo de servidor",
+                "nl": "terug naar knooppunt 18\nbestanden opruimen en wat details\nfix server tijd diff berekeningen",
+                "fr": "retour au nœud 18\nfichiers de nettoyage et quelques détails\ncorrection des calculs de diff heure du serveur",
+                "it": "tornare al nodo 18\nfile di pulizia e alcuni dettagli\ncorrezione dei calcoli di diff dell'ora del server",
+                "es": "revertir a los nodos 18\nlimpiar archivos y algunos detalles\nfijar cálculos del tiempo del servidor",
+                "pl": "powrót do węzła 18\nczyszczenie plików i kilka szczegółów\nnaprawić obliczenia czasu diff serwera",
+                "uk": "перевернутися до вузла 18 років\nочищення файлів і деякі деталі\nфіксувати розрахунки часу сервера",
+                "zh-cn": "返回节点 第 18 条\n清理文件和一些细节\n修正服务器时间 diff 计算"
+            },
+            "1.4.0": {
+                "en": "to update the time from the configuration i added a SetDP Button",
+                "de": "um die Zeit von der Konfiguration zu aktualisieren, habe ich einen SetDP Button hinzugefügt",
+                "ru": "для обновления времени от конфигурации я добавил кнопку SetDP",
+                "pt": "para atualizar o tempo da configuração eu adicionei um botão SetDP",
+                "nl": "om de tijd van de configuratie bij te werken heb ik een SetDP-knop toegevoegd",
+                "fr": "pour mettre à jour l'heure de la configuration j'ai ajouté un bouton SetDP",
+                "it": "per aggiornare il tempo dalla configurazione ho aggiunto un pulsante SetDP",
+                "es": "para actualizar el tiempo de la configuración añadí un botón SetDP",
+                "pl": "aby zaktualizować czas z konfiguracji dodałem przycisk SetDP",
+                "uk": "для оновлення часу з конфігурації я додав кнопку SetDP",
+                "zh-cn": "以更新配置中的时间 "
+            }
+        },
+        "platform": "Javascript/Node.js",
+        "mode": "daemon",
+        "nogit": true,
+        "loglevel": "info",
+        "icon": "mytime.png",
+        "extIcon": "https://raw.githubusercontent.com/oweitman/ioBroker.mytime/main/admin/mytime.png",
+        "keywords": [
+            "mytime",
+            "timeseries",
+            "countdown timer"
+        ],
+        "adminUI": {
+            "config": "json"
+        },
+        "readme": "https://github.com/oweitman/ioBroker.mytime/blob/main/README.md",
+        "enabled": true,
+        "licenseInformation": {
+            "type": "free",
+            "license": "MIT"
+        },
+        "compact": true,
+        "eraseOnUpload": true,
+        "dependencies": [
+            {
+                "js-controller": ">=5.0.19"
+            }
+        ],
+        "globalDependencies": [
+            {
+                "admin": ">=6.17.14"
+            }
+        ],
+        "type": "visualization",
+        "messagebox": true,
+        "tier": 3,
+        "connectionType": "local",
+        "dataSource": "poll",
+        "restartAdapters": [
+            "vis",
+            "vis-2"
+        ]
     },
-    "desc": {
-      "en": "This adapter handle Time (eg: countdown,etc.)",
-      "de": "This adapter handle Time (eg: countdown,etc.)",
-      "ru": "This adapter handle Time (eg: countdown,etc.)",
-      "pt": "This adapter handle Time (eg: countdown,etc.)",
-      "nl": "This adapter handle Time (eg: countdown,etc.)",
-      "fr": "This adapter handle Time (eg: countdown,etc.)",
-      "it": "This adapter handle Time (eg: countdown,etc.)",
-      "es": "This adapter handle Time (eg: countdown,etc.)",
-      "pl": "This adapter handle Time (eg: countdown,etc.)",
-      "zh-cn": "This adapter handle Time (eg: countdown,etc.)",
-      "uk": "Цей адаптер обробляє час (наприклад, зворотній відлік тощо)"
+    "native": {
+        "countdowns": [],
+        "timeseries": []
     },
-    "authors": [
-      "oweitman <oweitman@gmx.de>"
-    ],
-    "news": {
-      "2.0.1": {
-        "en": "major release: make nixie clock responsive. the users have to adjust the \n  font-size of the widget to get the old size.\n  if you want the old size try it with 100px font-size.",
-        "de": "Hauptversion: Nixie-Uhr reaktionsfähig machen. Die Benutzer müssen die\n  font-size des Widgets, um die alte Größe zu erhalten.\n  wenn Sie die alte Größe wollen, versuchen Sie es mit 100px font-size.",
-        "ru": "Основной релиз: сделайте часы nixie отзывчивыми. пользователям придется настроить\n  font-size виджета, чтобы получить старый размер.\n  Если вам нужен старый размер, попробуйте сделать это с font-size 100px.",
-        "pt": "versão principal: tornar o relógio nixie responsivo. os utilizadores têm de ajustar o\n  tamanho da fonte do widget para obter o tamanho antigo.\n  se quiser o tamanho antigo, experimente-o com 100px font-size.",
-        "nl": "grote release: nixieklok responsief maken. de gebruikers moeten de\n  font-size van de widget om de oude grootte te krijgen.\n  Als je de oude grootte wilt, probeer het dan met 100px font-size.",
-        "fr": "version majeure : rendre l'horloge nixie réactive. les utilisateurs doivent ajuster la taille de l'horloge nixie.\n  font-size du widget pour obtenir l'ancienne taille.\n  si vous voulez l'ancienne taille, essayez avec 100px de taille de police.",
-        "it": "rilascio importante: rendere reattivo l'orologio nixie. gli utenti devono regolare il\n  font-size del widget per ottenere la vecchia dimensione.\n  se si desidera la vecchia dimensione, provare con 100px font-size.",
-        "es": "versión principal: hacer que el reloj nixie responda. los usuarios tienen que ajustar el\n  font-size del widget para obtener el tamaño antiguo.\n  si quieres el tamaño antiguo prueba con font-size de 100px.",
-        "pl": "główne wydanie: uczynienie zegara nixie responsywnym. użytkownicy muszą dostosować\n  font-size widżetu, aby uzyskać stary rozmiar.\n  Jeśli chcesz mieć stary rozmiar, spróbuj użyć rozmiaru czcionki 100px.",
-        "uk": "Основний реліз: зроблено годинник nixie більш адаптивним. Користувачам доводиться налаштовувати\n  font-size віджету, щоб отримати старий розмір.\n  якщо вам потрібен старий розмір, спробуйте з розміром шрифту 100px.",
-        "zh-cn": "major release: make nixie clock responsive. the users have to adjust the \n  font-size of the widget to get the old size.\n  if you want the old size try it with 100px font-size."
-      },
-      "1.4.7": {
-        "en": "remove types/request\nimprove documentation format",
-        "de": "typen/request entfernen\nverbesserung des dokumentationsformats",
-        "ru": "удалить типы/запрос\nулучшение формата документации",
-        "pt": "remover tipos/pedidos\nmelhorar o formato da documentação",
-        "nl": "type/verzoek verwijderen\nverbetering van het documentatieformaat",
-        "fr": "supprimer les types/demandes\naméliorer le format de la documentation",
-        "it": "rimuovere i tipi / richiesta\nmigliorare il formato della documentazione",
-        "es": "eliminar tipos/requisitos\nmejorar el formato de documentación",
-        "pl": "usunąć typy / żądanie\npoprawić format dokumentacji",
-        "uk": "видалення типів / пошук\nформат документації",
-        "zh-cn": "删除类型/请求\n改进文件格式"
-      },
-      "1.4.6": {
-        "en": "fix wrong calc of datapoints in some cases",
-        "de": "fehlerbehebung von datenpunkten in einigen fällen",
-        "ru": "исправить неправильный кальций точек данных в некоторых случаях",
-        "pt": "corrigir o cálculo errado de pontos de dados em alguns casos",
-        "nl": "vast te stellen verkeerde calc van datapunten in sommige gevallen",
-        "fr": "corriger une mauvaise calc des points de données dans certains cas",
-        "it": "correggere il calcolo sbagliato dei datapoint in alcuni casi",
-        "es": "corregir el cálculo incorrecto de los puntos de datos en algunos casos",
-        "pl": "naprawić błędne kalc punktów danych w niektórych przypadkach",
-        "uk": "зафіксувати неправильне калібрування точок даних в деяких випадках",
-        "zh-cn": "在某些情况下修补错误的数据点计算"
-      },
-      "1.4.5": {
-        "en": "fix widget reverse countdown plain",
-        "de": "widget reverse countdown ebene",
-        "ru": "исправить виджет reverse countdown plain",
-        "pt": "corrigir a contagem regressiva do elemento",
-        "nl": "fix widget reverse countdown gewoon",
-        "fr": "correction du compte à rebours du widget",
-        "it": "correzione widget conto alla rovescia inversa",
-        "es": "arreglar widget reverso cuenta regresiva plano",
-        "pl": "fix widget reverse countdown plain",
-        "uk": "виправити віджет зворотний відлік plain",
-        "zh-cn": "修正部件倒数倒数平原"
-      },
-      "1.4.4": {
-        "en": "fix stopbeaviour\nfix state handling\nimprove validator vor name and setdp in admin",
-        "de": "stoppbeaviour\nzustandsbehandlung\nvalidator vor name und setdp in admin",
-        "ru": "фиксировать стоп-авиор\nфиксировать состояние\nулучшить имя валидатора и setdp в admin",
-        "pt": "corrigir o comportamento de paragem\ncorrigir o tratamento do estado\nmelhorar o nome do vor validador e setdp no administrador",
-        "nl": "fix stopbeaviour\nfix state handling\nverbeteren validator vor naam en setdp in admin",
-        "fr": "fixer stopbeaviour\nréparer la manipulation de l'état\naméliorer validator vor nom et setdp dans admin",
-        "it": "fix stopbeaviour\ncorretto gestione dello stato\nmigliorare il nome del vor del validatore e setdp in admin",
-        "es": "reparación stopbeaviour\ncorrección de estado\nmejorar el nombre del vor del validador y configurar en admin",
-        "pl": "naprawić stopbeaviour\nnaprawić obsługę państwa\npoprawić walidator vor nazwa i setdp w admin",
-        "uk": "фіксувати stopbeaviour\nфіксувати стан обробки\nпокращувати ім'я адміністратора і встановити в адмін",
-        "zh-cn": "修复断面\n固定状态处理\n改进管理员的验证符 vor 名称和设置dp"
-      },
-      "1.4.3": {
-        "en": "fix validation rule for the setDP button in admin",
-        "de": "die Validierungsregel für die setDP-Taste in Admin festlegen",
-        "ru": "исправить правило проверки для кнопки setDP в admin",
-        "pt": "regra de validação de correção para o botão setDP no admin",
-        "nl": "fix validatieregel voor de setDP-knop in admin",
-        "fr": "fixer la règle de validation pour le bouton setDP dans admin",
-        "it": "correzione della regola di convalida per il pulsante setDP in admin",
-        "es": "fijar regla de validación para el botón setDP en administración",
-        "pl": "reguła walidacji dla przycisku setDP w admin",
-        "uk": "зафіксувати правило валідації для кнопки setDP в адмін",
-        "zh-cn": "固定管理员设置的 DP 按钮的验证规则"
-      },
-      "1.4.2": {
-        "en": "revert to node 18\ncleanup files and some details\nfix server time diff calculations",
-        "de": "zurück zum knoten 183\naufräumen von dateien und details\nfix serverzeit-diff-berechnungen",
-        "ru": "вернуться в нод 18\nочистка файлов и некоторые детали\nфиксировать вычисления времени диффа сервера",
-        "pt": "reverter para nó 18\nlimpe arquivos e alguns detalhes\ncorrigir cálculos de diff de tempo de servidor",
-        "nl": "terug naar knooppunt 18\nbestanden opruimen en wat details\nfix server tijd diff berekeningen",
-        "fr": "retour au nœud 18\nfichiers de nettoyage et quelques détails\ncorrection des calculs de diff heure du serveur",
-        "it": "tornare al nodo 18\nfile di pulizia e alcuni dettagli\ncorrezione dei calcoli di diff dell'ora del server",
-        "es": "revertir a los nodos 18\nlimpiar archivos y algunos detalles\nfijar cálculos del tiempo del servidor",
-        "pl": "powrót do węzła 18\nczyszczenie plików i kilka szczegółów\nnaprawić obliczenia czasu diff serwera",
-        "uk": "перевернутися до вузла 18 років\nочищення файлів і деякі деталі\nфіксувати розрахунки часу сервера",
-        "zh-cn": "返回节点 第 18 条\n清理文件和一些细节\n修正服务器时间 diff 计算"
-      },
-      "1.4.0": {
-        "en": "to update the time from the configuration i added a SetDP Button",
-        "de": "um die Zeit von der Konfiguration zu aktualisieren, habe ich einen SetDP Button hinzugefügt",
-        "ru": "для обновления времени от конфигурации я добавил кнопку SetDP",
-        "pt": "para atualizar o tempo da configuração eu adicionei um botão SetDP",
-        "nl": "om de tijd van de configuratie bij te werken heb ik een SetDP-knop toegevoegd",
-        "fr": "pour mettre à jour l'heure de la configuration j'ai ajouté un bouton SetDP",
-        "it": "per aggiornare il tempo dalla configurazione ho aggiunto un pulsante SetDP",
-        "es": "para actualizar el tiempo de la configuración añadí un botón SetDP",
-        "pl": "aby zaktualizować czas z konfiguracji dodałem przycisk SetDP",
-        "uk": "для оновлення часу з конфігурації я додав кнопку SetDP",
-        "zh-cn": "以更新配置中的时间 "
-      }
-    },
-    "platform": "Javascript/Node.js",
-    "mode": "daemon",
-    "nogit": true,
-    "loglevel": "info",
-    "icon": "mytime.png",
-    "extIcon": "https://raw.githubusercontent.com/oweitman/ioBroker.mytime/main/admin/mytime.png",
-    "keywords": [
-      "mytime",
-      "timeseries",
-      "countdown timer"
-    ],
-    "adminUI": {
-      "config": "json"
-    },
-    "readme": "https://github.com/oweitman/ioBroker.mytime/blob/main/README.md",
-    "enabled": true,
-    "licenseInformation": {
-      "type": "free",
-      "license": "MIT"
-    },
-    "compact": true,
-    "eraseOnUpload": true,
-    "dependencies": [
-      {
-        "js-controller": ">=5.0.19"
-      }
-    ],
-    "globalDependencies": [
-      {
-        "admin": ">=6.17.14"
-      }
-    ],
-    "type": "visualization",
-    "messagebox": true,
-    "tier": 3,
-    "connectionType": "local",
-    "dataSource": "poll",
-    "restartAdapters": [
-      "vis",
-      "vis-2"
+    "objects": [],
+    "instanceObjects": [
+        {
+            "_id": "Countdowns",
+            "type": "device",
+            "common": {
+                "name": "All Countdowns datapoints"
+            },
+            "native": {}
+        },
+        {
+            "_id": "Timeseries",
+            "type": "device",
+            "common": {
+                "name": "All Timeseries datapoints"
+            },
+            "native": {}
+        },
+        {
+            "_id": "info",
+            "type": "channel",
+            "common": {
+                "name": "Information"
+            },
+            "native": {}
+        },
+        {
+            "_id": "info.connection",
+            "type": "state",
+            "common": {
+                "role": "indicator.connected",
+                "name": "Device or service connected",
+                "type": "boolean",
+                "read": true,
+                "write": false,
+                "def": false
+            },
+            "native": {}
+        }
     ]
-  },
-  "native": {
-    "countdown": [],
-    "timeseries": []
-  },
-  "objects": [],
-  "instanceObjects": [
-    {
-      "_id": "Countdowns",
-      "type": "device",
-      "common": {
-        "name": "All Countdowns datapoints"
-      },
-      "native": {}
-    },
-    {
-      "_id": "Timeseries",
-      "type": "device",
-      "common": {
-        "name": "All Timeseries datapoints"
-      },
-      "native": {}
-    },
-    {
-      "_id": "info",
-      "type": "channel",
-      "common": {
-        "name": "Information"
-      },
-      "native": {}
-    },
-    {
-      "_id": "info.connection",
-      "type": "state",
-      "common": {
-        "role": "indicator.connected",
-        "name": "Device or service connected",
-        "type": "boolean",
-        "read": true,
-        "write": false,
-        "def": false
-      },
-      "native": {}
-    }
-  ]
 }

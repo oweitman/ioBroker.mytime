@@ -41,6 +41,10 @@ to the time set by timer.
 
 After the countdown gets the signal stop, the countdown remains at 0.
 
+##### Stop behaviour rerun
+
+When the timer expires, it will automatically restart.
+
 #### Timeseries
 
 In the configuration dialog Tab "Timeseries" you can create a
@@ -85,6 +89,7 @@ After configuration of a new countdown the adapter creates the following datapoi
 | --------- | ---------------------------------------------------------------------- |
 | action    | actual state of thie countdown. possible values are stop,run,pause,end |
 | cmd       | datapoint for commands. possible commands are described below          |
+| config    | enthält zusätzliche konfiguration für den countdowntimer.              |
 | start     | datapoint for the start time in milliseconds                           |
 | end       | datapoint for the end time in milliseconds                             |
 | timer     | datapoint for the total time set in milliseconds                       |
@@ -118,7 +123,8 @@ After configuration of a new countdown the adapter creates the following datapoi
 | `end`           | `end`                   | stops the countdown. the countdown is set to 0                                                                                       |
 | `reset`         | `reset`                 | reset the timer to the configuration state                                                                                           |
 | `setstop2timer` | `setstop2timer`         | set stop behaviour configuration to timer                                                                                            |
-| `setstop2zero`  | `setstop2zero`          | set stop behaviour configuration to zeros                                                                                            |
+| `setstop2zero`  | `setstop2zero`          | set stop behaviour configuration to zero                                                                                             |
+| `setstop2rerun` | `setstop2rerun`         | set stop behaviour configuration to rerun                                                                                            |
 | `save`          | `save`                  | save the configuration defined in datapoints to the iobroker configuration, iobroker restarts the adapter after saving automatically |
 
 ##### Format of the value for setting the countdown timer
@@ -410,6 +416,8 @@ A widget to show a wordclock with many options
 ### **WORK IN PROGRESS**
 
 - switch from crao to vite build system
+- New option for countdown timer: rerun - when the timer expires,
+  it will automatically restart.
 
 ### 2.0.1 (2025-09-08)
 

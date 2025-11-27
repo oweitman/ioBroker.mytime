@@ -1,17 +1,14 @@
 import react from '@vitejs/plugin-react';
-//import commonjs from 'vite-plugin-commonjs';
+import commonjs from 'vite-plugin-commonjs';
 import vitetsConfigPaths from 'vite-tsconfig-paths';
 import { federation } from '@module-federation/vite';
-import { moduleFederationShared } from '@iobroker/adapter-react-v5/modulefederation.admin.config';
-import { readFileSync } from 'node:fs';
-const pack = JSON.parse(readFileSync('./package.json').toString());
+import { moduleFederationShared } from '@iobroker/adapter-react-v5/modulefederation.admin.config.js';
 
-import path from 'path';
+import pack from './package.json';
+import path from 'node:path';
 
 const config = {
     plugins: [
-        react({ jsxRuntime: 'automatic' }),
-        vitetsConfigPaths(),
         federation({
             manifest: true,
             name: 'ConfigCustomMytimeSet',
@@ -22,8 +19,9 @@ const config = {
             remotes: {},
             shared: moduleFederationShared(pack),
         }),
-
-        //commonjs(),
+        react(),
+        vitetsConfigPaths(),
+        commonjs(),
     ],
     server: {
         port: 3000,

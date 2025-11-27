@@ -127,7 +127,6 @@ export default function TimeseriesList({ sx }) {
                                 ))}
                             {timeseries.length === 0 && (
                                 <TableRow>
-                                    {' '}
                                     <TableCell sx={style.styleTableCellWide}>{I18n.t('tsTableListEmpty')}</TableCell>
                                     <TableCell sx={style.styleTableCellSmall}></TableCell>
                                 </TableRow>
