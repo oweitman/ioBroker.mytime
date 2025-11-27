@@ -412,8 +412,7 @@ A widget to show a wordclock with many options
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
-
-### **WORK IN PROGRESS**
+### 2.1.0 (2025-11-27)
 
 - switch from crao to vite build system
 - New option for countdown timer: rerun - when the timer expires,

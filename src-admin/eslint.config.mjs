@@ -1,10 +1,8 @@
 import config, { reactConfig } from '@iobroker/eslint-config';
-import reactRefresh from "eslint-plugin-react-refresh";
 
 export default [
     ...config,
     ...reactConfig,
-    ...reactRefresh.configs.vite,
     {
         rules: {
             'no-new-func': 'warn',
