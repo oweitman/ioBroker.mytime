@@ -88,7 +88,8 @@
                             "title": "cdBehavior",
                             "options": [
                                 { "label": "cdBehaviourSetTimer", "value": "timer" },
-                                { "label": "cdBehaviourSetReset", "value": "zero" }
+                                { "label": "cdBehaviourSetReset", "value": "zero" },
+                                { "label": "cdBehaviourSetRerun", "value": "rerun" }
                             ],
                             "filter": true,
                             "sort": true,
@@ -106,7 +107,7 @@
                             "variant": "outlined",
                             "showProcess": true,
                             "disabled": "!originalData.countdowns.some(el=>el.name==data.name)||!globalData.countdowns.filter((el,idx)=>el.name==data.name&&idx!=arrayIndex).length==0;"
-                          }
+                        }
                     ]
                 }
             }
@@ -129,6 +130,7 @@
                     "lg": 10,
                     "xl": 10,
                     "style": { "width": "100%" },
+                    "bundlerType": "module",
                     "url": "custom/customComponents.js",
                     "name": "ConfigCustomMytimeSet/Components/TimeseriesConfig"
                 }

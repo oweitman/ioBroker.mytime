@@ -1,5 +1,5 @@
-import React from "react";
-import SvgIcon from "@mui/material/SvgIcon";
+import React from 'react';
+import SvgIcon from '@mui/material/SvgIcon';
 
 function RulePlus(props) {
     return (
@@ -14,7 +14,10 @@ function RulePlus(props) {
 function RuleMinus(props) {
     return (
         <SvgIcon {...props}>
-            <path fill="currentColor" d="M2,16H10V14H2M12,14V16H22V14M14,6H2V8H14M14,10H2V12H14V10Z" />
+            <path
+                fill="currentColor"
+                d="M2,16H10V14H2M12,14V16H22V14M14,6H2V8H14M14,10H2V12H14V10Z"
+            />
         </SvgIcon>
     );
 }

@@ -41,6 +41,10 @@ to the time set by timer.
 
 After the countdown gets the signal stop, the countdown remains at 0.
 
+##### Stop behaviour rerun
+
+When the timer expires, it will automatically restart.
+
 #### Timeseries
 
 In the configuration dialog Tab "Timeseries" you can create a
@@ -85,6 +89,7 @@ After configuration of a new countdown the adapter creates the following datapoi
 | --------- | ---------------------------------------------------------------------- |
 | action    | actual state of thie countdown. possible values are stop,run,pause,end |
 | cmd       | datapoint for commands. possible commands are described below          |
+| config    | enthält zusätzliche konfiguration für den countdowntimer.              |
 | start     | datapoint for the start time in milliseconds                           |
 | end       | datapoint for the end time in milliseconds                             |
 | timer     | datapoint for the total time set in milliseconds                       |
@@ -100,26 +105,27 @@ After configuration of a new countdown the adapter creates the following datapoi
 
 ##### Available commands for the cmd datapoint
 
-| command         | example                 | description                                                                                   |
-| --------------- | ----------------------- | --------------------------------------------------------------------------------------------- |
-| `+value`        | `+1:10`                 | adds time to the countdown setting. the setting will be taken into account at the next start  |
-| `+!value`       | ``+!1:10`               | like + operator and extend the running timer                                                  |
-| `-value`        | `-1:2:3`                | subtracts time from the countdown. the setting will be taken into account at the next start   |
-| `-!value`       | `-!1:2:3`               | like - operator and reduce the running timer                                                  |
-| `=value`        | `=5:00`                 | set the countdowntimer to this time.                                                          |
-| `=!value`       | `=!5:00`                | like = operator and set running timer to the given time                                       |
-| `#ISO-Date`     | `#2025-01-01T10:00:00`  | set the countdowntimer to a target time. The Time must be formatted as ISO-Datestring         |
-| `#!ISO-Date`    | `#!2025-01-01T10:00:00` | like # operator and setting running timer to the given target time                            |
-| `$Time`         | `$20:15`                | set the countdowntimer to a target time. If Time is before current time. the next day is set. |
-| `$!Time`        | `$!20:15`               | like $ operator and setting running timer to the given target time                            |
-| `start`         | `start`                 | starts the countdown                                                                          |
-| `stop`          | `stop`                  | stops the countdown. the countdown time is reset to the setting                               |
-| `pause`         | `pause`                 | pauses the countdown                                                                          |
-| `end`           | `end`                   | stops the countdown. the countdown is set to 0                                                |
-| `reset`         | `reset`                 | reset the timer to the configuration state                                                    |
-| `setstop2timer` | `setstop2timer`         | set stop behaviour configuration to timer                                                     |
-| `setstop2zero`  | `setstop2zero`          | set stop behaviour configuration to zeros                                                     |
-| `save`          | `save`                  | save the configuration defined in datapoints to the iobroker configuration, iobroker restarts the adapter after saving automatically                    |
+| command         | example                 | description                                                                                                                          |
+| --------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| `+value`        | `+1:10`                 | adds time to the countdown setting. the setting will be taken into account at the next start                                         |
+| `+!value`       | ``+!1:10`               | like + operator and extend the running timer                                                                                         |
+| `-value`        | `-1:2:3`                | subtracts time from the countdown. the setting will be taken into account at the next start                                          |
+| `-!value`       | `-!1:2:3`               | like - operator and reduce the running timer                                                                                         |
+| `=value`        | `=5:00`                 | set the countdowntimer to this time.                                                                                                 |
+| `=!value`       | `=!5:00`                | like = operator and set running timer to the given time                                                                              |
+| `#ISO-Date`     | `#2025-01-01T10:00:00`  | set the countdowntimer to a target time. The Time must be formatted as ISO-Datestring                                                |
+| `#!ISO-Date`    | `#!2025-01-01T10:00:00` | like # operator and setting running timer to the given target time                                                                   |
+| `$Time`         | `$20:15`                | set the countdowntimer to a target time. If Time is before current time. the next day is set.                                        |
+| `$!Time`        | `$!20:15`               | like $ operator and setting running timer to the given target time                                                                   |
+| `start`         | `start`                 | starts the countdown                                                                                                                 |
+| `stop`          | `stop`                  | stops the countdown. the countdown time is reset to the setting                                                                      |
+| `pause`         | `pause`                 | pauses the countdown                                                                                                                 |
+| `end`           | `end`                   | stops the countdown. the countdown is set to 0                                                                                       |
+| `reset`         | `reset`                 | reset the timer to the configuration state                                                                                           |
+| `setstop2timer` | `setstop2timer`         | set stop behaviour configuration to timer                                                                                            |
+| `setstop2zero`  | `setstop2zero`          | set stop behaviour configuration to zero                                                                                             |
+| `setstop2rerun` | `setstop2rerun`         | set stop behaviour configuration to rerun                                                                                            |
+| `save`          | `save`                  | save the configuration defined in datapoints to the iobroker configuration, iobroker restarts the adapter after saving automatically |
 
 ##### Format of the value for setting the countdown timer
 
@@ -213,10 +219,10 @@ There a 2 seperate versions for vis1 and vis2
 
 ```css
 #w00000 .timer.cdend {
-  color: red;
+    color: red;
 }
 #w00000 .timer.cdrun {
-  color: green;
+    color: green;
 }
 ```
 
@@ -258,10 +264,10 @@ A countdown widget in a ring/circle design.
 
 ```css
 #w00000 .timer.cdend {
-  color: red;
+    color: red;
 }
 #w00000 .timer.cdrun {
-  color: green;
+    color: green;
 }
 ```
 
@@ -292,10 +298,10 @@ Group CSS-Common / transform "scale(0.5)"
 
 ```css
 #w00000 .timer.cdend {
-  color: red;
+    color: red;
 }
 #w00000 .timer.cdrun {
-  color: green;
+    color: green;
 }
 ```
 
@@ -329,7 +335,7 @@ A CSS class must be created for the negative margin.
 
 ```css
 #w00000 .cdclock {
-margin-top: -5px;
+    margin-top: -5px;
 }
 ```
 
@@ -346,8 +352,8 @@ corresponding settings cannot be configured in the widget settings:
 
 ```css
 #w00000 {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 ```
 
@@ -371,16 +377,14 @@ A widget to show a wordclock with many options
 | secondColor       | color of the Seconds LED                                 |
 | timezone          | The time of the selected timezone is displayed           |
 
-
-
 **The actual action state (cdstop,cdrun,cdpause,cdend) of the countdown is available as CSS-Class selector:**
 
 ```css
 #w00000 .timer.cdend {
-  color: red;
+    color: red;
 }
 #w00000 .timer.cdrun {
-  color: green;
+    color: green;
 }
 ```
 
@@ -408,9 +412,16 @@ A widget to show a wordclock with many options
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+
+### **WORK IN PROGRESS**
+
+- switch from crao to vite build system
+- New option for countdown timer: rerun - when the timer expires,
+  it will automatically restart.
+
 ### 2.0.1 (2025-09-08)
 
-- major release: make nixie clock responsive. the users have to adjust the 
+- major release: make nixie clock responsive. the users have to adjust the
   font-size of the widget to get the old size.
   if you want the old size try it with 100px font-size.
 

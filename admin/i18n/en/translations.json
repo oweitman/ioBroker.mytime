@@ -17,6 +17,7 @@
     "cd-TT-Behavior": "Behaviour after end of countdown",
     "cdBehaviourSetTimer": "set to timer",
     "cdBehaviourSetReset": "set to zero",
+    "cdBehaviourSetRerun": "set to rerun",
     "xxx": "xxx",
     "": ""
 }
