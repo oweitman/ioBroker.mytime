@@ -8,6 +8,7 @@ import {
     FormControl,
     FormLabel,
     FormControlLabel,
+    FormHelperText,
     RadioGroup,
     Radio,
     Checkbox,
@@ -38,7 +39,7 @@ const elements=[
         childs: [{label: "yearly", value: RRule.YEARLY }, {label: "monthly", value: RRule.MONTHLY }, {label: "weekly", value: RRule.WEEKLY }, {label: "daily", value: RRule.DAILY }, {label: "hourly", value: RRule.HOURLY }, {label: "minutely", value: RRule.MINUTELY }]
     },
     {tab:"base",type:"newline"},
-    {tab:"base", title:"start date",    attr:"dtstart",       type:"datetime-local", tooltip: "tsStartTooltip" },
+    {tab:"base", title:"start date",    attr:"dtstart",       type:"datetime-local", tooltip: "tsStartTooltip", default: "now" },
     {tab:"base", title:"until date",    attr:"until",       type:"datetime-local", tooltip: "tsUntilTooltip"},
     {tab:"base",type:"newline"},
     {tab:"base", title:"count",         attr:"count",       type:"text", tooltip: "tsCountTooltip"},
@@ -48,24 +49,64 @@ const elements=[
     {tab:"ext1", title:"weekstart",     attr:"weekstart",       type:"radio", tooltip: "tsWeekstartTooltip",
         childs: [{label: "Monday", value: RRule.MO.weekday }, {label: "Tuesday", value: RRule.TU.weekday }, {label: "Wednsday", value: RRule.WE.weekday }, {label: "Thursday", value: RRule.TH.weekday }, {label: "Friday", value: RRule.FR.weekday }, {label: "Saturday", value: RRule.SA.weekday }, {label: "Sunday", value: RRule.SU.weekday }]
     },
-    {tab:"ext1", title:"byweekday",     attr:"byweekday",       type:"checkbox", tooltip: "tsByweekdayTooltip",
+    {tab:"ext1", title:"byweekday",                     attr:"byweekday",       type:"checkbox", tooltip: "tsByweekdayTooltip", format:1,
         childs: [{label: "Monday", value: RRule.MO }, {label: "Tuesday", value: RRule.TU }, {label: "Wednsday", value: RRule.WE }, {label: "Thursday", value: RRule.TH }, {label: "Friday", value: RRule.FR }, {label: "Saturday", value: RRule.SA }, {label: "Sunday", value: RRule.SU }]
     },
-    {tab:"ext1", title:"bymonth",       attr:"bymonth",     type:"checkbox", tooltip: "tsBymonthTooltip",
+    {tab:"ext1", title:"bymonth",                       attr:"bymonth",     type:"checkbox", tooltip: "tsBymonthTooltip", format:1,
         childs: [{label: "January", value: 1 }, {label: "February", value: 2 }, {label: "March", value: 3 }, {label: "April", value: 4 }, {label: "May", value: 5 }, {label: "June", value: 6 }, {label: "July", value: 7 }, {label: "August", value: 8 }, {label: "September", value: 9 }, {label: "October", value: 10 }, {label: "November", value: 11 }, {label: "December", value: 12 }]
     },
-    {tab:"ext2", title:"bysetpos",      attr:"bysetpos",        type:"text", tooltip: "tsBysetposTooltip"},
+    {tab:"ext2", title:"bysetpos",                      attr:"bysetpos",        type:"text", tooltip: "tsBysetposTooltip"},
     {tab:"ext2",type:"newline"},
-    {tab:"ext2", title:"bymonthday",    attr:"bymonthday",      type:"text", tooltip: "tsBymonthdayTooltip"},
+    {tab:"ext2", title:"bymonthday",                    attr:"bymonthday",      type:"text", tooltip: "tsBymonthdayTooltip"},
     {tab:"ext2",type:"newline"},
-    {tab:"ext2", title:"byyearday",     attr:"byyearday",       type:"text", tooltip: "tsByyeardayTooltip"},
+    {tab:"ext2", title:"byyearday",                     attr:"byyearday",       type:"text", tooltip: "tsByyeardayTooltip"},
     {tab:"ext2",type:"newline"},
-    {tab:"ext2", title:"byweekno",      attr:"byweekno",        type:"text", tooltip: "tsByweeknoTooltip"},
+    {tab:"ext2", title:"byweekno",                      attr:"byweekno",        type:"text", tooltip: "tsByweeknoTooltip"},
     {tab:"ext2",type:"newline"},
-    {tab:"ext2", title:"byminute",      attr:"byminute",        type:"text", tooltip: "tsByminuteTooltip"},
+    {tab:"ext2", title:"byminute",                      attr:"byminute",        type:"text", tooltip: "tsByminuteTooltip"},
     {tab:"ext2",type:"newline"},
-    {tab:"ext2", title:"byhour",        attr:"byhour",          type:"text", tooltip: "tsByhourTooltip"},
+    {tab:"ext2", title:"byhour",                        attr:"byhour",          type:"text", tooltip: "tsByhourTooltip"},
+    {tab:"astro", title:"tsLatitude",    attr:"latitude",       type:"text", tooltip: "tsLatitudeTooltip" },
+    {tab:"astro", title:"tsLongitude",    attr:"longitude",       type:"text", tooltip: "tsLongitudeTooltip"},
+    {tab:"astro",type:"newline"},
+    {tab:"astro", title:"tsSuntimes",    attr:"suntimes",           type:"checkbox", tooltip: "tsSuntimesTooltip", format:2,
+        childs: [
+            {label: "tsAstronomicalDawn", value: "astronomicalDawn",tooltip: "tsAstronomicalDawnTooltip" }, 
+            {label: "tsAmateurDawn", value: "amateurDawn",tooltip: "tsAmateurDawnTooltip" },
+            {label: "tsNauticalDawn", value: "nauticalDawn",tooltip: "tsNauticalDawnTooltip" },
+            {label: "tsBlueHourDawnStart", value: "blueHourDawnStart",tooltip: "tsBlueHourDawnStartTooltip" },
+            {label: "tsCivilDawn", value: "civilDawn",tooltip: "tsCivilDawnTooltip" },
+            {label: "tsBlueHourDawnEnd", value: "blueHourDawnEnd",tooltip: "tsBlueHourDawnEndTooltip" },
+            {label: "tsGoldenHourDawnStart", value: "goldenHourDawnStart",tooltip: "tsGoldenHourDawnStartTooltip" },
+            {label: "tsSunriseStart", value: "sunriseStart",tooltip: "tsSunriseStartTooltip" },
+            {label: "tsSunriseEnd", value: "sunriseEnd",tooltip: "tsSunriseEndTooltip" },
+            {label: "tsGoldenHourDawnEnd", value: "goldenHourDawnEnd",tooltip: "tsGoldenHourDawnEndTooltip" },
+            {label: "tsSolarNoon", value: "solarNoon",tooltip: "tsSolarNoonTooltip" },
+            {label: "tsGoldenHourDuskStart", value: "goldenHourDuskStart",tooltip: "tsGoldenHourDuskStartTooltip" },
+            {label: "tsSunsetStart", value: "sunsetStart",tooltip: "tsSunsetStartTooltip" },
+            {label: "tsSunsetEnd", value: "sunsetEnd",tooltip: "tsSunsetEndTooltip" },
+            {label: "tsGoldenHourDuskEnd", value: "goldenHourDuskEnd",tooltip: "tsGoldenHourDuskEndTooltip" },
+            {label: "tsBlueHourDuskStart", value: "blueHourDuskStart",tooltip: "tsBlueHourDuskStartTooltip" },
+            {label: "tsCivilDusk", value: "civilDusk",tooltip: "tsCivilDuskTooltip" },
+            {label: "tsBlueHourDuskEnd", value: "blueHourDuskEnd",tooltip: "tsBlueHourDuskEndTooltip" },
+            {label: "tsNauticalDusk", value: "nauticalDusk",tooltip: "tsNauticalDuskTooltip" },
+            {label: "tsAmateurDusk", value: "amateurDusk",tooltip: "tsAmateurDuskTooltip" },
+            {label: "tsAstronomicalDusk", value: "astronomicalDusk",tooltip: "tsAstronomicalDuskTooltip" },
+            {label: "tsNadir", value: "nadir",tooltip: "tsNadirTooltip" }
+        ]
+    },
+    {tab:"astro",type:"newline"},
+    {tab:"astro", title:"tsMoontimes",attr:"moontimes",           type:"checkbox", tooltip: "tsMoontimesTooltip", format:3,
+        childs: [
+            {label: "tsMoonrise", value: "moonrise",tooltip: "tsMoonriseTooltip" }, 
+            {label: "tsMoonhigh", value: "moonhigh",tooltip: "tsMoonhighTooltip" }, 
+            {label: "tsMoonset", value: "moonset",tooltip: "tsMoonsetTooltip" }, 
+        ]
+    },
+    {tab:"astro",type:"newline"},
+
 ];
+
 function RRuleTabPanel(props) {
     const { children, value, index, ...other } = props;
 
@@ -266,7 +307,10 @@ export default function TimeseriesRulesEdit() {
             >
                 <HtmlTooltip title={I18n.t(el.tooltip)}>
                     <Box key={el.attr}>
-                        <FormControl component="fieldset">
+                        <FormControl
+                            component="fieldset"
+                            error={getError(navState, 'rule', el.attr) !== null}
+                        >
                             <FormLabel
                                 component="legend"
                                 sx={{ ...style.radioCheckLabel }}
@@ -312,6 +356,14 @@ export default function TimeseriesRulesEdit() {
                                             </Grid>
                                         ))}
                                 </RadioGroup>
+                                {getError(navState, 'rule', el.attr) && (
+                                    <FormHelperText
+                                        component="div"
+                                        error
+                                    >
+                                        {getError(navState, 'rule', el.attr)}
+                                    </FormHelperText>
+                                )}
                             </Grid>
                         </FormControl>
                     </Box>
@@ -320,6 +372,21 @@ export default function TimeseriesRulesEdit() {
         );
     }
     function renderCheckbox(el) {
+        let itemSizes;
+        switch (el.format) {
+            case 1:
+                itemSizes = { xs: 3, sm: 4, md: 3, lg: 2 };
+                break;
+            case 2:
+                itemSizes = { xs: 6, sm: 6, md: 4, lg: 3 };
+                break;
+            case 3:
+                itemSizes = { xs: 4, sm: 4, md: 4, lg: 4 };
+                break;
+            default:
+                itemSizes = { xs: 3, sm: 4, md: 3, lg: 2 };
+                break;
+        }
         return (
             <Grid
                 item
@@ -334,6 +401,7 @@ export default function TimeseriesRulesEdit() {
                     <FormControl
                         component="fieldset"
                         key={el.attr}
+                        error={getError(navState, 'rule', el.attr) !== null}
                     >
                         <FormLabel
                             component="legend"
@@ -348,46 +416,54 @@ export default function TimeseriesRulesEdit() {
                                         <Grid
                                             key={el.attr + option.value}
                                             item
-                                            xs={3}
-                                            sm={4}
-                                            md={3}
-                                            lg={2}
+                                            {...itemSizes}
                                         >
-                                            <FormControlLabel
-                                                control={
-                                                    <Checkbox
-                                                        checked={(rule[el.attr] || []).some(
-                                                            v => JSON.stringify(v) === JSON.stringify(option.value),
-                                                        )}
-                                                        inputProps={{
-                                                            'data-state': `${el.attr}_${JSON.stringify(option.value)}`,
-                                                        }}
-                                                        onChange={e => {
-                                                            const [field, obj] = e.target.dataset.state.split('_');
-                                                            const action = {
-                                                                type: 'rule-field-change-array',
-                                                                tsid: timeserie.id,
-                                                                rid: rule.id,
-                                                                field,
-                                                                value: JSON.parse(obj),
-                                                                checked: e.target.checked,
-                                                            };
-                                                            timeseriesDispatch(action);
-                                                        }}
-                                                        name={option.value.toString()}
-                                                        sx={{ ...style.radioCheckIconSize }}
-                                                    />
-                                                }
-                                                label={
-                                                    <span style={{ ...style.radioCheckLabel }}>
-                                                        {I18n.t(option.label)}
-                                                    </span>
-                                                }
-                                            />
+                                            <HtmlTooltip title={option.tooltip ? I18n.t(option.tooltip) || '' : ''}>
+                                                <FormControlLabel
+                                                    sx={{ width: '100%' }}
+                                                    control={
+                                                        <Checkbox
+                                                            checked={(rule[el.attr] || []).some(
+                                                                v => JSON.stringify(v) === JSON.stringify(option.value),
+                                                            )}
+                                                            inputProps={{
+                                                                'data-state': `${el.attr}_${JSON.stringify(option.value)}`,
+                                                            }}
+                                                            onChange={e => {
+                                                                const [field, obj] = e.target.dataset.state.split('_');
+                                                                const action = {
+                                                                    type: 'rule-field-change-array',
+                                                                    tsid: timeserie.id,
+                                                                    rid: rule.id,
+                                                                    field,
+                                                                    value: JSON.parse(obj),
+                                                                    checked: e.target.checked,
+                                                                };
+                                                                timeseriesDispatch(action);
+                                                            }}
+                                                            name={option.value.toString()}
+                                                            sx={{ ...style.radioCheckIconSize }}
+                                                        />
+                                                    }
+                                                    label={
+                                                        <span style={{ ...style.radioCheckLabel }}>
+                                                            {I18n.t(option.label)}
+                                                        </span>
+                                                    }
+                                                />
+                                            </HtmlTooltip>
                                         </Grid>
                                     ))}
                             </FormGroup>
                         </Grid>
+                        {getError(navState, 'rule', el.attr) && (
+                            <FormHelperText
+                                component="div"
+                                error
+                            >
+                                {getError(navState, 'rule', el.attr)}
+                            </FormHelperText>
+                        )}
                     </FormControl>
                 </HtmlTooltip>
             </Grid>
@@ -409,6 +485,10 @@ export default function TimeseriesRulesEdit() {
         );
     }
     function renderDatetime(el) {
+        let defaultValue = null;
+        if (el.default === 'now' && (!rule[el.attr] || rule[el.attr] === '')) {
+            rule[el.attr] = dayjs();
+        }
         return (
             <Grid
                 sx={{ ...style.datetimeMargin }}
@@ -437,6 +517,7 @@ export default function TimeseriesRulesEdit() {
                                 }}
                                 formatDensity="dense"
                                 value={(rule[el.attr] && dayjs(rule[el.attr])) || null}
+                                defaultValue={defaultValue}
                                 onChange={value => {
                                     const action = {
                                         type: 'rule-field-change',
@@ -514,6 +595,10 @@ export default function TimeseriesRulesEdit() {
                         label={I18n.t('tsExt2')}
                         key="ext2"
                     ></Tab>
+                    <Tab
+                        label={I18n.t('tsAstro')}
+                        key="astro"
+                    ></Tab>
                 </Tabs>
             </Box>
             <Box>
@@ -538,6 +623,13 @@ export default function TimeseriesRulesEdit() {
                     index={2}
                 >
                     {elements.filter(el => el.tab === 'ext2').map((el, index) => renderFormfield(el, index))}
+                </RRuleTabPanel>
+                <RRuleTabPanel
+                    value={tabValue}
+                    key="tab3"
+                    index={3}
+                >
+                    {elements.filter(el => el.tab === 'astro').map((el, index) => renderFormfield(el, index))}
                 </RRuleTabPanel>
             </Box>
         </Box>

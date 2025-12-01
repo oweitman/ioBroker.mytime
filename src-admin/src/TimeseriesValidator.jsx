@@ -3,6 +3,7 @@ import * as validatejs from 'validate.js';
 
 import { TimeseriesContext } from './TimeseriesContext';
 import { NavStateContext, useNavStateDispatch } from './TimeseriesNavContext';
+import { RRule } from 'rrule';
 
 export default function TimeseriesValidator() {
     const timeseries = useContext(TimeseriesContext);
@@ -115,37 +116,31 @@ export default function TimeseriesValidator() {
                 },
             },
             byhour: {
-                numericality: {
-                    strict: true,
-                    onlyInteger: true,
-                    lessThan: 1000000,
+                byNumberList: {
                     greaterThan: -1000000,
-                    notValid: '^tsValidNotValid',
-                    notInteger: '^tsValidNotInteger',
-                    notGreaterThan: '^tsValidNotGreaterThan1000000',
+                    lessThan: 1000000,
+                    notNumbers: '^tsValidNotValid',
+                    notIntegers: '^tsValidNotInteger',
+                    notGreaterThan: '^tsValidByhourNotGreaterThan1000000',
                     notLessThan: '^tsValidNotLessThan',
                 },
             },
             byminute: {
-                numericality: {
-                    strict: true,
-                    onlyInteger: true,
+                byNumberList: {
                     greaterThan: -1000000,
                     lessThan: 1000000,
-                    notValid: '^tsValidNotValid',
-                    notInteger: '^tsValidNotInteger',
+                    notNumbers: '^tsValidNotValid',
+                    notIntegers: '^tsValidNotInteger',
                     notGreaterThan: '^tsValidNotGreaterThan1000000',
                     notLessThan: '^tsValidNotLessThan',
                 },
             },
             bysecond: {
-                numericality: {
-                    strict: true,
-                    onlyInteger: true,
+                byNumberList: {
                     greaterThan: -1000000,
                     lessThan: 1000000,
-                    notValid: '^tsValidNotValid',
-                    notInteger: '^tsValidNotInteger',
+                    notNumbers: '^tsValidNotValid',
+                    notIntegers: '^tsValidNotInteger',
                     notGreaterThan: '^tsValidNotGreaterThan1000000',
                     notLessThan: '^tsValidNotLessThan',
                 },
@@ -174,6 +169,40 @@ export default function TimeseriesValidator() {
                     notLessThan: '^tsValidNotLessThan',
                 },
             },
+            freq: {
+                freqSuntimes: true,
+                freqMoontimes: true,
+            },
+            suntimes: {
+                freqSuntimes: true,
+            },
+            moontimes: {
+                freqMoontimes: true,
+            },
+            latitude: {
+                presence: function (value, attributes) {
+                    return (
+                        (attributes.suntimes && attributes.suntimes.length > 0) ||
+                        (attributes.moontimes && attributes.moontimes.length > 0)
+                    );
+                },
+                numericality: {
+                    greaterThanOrEqualTo: -90,
+                    lessThanOrEqualTo: 90,
+                },
+            },
+            longitude: {
+                presence: function (value, attributes) {
+                    return (
+                        (attributes.suntimes && attributes.suntimes.length > 0) ||
+                        (attributes.moontimes && attributes.moontimes.length > 0)
+                    );
+                },
+                numericality: {
+                    greaterThanOrEqualTo: -180,
+                    lessThanOrEqualTo: 180,
+                },
+            },
         };
         validatejs.validators.uniqueRulename = (value, options, key, attributes) =>
             timeserie.rules.reduce((acc, cur) => (cur.name === value && cur.id !== attributes.id ? acc + 1 : acc), 0) >
@@ -193,6 +222,54 @@ export default function TimeseriesValidator() {
                 }
             } else {
                 return null;
+            }
+            return null;
+        };
+        validatejs.validators.freqSuntimes = (value, options, key) => {
+            if (!Array.isArray(rule.suntimes)) {
+                return null;
+            }
+            if (rule.freq > RRule.DAILY && rule.suntimes.length > 0) {
+                return '^tsValidFreqSuntimes';
+            } else {
+                return null;
+            }
+        };
+        validatejs.validators.freqMoontimes = (value, options, key) => {
+            if (!Array.isArray(rule.moontimes)) {
+                return null;
+            }
+            if (rule.freq > RRule.DAILY && rule.moontimes.length > 0) {
+                return '^tsValidFreqMoontimes';
+            } else {
+                return null;
+            }
+        };
+        validatejs.validators.byNumberList = (value, options, key) => {
+            if (value === undefined || value === null) return null;
+            if (
+                value.includes(',') &&
+                value
+                    .split(',')
+                    .map(el => parseInt(el))
+                    .some(isNaN)
+            ) {
+                return options.notNumbers || '^tsNumberListnotContainNumbersNotDefined';
+            }
+            if (value.includes(',') && value.split(',').some(v => Number(v) == v && !Number.isInteger(Number(v)))) {
+                return options.notIntegers || '^tsNumberListNotIntegers';
+            }
+            if (options && typeof options.greaterThan === 'number') {
+                const nums = value.split(',').map(el => parseInt(el));
+                if (nums.filter(n => !(n > options.greaterThan)).length) {
+                    return options.notGreaterThan || '^tsNumberListGreaterThanNotDefined';
+                }
+            }
+            if (options && typeof options.lessThan === 'number') {
+                const nums = value.split(',').map(el => parseInt(el));
+                if (nums.filter(n => !(n < options.lessThan)).length) {
+                    return options.notLessThan || '^tsNumberListLessThanNotDefined';
+                }
             }
             return null;
         };

@@ -1,4 +1,56 @@
 {
+    "countdown_showsec": {
+        "en": "Show seconds",
+        "de": "Sekunden anzeigen",
+        "ru": "Показать секунды",
+        "pt": "Mostrar segundos",
+        "nl": "Toon seconden",
+        "fr": "Afficher les secondes",
+        "it": "Mostra i secondi",
+        "es": "Mostrar segundos",
+        "pl": "Pokaż sekundy",
+        "uk": "Показати секунди",
+        "zh-cn": "Show seconds"
+    },
+    "countdown_showmin": {
+        "en": "Show minutes",
+        "de": "Minuten anzeigen",
+        "ru": "Показать минуты",
+        "pt": "Mostrar minutos",
+        "nl": "Notulen tonen",
+        "fr": "Afficher les minutes",
+        "it": "Mostra i minuti",
+        "es": "Mostrar minutos",
+        "pl": "Pokaż minuty",
+        "uk": "Показати протокол",
+        "zh-cn": "Show minutes"
+    },
+    "countdown_showhrs": {
+        "en": "Show hours",
+        "de": "Stunden anzeigen",
+        "ru": "Часы работы",
+        "pt": "Mostrar horas",
+        "nl": "Toon uren",
+        "fr": "Heures d'ouverture",
+        "it": "Orari di apertura",
+        "es": "Mostrar horas",
+        "pl": "Godziny pokazów",
+        "uk": "Години показу",
+        "zh-cn": "Show hours"
+    },
+    "countdown_showday": {
+        "en": "Show day",
+        "de": "Tag anzeigen",
+        "ru": "День показа",
+        "pt": "Dia do espetáculo",
+        "nl": "Dag van de show",
+        "fr": "Jour du spectacle",
+        "it": "Giorno dello spettacolo",
+        "es": "Día del espectáculo",
+        "pl": "Dzień pokazu",
+        "uk": "День показу",
+        "zh-cn": "Show day"
+    },
     "countdown_oid": {
         "en": "Object ID",
         "de": "Objekt-ID",
@@ -46,7 +98,7 @@
         "nl": "HTML vooraf",
         "fr": "HTML prepend",
         "it": "HTML prepend",
-        "es": "HTML añadir",
+        "es": "HTML prepend",
         "pl": "Wstępne rozszerzenie HTML",
         "uk": "HTML prepend",
         "zh-cn": "HTML prepend"
@@ -66,7 +118,7 @@
     },
     "countdown_notimetext": {
         "en": "No time text",
-        "de": "Ohne Zeittext",
+        "de": "Kein Zeittext",
         "ru": "Текст без времени",
         "pt": "Texto sem tempo",
         "nl": "Geen tijd tekst",
@@ -144,7 +196,7 @@
     },
     "countdown_foreground": {
         "en": "Foreground color",
-        "de": "Vordergrundfarbe",
+        "de": "Farbe des Vordergrunds",
         "ru": "Цвет переднего плана",
         "pt": "Cor de primeiro plano",
         "nl": "Voorgrondkleur",
@@ -221,30 +273,30 @@
         "zh-cn": "Inactive color"
     },
     "countdown_opacity_inactive": {
-        "en": "Opacity inactive",
-        "de": "Deckkraft inaktiv",
-        "ru": "Непрозрачность неактивна",
-        "pt": "Opacidade inativa",
-        "nl": "Ondoorzichtigheid inactief",
-        "fr": "Opacité inactive",
-        "it": "Opacità inattiva",
-        "es": "Opacidad inactiva",
-        "pl": "Nieprzezroczystość nieaktywna",
-        "uk": "Непрозорість неактивна",
-        "zh-cn": "Opacity inactive"
+        "en": "Pacity inactive",
+        "de": "Kapazität inaktiv",
+        "ru": "Неактивность",
+        "pt": "Pacidade inativa",
+        "nl": "Inactieve capaciteit",
+        "fr": "Capacité inactive",
+        "it": "Pacità inattiva",
+        "es": "Paciencia inactiva",
+        "pl": "Wydajność nieaktywna",
+        "uk": "Потенціал неактивний",
+        "zh-cn": "Pacity inactive"
     },
     "countdown_glowcolor": {
-        "en": "Glow color",
-        "de": "Glühfarbe",
-        "ru": "Цвет свечения",
-        "pt": "Cor de brilho",
-        "nl": "Gloed kleur",
-        "fr": "Couleur d'éclat",
-        "it": "Colore del bagliore",
-        "es": "Color de brillo",
-        "pl": "Kolor blasku",
-        "uk": "Колір світіння",
-        "zh-cn": "Glow color"
+        "en": "Glowcolor",
+        "de": "Glowcolor",
+        "ru": "Glowcolor",
+        "pt": "Cor brilhante",
+        "nl": "Glowcolor",
+        "fr": "Couleurs chatoyantes",
+        "it": "Glowcolor",
+        "es": "Glowcolor",
+        "pl": "Glowcolor",
+        "uk": "Глоуколір",
+        "zh-cn": "Glowcolor"
     },
     "language": {
         "en": "Language",
@@ -287,7 +339,7 @@
     },
     "wordclockMargin": {
         "en": "Margin",
-        "de": "Rand",
+        "de": "Marge",
         "ru": "Маржа",
         "pt": "Margem",
         "nl": "Marge",
@@ -319,7 +371,7 @@
         "nl": "Minutengrootte",
         "fr": "Taille minute",
         "it": "Dimensione del minuto",
-        "es": "Tamaño del minuto",
+        "es": "Tamaño por minuto",
         "pl": "Rozmiar minutowy",
         "uk": "Розмір хвилини",
         "zh-cn": "Minute size"
@@ -388,57 +440,5 @@
         "pl": "Strefa czasowa",
         "uk": "Часовий пояс",
         "zh-cn": "Timezone"
-    },
-    "countdown_showsec": {
-        "en": "Show seconds",
-        "de": "Sekunden anzeigen",
-        "ru": "Показать секунды",
-        "pt": "Mostrar segundos",
-        "nl": "Toon seconden",
-        "fr": "Afficher les secondes",
-        "it": "Mostra i secondi",
-        "es": "Mostrar segundos",
-        "pl": "Pokaż sekundy",
-        "uk": "Показати секунди",
-        "zh-cn": "Show seconds"
-    },
-    "countdown_showmin": {
-        "en": "Show minutes",
-        "de": "Minuten anzeigen",
-        "ru": "Показать минуты",
-        "pt": "Mostrar minutos",
-        "nl": "Notulen tonen",
-        "fr": "Afficher les minutes",
-        "it": "Mostra i minuti",
-        "es": "Mostrar minutos",
-        "pl": "Pokaż minuty",
-        "uk": "Показати протокол",
-        "zh-cn": "Show minutes"
-    },
-    "countdown_showhrs": {
-        "en": "Show hours",
-        "de": "Stunden anzeigen",
-        "ru": "Часы работы",
-        "pt": "Mostrar horas",
-        "nl": "Toon uren",
-        "fr": "Heures d'ouverture",
-        "it": "Orari di apertura",
-        "es": "Mostrar horas",
-        "pl": "Godziny pokazów",
-        "uk": "Години показу",
-        "zh-cn": "Show hours"
-    },
-    "countdown_showday": {
-        "en": "Show day",
-        "de": "Tag anzeigen",
-        "ru": "День показа",
-        "pt": "Dia do espetáculo",
-        "nl": "Dag van de show",
-        "fr": "Jour du spectacle",
-        "it": "Giorno dello spettacolo",
-        "es": "Día del espectáculo",
-        "pl": "Dzień pokazu",
-        "uk": "День показу",
-        "zh-cn": "Show day"
     }
 }

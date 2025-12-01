@@ -59,6 +59,42 @@ The demo page <http://jakubroztocil.github.io/rrule/> can also be used for exper
 Additional to add a timerule, you can add a timerule to exclude time events,
 to add single time events and also to exclude single time events.
 
+In addition to the functionality of rrule, dynamically calculated times
+for the various sun and moon phases can now also be calculated.
+This calculation only occurs if the time interval is at
+least daily (not hourly or minutely).
+
+##### Sun based time events
+
+- astronomicalDawn
+- amateurDawn
+- nauticalDawn
+- blueHourDawnStart
+- civilDawn
+- blueHourDawnEnd
+- goldenHourDawnStart
+- sunriseStart
+- sunriseEnd
+- goldenHourDawnEnd
+- solarNoon
+- goldenHourDuskStart
+- sunsetStart
+- sunsetEnd
+- goldenHourDuskEnd
+- blueHourDuskStart
+- civilDusk
+- blueHourDuskEnd
+- nauticalDusk
+- amateurDusk
+- astronomicalDusk
+- nadir
+
+##### Moon based time events
+
+- moonrise
+- moonhigh
+- moonset
+
 ### Usage
 
 #### Usage of Timeseries
@@ -412,6 +448,14 @@ A widget to show a wordclock with many options
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+
+### **WORK IN PROGRESS**
+
+- add calculation of astro dates to timeseries
+- rework of the timeseries caluclation in the backend
+- this version includes extended debug information (map-files).
+  For this reason, the adapter is approximately 13MB in size instead of 2MB.
+
 ### 2.1.0 (2025-11-27)
 
 - switch from crao to vite build system

@@ -37,11 +37,15 @@ function importi18nKeys() {
     return i18n;
 }
 function exporti18nKeysMultiFile(i18n) {
-    const dir = path.resolve(__dirname, i18npath);
+    const dir = path.resolve(__dirname, '../', i18npath);
     for (const lang in i18n) {
         const json = JSON.stringify(i18n[lang], null, 4);
-        const filePath = `${dir}/${lang}.json`;
-        fs.writeFileSync(filePath, json);
+        const filePath = `${dir}\\${lang}.json`;
+        try {
+            fs.writeFileSync(filePath, json);
+        } catch (error) {
+            console.error(`Error writing file ${filePath}:`, error);
+        }
     }
 }
 function exporti18nKeysSingleFile(i18n) {
@@ -126,6 +130,7 @@ async function updateEmptyKeysWithTranslation(i18n, lang) {
                     i18n[k][key] = translatedKey[k];
                 }
             }
+            exporti18nKeys(i18n);
         }
     }
     return i18n;

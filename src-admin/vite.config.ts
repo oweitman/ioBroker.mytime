@@ -31,6 +31,10 @@ const config = {
             '/session': 'http://localhost:8081',
             '/log': 'http://localhost:8081',
             '/lib': 'http://localhost:8081',
+            '/i18n': {
+                target: 'http://localhost:4173',
+                rewrite: (pathname: string): string => pathname.replace(/^\/i18n/, '/src/i18n'),
+            },
         },
     },
     base: './',
@@ -44,6 +48,7 @@ const config = {
     build: {
         target: 'chrome89',
         outDir: './build',
+        sourcemap: true,
         rollupOptions: {
             onwarn(warning: { code: string }, warn: (warning: { code: string }) => void): void {
                 // Suppress "Module level directives cause errors when bundled" warnings
