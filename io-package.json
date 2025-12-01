@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "mytime",
-    "version": "2.1.0",
+    "version": "2.2.0",
     "titleLang": {
       "en": "MyTime",
       "de": "MyTime",
@@ -32,6 +32,19 @@
       "oweitman <oweitman@gmx.de>"
     ],
     "news": {
+      "2.2.0": {
+        "en": "- add calculation of astro dates to timeseries\n- rework of the timeseries caluclation in the backend\n- this version includes extended debug information (map-files).\n  For this reason, the adapter is approximately 13MB in size instead of 2MB.",
+        "de": "- berechnung von astrodaten in zeitreihen hinzufügen\n- nacharbeiten der zeitreihenkalkulation im backend\n- diese version enthält erweiterte debug-informationen (karte-dateien).\nAus diesem Grund ist der Adapter ca. 13MB groß statt 2MB.",
+        "ru": "- добавьте расчеты астро-дат к временным рядам\n- переделка часовых поясов в бэкэнде\n- эта версия включает расширенную информацию отладки (карты-файлы).\nПо этой причине адаптер имеет размер около 13 МБ вместо 2 МБ.",
+        "pt": "- adicionar o cálculo das datas astrológicas às séries cronológicas\n- retrabalho da caluclação de épocas na infra-estrutura\n- esta versão inclui informações de depuração estendidas (map-files).\nPor esta razão, o adaptador tem aproximadamente 13MB de tamanho em vez de 2MB.",
+        "nl": "- de berekening van astrodata toevoegen aan tijdreeksen\n- herwerken van de tijdschaal in de backend\n- deze versie bevat uitgebreide debug informatie (map-files).\nDaarom is de adapter ongeveer 13MB groot in plaats van 2MB.",
+        "fr": "- ajouter le calcul des dates astro aux séries chronologiques\n- retravail de la caluclation des séries chronologiques dans le moteur\n- cette version inclut des informations de débogage étendues (fichiers de cartes).\nPour cette raison, l'adaptateur est d'environ 13 Mo de taille au lieu de 2 Mo.",
+        "it": "- aggiungere il calcolo delle date dell'astro alle timeerie\n- rielaborazione della caluclazione dei tempi nel backend\n- questa versione include informazioni di debug estesa (file di mappa).\nPer questo motivo, l'adattatore è di circa 13MB di dimensione invece di 2MB.",
+        "es": "- añadir cálculo de las fechas astronómicas a los plazos\n- retrabajo de la calusión temporal en el backend\n- esta versión incluye información de depuración ampliada (map-files).\nPor esta razón, el adaptador es de aproximadamente 13 MB de tamaño en lugar de 2MB.",
+        "pl": "- dodawanie obliczania dat astro do czasopism\n- przeróbka kalkulacji w tle\n- ta wersja zawiera rozszerzone informacje o debugowaniu (map- files).\nZ tego powodu adapter ma rozmiar około 13MB zamiast 2MB.",
+        "uk": "- додавати розрахунок дат астро до періодичних видань\n- реконструкція часопису в задньому\n- дана версія включає розширену інформацію про відключення (карт-файли).\nЗ цієї причини адаптер приблизно 13 Мб за розміром замість 2 Мб.",
+        "zh-cn": "- 在时间序列中增加计算天体日期\n- 重新设计后端的时间序列计算\n- 这个版本包括扩展调试信息(地图文件).\n为此,适配器大小约为13MB,而非2MB."
+      },
       "2.1.0": {
         "en": "- switch from crao to vite build system\n- New option for countdown timer: rerun - when the timer expires,\n  it will automatically restart.",
         "de": "- wechsel von crao zu vite build system\n- Neue Option für Countdown-Timer: rerun - wenn der Timer abläuft,\nes wird automatisch neu gestartet.",
@@ -109,19 +122,6 @@
         "pl": "naprawić stopbeaviour\nnaprawić obsługę państwa\npoprawić walidator vor nazwa i setdp w admin",
         "uk": "фіксувати stopbeaviour\nфіксувати стан обробки\nпокращувати ім'я адміністратора і встановити в адмін",
         "zh-cn": "修复断面\n固定状态处理\n改进管理员的验证符 vor 名称和设置dp"
-      },
-      "1.4.3": {
-        "en": "fix validation rule for the setDP button in admin",
-        "de": "die Validierungsregel für die setDP-Taste in Admin festlegen",
-        "ru": "исправить правило проверки для кнопки setDP в admin",
-        "pt": "regra de validação de correção para o botão setDP no admin",
-        "nl": "fix validatieregel voor de setDP-knop in admin",
-        "fr": "fixer la règle de validation pour le bouton setDP dans admin",
-        "it": "correzione della regola di convalida per il pulsante setDP in admin",
-        "es": "fijar regla de validación para el botón setDP en administración",
-        "pl": "reguła walidacji dla przycisku setDP w admin",
-        "uk": "зафіксувати правило валідації для кнопки setDP в адмін",
-        "zh-cn": "固定管理员设置的 DP 按钮的验证规则"
       }
     },
     "platform": "Javascript/Node.js",
