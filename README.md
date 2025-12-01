@@ -448,6 +448,10 @@ A widget to show a wordclock with many options
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+### 2.2.1 (2025-12-01)
+
+- add missing files
+
 ### 2.2.0 (2025-12-01)
 
 - add calculation of astro dates to timeseries

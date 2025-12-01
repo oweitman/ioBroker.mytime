@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "mytime",
-    "version": "2.2.0",
+    "version": "2.2.1",
     "titleLang": {
       "en": "MyTime",
       "de": "MyTime",
@@ -32,6 +32,19 @@
       "oweitman <oweitman@gmx.de>"
     ],
     "news": {
+      "2.2.1": {
+        "en": "add missing files",
+        "de": "fehlende dateien hinzufügen",
+        "ru": "добавить недостающие файлы",
+        "pt": "adicionar os ficheiros em falta",
+        "nl": "ontbrekende bestanden toevoegen",
+        "fr": "ajouter des fichiers manquants",
+        "it": "aggiungere i file mancanti",
+        "es": "añadir archivos perdidos",
+        "pl": "dodaj brakujące pliki",
+        "uk": "додати відсутні файли",
+        "zh-cn": "添加缺失的文件"
+      },
       "2.2.0": {
         "en": "- add calculation of astro dates to timeseries\n- rework of the timeseries caluclation in the backend\n- this version includes extended debug information (map-files).\n  For this reason, the adapter is approximately 13MB in size instead of 2MB.",
         "de": "- berechnung von astrodaten in zeitreihen hinzufügen\n- nacharbeiten der zeitreihenkalkulation im backend\n- diese version enthält erweiterte debug-informationen (karte-dateien).\nAus diesem Grund ist der Adapter ca. 13MB groß statt 2MB.",
@@ -109,19 +122,6 @@
         "pl": "fix widget reverse countdown plain",
         "uk": "виправити віджет зворотний відлік plain",
         "zh-cn": "修正部件倒数倒数平原"
-      },
-      "1.4.4": {
-        "en": "fix stopbeaviour\nfix state handling\nimprove validator vor name and setdp in admin",
-        "de": "stoppbeaviour\nzustandsbehandlung\nvalidator vor name und setdp in admin",
-        "ru": "фиксировать стоп-авиор\nфиксировать состояние\nулучшить имя валидатора и setdp в admin",
-        "pt": "corrigir o comportamento de paragem\ncorrigir o tratamento do estado\nmelhorar o nome do vor validador e setdp no administrador",
-        "nl": "fix stopbeaviour\nfix state handling\nverbeteren validator vor naam en setdp in admin",
-        "fr": "fixer stopbeaviour\nréparer la manipulation de l'état\naméliorer validator vor nom et setdp dans admin",
-        "it": "fix stopbeaviour\ncorretto gestione dello stato\nmigliorare il nome del vor del validatore e setdp in admin",
-        "es": "reparación stopbeaviour\ncorrección de estado\nmejorar el nombre del vor del validador y configurar en admin",
-        "pl": "naprawić stopbeaviour\nnaprawić obsługę państwa\npoprawić walidator vor nazwa i setdp w admin",
-        "uk": "фіксувати stopbeaviour\nфіксувати стан обробки\nпокращувати ім'я адміністратора і встановити в адмін",
-        "zh-cn": "修复断面\n固定状态处理\n改进管理员的验证符 vor 名称和设置dp"
       }
     },
     "platform": "Javascript/Node.js",

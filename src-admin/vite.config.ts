@@ -48,6 +48,13 @@ const config = {
     build: {
         target: 'chrome89',
         outDir: './build',
+        output: {
+            manualChunks: {
+                reactVendor: ['react', 'react-dom'],
+                muiVendor: ['@mui/material', '@mui/icons-material'],
+            },
+            sourcemapExcludeSources: true,
+        },
         sourcemap: true,
         rollupOptions: {
             onwarn(warning: { code: string }, warn: (warning: { code: string }) => void): void {
