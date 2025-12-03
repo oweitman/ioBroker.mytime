@@ -8,6 +8,9 @@
 'use strict';
 
 import { version as pkgVersion } from '../../../package.json';
+import dayjs from 'dayjs';
+import duration from 'dayjs/plugin/duration.js';
+dayjs.extend(duration);
 
 /* global $, systemDictionary, jQuery, vis */
 // add translations for edit mode
@@ -20,7 +23,15 @@ fetch('widgets/mytime/i18n/translations.json').then(async res => {
         i18n,
     );
 });
-
+function toBoolSafe(input) {
+    if (input === false) {
+        return false;
+    }
+    if (input === 'false') {
+        return false;
+    }
+    return Boolean(input); // true, "true", 1, {}, [], usw.
+}
 // this code can be placed directly in mytime.html
 vis.binds['mytime'] = {
     version: pkgVersion,
@@ -51,24 +62,32 @@ vis.binds['mytime'] = {
                 console.error(`Error: invalid countdown_oid ${data.countdown_oid}`);
                 return;
             }
-            var showsec = data.countdown_showsec;
-            var showmin = data.countdown_showmin;
-            var showhrs = data.countdown_showhrs;
-            var showday = data.countdown_showday;
-
-            // var font = (style['font-family'] && style['font-family'] != '') ? style['font-family'] : '';
+            var mytime = vis.binds['mytime'];
+            var showsec = toBoolSafe(data.countdown_showsec);
+            var showmin = toBoolSafe(data.countdown_showmin);
+            var showhrs = toBoolSafe(data.countdown_showhrs);
+            var showday = toBoolSafe(data.countdown_showday);
+            var showweek = toBoolSafe(data.countdown_showweek);
+            var showmonth = toBoolSafe(data.countdown_showmonth);
+            var showyear = toBoolSafe(data.countdown_showyear);
+            var units = {
+                years: showyear,
+                months: showmonth,
+                weeks: showweek,
+                days: showday,
+                hours: showhrs,
+                minutes: showmin,
+                seconds: showsec,
+            };
+            var error = mytime.validateCountdownUnits(units);
+            if (error) {
+                return error;
+            }
 
             var color_act = data.countdown_color_active || '#FFE548';
             var color_inact = data.countdown_color_inactive || '#323232';
             var opacity_inact = data.countdown_opacity_inactive || 0.35;
             var glowcolor = data.countdown_glowcolor || '#F58732';
-
-            var pattern = (showday ? '1' : '0') + (showhrs ? '1' : '0') + (showmin ? '1' : '0') + (showsec ? '1' : '0');
-
-            if (pattern.indexOf('101') >= 0 || pattern.indexOf('1001') >= 0) {
-                $(`#${widgetID}`).html('Error: Invalid Format');
-                return;
-            }
 
             function onChange(e /* , newVal, oldVal */) {
                 var idParts = e.type.split('.');
@@ -84,7 +103,6 @@ vis.binds['mytime'] = {
             }
 
             if (countdown_oid) {
-                //console.log(`bind states ${widgetID}`);
                 vis.binds['mytime'].bindStates(
                     $div,
                     [
@@ -114,7 +132,99 @@ vis.binds['mytime'] = {
             text += '</style> \n';
 
             text += '<div class="cdclock">\n';
-
+            if (showyear) {
+                text += '    <section class="years">\n';
+                text += '        <div class="tens">\n';
+                text += '            <p>0</p>\n';
+                text += '            <p>1</p>\n';
+                text += '            <p>2</p>\n';
+                text += '            <p>3</p>\n';
+                text += '            <p>4</p>\n';
+                text += '            <p>5</p>\n';
+                text += '            <p>6</p>\n';
+                text += '            <p>7</p>\n';
+                text += '            <p>8</p>\n';
+                text += '            <p>9</p>\n';
+                text += '        </div>\n';
+                text += '        <div class="ones">\n';
+                text += '            <p>0</p>\n';
+                text += '            <p>1</p>\n';
+                text += '            <p>2</p>\n';
+                text += '            <p>3</p>\n';
+                text += '            <p>4</p>\n';
+                text += '            <p>5</p>\n';
+                text += '            <p>6</p>\n';
+                text += '            <p>7</p>\n';
+                text += '            <p>8</p>\n';
+                text += '            <p>9</p>\n';
+                text += '        </div>\n';
+                text += '    </section>\n';
+            }
+            if (showyear && (showmonth || showweek || showday || showhrs || showmin || showsec)) {
+                text += '    <p class="separator">:</p>\n';
+            }
+            if (showmonth) {
+                text += '    <section class="months">\n';
+                text += '        <div class="tens">\n';
+                text += '            <p>0</p>\n';
+                text += '            <p>1</p>\n';
+                text += '            <p>2</p>\n';
+                text += '            <p>3</p>\n';
+                text += '            <p>4</p>\n';
+                text += '            <p>5</p>\n';
+                text += '            <p>6</p>\n';
+                text += '            <p>7</p>\n';
+                text += '            <p>8</p>\n';
+                text += '            <p>9</p>\n';
+                text += '        </div>\n';
+                text += '        <div class="ones">\n';
+                text += '            <p>0</p>\n';
+                text += '            <p>1</p>\n';
+                text += '            <p>2</p>\n';
+                text += '            <p>3</p>\n';
+                text += '            <p>4</p>\n';
+                text += '            <p>5</p>\n';
+                text += '            <p>6</p>\n';
+                text += '            <p>7</p>\n';
+                text += '            <p>8</p>\n';
+                text += '            <p>9</p>\n';
+                text += '        </div>\n';
+                text += '    </section>\n';
+            }
+            if (showmonth && (showday || showhrs || showmin || showsec)) {
+                text += '    <p class="separator">:</p>\n';
+            }
+            if (showweek) {
+                text += '    <section class="weeks">\n';
+                text += '        <div class="tens">\n';
+                text += '            <p>0</p>\n';
+                text += '            <p>1</p>\n';
+                text += '            <p>2</p>\n';
+                text += '            <p>3</p>\n';
+                text += '            <p>4</p>\n';
+                text += '            <p>5</p>\n';
+                text += '            <p>6</p>\n';
+                text += '            <p>7</p>\n';
+                text += '            <p>8</p>\n';
+                text += '            <p>9</p>\n';
+                text += '        </div>\n';
+                text += '        <div class="ones">\n';
+                text += '            <p>0</p>\n';
+                text += '            <p>1</p>\n';
+                text += '            <p>2</p>\n';
+                text += '            <p>3</p>\n';
+                text += '            <p>4</p>\n';
+                text += '            <p>5</p>\n';
+                text += '            <p>6</p>\n';
+                text += '            <p>7</p>\n';
+                text += '            <p>8</p>\n';
+                text += '            <p>9</p>\n';
+                text += '        </div>\n';
+                text += '    </section>\n';
+            }
+            if (showweek && (showday || showhrs || showmin || showsec)) {
+                text += '    <p class="separator">:</p>\n';
+            }
             if (showday) {
                 text += '    <section class="days">\n';
                 text += '        <div class="tens">\n';
@@ -268,15 +378,27 @@ vis.binds['mytime'] = {
             var config = countdown_oid ? JSON.parse(vis.states.attr(`${countdown_oid}.config.val`) || '{}') : {};
             var stopbehaviour = config.stopbehaviour || 'timer';
 
-            var showsec = data.countdown_showsec;
-            var showmin = data.countdown_showmin;
-            var showhrs = data.countdown_showhrs;
-            var showday = data.countdown_showday;
-
-            /*             var pattern = ((showday) ? "1" : "0") +
-                            ((showhrs) ? "1" : "0") +
-                            ((showmin) ? "1" : "0") +
-                            ((showsec) ? "1" : "0"); */
+            var mytime = vis.binds['mytime'];
+            var showsec = toBoolSafe(data.countdown_showsec);
+            var showmin = toBoolSafe(data.countdown_showmin);
+            var showhrs = toBoolSafe(data.countdown_showhrs);
+            var showday = toBoolSafe(data.countdown_showday);
+            var showweek = toBoolSafe(data.countdown_showweek);
+            var showmonth = toBoolSafe(data.countdown_showmonth);
+            var showyear = toBoolSafe(data.countdown_showyear);
+            var units = {
+                years: showyear,
+                months: showmonth,
+                weeks: showweek,
+                days: showday,
+                hours: showhrs,
+                minutes: showmin,
+                seconds: showsec,
+            };
+            var error = mytime.validateCountdownUnits(units);
+            if (error) {
+                return error;
+            }
 
             var now = new Date().getTime() - (vis.binds['mytime'].serversync.serverTimeDiff || 0);
             var ms = 0;
@@ -314,18 +436,43 @@ vis.binds['mytime'] = {
                 }
             }
 
-            var cdObj = vis.binds['mytime'].formatDate(ms, 'dd:HH:mm:ss').split(':');
+            let cdObj;
+            let format = '';
+            if (units.weeks) {
+                format = 'YYYY:ww:dd:HH:mm:ss';
+            } else {
+                format = 'YYYY:MM:dd:HH:mm:ss';
+            }
+            if (action == 'end' || action == 'stop') {
+                cdObj = vis.binds['mytime'].formatDateFromMs(ms, format).split(':');
+            }
+            if (action == 'run') {
+                cdObj = vis.binds['mytime'].formatDateFromRange(now, end, format).split(':');
+            }
+            if (action == 'pause') {
+                cdObj = vis.binds['mytime'].formatDateFromRange(start, end, format).split(':');
+            }
+
+            if (showyear) {
+                vis.binds['mytime'].countdownnixie.setDigits($(`#${widgetID} .years`), cdObj[0]);
+            }
+            if (showmonth) {
+                vis.binds['mytime'].countdownnixie.setDigits($(`#${widgetID} .months`), cdObj[1]);
+            }
+            if (showweek) {
+                vis.binds['mytime'].countdownnixie.setDigits($(`#${widgetID} .weeks`), cdObj[1]);
+            }
             if (showday) {
-                vis.binds['mytime'].countdownnixie.setDigits($(`#${widgetID} .days`), cdObj[0]);
+                vis.binds['mytime'].countdownnixie.setDigits($(`#${widgetID} .days`), cdObj[2]);
             }
             if (showhrs) {
-                vis.binds['mytime'].countdownnixie.setDigits($(`#${widgetID} .hours`), cdObj[1]);
+                vis.binds['mytime'].countdownnixie.setDigits($(`#${widgetID} .hours`), cdObj[3]);
             }
             if (showmin) {
-                vis.binds['mytime'].countdownnixie.setDigits($(`#${widgetID} .mins`), cdObj[2]);
+                vis.binds['mytime'].countdownnixie.setDigits($(`#${widgetID} .mins`), cdObj[4]);
             }
             if (showsec) {
-                vis.binds['mytime'].countdownnixie.setDigits($(`#${widgetID} .secs`), cdObj[3]);
+                vis.binds['mytime'].countdownnixie.setDigits($(`#${widgetID} .secs`), cdObj[5]);
             }
         },
         setDigits: function (section, digit) {
@@ -357,10 +504,11 @@ vis.binds['mytime'] = {
                 console.error(`Error: invalid countdown_oid ${data.countdown_oid}`);
                 return;
             }
-            var showsec = data.countdown_showsec;
-            var showmin = data.countdown_showmin;
-            var showhrs = data.countdown_showhrs;
-            var showday = data.countdown_showday;
+
+            var showsec = toBoolSafe(data.countdown_showsec);
+            var showmin = toBoolSafe(data.countdown_showmin);
+            var showhrs = toBoolSafe(data.countdown_showhrs);
+            var showday = toBoolSafe(data.countdown_showday);
 
             var font = style['font-family'] && style['font-family'] != '' ? style['font-family'] : '';
             var color = data.countdown_color ? data.countdown_color : '';
@@ -458,11 +606,6 @@ vis.binds['mytime'] = {
             var config = countdown_oid ? JSON.parse(vis.states.attr(`${countdown_oid}.config.val`) || '{}') : {};
             var stopbehaviour = config.stopbehaviour || 'timer';
 
-            /*             var showsec = data.countdown_showsec;
-                        var showmin = data.countdown_showmin;
-                        var showhrs = data.countdown_showhrs;
-                        var showday = data.countdown_showday; */
-
             var now = new Date().getTime() - (vis.binds['mytime'].serversync.serverTimeDiff || 0);
             var ms = 0;
             if (action == 'stop' || action == '') {
@@ -498,6 +641,9 @@ vis.binds['mytime'] = {
                     ms = 0;
                 }
             }
+            if (ms > 8639999000) {
+                ms = 8639999000;
+            }
             vis.binds['mytime'].countdownflip.flips[widgetID].setTime(parseInt(ms / 1000));
         },
     },
@@ -519,17 +665,27 @@ vis.binds['mytime'] = {
                 console.error(`Error: invalid countdown_oid ${data.countdown_oid}`);
                 return;
             }
-            // var timer = countdown_oid ? vis.states.attr(countdown_oid + '.timer.val') ? vis.states.attr(countdown_oid + '.timer.val') : 0 : 0;
-            var showsec = data.countdown_showsec;
-            var showmin = data.countdown_showmin;
-            var showhrs = data.countdown_showhrs;
-            var showday = data.countdown_showday;
+            var mytime = vis.binds['mytime'];
+            var showsec = toBoolSafe(data.countdown_showsec);
+            var showmin = toBoolSafe(data.countdown_showmin);
+            var showhrs = toBoolSafe(data.countdown_showhrs);
+            var showday = toBoolSafe(data.countdown_showday);
+            var showweek = toBoolSafe(data.countdown_showweek);
+            var showmonth = toBoolSafe(data.countdown_showmonth);
+            var showyear = toBoolSafe(data.countdown_showyear);
 
-            var pattern = (showsec ? '1' : '0') + (showmin ? '1' : '0') + (showhrs ? '1' : '0') + (showday ? '1' : '0');
-
-            if (pattern.indexOf('101') >= 0 || pattern.indexOf('1001') >= 0) {
-                $(`#${widgetID}`).html('Error: Invalid Format');
-                return;
+            var error = mytime.validateCountdownUnits({
+                Y: showyear,
+                M: showmonth,
+                w: showweek,
+                d: showday,
+                H: showhrs,
+                m: showmin,
+                s: showsec,
+            });
+            if (error) {
+                $(`#${widgetID}`).html(error);
+                return error;
             }
 
             function onChange(e /* , newVal, oldVal */) {
@@ -538,11 +694,7 @@ vis.binds['mytime'] = {
                 if (dp != 'action' && dp != 'timer' && dp != 'start' && dp != 'end') {
                     return;
                 }
-                vis.binds['mytime'].countdowncircle.setState(
-                    widgetID,
-                    data,
-                    vis.binds['mytime'].countdowncircle.setState,
-                );
+                vis.binds['mytime'].countdowncircle.setState(widgetID, data);
             }
 
             if (countdown_oid) {
@@ -590,7 +742,7 @@ vis.binds['mytime'] = {
         calcInterval: function (timer) {
             return Math.min(Math.max(timer / 720, 25), 500);
         },
-        setState: function (widgetID, data, callback) {
+        setState: function (widgetID, data) {
             var countdown_oid;
             if (
                 !data.countdown_oid ||
@@ -599,6 +751,8 @@ vis.binds['mytime'] = {
                 console.error(`Error: invalid countdown_oid ${data.countdown_oid}`);
                 return;
             }
+            var mytime = vis.binds['mytime'];
+
             var start = countdown_oid ? vis.states.attr(`${countdown_oid}.start.val`) : 0;
             var end = countdown_oid ? vis.states.attr(`${countdown_oid}.end.val`) : 0;
             var timer = countdown_oid ? vis.states.attr(`${countdown_oid}.timer.val`) : 0;
@@ -609,17 +763,38 @@ vis.binds['mytime'] = {
             var format = data.countdown_format || 'mm:ss';
             var stopbehaviour = (config && config.stopbehaviour) || 'timer';
             var bcolor = data.countdown_background || 'grey';
-            var fcolor = data.countdown_foreground || '#87ceeb';
+
+            var colorSec = data.countdown_color_second || '#87ceeb';
+            var colorMin = data.countdown_color_minute || '#87ceeb';
+            var colorHrs = data.countdown_color_hour || '#87ceeb';
+            var colorDay = data.countdown_color_day || '#87ceeb';
+            var colorWeek = data.countdown_color_week || '#87ceeb';
+            var colorMonth = data.countdown_color_month || '#87ceeb';
+            var colorYear = data.countdown_color_year || '#87ceeb';
+
             var reverse = data.countdown_reverse;
             var caps = data.countdown_caps || 'straight';
-            var showsec = data.countdown_showsec;
-            var showmin = data.countdown_showmin;
-            var showhrs = data.countdown_showhrs;
-            var showday = data.countdown_showday;
             var ringgap = data.countdown_ringgap || 5;
-
-            var pattern = (showday ? '1' : '0') + (showhrs ? '1' : '0') + (showmin ? '1' : '0') + (showsec ? '1' : '0');
-
+            var showsec = toBoolSafe(data.countdown_showsec);
+            var showmin = toBoolSafe(data.countdown_showmin);
+            var showhrs = toBoolSafe(data.countdown_showhrs);
+            var showday = toBoolSafe(data.countdown_showday);
+            var showweek = toBoolSafe(data.countdown_showweek);
+            var showmonth = toBoolSafe(data.countdown_showmonth);
+            var showyear = toBoolSafe(data.countdown_showyear);
+            var units = {
+                years: showyear,
+                months: showmonth,
+                weeks: showweek,
+                days: showday,
+                hours: showhrs,
+                minutes: showmin,
+                seconds: showsec,
+            };
+            var error = mytime.validateCountdownUnits(units);
+            if (error) {
+                return error;
+            }
             var now = new Date().getTime() - (vis.binds['mytime'].serversync.serverTimeDiff || 0);
             var ms = 0;
             if (action == 'stop' || action == '') {
@@ -634,7 +809,7 @@ vis.binds['mytime'] = {
                     widgetID,
                     data,
                     vis.binds['mytime'].countdowncircle.calcInterval(timer),
-                    callback,
+                    vis.binds['mytime'].countdowncircle.setState,
                 );
             }
             if (action == 'pause') {
@@ -656,8 +831,8 @@ vis.binds['mytime'] = {
                 }
             }
 
-            var cdObjnow = vis.binds['mytime'].calcCountdownFromMiliSeconds(ms, pattern);
-            var cdObjtimer = vis.binds['mytime'].calcCountdownFromMiliSeconds(timer, pattern);
+            var cdObjnow = mytime.calcCountdownFromMilliseconds(ms, units);
+            var cdObjtimer = mytime.calcCountdownFromMilliseconds(timer, units);
 
             var canvas = $(`#${widgetID} canvas`);
             var ctx = canvas[0].getContext('2d');
@@ -665,59 +840,156 @@ vis.binds['mytime'] = {
 
             ctx.lineWidth = linewidth;
 
-            var radius = 0;
+            var radius, bound, gap;
             var x = ctx.canvas.width / 2;
             var y = ctx.canvas.height / 2;
             var length = Math.min(ctx.canvas.width, ctx.canvas.height);
             //var radius=(length/2)-(linewidth/2);
             var startangle = 0;
-            var bound = 0;
-            var gap = 0;
-            ['seconds', 'minutes', 'hours', 'days'].forEach(ring => {
-                bound = ring == 'seconds' ? length / 2 : radius - linewidth / 2;
-                gap = ring == 'seconds' ? 0 : ringgap;
+
+            ['seconds', 'minutes', 'hours', 'days', 'weeks', 'months', 'years'].forEach(ring => {
+                if (!units[ring]) {
+                    return;
+                }
+                if ((ring == 'weeks' && !units.weeks) || (ring == 'months' && !units.months)) {
+                    return;
+                }
+                bound = bound == undefined ? length / 2 : radius - linewidth / 2;
+                gap = gap == undefined ? 0 : ringgap;
                 radius = vis.binds['mytime'].countdowncircle.calcRadius(bound, linewidth, gap);
 
-                if (ring == 'seconds' && pattern[3] == '1') {
-                    startangle =
-                        pattern[2] == '1'
-                            ? (cdObjnow[ring] * 360) / 60 || 0
-                            : (cdObjnow[ring] * 360) / cdObjtimer[ring] || 0;
+                if (ring == 'seconds' && units.seconds) {
+                    startangle = units.seconds
+                        ? (cdObjnow[ring] * 360) / 60 || 0
+                        : (cdObjnow[ring] * 360) / cdObjtimer[ring] || 0;
                     if (vis.editMode) {
                         startangle = 180;
                     }
                     vis.binds['mytime'].countdowncircle.drawBase(ctx, x, y, radius, bcolor);
-                    vis.binds['mytime'].countdowncircle.drawRing(ctx, x, y, radius, startangle, fcolor, caps, reverse);
+                    vis.binds['mytime'].countdowncircle.drawRing(
+                        ctx,
+                        x,
+                        y,
+                        radius,
+                        startangle,
+                        colorSec,
+                        caps,
+                        reverse,
+                    );
                 }
-                if (ring == 'minutes' && pattern[2] == '1') {
-                    startangle =
-                        pattern[1] == '1'
-                            ? (cdObjnow[ring] * 360) / 60 || 0
-                            : (cdObjnow[ring] * 360) / cdObjtimer[ring] || 0;
+                if (ring == 'minutes' && units.minutes) {
+                    startangle = units.minutes
+                        ? (cdObjnow[ring] * 360) / 60 || 0
+                        : (cdObjnow[ring] * 360) / cdObjtimer[ring] || 0;
                     if (vis.editMode) {
                         startangle = 180;
                     }
                     vis.binds['mytime'].countdowncircle.drawBase(ctx, x, y, radius, bcolor);
-                    vis.binds['mytime'].countdowncircle.drawRing(ctx, x, y, radius, startangle, fcolor, caps, reverse);
+                    vis.binds['mytime'].countdowncircle.drawRing(
+                        ctx,
+                        x,
+                        y,
+                        radius,
+                        startangle,
+                        colorMin,
+                        caps,
+                        reverse,
+                    );
                 }
-                if (ring == 'hours' && pattern[1] == '1') {
-                    startangle =
-                        pattern[0] == '1'
-                            ? (cdObjnow[ring] * 360) / 24 || 0
-                            : (cdObjnow[ring] * 360) / cdObjtimer[ring] || 0;
+                if (ring == 'hours' && units.hours) {
+                    startangle = units.hours
+                        ? (cdObjnow[ring] * 360) / 24 || 0
+                        : (cdObjnow[ring] * 360) / cdObjtimer[ring] || 0;
                     if (vis.editMode) {
                         startangle = 180;
                     }
                     vis.binds['mytime'].countdowncircle.drawBase(ctx, x, y, radius, bcolor);
-                    vis.binds['mytime'].countdowncircle.drawRing(ctx, x, y, radius, startangle, fcolor, caps, reverse);
+                    vis.binds['mytime'].countdowncircle.drawRing(
+                        ctx,
+                        x,
+                        y,
+                        radius,
+                        startangle,
+                        colorHrs,
+                        caps,
+                        reverse,
+                    );
                 }
-                if (ring == 'days' && pattern[0] == '1') {
-                    startangle = (cdObjnow[ring] * 360) / cdObjtimer[ring] || 0;
+                if (ring == 'days' && units.days) {
+                    startangle = units.days
+                        ? (cdObjnow[ring] * 360) / 365 || 0
+                        : (cdObjnow[ring] * 360) / cdObjtimer[ring] || 0;
                     if (vis.editMode) {
                         startangle = 180;
                     }
                     vis.binds['mytime'].countdowncircle.drawBase(ctx, x, y, radius, bcolor);
-                    vis.binds['mytime'].countdowncircle.drawRing(ctx, x, y, radius, startangle, fcolor, caps, reverse);
+                    vis.binds['mytime'].countdowncircle.drawRing(
+                        ctx,
+                        x,
+                        y,
+                        radius,
+                        startangle,
+                        colorDay,
+                        caps,
+                        reverse,
+                    );
+                }
+                if (ring == 'weeks' && units.weeks) {
+                    startangle = units.weeks
+                        ? (cdObjnow[ring] * 360) / 52 || 0
+                        : (cdObjnow[ring] * 360) / cdObjtimer[ring] || 0;
+                    if (vis.editMode) {
+                        startangle = 180;
+                    }
+                    vis.binds['mytime'].countdowncircle.drawBase(ctx, x, y, radius, bcolor);
+                    vis.binds['mytime'].countdowncircle.drawRing(
+                        ctx,
+                        x,
+                        y,
+                        radius,
+                        startangle,
+                        colorWeek,
+                        caps,
+                        reverse,
+                    );
+                }
+                if (ring == 'months' && units.months) {
+                    startangle = units.months
+                        ? (cdObjnow[ring] * 360) / 12 || 0
+                        : (cdObjnow[ring] * 360) / cdObjtimer[ring] || 0;
+                    if (vis.editMode) {
+                        startangle = 180;
+                    }
+                    vis.binds['mytime'].countdowncircle.drawBase(ctx, x, y, radius, bcolor);
+                    vis.binds['mytime'].countdowncircle.drawRing(
+                        ctx,
+                        x,
+                        y,
+                        radius,
+                        startangle,
+                        colorMonth,
+                        caps,
+                        reverse,
+                    );
+                }
+                if (ring == 'years' && units.years) {
+                    startangle = units.years
+                        ? (cdObjnow[ring] * 360) / 12 || 0
+                        : (cdObjnow[ring] * 360) / cdObjtimer[ring] || 0;
+                    if (vis.editMode) {
+                        startangle = 180;
+                    }
+                    vis.binds['mytime'].countdowncircle.drawBase(ctx, x, y, radius, bcolor);
+                    vis.binds['mytime'].countdowncircle.drawRing(
+                        ctx,
+                        x,
+                        y,
+                        radius,
+                        startangle,
+                        colorYear,
+                        caps,
+                        reverse,
+                    );
                 }
             });
 
@@ -761,7 +1033,7 @@ vis.binds['mytime'] = {
         },
         drawText: function (widgetID, ms, format) {
             var text = '';
-            text += vis.binds['mytime'].formatDate(ms, format);
+            text += vis.binds['mytime'].formatDateFromMs(ms, format);
             $(`#${widgetID} .timer`).html(text);
         },
     },
@@ -802,11 +1074,8 @@ vis.binds['mytime'] = {
             var now = new Date().getTime() - (vis.binds['mytime'].serversync.serverTimeDiff || 0);
             var end = new Date(data.datetime).getTime();
 
-            //var ms = now - end;
-            var ms = end - now;
-
             var text = '';
-            text += vis.binds['mytime'].formatDate(ms, format);
+            text += vis.binds['mytime'].formatDateFromRange(now, end, format);
             $(`#${widgetID} .timer`).html(htmlprepend + text + htmlappend);
         },
     },
@@ -885,6 +1154,8 @@ vis.binds['mytime'] = {
             var config = countdown_oid ? JSON.parse(vis.states.attr(`${countdown_oid}.config.val`) || '{}') : {};
             var format = data.countdown_format || 'dd\\d HH\\h mm\\m ss\\s';
             var stopbehaviour = config.stopbehaviour || 'timer';
+            var htmlprepend = data.countdown_html_prepend || '';
+            var htmlappend = data.countdown_html_append || '';
 
             var now = new Date().getTime() - (vis.binds['mytime'].serversync.serverTimeDiff || 0);
             var ms = 0;
@@ -923,8 +1194,16 @@ vis.binds['mytime'] = {
             }
 
             var text = '';
-            text += vis.binds['mytime'].formatDate(ms, format);
-            $(`#${widgetID} .timer`).html(text);
+            if (action == 'end' || action == 'stop') {
+                text += vis.binds['mytime'].formatDateFromMs(ms, format);
+            }
+            if (action == 'run') {
+                text += vis.binds['mytime'].formatDateFromRange(now, end, format);
+            }
+            if (action == 'pause') {
+                text += vis.binds['mytime'].formatDateFromRange(start, end, format);
+            }
+            $(`#${widgetID} .timer`).html(htmlprepend + text + htmlappend);
         },
     },
     wordclock: {
@@ -1216,6 +1495,34 @@ vis.binds['mytime'] = {
 
         return ret;
     },
+    calcCountdownFromMiliSecondsNew: function (miliseconds, pattern) {
+        var ret = {};
+        /*
+        [0] days
+        [1] hours
+        [2] minutes
+        [3] seconds
+        */
+
+        if (pattern[0] == '1') {
+            ret.days = Math.floor(miliseconds / 1000 / 60 / 60 / 24);
+            miliseconds -= ret.days * 1000 * 60 * 60 * 24;
+        }
+        if (pattern[1] == '1') {
+            ret.hours = Math.floor(miliseconds / 1000 / 60 / 60);
+            miliseconds -= ret.hours * 1000 * 60 * 60;
+        }
+        if (pattern[2] == '1') {
+            ret.minutes = Math.floor(miliseconds / 1000 / 60);
+            miliseconds -= ret.minutes * 1000 * 60;
+        }
+        if (pattern[3] == '1') {
+            ret.seconds = Math.floor(miliseconds / 1000);
+            miliseconds -= ret.seconds * 1000;
+        }
+
+        return ret;
+    },
     bindStates: function (elem, bound, change_callback) {
         var $div = $(elem);
         var boundstates = $div.data('bound');
@@ -1326,6 +1633,288 @@ vis.binds['mytime'] = {
 
         return format;
     },
+    // ****************************************************************
+    // Helper: Zahl mit führenden Nullen auffüllen
+    pad: function (i, len) {
+        var s = `${i}`;
+        len = len || 2;
+        while (s.length < len) {
+            s = `0${s}`;
+        }
+        return s;
+    },
+
+    // Helper: prüft, ob ein (nicht-escaped) Placeholder im Format vorkommt
+    hasToken: function (format, letter) {
+        // (^|[^\\])X+  -> ein X oder mehrere, nicht escaped
+        var re = new RegExp(`(^|[^\\\\])${letter}+`);
+        return re.test(format);
+    },
+
+    // Einheiten aus dem Format extrahieren
+    parseCountdownUnits: function (format) {
+        return {
+            years: vis.binds['mytime'].hasToken(format, 'Y'), // Jahre
+            months: vis.binds['mytime'].hasToken(format, 'M'), // Monate
+            weeks: vis.binds['mytime'].hasToken(format, 'w'), // Wochen
+            days: vis.binds['mytime'].hasToken(format, 'd'), // Tage
+            hours: vis.binds['mytime'].hasToken(format, 'H'), // Stunden
+            minutes: vis.binds['mytime'].hasToken(format, 'm'), // Minuten
+            seconds: vis.binds['mytime'].hasToken(format, 's'), // Sekunden
+        };
+    },
+
+    // Pattern validieren (keine Lücken, nicht M und w gleichzeitig)
+    validateCountdownUnits: function (units) {
+        // M und w dürfen nie zusammen vorkommen
+        if (units.months && units.weeks) {
+            return 'Error: Invalid Format (cannot mix months (M) and weeks (w))';
+        }
+
+        // Slots: Y | (M oder w) | d | H | m | s
+        var slots = [units.years, units.months || units.weeks, units.days, units.hours, units.minutes, units.seconds];
+
+        var pattern = slots
+            .map(function (b) {
+                return b ? '1' : '0';
+            })
+            .join('');
+
+        // Die 1er müssen zusammenhängend sein (keine Lücken)
+        var first = pattern.indexOf('1');
+        if (first !== -1) {
+            var last = pattern.lastIndexOf('1');
+            var middle = pattern.slice(first, last + 1);
+            if (middle.indexOf('0') !== -1) {
+                // Es gibt eine Lücke in den Einheiten
+                return 'Error: Invalid Format';
+            }
+        }
+
+        return null; // alles okay
+    },
+    calcCountdownFromMilliseconds: function (ms, units) {
+        var now = dayjs();
+        var end = now.add(ms, 'millisecond');
+        return vis.binds['mytime'].calcCountdownFromDates(now, end, units);
+    },
+    calcCountdownFromDates: function (start, end, units) {
+        var from = dayjs(start);
+        var to = dayjs(end);
+
+        if (!to.isValid() || !from.isValid()) {
+            return {
+                years: 0,
+                months: 0,
+                weeks: 0,
+                days: 0,
+                hours: 0,
+                minutes: 0,
+                seconds: 0,
+            };
+        }
+
+        // Negativer Countdown -> alles 0
+        if (to.isBefore(from)) {
+            return {
+                years: 0,
+                months: 0,
+                weeks: 0,
+                days: 0,
+                hours: 0,
+                minutes: 0,
+                seconds: 0,
+            };
+        }
+
+        var result = {
+            years: 0,
+            months: 0,
+            weeks: 0,
+            days: 0,
+            hours: 0,
+            minutes: 0,
+            seconds: 0,
+        };
+
+        // Helper: diff & advance
+        function take(unit) {
+            var diff = to.diff(from, unit);
+            if (diff > 0) {
+                from = from.add(diff, unit);
+            }
+            return diff;
+        }
+
+        // --- Jahre ---
+        if (units.years) {
+            // z.B. 2020-02-01 bis 2025-02-01 -> 5 Jahre (inkl. Schaltjahr korrekt)
+            result.years = take('year');
+        }
+
+        // --- Monate ODER Wochen ---
+        if (units.months) {
+            // Wichtig: wenn Y deaktiviert, sollen alle Monate aufsummiert werden.
+            // Das ist bereits erfüllt, weil 'from' dann noch das Original-Startdatum ist.
+            result.months = take('month'); // echte Monate, inkl. Feb/Schaltjahr, 30/31 Tage usw.
+        } else if (units.weeks) {
+            // Wochen machen wir sinnvoll aus dem Rest in Tagen
+            // diff in Tagen (kalendarisch)
+            var totalDays = to.diff(from, 'day');
+            result.weeks = Math.floor(totalDays / 7);
+            if (result.weeks > 0) {
+                from = from.add(result.weeks * 7, 'day');
+            }
+        }
+
+        // --- Tage ---
+        if (units.days) {
+            result.days = take('day'); // echte Kalendertage
+        }
+
+        // --- Stunden ---
+        if (units.hours) {
+            result.hours = take('hour');
+        }
+
+        // --- Minuten ---
+        if (units.minutes) {
+            result.minutes = take('minute');
+        }
+
+        // --- Sekunden ---
+        if (units.seconds) {
+            result.seconds = take('second');
+        }
+
+        return result;
+    },
+    formatDateFromMs: function (ms, format) {
+        var mytime = vis.binds['mytime'];
+
+        // Units aus format bestimmen
+        var units = mytime.parseCountdownUnits(format);
+
+        // Validieren (inkl. M XOR w, keine Lücken)
+        var error = mytime.validateCountdownUnits(units);
+        if (error) {
+            return error;
+        }
+
+        // Countdown-Werte aus ms berechnen
+        var cdObj = mytime.calcCountdownFromMilliseconds(ms, units);
+
+        // Platzhalter ersetzen
+        return mytime.applyCountdownFormat(format, units, cdObj);
+    },
+    formatDateFromRange: function (startMs, endMs, format) {
+        var mytime = vis.binds['mytime'];
+
+        // Units aus format bestimmen
+        var units = mytime.parseCountdownUnits(format);
+
+        // Validieren
+        var error = mytime.validateCountdownUnits(units);
+        if (error) {
+            return error;
+        }
+
+        // Countdown-Werte aus Start/Ende berechnen (kalendarisch korrekt, falls so implementiert)
+        var cdObj = mytime.calcCountdownFromDates(startMs, endMs, units);
+
+        // Platzhalter ersetzen
+        return mytime.applyCountdownFormat(format, units, cdObj);
+    },
+    applyCountdownFormat: function (format, units, cdObj) {
+        var pad = vis.binds['mytime'].pad;
+
+        // Jahre: Y / YY / YYYY
+        if (units.years) {
+            var Y = cdObj.years;
+            format = format.replace(/(^|[^\\])YYYY/g, function (_m, p1) {
+                return p1 + pad(Y, 4);
+            });
+            format = format.replace(/(^|[^\\])YY/g, function (_m, p1) {
+                return p1 + pad(Y, 2);
+            });
+            format = format.replace(/(^|[^\\])Y/g, function (_m, p1) {
+                return p1 + Y;
+            });
+        }
+
+        // Monate: M / MM
+        if (units.months) {
+            var M = cdObj.months;
+            format = format.replace(/(^|[^\\])MM/g, function (_m, p1) {
+                return p1 + pad(M, 2);
+            });
+            format = format.replace(/(^|[^\\])M/g, function (_m, p1) {
+                return p1 + M;
+            });
+        }
+
+        // Wochen: w / ww
+        if (units.weeks) {
+            var w = cdObj.weeks;
+            format = format.replace(/(^|[^\\])ww/g, function (_m, p1) {
+                return p1 + pad(w, 2);
+            });
+            format = format.replace(/(^|[^\\])w/g, function (_m, p1) {
+                return p1 + w;
+            });
+        }
+
+        // Tage: d / dd
+        if (units.days) {
+            var d = cdObj.days;
+            format = format.replace(/(^|[^\\])dd/g, function (_m, p1) {
+                return p1 + pad(d, 2);
+            });
+            format = format.replace(/(^|[^\\])d/g, function (_m, p1) {
+                return p1 + d;
+            });
+        }
+
+        // Stunden: H / HH
+        if (units.hours) {
+            var H = cdObj.hours;
+            format = format.replace(/(^|[^\\])HH/g, function (_m, p1) {
+                return p1 + pad(H, 2);
+            });
+            format = format.replace(/(^|[^\\])H/g, function (_m, p1) {
+                return p1 + H;
+            });
+        }
+
+        // Minuten: m / mm
+        if (units.minutes) {
+            var m = cdObj.minutes;
+            format = format.replace(/(^|[^\\])mm/g, function (_m, p1) {
+                return p1 + pad(m, 2);
+            });
+            format = format.replace(/(^|[^\\])m/g, function (_m, p1) {
+                return p1 + m;
+            });
+        }
+
+        // Sekunden: s / ss
+        if (units.seconds) {
+            var s = cdObj.seconds;
+            format = format.replace(/(^|[^\\])ss/g, function (_m, p1) {
+                return p1 + pad(s, 2);
+            });
+            format = format.replace(/(^|[^\\])s/g, function (_m, p1) {
+                return p1 + s;
+            });
+        }
+
+        // Escape-Zeichen entfernen (\X -> X)
+        format = format.replace(/\\(.)/g, '$1');
+
+        return format;
+    },
+    // ****************************************************************
+
     getTimezones: function () {
         return this.timezones.map(el => el.label);
     },

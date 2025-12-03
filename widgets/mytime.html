@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="widgets/mytime/css/style.css" />
 <!-- here you can include so many js-files as you want -->
 <!-- <script type="text/javascript" src="widgets/mytime/dist/index.js"></script>-->
- 
+
 <script type="text/javascript" src="widgets/mytime/lib/flipclock.js"></script>
 <script type="text/javascript" src="widgets/mytime/lib/flipclockmytimeface.js"></script>
 <!-- <script type="text/javascript" src="widgets/mytime/lib/timezones.js"></script> -->
@@ -97,90 +97,60 @@
  
 x
 -->
- 
-<script id="tplMyTimeCountdownPlain"
-        type="text/ejs"
-        class="vis-tpl"
-		data-vis-prev='<img style="display: block;margin-left: auto;margin-right: auto;width: 50%;" src="widgets/mytime/img/cdplain.png"></img>'
-        data-vis-attrs="countdown_oid/id;countdown_format[dd\d HH\h mm\m ss\s];"
-        data-vis-set="mytime"
-        data-vis-type="val"
-        data-vis-beta="false"
-        data-vis-update-style="true"
-        data-vis-name="MyTime Countdown Plain">
+
+<script id="tplMyTimeCountdownPlain" type="text/ejs" class="vis-tpl"
+    data-vis-prev='<img style="display: block;margin-left: auto;margin-right: auto;width: 50%;" src="widgets/mytime/img/cdplain.png"></img>'
+    data-vis-attrs="countdown_oid/id;countdown_format[dd\d HH\h mm\m ss\s];countdown_html_prepend/text;countdown_html_append/text;"
+    data-vis-set="mytime" data-vis-type="val" data-vis-beta="false" data-vis-update-style="true"
+    data-vis-name="MyTime Countdown Plain">
     <div class="vis-widget <%== this.data.attr('class') %>" style="overflow:visible; width: 230px; height: 24px" id="<%= this.data.attr('wid') %>"><%
         vis.binds['mytime'].countdownplain.createWidget(this.data.wid, this.view, this.data, this.style);
     %></div>
 </script>
 
-<script id="tplMyTimeReverseCountdownPlain"
-        type="text/ejs"
-        class="vis-tpl"
-		data-vis-prev='<img style="display: block;margin-left: auto;margin-right: auto;width: 50%;" src="widgets/mytime/img/cdplain.png"></img>'
-        data-vis-attrs="countdown_datetime;countdown_format[dd\d HH\h mm\m ss\s];countdown_html_prepend/text;countdown_html_append/text;"
-        data-vis-set="mytime"
-        data-vis-type="val"
-        data-vis-beta="false"
-        data-vis-update-style="true"
-        data-vis-name="MyTime Reverse Countdown Plain">
+<script id="tplMyTimeReverseCountdownPlain" type="text/ejs" class="vis-tpl"
+    data-vis-prev='<img style="display: block;margin-left: auto;margin-right: auto;width: 50%;" src="widgets/mytime/img/cdplain.png"></img>'
+    data-vis-attrs="countdown_datetime;countdown_format[dd\d HH\h mm\m ss\s];countdown_html_prepend/text;countdown_html_append/text;"
+    data-vis-set="mytime" data-vis-type="val" data-vis-beta="false" data-vis-update-style="true"
+    data-vis-name="MyTime Reverse Countdown Plain">
     <div class="vis-widget <%== this.data.attr('class') %>" style="overflow:visible; width: 230px; height: 24px" id="<%= this.data.attr('wid') %>"><%
         vis.binds['mytime'].reversecountdownplain.createWidget(this.data.wid, this.view, this.data, this.style);
     %></div>
 </script>
 
-<script id="tplMyTimeCountdownCircle"
-        type="text/ejs"
-        class="vis-tpl"
-		data-vis-prev='<img style="display: block;margin-left: auto;margin-right: auto;width: 50%;" src="widgets/mytime/img/cdcircle.png"></img>'
-        data-vis-attrs="countdown_oid/id;countdown_notimetext/checkbox;countdown_format[mm:ss];countdown_reverse/checkbox;countdown_width[20];countdown_ringgap;countdown_caps[straight]/nselect,straight,round;countdown_background/color;countdown_foreground/color;countdown_showsec[true]/checkbox;countdown_showmin/checkbox;countdown_showhrs/checkbox;countdown_showday/checkbox;"
-        data-vis-set="mytime"
-        data-vis-type="val"
-        data-vis-beta="false"
-        data-vis-update-style="true"
-        data-vis-name="MyTime Countdown Circle">
+<script id="tplMyTimeCountdownCircle" type="text/ejs" class="vis-tpl"
+    data-vis-prev='<img style="display: block;margin-left: auto;margin-right: auto;width: 50%;" src="widgets/mytime/img/cdcircle.png"></img>'
+    data-vis-attrs="countdown_oid/id;countdown_notimetext/checkbox;countdown_format[mm:ss];countdown_reverse/checkbox;countdown_width[20];countdown_ringgap;countdown_caps[straight]/nselect,straight,round;countdown_background/color;countdown_color_second/color;countdown_color_minute/color;countdown_color_hour/color;countdown_color_day/color;countdown_color_week/color;countdown_color_month/color;countdown_color_year/color;countdown_showsec[true]/checkbox;countdown_showmin/checkbox;countdown_showhrs/checkbox;countdown_showday/checkbox;countdown_showweek/checkbox;countdown_showmonth/checkbox;countdown_showyear/checkbox;"
+    data-vis-set="mytime" data-vis-type="val" data-vis-beta="false" data-vis-update-style="true"
+    data-vis-name="MyTime Countdown Circle">
     <div class="vis-widget <%== this.data.attr('class') %>" style="overflow:visible; width: 230px; height: 210px" id="<%= this.data.attr('wid') %>"><%
         vis.binds['mytime'].countdowncircle.createWidget(this.data.wid, this.view, this.data, this.style);
     %></div>
 </script>
 
-<script id="tplMyTimeCountdownFlip"
-        type="text/ejs"
-        class="vis-tpl"
-		data-vis-prev='<img style="display: block;margin-left: auto;margin-right: auto;width: 50%;" src="widgets/mytime/img/cdflipclock.png"></img>'
-        data-vis-attrs="countdown_oid/id;countdown_showsec[true]/checkbox;countdown_showmin/checkbox;countdown_showhrs/checkbox;countdown_showday/checkbox;countdown_color/color;countdown_background_color/color;countdown_dot_color/color;"
-        data-vis-set="mytime"
-        data-vis-type="val"
-        data-vis-beta="false"
-        data-vis-update-style="true"
-        data-vis-name="MyTime Countdown FlipClock">
+<script id="tplMyTimeCountdownFlip" type="text/ejs" class="vis-tpl"
+    data-vis-prev='<img style="display: block;margin-left: auto;margin-right: auto;width: 50%;" src="widgets/mytime/img/cdflipclock.png"></img>'
+    data-vis-attrs="countdown_oid/id;countdown_showsec[true]/checkbox;countdown_showmin/checkbox;countdown_showhrs/checkbox;countdown_showday/checkbox;countdown_color/color;countdown_background_color/color;countdown_dot_color/color;"
+    data-vis-set="mytime" data-vis-type="val" data-vis-beta="false" data-vis-update-style="true"
+    data-vis-name="MyTime Countdown FlipClock">
     <div class="vis-widget <%== this.data.attr('class') %>" style="overflow:visible; width: 160px; height: 120px" id="<%= this.data.attr('wid') %>"><%
         vis.binds['mytime'].countdownflip.createWidget(this.data.wid, this.view, this.data, this.style);
     %></div>
 </script>
-<script id="tplMyTimeCountdownNixie"
-        type="text/ejs"
-        class="vis-tpl"
-		data-vis-prev='<img style="display: block;margin-left: auto;margin-right: auto;width: 50%;" src="widgets/mytime/img/cdnixie.png"></img>'
-        data-vis-attrs="countdown_oid/id;countdown_showsec[true]/checkbox;countdown_showmin/checkbox;countdown_showhrs/checkbox;countdown_showday/checkbox;countdown_color_active[#FFE548]/color;countdown_color_inactive[#323232]/color;countdown_opacity_inactive[0.35]/number,0,1,0.05;countdown_glowcolor[#F58732]/color;"
-        data-vis-set="mytime"
-        data-vis-type="val"
-        data-vis-beta="false"
-        data-vis-update-style="true"
-        data-vis-name="MyTime Countdown NixieClock">
+<script id="tplMyTimeCountdownNixie" type="text/ejs" class="vis-tpl"
+    data-vis-prev='<img style="display: block;margin-left: auto;margin-right: auto;width: 50%;" src="widgets/mytime/img/cdnixie.png"></img>'
+    data-vis-attrs="countdown_oid/id;countdown_showsec[true]/checkbox;countdown_showmin/checkbox;countdown_showhrs/checkbox;countdown_showday/checkbox;countdown_showweek/checkbox;countdown_showmonth/checkbox;countdown_showyear/checkbox;countdown_color_active[#FFE548]/color;countdown_color_inactive[#323232]/color;countdown_opacity_inactive[0.35]/number,0,1,0.05;countdown_glowcolor[#F58732]/color;"
+    data-vis-set="mytime" data-vis-type="val" data-vis-beta="false" data-vis-update-style="true"
+    data-vis-name="MyTime Countdown NixieClock">
     <div class="vis-widget <%== this.data.attr('class') %>" style="overflow:visible; width: 160px; height: 120px" id="<%= this.data.attr('wid') %>"><%
         vis.binds['mytime'].countdownnixie.createWidget(this.data.wid, this.view, this.data, this.style);
     %></div>
 </script>
-<script id="tplMyTimeClockWord"
-        type="text/ejs"
-        class="vis-tpl"
-		data-vis-prev='<img style="display: block;margin-left: auto;margin-right: auto;width: 50%;" src="widgets/mytime/img/wordclock.png"></img>'
-        data-vis-attrs="language[english]/nselect,english,german,swiss,swabian,dutch,italian,spanish,french,russian,turkish;letterActivated/color;letterDeactivated/color;wordclockMargin/number;withMinutes/checkbox;minuteSize[5]/number;minuteColor/color;withSeconds/checkbox;secondSize[5]/number;secondColor/color;timezone/custom,mytime.attrSelect;"
-        data-vis-set="mytime"
-        data-vis-type="val"
-        data-vis-beta="false"
-        data-vis-update-style="true"
-        data-vis-name="MyTime Wordclock">
+<script id="tplMyTimeClockWord" type="text/ejs" class="vis-tpl"
+    data-vis-prev='<img style="display: block;margin-left: auto;margin-right: auto;width: 50%;" src="widgets/mytime/img/wordclock.png"></img>'
+    data-vis-attrs="language[english]/nselect,english,german,swiss,swabian,dutch,italian,spanish,french,russian,turkish;letterActivated/color;letterDeactivated/color;wordclockMargin/number;withMinutes/checkbox;minuteSize[5]/number;minuteColor/color;withSeconds/checkbox;secondSize[5]/number;secondColor/color;timezone/custom,mytime.attrSelect;"
+    data-vis-set="mytime" data-vis-type="val" data-vis-beta="false" data-vis-update-style="true"
+    data-vis-name="MyTime Wordclock">
     <div class="vis-widget <%== this.data.attr('class') %>" style="overflow:visible; width: 230px; height: 210px" id="<%= this.data.attr('wid') %>"><%
         vis.binds['mytime'].wordclock.createWidget(this.data.wid, this.view, this.data, this.style);
     %></div>
