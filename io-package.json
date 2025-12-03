@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "mytime",
-    "version": "2.2.1",
+    "version": "2.3.0",
     "titleLang": {
       "en": "MyTime",
       "de": "MyTime",
@@ -32,6 +32,19 @@
       "oweitman <oweitman@gmx.de>"
     ],
     "news": {
+      "2.3.0": {
+        "en": "remove autocomplete function in the browser\nimprove documentation\nadd html prepend and append to the countdown plain widget\nRevision of the algorithms for parameter takeover and verification.\nRevision of the calculation of dynamic time differences",
+        "de": "autocomplete funktion im browser entfernen\nverbesserung der dokumentation\nhtml prepend and append to the countdown simple widget hinzufügen\nRevision der Algorithmen zur Parameterübernahme und -überprüfung.\nRevision der Berechnung dynamischer Zeitunterschiede",
+        "ru": "удалить функцию автозаполнения в браузере\nулучшить документацию\nдобавить html prepend и добавить в виджет обратного отсчета\nПересмотр алгоритмов захвата и проверки параметров.\nПересмотр расчета динамических разниц во времени",
+        "pt": "remover a função autocompletar no navegador\nmelhorar a documentação\nadicionar o preprend html e adicionar ao widget de contagem decrescente\nRevisão dos algoritmos para aquisição e verificação de parâmetros.\nRevisão do cálculo das diferenças de tempo dinâmicas",
+        "nl": "autocomplete functie in de browser verwijderen\nde documentatie verbeteren\nhtml-prepend toevoegen en toevoegen aan het countdown-platte widget\nHerziening van de algoritmen voor parameterovername en verificatie.\nHerziening van de berekening van dynamische tijdsverschillen",
+        "fr": "supprimer la fonction autocomplete dans le navigateur\naméliorer la documentation\najouter html prepend et ajouter au widget simple compte à rebours\nRévision des algorithmes de prise en charge et de vérification des paramètres.\nRévision du calcul des écarts de temps dynamiques",
+        "it": "rimuovere la funzione di completamento automatico nel browser\nmigliorare la documentazione\naggiungere html prepend e append al widget di conto alla rovescia\nRevisione degli algoritmi per l'acquisizione dei parametri e la verifica.\nRevisione del calcolo delle differenze di tempo dinamiche",
+        "es": "eliminar la función autocompleta en el navegador\nmejorar la documentación\nañadir html prepend y apéndice al widget de cuenta atrás\nRevisión de los algoritmos para la toma y verificación del parámetro.\nRevisión del cálculo de las diferencias de tiempo dinámico",
+        "pl": "usuń funkcję autocomplete w przeglądarce\npoprawić dokumentację\ndodaj prependium html i dołącz do zwykłego widgetu licznika\nPrzegląd algorytmów przejęcia i weryfikacji parametrów.\nPrzegląd obliczania dynamicznych różnic w czasie",
+        "uk": "видалити автоматичну функцію в браузері\nвдосконалення документації\nadd html prepend і додаток до відліку звичайного віджету\nПерегляд алгоритмів вступу та перевірки параметрів.\nРевізія розрахунку динамічних часових відмінностей",
+        "zh-cn": "删除浏览器中的自动完整功能\n改进文件编制\n添加 html 预置和附加到倒计时平原部件\n修改参数接管与验证的算法.\n动态时差计算的修订"
+      },
       "2.2.1": {
         "en": "add missing files",
         "de": "fehlende dateien hinzufügen",
@@ -109,19 +122,6 @@
         "pl": "naprawić błędne kalc punktów danych w niektórych przypadkach",
         "uk": "зафіксувати неправильне калібрування точок даних в деяких випадках",
         "zh-cn": "在某些情况下修补错误的数据点计算"
-      },
-      "1.4.5": {
-        "en": "fix widget reverse countdown plain",
-        "de": "widget reverse countdown ebene",
-        "ru": "исправить виджет reverse countdown plain",
-        "pt": "corrigir a contagem regressiva do elemento",
-        "nl": "fix widget reverse countdown gewoon",
-        "fr": "correction du compte à rebours du widget",
-        "it": "correzione widget conto alla rovescia inversa",
-        "es": "arreglar widget reverso cuenta regresiva plano",
-        "pl": "fix widget reverse countdown plain",
-        "uk": "виправити віджет зворотний відлік plain",
-        "zh-cn": "修正部件倒数倒数平原"
       }
     },
     "platform": "Javascript/Node.js",

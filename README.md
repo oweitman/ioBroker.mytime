@@ -514,8 +514,7 @@ of the countdown is available as CSS-Class selector:**
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
-
-### **WORK IN PROGRESS**
+### 2.3.0 (2025-12-03)
 
 - remove autocomplete function in the browser
 - improve documentation
