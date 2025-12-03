@@ -99,6 +99,12 @@ export default function TimeseriesEdit() {
                                             fullWidth
                                             label={I18n.t('tsTimeseriesName')}
                                             name="tsname"
+                                            autoComplete="off"
+                                            InputProps={{
+                                                inputProps: {
+                                                    autoComplete: 'new-password', // Chrome-sicher
+                                                },
+                                            }}
                                             variant="standard"
                                             autoFocus
                                             onChange={e => {

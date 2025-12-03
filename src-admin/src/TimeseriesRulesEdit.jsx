@@ -217,6 +217,12 @@ export default function TimeseriesRulesEdit() {
                     <TextField
                         fullWidth
                         name={el.attr}
+                        autoComplete="off"
+                        InputProps={{
+                            inputProps: {
+                                autoComplete: 'new-password', // Chrome-sicher
+                            },
+                        }}
                         key={el.attr}
                         label={I18n.t(el.title)}
                         variant="standard"
