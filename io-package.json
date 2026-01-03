@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "mytime",
-    "version": "2.3.0",
+    "version": "2.3.1",
     "titleLang": {
       "en": "MyTime",
       "de": "MyTime",
@@ -32,6 +32,19 @@
       "oweitman <oweitman@gmx.de>"
     ],
     "news": {
+      "2.3.1": {
+        "en": "- circle widget: fix reverse selection\n- circle widget: fixed full/partial display of the largest ring.\n  Option added to select behavior.",
+        "de": "- kreis widget: reverse auswahl beheben\n- kreis widget: feste voll-/teildarstellung des größten rings.\nOption hinzugefügt, um das Verhalten auszuwählen.",
+        "ru": "- виджет круга: исправить обратный выбор\nвиджет круга: фиксированный полный/частичный дисплей самого большого кольца.\nВариант добавлен для выбора поведения.",
+        "pt": "- widget círculo: corrigir seleção reversa\n- widget círculo: exibição fixa total / parcial do maior anel.\nOpção adicionada para selecionar o comportamento.",
+        "nl": "- cirkel-widget: fix omgekeerde selectie\n- cirkel widget: vaste volledige/gedeeltelijke weergave van de grootste ring.\nOptie toegevoegd om gedrag te selecteren.",
+        "fr": "- widget cercle : corriger la sélection inversée\n- widget de cercle: affichage complet/partiel fixe de la plus grande bague.\nOption ajoutée pour sélectionner le comportement.",
+        "it": "- widget cerchio: correzione selezione inversa\n- widget cerchio: display fisso full/partial dell'anello più grande.\nOpzione aggiunta per selezionare il comportamento.",
+        "es": "- widget círculo: fijar selección inversa\n- widget círculo: pantalla completa/parcial fija del anillo más grande.\nOpción agregada para seleccionar el comportamiento.",
+        "pl": "- widget okręgu: naprawić wybór odwrotny\n- widżet okręgu: stały pełny / częściowy wyświetlacz największego pierścienia.\nOpcja dodana do wyboru zachowania.",
+        "uk": "- коло віджет: виправити зворотний вибір\n- круговий віджет: фіксований повноканальний дисплей найбільшого кільця.\nВаріант додано для вибору поведінки.",
+        "zh-cn": "- 圆形部件:修正反向选择\n- 圆形部件:最大环的固定全/部分显示.\n为选择行为添加了选项 ."
+      },
       "2.3.0": {
         "en": "remove autocomplete function in the browser\nimprove documentation\nadd html prepend and append to the countdown plain widget\nRevision of the algorithms for parameter takeover and verification.\nRevision of the calculation of dynamic time differences",
         "de": "autocomplete funktion im browser entfernen\nverbesserung der dokumentation\nhtml prepend and append to the countdown simple widget hinzufügen\nRevision der Algorithmen zur Parameterübernahme und -überprüfung.\nRevision der Berechnung dynamischer Zeitunterschiede",
@@ -109,19 +122,6 @@
         "pl": "usunąć typy / żądanie\npoprawić format dokumentacji",
         "uk": "видалення типів / пошук\nформат документації",
         "zh-cn": "删除类型/请求\n改进文件格式"
-      },
-      "1.4.6": {
-        "en": "fix wrong calc of datapoints in some cases",
-        "de": "fehlerbehebung von datenpunkten in einigen fällen",
-        "ru": "исправить неправильный кальций точек данных в некоторых случаях",
-        "pt": "corrigir o cálculo errado de pontos de dados em alguns casos",
-        "nl": "vast te stellen verkeerde calc van datapunten in sommige gevallen",
-        "fr": "corriger une mauvaise calc des points de données dans certains cas",
-        "it": "correggere il calcolo sbagliato dei datapoint in alcuni casi",
-        "es": "corregir el cálculo incorrecto de los puntos de datos en algunos casos",
-        "pl": "naprawić błędne kalc punktów danych w niektórych przypadkach",
-        "uk": "зафіксувати неправильне калібрування точок даних в деяких випадках",
-        "zh-cn": "在某些情况下修补错误的数据点计算"
       }
     },
     "platform": "Javascript/Node.js",
