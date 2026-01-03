@@ -773,6 +773,7 @@ vis.binds['mytime'] = {
             var colorYear = data.countdown_color_year || '#87ceeb';
 
             var reverse = data.countdown_reverse;
+            var partring = data.countdown_partring;
             var caps = data.countdown_caps || 'straight';
             var ringgap = data.countdown_ringgap || 5;
             var showsec = toBoolSafe(data.countdown_showsec);
@@ -847,7 +848,10 @@ vis.binds['mytime'] = {
             //var radius=(length/2)-(linewidth/2);
             var startangle = 0;
 
-            ['seconds', 'minutes', 'hours', 'days', 'weeks', 'months', 'years'].forEach(ring => {
+            const order = ['seconds', 'minutes', 'hours', 'days', 'weeks', 'months', 'years'];
+            const smallestUnit = order.reverse().find(unit => units[unit] === true);
+
+            order.forEach(ring => {
                 if (!units[ring]) {
                     return;
                 }
@@ -858,13 +862,16 @@ vis.binds['mytime'] = {
                 gap = gap == undefined ? 0 : ringgap;
                 radius = vis.binds['mytime'].countdowncircle.calcRadius(bound, linewidth, gap);
 
-                if (ring == 'seconds' && units.seconds) {
-                    startangle = units.seconds
-                        ? (cdObjnow[ring] * 360) / 60 || 0
-                        : (cdObjnow[ring] * 360) / cdObjtimer[ring] || 0;
+                if (ring === 'seconds' && units.seconds) {
+                    const isFull = smallestUnit === 'seconds' && partring === false;
+                    const denom = isFull ? cdObjtimer[ring] : 60;
+
+                    startangle = (cdObjnow[ring] * 360) / denom || 0;
+
                     if (vis.editMode) {
                         startangle = 180;
                     }
+
                     vis.binds['mytime'].countdowncircle.drawBase(ctx, x, y, radius, bcolor);
                     vis.binds['mytime'].countdowncircle.drawRing(
                         ctx,
@@ -877,13 +884,17 @@ vis.binds['mytime'] = {
                         reverse,
                     );
                 }
-                if (ring == 'minutes' && units.minutes) {
-                    startangle = units.minutes
-                        ? (cdObjnow[ring] * 360) / 60 || 0
-                        : (cdObjnow[ring] * 360) / cdObjtimer[ring] || 0;
+
+                if (ring === 'minutes' && units.minutes) {
+                    const isFull = smallestUnit === 'minutes' && partring === false;
+                    const denom = isFull ? cdObjtimer[ring] : 60;
+
+                    startangle = (cdObjnow[ring] * 360) / denom || 0;
+
                     if (vis.editMode) {
                         startangle = 180;
                     }
+
                     vis.binds['mytime'].countdowncircle.drawBase(ctx, x, y, radius, bcolor);
                     vis.binds['mytime'].countdowncircle.drawRing(
                         ctx,
@@ -896,13 +907,16 @@ vis.binds['mytime'] = {
                         reverse,
                     );
                 }
-                if (ring == 'hours' && units.hours) {
-                    startangle = units.hours
-                        ? (cdObjnow[ring] * 360) / 24 || 0
-                        : (cdObjnow[ring] * 360) / cdObjtimer[ring] || 0;
+                if (ring === 'hours' && units.minutes) {
+                    const isFull = smallestUnit === 'hours' && partring === false;
+                    const denom = isFull ? cdObjtimer[ring] : 24;
+
+                    startangle = (cdObjnow[ring] * 360) / denom || 0;
+
                     if (vis.editMode) {
                         startangle = 180;
                     }
+
                     vis.binds['mytime'].countdowncircle.drawBase(ctx, x, y, radius, bcolor);
                     vis.binds['mytime'].countdowncircle.drawRing(
                         ctx,
@@ -915,13 +929,16 @@ vis.binds['mytime'] = {
                         reverse,
                     );
                 }
-                if (ring == 'days' && units.days) {
-                    startangle = units.days
-                        ? (cdObjnow[ring] * 360) / 365 || 0
-                        : (cdObjnow[ring] * 360) / cdObjtimer[ring] || 0;
+                if (ring === 'days' && units.minutes) {
+                    const isFull = smallestUnit === 'days' && partring === false;
+                    const denom = isFull ? cdObjtimer[ring] : 365;
+
+                    startangle = (cdObjnow[ring] * 360) / denom || 0;
+
                     if (vis.editMode) {
                         startangle = 180;
                     }
+
                     vis.binds['mytime'].countdowncircle.drawBase(ctx, x, y, radius, bcolor);
                     vis.binds['mytime'].countdowncircle.drawRing(
                         ctx,
@@ -934,13 +951,16 @@ vis.binds['mytime'] = {
                         reverse,
                     );
                 }
-                if (ring == 'weeks' && units.weeks) {
-                    startangle = units.weeks
-                        ? (cdObjnow[ring] * 360) / 52 || 0
-                        : (cdObjnow[ring] * 360) / cdObjtimer[ring] || 0;
+                if (ring === 'weeks' && units.minutes) {
+                    const isFull = smallestUnit === 'weeks' && partring === false;
+                    const denom = isFull ? cdObjtimer[ring] : 52;
+
+                    startangle = (cdObjnow[ring] * 360) / denom || 0;
+
                     if (vis.editMode) {
                         startangle = 180;
                     }
+
                     vis.binds['mytime'].countdowncircle.drawBase(ctx, x, y, radius, bcolor);
                     vis.binds['mytime'].countdowncircle.drawRing(
                         ctx,
@@ -953,13 +973,16 @@ vis.binds['mytime'] = {
                         reverse,
                     );
                 }
-                if (ring == 'months' && units.months) {
-                    startangle = units.months
-                        ? (cdObjnow[ring] * 360) / 12 || 0
-                        : (cdObjnow[ring] * 360) / cdObjtimer[ring] || 0;
+                if (ring === 'months' && units.minutes) {
+                    const isFull = smallestUnit === 'months' && partring === false;
+                    const denom = isFull ? cdObjtimer[ring] : 12;
+
+                    startangle = (cdObjnow[ring] * 360) / denom || 0;
+
                     if (vis.editMode) {
                         startangle = 180;
                     }
+
                     vis.binds['mytime'].countdowncircle.drawBase(ctx, x, y, radius, bcolor);
                     vis.binds['mytime'].countdowncircle.drawRing(
                         ctx,
@@ -972,13 +995,16 @@ vis.binds['mytime'] = {
                         reverse,
                     );
                 }
-                if (ring == 'years' && units.years) {
-                    startangle = units.years
-                        ? (cdObjnow[ring] * 360) / 12 || 0
-                        : (cdObjnow[ring] * 360) / cdObjtimer[ring] || 0;
+                if (ring === 'years' && units.minutes) {
+                    const isFull = smallestUnit === 'years' && partring === false;
+                    const denom = isFull ? cdObjtimer[ring] : 12;
+
+                    startangle = (cdObjnow[ring] * 360) / denom || 0;
+
                     if (vis.editMode) {
                         startangle = 180;
                     }
+
                     vis.binds['mytime'].countdowncircle.drawBase(ctx, x, y, radius, bcolor);
                     vis.binds['mytime'].countdowncircle.drawRing(
                         ctx,
@@ -1024,9 +1050,9 @@ vis.binds['mytime'] = {
             var sh = -90 * (Math.PI / 180);
 
             if (reverse) {
-                ctx.arc(x, y, radius, startangle * (Math.PI / 180) + sh, 0 * (Math.PI / 180) + sh, 1);
-            } else {
                 ctx.arc(x, y, radius, (360 - startangle) * (Math.PI / 180) + sh, 0 * (Math.PI / 180) + sh, 1);
+            } else {
+                ctx.arc(x, y, radius, startangle * (Math.PI / 180) + sh, 0 * (Math.PI / 180) + sh, 1);
             }
             ctx.stroke();
             ctx.closePath();

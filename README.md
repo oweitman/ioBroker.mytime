@@ -309,6 +309,7 @@ A countdown widget in a ring/circle design.
 | `notimetext`             | Disables the time text over the polar clock                                                                                                                                                                           |
 | `Format`                 | Formats the timer output. default is mm:ss. for details see Chapter [Datetime Format](#format-of-the-template-to-format-the-countdown-output-in-the-widget). ReversevSetting for growing or shrinking the ring/circle |
 | `reverse`                | The width of the ring or circle.                                                                                                                                                                                      |
+| `partring`               | The largest selected ring is displayed proportionally and not in full.                                                                                                                                                |
 | `Width`                  | The width of the ring or circle.                                                                                                                                                                                      |
 | `Ring gap`               | Gap in pixel between the rings                                                                                                                                                                                        |
 | `Ring Caps`              | Setting for the ends of the ring/circle: round or straight                                                                                                                                                            |
@@ -515,6 +516,13 @@ of the countdown is available as CSS-Class selector:**
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+
+### **WORK IN PROGRESS**
+
+- circle widget: fix reverse selection
+- circle widget: fixed full/partial display of the largest ring.
+  Option added to select behavior.
+
 ### 2.3.0 (2025-12-03)
 
 - remove autocomplete function in the browser
