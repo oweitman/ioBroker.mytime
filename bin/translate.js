@@ -125,6 +125,11 @@ async function updateEmptyKeysWithTranslation(i18n, lang) {
     for (const key in i18n[lang]) {
         if (isKeyEmptyInAnyLanguage(i18n, key)) {
             const translatedKey = await fetchTranslations(i18n[lang][key]);
+            if (translatedKey == 'Service Unavailable') {
+                exporti18nKeys(i18n);
+                console.log('Error with translator service');
+                return i18n;
+            }
             for (const k in translatedKey) {
                 if (i18n[k][key] === '') {
                     i18n[k][key] = translatedKey[k];

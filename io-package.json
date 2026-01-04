@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "mytime",
-    "version": "2.3.1",
+    "version": "2.3.2",
     "titleLang": {
       "en": "MyTime",
       "de": "MyTime",
@@ -32,6 +32,19 @@
       "oweitman <oweitman@gmx.de>"
     ],
     "news": {
+      "2.3.2": {
+        "en": "fix some translations",
+        "de": "einige übersetzungen beheben",
+        "ru": "исправить некоторые переводы",
+        "pt": "corrigir algumas traduções",
+        "nl": "sommige vertalingen te herstellen",
+        "fr": "corriger certaines traductions",
+        "it": "fissare alcune traduzioni",
+        "es": "arreglar algunas traducciones",
+        "pl": "naprawić niektóre tłumaczenia",
+        "uk": "виправити деякі переклади",
+        "zh-cn": "修复一些翻译"
+      },
       "2.3.1": {
         "en": "- circle widget: fix reverse selection\n- circle widget: fixed full/partial display of the largest ring.\n  Option added to select behavior.",
         "de": "- kreis widget: reverse auswahl beheben\n- kreis widget: feste voll-/teildarstellung des größten rings.\nOption hinzugefügt, um das Verhalten auszuwählen.",
@@ -109,19 +122,6 @@
         "pl": "główne wydanie: uczynienie zegara nixie responsywnym. użytkownicy muszą dostosować\n  font-size widżetu, aby uzyskać stary rozmiar.\n  Jeśli chcesz mieć stary rozmiar, spróbuj użyć rozmiaru czcionki 100px.",
         "uk": "Основний реліз: зроблено годинник nixie більш адаптивним. Користувачам доводиться налаштовувати\n  font-size віджету, щоб отримати старий розмір.\n  якщо вам потрібен старий розмір, спробуйте з розміром шрифту 100px.",
         "zh-cn": "major release: make nixie clock responsive. the users have to adjust the \n  font-size of the widget to get the old size.\n  if you want the old size try it with 100px font-size."
-      },
-      "1.4.7": {
-        "en": "remove types/request\nimprove documentation format",
-        "de": "typen/request entfernen\nverbesserung des dokumentationsformats",
-        "ru": "удалить типы/запрос\nулучшение формата документации",
-        "pt": "remover tipos/pedidos\nmelhorar o formato da documentação",
-        "nl": "type/verzoek verwijderen\nverbetering van het documentatieformaat",
-        "fr": "supprimer les types/demandes\naméliorer le format de la documentation",
-        "it": "rimuovere i tipi / richiesta\nmigliorare il formato della documentazione",
-        "es": "eliminar tipos/requisitos\nmejorar el formato de documentación",
-        "pl": "usunąć typy / żądanie\npoprawić format dokumentacji",
-        "uk": "видалення типів / пошук\nформат документації",
-        "zh-cn": "删除类型/请求\n改进文件格式"
       }
     },
     "platform": "Javascript/Node.js",
