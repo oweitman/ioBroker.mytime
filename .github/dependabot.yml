@@ -1,7 +1,7 @@
 version: 2
 updates:
     - package-ecosystem: npm
-      directories: '**/*'
+      directories: ['**/*']
       schedule:
           interval: weekly
           time: '10:00'
@@ -12,7 +12,7 @@ updates:
       versioning-strategy: increase
 
     - package-ecosystem: github-actions
-      directory: '/'
+      directories: ['/']
       schedule:
           interval: weekly
           time: '10:00'

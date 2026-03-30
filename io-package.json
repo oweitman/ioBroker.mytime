@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "mytime",
-    "version": "2.3.2",
+    "version": "2.3.4",
     "titleLang": {
       "en": "MyTime",
       "de": "MyTime",
@@ -32,6 +32,19 @@
       "oweitman <oweitman@gmx.de>"
     ],
     "news": {
+      "2.3.4": {
+        "en": "update packages\nfix repochecker",
+        "de": "update-pakete\nrepochecker reparieren",
+        "ru": "обновление пакетов\nремонтировать",
+        "pt": "atualizar pacotes\ncorrigir o repochecker",
+        "nl": "pakketten bijwerken\nrepareren",
+        "fr": "mettre à jour les paquets\nfixer le repocheur",
+        "it": "pacchetti di aggiornamento\ncorreggere il repochecker",
+        "es": "actualizar paquetes\narreglar repochecker",
+        "pl": "aktualizacja pakietów\nfix repochecker",
+        "uk": "оновлення пакетів\nвиправити repochecker",
+        "zh-cn": "更新软件包\n固定重检查器"
+      },
       "2.3.2": {
         "en": "fix some translations",
         "de": "einige übersetzungen beheben",
@@ -109,19 +122,6 @@
         "pl": "- przełączanie z systemu crao na system vite build\n- Nowa opcja dla licznika czasu: ponownie uruchomić - gdy zegar wygasa,\nautomatycznie się uruchomi.",
         "uk": "- вимикач від crao до системи збирання\n- Новий варіант відліку таймера: перебіг - коли таймер закінчується,\nвін автоматично перезавантажить.",
         "zh-cn": "- 从crao到vite建设系统\n- 倒计时计时器的新选项:重新运行 - 当计时器过期时,\n它会自动重启."
-      },
-      "2.0.1": {
-        "en": "major release: make nixie clock responsive. the users have to adjust the \n  font-size of the widget to get the old size.\n  if you want the old size try it with 100px font-size.",
-        "de": "Hauptversion: Nixie-Uhr reaktionsfähig machen. Die Benutzer müssen die\n  font-size des Widgets, um die alte Größe zu erhalten.\n  wenn Sie die alte Größe wollen, versuchen Sie es mit 100px font-size.",
-        "ru": "Основной релиз: сделайте часы nixie отзывчивыми. пользователям придется настроить\n  font-size виджета, чтобы получить старый размер.\n  Если вам нужен старый размер, попробуйте сделать это с font-size 100px.",
-        "pt": "versão principal: tornar o relógio nixie responsivo. os utilizadores têm de ajustar o\n  tamanho da fonte do widget para obter o tamanho antigo.\n  se quiser o tamanho antigo, experimente-o com 100px font-size.",
-        "nl": "grote release: nixieklok responsief maken. de gebruikers moeten de\n  font-size van de widget om de oude grootte te krijgen.\n  Als je de oude grootte wilt, probeer het dan met 100px font-size.",
-        "fr": "version majeure : rendre l'horloge nixie réactive. les utilisateurs doivent ajuster la taille de l'horloge nixie.\n  font-size du widget pour obtenir l'ancienne taille.\n  si vous voulez l'ancienne taille, essayez avec 100px de taille de police.",
-        "it": "rilascio importante: rendere reattivo l'orologio nixie. gli utenti devono regolare il\n  font-size del widget per ottenere la vecchia dimensione.\n  se si desidera la vecchia dimensione, provare con 100px font-size.",
-        "es": "versión principal: hacer que el reloj nixie responda. los usuarios tienen que ajustar el\n  font-size del widget para obtener el tamaño antiguo.\n  si quieres el tamaño antiguo prueba con font-size de 100px.",
-        "pl": "główne wydanie: uczynienie zegara nixie responsywnym. użytkownicy muszą dostosować\n  font-size widżetu, aby uzyskać stary rozmiar.\n  Jeśli chcesz mieć stary rozmiar, spróbuj użyć rozmiaru czcionki 100px.",
-        "uk": "Основний реліз: зроблено годинник nixie більш адаптивним. Користувачам доводиться налаштовувати\n  font-size віджету, щоб отримати старий розмір.\n  якщо вам потрібен старий розмір, спробуйте з розміром шрифту 100px.",
-        "zh-cn": "major release: make nixie clock responsive. the users have to adjust the \n  font-size of the widget to get the old size.\n  if you want the old size try it with 100px font-size."
       }
     },
     "platform": "Javascript/Node.js",
@@ -148,12 +148,12 @@
     "eraseOnUpload": true,
     "dependencies": [
       {
-        "js-controller": ">=5.0.19"
+        "js-controller": ">=6.0.11"
       }
     ],
     "globalDependencies": [
       {
-        "admin": ">=6.17.14"
+        "admin": ">=7.6.17"
       }
     ],
     "type": "visualization",
