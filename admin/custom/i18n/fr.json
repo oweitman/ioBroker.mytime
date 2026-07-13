@@ -112,7 +112,7 @@
     "tsSuntimesTooltip": "Permet d'activer ou de désactiver le calcul des temps astro pour cette série temporelle. Voir https://suncalc.net/ pour référence. Si vous sélectionnez plus d'une date, un événement sera calculé pour chaque date.",
     "tsSuntimes": "Dates de l'heure du soleil",
     "tsAmateurDawn": "L'aube amateur",
-    "tsAmateurDawnTooltip": "Amateur astronomical dawn (sun at 12° before sunrise)",
+    "tsAmateurDawnTooltip": "Aube astronomique (Soleil à 12° avant le lever du Soleil)",
     "tsAmateurDusk": "Crépuscule amateur",
     "tsAmateurDuskTooltip": "Crépuscule astronomique amateur (soleil à 12° après le lever du soleil)",
     "tsAstronomicalDawn": "L'aube astronomique",
@@ -165,6 +165,5 @@
     "tsMoonhigh": "Hauteur de la lune",
     "tsMoonhighTooltip": "Clair de lune (moment où la lune est dans sa position la plus haute)",
     "tsMoonset": "Coucher de lune",
-    "tsMoonsetTooltip": "Coucher de lune (moment où la lune disparaît sous l'horizon)",
-    "xxx": "xxx"
+    "tsMoonsetTooltip": "Coucher de lune (moment où la lune disparaît sous l'horizon)"
 }

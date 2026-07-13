@@ -18,7 +18,7 @@
             "request": "launch",
             "name": "Run translate-adapter",
             // "args": ["./bin/translate.js", "deletekey", "tsTimeseriesName,tsTimeseriesNameTooltip"],
-            "args": ["./bin/translate.js", "--source", "widgets/mytime/i18n/en.json", "--format", "single"],
+            "args": ["./bin/translate.js", "--source", "widgets/mytime/myi18n/en.json", "--format", "single"],
             "runtimeExecutable": "c:/Users/oweit/AppData/Roaming/fnm/aliases/default/node.exe",
             "cwd": "${workspaceFolder}",
             "stopOnEntry": true
@@ -60,6 +60,15 @@
             "url": "http://localhost:4173/",
             "trace": true,
             "skipFiles": ["socket.io.js"]
+        },
+        {
+            "name": "repochecker local",
+            "program": "../iobroker.repochecker/index.js",
+            "args": ["https://github.com/oweitman/ioBroker.mytime", "--local"],
+            "request": "launch",
+            "stopOnEntry": false,
+            "skipFiles": ["<node_internals>/**"],
+            "type": "node"
         }
     ]
 }

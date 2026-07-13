@@ -1,5 +1,4 @@
 {
-    "": "",
     "cd-TT-Behavior": "Comportamento após o fim da contagem regressiva",
     "cd-TT-Days": "Número de dias para a contagem regressiva",
     "cd-TT-Hours": "Número de horas para a contagem regressiva",
@@ -18,6 +17,5 @@
     "cdSetDP": "Definir DP",
     "mytime2 adapter settings": "Configurações do adaptador para mytime2",
     "tabcountdown": "Contagem regressiva",
-    "tabtimeseries": "Série temporal",
-    "xxx": "xxx"
+    "tabtimeseries": "Série temporal"
 }

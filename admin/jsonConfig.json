@@ -100,7 +100,7 @@
                             "width": "5%",
                             "attr": "_send",
                             "type": "sendTo",
-                            "label": "SetDP",
+                            "label": "cdSetDP",
                             "title": "cdSetDP",
                             "command": "setCountdownConfig",
                             "jsonData": "{\"behavior\": \"${data.behavior}\", \"days\": \"${data.days}\", \"hours\": \"${data.hours}\", \"minutes\": \"${data.minutes}\", \"name\": \"${data.name}\", \"seconds\": \"${data.seconds}\" }",

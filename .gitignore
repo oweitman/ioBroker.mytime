@@ -30,3 +30,4 @@ admin/i18n/*/flat.txt
 
 #ignore .commitinfo created by ioBroker release script
 .commitinfo
+.env

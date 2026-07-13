@@ -14,7 +14,7 @@ dayjs.extend(duration);
 
 /* global $, systemDictionary, jQuery, vis */
 // add translations for edit mode
-fetch('widgets/mytime/i18n/translations.json').then(async res => {
+fetch('widgets/mytime/myi18n/translations.json').then(async res => {
     let i18n = await res.json();
 
     $.extend(

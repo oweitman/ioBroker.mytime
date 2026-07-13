@@ -1,5 +1,7 @@
 'use strict';
 
+/// <reference types="node" />
+
 /*
  * Created with @iobroker/create-adapter v2.6.3
  */
@@ -99,7 +101,12 @@ class Mytime extends utils.Adapter {
                 }
             }
         }
-        mytimeserver.processMessages(obj);
+        if (!mytimeserver) {
+            this.log.error(
+                'main onMessage problem with mytimeserver. please report issue with additional context informations',
+            );
+        }
+        mytimeserver && mytimeserver.processMessages(obj);
     }
 }
 

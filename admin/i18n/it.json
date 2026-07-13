@@ -1,5 +1,4 @@
 {
-    "": "",
     "cd-TT-Behavior": "Comportamento dopo la fine del conto alla rovescia",
     "cd-TT-Days": "Numero di giorni per il conto alla rovescia",
     "cd-TT-Hours": "Numero di ore per il conto alla rovescia",
@@ -18,6 +17,5 @@
     "cdSetDP": "ImpostaDP",
     "mytime2 adapter settings": "Impostazioni dell'adattatore per mytime2",
     "tabcountdown": "Conto alla rovescia",
-    "tabtimeseries": "Serie temporali",
-    "xxx": "xxx"
+    "tabtimeseries": "Serie temporali"
 }

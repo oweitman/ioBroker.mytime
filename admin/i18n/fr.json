@@ -1,5 +1,4 @@
 {
-    "": "",
     "cd-TT-Behavior": "Comportement après la fin du compte à rebours",
     "cd-TT-Days": "Nombre de jours pour le compte à rebours",
     "cd-TT-Hours": "Nombre d'heures pour le compte à rebours",
@@ -18,6 +17,5 @@
     "cdSetDP": "DéfinirDP",
     "mytime2 adapter settings": "Paramètres d'adaptateur pour mytime2",
     "tabcountdown": "Compte à rebours",
-    "tabtimeseries": "Séries temporelles",
-    "xxx": "xxx"
+    "tabtimeseries": "Séries temporelles"
 }

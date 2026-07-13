@@ -1,5 +1,4 @@
 {
-    "": "",
     "cd-TT-Behavior": "Zachowanie po zakończeniu odliczania",
     "cd-TT-Days": "Liczba dni do odliczania",
     "cd-TT-Hours": "Liczba godzin do odliczania",
@@ -18,6 +17,5 @@
     "cdSetDP": "UstawDP",
     "mytime2 adapter settings": "Ustawienia adaptera dla mytime2",
     "tabcountdown": "Odliczanie",
-    "tabtimeseries": "Serie czasowe",
-    "xxx": "xxx"
+    "tabtimeseries": "Serie czasowe"
 }

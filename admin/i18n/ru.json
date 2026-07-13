@@ -1,5 +1,4 @@
 {
-    "": "",
     "cd-TT-Behavior": "Поведение после окончания обратного отсчета",
     "cd-TT-Days": "Количество дней для обратного отсчета",
     "cd-TT-Hours": "Количество часов для обратного отсчета",
@@ -18,6 +17,5 @@
     "cdSetDP": "SetDP",
     "mytime2 adapter settings": "Настройки адаптера для mytime2",
     "tabcountdown": "Обратный отсчет",
-    "tabtimeseries": "Таймсерии",
-    "xxx": "xxx"
+    "tabtimeseries": "Таймсерии"
 }

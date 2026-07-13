@@ -1,5 +1,4 @@
 {
-    "": "",
     "cd-TT-Behavior": "倒计时结束后的行为",
     "cd-TT-Days": "倒计时天数",
     "cd-TT-Hours": "倒计时的小时数",
@@ -18,6 +17,5 @@
     "cdSetDP": "设置DP",
     "mytime2 adapter settings": "mytime2的适配器设置",
     "tabcountdown": "倒计时",
-    "tabtimeseries": "时间序列",
-    "xxx": "xxx"
+    "tabtimeseries": "时间序列"
 }

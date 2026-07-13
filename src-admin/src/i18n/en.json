@@ -165,7 +165,5 @@
     "tsMoonhigh": "Moonhigh",
     "tsMoonhighTooltip": "Moonhigh (time when the moon is in the highest position)",
     "tsMoonset": "Moonset",
-    "tsMoonsetTooltip": "Moonset (time when the moon disappears below the horizon)",
-    "xxx": "xxx",
-    "": ""
+    "tsMoonsetTooltip": "Moonset (time when the moon disappears below the horizon)"
 }

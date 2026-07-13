@@ -1,5 +1,4 @@
 {
-    "": "",
     "cd-TT-Behavior": "Verhalten nach Ende des Countdowns",
     "cd-TT-Days": "Anzahl der Tage für den Countdown",
     "cd-TT-Hours": "Anzahl der Stunden für den Countdown",
@@ -18,6 +17,5 @@
     "cdSetDP": "SetDP",
     "mytime2 adapter settings": "Adaptereinstellungen für mytime2",
     "tabcountdown": "Countdown",
-    "tabtimeseries": "Zeitreihen",
-    "xxx": "xxx"
+    "tabtimeseries": "Zeitreihen"
 }

@@ -112,7 +112,7 @@
     "tsSuntimesTooltip": "Enbale o disabilita il calcolo dei tempi astro per questa serie temporale. vedere https://suncalc.net/ come riferimento. Se si seleziona più di una data, verrà calcolato un evento per ogni data.",
     "tsSuntimes": "Date dell'ora solare",
     "tsAmateurDawn": "Alba amatoriale",
-    "tsAmateurDawnTooltip": "Amateur astronomical dawn (sun at 12° before sunrise)",
+    "tsAmateurDawnTooltip": "Alba astronomica (Sole a 12° prima del sorgere del Sole)",
     "tsAmateurDusk": "Crepuscolo amatoriale",
     "tsAmateurDuskTooltip": "Crepuscolo astronomico amatoriale (sole a 12° dopo l'alba)",
     "tsAstronomicalDawn": "Alba astronomica",
@@ -165,6 +165,5 @@
     "tsMoonhigh": "Altezza della luna",
     "tsMoonhighTooltip": "Moonhigh (momento in cui la luna è nella posizione più alta)",
     "tsMoonset": "Tramonto della luna",
-    "tsMoonsetTooltip": "Tramonto della luna (momento in cui la luna scompare sotto l'orizzonte)",
-    "xxx": "xxx"
+    "tsMoonsetTooltip": "Tramonto della luna (momento in cui la luna scompare sotto l'orizzonte)"
 }

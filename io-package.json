@@ -1,213 +1,204 @@
 {
-  "common": {
-    "name": "mytime",
-    "version": "2.3.4",
-    "titleLang": {
-      "en": "MyTime",
-      "de": "MyTime",
-      "ru": "MyTime",
-      "pt": "MyTime",
-      "nl": "MyTime",
-      "fr": "MyTime",
-      "it": "MyTime",
-      "es": "MyTime",
-      "pl": "MyTime",
-      "zh-cn": "MyTime",
-      "uk": "MyTime"
+    "common": {
+        "name": "mytime",
+        "version": "2.3.4",
+        "titleLang": {
+            "en": "MyTime",
+            "de": "MyTime",
+            "ru": "MyTime",
+            "pt": "MyTime",
+            "nl": "MyTime",
+            "fr": "MyTime",
+            "it": "MyTime",
+            "es": "MyTime",
+            "pl": "MyTime",
+            "zh-cn": "MyTime",
+            "uk": "MyTime"
+        },
+        "desc": {
+            "en": "This adapter handle Time (eg: countdown,etc.)",
+            "de": "This adapter handle Time (eg: countdown,etc.)",
+            "ru": "This adapter handle Time (eg: countdown,etc.)",
+            "pt": "This adapter handle Time (eg: countdown,etc.)",
+            "nl": "This adapter handle Time (eg: countdown,etc.)",
+            "fr": "This adapter handle Time (eg: countdown,etc.)",
+            "it": "This adapter handle Time (eg: countdown,etc.)",
+            "es": "This adapter handle Time (eg: countdown,etc.)",
+            "pl": "This adapter handle Time (eg: countdown,etc.)",
+            "zh-cn": "This adapter handle Time (eg: countdown,etc.)",
+            "uk": "Цей адаптер обробляє час (наприклад, зворотній відлік тощо)"
+        },
+        "authors": ["oweitman <oweitman@gmx.de>"],
+        "news": {
+            "2.3.4": {
+                "en": "update packages\nfix repochecker",
+                "de": "update-pakete\nrepochecker reparieren",
+                "ru": "обновление пакетов\nремонтировать",
+                "pt": "atualizar pacotes\ncorrigir o repochecker",
+                "nl": "pakketten bijwerken\nrepareren",
+                "fr": "mettre à jour les paquets\nfixer le repocheur",
+                "it": "pacchetti di aggiornamento\ncorreggere il repochecker",
+                "es": "actualizar paquetes\narreglar repochecker",
+                "pl": "aktualizacja pakietów\nfix repochecker",
+                "uk": "оновлення пакетів\nвиправити repochecker",
+                "zh-cn": "更新软件包\n固定重检查器"
+            },
+            "2.3.2": {
+                "en": "fix some translations",
+                "de": "einige übersetzungen beheben",
+                "ru": "исправить некоторые переводы",
+                "pt": "corrigir algumas traduções",
+                "nl": "sommige vertalingen te herstellen",
+                "fr": "corriger certaines traductions",
+                "it": "fissare alcune traduzioni",
+                "es": "arreglar algunas traducciones",
+                "pl": "naprawić niektóre tłumaczenia",
+                "uk": "виправити деякі переклади",
+                "zh-cn": "修复一些翻译"
+            },
+            "2.3.1": {
+                "en": "- circle widget: fix reverse selection\n- circle widget: fixed full/partial display of the largest ring.\n  Option added to select behavior.",
+                "de": "- kreis widget: reverse auswahl beheben\n- kreis widget: feste voll-/teildarstellung des größten rings.\nOption hinzugefügt, um das Verhalten auszuwählen.",
+                "ru": "- виджет круга: исправить обратный выбор\nвиджет круга: фиксированный полный/частичный дисплей самого большого кольца.\nВариант добавлен для выбора поведения.",
+                "pt": "- widget círculo: corrigir seleção reversa\n- widget círculo: exibição fixa total / parcial do maior anel.\nOpção adicionada para selecionar o comportamento.",
+                "nl": "- cirkel-widget: fix omgekeerde selectie\n- cirkel widget: vaste volledige/gedeeltelijke weergave van de grootste ring.\nOptie toegevoegd om gedrag te selecteren.",
+                "fr": "- widget cercle : corriger la sélection inversée\n- widget de cercle: affichage complet/partiel fixe de la plus grande bague.\nOption ajoutée pour sélectionner le comportement.",
+                "it": "- widget cerchio: correzione selezione inversa\n- widget cerchio: display fisso full/partial dell'anello più grande.\nOpzione aggiunta per selezionare il comportamento.",
+                "es": "- widget círculo: fijar selección inversa\n- widget círculo: pantalla completa/parcial fija del anillo más grande.\nOpción agregada para seleccionar el comportamiento.",
+                "pl": "- widget okręgu: naprawić wybór odwrotny\n- widżet okręgu: stały pełny / częściowy wyświetlacz największego pierścienia.\nOpcja dodana do wyboru zachowania.",
+                "uk": "- коло віджет: виправити зворотний вибір\n- круговий віджет: фіксований повноканальний дисплей найбільшого кільця.\nВаріант додано для вибору поведінки.",
+                "zh-cn": "- 圆形部件:修正反向选择\n- 圆形部件:最大环的固定全/部分显示.\n为选择行为添加了选项 ."
+            },
+            "2.3.0": {
+                "en": "remove autocomplete function in the browser\nimprove documentation\nadd html prepend and append to the countdown plain widget\nRevision of the algorithms for parameter takeover and verification.\nRevision of the calculation of dynamic time differences",
+                "de": "autocomplete funktion im browser entfernen\nverbesserung der dokumentation\nhtml prepend and append to the countdown simple widget hinzufügen\nRevision der Algorithmen zur Parameterübernahme und -überprüfung.\nRevision der Berechnung dynamischer Zeitunterschiede",
+                "ru": "удалить функцию автозаполнения в браузере\nулучшить документацию\nдобавить html prepend и добавить в виджет обратного отсчета\nПересмотр алгоритмов захвата и проверки параметров.\nПересмотр расчета динамических разниц во времени",
+                "pt": "remover a função autocompletar no navegador\nmelhorar a documentação\nadicionar o preprend html e adicionar ao widget de contagem decrescente\nRevisão dos algoritmos para aquisição e verificação de parâmetros.\nRevisão do cálculo das diferenças de tempo dinâmicas",
+                "nl": "autocomplete functie in de browser verwijderen\nde documentatie verbeteren\nhtml-prepend toevoegen en toevoegen aan het countdown-platte widget\nHerziening van de algoritmen voor parameterovername en verificatie.\nHerziening van de berekening van dynamische tijdsverschillen",
+                "fr": "supprimer la fonction autocomplete dans le navigateur\naméliorer la documentation\najouter html prepend et ajouter au widget simple compte à rebours\nRévision des algorithmes de prise en charge et de vérification des paramètres.\nRévision du calcul des écarts de temps dynamiques",
+                "it": "rimuovere la funzione di completamento automatico nel browser\nmigliorare la documentazione\naggiungere html prepend e append al widget di conto alla rovescia\nRevisione degli algoritmi per l'acquisizione dei parametri e la verifica.\nRevisione del calcolo delle differenze di tempo dinamiche",
+                "es": "eliminar la función autocompleta en el navegador\nmejorar la documentación\nañadir html prepend y apéndice al widget de cuenta atrás\nRevisión de los algoritmos para la toma y verificación del parámetro.\nRevisión del cálculo de las diferencias de tiempo dinámico",
+                "pl": "usuń funkcję autocomplete w przeglądarce\npoprawić dokumentację\ndodaj prependium html i dołącz do zwykłego widgetu licznika\nPrzegląd algorytmów przejęcia i weryfikacji parametrów.\nPrzegląd obliczania dynamicznych różnic w czasie",
+                "uk": "видалити автоматичну функцію в браузері\nвдосконалення документації\nadd html prepend і додаток до відліку звичайного віджету\nПерегляд алгоритмів вступу та перевірки параметрів.\nРевізія розрахунку динамічних часових відмінностей",
+                "zh-cn": "删除浏览器中的自动完整功能\n改进文件编制\n添加 html 预置和附加到倒计时平原部件\n修改参数接管与验证的算法.\n动态时差计算的修订"
+            },
+            "2.2.1": {
+                "en": "add missing files",
+                "de": "fehlende dateien hinzufügen",
+                "ru": "добавить недостающие файлы",
+                "pt": "adicionar os ficheiros em falta",
+                "nl": "ontbrekende bestanden toevoegen",
+                "fr": "ajouter des fichiers manquants",
+                "it": "aggiungere i file mancanti",
+                "es": "añadir archivos perdidos",
+                "pl": "dodaj brakujące pliki",
+                "uk": "додати відсутні файли",
+                "zh-cn": "添加缺失的文件"
+            },
+            "2.2.0": {
+                "en": "- add calculation of astro dates to timeseries\n- rework of the timeseries caluclation in the backend\n- this version includes extended debug information (map-files).\n  For this reason, the adapter is approximately 13MB in size instead of 2MB.",
+                "de": "- berechnung von astrodaten in zeitreihen hinzufügen\n- nacharbeiten der zeitreihenkalkulation im backend\n- diese version enthält erweiterte debug-informationen (karte-dateien).\nAus diesem Grund ist der Adapter ca. 13MB groß statt 2MB.",
+                "ru": "- добавьте расчеты астро-дат к временным рядам\n- переделка часовых поясов в бэкэнде\n- эта версия включает расширенную информацию отладки (карты-файлы).\nПо этой причине адаптер имеет размер около 13 МБ вместо 2 МБ.",
+                "pt": "- adicionar o cálculo das datas astrológicas às séries cronológicas\n- retrabalho da caluclação de épocas na infra-estrutura\n- esta versão inclui informações de depuração estendidas (map-files).\nPor esta razão, o adaptador tem aproximadamente 13MB de tamanho em vez de 2MB.",
+                "nl": "- de berekening van astrodata toevoegen aan tijdreeksen\n- herwerken van de tijdschaal in de backend\n- deze versie bevat uitgebreide debug informatie (map-files).\nDaarom is de adapter ongeveer 13MB groot in plaats van 2MB.",
+                "fr": "- ajouter le calcul des dates astro aux séries chronologiques\n- retravail de la caluclation des séries chronologiques dans le moteur\n- cette version inclut des informations de débogage étendues (fichiers de cartes).\nPour cette raison, l'adaptateur est d'environ 13 Mo de taille au lieu de 2 Mo.",
+                "it": "- aggiungere il calcolo delle date dell'astro alle timeerie\n- rielaborazione della caluclazione dei tempi nel backend\n- questa versione include informazioni di debug estesa (file di mappa).\nPer questo motivo, l'adattatore è di circa 13MB di dimensione invece di 2MB.",
+                "es": "- añadir cálculo de las fechas astronómicas a los plazos\n- retrabajo de la calusión temporal en el backend\n- esta versión incluye información de depuración ampliada (map-files).\nPor esta razón, el adaptador es de aproximadamente 13 MB de tamaño en lugar de 2MB.",
+                "pl": "- dodawanie obliczania dat astro do czasopism\n- przeróbka kalkulacji w tle\n- ta wersja zawiera rozszerzone informacje o debugowaniu (map- files).\nZ tego powodu adapter ma rozmiar około 13MB zamiast 2MB.",
+                "uk": "- додавати розрахунок дат астро до періодичних видань\n- реконструкція часопису в задньому\n- дана версія включає розширену інформацію про відключення (карт-файли).\nЗ цієї причини адаптер приблизно 13 Мб за розміром замість 2 Мб.",
+                "zh-cn": "- 在时间序列中增加计算天体日期\n- 重新设计后端的时间序列计算\n- 这个版本包括扩展调试信息(地图文件).\n为此,适配器大小约为13MB,而非2MB."
+            },
+            "2.1.0": {
+                "en": "- switch from crao to vite build system\n- New option for countdown timer: rerun - when the timer expires,\n  it will automatically restart.",
+                "de": "- wechsel von crao zu vite build system\n- Neue Option für Countdown-Timer: rerun - wenn der Timer abläuft,\nes wird automatisch neu gestartet.",
+                "ru": "- переключение с crao на vite\n- Новая опция для таймера обратного отсчета: повтор - когда таймер истекает,\nон будет автоматически перезапущен.",
+                "pt": "- mudar do sistema de compilação crao para vite\n- Nova opção para contagem regressiva: reexecução - quando o temporizador expira,\nirá reiniciar automaticamente.",
+                "nl": "- overschakelen van crao naar vite build systeem\n- Nieuwe optie voor countdown timer: rerun - wanneer de timer verloopt,\nhet zal automatisch herstarten.",
+                "fr": "- passer d'un système de construction de crao à un système de construction de puces\n- Nouvelle option pour le compte à rebours : redémarrer - quand le timer expire,\nil redémarrera automatiquement.",
+                "it": "- interruttore da crao a vite\n- Nuova opzione per il timer conto alla rovescia: eseguire - quando il timer scade,\nsi riavvia automaticamente.",
+                "es": "- cambiar de caja a sistema de construcción vite\n- Nueva opción para el temporizador de cuenta atrás: rerun - cuando el temporizador expira,\nse reiniciará automáticamente.",
+                "pl": "- przełączanie z systemu crao na system vite build\n- Nowa opcja dla licznika czasu: ponownie uruchomić - gdy zegar wygasa,\nautomatycznie się uruchomi.",
+                "uk": "- вимикач від crao до системи збирання\n- Новий варіант відліку таймера: перебіг - коли таймер закінчується,\nвін автоматично перезавантажить.",
+                "zh-cn": "- 从crao到vite建设系统\n- 倒计时计时器的新选项:重新运行 - 当计时器过期时,\n它会自动重启."
+            }
+        },
+        "platform": "Javascript/Node.js",
+        "mode": "daemon",
+        "nogit": true,
+        "loglevel": "info",
+        "icon": "mytime.png",
+        "extIcon": "https://raw.githubusercontent.com/oweitman/ioBroker.mytime/main/admin/mytime.png",
+        "keywords": ["mytime", "timeseries", "countdown timer"],
+        "adminUI": {
+            "config": "json"
+        },
+        "readme": "https://github.com/oweitman/ioBroker.mytime/blob/main/README.md",
+        "enabled": true,
+        "licenseInformation": {
+            "type": "free",
+            "license": "MIT"
+        },
+        "compact": true,
+        "eraseOnUpload": true,
+        "dependencies": [
+            {
+                "js-controller": ">=6.0.11"
+            }
+        ],
+        "globalDependencies": [
+            {
+                "admin": ">=7.6.20"
+            }
+        ],
+        "type": "visualization",
+        "messagebox": true,
+        "tier": 3,
+        "connectionType": "local",
+        "dataSource": "poll",
+        "restartAdapters": ["vis", "vis-2"]
     },
-    "desc": {
-      "en": "This adapter handle Time (eg: countdown,etc.)",
-      "de": "This adapter handle Time (eg: countdown,etc.)",
-      "ru": "This adapter handle Time (eg: countdown,etc.)",
-      "pt": "This adapter handle Time (eg: countdown,etc.)",
-      "nl": "This adapter handle Time (eg: countdown,etc.)",
-      "fr": "This adapter handle Time (eg: countdown,etc.)",
-      "it": "This adapter handle Time (eg: countdown,etc.)",
-      "es": "This adapter handle Time (eg: countdown,etc.)",
-      "pl": "This adapter handle Time (eg: countdown,etc.)",
-      "zh-cn": "This adapter handle Time (eg: countdown,etc.)",
-      "uk": "Цей адаптер обробляє час (наприклад, зворотній відлік тощо)"
+    "native": {
+        "countdowns": [],
+        "timeseries": []
     },
-    "authors": [
-      "oweitman <oweitman@gmx.de>"
-    ],
-    "news": {
-      "2.3.4": {
-        "en": "update packages\nfix repochecker",
-        "de": "update-pakete\nrepochecker reparieren",
-        "ru": "обновление пакетов\nремонтировать",
-        "pt": "atualizar pacotes\ncorrigir o repochecker",
-        "nl": "pakketten bijwerken\nrepareren",
-        "fr": "mettre à jour les paquets\nfixer le repocheur",
-        "it": "pacchetti di aggiornamento\ncorreggere il repochecker",
-        "es": "actualizar paquetes\narreglar repochecker",
-        "pl": "aktualizacja pakietów\nfix repochecker",
-        "uk": "оновлення пакетів\nвиправити repochecker",
-        "zh-cn": "更新软件包\n固定重检查器"
-      },
-      "2.3.2": {
-        "en": "fix some translations",
-        "de": "einige übersetzungen beheben",
-        "ru": "исправить некоторые переводы",
-        "pt": "corrigir algumas traduções",
-        "nl": "sommige vertalingen te herstellen",
-        "fr": "corriger certaines traductions",
-        "it": "fissare alcune traduzioni",
-        "es": "arreglar algunas traducciones",
-        "pl": "naprawić niektóre tłumaczenia",
-        "uk": "виправити деякі переклади",
-        "zh-cn": "修复一些翻译"
-      },
-      "2.3.1": {
-        "en": "- circle widget: fix reverse selection\n- circle widget: fixed full/partial display of the largest ring.\n  Option added to select behavior.",
-        "de": "- kreis widget: reverse auswahl beheben\n- kreis widget: feste voll-/teildarstellung des größten rings.\nOption hinzugefügt, um das Verhalten auszuwählen.",
-        "ru": "- виджет круга: исправить обратный выбор\nвиджет круга: фиксированный полный/частичный дисплей самого большого кольца.\nВариант добавлен для выбора поведения.",
-        "pt": "- widget círculo: corrigir seleção reversa\n- widget círculo: exibição fixa total / parcial do maior anel.\nOpção adicionada para selecionar o comportamento.",
-        "nl": "- cirkel-widget: fix omgekeerde selectie\n- cirkel widget: vaste volledige/gedeeltelijke weergave van de grootste ring.\nOptie toegevoegd om gedrag te selecteren.",
-        "fr": "- widget cercle : corriger la sélection inversée\n- widget de cercle: affichage complet/partiel fixe de la plus grande bague.\nOption ajoutée pour sélectionner le comportement.",
-        "it": "- widget cerchio: correzione selezione inversa\n- widget cerchio: display fisso full/partial dell'anello più grande.\nOpzione aggiunta per selezionare il comportamento.",
-        "es": "- widget círculo: fijar selección inversa\n- widget círculo: pantalla completa/parcial fija del anillo más grande.\nOpción agregada para seleccionar el comportamiento.",
-        "pl": "- widget okręgu: naprawić wybór odwrotny\n- widżet okręgu: stały pełny / częściowy wyświetlacz największego pierścienia.\nOpcja dodana do wyboru zachowania.",
-        "uk": "- коло віджет: виправити зворотний вибір\n- круговий віджет: фіксований повноканальний дисплей найбільшого кільця.\nВаріант додано для вибору поведінки.",
-        "zh-cn": "- 圆形部件:修正反向选择\n- 圆形部件:最大环的固定全/部分显示.\n为选择行为添加了选项 ."
-      },
-      "2.3.0": {
-        "en": "remove autocomplete function in the browser\nimprove documentation\nadd html prepend and append to the countdown plain widget\nRevision of the algorithms for parameter takeover and verification.\nRevision of the calculation of dynamic time differences",
-        "de": "autocomplete funktion im browser entfernen\nverbesserung der dokumentation\nhtml prepend and append to the countdown simple widget hinzufügen\nRevision der Algorithmen zur Parameterübernahme und -überprüfung.\nRevision der Berechnung dynamischer Zeitunterschiede",
-        "ru": "удалить функцию автозаполнения в браузере\nулучшить документацию\nдобавить html prepend и добавить в виджет обратного отсчета\nПересмотр алгоритмов захвата и проверки параметров.\nПересмотр расчета динамических разниц во времени",
-        "pt": "remover a função autocompletar no navegador\nmelhorar a documentação\nadicionar o preprend html e adicionar ao widget de contagem decrescente\nRevisão dos algoritmos para aquisição e verificação de parâmetros.\nRevisão do cálculo das diferenças de tempo dinâmicas",
-        "nl": "autocomplete functie in de browser verwijderen\nde documentatie verbeteren\nhtml-prepend toevoegen en toevoegen aan het countdown-platte widget\nHerziening van de algoritmen voor parameterovername en verificatie.\nHerziening van de berekening van dynamische tijdsverschillen",
-        "fr": "supprimer la fonction autocomplete dans le navigateur\naméliorer la documentation\najouter html prepend et ajouter au widget simple compte à rebours\nRévision des algorithmes de prise en charge et de vérification des paramètres.\nRévision du calcul des écarts de temps dynamiques",
-        "it": "rimuovere la funzione di completamento automatico nel browser\nmigliorare la documentazione\naggiungere html prepend e append al widget di conto alla rovescia\nRevisione degli algoritmi per l'acquisizione dei parametri e la verifica.\nRevisione del calcolo delle differenze di tempo dinamiche",
-        "es": "eliminar la función autocompleta en el navegador\nmejorar la documentación\nañadir html prepend y apéndice al widget de cuenta atrás\nRevisión de los algoritmos para la toma y verificación del parámetro.\nRevisión del cálculo de las diferencias de tiempo dinámico",
-        "pl": "usuń funkcję autocomplete w przeglądarce\npoprawić dokumentację\ndodaj prependium html i dołącz do zwykłego widgetu licznika\nPrzegląd algorytmów przejęcia i weryfikacji parametrów.\nPrzegląd obliczania dynamicznych różnic w czasie",
-        "uk": "видалити автоматичну функцію в браузері\nвдосконалення документації\nadd html prepend і додаток до відліку звичайного віджету\nПерегляд алгоритмів вступу та перевірки параметрів.\nРевізія розрахунку динамічних часових відмінностей",
-        "zh-cn": "删除浏览器中的自动完整功能\n改进文件编制\n添加 html 预置和附加到倒计时平原部件\n修改参数接管与验证的算法.\n动态时差计算的修订"
-      },
-      "2.2.1": {
-        "en": "add missing files",
-        "de": "fehlende dateien hinzufügen",
-        "ru": "добавить недостающие файлы",
-        "pt": "adicionar os ficheiros em falta",
-        "nl": "ontbrekende bestanden toevoegen",
-        "fr": "ajouter des fichiers manquants",
-        "it": "aggiungere i file mancanti",
-        "es": "añadir archivos perdidos",
-        "pl": "dodaj brakujące pliki",
-        "uk": "додати відсутні файли",
-        "zh-cn": "添加缺失的文件"
-      },
-      "2.2.0": {
-        "en": "- add calculation of astro dates to timeseries\n- rework of the timeseries caluclation in the backend\n- this version includes extended debug information (map-files).\n  For this reason, the adapter is approximately 13MB in size instead of 2MB.",
-        "de": "- berechnung von astrodaten in zeitreihen hinzufügen\n- nacharbeiten der zeitreihenkalkulation im backend\n- diese version enthält erweiterte debug-informationen (karte-dateien).\nAus diesem Grund ist der Adapter ca. 13MB groß statt 2MB.",
-        "ru": "- добавьте расчеты астро-дат к временным рядам\n- переделка часовых поясов в бэкэнде\n- эта версия включает расширенную информацию отладки (карты-файлы).\nПо этой причине адаптер имеет размер около 13 МБ вместо 2 МБ.",
-        "pt": "- adicionar o cálculo das datas astrológicas às séries cronológicas\n- retrabalho da caluclação de épocas na infra-estrutura\n- esta versão inclui informações de depuração estendidas (map-files).\nPor esta razão, o adaptador tem aproximadamente 13MB de tamanho em vez de 2MB.",
-        "nl": "- de berekening van astrodata toevoegen aan tijdreeksen\n- herwerken van de tijdschaal in de backend\n- deze versie bevat uitgebreide debug informatie (map-files).\nDaarom is de adapter ongeveer 13MB groot in plaats van 2MB.",
-        "fr": "- ajouter le calcul des dates astro aux séries chronologiques\n- retravail de la caluclation des séries chronologiques dans le moteur\n- cette version inclut des informations de débogage étendues (fichiers de cartes).\nPour cette raison, l'adaptateur est d'environ 13 Mo de taille au lieu de 2 Mo.",
-        "it": "- aggiungere il calcolo delle date dell'astro alle timeerie\n- rielaborazione della caluclazione dei tempi nel backend\n- questa versione include informazioni di debug estesa (file di mappa).\nPer questo motivo, l'adattatore è di circa 13MB di dimensione invece di 2MB.",
-        "es": "- añadir cálculo de las fechas astronómicas a los plazos\n- retrabajo de la calusión temporal en el backend\n- esta versión incluye información de depuración ampliada (map-files).\nPor esta razón, el adaptador es de aproximadamente 13 MB de tamaño en lugar de 2MB.",
-        "pl": "- dodawanie obliczania dat astro do czasopism\n- przeróbka kalkulacji w tle\n- ta wersja zawiera rozszerzone informacje o debugowaniu (map- files).\nZ tego powodu adapter ma rozmiar około 13MB zamiast 2MB.",
-        "uk": "- додавати розрахунок дат астро до періодичних видань\n- реконструкція часопису в задньому\n- дана версія включає розширену інформацію про відключення (карт-файли).\nЗ цієї причини адаптер приблизно 13 Мб за розміром замість 2 Мб.",
-        "zh-cn": "- 在时间序列中增加计算天体日期\n- 重新设计后端的时间序列计算\n- 这个版本包括扩展调试信息(地图文件).\n为此,适配器大小约为13MB,而非2MB."
-      },
-      "2.1.0": {
-        "en": "- switch from crao to vite build system\n- New option for countdown timer: rerun - when the timer expires,\n  it will automatically restart.",
-        "de": "- wechsel von crao zu vite build system\n- Neue Option für Countdown-Timer: rerun - wenn der Timer abläuft,\nes wird automatisch neu gestartet.",
-        "ru": "- переключение с crao на vite\n- Новая опция для таймера обратного отсчета: повтор - когда таймер истекает,\nон будет автоматически перезапущен.",
-        "pt": "- mudar do sistema de compilação crao para vite\n- Nova opção para contagem regressiva: reexecução - quando o temporizador expira,\nirá reiniciar automaticamente.",
-        "nl": "- overschakelen van crao naar vite build systeem\n- Nieuwe optie voor countdown timer: rerun - wanneer de timer verloopt,\nhet zal automatisch herstarten.",
-        "fr": "- passer d'un système de construction de crao à un système de construction de puces\n- Nouvelle option pour le compte à rebours : redémarrer - quand le timer expire,\nil redémarrera automatiquement.",
-        "it": "- interruttore da crao a vite\n- Nuova opzione per il timer conto alla rovescia: eseguire - quando il timer scade,\nsi riavvia automaticamente.",
-        "es": "- cambiar de caja a sistema de construcción vite\n- Nueva opción para el temporizador de cuenta atrás: rerun - cuando el temporizador expira,\nse reiniciará automáticamente.",
-        "pl": "- przełączanie z systemu crao na system vite build\n- Nowa opcja dla licznika czasu: ponownie uruchomić - gdy zegar wygasa,\nautomatycznie się uruchomi.",
-        "uk": "- вимикач від crao до системи збирання\n- Новий варіант відліку таймера: перебіг - коли таймер закінчується,\nвін автоматично перезавантажить.",
-        "zh-cn": "- 从crao到vite建设系统\n- 倒计时计时器的新选项:重新运行 - 当计时器过期时,\n它会自动重启."
-      }
-    },
-    "platform": "Javascript/Node.js",
-    "mode": "daemon",
-    "nogit": true,
-    "loglevel": "info",
-    "icon": "mytime.png",
-    "extIcon": "https://raw.githubusercontent.com/oweitman/ioBroker.mytime/main/admin/mytime.png",
-    "keywords": [
-      "mytime",
-      "timeseries",
-      "countdown timer"
-    ],
-    "adminUI": {
-      "config": "json"
-    },
-    "readme": "https://github.com/oweitman/ioBroker.mytime/blob/main/README.md",
-    "enabled": true,
-    "licenseInformation": {
-      "type": "free",
-      "license": "MIT"
-    },
-    "compact": true,
-    "eraseOnUpload": true,
-    "dependencies": [
-      {
-        "js-controller": ">=6.0.11"
-      }
-    ],
-    "globalDependencies": [
-      {
-        "admin": ">=7.6.17"
-      }
-    ],
-    "type": "visualization",
-    "messagebox": true,
-    "tier": 3,
-    "connectionType": "local",
-    "dataSource": "poll",
-    "restartAdapters": [
-      "vis",
-      "vis-2"
+    "objects": [],
+    "instanceObjects": [
+        {
+            "_id": "Countdowns",
+            "type": "device",
+            "common": {
+                "name": "All Countdowns datapoints"
+            },
+            "native": {}
+        },
+        {
+            "_id": "Timeseries",
+            "type": "device",
+            "common": {
+                "name": "All Timeseries datapoints"
+            },
+            "native": {}
+        },
+        {
+            "_id": "info",
+            "type": "channel",
+            "common": {
+                "name": "Information"
+            },
+            "native": {}
+        },
+        {
+            "_id": "info.connection",
+            "type": "state",
+            "common": {
+                "role": "indicator.connected",
+                "name": "Device or service connected",
+                "type": "boolean",
+                "read": true,
+                "write": false,
+                "def": false
+            },
+            "native": {}
+        }
     ]
-  },
-  "native": {
-    "countdowns": [],
-    "timeseries": []
-  },
-  "objects": [],
-  "instanceObjects": [
-    {
-      "_id": "Countdowns",
-      "type": "device",
-      "common": {
-        "name": "All Countdowns datapoints"
-      },
-      "native": {}
-    },
-    {
-      "_id": "Timeseries",
-      "type": "device",
-      "common": {
-        "name": "All Timeseries datapoints"
-      },
-      "native": {}
-    },
-    {
-      "_id": "info",
-      "type": "channel",
-      "common": {
-        "name": "Information"
-      },
-      "native": {}
-    },
-    {
-      "_id": "info.connection",
-      "type": "state",
-      "common": {
-        "role": "indicator.connected",
-        "name": "Device or service connected",
-        "type": "boolean",
-        "read": true,
-        "write": false,
-        "def": false
-      },
-      "native": {}
-    }
-  ]
 }

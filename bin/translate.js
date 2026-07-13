@@ -130,9 +130,18 @@ async function updateEmptyKeysWithTranslation(i18n, lang) {
                 console.log('Error with translator service');
                 return i18n;
             }
-            for (const k in translatedKey) {
-                if (i18n[k][key] === '') {
-                    i18n[k][key] = translatedKey[k];
+            if (format == 'multi') {
+                for (const k in translatedKey) {
+                    if (i18n[k][key] === '') {
+                        i18n[k][key] = translatedKey[k];
+                    }
+                }
+            }
+            if (format == 'single') {
+                for (const lang in i18n) {
+                    if (i18n[lang][key] === '') {
+                        i18n[lang][key] = translatedKey[i18n['en'][key]][lang];
+                    }
                 }
             }
             exporti18nKeys(i18n);

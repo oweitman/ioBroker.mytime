@@ -1,5 +1,4 @@
 {
-    "": "",
     "cd-TT-Behavior": "Gedrag na einde van het aftellen",
     "cd-TT-Days": "Aantal dagen voor het aftellen",
     "cd-TT-Hours": "Aantal uren voor het aftellen",
@@ -18,6 +17,5 @@
     "cdSetDP": "StelDP in",
     "mytime2 adapter settings": "Adapterinstellingen voor mytime2",
     "tabcountdown": "Aftellen",
-    "tabtimeseries": "Tijdreeksen",
-    "xxx": "xxx"
+    "tabtimeseries": "Tijdreeksen"
 }
