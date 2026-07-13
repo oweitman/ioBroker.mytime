@@ -83,7 +83,7 @@
         "update-packages": "ncu --upgrade && cd src && ncu --upgrade && cd ../src-admin && ncu --upgrade",
         "npm": "npm i -f && cd src-admin && npm i -f",
         "lint": "eslint -c eslint.config.mjs .",
-        "repochecker": "npx github:oweitman/ioBroker.repochecker https://github.com/oweitman/ioBroker.mytime --local --noinfo",
+        "repochecker": "npx @iobroker/repochecker https://github.com/oweitman/ioBroker.mytime --local --noinfo",
         "translate-admin-deletekey": "node ./src-admin/bin/translate.js deletekey 'xx,xx'",
         "translate-admin": "node ./bin/translate.js --source src-admin/src/i18n",
         "translate-widgets": "node ./bin/translate.js --source widgets/mytime/i18n/en.json --format single"
