@@ -23,7 +23,8 @@
     },
     "dependencies": {
         "@iobroker/adapter-core": "^3.4.1",
-        "dayjs": "^1.11.20",
+        "@iobroker/types": "^7.1.2",
+        "dayjs": "^1.11.21",
         "rrule": "^2.8.1",
         "suncalc3": "^2.0.5"
     },
@@ -34,11 +35,10 @@
         "@alcalzone/release-script-plugin-manual-review": "^5.2.0",
         "@iobroker/adapter-dev": "^1.5.0",
         "@iobroker/build-tools": "^3.0.1",
-        "@iobroker/eslint-config": "^2.2.0",
+        "@iobroker/eslint-config": "^2.3.4",
         "@iobroker/testing": "^5.2.2",
         "@iobroker/vis-2-widgets-react-dev": "^4.0.4",
         "@tsconfig/node22": "^22.0.5",
-        "@iobroker/types": "^7.1.0",
         "@types/node": "^22.13.14",
         "@types/react": "^18.3.31",
         "@types/react-dom": "^18.3.7",
@@ -83,10 +83,10 @@
         "update-packages": "ncu --upgrade && cd src && ncu --upgrade && cd ../src-admin && ncu --upgrade",
         "npm": "npm i -f && cd src-admin && npm i -f",
         "lint": "eslint -c eslint.config.mjs .",
-        "repochecker": "npx @iobroker/repochecker https://github.com/oweitman/ioBroker.mytime --local --noinfo",
-        "translate-admin-deletekey": "node ./bin/translate.js --source src-admin/src/i18n deletekey 'tsEmptycheckboxtooltip'",
+        "repochecker": "npx github:oweitman/ioBroker.repochecker https://github.com/oweitman/ioBroker.mytime --local --noinfo",
+        "translate-admin-deletekey": "node ./src-admin/bin/translate.js deletekey 'xx,xx'",
         "translate-admin": "node ./bin/translate.js --source src-admin/src/i18n",
-        "translate-widgets": "node ./bin/translate.js --source widgets/mytime/myi18n/en.json --format single"
+        "translate-widgets": "node ./bin/translate.js --source widgets/mytime/i18n/en.json --format single"
     },
     "readmeFilename": "README.md"
 }
