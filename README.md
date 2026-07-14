@@ -516,6 +516,7 @@ of the countdown is available as CSS-Class selector:**
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+
 ### 2.3.5 (2026-07-14)
 
 - fix repochecker
@@ -543,6 +544,8 @@ of the countdown is available as CSS-Class selector:**
 - add html prepend and append to the countdown plain widget
 - Revision of the algorithms for parameter takeover and verification.
 - Revision of the calculation of dynamic time differences
+
+[Older changelogs can be found there](CHANGELOG_OLD.md)
 
 ## License
 
