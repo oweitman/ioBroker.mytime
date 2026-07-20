@@ -131,7 +131,8 @@
                     "xl": 10,
                     "style": { "width": "100%" },
                     "bundlerType": "module",
-                    "url": "custom/customComponents.js",
+                    "urlxx": "custom/customComponents.js",
+                    "url": "http://localhost:4173/customComponents.js",
                     "name": "ConfigCustomMytimeSet/Components/TimeseriesConfig"
                 }
             }

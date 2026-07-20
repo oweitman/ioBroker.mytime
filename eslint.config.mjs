@@ -8,6 +8,7 @@ export default [
     {
         // specify files to exclude from linting here
         ignores: [
+            'node_modules/**/*',
             'lib/tools.js',
             'lib/rrule.js',
             'widgets/mytime/js/mytime-dist.js',
@@ -26,10 +27,11 @@ export default [
             'src-admin/dist',
             'src-admin/.__mf__temp',
             'admin/custom',
+            'admin/i18n/**/*',
             'admin/words.js',
             'admin/admin.d.ts',
-            '**/adapter-config.d.ts'
-        ]
+            '**/adapter-config.d.ts',
+        ],
     },
 
     {
@@ -39,5 +41,4 @@ export default [
             // 'jsdoc/require-jsdoc': 'off',
         },
     },
-
 ];

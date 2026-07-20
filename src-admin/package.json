@@ -1,9 +1,9 @@
 {
-    "name": "iobroker-admin-component-ping",
+    "name": "iobroker-admin-component-mytime",
     "private": true,
     "version": "3.8.2",
     "scripts": {
-        "start": "vite --port 4173",
+        "start": "vite --port 4173 --debug",
         "build": "tsc && vite build",
         "preview": "vite preview",
         "lint": "eslint -c eslint.config.mjs"
@@ -11,25 +11,24 @@
     "devDependencies": {
         "@emotion/react": "^11.14.0",
         "@emotion/styled": "^11.14.1",
-        "@iobroker/adapter-react-v5": "^8.3.0",
-        "@iobroker/json-config": "7.7.3",
-        "@module-federation/runtime": "^0.10.0",
-        "@module-federation/vite": "^1.16.16",
-        "@mui/icons-material": "^6.5.0",
-        "@mui/material": "^6.5.0",
-        "@originjs/vite-plugin-federation": "^1.4.1",
-        "@types/react": "^18.3.31",
-        "@types/react-dom": "^18.3.7",
-        "@vitejs/plugin-react": "^5.0.4",
-        "eslint-plugin-react-refresh": "^0.5.3",
-        "ip": "^2.0.1",
+        "@iobroker/adapter-react-v5": "8.2.13",
+        "@iobroker/json-config": "8.4.15",
+        "@module-federation/runtime": "^0.21.4",
+        "@module-federation/vite": "^1.9.0",
+        "@mui/icons-material": "^6.4.7",
+        "@mui/material": "^6.4.7",
+        "@mui/x-date-pickers": "^7.28.3",
+        "@types/react": "^18.3.18",
+        "@types/react-dom": "^18.3.5",
+        "@vitejs/plugin-react": "^5.1.1",
+        "dayjs": "^1.11.21",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "validate.js": "^0.13.1",
-        "vite": "7.3.2",
+        "vite": "7.3.5",
         "vite-plugin-commonjs": "^0.10.4",
-        "vite-plugin-svgr": "^4.5.0",
-        "vite-tsconfig-paths": "^5.1.4"
+        "vite-tsconfig-paths": "^5.1.4",
+        "react-dropzone": "^19.1.1"
     },
     "browserslist": {
         "production": [
