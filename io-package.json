@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "mytime",
-    "version": "2.4.0",
+    "version": "2.4.1",
     "titleLang": {
       "en": "MyTime",
       "de": "MyTime",
@@ -32,6 +32,19 @@
       "oweitman <oweitman@gmx.de>"
     ],
     "news": {
+      "2.4.1": {
+        "en": "add new clock widgets\nfix prod and dev build\nreengineered widgets",
+        "de": "neue clock widgets hinzufügen\nfix prod und dev build\nreengineered widgets",
+        "ru": "добавить новые виджеты часов\nобсуждение prod and dev build\nреинжиниринг виджетов",
+        "pt": "adicionar novos widgets de relógio\ncorrigir a compilação de prod e dev\nwidgets reengenharados",
+        "nl": "nieuwe klok-widgets toevoegen\nfix prod en dev build\nvernieuwde widgets",
+        "fr": "ajouter de nouveaux widgets horloge\nréparer prod et dev build\nwidgets remaniés",
+        "it": "aggiungere nuovi widget orologio\nfix prod e sviluppo costruire\nwidget progettati",
+        "es": "añadir nuevos widgets de reloj\narreglar prod y dev construir\nwidgets reconectados",
+        "pl": "dodaj nowe widżety zegara\nfix prod i dev build\nprzeprojektowane widżety",
+        "uk": "додати нові віджети годинника\nвиправити prod і dev побудувати\nreengineered віджети",
+        "zh-cn": "添加新的时钟部件\n固定 prod 和 dev 构建\n重新设计的部件"
+      },
       "2.4.0": {
         "en": "add new clock widgets\nfix prod and dev build",
         "de": "neue clock widgets hinzufügen\nfix prod und dev build",
@@ -109,19 +122,6 @@
         "pl": "usuń funkcję autocomplete w przeglądarce\npoprawić dokumentację\ndodaj prependium html i dołącz do zwykłego widgetu licznika\nPrzegląd algorytmów przejęcia i weryfikacji parametrów.\nPrzegląd obliczania dynamicznych różnic w czasie",
         "uk": "видалити автоматичну функцію в браузері\nвдосконалення документації\nadd html prepend і додаток до відліку звичайного віджету\nПерегляд алгоритмів вступу та перевірки параметрів.\nРевізія розрахунку динамічних часових відмінностей",
         "zh-cn": "删除浏览器中的自动完整功能\n改进文件编制\n添加 html 预置和附加到倒计时平原部件\n修改参数接管与验证的算法.\n动态时差计算的修订"
-      },
-      "2.2.1": {
-        "en": "add missing files",
-        "de": "fehlende dateien hinzufügen",
-        "ru": "добавить недостающие файлы",
-        "pt": "adicionar os ficheiros em falta",
-        "nl": "ontbrekende bestanden toevoegen",
-        "fr": "ajouter des fichiers manquants",
-        "it": "aggiungere i file mancanti",
-        "es": "añadir archivos perdidos",
-        "pl": "dodaj brakujące pliki",
-        "uk": "додати відсутні файли",
-        "zh-cn": "添加缺失的文件"
       }
     },
     "platform": "Javascript/Node.js",

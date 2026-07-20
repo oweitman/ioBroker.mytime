@@ -595,10 +595,11 @@ of the countdown is available as CSS-Class selector:**
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
-### 2.4.0 (2026-07-20)
+### 2.4.1 (2026-07-20)
 
 - add new clock widgets
 - fix prod and dev build
+- reengineered widgets
 
 ### 2.3.5 (2026-07-14)
 

@@ -34,21 +34,33 @@ const clockFlip = {
         content += `#${widgetID} .clock-flip-unit{flex:0 0 140px;width:140px}`;
         content += `#${widgetID} .clock-flip-unit .flip-clock-wrapper{display:flex;width:140px;min-width:140px;margin:0}`;
         content += `#${widgetID} .clock-flip-separator{font-size:48px;line-height:100px;margin:0 4px}`;
-        if (font) content += `#${widgetID} .flip-clock-wrapper{font-family:${font}}`;
-        if (color || background) content += `#${widgetID} .flip-clock-wrapper ul li a div div.inn{${color ? `color:${color};` : ''}${background ? `background-color:${background};` : ''}}`;
-        if (dots) content += `#${widgetID} .flip-clock-dot{background-color:${dots}}#${widgetID} .clock-flip-separator{color:${dots}}`;
+        if (font) {
+            content += `#${widgetID} .flip-clock-wrapper{font-family:${font}}`;
+        }
+        if (color || background) {
+            content += `#${widgetID} .flip-clock-wrapper ul li a div div.inn{${color ? `color:${color};` : ''}${background ? `background-color:${background};` : ''}}`;
+        }
+        if (dots) {
+            content += `#${widgetID} .flip-clock-dot{background-color:${dots}}#${widgetID} .clock-flip-separator{color:${dots}}`;
+        }
         content += `#${widgetID} .clock-flip-unit{display:inline-block}</style><div class="clock-flip">`;
         enabled.forEach(([key], index) => {
-            if (index) content += '<span class="clock-flip-separator">:</span>';
+            if (index) {
+                content += '<span class="clock-flip-separator">:</span>';
+            }
             content += `<span class="clock-flip-unit clock-${key}"></span>`;
         });
         content += '</div>';
         $div.html(content);
         clockFlip.flips[widgetID] = {};
         enabled.forEach(([key, faceUnit]) => {
-            var pattern = faceUnit === 'day' ? '1000' : faceUnit === 'hours' ? '0100' : faceUnit === 'minutes' ? '0010' : '0001';
+            var pattern =
+                faceUnit === 'day' ? '1000' : faceUnit === 'hours' ? '0100' : faceUnit === 'minutes' ? '0010' : '0001';
             clockFlip.flips[widgetID][key] = $(`#${widgetID} .clock-${key}`).mtFlipClock(0, {
-                clockFace: 'Mytime', countdown: false, autoStart: false, pattern,
+                clockFace: 'Mytime',
+                countdown: false,
+                autoStart: false,
+                pattern,
             });
         });
         vis.binds['mytime'].stopTimer(widgetID);
@@ -59,7 +71,9 @@ const clockFlip = {
         var parts = vis.binds['mytime'].getClockParts(data);
         getUnits(data).forEach(([key, _faceUnit, multiplier]) => {
             var flip = clockFlip.flips[widgetID] && clockFlip.flips[widgetID][key];
-            if (flip) flip.setTime((key === 'year' ? parts[key] % 100 : parts[key]) * multiplier);
+            if (flip) {
+                flip.setTime((key === 'year' ? parts[key] % 100 : parts[key]) * multiplier);
+            }
         });
     },
 };
