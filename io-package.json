@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "mytime",
-    "version": "2.3.5",
+    "version": "2.4.0",
     "titleLang": {
       "en": "MyTime",
       "de": "MyTime",
@@ -32,6 +32,19 @@
       "oweitman <oweitman@gmx.de>"
     ],
     "news": {
+      "2.4.0": {
+        "en": "add new clock widgets\nfix prod and dev build",
+        "de": "neue clock widgets hinzufügen\nfix prod und dev build",
+        "ru": "добавить новые виджеты часов\nобсуждение prod and dev build",
+        "pt": "adicionar novos widgets de relógio\ncorrigir a compilação de prod e dev",
+        "nl": "nieuwe klok-widgets toevoegen\nfix prod en dev build",
+        "fr": "ajouter de nouveaux widgets horloge\nréparer prod et dev build",
+        "it": "aggiungere nuovi widget orologio\nfix prod e sviluppo costruire",
+        "es": "añadir nuevos widgets de reloj\narreglar prod y dev construir",
+        "pl": "dodaj nowe widżety zegara\nfix prod i dev build",
+        "uk": "додати нові віджети годинника\nвиправити prod і dev побудувати",
+        "zh-cn": "添加新的时钟部件\n固定 prod 和 dev 构建"
+      },
       "2.3.5": {
         "en": "fix repochecker\nupdate react to 18 and many more packages",
         "de": "Repochecker reparieren\nReact auf Version 18 aktualisieren und viele weitere Pakete",
@@ -109,19 +122,6 @@
         "pl": "dodaj brakujące pliki",
         "uk": "додати відсутні файли",
         "zh-cn": "添加缺失的文件"
-      },
-      "2.2.0": {
-        "en": "- add calculation of astro dates to timeseries\n- rework of the timeseries caluclation in the backend\n- this version includes extended debug information (map-files).\n  For this reason, the adapter is approximately 13MB in size instead of 2MB.",
-        "de": "- berechnung von astrodaten in zeitreihen hinzufügen\n- nacharbeiten der zeitreihenkalkulation im backend\n- diese version enthält erweiterte debug-informationen (karte-dateien).\nAus diesem Grund ist der Adapter ca. 13MB groß statt 2MB.",
-        "ru": "- добавьте расчеты астро-дат к временным рядам\n- переделка часовых поясов в бэкэнде\n- эта версия включает расширенную информацию отладки (карты-файлы).\nПо этой причине адаптер имеет размер около 13 МБ вместо 2 МБ.",
-        "pt": "- adicionar o cálculo das datas astrológicas às séries cronológicas\n- retrabalho da caluclação de épocas na infra-estrutura\n- esta versão inclui informações de depuração estendidas (map-files).\nPor esta razão, o adaptador tem aproximadamente 13MB de tamanho em vez de 2MB.",
-        "nl": "- de berekening van astrodata toevoegen aan tijdreeksen\n- herwerken van de tijdschaal in de backend\n- deze versie bevat uitgebreide debug informatie (map-files).\nDaarom is de adapter ongeveer 13MB groot in plaats van 2MB.",
-        "fr": "- ajouter le calcul des dates astro aux séries chronologiques\n- retravail de la caluclation des séries chronologiques dans le moteur\n- cette version inclut des informations de débogage étendues (fichiers de cartes).\nPour cette raison, l'adaptateur est d'environ 13 Mo de taille au lieu de 2 Mo.",
-        "it": "- aggiungere il calcolo delle date dell'astro alle timeerie\n- rielaborazione della caluclazione dei tempi nel backend\n- questa versione include informazioni di debug estesa (file di mappa).\nPer questo motivo, l'adattatore è di circa 13MB di dimensione invece di 2MB.",
-        "es": "- añadir cálculo de las fechas astronómicas a los plazos\n- retrabajo de la calusión temporal en el backend\n- esta versión incluye información de depuración ampliada (map-files).\nPor esta razón, el adaptador es de aproximadamente 13 MB de tamaño en lugar de 2MB.",
-        "pl": "- dodawanie obliczania dat astro do czasopism\n- przeróbka kalkulacji w tle\n- ta wersja zawiera rozszerzone informacje o debugowaniu (map- files).\nZ tego powodu adapter ma rozmiar około 13MB zamiast 2MB.",
-        "uk": "- додавати розрахунок дат астро до періодичних видань\n- реконструкція часопису в задньому\n- дана версія включає розширену інформацію про відключення (карт-файли).\nЗ цієї причини адаптер приблизно 13 Мб за розміром замість 2 Мб.",
-        "zh-cn": "- 在时间序列中增加计算天体日期\n- 重新设计后端的时间序列计算\n- 这个版本包括扩展调试信息(地图文件).\n为此,适配器大小约为13MB,而非2MB."
       }
     },
     "platform": "Javascript/Node.js",

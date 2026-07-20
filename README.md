@@ -467,22 +467,22 @@ The time can be taken either from the browser client or from the synchronized io
 
 ##### Widget Properties of Clock plain
 
-| Attribute          | Description                                                                                   |
-| ------------------ | --------------------------------------------------------------------------------------------- |
-| `clock_time_source` | Selects `client` for the browser time or `server` for the synchronized ioBroker server time. |
-| `clock_format`      | Defines the date and time format. The default is `DD.MM.YYYY HH:mm:ss`.                       |
+| Attribute            | Description                                                                                  |
+| -------------------- | -------------------------------------------------------------------------------------------- |
+| `clock_time_source`  | Selects `client` for the browser time or `server` for the synchronized ioBroker server time. |
+| `clock_format`       | Defines the date and time format. The default is `DD.MM.YYYY HH:mm:ss`.                      |
 | `clock_html_prepend` | Text or HTML inserted before the formatted date and time.                                    |
-| `clock_html_append` | Text or HTML appended after the formatted date and time.                                      |
+| `clock_html_append`  | Text or HTML appended after the formatted date and time.                                     |
 
 The following placeholders can be used in `clock_format`:
 
-| Placeholder | Description                    |
-| ----------- | ------------------------------ |
-| `YYYY`      | Four-digit year                |
-| `YY`        | Two-digit year                 |
-| `MM` / `M`  | Month with / without leading zero |
-| `DD` / `D`  | Day with / without leading zero   |
-| `HH` / `H`  | Hours with / without leading zero |
+| Placeholder | Description                         |
+| ----------- | ----------------------------------- |
+| `YYYY`      | Four-digit year                     |
+| `YY`        | Two-digit year                      |
+| `MM` / `M`  | Month with / without leading zero   |
+| `DD` / `D`  | Day with / without leading zero     |
+| `HH` / `H`  | Hours with / without leading zero   |
 | `mm` / `m`  | Minutes with / without leading zero |
 | `ss` / `s`  | Seconds with / without leading zero |
 
@@ -495,19 +495,19 @@ Each date and time component can be shown or hidden individually.
 
 ##### Widget Properties of Clock FlipClock
 
-| Attribute                | Description                                                                                   |
-| ------------------------ | --------------------------------------------------------------------------------------------- |
+| Attribute                | Description                                                                                  |
+| ------------------------ | -------------------------------------------------------------------------------------------- |
 | `clock_time_source`      | Selects `client` for the browser time or `server` for the synchronized ioBroker server time. |
-| `clock_date_order`       | Selects `DMY`, `MDY`, or `YMD` as the order of the date components.                           |
-| `clock_showyear`         | Shows the two-digit year component.                                                           |
-| `clock_showmonth`        | Shows the month component.                                                                    |
-| `clock_showday`          | Shows the day component.                                                                      |
-| `clock_showhours`        | Shows the hours component.                                                                    |
-| `clock_showminutes`      | Shows the minutes component.                                                                  |
-| `clock_showseconds`      | Shows the seconds component.                                                                  |
-| `clock_color`            | Sets the color of the digits.                                                                 |
-| `clock_background_color` | Sets the background color of the flip cards.                                                  |
-| `clock_dot_color`        | Sets the color of the separators between the components.                                      |
+| `clock_date_order`       | Selects `DMY`, `MDY`, or `YMD` as the order of the date components.                          |
+| `clock_showyear`         | Shows the two-digit year component.                                                          |
+| `clock_showmonth`        | Shows the month component.                                                                   |
+| `clock_showday`          | Shows the day component.                                                                     |
+| `clock_showhours`        | Shows the hours component.                                                                   |
+| `clock_showminutes`      | Shows the minutes component.                                                                 |
+| `clock_showseconds`      | Shows the seconds component.                                                                 |
+| `clock_color`            | Sets the color of the digits.                                                                |
+| `clock_background_color` | Sets the background color of the flip cards.                                                 |
+| `clock_dot_color`        | Sets the color of the separators between the components.                                     |
 
 The time components are always displayed after the selected date components in the order hours, minutes, seconds.
 
@@ -520,20 +520,20 @@ Each date and time component can be shown or hidden individually.
 
 ##### Widget Properties of Clock NixieClock
 
-| Attribute                  | Description                                                                                   |
-| -------------------------- | --------------------------------------------------------------------------------------------- |
-| `clock_time_source`        | Selects `client` for the browser time or `server` for the synchronized ioBroker server time. |
-| `clock_date_order`         | Selects `DMY`, `MDY`, or `YMD` as the order of the date components.                           |
-| `clock_showyear`           | Shows the two-digit year component.                                                           |
-| `clock_showmonth`          | Shows the month component.                                                                    |
-| `clock_showday`            | Shows the day component.                                                                      |
-| `clock_showhours`          | Shows the hours component.                                                                    |
-| `clock_showminutes`        | Shows the minutes component.                                                                  |
-| `clock_showseconds`        | Shows the seconds component.                                                                  |
-| `clock_color_active`       | Sets the color of the active Nixie digits.                                                    |
-| `clock_color_inactive`     | Sets the color of the inactive Nixie digits.                                                  |
-| `clock_opacity_inactive`   | Sets the opacity of the inactive digits.                                                      |
-| `clock_glowcolor`          | Sets the color of the glow around the active digits.                                          |
+| Attribute                | Description                                                                                  |
+| ------------------------ | -------------------------------------------------------------------------------------------- |
+| `clock_time_source`      | Selects `client` for the browser time or `server` for the synchronized ioBroker server time. |
+| `clock_date_order`       | Selects `DMY`, `MDY`, or `YMD` as the order of the date components.                          |
+| `clock_showyear`         | Shows the two-digit year component.                                                          |
+| `clock_showmonth`        | Shows the month component.                                                                   |
+| `clock_showday`          | Shows the day component.                                                                     |
+| `clock_showhours`        | Shows the hours component.                                                                   |
+| `clock_showminutes`      | Shows the minutes component.                                                                 |
+| `clock_showseconds`      | Shows the seconds component.                                                                 |
+| `clock_color_active`     | Sets the color of the active Nixie digits.                                                   |
+| `clock_color_inactive`   | Sets the color of the inactive Nixie digits.                                                 |
+| `clock_opacity_inactive` | Sets the opacity of the inactive digits.                                                     |
+| `clock_glowcolor`        | Sets the color of the glow around the active digits.                                         |
 
 The time components are always displayed after the selected date components in the order hours, minutes, seconds.
 
@@ -595,6 +595,10 @@ of the countdown is available as CSS-Class selector:**
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+### 2.4.0 (2026-07-20)
+
+- add new clock widgets
+- fix prod and dev build
 
 ### 2.3.5 (2026-07-14)
 
@@ -615,14 +619,6 @@ of the countdown is available as CSS-Class selector:**
 - circle widget: fix reverse selection
 - circle widget: fixed full/partial display of the largest ring.
   Option added to select behavior.
-
-### 2.3.0 (2025-12-03)
-
-- remove autocomplete function in the browser
-- improve documentation
-- add html prepend and append to the countdown plain widget
-- Revision of the algorithms for parameter takeover and verification.
-- Revision of the calculation of dynamic time differences
 
 [Older changelogs can be found there](CHANGELOG_OLD.md)
 

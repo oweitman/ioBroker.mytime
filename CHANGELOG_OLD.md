@@ -1,4 +1,12 @@
 # Older changes
+## 2.3.0 (2025-12-03)
+
+- remove autocomplete function in the browser
+- improve documentation
+- add html prepend and append to the countdown plain widget
+- Revision of the algorithms for parameter takeover and verification.
+- Revision of the calculation of dynamic time differences
+
 ## 2.2.1 (2025-12-01)
 
 - add missing files

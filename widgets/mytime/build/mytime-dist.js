@@ -475,7 +475,7 @@
   });
 
   // ../package.json
-  var version = "2.3.5";
+  var version = "2.4.0";
 
   // mytime/js/support/util.js
   function toBoolSafe(input) {
