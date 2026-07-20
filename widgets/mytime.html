@@ -146,6 +146,37 @@ x
         vis.binds['mytime'].countdownnixie.createWidget(this.data.wid, this.view, this.data, this.style);
     %></div>
 </script>
+
+<script id="tplMyTimeClockPlain" type="text/ejs" class="vis-tpl"
+    data-vis-prev='<img style="display: block;margin-left: auto;margin-right: auto;width: 50%;" src="widgets/mytime/img/cdplain.png"></img>'
+    data-vis-attrs="clock_time_source[client]/nselect,client,server;clock_format[DD.MM.YYYY HH:mm:ss];clock_html_prepend/text;clock_html_append/text;"
+    data-vis-set="mytime" data-vis-type="static" data-vis-beta="false" data-vis-update-style="true"
+    data-vis-name="MyTime clock plain">
+    <div class="vis-widget <%== this.data.attr('class') %>" style="overflow:visible; width: 230px; height: 24px" id="<%= this.data.attr('wid') %>"><%
+        vis.binds['mytime'].clockplain.createWidget(this.data.wid, this.view, this.data, this.style);
+    %></div>
+</script>
+
+<script id="tplMyTimeClockNixie" type="text/ejs" class="vis-tpl"
+    data-vis-prev='<img style="display: block;margin-left: auto;margin-right: auto;width: 50%;" src="widgets/mytime/img/cdnixie.png"></img>'
+    data-vis-attrs="clock_time_source[client]/nselect,client,server;clock_date_order[DMY]/nselect,DMY,MDY,YMD;clock_showyear[true]/checkbox;clock_showmonth[true]/checkbox;clock_showday[true]/checkbox;clock_showhours[true]/checkbox;clock_showminutes[true]/checkbox;clock_showseconds[true]/checkbox;clock_color_active[#FFE548]/color;clock_color_inactive[#323232]/color;clock_opacity_inactive[0.35]/number,0,1,0.05;clock_glowcolor[#F58732]/color;"
+    data-vis-set="mytime" data-vis-type="static" data-vis-beta="false" data-vis-update-style="true"
+    data-vis-name="MyTime clock Nixie">
+    <div class="vis-widget <%== this.data.attr('class') %>" style="overflow:visible; width: 260px; height: 120px" id="<%= this.data.attr('wid') %>"><%
+        vis.binds['mytime'].clocknixie.createWidget(this.data.wid, this.view, this.data, this.style);
+    %></div>
+</script>
+
+<script id="tplMyTimeClockFlip" type="text/ejs" class="vis-tpl"
+    data-vis-prev='<img style="display: block;margin-left: auto;margin-right: auto;width: 50%;" src="widgets/mytime/img/cdflipclock.png"></img>'
+    data-vis-attrs="clock_time_source[client]/nselect,client,server;clock_date_order[DMY]/nselect,DMY,MDY,YMD;clock_showyear[true]/checkbox;clock_showmonth[true]/checkbox;clock_showday[true]/checkbox;clock_showhours[true]/checkbox;clock_showminutes[true]/checkbox;clock_showseconds[true]/checkbox;clock_color/color;clock_background_color/color;clock_dot_color/color;"
+    data-vis-set="mytime" data-vis-type="static" data-vis-beta="false" data-vis-update-style="true"
+    data-vis-name="MyTime clock FlipClock">
+    <div class="vis-widget <%== this.data.attr('class') %>" style="overflow:visible; width: 900px; height: 120px" id="<%= this.data.attr('wid') %>"><%
+        vis.binds['mytime'].clockflip.createWidget(this.data.wid, this.view, this.data, this.style);
+    %></div>
+</script>
+
 <script id="tplMyTimeClockWord" type="text/ejs" class="vis-tpl"
     data-vis-prev='<img style="display: block;margin-left: auto;margin-right: auto;width: 50%;" src="widgets/mytime/img/wordclock.png"></img>'
     data-vis-attrs="language[english]/nselect,english,german,swiss,swabian,dutch,italian,spanish,french,russian,turkish;letterActivated/color;letterDeactivated/color;wordclockMargin/number;withMinutes/checkbox;minuteSize[5]/number;minuteColor/color;withSeconds/checkbox;secondSize[5]/number;secondColor/color;timezone/custom,mytime.attrSelect;"

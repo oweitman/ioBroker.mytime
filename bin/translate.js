@@ -33,6 +33,20 @@ function importi18nKeys() {
     if (format === 'single') {
         const filePath = path.resolve(__dirname, '../', i18npath);
         i18n['en'] = require(filePath);
+        const translationsPath = path.resolve(__dirname, '..', path.dirname(i18npath), 'translations.json');
+        const translations = JSON.parse(fs.readFileSync(translationsPath, 'utf8'));
+        for (const [key, languages] of Object.entries(translations)) {
+            for (const [lang, text] of Object.entries(languages)) {
+                if (lang === 'en') {
+                    continue;
+                }
+                if (!i18n[lang]) {
+                    i18n[lang] = {};
+                }
+
+                i18n[lang][key] = text;
+            }
+        }
     }
     return i18n;
 }
@@ -111,7 +125,7 @@ function isKeyEmptyInAnyLanguage(i18n, key) {
 }
 async function fetchTranslations(word) {
     console.log(`translate ${word}`);
-    const response = await fetch('https://oz7q7o4tl3.execute-api.eu-west-1.amazonaws.com/', {
+    const response = await fetch('https://translator.iobroker.in/', {
         headers: {
             Referer: 'https://translator-ui.iobroker.in/',
         },

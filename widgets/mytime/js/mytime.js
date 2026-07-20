@@ -12,6 +12,9 @@ import countdownCircle from './widgets/countdownCircle.js';
 import reverseCountdownPlain from './widgets/reverseCountdownPlain.js';
 import countdownPlain from './widgets/countdownPlain.js';
 import wordclock from './widgets/wordclock.js';
+import clockPlain from './widgets/clockPlain.js';
+import clockNixie from './widgets/clockNixie.js';
+import clockFlip from './widgets/clockFlip.js';
 import support from './support/support.js';
 
 /* global $, systemDictionary, vis */
@@ -35,6 +38,9 @@ vis.binds.mytime = {
     reversecountdownplain: reverseCountdownPlain,
     countdownplain: countdownPlain,
     wordclock,
+    clockplain: clockPlain,
+    clocknixie: clockNixie,
+    clockflip: clockFlip,
     ...support,
 };
 

@@ -1779,6 +1779,155 @@
   };
   var wordclock_default = wordclock;
 
+  // mytime/js/widgets/clockPlain.js
+  var clockPlain = {
+    intervaltime: 250,
+    createWidget: function(widgetID, view, data) {
+      var $div = $(`#${widgetID}`);
+      if (!$div.length) {
+        return setTimeout(() => vis.binds["mytime"].clockplain.createWidget(widgetID, view, data), 100);
+      }
+      $div.html('<div class="timer"></div>');
+      vis.binds["mytime"].stopTimer(widgetID);
+      vis.binds["mytime"].clockplain.setState(widgetID, data);
+      vis.binds["mytime"].startTimer(widgetID, data, clockPlain.intervaltime, clockPlain.setState);
+    },
+    setState: function(widgetID, data) {
+      var value = vis.binds["mytime"].formatClockDate(
+        vis.binds["mytime"].getClockDate(data),
+        data.clock_format || "DD.MM.YYYY HH:mm:ss"
+      );
+      $(`#${widgetID} .timer`).html((data.clock_html_prepend || "") + value + (data.clock_html_append || ""));
+    }
+  };
+  var clockPlain_default = clockPlain;
+
+  // mytime/js/widgets/clockNixie.js
+  var dateUnits = {
+    Y: ["year", "years"],
+    M: ["month", "months"],
+    D: ["day", "days"]
+  };
+  var timeUnits = [
+    ["hours", "hours"],
+    ["minutes", "mins"],
+    ["seconds", "secs"]
+  ];
+  function getUnits(data) {
+    var order = data.clock_date_order || "DMY";
+    return [...order.split("").map((key) => dateUnits[key]), ...timeUnits];
+  }
+  function digitColumn(className) {
+    return `<div class="${className}">${Array.from({ length: 10 }, (_value, digit) => `<p>${digit}</p>`).join("")}</div>`;
+  }
+  var clockNixie = {
+    intervaltime: 250,
+    createWidget: function(widgetID, view, data) {
+      var $div = $(`#${widgetID}`);
+      if (!$div.length) {
+        return setTimeout(() => vis.binds["mytime"].clocknixie.createWidget(widgetID, view, data), 100);
+      }
+      var enabled = getUnits(data).filter(([key]) => toBoolSafe(data[`clock_show${key}`]));
+      var active = data.clock_color_active || "#FFE548";
+      var inactive = data.clock_color_inactive || "#323232";
+      var opacity = data.clock_opacity_inactive === void 0 ? 0.35 : Number(data.clock_opacity_inactive);
+      var glow = data.clock_glowcolor || "#F58732";
+      var alpha = `0${Math.round(255 * opacity).toString(16)}`.slice(-2);
+      var content = `<style>#${widgetID} .cdclock p.separator,#${widgetID} .cdclock section p.active{color:${active};text-shadow:0 0 20px ${glow}}#${widgetID} .cdclock{color:${inactive}${alpha}}</style>`;
+      content += '<div class="cdclock">';
+      enabled.forEach(([_key, className], index) => {
+        if (index) {
+          content += '<p class="separator">:</p>';
+        }
+        content += `<section class="${className}">${digitColumn("tens")}${digitColumn("ones")}</section>`;
+      });
+      content += "</div>";
+      $div.html(content);
+      vis.binds["mytime"].stopTimer(widgetID);
+      clockNixie.setState(widgetID, data);
+      vis.binds["mytime"].startTimer(widgetID, data, clockNixie.intervaltime, clockNixie.setState);
+    },
+    setState: function(widgetID, data) {
+      var parts = vis.binds["mytime"].getClockParts(data);
+      getUnits(data).forEach(([key, className]) => {
+        if (toBoolSafe(data[`clock_show${key}`])) {
+          var value = key === "year" ? parts[key] % 100 : parts[key];
+          vis.binds["mytime"].countdownnixie.setDigits(
+            $(`#${widgetID} .${className}`),
+            vis.binds["mytime"].pad(value, 2)
+          );
+        }
+      });
+    }
+  };
+  var clockNixie_default = clockNixie;
+
+  // mytime/js/widgets/clockFlip.js
+  var dateUnits2 = {
+    Y: ["year", "day", 86400],
+    M: ["month", "day", 86400],
+    D: ["day", "day", 86400]
+  };
+  var timeUnits2 = [
+    ["hours", "hours", 3600],
+    ["minutes", "minutes", 60],
+    ["seconds", "seconds", 1]
+  ];
+  function getUnits2(data) {
+    var order = data.clock_date_order || "DMY";
+    return [...order.split("").map((key) => dateUnits2[key]), ...timeUnits2];
+  }
+  var clockFlip = {
+    intervaltime: 250,
+    flips: {},
+    createWidget: function(widgetID, view, data, style) {
+      var $div = $(`#${widgetID}`);
+      if (!$div.length || !jQuery().mtFlipClock) {
+        return setTimeout(() => vis.binds["mytime"].clockflip.createWidget(widgetID, view, data, style), 100);
+      }
+      var enabled = getUnits2(data).filter(([key]) => toBoolSafe(data[`clock_show${key}`]));
+      var font = style["font-family"] || "";
+      var color = data.clock_color || "";
+      var background = data.clock_background_color || "";
+      var dots = data.clock_dot_color || "";
+      var content = `<style>#${widgetID} .clock-flip{display:flex;align-items:flex-start;white-space:nowrap}`;
+      content += `#${widgetID} .clock-flip-unit{flex:0 0 140px;width:140px}`;
+      content += `#${widgetID} .clock-flip-unit .flip-clock-wrapper{display:flex;width:140px;min-width:140px;margin:0}`;
+      content += `#${widgetID} .clock-flip-separator{font-size:48px;line-height:100px;margin:0 4px}`;
+      if (font) content += `#${widgetID} .flip-clock-wrapper{font-family:${font}}`;
+      if (color || background) content += `#${widgetID} .flip-clock-wrapper ul li a div div.inn{${color ? `color:${color};` : ""}${background ? `background-color:${background};` : ""}}`;
+      if (dots) content += `#${widgetID} .flip-clock-dot{background-color:${dots}}#${widgetID} .clock-flip-separator{color:${dots}}`;
+      content += `#${widgetID} .clock-flip-unit{display:inline-block}</style><div class="clock-flip">`;
+      enabled.forEach(([key], index) => {
+        if (index) content += '<span class="clock-flip-separator">:</span>';
+        content += `<span class="clock-flip-unit clock-${key}"></span>`;
+      });
+      content += "</div>";
+      $div.html(content);
+      clockFlip.flips[widgetID] = {};
+      enabled.forEach(([key, faceUnit]) => {
+        var pattern = faceUnit === "day" ? "1000" : faceUnit === "hours" ? "0100" : faceUnit === "minutes" ? "0010" : "0001";
+        clockFlip.flips[widgetID][key] = $(`#${widgetID} .clock-${key}`).mtFlipClock(0, {
+          clockFace: "Mytime",
+          countdown: false,
+          autoStart: false,
+          pattern
+        });
+      });
+      vis.binds["mytime"].stopTimer(widgetID);
+      clockFlip.setState(widgetID, data);
+      vis.binds["mytime"].startTimer(widgetID, data, clockFlip.intervaltime, clockFlip.setState);
+    },
+    setState: function(widgetID, data) {
+      var parts = vis.binds["mytime"].getClockParts(data);
+      getUnits2(data).forEach(([key, _faceUnit, multiplier]) => {
+        var flip = clockFlip.flips[widgetID] && clockFlip.flips[widgetID][key];
+        if (flip) flip.setTime((key === "year" ? parts[key] % 100 : parts[key]) * multiplier);
+      });
+    }
+  };
+  var clockFlip_default = clockFlip;
+
   // mytime/js/support/runtime.js
   var runtime = {
     startTimer: function(widgetID, data, time, callback) {
@@ -2669,8 +2818,49 @@
   };
   var serverSync_default = serverSync;
 
+  // mytime/js/support/clock.js
+  var clock = {
+    getClockDate: function(data) {
+      var now = Date.now();
+      if ((data.clock_time_source || "client") === "server") {
+        now -= vis.binds["mytime"].serversync.serverTimeDiff || 0;
+      }
+      return new Date(now);
+    },
+    getClockParts: function(data) {
+      var date = vis.binds["mytime"].getClockDate(data);
+      return {
+        year: date.getFullYear(),
+        month: date.getMonth() + 1,
+        day: date.getDate(),
+        hours: date.getHours(),
+        minutes: date.getMinutes(),
+        seconds: date.getSeconds()
+      };
+    },
+    formatClockDate: function(date, format) {
+      var pad = vis.binds["mytime"].pad;
+      var values = {
+        YYYY: pad(date.getFullYear(), 4),
+        YY: pad(date.getFullYear() % 100, 2),
+        MM: pad(date.getMonth() + 1, 2),
+        M: date.getMonth() + 1,
+        DD: pad(date.getDate(), 2),
+        D: date.getDate(),
+        HH: pad(date.getHours(), 2),
+        H: date.getHours(),
+        mm: pad(date.getMinutes(), 2),
+        m: date.getMinutes(),
+        ss: pad(date.getSeconds(), 2),
+        s: date.getSeconds()
+      };
+      return (format || "DD.MM.YYYY HH:mm:ss").replace(/YYYY|YY|MM|M|DD|D|HH|H|mm|m|ss|s/g, (token) => values[token]);
+    }
+  };
+  var clock_default = clock;
+
   // mytime/js/support/support.js
-  var support_default = __spreadValues(__spreadValues(__spreadValues(__spreadValues({}, runtime_default), countdown_default), timezones_default2), serverSync_default);
+  var support_default = __spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues({}, runtime_default), countdown_default), timezones_default2), serverSync_default), clock_default);
 
   // mytime/js/mytime.js
   fetch("widgets/mytime/myi18n/translations.json").then((response) => response.json()).then((i18n) => $.extend(true, systemDictionary, i18n));
@@ -2689,7 +2879,10 @@
     countdowncircle: countdownCircle_default,
     reversecountdownplain: reverseCountdownPlain_default,
     countdownplain: countdownPlain_default,
-    wordclock: wordclock_default
+    wordclock: wordclock_default,
+    clockplain: clockPlain_default,
+    clocknixie: clockNixie_default,
+    clockflip: clockFlip_default
   }, support_default);
   vis.binds.mytime.showVersion();
   vis.binds.mytime.calcServerTimeDiff();

@@ -458,6 +458,85 @@ corresponding settings cannot be configured in the widget settings:
 }
 ```
 
+#### Widget Clock plain
+
+![Widget Clock plain](admin/mytime-plain-clock.png)
+
+A configurable widget for displaying the current date and time as plain text.
+The time can be taken either from the browser client or from the synchronized ioBroker server time.
+
+##### Widget Properties of Clock plain
+
+| Attribute          | Description                                                                                   |
+| ------------------ | --------------------------------------------------------------------------------------------- |
+| `clock_time_source` | Selects `client` for the browser time or `server` for the synchronized ioBroker server time. |
+| `clock_format`      | Defines the date and time format. The default is `DD.MM.YYYY HH:mm:ss`.                       |
+| `clock_html_prepend` | Text or HTML inserted before the formatted date and time.                                    |
+| `clock_html_append` | Text or HTML appended after the formatted date and time.                                      |
+
+The following placeholders can be used in `clock_format`:
+
+| Placeholder | Description                    |
+| ----------- | ------------------------------ |
+| `YYYY`      | Four-digit year                |
+| `YY`        | Two-digit year                 |
+| `MM` / `M`  | Month with / without leading zero |
+| `DD` / `D`  | Day with / without leading zero   |
+| `HH` / `H`  | Hours with / without leading zero |
+| `mm` / `m`  | Minutes with / without leading zero |
+| `ss` / `s`  | Seconds with / without leading zero |
+
+#### Widget Clock FlipClock
+
+![Widget Clock FlipClock](admin/mytime-flip-clock.png)
+
+A configurable date and time widget in an airport flip board style.
+Each date and time component can be shown or hidden individually.
+
+##### Widget Properties of Clock FlipClock
+
+| Attribute                | Description                                                                                   |
+| ------------------------ | --------------------------------------------------------------------------------------------- |
+| `clock_time_source`      | Selects `client` for the browser time or `server` for the synchronized ioBroker server time. |
+| `clock_date_order`       | Selects `DMY`, `MDY`, or `YMD` as the order of the date components.                           |
+| `clock_showyear`         | Shows the two-digit year component.                                                           |
+| `clock_showmonth`        | Shows the month component.                                                                    |
+| `clock_showday`          | Shows the day component.                                                                      |
+| `clock_showhours`        | Shows the hours component.                                                                    |
+| `clock_showminutes`      | Shows the minutes component.                                                                  |
+| `clock_showseconds`      | Shows the seconds component.                                                                  |
+| `clock_color`            | Sets the color of the digits.                                                                 |
+| `clock_background_color` | Sets the background color of the flip cards.                                                  |
+| `clock_dot_color`        | Sets the color of the separators between the components.                                      |
+
+The time components are always displayed after the selected date components in the order hours, minutes, seconds.
+
+#### Widget Clock NixieClock
+
+![Widget Clock NixieClock](admin/mytime-nixie-clock.png)
+
+A configurable date and time widget in a Nixie-Tube/LED style.
+Each date and time component can be shown or hidden individually.
+
+##### Widget Properties of Clock NixieClock
+
+| Attribute                  | Description                                                                                   |
+| -------------------------- | --------------------------------------------------------------------------------------------- |
+| `clock_time_source`        | Selects `client` for the browser time or `server` for the synchronized ioBroker server time. |
+| `clock_date_order`         | Selects `DMY`, `MDY`, or `YMD` as the order of the date components.                           |
+| `clock_showyear`           | Shows the two-digit year component.                                                           |
+| `clock_showmonth`          | Shows the month component.                                                                    |
+| `clock_showday`            | Shows the day component.                                                                      |
+| `clock_showhours`          | Shows the hours component.                                                                    |
+| `clock_showminutes`        | Shows the minutes component.                                                                  |
+| `clock_showseconds`        | Shows the seconds component.                                                                  |
+| `clock_color_active`       | Sets the color of the active Nixie digits.                                                    |
+| `clock_color_inactive`     | Sets the color of the inactive Nixie digits.                                                  |
+| `clock_opacity_inactive`   | Sets the opacity of the inactive digits.                                                      |
+| `clock_glowcolor`          | Sets the color of the glow around the active digits.                                          |
+
+The time components are always displayed after the selected date components in the order hours, minutes, seconds.
+
 #### Widget Wordclock
 
 ![Widget Wordclock](admin/mytime-wordclock.png)
