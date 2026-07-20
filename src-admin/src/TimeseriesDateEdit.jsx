@@ -24,7 +24,7 @@ import {
     IconButton,
 } from '@mui/material';
 import { Delete as DelIcon, Add as AddIcon } from '@mui/icons-material';
-import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
+import { DateTimePicker } from '@mui/x-date-pickers';
 
 import { TimeseriesContext, useTimeseriesDispatch } from './TimeseriesContext';
 import { NavStateContext, useNavStateDispatch } from './TimeseriesNavContext';

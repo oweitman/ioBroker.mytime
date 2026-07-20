@@ -21,7 +21,7 @@ import {
     IconButton,
 } from '@mui/material';
 import { Cancel } from '@mui/icons-material';
-import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
+import { DateTimePicker } from '@mui/x-date-pickers';
 
 import { RRule } from 'rrule';
 
