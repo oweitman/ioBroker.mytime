@@ -62,6 +62,21 @@
             "skipFiles": ["socket.io.js"]
         },
         {
+            "type": "chrome",
+            "request": "launch",
+            "name": "iobroker adapter config",
+            "url": "http://localhost:8081/#tab-instances/config/system.adapter.mytime.0",
+            "webRoot": "${workspaceFolder}/src-admin",
+            "sourceMaps": true,
+            "sourceMapPathOverrides": {
+                "http://localhost:4173/*": "${workspaceFolder}/src-admin/*",
+                "http://127.0.0.1:4173/*": "${workspaceFolder}/src-admin/*",
+                "/src/*": "${workspaceFolder}/src-admin/src/*"
+            },
+            "trace": true,
+            "skipFiles": ["socket.io.js"]
+        },
+        {
             "name": "repochecker local",
             "program": "../iobroker.repochecker/index.js",
             "args": ["https://github.com/oweitman/ioBroker.mytime", "--local"],

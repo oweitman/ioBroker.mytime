@@ -1,0 +1,2 @@
+import{g as e}from"./_commonjsHelpers-CE1G-McA.js";import{C as o}from"./ConfigCustomMytimeSet__mf_v__runtimeInit__mf_v__-OnXS3AP3.js";const{initPromise:r}=o,_=r.then(t=>t.loadShare("react-dom",{customShareInfo:{shareConfig:{singleton:!0,strictVersion:!1,requiredVersion:"*"}}})),a=await _.then(t=>t());var s=a;const n=e(s);export{s as C,n as R};
+//# sourceMappingURL=ConfigCustomMytimeSet__loadShare__react_mf_2_dom__loadShare__-nCaSkNBY.js.map
