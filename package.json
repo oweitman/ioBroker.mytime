@@ -71,7 +71,7 @@
         "test:package": "mocha test/package --exit",
         "test:integration": "mocha test/integration --exit",
         "build:admin": "node tasks --default",
-        "build:widgets": "cd widgets/mytime && npm run build",
+        "build:widgets": "cd widgets && npm run build",
         "build": "npm run build:widgets && npm run build:admin",
         "prepublishOnly": "npm run build",
         "release": "release-script --all",
