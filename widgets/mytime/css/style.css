@@ -1,4 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:100');
+@font-face {
+  font-family: 'Lato MyTime';
+  src: url('../fonts/Lato-Thin.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+}
 
 .mytime-class {
     font-style: italic;
@@ -9,7 +15,8 @@
   align-items: center;
   line-height: 1;
   white-space: nowrap;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Lato MyTime', sans-serif;
+  font-weight: 100;
   font-size: inherit;
 }
 

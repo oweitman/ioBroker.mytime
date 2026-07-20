@@ -10,4 +10,3 @@ import "./wc_langPack_FR.js";
 import "./wc_langPack_RU.js";
 import "./wc_langPack_ES.js";
 import "./wc_langPack_TR.js";
-import "./timezones.js";

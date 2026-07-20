@@ -6,7 +6,8 @@
         "build": "mytime/**/js/*.js"
     },
     "scripts": {
-        "build": "esbuild mytime/js/bundle.js --minify --bundle --outfile=mytime/build/mytime-dist.js --target=es6 --sourcemap",
+        "build:min": "esbuild mytime/js/bundle.js --minify --bundle --outfile=mytime/build/mytime-dist.js --target=es6 --sourcemap",
+        "build": "esbuild mytime/js/bundle.js --bundle --outfile=mytime/build/mytime-dist.js --target=es6 --sourcemap",
         "watch": "npm-watch"
     },
     "author": "",
