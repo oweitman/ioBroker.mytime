@@ -596,8 +596,7 @@ of the countdown is available as CSS-Class selector:**
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
-
-### **WORK IN PROGRESS**
+### 2.5.0 (2026-07-21)
 
 - Flip clock size is now adjustable via font-size.
 - Defined better initial sizes and defaults for various widgets.
@@ -621,12 +620,6 @@ of the countdown is available as CSS-Class selector:**
 ### 2.3.2 (2026-01-04)
 
 - fix some translations
-
-### 2.3.1 (2026-01-03)
-
-- circle widget: fix reverse selection
-- circle widget: fixed full/partial display of the largest ring.
-  Option added to select behavior.
 
 [Older changelogs can be found there](CHANGELOG_OLD.md)
 

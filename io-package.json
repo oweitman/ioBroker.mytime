@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "mytime",
-    "version": "2.4.1",
+    "version": "2.5.0",
     "titleLang": {
       "en": "MyTime",
       "de": "MyTime",
@@ -32,6 +32,19 @@
       "oweitman <oweitman@gmx.de>"
     ],
     "news": {
+      "2.5.0": {
+        "en": "Flip clock size is now adjustable via font-size.\nDefined better initial sizes and defaults for various widgets.",
+        "de": "Die Größe der Flip-Uhr ist jetzt über die Schriftgröße einstellbar.\nDefinierte bessere Anfangsgrößen und Standardwerte für verschiedene Widgets.",
+        "ru": "Размер часов Flip теперь регулируется размером шрифта.\nОпределены лучшие начальные размеры и по умолчанию для различных виджетов.",
+        "pt": "O tamanho do relógio é agora ajustável através do tamanho da fonte.\nDefiniu melhores tamanhos iniciais e padrões para vários widgets.",
+        "nl": "De klokgrootte is nu instelbaar via lettergrootte.\nEen betere begingrootte en standaardinstellingen voor verschillende widgets.",
+        "fr": "La taille de l'horloge Flip est maintenant réglable via la taille de police.\nDéfinir de meilleures tailles initiales et des valeurs par défaut pour divers widgets.",
+        "it": "La dimensione dell'orologio Flip è ora regolabile tramite font-size.\nDefinito migliori dimensioni iniziali e di default per vari widget.",
+        "es": "El tamaño del reloj Flip ahora es ajustable mediante tamaño de fuente.\nDefinido mejores tamaños iniciales y defectos para varios widgets.",
+        "pl": "Rozmiar zegara Flip jest teraz regulowany przez font- size.\nOkreślono lepsze początkowe rozmiary i domyślnie dla różnych widżetów.",
+        "uk": "Розмір годинника Flip тепер регулюється через розмір шрифту.\nВизначені кращі початкові розміри та за замовчуванням для різних віджетів.",
+        "zh-cn": "翻转时钟大小现在可以通过字体大小进行调整 .\n为各种部件定义了更好的初始大小和默认值."
+      },
       "2.4.1": {
         "en": "add new clock widgets\nfix prod and dev build\nreengineered widgets",
         "de": "neue clock widgets hinzufügen\nfix prod und dev build\nreengineered widgets",
@@ -109,19 +122,6 @@
         "pl": "- widget okręgu: naprawić wybór odwrotny\n- widżet okręgu: stały pełny / częściowy wyświetlacz największego pierścienia.\nOpcja dodana do wyboru zachowania.",
         "uk": "- коло віджет: виправити зворотний вибір\n- круговий віджет: фіксований повноканальний дисплей найбільшого кільця.\nВаріант додано для вибору поведінки.",
         "zh-cn": "- 圆形部件:修正反向选择\n- 圆形部件:最大环的固定全/部分显示.\n为选择行为添加了选项 ."
-      },
-      "2.3.0": {
-        "en": "remove autocomplete function in the browser\nimprove documentation\nadd html prepend and append to the countdown plain widget\nRevision of the algorithms for parameter takeover and verification.\nRevision of the calculation of dynamic time differences",
-        "de": "autocomplete funktion im browser entfernen\nverbesserung der dokumentation\nhtml prepend and append to the countdown simple widget hinzufügen\nRevision der Algorithmen zur Parameterübernahme und -überprüfung.\nRevision der Berechnung dynamischer Zeitunterschiede",
-        "ru": "удалить функцию автозаполнения в браузере\nулучшить документацию\nдобавить html prepend и добавить в виджет обратного отсчета\nПересмотр алгоритмов захвата и проверки параметров.\nПересмотр расчета динамических разниц во времени",
-        "pt": "remover a função autocompletar no navegador\nmelhorar a documentação\nadicionar o preprend html e adicionar ao widget de contagem decrescente\nRevisão dos algoritmos para aquisição e verificação de parâmetros.\nRevisão do cálculo das diferenças de tempo dinâmicas",
-        "nl": "autocomplete functie in de browser verwijderen\nde documentatie verbeteren\nhtml-prepend toevoegen en toevoegen aan het countdown-platte widget\nHerziening van de algoritmen voor parameterovername en verificatie.\nHerziening van de berekening van dynamische tijdsverschillen",
-        "fr": "supprimer la fonction autocomplete dans le navigateur\naméliorer la documentation\najouter html prepend et ajouter au widget simple compte à rebours\nRévision des algorithmes de prise en charge et de vérification des paramètres.\nRévision du calcul des écarts de temps dynamiques",
-        "it": "rimuovere la funzione di completamento automatico nel browser\nmigliorare la documentazione\naggiungere html prepend e append al widget di conto alla rovescia\nRevisione degli algoritmi per l'acquisizione dei parametri e la verifica.\nRevisione del calcolo delle differenze di tempo dinamiche",
-        "es": "eliminar la función autocompleta en el navegador\nmejorar la documentación\nañadir html prepend y apéndice al widget de cuenta atrás\nRevisión de los algoritmos para la toma y verificación del parámetro.\nRevisión del cálculo de las diferencias de tiempo dinámico",
-        "pl": "usuń funkcję autocomplete w przeglądarce\npoprawić dokumentację\ndodaj prependium html i dołącz do zwykłego widgetu licznika\nPrzegląd algorytmów przejęcia i weryfikacji parametrów.\nPrzegląd obliczania dynamicznych różnic w czasie",
-        "uk": "видалити автоматичну функцію в браузері\nвдосконалення документації\nadd html prepend і додаток до відліку звичайного віджету\nПерегляд алгоритмів вступу та перевірки параметрів.\nРевізія розрахунку динамічних часових відмінностей",
-        "zh-cn": "删除浏览器中的自动完整功能\n改进文件编制\n添加 html 预置和附加到倒计时平原部件\n修改参数接管与验证的算法.\n动态时差计算的修订"
       }
     },
     "platform": "Javascript/Node.js",

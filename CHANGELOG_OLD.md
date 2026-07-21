@@ -1,4 +1,10 @@
 # Older changes
+## 2.3.1 (2026-01-03)
+
+- circle widget: fix reverse selection
+- circle widget: fixed full/partial display of the largest ring.
+  Option added to select behavior.
+
 ## 2.3.0 (2025-12-03)
 
 - remove autocomplete function in the browser
