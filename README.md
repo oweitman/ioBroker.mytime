@@ -233,7 +233,7 @@ From Version 1.2.0 on the widgets should be compatible with vis1 and vis2.
 
 #### Widget Countdown plain
 
-![Widget Countdown plain](admin/mytime-plain.png)
+![Widget Countdown plain](admin/mytime-plain-countdown.png)
 
 A countdown widget for a plain textual output.
 The output can be configured in detail.
@@ -282,7 +282,7 @@ of the countdown is available as CSS-Class selector:**
 
 #### Widget Reverse Countdown plain
 
-![Widget Reverse Countdown](admin/mytime-reverse.png)
+![Widget Reverse Countdown](admin/mytime-plainreverse-countdown.png)
 
 A widget that shows the elapsed time from a given point in time
 
@@ -297,7 +297,7 @@ A widget that shows the elapsed time from a given point in time
 
 #### Widget Countdown Circle
 
-![Widget Countdown Circle](admin/mytime-circle.png)
+![Widget Countdown Circle](admin/mytime-circle-countdown.png)
 
 A countdown widget in a ring/circle design.
 
@@ -350,7 +350,7 @@ of the countdown is available as CSS-Class selector:**
 
 #### Widget Countdown FlipClock
 
-![Widget Countdown FlipClock](admin/mytime-flip.png)
+![Widget Countdown FlipClock](admin/mytime-flip-countdown.png)
 
 A countdown widget in a airport flip board style.
 Only 100 day - 1 second is supported.
@@ -396,7 +396,7 @@ of the countdown is available as CSS-Class selector:**
 
 #### Widget Countdown NixieClock
 
-![Widget Countdown NixieClock](admin/mytime-nixie.png)
+![Widget Countdown NixieClock](admin/mytime-nixie-countdown.png)
 
 A countdown widget in a Nixie-Tube/LED style
 
@@ -595,6 +595,7 @@ of the countdown is available as CSS-Class selector:**
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+
 ### 2.4.1 (2026-07-20)
 
 - add new clock widgets
