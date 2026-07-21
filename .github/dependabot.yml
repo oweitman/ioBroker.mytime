@@ -17,8 +17,50 @@ updates:
       cooldown:
           default-days: 7
       ignore:
-          # Keep @types/node aligned with the supported Node.js runtime; do not bump majors automatically.
+          # Keep @types/node aligned with the supported Node.js runtime.
           - dependency-name: '@types/node'
+            update-types: ['version-update:semver-major']
+
+          # Update the validated Federation toolchain only as a manually tested, coordinated set.
+          # Current combination: vite 7.1.7, @module-federation/vite 1.11.0,
+          # and @module-federation/runtime 2.0.0.
+          - dependency-name: 'vite'
+            update-types:
+                - 'version-update:semver-patch'
+                - 'version-update:semver-minor'
+                - 'version-update:semver-major'
+          - dependency-name: '@module-federation/vite'
+            update-types:
+                - 'version-update:semver-patch'
+                - 'version-update:semver-minor'
+                - 'version-update:semver-major'
+          - dependency-name: '@module-federation/runtime'
+            update-types:
+                - 'version-update:semver-patch'
+                - 'version-update:semver-minor'
+                - 'version-update:semver-major'
+
+          # Shared runtime and framework packages may receive patch and minor updates,
+          # but major upgrades require manual Federation and runtime testing.
+          - dependency-name: 'react'
+            update-types: ['version-update:semver-major']
+          - dependency-name: 'react-dom'
+            update-types: ['version-update:semver-major']
+          - dependency-name: '@vitejs/plugin-react'
+            update-types: ['version-update:semver-major']
+          - dependency-name: '@mui/material'
+            update-types: ['version-update:semver-major']
+          - dependency-name: '@mui/icons-material'
+            update-types: ['version-update:semver-major']
+          - dependency-name: '@mui/x-date-pickers'
+            update-types: ['version-update:semver-major']
+          - dependency-name: '@emotion/react'
+            update-types: ['version-update:semver-major']
+          - dependency-name: '@emotion/styled'
+            update-types: ['version-update:semver-major']
+          - dependency-name: '@iobroker/adapter-react-v5'
+            update-types: ['version-update:semver-major']
+          - dependency-name: '@iobroker/json-config'
             update-types: ['version-update:semver-major']
 
     - package-ecosystem: github-actions
