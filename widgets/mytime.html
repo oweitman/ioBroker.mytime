@@ -103,7 +103,7 @@ x
     data-vis-attrs="countdown_oid/id;countdown_format[dd\d HH\h mm\m ss\s];countdown_html_prepend/text;countdown_html_append/text;"
     data-vis-set="mytime" data-vis-type="val" data-vis-beta="false" data-vis-update-style="true"
     data-vis-name="MyTime Countdown Plain">
-    <div class="vis-widget <%== this.data.attr('class') %>" style="overflow:visible; width: 230px; height: 24px" id="<%= this.data.attr('wid') %>"><%
+    <div class="vis-widget <%== this.data.attr('class') %>" style="overflow:visible; width: 130px; height: 24px" id="<%= this.data.attr('wid') %>"><%
         vis.binds['mytime'].countdownplain.createWidget(this.data.wid, this.view, this.data, this.style);
     %></div>
 </script>
@@ -113,7 +113,7 @@ x
     data-vis-attrs="countdown_datetime;countdown_format[dd\d HH\h mm\m ss\s];countdown_html_prepend/text;countdown_html_append/text;"
     data-vis-set="mytime" data-vis-type="val" data-vis-beta="false" data-vis-update-style="true"
     data-vis-name="MyTime Reverse Countdown Plain">
-    <div class="vis-widget <%== this.data.attr('class') %>" style="overflow:visible; width: 230px; height: 24px" id="<%= this.data.attr('wid') %>"><%
+    <div class="vis-widget <%== this.data.attr('class') %>" style="overflow:visible; width: 130px; height: 24px" id="<%= this.data.attr('wid') %>"><%
         vis.binds['mytime'].reversecountdownplain.createWidget(this.data.wid, this.view, this.data, this.style);
     %></div>
 </script>
@@ -133,7 +133,7 @@ x
     data-vis-attrs="countdown_oid/id;countdown_showsec[true]/checkbox;countdown_showmin/checkbox;countdown_showhrs/checkbox;countdown_showday/checkbox;countdown_color/color;countdown_background_color/color;countdown_dot_color/color;"
     data-vis-set="mytime" data-vis-type="val" data-vis-beta="false" data-vis-update-style="true"
     data-vis-name="MyTime Countdown FlipClock">
-    <div class="vis-widget <%== this.data.attr('class') %>" style="overflow:visible; width: 160px; height: 120px" id="<%= this.data.attr('wid') %>"><%
+    <div class="vis-widget <%== this.data.attr('class') %>" style="overflow:visible; width: 160px; height: 120px; font-size: 80px" id="<%= this.data.attr('wid') %>"><%
         vis.binds['mytime'].countdownflip.createWidget(this.data.wid, this.view, this.data, this.style);
     %></div>
 </script>
@@ -142,7 +142,7 @@ x
     data-vis-attrs="countdown_oid/id;countdown_showsec[true]/checkbox;countdown_showmin/checkbox;countdown_showhrs/checkbox;countdown_showday/checkbox;countdown_showweek/checkbox;countdown_showmonth/checkbox;countdown_showyear/checkbox;countdown_color_active[#FFE548]/color;countdown_color_inactive[#323232]/color;countdown_opacity_inactive[0.35]/number,0,1,0.05;countdown_glowcolor[#F58732]/color;"
     data-vis-set="mytime" data-vis-type="val" data-vis-beta="false" data-vis-update-style="true"
     data-vis-name="MyTime Countdown NixieClock">
-    <div class="vis-widget <%== this.data.attr('class') %>" style="overflow:visible; width: 160px; height: 120px" id="<%= this.data.attr('wid') %>"><%
+    <div class="vis-widget <%== this.data.attr('class') %>" style="overflow:visible; width: 100px; height: 90px; font-size: 80px" id="<%= this.data.attr('wid') %>"><%
         vis.binds['mytime'].countdownnixie.createWidget(this.data.wid, this.view, this.data, this.style);
     %></div>
 </script>
@@ -152,7 +152,7 @@ x
     data-vis-attrs="clock_time_source[client]/nselect,client,server;clock_format[DD.MM.YYYY HH:mm:ss];clock_html_prepend/text;clock_html_append/text;"
     data-vis-set="mytime" data-vis-type="static" data-vis-beta="false" data-vis-update-style="true"
     data-vis-name="MyTime clock plain">
-    <div class="vis-widget <%== this.data.attr('class') %>" style="overflow:visible; width: 230px; height: 24px" id="<%= this.data.attr('wid') %>"><%
+    <div class="vis-widget <%== this.data.attr('class') %>" style="overflow:visible; width: 160px; height: 24px" id="<%= this.data.attr('wid') %>"><%
         vis.binds['mytime'].clockplain.createWidget(this.data.wid, this.view, this.data, this.style);
     %></div>
 </script>
@@ -162,7 +162,7 @@ x
     data-vis-attrs="clock_time_source[client]/nselect,client,server;clock_date_order[DMY]/nselect,DMY,MDY,YMD;clock_showyear[true]/checkbox;clock_showmonth[true]/checkbox;clock_showday[true]/checkbox;clock_showhours[true]/checkbox;clock_showminutes[true]/checkbox;clock_showseconds[true]/checkbox;clock_color_active[#FFE548]/color;clock_color_inactive[#323232]/color;clock_opacity_inactive[0.35]/number,0,1,0.05;clock_glowcolor[#F58732]/color;"
     data-vis-set="mytime" data-vis-type="static" data-vis-beta="false" data-vis-update-style="true"
     data-vis-name="MyTime clock Nixie">
-    <div class="vis-widget <%== this.data.attr('class') %>" style="overflow:visible; width: 260px; height: 120px" id="<%= this.data.attr('wid') %>"><%
+    <div class="vis-widget <%== this.data.attr('class') %>" style="overflow:visible; width: 670px; height: 90px; font-size: 80px" id="<%= this.data.attr('wid') %>"><%
         vis.binds['mytime'].clocknixie.createWidget(this.data.wid, this.view, this.data, this.style);
     %></div>
 </script>
@@ -172,7 +172,7 @@ x
     data-vis-attrs="clock_time_source[client]/nselect,client,server;clock_date_order[DMY]/nselect,DMY,MDY,YMD;clock_showyear[true]/checkbox;clock_showmonth[true]/checkbox;clock_showday[true]/checkbox;clock_showhours[true]/checkbox;clock_showminutes[true]/checkbox;clock_showseconds[true]/checkbox;clock_color/color;clock_background_color/color;clock_dot_color/color;"
     data-vis-set="mytime" data-vis-type="static" data-vis-beta="false" data-vis-update-style="true"
     data-vis-name="MyTime clock FlipClock">
-    <div class="vis-widget <%== this.data.attr('class') %>" style="overflow:visible; width: 900px; height: 120px" id="<%= this.data.attr('wid') %>"><%
+    <div class="vis-widget <%== this.data.attr('class') %>" style="overflow:visible; width: 860px; height: 90px; font-size: 64px" id="<%= this.data.attr('wid') %>"><%
         vis.binds['mytime'].clockflip.createWidget(this.data.wid, this.view, this.data, this.style);
     %></div>
 </script>

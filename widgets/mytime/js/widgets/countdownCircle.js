@@ -11,8 +11,8 @@ const countdownCircle = {
                 vis.binds['mytime'].countdowncircle.createWidget(widgetID, view, data, style);
             }, 100);
         }
-        var countdown_oid;
-        if (!data.countdown_oid || (countdown_oid = vis.binds['mytime'].getCountdownId(data.countdown_oid)) == false) {
+        var countdown_oid = data.countdown_oid ? vis.binds['mytime'].getCountdownId(data.countdown_oid) : null;
+        if (countdown_oid === false) {
             console.error(`Error: invalid countdown_oid ${data.countdown_oid}`);
             return;
         }
@@ -82,20 +82,22 @@ const countdownCircle = {
         $(`#${widgetID}`).html(text);
         vis.binds['mytime'].stopTimer(widgetID);
         vis.binds['mytime'].countdowncircle.setState(widgetID, data);
-        vis.binds['mytime'].startTimer(
-            widgetID,
-            data,
-            //vis.binds["mytime"].countdowncircle.calcInterval(timer),
-            vis.binds['mytime'].countdowncircle.intervaltime,
-            vis.binds['mytime'].countdowncircle.setState,
-        );
+        if (countdown_oid) {
+            vis.binds['mytime'].startTimer(
+                widgetID,
+                data,
+                //vis.binds["mytime"].countdowncircle.calcInterval(timer),
+                vis.binds['mytime'].countdowncircle.intervaltime,
+                vis.binds['mytime'].countdowncircle.setState,
+            );
+        }
     },
     calcInterval: function (timer) {
         return Math.min(Math.max(timer / 720, 25), 500);
     },
     setState: function (widgetID, data) {
-        var countdown_oid;
-        if (!data.countdown_oid || (countdown_oid = vis.binds['mytime'].getCountdownId(data.countdown_oid)) == false) {
+        var countdown_oid = data.countdown_oid ? vis.binds['mytime'].getCountdownId(data.countdown_oid) : null;
+        if (countdown_oid === false) {
             console.error(`Error: invalid countdown_oid ${data.countdown_oid}`);
             return;
         }

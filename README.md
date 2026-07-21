@@ -376,11 +376,7 @@ Example:
 Valid: year, month, day | hour, minute, second
 Irvalid: year, minute, second
 
-**Tips:**
-
-If you want to adjust the size of the countdown flipclock,
-under css settings in vis you can enter for half size:
-Group CSS-Common / transform "scale(0.5)"
+The display size can be controlled via the CSS `font-size` setting.
 
 **The actual action state (cdstop,cdrun,cdpause,cdend)
 of the countdown is available as CSS-Class selector:**
@@ -440,11 +436,9 @@ A CSS class must be created for the negative margin.
 }
 ```
 
-###### Widget size before Vrsion 2
+###### Widget size
 
-If you want to adjust the size of the countdown nixieclock,
-under css settings in vis you can enter for half size:
-Group CSS-Common / transform "scale(0.5)"
+The display size can be controlled via the CSS `font-size` setting.
 
 ###### Centering the Nixie Clock
 
@@ -463,7 +457,8 @@ corresponding settings cannot be configured in the widget settings:
 ![Widget Clock plain](admin/mytime-plain-clock.png)
 
 A configurable widget for displaying the current date and time as plain text.
-The time can be taken either from the browser client or from the synchronized ioBroker server time.
+The time can be taken either from the browser client or from
+the synchronized ioBroker server time.
 
 ##### Widget Properties of Clock plain
 
@@ -485,6 +480,8 @@ The following placeholders can be used in `clock_format`:
 | `HH` / `H`  | Hours with / without leading zero   |
 | `mm` / `m`  | Minutes with / without leading zero |
 | `ss` / `s`  | Seconds with / without leading zero |
+
+The display size can be controlled via the CSS `font-size` setting.
 
 #### Widget Clock FlipClock
 
@@ -509,7 +506,9 @@ Each date and time component can be shown or hidden individually.
 | `clock_background_color` | Sets the background color of the flip cards.                                                 |
 | `clock_dot_color`        | Sets the color of the separators between the components.                                     |
 
-The time components are always displayed after the selected date components in the order hours, minutes, seconds.
+The time components are always displayed after the selected date components
+in the order hours, minutes, seconds.
+The display size can be controlled via the CSS `font-size` setting.
 
 #### Widget Clock NixieClock
 
@@ -535,7 +534,9 @@ Each date and time component can be shown or hidden individually.
 | `clock_opacity_inactive` | Sets the opacity of the inactive digits.                                                     |
 | `clock_glowcolor`        | Sets the color of the glow around the active digits.                                         |
 
-The time components are always displayed after the selected date components in the order hours, minutes, seconds.
+The time components are always displayed after the selected date components
+in the order hours, minutes, seconds.
+The display size can be controlled via the CSS `font-size` setting.
 
 #### Widget Wordclock
 
@@ -595,6 +596,11 @@ of the countdown is available as CSS-Class selector:**
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+
+### **WORK IN PROGRESS**
+
+- Flip clock size is now adjustable via font-size.
+- Defined better initial sizes and defaults for various widgets.
 
 ### 2.4.1 (2026-07-20)
 

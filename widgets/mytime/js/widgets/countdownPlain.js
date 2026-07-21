@@ -10,8 +10,8 @@ const countdownPlain = {
             }, 100);
         }
 
-        var countdown_oid;
-        if (!data.countdown_oid || (countdown_oid = vis.binds['mytime'].getCountdownId(data.countdown_oid)) == false) {
+        var countdown_oid = data.countdown_oid ? vis.binds['mytime'].getCountdownId(data.countdown_oid) : null;
+        if (countdown_oid === false) {
             console.error(`Error: invalid countdown_oid ${data.countdown_oid}`);
             return;
         }
@@ -45,19 +45,19 @@ const countdownPlain = {
         $(`#${widgetID}`).html(text);
 
         vis.binds['mytime'].stopTimer(widgetID);
-        vis.binds['mytime'].startTimer(
-            widgetID,
-            data,
-            vis.binds['mytime'].countdownplain.intervaltime,
-            vis.binds['mytime'].countdownplain.setState,
-        );
-        if (vis.editMode) {
-            vis.binds['mytime'].countdownplain.setState(widgetID, data);
+        vis.binds['mytime'].countdownplain.setState(widgetID, data);
+        if (countdown_oid) {
+            vis.binds['mytime'].startTimer(
+                widgetID,
+                data,
+                vis.binds['mytime'].countdownplain.intervaltime,
+                vis.binds['mytime'].countdownplain.setState,
+            );
         }
     },
     setState: function (widgetID, data) {
-        var countdown_oid;
-        if (!data.countdown_oid || (countdown_oid = vis.binds['mytime'].getCountdownId(data.countdown_oid)) == false) {
+        var countdown_oid = data.countdown_oid ? vis.binds['mytime'].getCountdownId(data.countdown_oid) : null;
+        if (countdown_oid === false) {
             console.error(`Error: invalid countdown_oid ${data.countdown_oid}`);
             return;
         }

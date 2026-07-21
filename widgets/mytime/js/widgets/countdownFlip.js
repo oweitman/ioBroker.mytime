@@ -12,8 +12,8 @@ const countdownFlip = {
                 vis.binds['mytime'].countdownflip.createWidget(widgetID, view, data, style);
             }, 100);
         }
-        var countdown_oid;
-        if (!data.countdown_oid || (countdown_oid = vis.binds['mytime'].getCountdownId(data.countdown_oid)) == false) {
+        var countdown_oid = data.countdown_oid ? vis.binds['mytime'].getCountdownId(data.countdown_oid) : null;
+        if (countdown_oid === false) {
             console.error(`Error: invalid countdown_oid ${data.countdown_oid}`);
             return;
         }
@@ -93,19 +93,19 @@ const countdownFlip = {
             pattern: pattern,
         });
         vis.binds['mytime'].stopTimer(widgetID);
-        vis.binds['mytime'].startTimer(
-            widgetID,
-            data,
-            vis.binds['mytime'].countdownflip.intervaltime,
-            vis.binds['mytime'].countdownflip.setState,
-        );
-        if (vis.editMode) {
-            vis.binds['mytime'].countdownflip.setState(widgetID, data);
+        vis.binds['mytime'].countdownflip.setState(widgetID, data);
+        if (countdown_oid) {
+            vis.binds['mytime'].startTimer(
+                widgetID,
+                data,
+                vis.binds['mytime'].countdownflip.intervaltime,
+                vis.binds['mytime'].countdownflip.setState,
+            );
         }
     },
     setState: function (widgetID, data) {
-        var countdown_oid;
-        if (!data.countdown_oid || (countdown_oid = vis.binds['mytime'].getCountdownId(data.countdown_oid)) == false) {
+        var countdown_oid = data.countdown_oid ? vis.binds['mytime'].getCountdownId(data.countdown_oid) : null;
+        if (countdown_oid === false) {
             console.error(`Error: invalid countdown_oid ${data.countdown_oid}`);
             return;
         }

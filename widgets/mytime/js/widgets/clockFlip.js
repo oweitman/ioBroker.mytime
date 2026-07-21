@@ -31,9 +31,9 @@ const clockFlip = {
         var background = data.clock_background_color || '';
         var dots = data.clock_dot_color || '';
         var content = `<style>#${widgetID} .clock-flip{display:flex;align-items:flex-start;white-space:nowrap}`;
-        content += `#${widgetID} .clock-flip-unit{flex:0 0 140px;width:140px}`;
-        content += `#${widgetID} .clock-flip-unit .flip-clock-wrapper{display:flex;width:140px;min-width:140px;margin:0}`;
-        content += `#${widgetID} .clock-flip-separator{font-size:48px;line-height:100px;margin:0 4px}`;
+        content += `#${widgetID} .clock-flip-unit{flex:0 0 1.75em;width:1.75em}`;
+        content += `#${widgetID} .clock-flip-unit .flip-clock-wrapper{display:flex;width:1.75em;min-width:1.75em;margin:0}`;
+        content += `#${widgetID} .clock-flip-separator{font-size:.6em;line-height:2.083333em;margin:0 .083333em}`;
         if (font) {
             content += `#${widgetID} .flip-clock-wrapper{font-family:${font}}`;
         }

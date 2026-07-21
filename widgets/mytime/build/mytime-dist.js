@@ -493,8 +493,8 @@
           vis.binds["mytime"].countdownnixie.createWidget(widgetID, view, data, style);
         }, 100);
       }
-      var countdown_oid;
-      if (!data.countdown_oid || (countdown_oid = vis.binds["mytime"].getCountdownId(data.countdown_oid)) == false) {
+      var countdown_oid = data.countdown_oid ? vis.binds["mytime"].getCountdownId(data.countdown_oid) : null;
+      if (countdown_oid === false) {
         console.error(`Error: invalid countdown_oid ${data.countdown_oid}`);
         return;
       }
@@ -780,19 +780,19 @@
       text += '<div class="timer"></div>';
       $(`#${widgetID}`).html(text);
       vis.binds["mytime"].stopTimer(widgetID);
-      vis.binds["mytime"].startTimer(
-        widgetID,
-        data,
-        vis.binds["mytime"].countdownnixie.intervaltime,
-        vis.binds["mytime"].countdownnixie.setState
-      );
-      if (vis.editMode) {
-        vis.binds["mytime"].countdownnixie.setState(widgetID, data);
+      vis.binds["mytime"].countdownnixie.setState(widgetID, data);
+      if (countdown_oid) {
+        vis.binds["mytime"].startTimer(
+          widgetID,
+          data,
+          vis.binds["mytime"].countdownnixie.intervaltime,
+          vis.binds["mytime"].countdownnixie.setState
+        );
       }
     },
     setState: function(widgetID, data) {
-      var countdown_oid;
-      if (!data.countdown_oid || (countdown_oid = vis.binds["mytime"].getCountdownId(data.countdown_oid)) == false) {
+      var countdown_oid = data.countdown_oid ? vis.binds["mytime"].getCountdownId(data.countdown_oid) : null;
+      if (countdown_oid === false) {
         console.error(`Error: invalid countdown_oid ${data.countdown_oid}`);
         return;
       }
@@ -919,8 +919,8 @@
           vis.binds["mytime"].countdownflip.createWidget(widgetID, view, data, style);
         }, 100);
       }
-      var countdown_oid;
-      if (!data.countdown_oid || (countdown_oid = vis.binds["mytime"].getCountdownId(data.countdown_oid)) == false) {
+      var countdown_oid = data.countdown_oid ? vis.binds["mytime"].getCountdownId(data.countdown_oid) : null;
+      if (countdown_oid === false) {
         console.error(`Error: invalid countdown_oid ${data.countdown_oid}`);
         return;
       }
@@ -997,19 +997,19 @@
         pattern
       });
       vis.binds["mytime"].stopTimer(widgetID);
-      vis.binds["mytime"].startTimer(
-        widgetID,
-        data,
-        vis.binds["mytime"].countdownflip.intervaltime,
-        vis.binds["mytime"].countdownflip.setState
-      );
-      if (vis.editMode) {
-        vis.binds["mytime"].countdownflip.setState(widgetID, data);
+      vis.binds["mytime"].countdownflip.setState(widgetID, data);
+      if (countdown_oid) {
+        vis.binds["mytime"].startTimer(
+          widgetID,
+          data,
+          vis.binds["mytime"].countdownflip.intervaltime,
+          vis.binds["mytime"].countdownflip.setState
+        );
       }
     },
     setState: function(widgetID, data) {
-      var countdown_oid;
-      if (!data.countdown_oid || (countdown_oid = vis.binds["mytime"].getCountdownId(data.countdown_oid)) == false) {
+      var countdown_oid = data.countdown_oid ? vis.binds["mytime"].getCountdownId(data.countdown_oid) : null;
+      if (countdown_oid === false) {
         console.error(`Error: invalid countdown_oid ${data.countdown_oid}`);
         return;
       }
@@ -1072,8 +1072,8 @@
           vis.binds["mytime"].countdowncircle.createWidget(widgetID, view, data, style);
         }, 100);
       }
-      var countdown_oid;
-      if (!data.countdown_oid || (countdown_oid = vis.binds["mytime"].getCountdownId(data.countdown_oid)) == false) {
+      var countdown_oid = data.countdown_oid ? vis.binds["mytime"].getCountdownId(data.countdown_oid) : null;
+      if (countdown_oid === false) {
         console.error(`Error: invalid countdown_oid ${data.countdown_oid}`);
         return;
       }
@@ -1136,20 +1136,22 @@
       $(`#${widgetID}`).html(text);
       vis.binds["mytime"].stopTimer(widgetID);
       vis.binds["mytime"].countdowncircle.setState(widgetID, data);
-      vis.binds["mytime"].startTimer(
-        widgetID,
-        data,
-        //vis.binds["mytime"].countdowncircle.calcInterval(timer),
-        vis.binds["mytime"].countdowncircle.intervaltime,
-        vis.binds["mytime"].countdowncircle.setState
-      );
+      if (countdown_oid) {
+        vis.binds["mytime"].startTimer(
+          widgetID,
+          data,
+          //vis.binds["mytime"].countdowncircle.calcInterval(timer),
+          vis.binds["mytime"].countdowncircle.intervaltime,
+          vis.binds["mytime"].countdowncircle.setState
+        );
+      }
     },
     calcInterval: function(timer) {
       return Math.min(Math.max(timer / 720, 25), 500);
     },
     setState: function(widgetID, data) {
-      var countdown_oid;
-      if (!data.countdown_oid || (countdown_oid = vis.binds["mytime"].getCountdownId(data.countdown_oid)) == false) {
+      var countdown_oid = data.countdown_oid ? vis.binds["mytime"].getCountdownId(data.countdown_oid) : null;
+      if (countdown_oid === false) {
         console.error(`Error: invalid countdown_oid ${data.countdown_oid}`);
         return;
       }
@@ -1416,8 +1418,8 @@
           vis.binds["mytime"].countdownplain.createWidget(widgetID, view, data, style);
         }, 100);
       }
-      var countdown_oid;
-      if (!data.countdown_oid || (countdown_oid = vis.binds["mytime"].getCountdownId(data.countdown_oid)) == false) {
+      var countdown_oid = data.countdown_oid ? vis.binds["mytime"].getCountdownId(data.countdown_oid) : null;
+      if (countdown_oid === false) {
         console.error(`Error: invalid countdown_oid ${data.countdown_oid}`);
         return;
       }
@@ -1446,19 +1448,19 @@
       text += '<div class="timer"></div>';
       $(`#${widgetID}`).html(text);
       vis.binds["mytime"].stopTimer(widgetID);
-      vis.binds["mytime"].startTimer(
-        widgetID,
-        data,
-        vis.binds["mytime"].countdownplain.intervaltime,
-        vis.binds["mytime"].countdownplain.setState
-      );
-      if (vis.editMode) {
-        vis.binds["mytime"].countdownplain.setState(widgetID, data);
+      vis.binds["mytime"].countdownplain.setState(widgetID, data);
+      if (countdown_oid) {
+        vis.binds["mytime"].startTimer(
+          widgetID,
+          data,
+          vis.binds["mytime"].countdownplain.intervaltime,
+          vis.binds["mytime"].countdownplain.setState
+        );
       }
     },
     setState: function(widgetID, data) {
-      var countdown_oid;
-      if (!data.countdown_oid || (countdown_oid = vis.binds["mytime"].getCountdownId(data.countdown_oid)) == false) {
+      var countdown_oid = data.countdown_oid ? vis.binds["mytime"].getCountdownId(data.countdown_oid) : null;
+      if (countdown_oid === false) {
         console.error(`Error: invalid countdown_oid ${data.countdown_oid}`);
         return;
       }
@@ -1891,9 +1893,9 @@
       var background = data.clock_background_color || "";
       var dots = data.clock_dot_color || "";
       var content = `<style>#${widgetID} .clock-flip{display:flex;align-items:flex-start;white-space:nowrap}`;
-      content += `#${widgetID} .clock-flip-unit{flex:0 0 140px;width:140px}`;
-      content += `#${widgetID} .clock-flip-unit .flip-clock-wrapper{display:flex;width:140px;min-width:140px;margin:0}`;
-      content += `#${widgetID} .clock-flip-separator{font-size:48px;line-height:100px;margin:0 4px}`;
+      content += `#${widgetID} .clock-flip-unit{flex:0 0 1.75em;width:1.75em}`;
+      content += `#${widgetID} .clock-flip-unit .flip-clock-wrapper{display:flex;width:1.75em;min-width:1.75em;margin:0}`;
+      content += `#${widgetID} .clock-flip-separator{font-size:.6em;line-height:2.083333em;margin:0 .083333em}`;
       if (font) {
         content += `#${widgetID} .flip-clock-wrapper{font-family:${font}}`;
       }
