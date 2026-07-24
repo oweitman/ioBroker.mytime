@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "mytime",
-    "version": "2.5.0",
+    "version": "2.5.1",
     "titleLang": {
       "en": "MyTime",
       "de": "MyTime",
@@ -32,6 +32,19 @@
       "oweitman <oweitman@gmx.de>"
     ],
     "news": {
+      "2.5.1": {
+        "en": "seperate flipclock css classes from timeandweather adapter",
+        "de": "seperate flipclock css klassen von timeandweather adapter",
+        "ru": "отдельные классы flipclock css от адаптера времени и погоды",
+        "pt": "classes separadas de css do flipclock a partir do tempo eweather adaptador",
+        "nl": "aparte flipclock css lessen van timeandweather adapter",
+        "fr": "css classes de temps et d'adaptateur météorologique",
+        "it": "seperate le classi di css flipclock dal tempo e l'adattatore",
+        "es": "seperate clases de css de la hora y el adaptador de la tela",
+        "pl": "klasy css seperate flipclock z adaptera czasu i pogody",
+        "uk": "seperate flipclock css класи від timeandweather адаптер",
+        "zh-cn": "从时间和天气适配器中分解翻转时钟 css 类"
+      },
       "2.5.0": {
         "en": "Flip clock size is now adjustable via font-size.\nDefined better initial sizes and defaults for various widgets.",
         "de": "Die Größe der Flip-Uhr ist jetzt über die Schriftgröße einstellbar.\nDefinierte bessere Anfangsgrößen und Standardwerte für verschiedene Widgets.",
@@ -109,19 +122,6 @@
         "pl": "naprawić niektóre tłumaczenia",
         "uk": "виправити деякі переклади",
         "zh-cn": "修复一些翻译"
-      },
-      "2.3.1": {
-        "en": "- circle widget: fix reverse selection\n- circle widget: fixed full/partial display of the largest ring.\n  Option added to select behavior.",
-        "de": "- kreis widget: reverse auswahl beheben\n- kreis widget: feste voll-/teildarstellung des größten rings.\nOption hinzugefügt, um das Verhalten auszuwählen.",
-        "ru": "- виджет круга: исправить обратный выбор\nвиджет круга: фиксированный полный/частичный дисплей самого большого кольца.\nВариант добавлен для выбора поведения.",
-        "pt": "- widget círculo: corrigir seleção reversa\n- widget círculo: exibição fixa total / parcial do maior anel.\nOpção adicionada para selecionar o comportamento.",
-        "nl": "- cirkel-widget: fix omgekeerde selectie\n- cirkel widget: vaste volledige/gedeeltelijke weergave van de grootste ring.\nOptie toegevoegd om gedrag te selecteren.",
-        "fr": "- widget cercle : corriger la sélection inversée\n- widget de cercle: affichage complet/partiel fixe de la plus grande bague.\nOption ajoutée pour sélectionner le comportement.",
-        "it": "- widget cerchio: correzione selezione inversa\n- widget cerchio: display fisso full/partial dell'anello più grande.\nOpzione aggiunta per selezionare il comportamento.",
-        "es": "- widget círculo: fijar selección inversa\n- widget círculo: pantalla completa/parcial fija del anillo más grande.\nOpción agregada para seleccionar el comportamiento.",
-        "pl": "- widget okręgu: naprawić wybór odwrotny\n- widżet okręgu: stały pełny / częściowy wyświetlacz największego pierścienia.\nOpcja dodana do wyboru zachowania.",
-        "uk": "- коло віджет: виправити зворотний вибір\n- круговий віджет: фіксований повноканальний дисплей найбільшого кільця.\nВаріант додано для вибору поведінки.",
-        "zh-cn": "- 圆形部件:修正反向选择\n- 圆形部件:最大环的固定全/部分显示.\n为选择行为添加了选项 ."
       }
     },
     "platform": "Javascript/Node.js",

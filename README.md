@@ -596,8 +596,7 @@ of the countdown is available as CSS-Class selector:**
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
-
-### **WORK IN PROGRESS**
+### 2.5.1 (2026-07-24)
 
 - seperate flipclock css classes from timeandweather adapter
 
@@ -621,10 +620,6 @@ of the countdown is available as CSS-Class selector:**
 
 - update packages
 - fix repochecker
-
-### 2.3.2 (2026-01-04)
-
-- fix some translations
 
 [Older changelogs can be found there](CHANGELOG_OLD.md)
 

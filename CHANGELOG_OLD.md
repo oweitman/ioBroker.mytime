@@ -1,4 +1,8 @@
 # Older changes
+## 2.3.2 (2026-01-04)
+
+- fix some translations
+
 ## 2.3.1 (2026-01-03)
 
 - circle widget: fix reverse selection
