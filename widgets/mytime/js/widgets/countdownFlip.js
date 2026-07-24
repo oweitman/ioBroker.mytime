@@ -12,6 +12,7 @@ const countdownFlip = {
                 vis.binds['mytime'].countdownflip.createWidget(widgetID, view, data, style);
             }, 100);
         }
+        $div.addClass('mytime-flip-clock');
         var countdown_oid = data.countdown_oid ? vis.binds['mytime'].getCountdownId(data.countdown_oid) : null;
         if (countdown_oid === false) {
             console.error(`Error: invalid countdown_oid ${data.countdown_oid}`);

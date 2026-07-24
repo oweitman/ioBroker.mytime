@@ -596,6 +596,11 @@ of the countdown is available as CSS-Class selector:**
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+
+### **WORK IN PROGRESS**
+
+- seperate flipclock css classes from timeandweather adapter
+
 ### 2.5.0 (2026-07-21)
 
 - Flip clock size is now adjustable via font-size.

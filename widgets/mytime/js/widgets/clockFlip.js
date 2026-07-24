@@ -25,6 +25,7 @@ const clockFlip = {
         if (!$div.length || !jQuery().mtFlipClock) {
             return setTimeout(() => vis.binds['mytime'].clockflip.createWidget(widgetID, view, data, style), 100);
         }
+        $div.addClass('mytime-flip-clock');
         var enabled = getUnits(data).filter(([key]) => toBoolSafe(data[`clock_show${key}`]));
         var font = style['font-family'] || '';
         var color = data.clock_color || '';
