@@ -1,10 +1,9 @@
 import { useContext } from 'react';
 import { Add as AddIcon, Delete as DelIcon, Edit as EditIcon } from '@mui/icons-material';
-// import PropTypes from 'prop-types';
 
 import { Button, Stack, Table, TableHead, TableRow, TableCell, TableBody, IconButton, Grid } from '@mui/material';
 
-import { I18n } from '@iobroker/adapter-react-v5';
+import { I18n } from '@iobroker/gui-components';
 import { TimeseriesContext, useTimeseriesDispatch, timeserieTemplate } from './TimeseriesContext';
 import TimeseriesEdit from './TimeseriesEdit';
 import { NavStateContext, useNavStateDispatch } from './TimeseriesNavContext';
@@ -36,14 +35,16 @@ export default function TimeseriesList({ sx }) {
             <Grid container>
                 <Grid
                     item
-                    xs={12}
+                    size={{ xs: 12 }}
+                    //xs={12}
                 >
                     <Grid
                         item
-                        xs={12}
-                        sm={10}
-                        md={8}
-                        lg={6}
+                        size={{ xs: 12, xs: 12, sm: 10, md: 8, lg: 6 }}
+                        // xs={12}
+                        // sm={10}
+                        // md={8}
+                        // lg={6}
                     >
                         <Button
                             variant="contained"
@@ -74,10 +75,11 @@ export default function TimeseriesList({ sx }) {
                 </Grid>
                 <Grid
                     item
-                    xs={12}
-                    sm={10}
-                    md={8}
-                    lg={6}
+                    size={{ xs: 12, sm: 10, md: 8, lg: 6 }}
+                    // xs={12}
+                    // sm={10}
+                    // md={8}
+                    // lg={6}
                 >
                     <Table>
                         <TableHead>

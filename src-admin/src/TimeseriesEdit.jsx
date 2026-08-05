@@ -1,7 +1,7 @@
 import { useContext, useEffect } from 'react';
 import { Paper, TextField, Grid, Button, Dialog, Box } from '@mui/material';
 import { ArrowBack as ArrowBackIcon, Cancel as CancelIcon } from '@mui/icons-material';
-import { I18n } from '@iobroker/adapter-react-v5';
+import { I18n } from '@iobroker/gui-components';
 
 import { Header } from './Components/Header';
 
@@ -79,8 +79,9 @@ export default function TimeseriesEdit() {
                 <Grid container>
                     <Grid
                         item
-                        xs={12}
-                        sm={6}
+                        size={{ xs: 12, md: 6 }}
+                        // xs={12}
+                        // sm={6}
                     >
                         <Header
                             size={3}
@@ -90,8 +91,9 @@ export default function TimeseriesEdit() {
                             <Grid container>
                                 <Grid
                                     item
-                                    xs={6}
-                                    sm={6}
+                                    size={{ xs: 6, sm: 6 }}
+                                    // xs={6}
+                                    // sm={6}
                                 >
                                     <HtmlTooltip title={I18n.t('tsTimeseriesNameTooltip')}>
                                         <TextField
@@ -100,8 +102,8 @@ export default function TimeseriesEdit() {
                                             label={I18n.t('tsTimeseriesName')}
                                             name="tsname"
                                             autoComplete="off"
-                                            InputProps={{
-                                                inputProps: {
+                                            slotProps={{
+                                                input: {
                                                     autoComplete: 'new-password', // Chrome-sicher
                                                 },
                                             }}
@@ -126,8 +128,9 @@ export default function TimeseriesEdit() {
                                 </Grid>
                                 <Grid
                                     item
-                                    xs={6}
-                                    sm={6}
+                                    size={{ xs: 6, sm: 6 }}
+                                    // xs={6}
+                                    // sm={6}
                                 >
                                     <HtmlTooltip title={I18n.t('tsTimeseriesDurationTooltip')}>
                                         <TextField
@@ -156,13 +159,15 @@ export default function TimeseriesEdit() {
                             </Grid>
                             <Grid
                                 item
-                                xs={12}
+                                size={{ xs: 12 }}
+                                //xs={12}
                             >
                                 <TimeseriesRulesList />
                             </Grid>
                             <Grid
                                 item
-                                xs={12}
+                                size={{ xs: 12 }}
+                                //xs={12}
                             >
                                 <Grid
                                     container
@@ -298,8 +303,9 @@ export default function TimeseriesEdit() {
                     </Grid>
                     <Grid
                         item
-                        xs={12}
-                        sm={6}
+                        size={{ xs: 12, sm: 6 }}
+                        //xs={12}
+                        //sm={6}
                     >
                         <TimeseriesCalcedDateList></TimeseriesCalcedDateList>
                     </Grid>

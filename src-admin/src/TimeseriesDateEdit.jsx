@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import dayjs from 'dayjs';
 
-import { I18n } from '@iobroker/adapter-react-v5';
+import { I18n } from '@iobroker/gui-components';
 import {
     TextField,
     MenuItem,
@@ -127,11 +127,12 @@ export default function TimeseriesDateEdit({ sx }) {
             <Grid
                 item
                 key={el.attr}
-                xs={12}
-                sm={12}
-                md={8}
-                lg={4}
-                xl={4}
+                size={{ xs: 12, sm: 12, md: 8, lg: 4, xl: 4 }}
+                // xs={12}
+                // sm={12}
+                // md={8}
+                // lg={4}
+                // xl={4}
                 sx={{ ...style.gridMargin }}
             >
                 <HtmlTooltip title={I18n.t(el.tooltip)}>
@@ -160,9 +161,11 @@ export default function TimeseriesDateEdit({ sx }) {
                         size="small"
                         margin="dense"
                         value={rule[el.attr]}
-                        inputProps={{ style: { fontSize: 12 } }} // font size of input text
-                        InputLabelProps={{ style: { fontSize: 12 } }} // font size of input label
                         sx={{ ...style.text }}
+                        slotProps={{
+                            input: { style: { fontSize: 12 } },
+                            inputLabel: { style: { fontSize: 12 } },
+                        }}
                     />
                 </HtmlTooltip>
             </Grid>
@@ -263,13 +266,14 @@ export default function TimeseriesDateEdit({ sx }) {
                                 <Grid
                                     key={el.attr + option.value}
                                     item
-                                    xs={3}
+                                    size={{ xs: 3 }}
+                                    //xs={3}
                                 >
                                     <FormControlLabel
                                         control={
                                             <Checkbox
-                                                inputProps={{
-                                                    'data-state': `${el.attr}_${option.value}`,
+                                                slotProps={{
+                                                    input: { 'data-state': `${el.attr}_${option.value}` },
                                                 }}
                                                 onChange={e => {
                                                     const action = {
@@ -410,6 +414,11 @@ export default function TimeseriesDateEdit({ sx }) {
                                     textField: {
                                         size: 'small',
                                         variant: 'standard',
+                                        sx: {
+                                            '& .MuiPickersInputBase-root': {
+                                                fontSize: '12px',
+                                            },
+                                        },
                                         helperText: getError(navState, 'date', el.attr),
                                         error: getError(navState, 'date', el.attr) !== null,
                                     },

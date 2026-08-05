@@ -1,9 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 
-import { Theme } from '@iobroker/adapter-react-v5';
+import { Theme } from '@iobroker/gui-components';
 import { ConfigGeneric } from '@iobroker/json-config';
 
 //import './index.css';
@@ -55,18 +54,5 @@ class TimeseriesConfig extends ConfigGeneric {
         );
     }
 }
-
-TimeseriesConfig.propTypes = {
-    socket: PropTypes.object.isRequired,
-    themeType: PropTypes.string,
-    themeName: PropTypes.string,
-    style: PropTypes.object,
-    className: PropTypes.string,
-    data: PropTypes.object.isRequired,
-    attr: PropTypes.string,
-    schema: PropTypes.object,
-    onError: PropTypes.func,
-    onChange: PropTypes.func,
-};
 
 export default TimeseriesConfig;
