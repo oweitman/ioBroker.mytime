@@ -69,19 +69,6 @@
                 "uk": "додати нові віджети годинника\nвиправити prod і dev побудувати\nreengineered віджети",
                 "zh-cn": "添加新的时钟部件\n固定 prod 和 dev 构建\n重新设计的部件"
             },
-            "2.4.0": {
-                "en": "add new clock widgets\nfix prod and dev build",
-                "de": "neue clock widgets hinzufügen\nfix prod und dev build",
-                "ru": "добавить новые виджеты часов\nобсуждение prod and dev build",
-                "pt": "adicionar novos widgets de relógio\ncorrigir a compilação de prod e dev",
-                "nl": "nieuwe klok-widgets toevoegen\nfix prod en dev build",
-                "fr": "ajouter de nouveaux widgets horloge\nréparer prod et dev build",
-                "it": "aggiungere nuovi widget orologio\nfix prod e sviluppo costruire",
-                "es": "añadir nuevos widgets de reloj\narreglar prod y dev construir",
-                "pl": "dodaj nowe widżety zegara\nfix prod i dev build",
-                "uk": "додати нові віджети годинника\nвиправити prod і dev побудувати",
-                "zh-cn": "添加新的时钟部件\n固定 prod 和 dev 构建"
-            },
             "2.3.5": {
                 "en": "fix repochecker\nupdate react to 18 and many more packages",
                 "de": "Repochecker reparieren\nReact auf Version 18 aktualisieren und viele weitere Pakete",
