@@ -73,6 +73,7 @@
         "build": "npm run build:widgets && npm run build:admin",
         "prepublishOnly": "npm run build",
         "release": "release-script --all",
+        "release:3x": "release-script --all -- --branch-pattern release3x",
         "release-patch": "release-script patch --yes",
         "release-minor": "release-script minor --yes",
         "release-major": "release-script major --yes",

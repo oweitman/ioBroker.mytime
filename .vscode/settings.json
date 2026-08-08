@@ -2,11 +2,17 @@
     "eslint.enable": true,
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "files.associations": {
+        "*.json5": "jsonc"
+    },
+
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
     "json.schemas": [
         {
-            "fileMatch": [
-                "io-package.json"
-            ],
+            "fileMatch": ["io-package.json"],
             "url": "https://raw.githubusercontent.com/ioBroker/ioBroker.js-controller/master/schemas/io-package.json"
         },
         {
