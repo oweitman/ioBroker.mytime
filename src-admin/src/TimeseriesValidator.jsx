@@ -18,7 +18,7 @@ export default function TimeseriesValidator() {
         const constraints = {
             tsname: {
                 presence: true,
-                uniqueRulename: true,
+                timeseriesUniqueRulename: true,
                 length: { minimum: 1, tooShort: '^tsValidLength' },
             },
             tsduration: {
@@ -35,7 +35,7 @@ export default function TimeseriesValidator() {
                 },
             },
         };
-        validatejs.validators.uniqueRulename = (value, options, key, attributes) =>
+        validatejs.validators.timeseriesUniqueRulename = (value, options, key, attributes) =>
             timeseries.reduce((acc, cur) => (cur.tsname === value && cur.id !== attributes.id ? acc + 1 : acc), 0) > 0
                 ? '^tsValidUniqueTimeseriesName'
                 : null;
@@ -72,7 +72,7 @@ export default function TimeseriesValidator() {
         const constraints = {
             name: {
                 presence: true,
-                uniqueRulename: true,
+                ruleUniqueRulename: true,
                 length: { minimum: 1, tooShort: '^tsValidLength' },
             },
             bysetpos: {
@@ -204,7 +204,7 @@ export default function TimeseriesValidator() {
                 },
             },
         };
-        validatejs.validators.uniqueRulename = (value, options, key, attributes) =>
+        validatejs.validators.ruleUniqueRulename = (value, options, key, attributes) =>
             timeserie.rules.reduce((acc, cur) => (cur.name === value && cur.id !== attributes.id ? acc + 1 : acc), 0) >
             0
                 ? '^tsValidUniqueRulename'
@@ -279,7 +279,7 @@ export default function TimeseriesValidator() {
         const constraints = {
             name: {
                 presence: true,
-                uniqueRulename: true,
+                datesUniqueRulename: true,
                 length: { minimum: 1, tooShort: '^tsValidLength' },
             },
             dates: {
@@ -287,7 +287,7 @@ export default function TimeseriesValidator() {
                 length: { minimum: 1, tooShort: '^tsValidArrayLength' },
             },
         };
-        validatejs.validators.uniqueRulename = (value, options, key, attributes) =>
+        validatejs.validators.datesUniqueRulename = (value, options, key, attributes) =>
             timeserie.rules.reduce((acc, cur) => (cur.name === value && cur.id !== attributes.id ? acc + 1 : acc), 0) >
             0
                 ? '^tsValidUniqueRulename'
