@@ -28,7 +28,7 @@
         "vite": "7.1.7",
         "vite-plugin-commonjs": "^0.10.4",
         "vite-tsconfig-paths": "^5.1.4",
-        "react-dropzone": "^19.1.1"
+        "react-dropzone": "^20.0.0"
     },
     "browserslist": {
         "production": [
