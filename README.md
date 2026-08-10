@@ -596,6 +596,15 @@ of the countdown is available as CSS-Class selector:**
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+### 3.0.1 (2026-08-10)
+
+- improve and fix jsonConfig
+- switch from build to dist directory
+- extend log output for onMessage error
+- improve getServerTime timer in widget
+- rename subsubdirectory widgets to widgetTypes
+- improve race condition with states
+
 ### 3.0.0 (2026-08-09)
 
 - update to react 19
@@ -615,11 +624,6 @@ of the countdown is available as CSS-Class selector:**
 - add new clock widgets
 - fix prod and dev build
 - reengineered widgets
-
-### 2.3.5 (2026-07-14)
-
-- fix repochecker
-- update react to 18 and many more packages
 
 [Older changelogs can be found there](CHANGELOG_OLD.md)
 

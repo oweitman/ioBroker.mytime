@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "mytime",
-    "version": "3.0.0",
+    "version": "3.0.1",
     "titleLang": {
       "en": "MyTime",
       "de": "MyTime",
@@ -32,6 +32,19 @@
       "oweitman <oweitman@gmx.de>"
     ],
     "news": {
+      "3.0.1": {
+        "en": "improve and fix jsonConfig / switch from build to dist directory / extend log output for onMessage error / improve getServerTime timer in widget / rename subsubdirectory widgets to widgetTypes / improve race condition with states",
+        "de": "jsonConfig verbessert und korrigiert / Wechsel vom build- zum dist-Verzeichnis / Log-Ausgabe für onMessage-Fehler erweitert / getServerTime-Timer im Widget verbessert / Unterverzeichnis widgets in widgetTypes umbenannt / Race Condition bei States verbessert",
+        "ru": "улучшение и исправление jsonConfig / переход с каталога build на dist / расширение вывода журнала для ошибок onMessage / улучшение таймера getServerTime в виджете / переименование подкаталога widgets в widgetTypes / улучшение обработки состояния гонки при работе со states",
+        "pt": "melhorias e correções no jsonConfig / mudança do diretório build para dist / extensão da saída de log para erros onMessage / melhoria do temporizador getServerTime no widget / renomeação do subdiretório widgets para widgetTypes / melhoria da condição de corrida com states",
+        "nl": "jsonConfig verbeterd en gecorrigeerd / overgeschakeld van de build- naar de dist-directory / loguitvoer voor onMessage-fouten uitgebreid / getServerTime-timer in de widget verbeterd / subdirectory widgets hernoemd naar widgetTypes / race condition met states verbeterd",
+        "fr": "amélioration et correction de jsonConfig / passage du répertoire build au répertoire dist / extension de la sortie du journal pour les erreurs onMessage / amélioration du minuteur getServerTime dans le widget / renommage du sous-répertoire widgets en widgetTypes / amélioration de la gestion des conditions de concurrence avec les states",
+        "it": "miglioramenti e correzioni a jsonConfig / passaggio dalla directory build alla directory dist / estensione dell'output del log per gli errori onMessage / miglioramento del timer getServerTime nel widget / rinomina della sottodirectory widgets in widgetTypes / miglioramento della gestione delle race condition con gli states",
+        "es": "mejoras y correcciones en jsonConfig / cambio del directorio build al directorio dist / ampliación de la salida del registro para errores de onMessage / mejora del temporizador getServerTime en el widget / cambio de nombre del subdirectorio widgets a widgetTypes / mejora de la gestión de condiciones de carrera con states",
+        "pl": "ulepszenia i poprawki w jsonConfig / zmiana katalogu build na dist / rozszerzenie danych wyjściowych dziennika dla błędów onMessage / ulepszenie timera getServerTime w widżecie / zmiana nazwy podkatalogu widgets na widgetTypes / poprawa obsługi race condition ze states",
+        "uk": "покращення та виправлення jsonConfig / перехід з каталогу build на dist / розширення виводу журналу для помилок onMessage / покращення таймера getServerTime у віджеті / перейменування підкаталогу widgets на widgetTypes / покращення обробки стану гонитви при роботі зі states",
+        "zh-cn": "改进并修复 jsonConfig / 从 build 目录切换到 dist 目录 / 扩展 onMessage 错误的日志输出 / 改进小部件中的 getServerTime 定时器 / 将子目录 widgets 重命名为 widgetTypes / 改进 states 的竞态条件处理"
+      },
       "3.0.0": {
         "en": "update to react 19\nfix repochecker",
         "de": "update für response 19\nfix-repochecker",
@@ -109,19 +122,6 @@
         "pl": "aktualizacja pakietów\nfix repochecker",
         "uk": "оновлення пакетів\nвиправити repochecker",
         "zh-cn": "更新软件包\n固定重检查器"
-      },
-      "2.3.2": {
-        "en": "fix some translations",
-        "de": "einige übersetzungen beheben",
-        "ru": "исправить некоторые переводы",
-        "pt": "corrigir algumas traduções",
-        "nl": "sommige vertalingen te herstellen",
-        "fr": "corriger certaines traductions",
-        "it": "fissare alcune traduzioni",
-        "es": "arreglar algunas traducciones",
-        "pl": "naprawić niektóre tłumaczenia",
-        "uk": "виправити деякі переклади",
-        "zh-cn": "修复一些翻译"
       }
     },
     "platform": "Javascript/Node.js",
