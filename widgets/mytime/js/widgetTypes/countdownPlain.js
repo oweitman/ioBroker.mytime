@@ -1,4 +1,6 @@
 /* global $, vis */
+import { normalizeCountdownAction } from '../support/util.js';
+
 const countdownPlain = {
     intervaltime: 500,
     createWidget: function (widgetID, view, data, style) {
@@ -64,7 +66,7 @@ const countdownPlain = {
         var start = countdown_oid ? vis.states.attr(`${countdown_oid}.start.val`) : 0;
         var end = countdown_oid ? vis.states.attr(`${countdown_oid}.end.val`) : 0;
         var timer = countdown_oid ? vis.states.attr(`${countdown_oid}.timer.val`) : 0;
-        var action = countdown_oid ? vis.states.attr(`${countdown_oid}.action.val`) : 'stop';
+        var action = normalizeCountdownAction(countdown_oid ? vis.states.attr(`${countdown_oid}.action.val`) : 'stop');
         var config = countdown_oid ? JSON.parse(vis.states.attr(`${countdown_oid}.config.val`) || '{}') : {};
         var format = data.countdown_format || 'dd\\d HH\\h mm\\m ss\\s';
         var stopbehaviour = config.stopbehaviour || 'timer';

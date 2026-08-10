@@ -32,6 +32,7 @@
                             "tooltip": "cd-TT-Name",
                             "validator": "!/[^0-9a-zöÖüÜäÄß]/i.test(data.name) && data.name.length>0 && data.name.length<30&&globalData.countdowns.filter((el,idx)=>el.name==data.name&&idx!=arrayIndex).length==0",
                             "validatorNoSaveOnError": true,
+                            "disabled": "originalData.countdowns.some(el=>el.name==data.name)"
                         },
                         {
                             "width": "5%",
@@ -43,7 +44,7 @@
                             "default": 0,
                             "tooltip": "cd-TT-Days",
                             "validator": "data.days>=0",
-                            "validatorNoSaveOnError": true,
+                            "validatorNoSaveOnError": true
                         },
                         {
                             "width": "5%",
@@ -55,7 +56,7 @@
                             "default": 0,
                             "tooltip": "cd-TT-Hours",
                             "validator": "(data.hours>=0) && (data.hours<=23)",
-                            "validatorNoSaveOnError": true,
+                            "validatorNoSaveOnError": true
                         },
                         {
                             "width": "5%",
@@ -66,8 +67,8 @@
                             "sort": true,
                             "default": 0,
                             "tooltip": "cd-TT-Minutes",
-                            "validator": "(data.hours>=0) && (data.hours<=59)",
-                            "validatorNoSaveOnError": true,
+                            "validator": "(data.minutes>=0) && (data.minutes<=59)",
+                            "validatorNoSaveOnError": true
                         },
                         {
                             "width": "5%",
@@ -78,8 +79,8 @@
                             "sort": true,
                             "default": 0,
                             "tooltip": "cd-TT-Seconds",
-                            "validator": "(data.hours>=0) && (data.hours<=59)",
-                            "validatorNoSaveOnError": true,
+                            "validator": "(data.seconds>=0) && (data.seconds<=59)",
+                            "validatorNoSaveOnError": true
                         },
                         {
                             "width": "5%",
@@ -89,12 +90,12 @@
                             "options": [
                                 { "label": "cdBehaviourSetTimer", "value": "timer" },
                                 { "label": "cdBehaviourSetReset", "value": "zero" },
-                                { "label": "cdBehaviourSetRerun", "value": "rerun" },
+                                { "label": "cdBehaviourSetRerun", "value": "rerun" }
                             ],
                             "filter": true,
                             "sort": true,
                             "default": "timer",
-                            "tooltip": "cd-TT-Behavior",
+                            "tooltip": "cd-TT-Behavior"
                         },
                         {
                             "width": "5%",
@@ -106,11 +107,11 @@
                             "jsonData": "{\"behavior\": \"${data.behavior}\", \"days\": \"${data.days}\", \"hours\": \"${data.hours}\", \"minutes\": \"${data.minutes}\", \"name\": \"${data.name}\", \"seconds\": \"${data.seconds}\" }",
                             "variant": "outlined",
                             "showProcess": true,
-                            "disabled": "!originalData.countdowns.some(el=>el.name==data.name)||!globalData.countdowns.filter((el,idx)=>el.name==data.name&&idx!=arrayIndex).length==0;",
-                        },
-                    ],
-                },
-            },
+                            "disabled": "!originalData.countdowns[arrayIndex] || (originalData.countdowns[arrayIndex].days==data.days && originalData.countdowns[arrayIndex].hours==data.hours && originalData.countdowns[arrayIndex].minutes==data.minutes && originalData.countdowns[arrayIndex].seconds==data.seconds && originalData.countdowns[arrayIndex].behavior==data.behavior)"
+                        }
+                    ]
+                }
+            }
         },
         "_tabtimeseries": {
             "type": "panel",
@@ -132,10 +133,9 @@
                     "style": { "width": "100%" },
                     "guiApi": 2,
                     "url": "custom/customComponents.js",
-                    //"url": "http://localhost:4173/customComponents.js",
-                    "name": "ConfigCustomMytimeSet/Components/TimeseriesConfig",
-                },
-            },
-        },
-    },
+                    "name": "ConfigCustomMytimeSet/Components/TimeseriesConfig"
+                }
+            }
+        }
+    }
 }

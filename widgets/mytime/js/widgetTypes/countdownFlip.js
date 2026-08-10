@@ -1,5 +1,5 @@
 /* global $, jQuery, vis */
-import { toBoolSafe } from '../support/util.js';
+import { normalizeCountdownAction, toBoolSafe } from '../support/util.js';
 
 const countdownFlip = {
     intervaltime: 500,
@@ -113,7 +113,7 @@ const countdownFlip = {
         var start = countdown_oid ? vis.states.attr(`${countdown_oid}.start.val`) : 0;
         var end = countdown_oid ? vis.states.attr(`${countdown_oid}.end.val`) : 0;
         var timer = countdown_oid ? vis.states.attr(`${countdown_oid}.timer.val`) : 0;
-        var action = countdown_oid ? vis.states.attr(`${countdown_oid}.action.val`) : 'stop';
+        var action = normalizeCountdownAction(countdown_oid ? vis.states.attr(`${countdown_oid}.action.val`) : 'stop');
         var config = countdown_oid ? JSON.parse(vis.states.attr(`${countdown_oid}.config.val`) || '{}') : {};
         var stopbehaviour = config.stopbehaviour || 'timer';
 

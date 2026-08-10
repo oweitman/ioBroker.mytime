@@ -481,8 +481,11 @@
   function toBoolSafe(input) {
     return input !== false && input !== "false" && Boolean(input);
   }
+  function normalizeCountdownAction(input) {
+    return input === "run" || input === "pause" || input === "end" ? input : "stop";
+  }
 
-  // mytime/js/widgets/countdownNixie.js
+  // mytime/js/widgetTypes/countdownNixie.js
   var countdownNixie = {
     intervaltime: 500,
     flips: [],
@@ -799,7 +802,7 @@
       var start = countdown_oid ? vis.states.attr(`${countdown_oid}.start.val`) : 0;
       var end = countdown_oid ? vis.states.attr(`${countdown_oid}.end.val`) : 0;
       var timer = countdown_oid ? vis.states.attr(`${countdown_oid}.timer.val`) : 0;
-      var action = countdown_oid ? vis.states.attr(`${countdown_oid}.action.val`) : "stop";
+      var action = normalizeCountdownAction(countdown_oid ? vis.states.attr(`${countdown_oid}.action.val`) : "stop");
       var config = countdown_oid ? JSON.parse(vis.states.attr(`${countdown_oid}.config.val`) || "{}") : {};
       var stopbehaviour = config.stopbehaviour || "timer";
       var mytime = vis.binds["mytime"];
@@ -908,7 +911,7 @@
   };
   var countdownNixie_default = countdownNixie;
 
-  // mytime/js/widgets/countdownFlip.js
+  // mytime/js/widgetTypes/countdownFlip.js
   var countdownFlip = {
     intervaltime: 500,
     flips: [],
@@ -1017,7 +1020,7 @@
       var start = countdown_oid ? vis.states.attr(`${countdown_oid}.start.val`) : 0;
       var end = countdown_oid ? vis.states.attr(`${countdown_oid}.end.val`) : 0;
       var timer = countdown_oid ? vis.states.attr(`${countdown_oid}.timer.val`) : 0;
-      var action = countdown_oid ? vis.states.attr(`${countdown_oid}.action.val`) : "stop";
+      var action = normalizeCountdownAction(countdown_oid ? vis.states.attr(`${countdown_oid}.action.val`) : "stop");
       var config = countdown_oid ? JSON.parse(vis.states.attr(`${countdown_oid}.config.val`) || "{}") : {};
       var stopbehaviour = config.stopbehaviour || "timer";
       var now = (/* @__PURE__ */ new Date()).getTime() - (vis.binds["mytime"].serversync.serverTimeDiff || 0);
@@ -1063,7 +1066,7 @@
   };
   var countdownFlip_default = countdownFlip;
 
-  // mytime/js/widgets/countdownCircle.js
+  // mytime/js/widgetTypes/countdownCircle.js
   var countdownCircle = {
     intervaltime: 500,
     createWidget: function(widgetID, view, data, style) {
@@ -1160,7 +1163,7 @@
       var start = countdown_oid ? vis.states.attr(`${countdown_oid}.start.val`) : 0;
       var end = countdown_oid ? vis.states.attr(`${countdown_oid}.end.val`) : 0;
       var timer = countdown_oid ? vis.states.attr(`${countdown_oid}.timer.val`) : 0;
-      var action = countdown_oid ? vis.states.attr(`${countdown_oid}.action.val`) : "stop";
+      var action = normalizeCountdownAction(countdown_oid ? vis.states.attr(`${countdown_oid}.action.val`) : "stop");
       var config = countdown_oid ? JSON.parse(vis.states.attr(`${countdown_oid}.config.val`) || "{}") : {};
       var linewidth = data.countdown_width || 20;
       var notimetext = data.countdown_notimetext;
@@ -1371,7 +1374,7 @@
   };
   var countdownCircle_default = countdownCircle;
 
-  // mytime/js/widgets/reverseCountdownPlain.js
+  // mytime/js/widgetTypes/reverseCountdownPlain.js
   var reverseCountdownPlain = {
     intervaltime: 500,
     createWidget: function(widgetID, view, data, style) {
@@ -1409,7 +1412,7 @@
   };
   var reverseCountdownPlain_default = reverseCountdownPlain;
 
-  // mytime/js/widgets/countdownPlain.js
+  // mytime/js/widgetTypes/countdownPlain.js
   var countdownPlain = {
     intervaltime: 500,
     createWidget: function(widgetID, view, data, style) {
@@ -1468,7 +1471,7 @@
       var start = countdown_oid ? vis.states.attr(`${countdown_oid}.start.val`) : 0;
       var end = countdown_oid ? vis.states.attr(`${countdown_oid}.end.val`) : 0;
       var timer = countdown_oid ? vis.states.attr(`${countdown_oid}.timer.val`) : 0;
-      var action = countdown_oid ? vis.states.attr(`${countdown_oid}.action.val`) : "stop";
+      var action = normalizeCountdownAction(countdown_oid ? vis.states.attr(`${countdown_oid}.action.val`) : "stop");
       var config = countdown_oid ? JSON.parse(vis.states.attr(`${countdown_oid}.config.val`) || "{}") : {};
       var format = data.countdown_format || "dd\\d HH\\h mm\\m ss\\s";
       var stopbehaviour = config.stopbehaviour || "timer";
@@ -1524,7 +1527,7 @@
   };
   var countdownPlain_default = countdownPlain;
 
-  // mytime/js/widgets/wordclock.js
+  // mytime/js/widgetTypes/wordclock.js
   var wordclock = {
     lang_pack: [],
     lang_map: {
@@ -1782,7 +1785,7 @@
   };
   var wordclock_default = wordclock;
 
-  // mytime/js/widgets/clockPlain.js
+  // mytime/js/widgetTypes/clockPlain.js
   var clockPlain = {
     intervaltime: 250,
     createWidget: function(widgetID, view, data) {
@@ -1805,7 +1808,7 @@
   };
   var clockPlain_default = clockPlain;
 
-  // mytime/js/widgets/clockNixie.js
+  // mytime/js/widgetTypes/clockNixie.js
   var dateUnits = {
     Y: ["year", "years"],
     M: ["month", "months"],
@@ -1865,7 +1868,7 @@
   };
   var clockNixie_default = clockNixie;
 
-  // mytime/js/widgets/clockFlip.js
+  // mytime/js/widgetTypes/clockFlip.js
   var dateUnits2 = {
     Y: ["year", "day", 86400],
     M: ["month", "day", 86400],
@@ -2794,23 +2797,40 @@
   var serverSync = {
     calcServerTimeDiff: function() {
       return __async(this, null, function* () {
+        const sync = this.serversync;
+        if (sync.running || sync.timer) {
+          return;
+        }
+        sync.running = true;
+        sync.stopped = false;
+        let nextDelay = 15e3;
         try {
           let serverTime = yield this.sendToAsync("mytime.0", "getServerTime");
           let now = (/* @__PURE__ */ new Date()).getTime();
-          this.serversync.serverTimeDiff = now - serverTime;
-          this.serversync.retryDelay = 1e3;
-          setTimeout(() => {
-            this.calcServerTimeDiff();
-          }, 15e3);
+          sync.serverTimeDiff = now - serverTime;
+          sync.retryDelay = 1e3;
         } catch (error) {
           console.log("Error retrieving server time:", error);
-          const retryDelay = this.serversync.retryDelay || 1e3;
-          this.serversync.retryDelay = Math.min(retryDelay * 2, 6e4);
-          setTimeout(() => {
-            this.calcServerTimeDiff();
-          }, retryDelay);
+          nextDelay = sync.retryDelay || 1e3;
+          sync.retryDelay = Math.min(nextDelay * 2, 6e4);
+        } finally {
+          sync.running = false;
+          if (!sync.stopped) {
+            sync.timer = setTimeout(() => {
+              sync.timer = null;
+              this.calcServerTimeDiff();
+            }, nextDelay);
+          }
         }
       });
+    },
+    stopServerTimeSync: function() {
+      const sync = this.serversync;
+      sync.stopped = true;
+      if (sync.timer) {
+        clearTimeout(sync.timer);
+        sync.timer = null;
+      }
     },
     sendToAsync: function(instance, command, sendData) {
       return __async(this, null, function* () {
@@ -2878,6 +2898,8 @@
 
   // mytime/js/mytime.js
   fetch("widgets/mytime/myi18n/translations.json").then((response) => response.json()).then((i18n) => $.extend(true, systemDictionary, i18n));
+  var _a, _b;
+  (_b = (_a = vis.binds.mytime) == null ? void 0 : _a.stopServerTimeSync) == null ? void 0 : _b.call(_a);
   vis.binds.mytime = __spreadValues({
     version,
     showVersion() {

@@ -19,6 +19,7 @@ function copy() {
     copyFiles(['src-admin/build/assets/*.map', '!src-admin/build/static/js/vendors*.map'], 'admin/custom/assets');
     copyFiles(['src-admin/build/customComponents.js'], 'admin/custom');
     copyFiles(['src-admin/build/customComponents.js.map'], 'admin/custom');
+    copyFiles(['src-admin/build/mf.manifest.json'], 'admin/custom');
     copyFiles(['src-admin/src/i18n/*.json'], 'admin/custom/i18n');
 }
 

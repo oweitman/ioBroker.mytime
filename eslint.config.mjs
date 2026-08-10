@@ -15,7 +15,7 @@ export default [
             'widgets/mytime/lib/flipclock.js',
             'widgets/mytime/js/bundle.js',
             'widgets/mytime/js/timezones.js',
-            'widgets/mytime/build',
+            'widgets/mytime/dist',
             '.dev-server/**',
             'backup/**',
             '*.test.js',

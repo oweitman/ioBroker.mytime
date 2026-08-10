@@ -2,23 +2,40 @@
 
 const serverSync = {
     calcServerTimeDiff: async function () {
+        const sync = this.serversync;
+        if (sync.running || sync.timer) {
+            return;
+        }
+
+        sync.running = true;
+        sync.stopped = false;
+        let nextDelay = 15000;
+
         try {
             let serverTime = await this.sendToAsync('mytime.0', 'getServerTime');
             let now = new Date().getTime();
-            this.serversync.serverTimeDiff = now - serverTime;
-            this.serversync.retryDelay = 1000;
-
-            // Erfolgreich? Dann erneut in 15 Sekunden aufrufen
-            setTimeout(() => {
-                this.calcServerTimeDiff();
-            }, 15000);
+            sync.serverTimeDiff = now - serverTime;
+            sync.retryDelay = 1000;
         } catch (error) {
             console.log('Error retrieving server time:', error);
-            const retryDelay = this.serversync.retryDelay || 1000;
-            this.serversync.retryDelay = Math.min(retryDelay * 2, 60000);
-            setTimeout(() => {
-                this.calcServerTimeDiff();
-            }, retryDelay);
+            nextDelay = sync.retryDelay || 1000;
+            sync.retryDelay = Math.min(nextDelay * 2, 60000);
+        } finally {
+            sync.running = false;
+            if (!sync.stopped) {
+                sync.timer = setTimeout(() => {
+                    sync.timer = null;
+                    this.calcServerTimeDiff();
+                }, nextDelay);
+            }
+        }
+    },
+    stopServerTimeSync: function () {
+        const sync = this.serversync;
+        sync.stopped = true;
+        if (sync.timer) {
+            clearTimeout(sync.timer);
+            sync.timer = null;
         }
     },
     sendToAsync: async function (instance, command, sendData) {
