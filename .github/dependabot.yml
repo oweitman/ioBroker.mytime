@@ -58,7 +58,7 @@ updates:
             update-types: ['version-update:semver-major']
           - dependency-name: '@emotion/styled'
             update-types: ['version-update:semver-major']
-          - dependency-name: '@iobroker/adapter-react-v5'
+          - dependency-name: '@iobroker/gui-components'
             update-types: ['version-update:semver-major']
           - dependency-name: '@iobroker/json-config'
             update-types: ['version-update:semver-major']

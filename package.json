@@ -1,6 +1,6 @@
 {
   "name": "iobroker.mytime",
-  "version": "2.5.1",
+  "version": "3.0.1",
   "description": "This adapter handle Time (eg: countdown,etc.)",
   "author": {
     "name": "oweitman",
@@ -22,7 +22,7 @@
     "node": ">= 22"
   },
   "dependencies": {
-    "@iobroker/adapter-core": "^3.4.2",
+    "@iobroker/adapter-core": "^3.4.3",
     "dayjs": "^1.11.21",
     "rrule": "^2.8.1",
     "suncalc3": "^2.0.5"
@@ -40,11 +40,9 @@
     "@iobroker/vis-2-widgets-react-dev": "^4.0.4",
     "@tsconfig/node22": "^22.0.5",
     "@types/node": "^22.13.14",
-    "@types/react": "^18.3.31",
-    "@types/react-dom": "^18.3.7",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
     "alcalzone-shared": "^5.0.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
     "typescript": "~5.9.3"
   },
   "bugs": {
@@ -55,8 +53,8 @@
     "admin/",
     "lib/",
     "widgets/**/!(tsconfig|tsconfig.*|.eslintrc|en).json",
-    "widgets/**/*.{html,css,png,svg,jpg}",
-    "widgets/**/build/*.{js,map}",
+    "widgets/**/*.{html,css,png,svg,jpg,ttf}",
+    "widgets/**/dist/*.{js,map}",
     "widgets/**/lib/*.{js,map}",
     "!widgets/node_modules/**",
     "www/",
@@ -70,11 +68,12 @@
     "test": "npm run test:package",
     "test:package": "mocha test/package --exit",
     "test:integration": "mocha test/integration --exit",
-    "build:admin": "node tasks --default",
+    "build:admin": "node tasks.mjs --default",
     "build:widgets": "cd widgets && npm run build",
     "build": "npm run build:widgets && npm run build:admin",
     "prepublishOnly": "npm run build",
     "release": "release-script --all",
+    "release:3x": "release-script --all --branch-pattern release3x",
     "release-patch": "release-script patch --yes",
     "release-minor": "release-script minor --yes",
     "release-major": "release-script major --yes",

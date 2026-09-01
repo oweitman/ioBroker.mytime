@@ -1,7 +1,7 @@
 import { useContext, useState, useEffect } from 'react';
 import dayjs from 'dayjs';
 
-import { I18n } from '@iobroker/adapter-react-v5';
+import { I18n } from '@iobroker/gui-components';
 import {
     TextField,
     MenuItem,
@@ -49,7 +49,7 @@ const elements=[
     {tab:"ext1", title:"weekstart",     attr:"weekstart",       type:"radio", tooltip: "tsWeekstartTooltip",
         childs: [{label: "Monday", value: RRule.MO.weekday }, {label: "Tuesday", value: RRule.TU.weekday }, {label: "Wednsday", value: RRule.WE.weekday }, {label: "Thursday", value: RRule.TH.weekday }, {label: "Friday", value: RRule.FR.weekday }, {label: "Saturday", value: RRule.SA.weekday }, {label: "Sunday", value: RRule.SU.weekday }]
     },
-    {tab:"ext1", title:"byweekday",                     attr:"byweekday",       type:"checkbox", tooltip: "tsByweekdayTooltip", format:1,
+    {tab:"ext1", title:"byweekday",                     attr:"byweekday",       type:"checkbox", tooltip: "tsByweekdayTooltip", format:4,
         childs: [{label: "Monday", value: RRule.MO }, {label: "Tuesday", value: RRule.TU }, {label: "Wednsday", value: RRule.WE }, {label: "Thursday", value: RRule.TH }, {label: "Friday", value: RRule.FR }, {label: "Saturday", value: RRule.SA }, {label: "Sunday", value: RRule.SU }]
     },
     {tab:"ext1", title:"bymonth",                       attr:"bymonth",     type:"checkbox", tooltip: "tsBymonthTooltip", format:1,
@@ -206,11 +206,12 @@ export default function TimeseriesRulesEdit() {
         return (
             <Grid
                 item
-                xs={12}
-                sm={12}
-                md={8}
-                lg={4}
-                xl={4}
+                size={{ xs: 12, sm: 12, md: 8, lg: 4, xl: 4 }}
+                // xs={12}
+                // sm={12}
+                // md={8}
+                // lg={4}
+                // xl={4}
                 key={el.attr}
             >
                 <HtmlTooltip title={I18n.t(el.tooltip)}>
@@ -218,11 +219,6 @@ export default function TimeseriesRulesEdit() {
                         fullWidth
                         name={el.attr}
                         autoComplete="off"
-                        InputProps={{
-                            inputProps: {
-                                autoComplete: 'new-password', // Chrome-sicher
-                            },
-                        }}
                         key={el.attr}
                         label={I18n.t(el.title)}
                         variant="standard"
@@ -244,8 +240,15 @@ export default function TimeseriesRulesEdit() {
                         size="small"
                         margin="dense"
                         value={rule[el.attr] || ''}
-                        inputProps={{ style: { fontSize: 12 } }} // font size of input text
-                        InputLabelProps={{ style: { fontSize: 12 } }} // font size of input label
+                        slotProps={{
+                            input: {
+                                style: { fontSize: 12 },
+                                autoComplete: 'new-password', // Chrome-sicher
+                            },
+                            inputLabel: {
+                                style: { fontSize: 12 },
+                            },
+                        }}
                         sx={{ ...style.textPadding }}
                     />
                 </HtmlTooltip>
@@ -256,11 +259,12 @@ export default function TimeseriesRulesEdit() {
         return (
             <Grid
                 item
-                xs={12}
-                sm={12}
-                md={12}
-                lg={12}
-                xl={12}
+                size={{ xs: 12, sm: 12, md: 12, lg: 12, xl: 12 }}
+                // xs={12}
+                // sm={12}
+                // md={12}
+                // lg={12}
+                // xl={12}
                 key={el.attr}
             >
                 <HtmlTooltip title={I18n.t(el.tooltip)}>
@@ -301,14 +305,16 @@ export default function TimeseriesRulesEdit() {
         );
     }
     function renderRadio(el) {
+        let itemSizes = { xs: 3, sm: 4, md: 3, lg: 3, xl: 3 };
         return (
             <Grid
                 item
-                xs={12}
-                sm={12}
-                md={12}
-                lg={12}
-                xl={12}
+                size={{ xs: 12, sm: 12, md: 12, lg: 12, xl: 12 }}
+                // xs={12}
+                // sm={12}
+                // md={12}
+                // lg={12}
+                // xl={12}
                 key={el.attr}
             >
                 <HtmlTooltip title={I18n.t(el.tooltip)}>
@@ -347,6 +353,7 @@ export default function TimeseriesRulesEdit() {
                                             <Grid
                                                 key={el.attr + option.value}
                                                 item
+                                                size={{ ...itemSizes }}
                                             >
                                                 <FormControlLabel
                                                     checked={rule[el.attr] === option.value}
@@ -380,27 +387,32 @@ export default function TimeseriesRulesEdit() {
     function renderCheckbox(el) {
         let itemSizes;
         switch (el.format) {
-            case 1:
-                itemSizes = { xs: 3, sm: 4, md: 3, lg: 2 };
+            case 1: //bymonth
+                //itemSizes = { xs: 3, sm: 4, md: 3, lg: 2 };
+                itemSizes = { xs: 3, sm: 4, md: 3, lg: 2, xl: 2 };
                 break;
-            case 2:
-                itemSizes = { xs: 6, sm: 6, md: 4, lg: 3 };
+            case 2: //suntimes
+                itemSizes = { xs: 6, sm: 5, md: 5, lg: 4, xl: 4 };
                 break;
-            case 3:
-                itemSizes = { xs: 4, sm: 4, md: 4, lg: 4 };
+            case 3: // moontimes
+                itemSizes = { xs: 4, sm: 4, md: 4, lg: 4, xl: 4 };
                 break;
-            default:
+            case 4: //byweekday
+                itemSizes = { xs: 3, sm: 4, md: 3, lg: 3, xl: 3 };
+                break;
+            default: // all others
                 itemSizes = { xs: 3, sm: 4, md: 3, lg: 2 };
                 break;
         }
         return (
             <Grid
                 item
-                xs={12}
-                sm={12}
-                md={12}
-                lg={12}
-                xl={12}
+                size={{ xs: 12, sm: 12, md: 12, lg: 12, xl: 12 }}
+                // xs={12}
+                // sm={12}
+                // md={12}
+                // lg={12}
+                // xl={12}
                 key={el.attr}
             >
                 <HtmlTooltip title={I18n.t(el.tooltip)}>
@@ -422,7 +434,7 @@ export default function TimeseriesRulesEdit() {
                                         <Grid
                                             key={el.attr + option.value}
                                             item
-                                            {...itemSizes}
+                                            size={{ ...itemSizes }}
                                         >
                                             <HtmlTooltip title={option.tooltip ? I18n.t(option.tooltip) || '' : ''}>
                                                 <FormControlLabel
@@ -432,7 +444,7 @@ export default function TimeseriesRulesEdit() {
                                                             checked={(rule[el.attr] || []).some(
                                                                 v => JSON.stringify(v) === JSON.stringify(option.value),
                                                             )}
-                                                            inputProps={{
+                                                            slotProps={{
                                                                 'data-state': `${el.attr}_${JSON.stringify(option.value)}`,
                                                             }}
                                                             onChange={e => {
@@ -479,11 +491,12 @@ export default function TimeseriesRulesEdit() {
         return (
             <Grid
                 item
-                xs={12}
-                sm={12}
-                md={12}
-                lg={12}
-                xl={12}
+                size={{ xs: 12, sm: 12, md: 12, lg: 12, xl: 12 }}
+                // xs={12}
+                // sm={12}
+                // md={12}
+                // lg={12}
+                // xl={12}
                 key={`newline${index}`}
             >
                 <Box size={12}></Box>
@@ -499,18 +512,19 @@ export default function TimeseriesRulesEdit() {
             <Grid
                 sx={{ ...style.datetimeMargin }}
                 item
-                xs={5}
-                sm={5}
-                md={5}
-                lg={4}
-                xl={4}
+                size={{ xs: 5, sm: 5, md: 5, lg: 4, xl: 4 }}
+                // xs={5}
+                // sm={5}
+                // md={5}
+                // lg={4}
+                // xl={4}
                 key={el.attr}
             >
                 <HtmlTooltip title={I18n.t(el.tooltip)}>
                     <Box>
                         <Stack
                             direction="row"
-                            alignItems="flex-end"
+                            sx={{ alignItems: 'flex-end' }}
                         >
                             <DateTimePicker
                                 key={el.attr}
@@ -519,7 +533,15 @@ export default function TimeseriesRulesEdit() {
                                 views={['year', 'month', 'day', 'hours', 'minutes', 'seconds']}
                                 ampm={false}
                                 slotProps={{
-                                    textField: { size: 'small', variant: 'standard' },
+                                    textField: {
+                                        size: 'normal',
+                                        variant: 'standard',
+                                        sx: {
+                                            '& .MuiPickersInputBase-root': {
+                                                fontSize: '12px',
+                                            },
+                                        },
+                                    },
                                 }}
                                 formatDensity="dense"
                                 value={(rule[el.attr] && dayjs(rule[el.attr])) || null}
@@ -588,6 +610,8 @@ export default function TimeseriesRulesEdit() {
                     value={tabValue}
                     onChange={handleTabChange}
                     sx={{ ...style.tabFlex }}
+                    variant="scrollable"
+                    scrollButtons="auto"
                 >
                     <Tab
                         label={I18n.t('tsBase')}

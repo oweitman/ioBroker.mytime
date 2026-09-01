@@ -103,7 +103,7 @@ class Mytime extends utils.Adapter {
         }
         if (!mytimeserver) {
             this.log.error(
-                'main onMessage problem with mytimeserver. please report issue with additional context informations',
+                `main onMessage problem with mytimeserver. please report issue with additional context informations. command: ${obj.command} from: ${obj.from}`,
             );
         }
         mytimeserver && mytimeserver.processMessages(obj);

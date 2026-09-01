@@ -84,6 +84,19 @@
             "stopOnEntry": false,
             "skipFiles": ["<node_internals>/**"],
             "type": "node"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Release 3x debuggen (Dry Run)",
+            "program": "${workspaceFolder}/node_modules/@alcalzone/release-script/bin/release.js",
+            "args": ["--all", "--branchPattern", "release3x", "--verbose"],
+            "cwd": "${workspaceFolder}",
+            "runtimeExecutable": "c:/Users/oweit/AppData/Roaming/fnm/aliases/default/node.exe",
+            "console": "integratedTerminal",
+            "stopOnEntry": true,
+            "sourceMaps": true,
+            "skipFiles": ["<node_internals>/**"]
         }
     ]
 }

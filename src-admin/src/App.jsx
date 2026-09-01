@@ -4,7 +4,7 @@
 import { useTheme, ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
 
 // Rest of your code...s
-import { GenericApp, I18n, Loader } from '@iobroker/adapter-react-v5';
+import { GenericApp, I18n, Loader } from '@iobroker/gui-components';
 
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';

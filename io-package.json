@@ -1,191 +1,159 @@
 {
-    "common": {
-        "name": "mytime",
-        "version": "2.5.1",
-        "titleLang": {
-            "en": "MyTime",
-            "de": "MyTime",
-            "ru": "MyTime",
-            "pt": "MyTime",
-            "nl": "MyTime",
-            "fr": "MyTime",
-            "it": "MyTime",
-            "es": "MyTime",
-            "pl": "MyTime",
-            "zh-cn": "MyTime",
-            "uk": "MyTime"
-        },
-        "desc": {
-            "en": "This adapter handle Time (eg: countdown,etc.)",
-            "de": "This adapter handle Time (eg: countdown,etc.)",
-            "ru": "This adapter handle Time (eg: countdown,etc.)",
-            "pt": "This adapter handle Time (eg: countdown,etc.)",
-            "nl": "This adapter handle Time (eg: countdown,etc.)",
-            "fr": "This adapter handle Time (eg: countdown,etc.)",
-            "it": "This adapter handle Time (eg: countdown,etc.)",
-            "es": "This adapter handle Time (eg: countdown,etc.)",
-            "pl": "This adapter handle Time (eg: countdown,etc.)",
-            "zh-cn": "This adapter handle Time (eg: countdown,etc.)",
-            "uk": "Цей адаптер обробляє час (наприклад, зворотній відлік тощо)"
-        },
-        "authors": ["oweitman <oweitman@gmx.de>"],
-        "news": {
-            "2.5.1": {
-                "en": "seperate flipclock css classes from timeandweather adapter",
-                "de": "seperate flipclock css klassen von timeandweather adapter",
-                "ru": "отдельные классы flipclock css от адаптера времени и погоды",
-                "pt": "classes separadas de css do flipclock a partir do tempo eweather adaptador",
-                "nl": "aparte flipclock css lessen van timeandweather adapter",
-                "fr": "css classes de temps et d'adaptateur météorologique",
-                "it": "seperate le classi di css flipclock dal tempo e l'adattatore",
-                "es": "seperate clases de css de la hora y el adaptador de la tela",
-                "pl": "klasy css seperate flipclock z adaptera czasu i pogody",
-                "uk": "seperate flipclock css класи від timeandweather адаптер",
-                "zh-cn": "从时间和天气适配器中分解翻转时钟 css 类"
-            },
-            "2.5.0": {
-                "en": "Flip clock size is now adjustable via font-size.\nDefined better initial sizes and defaults for various widgets.",
-                "de": "Die Größe der Flip-Uhr ist jetzt über die Schriftgröße einstellbar.\nDefinierte bessere Anfangsgrößen und Standardwerte für verschiedene Widgets.",
-                "ru": "Размер часов Flip теперь регулируется размером шрифта.\nОпределены лучшие начальные размеры и по умолчанию для различных виджетов.",
-                "pt": "O tamanho do relógio é agora ajustável através do tamanho da fonte.\nDefiniu melhores tamanhos iniciais e padrões para vários widgets.",
-                "nl": "De klokgrootte is nu instelbaar via lettergrootte.\nEen betere begingrootte en standaardinstellingen voor verschillende widgets.",
-                "fr": "La taille de l'horloge Flip est maintenant réglable via la taille de police.\nDéfinir de meilleures tailles initiales et des valeurs par défaut pour divers widgets.",
-                "it": "La dimensione dell'orologio Flip è ora regolabile tramite font-size.\nDefinito migliori dimensioni iniziali e di default per vari widget.",
-                "es": "El tamaño del reloj Flip ahora es ajustable mediante tamaño de fuente.\nDefinido mejores tamaños iniciales y defectos para varios widgets.",
-                "pl": "Rozmiar zegara Flip jest teraz regulowany przez font- size.\nOkreślono lepsze początkowe rozmiary i domyślnie dla różnych widżetów.",
-                "uk": "Розмір годинника Flip тепер регулюється через розмір шрифту.\nВизначені кращі початкові розміри та за замовчуванням для різних віджетів.",
-                "zh-cn": "翻转时钟大小现在可以通过字体大小进行调整 .\n为各种部件定义了更好的初始大小和默认值."
-            },
-            "2.4.1": {
-                "en": "add new clock widgets\nfix prod and dev build\nreengineered widgets",
-                "de": "neue clock widgets hinzufügen\nfix prod und dev build\nreengineered widgets",
-                "ru": "добавить новые виджеты часов\nобсуждение prod and dev build\nреинжиниринг виджетов",
-                "pt": "adicionar novos widgets de relógio\ncorrigir a compilação de prod e dev\nwidgets reengenharados",
-                "nl": "nieuwe klok-widgets toevoegen\nfix prod en dev build\nvernieuwde widgets",
-                "fr": "ajouter de nouveaux widgets horloge\nréparer prod et dev build\nwidgets remaniés",
-                "it": "aggiungere nuovi widget orologio\nfix prod e sviluppo costruire\nwidget progettati",
-                "es": "añadir nuevos widgets de reloj\narreglar prod y dev construir\nwidgets reconectados",
-                "pl": "dodaj nowe widżety zegara\nfix prod i dev build\nprzeprojektowane widżety",
-                "uk": "додати нові віджети годинника\nвиправити prod і dev побудувати\nreengineered віджети",
-                "zh-cn": "添加新的时钟部件\n固定 prod 和 dev 构建\n重新设计的部件"
-            },
-            "2.3.5": {
-                "en": "fix repochecker\nupdate react to 18 and many more packages",
-                "de": "Repochecker reparieren\nReact auf Version 18 aktualisieren und viele weitere Pakete",
-                "ru": "исправить repochecker\nОбновить React до версии 18 и многие другие пакеты.",
-                "pt": "corrigir repochecker\nAtualização para React 18 e muitos outros pacotes",
-                "nl": "repochecker repareren\nUpdate React naar versie 18 en nog veel meer pakketten.",
-                "fr": "corriger le rechecker\nMise à jour de React vers la version 18 et de nombreux autres packages",
-                "it": "fix repochecker\naggiorna React alla versione 18 e molti altri pacchetti",
-                "es": "corregir repochecker\nActualiza React a la versión 18 y muchos más paquetes.",
-                "pl": "napraw repochecker\naktualizacja reakcji na 18 i wiele innych pakietów",
-                "uk": "виправити перевірку повторів\nоновлення реагує на 18 та багато інших пакетів",
-                "zh-cn": "修复 repochecker\n将 React 更新到 18 版本以及更多软件包"
-            },
-            "2.3.4": {
-                "en": "update packages\nfix repochecker",
-                "de": "update-pakete\nrepochecker reparieren",
-                "ru": "обновление пакетов\nремонтировать",
-                "pt": "atualizar pacotes\ncorrigir o repochecker",
-                "nl": "pakketten bijwerken\nrepareren",
-                "fr": "mettre à jour les paquets\nfixer le repocheur",
-                "it": "pacchetti di aggiornamento\ncorreggere il repochecker",
-                "es": "actualizar paquetes\narreglar repochecker",
-                "pl": "aktualizacja pakietów\nfix repochecker",
-                "uk": "оновлення пакетів\nвиправити repochecker",
-                "zh-cn": "更新软件包\n固定重检查器"
-            },
-            "2.3.2": {
-                "en": "fix some translations",
-                "de": "einige übersetzungen beheben",
-                "ru": "исправить некоторые переводы",
-                "pt": "corrigir algumas traduções",
-                "nl": "sommige vertalingen te herstellen",
-                "fr": "corriger certaines traductions",
-                "it": "fissare alcune traduzioni",
-                "es": "arreglar algunas traducciones",
-                "pl": "naprawić niektóre tłumaczenia",
-                "uk": "виправити деякі переклади",
-                "zh-cn": "修复一些翻译"
-            }
-        },
-        "platform": "Javascript/Node.js",
-        "mode": "daemon",
-        "nogit": true,
-        "loglevel": "info",
-        "icon": "mytime.png",
-        "extIcon": "https://raw.githubusercontent.com/oweitman/ioBroker.mytime/main/admin/mytime.png",
-        "keywords": ["mytime", "timeseries", "countdown timer"],
-        "adminUI": {
-            "config": "json"
-        },
-        "readme": "https://github.com/oweitman/ioBroker.mytime/blob/main/README.md",
-        "enabled": true,
-        "licenseInformation": {
-            "type": "free",
-            "license": "MIT"
-        },
-        "compact": true,
-        "eraseOnUpload": true,
-        "dependencies": [
-            {
-                "js-controller": ">=6.0.11"
-            }
-        ],
-        "globalDependencies": [
-            {
-                "admin": ">=7.6.20"
-            }
-        ],
-        "type": "visualization",
-        "messagebox": true,
-        "tier": 3,
-        "connectionType": "local",
-        "dataSource": "poll",
-        "restartAdapters": ["vis", "vis-2"]
+  "common": {
+    "name": "mytime",
+    "version": "3.0.1",
+    "titleLang": {
+      "en": "MyTime",
+      "de": "MyTime",
+      "ru": "MyTime",
+      "pt": "MyTime",
+      "nl": "MyTime",
+      "fr": "MyTime",
+      "it": "MyTime",
+      "es": "MyTime",
+      "pl": "MyTime",
+      "zh-cn": "MyTime",
+      "uk": "MyTime"
     },
     "native": {
         "countdowns": [],
         "timeseries": []
     },
-    "objects": [],
-    "instanceObjects": [
-        {
-            "_id": "Countdowns",
-            "type": "device",
-            "common": {
-                "name": "All Countdowns datapoints"
-            },
-            "native": {}
-        },
-        {
-            "_id": "Timeseries",
-            "type": "device",
-            "common": {
-                "name": "All Timeseries datapoints"
-            },
-            "native": {}
-        },
-        {
-            "_id": "info",
-            "type": "channel",
-            "common": {
-                "name": "Information"
-            },
-            "native": {}
-        },
-        {
-            "_id": "info.connection",
-            "type": "state",
-            "common": {
-                "role": "indicator.connected",
-                "name": "Device or service connected",
-                "type": "boolean",
-                "read": true,
-                "write": false,
-                "def": false
-            },
-            "native": {}
-        }
+    "authors": [
+      "oweitman <oweitman@gmx.de>"
+    ],
+    "news": {
+      "3.0.1": {
+        "en": "improve and fix jsonConfig / switch from build to dist directory / extend log output for onMessage error / improve getServerTime timer in widget / rename subsubdirectory widgets to widgetTypes / improve race condition with states",
+        "de": "jsonConfig verbessert und korrigiert / Wechsel vom build- zum dist-Verzeichnis / Log-Ausgabe für onMessage-Fehler erweitert / getServerTime-Timer im Widget verbessert / Unterverzeichnis widgets in widgetTypes umbenannt / Race Condition bei States verbessert",
+        "ru": "улучшение и исправление jsonConfig / переход с каталога build на dist / расширение вывода журнала для ошибок onMessage / улучшение таймера getServerTime в виджете / переименование подкаталога widgets в widgetTypes / улучшение обработки состояния гонки при работе со states",
+        "pt": "melhorias e correções no jsonConfig / mudança do diretório build para dist / extensão da saída de log para erros onMessage / melhoria do temporizador getServerTime no widget / renomeação do subdiretório widgets para widgetTypes / melhoria da condição de corrida com states",
+        "nl": "jsonConfig verbeterd en gecorrigeerd / overgeschakeld van de build- naar de dist-directory / loguitvoer voor onMessage-fouten uitgebreid / getServerTime-timer in de widget verbeterd / subdirectory widgets hernoemd naar widgetTypes / race condition met states verbeterd",
+        "fr": "amélioration et correction de jsonConfig / passage du répertoire build au répertoire dist / extension de la sortie du journal pour les erreurs onMessage / amélioration du minuteur getServerTime dans le widget / renommage du sous-répertoire widgets en widgetTypes / amélioration de la gestion des conditions de concurrence avec les states",
+        "it": "miglioramenti e correzioni a jsonConfig / passaggio dalla directory build alla directory dist / estensione dell'output del log per gli errori onMessage / miglioramento del timer getServerTime nel widget / rinomina della sottodirectory widgets in widgetTypes / miglioramento della gestione delle race condition con gli states",
+        "es": "mejoras y correcciones en jsonConfig / cambio del directorio build al directorio dist / ampliación de la salida del registro para errores de onMessage / mejora del temporizador getServerTime en el widget / cambio de nombre del subdirectorio widgets a widgetTypes / mejora de la gestión de condiciones de carrera con states",
+        "pl": "ulepszenia i poprawki w jsonConfig / zmiana katalogu build na dist / rozszerzenie danych wyjściowych dziennika dla błędów onMessage / ulepszenie timera getServerTime w widżecie / zmiana nazwy podkatalogu widgets na widgetTypes / poprawa obsługi race condition ze states",
+        "uk": "покращення та виправлення jsonConfig / перехід з каталогу build на dist / розширення виводу журналу для помилок onMessage / покращення таймера getServerTime у віджеті / перейменування підкаталогу widgets на widgetTypes / покращення обробки стану гонитви при роботі зі states",
+        "zh-cn": "改进并修复 jsonConfig / 从 build 目录切换到 dist 目录 / 扩展 onMessage 错误的日志输出 / 改进小部件中的 getServerTime 定时器 / 将子目录 widgets 重命名为 widgetTypes / 改进 states 的竞态条件处理"
+      },
+      "3.0.0": {
+        "en": "update to react 19\nfix repochecker",
+        "de": "update für response 19\nfix-repochecker",
+        "ru": "обновление для реагирования 19\nремонтировать",
+        "pt": "atualização para reagir 19\ncorrigir o repochecker",
+        "nl": "update om te reageren 19\nrepareren",
+        "fr": "mise à jour pour réagir 19\nfixer le repocheur",
+        "it": "aggiornamento per reagire 19\ncorreggere il repochecker",
+        "es": "actualización para reaccionar 19\narreglar repochecker",
+        "pl": "aktualizacja w celu reakcji 19\nfix repochecker",
+        "uk": "оновлення для реагації 19\nвиправити repochecker",
+        "zh-cn": "更新以作出反应 19\n固定重检查器"
+      },
+      "2.5.1": {
+        "en": "seperate flipclock css classes from timeandweather adapter",
+        "de": "seperate flipclock css klassen von timeandweather adapter",
+        "ru": "отдельные классы flipclock css от адаптера времени и погоды",
+        "pt": "classes separadas de css do flipclock a partir do tempo eweather adaptador",
+        "nl": "aparte flipclock css lessen van timeandweather adapter",
+        "fr": "css classes de temps et d'adaptateur météorologique",
+        "it": "seperate le classi di css flipclock dal tempo e l'adattatore",
+        "es": "seperate clases de css de la hora y el adaptador de la tela",
+        "pl": "klasy css seperate flipclock z adaptera czasu i pogody",
+        "uk": "seperate flipclock css класи від timeandweather адаптер",
+        "zh-cn": "从时间和天气适配器中分解翻转时钟 css 类"
+      },
+      "2.5.0": {
+        "en": "Flip clock size is now adjustable via font-size.\nDefined better initial sizes and defaults for various widgets.",
+        "de": "Die Größe der Flip-Uhr ist jetzt über die Schriftgröße einstellbar.\nDefinierte bessere Anfangsgrößen und Standardwerte für verschiedene Widgets.",
+        "ru": "Размер часов Flip теперь регулируется размером шрифта.\nОпределены лучшие начальные размеры и по умолчанию для различных виджетов.",
+        "pt": "O tamanho do relógio é agora ajustável através do tamanho da fonte.\nDefiniu melhores tamanhos iniciais e padrões para vários widgets.",
+        "nl": "De klokgrootte is nu instelbaar via lettergrootte.\nEen betere begingrootte en standaardinstellingen voor verschillende widgets.",
+        "fr": "La taille de l'horloge Flip est maintenant réglable via la taille de police.\nDéfinir de meilleures tailles initiales et des valeurs par défaut pour divers widgets.",
+        "it": "La dimensione dell'orologio Flip è ora regolabile tramite font-size.\nDefinito migliori dimensioni iniziali e di default per vari widget.",
+        "es": "El tamaño del reloj Flip ahora es ajustable mediante tamaño de fuente.\nDefinido mejores tamaños iniciales y defectos para varios widgets.",
+        "pl": "Rozmiar zegara Flip jest teraz regulowany przez font- size.\nOkreślono lepsze początkowe rozmiary i domyślnie dla różnych widżetów.",
+        "uk": "Розмір годинника Flip тепер регулюється через розмір шрифту.\nВизначені кращі початкові розміри та за замовчуванням для різних віджетів.",
+        "zh-cn": "翻转时钟大小现在可以通过字体大小进行调整 .\n为各种部件定义了更好的初始大小和默认值."
+      },
+      "2.4.1": {
+        "en": "add new clock widgets\nfix prod and dev build\nreengineered widgets",
+        "de": "neue clock widgets hinzufügen\nfix prod und dev build\nreengineered widgets",
+        "ru": "добавить новые виджеты часов\nобсуждение prod and dev build\nреинжиниринг виджетов",
+        "pt": "adicionar novos widgets de relógio\ncorrigir a compilação de prod e dev\nwidgets reengenharados",
+        "nl": "nieuwe klok-widgets toevoegen\nfix prod en dev build\nvernieuwde widgets",
+        "fr": "ajouter de nouveaux widgets horloge\nréparer prod et dev build\nwidgets remaniés",
+        "it": "aggiungere nuovi widget orologio\nfix prod e sviluppo costruire\nwidget progettati",
+        "es": "añadir nuevos widgets de reloj\narreglar prod y dev construir\nwidgets reconectados",
+        "pl": "dodaj nowe widżety zegara\nfix prod i dev build\nprzeprojektowane widżety",
+        "uk": "додати нові віджети годинника\nвиправити prod і dev побудувати\nreengineered віджети",
+        "zh-cn": "添加新的时钟部件\n固定 prod 和 dev 构建\n重新设计的部件"
+      },
+      "2.3.5": {
+        "en": "fix repochecker\nupdate react to 18 and many more packages",
+        "de": "Repochecker reparieren\nReact auf Version 18 aktualisieren und viele weitere Pakete",
+        "ru": "исправить repochecker\nОбновить React до версии 18 и многие другие пакеты.",
+        "pt": "corrigir repochecker\nAtualização para React 18 e muitos outros pacotes",
+        "nl": "repochecker repareren\nUpdate React naar versie 18 en nog veel meer pakketten.",
+        "fr": "corriger le rechecker\nMise à jour de React vers la version 18 et de nombreux autres packages",
+        "it": "fix repochecker\naggiorna React alla versione 18 e molti altri pacchetti",
+        "es": "corregir repochecker\nActualiza React a la versión 18 y muchos más paquetes.",
+        "pl": "napraw repochecker\naktualizacja reakcji na 18 i wiele innych pakietów",
+        "uk": "виправити перевірку повторів\nоновлення реагує на 18 та багато інших пакетів",
+        "zh-cn": "修复 repochecker\n将 React 更新到 18 版本以及更多软件包"
+      },
+      "2.3.4": {
+        "en": "update packages\nfix repochecker",
+        "de": "update-pakete\nrepochecker reparieren",
+        "ru": "обновление пакетов\nремонтировать",
+        "pt": "atualizar pacotes\ncorrigir o repochecker",
+        "nl": "pakketten bijwerken\nrepareren",
+        "fr": "mettre à jour les paquets\nfixer le repocheur",
+        "it": "pacchetti di aggiornamento\ncorreggere il repochecker",
+        "es": "actualizar paquetes\narreglar repochecker",
+        "pl": "aktualizacja pakietów\nfix repochecker",
+        "uk": "оновлення пакетів\nвиправити repochecker",
+        "zh-cn": "更新软件包\n固定重检查器"
+      }
+    },
+    "platform": "Javascript/Node.js",
+    "mode": "daemon",
+    "nogit": true,
+    "loglevel": "info",
+    "icon": "mytime.png",
+    "extIcon": "https://raw.githubusercontent.com/oweitman/ioBroker.mytime/main/admin/mytime.png",
+    "keywords": [
+      "mytime",
+      "timeseries",
+      "countdown timer"
+    ],
+    "adminUI": {
+      "config": "json"
+    },
+    "readme": "https://github.com/oweitman/ioBroker.mytime/blob/main/README.md",
+    "enabled": true,
+    "licenseInformation": {
+      "type": "free",
+      "license": "MIT"
+    },
+    "compact": true,
+    "eraseOnUpload": true,
+    "dependencies": [
+      {
+        "js-controller": ">=6.0.11"
+      }
+    ],
+    "globalDependencies": [
+      {
+        "admin": ">=8.0.0"
+      }
+    ],
+    "type": "visualization",
+    "messagebox": true,
+    "tier": 3,
+    "connectionType": "local",
+    "dataSource": "poll",
+    "restartAdapters": [
+      "vis",
+      "vis-2"
     ]
 }

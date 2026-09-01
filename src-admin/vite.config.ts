@@ -1,10 +1,8 @@
 import react from '@vitejs/plugin-react';
 import commonjs from 'vite-plugin-commonjs';
-import vitetsConfigPaths from 'vite-tsconfig-paths';
 import { federation } from '@module-federation/vite';
-import { moduleFederationShared } from '@iobroker/adapter-react-v5/modulefederation.admin.config';
-
-import pack from './package.json';
+import { moduleFederationShared } from '@iobroker/gui-components/modulefederation.admin.config';
+import { readFileSync } from 'node:fs';
 import path from 'node:path';
 
 const config = {
@@ -18,11 +16,10 @@ const config = {
                 './Components': './src/Components.jsx',
             },
             remotes: {},
-            shared: moduleFederationShared(pack),
+            shared: moduleFederationShared(JSON.parse(readFileSync('./package.json').toString())),
             dts: false,
         }),
         react(),
-        vitetsConfigPaths(),
         commonjs(),
     ],
     server: {
@@ -45,18 +42,19 @@ const config = {
             fs: path.resolve(__dirname, 'src/empty.js'),
             path: path.resolve(__dirname, 'src/empty.js'),
         },
+        tsconfigPaths: true,
     },
 
     build: {
         target: 'chrome89',
         outDir: './build',
-        output: {
-            manualChunks: {
-                reactVendor: ['react', 'react-dom'],
-                muiVendor: ['@mui/material', '@mui/icons-material'],
-            },
-            sourcemapExcludeSources: true,
-        },
+        // output: {
+        //     manualChunks: {
+        //         reactVendor: ['react', 'react-dom'],
+        //         muiVendor: ['@mui/material', '@mui/icons-material'],
+        //     },
+        //     sourcemapExcludeSources: true,
+        // },
         sourcemap: true,
         rollupOptions: {
             onwarn(warning: { code: string }, warn: (warning: { code: string }) => void): void {

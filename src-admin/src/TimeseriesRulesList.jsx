@@ -6,7 +6,6 @@ import {
     /*     ArrowDownward as ArrowDownwardIcon,
     ArrowUpward as ArrowUpwardIcon, */
 } from '@mui/icons-material';
-// import PropTypes from 'prop-types';
 
 import {
     Box,
@@ -26,7 +25,7 @@ import {
     Paper,
 } from '@mui/material';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import { I18n } from '@iobroker/adapter-react-v5';
+import { I18n } from '@iobroker/gui-components';
 import { Header } from './Components/Header';
 import TimeseriesRulesEdit from './TimeseriesRulesEdit';
 import TimeseriesDateEdit from './TimeseriesDateEdit';
@@ -169,7 +168,7 @@ function ItemsAsCards({ style, rules, timeseriesDispatch, navStateDispatch, navS
                                 >
                                     <Typography
                                         gutterBottom
-                                        variant="h5"
+                                        variant="h6"
                                         component="div"
                                     >
                                         {item.name}
@@ -306,7 +305,8 @@ export default function TimeseriesRulesList({ sx }) {
             >
                 <Grid
                     item
-                    xs={12}
+                    size={{ xs: 12 }}
+                    // xs={12}
                 >
                     <Header
                         size={4}
@@ -315,7 +315,8 @@ export default function TimeseriesRulesList({ sx }) {
                 </Grid>
                 <Grid
                     item
-                    xs={12}
+                    size={{ xs: 12 }}
+                    // xs={12}
                 >
                     <Grid
                         container
@@ -323,10 +324,11 @@ export default function TimeseriesRulesList({ sx }) {
                     >
                         <Grid
                             item
-                            xs={12}
-                            sm={12}
-                            lg={6}
-                            xl={3}
+                            size={{ xs: 12, sm: 12, lg: 6, xl: 3 }}
+                            // xs={12}
+                            // sm={12}
+                            // lg={6}
+                            // xl={3}
                         >
                             <HtmlTooltip title={I18n.t('tsRuleAddTooltip')}>
                                 <Button
@@ -363,10 +365,11 @@ export default function TimeseriesRulesList({ sx }) {
                         </Grid>
                         <Grid
                             item
-                            xs={12}
-                            sm={12}
-                            lg={6}
-                            xl={3}
+                            size={{ xs: 12, sm: 12, lg: 6, xl: 3 }}
+                            // xs={12}
+                            // sm={12}
+                            // lg={6}
+                            // xl={3}
                         >
                             <HtmlTooltip title={I18n.t('tsRuleDelTooltip')}>
                                 <Button
@@ -403,10 +406,11 @@ export default function TimeseriesRulesList({ sx }) {
                         </Grid>
                         <Grid
                             item
-                            xs={12}
-                            sm={12}
-                            lg={6}
-                            xl={3}
+                            size={{ xs: 12, sm: 12, lg: 6, xl: 3 }}
+                            // xs={12}
+                            // sm={12}
+                            // lg={6}
+                            // xl={3}
                         >
                             <HtmlTooltip title={I18n.t('tsDatelistAddTooltip')}>
                                 <Button
@@ -445,10 +449,11 @@ export default function TimeseriesRulesList({ sx }) {
                         </Grid>
                         <Grid
                             item
-                            xs={12}
-                            sm={12}
-                            lg={6}
-                            xl={3}
+                            size={{ xs: 12, sm: 12, lg: 6, xl: 3 }}
+                            // xs={12}
+                            // sm={12}
+                            // lg={6}
+                            // xl={3}
                         >
                             <HtmlTooltip title={I18n.t('tsDatelistDelTooltip')}>
                                 <Button
@@ -489,11 +494,12 @@ export default function TimeseriesRulesList({ sx }) {
                 <Grid
                     item
                     sx={{ ...style.table }}
-                    xs={12}
-                    sm={12}
-                    md={10}
-                    lg={10}
-                    xl={10}
+                    size={{ xs: 12, sm: 12, md: 10, lg: 10, xl: 10 }}
+                    // xs={12}
+                    // sm={12}
+                    // md={10}
+                    // lg={10}
+                    // xl={10}
                 >
                     <Box>
                         {!smallResolution && (

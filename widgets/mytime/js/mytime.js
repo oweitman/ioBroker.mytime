@@ -6,21 +6,24 @@
 'use strict';
 
 import { version as pkgVersion } from '../../../package.json';
-import countdownNixie from './widgets/countdownNixie.js';
-import countdownFlip from './widgets/countdownFlip.js';
-import countdownCircle from './widgets/countdownCircle.js';
-import reverseCountdownPlain from './widgets/reverseCountdownPlain.js';
-import countdownPlain from './widgets/countdownPlain.js';
-import wordclock from './widgets/wordclock.js';
-import clockPlain from './widgets/clockPlain.js';
-import clockNixie from './widgets/clockNixie.js';
-import clockFlip from './widgets/clockFlip.js';
+import countdownNixie from './widgetTypes/countdownNixie.js';
+import countdownFlip from './widgetTypes/countdownFlip.js';
+import countdownCircle from './widgetTypes/countdownCircle.js';
+import reverseCountdownPlain from './widgetTypes/reverseCountdownPlain.js';
+import countdownPlain from './widgetTypes/countdownPlain.js';
+import wordclock from './widgetTypes/wordclock.js';
+import clockPlain from './widgetTypes/clockPlain.js';
+import clockNixie from './widgetTypes/clockNixie.js';
+import clockFlip from './widgetTypes/clockFlip.js';
 import support from './support/support.js';
 
 /* global $, systemDictionary, vis */
 fetch('widgets/mytime/myi18n/translations.json')
     .then(response => response.json())
     .then(i18n => $.extend(true, systemDictionary, i18n));
+
+// Stop an existing synchronization loop before this bundle is initialized again.
+vis.binds.mytime?.stopServerTimeSync?.();
 
 vis.binds.mytime = {
     version: pkgVersion,
