@@ -1,4 +1,9 @@
 # Older changes
+## 2.5.0 (2026-07-21)
+
+- Flip clock size is now adjustable via font-size.
+- Defined better initial sizes and defaults for various widgets.
+
 ## 2.4.1 (2026-07-20)
 
 - add new clock widgets

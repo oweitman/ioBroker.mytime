@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "mytime",
-    "version": "3.0.2",
+    "version": "3.0.3",
     "titleLang": {
       "en": "MyTime",
       "de": "MyTime",
@@ -32,6 +32,19 @@
       "oweitman <oweitman@gmx.de>"
     ],
     "news": {
+      "3.0.3": {
+        "en": "fix package-lock",
+        "de": "Paketsperre beheben",
+        "ru": "исправление блокировки пакета",
+        "pt": "corrigir bloqueio de pacote",
+        "nl": "fix package-lock",
+        "fr": "correction du verrouillage du paquet",
+        "it": "correzione del blocco del pacchetto",
+        "es": "corregir el bloqueo del paquete",
+        "pl": "napraw blokadę pakietu",
+        "uk": "виправити блокування пакета",
+        "zh-cn": "修复软件包锁定"
+      },
       "3.0.2": {
         "en": "prepare for stable release",
         "de": "Bereiten Sie sich auf die stabile Version vor.",
@@ -109,19 +122,6 @@
         "pl": "dodaj nowe widżety zegara\nfix prod i dev build\nprzeprojektowane widżety",
         "uk": "додати нові віджети годинника\nвиправити prod і dev побудувати\nreengineered віджети",
         "zh-cn": "添加新的时钟部件\n固定 prod 和 dev 构建\n重新设计的部件"
-      },
-      "2.3.5": {
-        "en": "fix repochecker\nupdate react to 18 and many more packages",
-        "de": "Repochecker reparieren\nReact auf Version 18 aktualisieren und viele weitere Pakete",
-        "ru": "исправить repochecker\nОбновить React до версии 18 и многие другие пакеты.",
-        "pt": "corrigir repochecker\nAtualização para React 18 e muitos outros pacotes",
-        "nl": "repochecker repareren\nUpdate React naar versie 18 en nog veel meer pakketten.",
-        "fr": "corriger le rechecker\nMise à jour de React vers la version 18 et de nombreux autres packages",
-        "it": "fix repochecker\naggiorna React alla versione 18 e molti altri pacchetti",
-        "es": "corregir repochecker\nActualiza React a la versión 18 y muchos más paquetes.",
-        "pl": "napraw repochecker\naktualizacja reakcji na 18 i wiele innych pakietów",
-        "uk": "виправити перевірку повторів\nоновлення реагує на 18 та багато інших пакетів",
-        "zh-cn": "修复 repochecker\n将 React 更新到 18 版本以及更多软件包"
       }
     },
     "platform": "Javascript/Node.js",
