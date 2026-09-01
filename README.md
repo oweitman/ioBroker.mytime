@@ -596,6 +596,11 @@ of the countdown is available as CSS-Class selector:**
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+
+### **WORK IN PROGRESS**
+
+- prepare for stable release
+
 ### 3.0.1 (2026-08-10)
 
 - improve and fix jsonConfig
