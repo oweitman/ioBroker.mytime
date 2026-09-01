@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "mytime",
-    "version": "3.0.4",
+    "version": "3.0.5",
     "titleLang": {
       "en": "MyTime",
       "de": "MyTime",
@@ -16,49 +16,23 @@
       "uk": "MyTime"
     },
     "desc": {
-      "en": "This adapter handle Time (eg: countdown,etc.)",
-      "de": "This adapter handle Time (eg: countdown,etc.)",
-      "ru": "This adapter handle Time (eg: countdown,etc.)",
-      "pt": "This adapter handle Time (eg: countdown,etc.)",
-      "nl": "This adapter handle Time (eg: countdown,etc.)",
-      "fr": "This adapter handle Time (eg: countdown,etc.)",
-      "it": "This adapter handle Time (eg: countdown,etc.)",
-      "es": "This adapter handle Time (eg: countdown,etc.)",
-      "pl": "This adapter handle Time (eg: countdown,etc.)",
-      "zh-cn": "This adapter handle Time (eg: countdown,etc.)",
-      "uk": "Цей адаптер обробляє час (наприклад, зворотній відлік тощо)"
+      "en": "This adapter handles time (e.g. countdowns, etc.)",
+      "de": "Dieser Adapter verarbeitet Zeit (z. B. Countdowns usw.)",
+      "ru": "Этот адаптер обрабатывает время (например, обратный отсчёт и т. д.)",
+      "pt": "Este adaptador processa tempo (por exemplo, contagens regressivas, etc.)",
+      "nl": "Deze adapter verwerkt tijd (bijv. aftellingen, enz.)",
+      "fr": "Cet adaptateur gère le temps (par ex. les comptes à rebours, etc.)",
+      "it": "Questo adattatore gestisce il tempo (ad es. conto alla rovescia, ecc.)",
+      "es": "Este adaptador gestiona el tiempo (p. ej., cuentas regresivas, etc.)",
+      "pl": "Ten adapter obsługuje czas (np. odliczanie itp.)",
+      "zh-cn": "此适配器处理时间（例如倒计时等）",
+      "uk": "Цей адаптер обробляє час (наприклад, зворотний відлік тощо)"
     },
     "authors": [
       "oweitman <oweitman@gmx.de>"
     ],
     "news": {
-      "3.0.4": {
-        "en": "fix package-lock",
-        "de": "Paketsperre beheben",
-        "ru": "исправление блокировки пакета",
-        "pt": "corrigir bloqueio de pacote",
-        "nl": "pakketvergrendeling repareren",
-        "fr": "correction du verrouillage du paquet",
-        "it": "correzione del blocco del pacchetto",
-        "es": "corregir el bloqueo del paquete",
-        "pl": "napraw blokadę pakietu",
-        "uk": "виправити блокування пакета",
-        "zh-cn": "修复软件包锁定"
-      },
-      "3.0.3": {
-        "en": "fix package-lock",
-        "de": "Paketsperre beheben",
-        "ru": "исправление блокировки пакета",
-        "pt": "corrigir bloqueio de pacote",
-        "nl": "fix package-lock",
-        "fr": "correction du verrouillage du paquet",
-        "it": "correzione del blocco del pacchetto",
-        "es": "corregir el bloqueo del paquete",
-        "pl": "napraw blokadę pakietu",
-        "uk": "виправити блокування пакета",
-        "zh-cn": "修复软件包锁定"
-      },
-      "3.0.2": {
+      "3.0.5": {
         "en": "prepare for stable release",
         "de": "Bereiten Sie sich auf die stabile Version vor.",
         "ru": "подготовка к стабильному релизу",
