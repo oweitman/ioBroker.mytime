@@ -596,8 +596,7 @@ of the countdown is available as CSS-Class selector:**
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
-
-### **WORK IN PROGRESS**
+### 3.0.2 (2026-09-01)
 
 - prepare for stable release
 
@@ -623,12 +622,6 @@ of the countdown is available as CSS-Class selector:**
 
 - Flip clock size is now adjustable via font-size.
 - Defined better initial sizes and defaults for various widgets.
-
-### 2.4.1 (2026-07-20)
-
-- add new clock widgets
-- fix prod and dev build
-- reengineered widgets
 
 [Older changelogs can be found there](CHANGELOG_OLD.md)
 
