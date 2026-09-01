@@ -1,4 +1,8 @@
 # Older changes
+## 2.5.1 (2026-07-24)
+
+- seperate flipclock css classes from timeandweather adapter
+
 ## 2.5.0 (2026-07-21)
 
 - Flip clock size is now adjustable via font-size.

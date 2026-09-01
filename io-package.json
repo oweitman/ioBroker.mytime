@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "mytime",
-    "version": "3.0.3",
+    "version": "3.0.4",
     "titleLang": {
       "en": "MyTime",
       "de": "MyTime",
@@ -32,6 +32,19 @@
       "oweitman <oweitman@gmx.de>"
     ],
     "news": {
+      "3.0.4": {
+        "en": "fix package-lock",
+        "de": "Paketsperre beheben",
+        "ru": "исправление блокировки пакета",
+        "pt": "corrigir bloqueio de pacote",
+        "nl": "pakketvergrendeling repareren",
+        "fr": "correction du verrouillage du paquet",
+        "it": "correzione del blocco del pacchetto",
+        "es": "corregir el bloqueo del paquete",
+        "pl": "napraw blokadę pakietu",
+        "uk": "виправити блокування пакета",
+        "zh-cn": "修复软件包锁定"
+      },
       "3.0.3": {
         "en": "fix package-lock",
         "de": "Paketsperre beheben",
@@ -109,19 +122,6 @@
         "pl": "Rozmiar zegara Flip jest teraz regulowany przez font- size.\nOkreślono lepsze początkowe rozmiary i domyślnie dla różnych widżetów.",
         "uk": "Розмір годинника Flip тепер регулюється через розмір шрифту.\nВизначені кращі початкові розміри та за замовчуванням для різних віджетів.",
         "zh-cn": "翻转时钟大小现在可以通过字体大小进行调整 .\n为各种部件定义了更好的初始大小和默认值."
-      },
-      "2.4.1": {
-        "en": "add new clock widgets\nfix prod and dev build\nreengineered widgets",
-        "de": "neue clock widgets hinzufügen\nfix prod und dev build\nreengineered widgets",
-        "ru": "добавить новые виджеты часов\nобсуждение prod and dev build\nреинжиниринг виджетов",
-        "pt": "adicionar novos widgets de relógio\ncorrigir a compilação de prod e dev\nwidgets reengenharados",
-        "nl": "nieuwe klok-widgets toevoegen\nfix prod en dev build\nvernieuwde widgets",
-        "fr": "ajouter de nouveaux widgets horloge\nréparer prod et dev build\nwidgets remaniés",
-        "it": "aggiungere nuovi widget orologio\nfix prod e sviluppo costruire\nwidget progettati",
-        "es": "añadir nuevos widgets de reloj\narreglar prod y dev construir\nwidgets reconectados",
-        "pl": "dodaj nowe widżety zegara\nfix prod i dev build\nprzeprojektowane widżety",
-        "uk": "додати нові віджети годинника\nвиправити prod і dev побудувати\nreengineered віджети",
-        "zh-cn": "添加新的时钟部件\n固定 prod 和 dev 构建\n重新设计的部件"
       }
     },
     "platform": "Javascript/Node.js",

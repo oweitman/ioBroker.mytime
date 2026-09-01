@@ -596,6 +596,10 @@ of the countdown is available as CSS-Class selector:**
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+### 3.0.4 (2026-09-01)
+
+- fix package-lock
+
 ### 3.0.3 (2026-09-01)
 
 - fix package-lock
@@ -617,10 +621,6 @@ of the countdown is available as CSS-Class selector:**
 
 - update to react 19
 - fix repochecker
-
-### 2.5.1 (2026-07-24)
-
-- seperate flipclock css classes from timeandweather adapter
 
 [Older changelogs can be found there](CHANGELOG_OLD.md)
 
