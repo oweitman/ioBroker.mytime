@@ -40,7 +40,7 @@
     "@iobroker/vis-2-widgets-react-dev": "^4.0.4",
     "@tsconfig/node22": "^22.0.6",
     "@types/node": "^22.13.14",
-    "@types/react": "^19.0.0",
+    "@types/react": "^19.3.0",
     "@types/react-dom": "^19.2.7",
     "alcalzone-shared": "^5.0.0",
     "typescript": "~5.9.3"
